@@ -1,0 +1,586 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  ArrowLeft,
+  Calendar,
+  MapPin,
+  Building2,
+  Target,
+  Loader2,
+  AlertCircle,
+  Briefcase,
+  FileText,
+  Award,
+  Clock,
+  TrendingUp,
+  ChevronRight,
+  Share2,
+} from "lucide-react";
+import { useParams } from "next/navigation";
+
+import type { SampleOpportunity } from "@/lib/types/cv-score";
+
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SaveButton } from "@/components/SaveButton";
+
+/* ─── Helpers ──────────────────────────────────────────────── */
+
+function fmtDate(d: string | null) {
+  if (!d) return "Open / Ongoing";
+  try {
+    return new Date(d).toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+  } catch {
+    return d;
+  }
+}
+
+function deadlineStatus(d: string | null, isExpired: boolean) {
+  if (!d)
+    return {
+      label: "Open",
+      daysLeft: null,
+      cls: "text-emerald-600 bg-emerald-50 border-emerald-200",
+    };
+  if (isExpired)
+    return {
+      label: "Closed",
+      daysLeft: null,
+      cls: "text-red-600 bg-red-50 border-red-200",
+    };
+  try {
+    const diff = new Date(d).getTime() - Date.now();
+    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    if (days <= 3)
+      return {
+        label: `Closing in ${days} day${days !== 1 ? "s" : ""}`,
+        daysLeft: days,
+        cls: "text-red-600 bg-red-50 border-red-200",
+      };
+    if (days <= 7)
+      return {
+        label: `${days} days remaining`,
+        daysLeft: days,
+        cls: "text-amber-600 bg-amber-50 border-amber-200",
+      };
+    return {
+      label: `${days} days remaining`,
+      daysLeft: days,
+      cls: "text-emerald-600 bg-emerald-50 border-emerald-200",
+    };
+  } catch {
+    return {
+      label: "Open",
+      daysLeft: null,
+      cls: "text-dark-500 bg-dark-50 border-dark-100",
+    };
+  }
+}
+
+function typeColor(type: string) {
+  switch (type.toLowerCase()) {
+    case "job":
+      return "bg-cyan-50 text-cyan-700 border-cyan-200";
+    case "tender":
+      return "bg-violet-50 text-violet-700 border-violet-200";
+    case "consulting":
+      return "bg-teal-50 text-teal-700 border-teal-200";
+    case "internship":
+      return "bg-amber-50 text-amber-700 border-amber-200";
+    case "grant":
+      return "bg-emerald-50 text-emerald-700 border-emerald-200";
+    default:
+      return "bg-dark-50 text-dark-600 border-dark-200";
+  }
+}
+
+function seniorityBadge(seniority: string) {
+  switch (seniority) {
+    case "Director":
+      return "bg-violet-50 text-violet-700 border-violet-200";
+    case "Senior":
+      return "bg-blue-50 text-blue-700 border-blue-200";
+    case "Mid-level":
+      return "bg-teal-50 text-teal-700 border-teal-200";
+    case "Junior":
+      return "bg-amber-50 text-amber-700 border-amber-200";
+    case "Entry":
+      return "bg-emerald-50 text-emerald-700 border-emerald-200";
+    default:
+      return "bg-dark-50 text-dark-600 border-dark-200";
+  }
+}
+
+/** Returns a cleaned description or empty string if it's garbage/sparse */
+function cleanDescription(desc: string | null | undefined): string {
+  if (!desc) return "";
+  const trimmed = desc.trim();
+  if (trimmed.length < 150) return "";
+  const pipeCount = (trimmed.match(/\|/g) || []).length;
+  const words = trimmed.split(/\s+/).length;
+  if (pipeCount > 3 && words < 30) return "";
+  const upperRatio = (trimmed.match(/[A-Z]/g) || []).length / trimmed.length;
+  if (upperRatio > 0.6 && words < 20) return "";
+  return trimmed;
+}
+
+/** Check if description is too sparse for a detail page (needs enrichment) */
+function isSparse(desc: string | null | undefined): boolean {
+  return !cleanDescription(desc);
+}
+
+/** Render description as paragraphs, preserving line breaks */
+function renderDescription(text: string) {
+  return text.split(/\n\n+/).map((paragraph, pIdx) => {
+    const lines = paragraph.split(/\n/);
+    return (
+      <p key={pIdx} className="mb-4 last:mb-0">
+        {lines.map((line, lIdx) => (
+          <span key={lIdx}>
+            {lIdx > 0 && <br />}
+            {line}
+          </span>
+        ))}
+      </p>
+    );
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN COMPONENT
+   ═══════════════════════════════════════════════════════════════ */
+
+export default function OpportunityDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
+
+  const [opportunity, setOpportunity] = useState<SampleOpportunity | null>(
+    null
+  );
+  const [related, setRelated] = useState<SampleOpportunity[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    // Fetch this opportunity + all opportunities for related
+    Promise.all([
+      fetch(`/api/opportunities/sample?id=${encodeURIComponent(id)}`).then(
+        (r) => r.json()
+      ),
+      fetch("/api/opportunities/sample?hideExpired=true&minQuality=40").then(
+        (r) => r.json()
+      ),
+    ])
+      .then(([detail, feed]) => {
+        if (detail.success && detail.opportunity) {
+          setOpportunity(detail.opportunity);
+          // Find related: same org, different ID, max 4
+          const org = detail.opportunity.organization?.toLowerCase();
+          const others = (feed.opportunities || [])
+            .filter(
+              (o: SampleOpportunity) =>
+                o.id !== id && o.organization?.toLowerCase() === org
+            )
+            .slice(0, 4);
+          setRelated(others);
+        } else {
+          setError(detail.error || "Opportunity not found");
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message || "Failed to load opportunity");
+        setLoading(false);
+      });
+  }, [id]);
+
+  function handleShareLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      <SiteHeader activeHref="/opportunities" />
+
+      {/* Gradient accent strip */}
+      <div className="h-1 bg-gradient-to-r from-cyan-500 via-teal-400 to-cyan-500" />
+
+      {/* Hero */}
+      <section className="relative bg-dark-900 overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #27ABD2 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
+
+        <div className="relative max-w-5xl mx-auto px-6 py-10 lg:py-14">
+          {/* Breadcrumb navigation */}
+          <nav className="flex items-center gap-1.5 text-sm mb-6">
+            <Link
+              href="/opportunities"
+              className="text-dark-400 hover:text-cyan-400 font-semibold transition-colors"
+            >
+              Opportunities
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-dark-500" />
+            <span className="text-dark-300 font-medium truncate max-w-[300px]">
+              {loading
+                ? "Loading..."
+                : error
+                  ? "Not Found"
+                  : opportunity?.title ?? "Detail"}
+            </span>
+          </nav>
+
+          {loading ? (
+            <div className="h-20" />
+          ) : error ? (
+            <h1 className="text-2xl font-extrabold text-white">
+              Opportunity Not Found
+            </h1>
+          ) : opportunity ? (
+            <>
+              {/* Badge row */}
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                {/* Type badge */}
+                <span
+                  className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${typeColor(opportunity.classified_type)}`}
+                >
+                  {opportunity.classified_type}
+                </span>
+
+                {/* Seniority badge */}
+                {opportunity.seniority && (
+                  <span
+                    className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${seniorityBadge(opportunity.seniority)}`}
+                  >
+                    <Award className="w-3 h-3" />
+                    {opportunity.seniority}
+                  </span>
+                )}
+
+                {/* Expired badge */}
+                {opportunity.is_expired && (
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border bg-red-50 text-red-500 border-red-200">
+                    <Clock className="w-3 h-3" />
+                    Expired
+                  </span>
+                )}
+
+                <span className="text-dark-400 text-xs font-medium">
+                  via {opportunity.source_domain}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-2xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                {opportunity.title}
+              </h1>
+
+              {/* Meta row */}
+              <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-dark-300">
+                <span className="inline-flex items-center gap-1.5">
+                  <Building2 className="w-4 h-4" />
+                  {opportunity.organization}
+                </span>
+                {opportunity.country && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4" />
+                    {opportunity.country}
+                  </span>
+                )}
+                {opportunity.experience_years && (
+                  <span className="inline-flex items-center gap-1.5 text-teal-400">
+                    <TrendingUp className="w-4 h-4" />
+                    {opportunity.experience_years}+ years experience
+                  </span>
+                )}
+              </div>
+
+              {/* Action buttons row in hero */}
+              <div className="flex flex-wrap items-center gap-3 mt-6">
+                <SaveButton
+                  opportunityId={opportunity.id}
+                  opportunityTitle={opportunity.title}
+                  opportunityOrg={opportunity.organization}
+                  opportunityDeadline={opportunity.deadline}
+                  opportunityUrl={opportunity.source_url}
+                  variant="button"
+                />
+                <button
+                  onClick={handleShareLink}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-white/10 text-dark-200 border border-white/10 hover:bg-white/20 hover:text-white transition-all"
+                >
+                  <Share2 className="w-4 h-4" />
+                  {copied ? "Link Copied!" : "Share"}
+                </button>
+              </div>
+            </>
+          ) : null}
+        </div>
+      </section>
+
+      {/* Content */}
+      <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10 lg:py-14">
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-24">
+            <Loader2 className="w-10 h-10 text-cyan-500 animate-spin mb-4" />
+            <p className="text-dark-400 font-medium">
+              Loading opportunity details...
+            </p>
+          </div>
+        ) : error ? (
+          /* ── 404 State ──────────────────────────────────────── */
+          <div className="text-center py-20">
+            <div className="w-20 h-20 rounded-2xl bg-dark-50 flex items-center justify-center mx-auto mb-6">
+              <AlertCircle className="w-10 h-10 text-dark-200" />
+            </div>
+            <h2 className="text-xl font-extrabold text-dark-700 mb-2">
+              Opportunity Not Found
+            </h2>
+            <p className="text-sm text-dark-400 max-w-md mx-auto">
+              This opportunity may have been removed, or the link may be
+              incorrect. Try browsing all available opportunities.
+            </p>
+            <Link
+              href="/opportunities"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Browse All Opportunities
+            </Link>
+          </div>
+        ) : opportunity ? (
+          <div className="space-y-8 animate-fadeInUp">
+            {/* ── Info cards ───────────────────────────────── */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Deadline */}
+              <div className="p-5 rounded-2xl border border-dark-100">
+                <p className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-2">
+                  Deadline
+                </p>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-dark-300" />
+                  <span className="text-sm font-bold text-dark-900">
+                    {fmtDate(opportunity.deadline)}
+                  </span>
+                </div>
+                {opportunity.deadline && (
+                  <span
+                    className={`inline-flex items-center mt-2 px-2.5 py-1 rounded-lg text-xs font-semibold border ${deadlineStatus(opportunity.deadline, opportunity.is_expired).cls}`}
+                  >
+                    {
+                      deadlineStatus(opportunity.deadline, opportunity.is_expired)
+                        .label
+                    }
+                  </span>
+                )}
+              </div>
+
+              {/* Location */}
+              <div className="p-5 rounded-2xl border border-dark-100">
+                <p className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-2">
+                  Location
+                </p>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-dark-300" />
+                  <span className="text-sm font-bold text-dark-900">
+                    {opportunity.country || "Not specified"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Seniority & Experience */}
+              <div className="p-5 rounded-2xl border border-dark-100">
+                <p className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-2">
+                  Level
+                </p>
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-dark-300" />
+                  <span className="text-sm font-bold text-dark-900">
+                    {opportunity.seniority || "Not specified"}
+                  </span>
+                </div>
+                {opportunity.experience_years && (
+                  <span className="inline-flex items-center gap-1 mt-2 text-xs text-dark-500 font-medium">
+                    <Briefcase className="w-3.5 h-3.5" />
+                    {opportunity.experience_years}+ years required
+                  </span>
+                )}
+              </div>
+
+            </div>
+
+            {/* ── Description ──────────────────────────────── */}
+            {cleanDescription(opportunity.description) ? (
+              <div className="border border-dark-100 rounded-2xl p-6 lg:p-8">
+                <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em] mb-4">
+                  <FileText className="w-4 h-4 inline-block mr-1.5 -mt-0.5 text-cyan-500" />
+                  Full Description
+                </p>
+                <div className="text-sm text-dark-600 leading-relaxed">
+                  {renderDescription(cleanDescription(opportunity.description))}
+                </div>
+              </div>
+            ) : (
+              <div className="border border-dark-100 rounded-2xl p-6 lg:p-8 text-center">
+                <FileText className="w-8 h-8 text-dark-200 mx-auto mb-3" />
+                <p className="text-sm text-dark-500 font-medium">
+                  Full details available on the application page
+                </p>
+                <p className="text-xs text-dark-400 mt-1">
+                  Use the Apply button below to view the complete listing
+                </p>
+              </div>
+            )}
+
+            {/* ── Apply / View Original ────────────────────── */}
+            {opportunity.source_url && !opportunity.is_expired && (
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={opportunity.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-base hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5"
+                >
+                  <Briefcase className="w-5 h-5" />
+                  Apply Now
+                </a>
+                <SaveButton
+                  opportunityId={opportunity.id}
+                  opportunityTitle={opportunity.title}
+                  opportunityOrg={opportunity.organization}
+                  opportunityDeadline={opportunity.deadline}
+                  opportunityUrl={opportunity.source_url}
+                  variant="button"
+                />
+              </div>
+            )}
+
+            {/* ── Expired banner ─────────────────────────────── */}
+            {opportunity.is_expired && (
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-red-50 border border-red-200">
+                <Clock className="w-5 h-5 text-red-500 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-red-700">
+                    This opportunity has expired
+                  </p>
+                  <p className="text-xs text-red-500 mt-0.5">
+                    The deadline for this listing has passed. Check the source
+                    site for similar openings.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* ── CTA: Score your CV for this opportunity ──── */}
+            {!opportunity.is_expired && (
+              <div className="relative rounded-2xl overflow-hidden border border-dark-100">
+                <div
+                  className="absolute inset-0 opacity-[0.03]"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, #27ABD2 1px, transparent 1px)",
+                    backgroundSize: "20px 20px",
+                  }}
+                />
+                <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 p-6 lg:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                      <Target className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-dark-900">
+                        Score your CV for this opportunity
+                      </p>
+                      <p className="text-sm text-dark-400 mt-0.5">
+                        See how well your profile matches this role and get
+                        actionable feedback
+                      </p>
+                    </div>
+                  </div>
+                  <Link
+                    href={`/score?oppId=${encodeURIComponent(opportunity.id)}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5 whitespace-nowrap"
+                  >
+                    Score My CV
+                    <Target className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {/* ── Related Opportunities ──────────────────────── */}
+            {related.length > 0 && (
+              <div>
+                <h2 className="text-lg font-extrabold text-dark-900 mb-4">
+                  More from {opportunity.organization}
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {related.map((rel) => (
+                    <Link
+                      key={rel.id}
+                      href={`/opportunities/${rel.id}`}
+                      className="block p-4 rounded-xl border border-dark-100 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 transition-all group"
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${typeColor(rel.classified_type)}`}
+                        >
+                          {rel.classified_type}
+                        </span>
+                        {rel.seniority && (
+                          <span className="text-[10px] text-dark-400 font-medium">
+                            {rel.seniority}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-sm font-bold text-dark-900 group-hover:text-cyan-600 transition-colors line-clamp-2">
+                        {rel.title}
+                      </h3>
+                      {rel.deadline && (
+                        <p className="mt-2 text-xs text-dark-400 flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {fmtDate(rel.deadline)}
+                        </p>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ── Back link ────────────────────────────────── */}
+            <div className="flex justify-center pt-4 pb-8">
+              <Link
+                href="/opportunities"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-dark-200 text-dark-600 font-bold hover:bg-dark-50 hover:border-dark-300 transition-all"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Opportunities
+              </Link>
+            </div>
+          </div>
+        ) : null}
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}

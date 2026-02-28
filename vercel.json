@@ -1,0 +1,14 @@
+{
+  "framework": "nextjs",
+  "functions": {
+    "app/api/score/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/opportunities/enrich/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/telegram/webhook/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}

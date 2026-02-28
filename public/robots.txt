@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /poc/
+
+Sitemap: https://app.devidends.org/sitemap.xml
