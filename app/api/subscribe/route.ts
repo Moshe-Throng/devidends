@@ -7,8 +7,32 @@ function getSupabase() {
   return createClient(url, key);
 }
 
+// Rate limit subscribe endpoint (per IP, 10/hour)
+const subscribeRateLimit = new Map<string, { count: number; resetAt: number }>();
+
+function checkSubscribeRate(ip: string): boolean {
+  const now = Date.now();
+  const entry = subscribeRateLimit.get(ip);
+  if (!entry || now > entry.resetAt) {
+    subscribeRateLimit.set(ip, { count: 1, resetAt: now + 60 * 60 * 1000 });
+    return true;
+  }
+  if (entry.count >= 10) return false;
+  entry.count++;
+  return true;
+}
+
 export async function POST(req: NextRequest) {
   try {
+    // Rate limiting
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    if (!checkSubscribeRate(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { email, telegram_id, channel, sectors_filter, donor_filter, country_filter } = body;
 

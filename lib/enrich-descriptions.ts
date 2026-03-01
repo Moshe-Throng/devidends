@@ -88,10 +88,33 @@ function extractTextFromCheerio($: any, selectors: string[]): string {
 }
 /* ─── Cheerio-based fetch (fast, static HTML) ────────────── */
 
+/** Block requests to private/internal IP ranges (SSRF prevention) */
+function isPrivateUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname;
+    // Block private IPs, localhost, metadata endpoints
+    if (
+      /^(127\.|10\.|172\.(1[6-9]|2\d|3[01])\.|192\.168\.|0\.|169\.254\.|fc|fd|fe80|::1|localhost)/i.test(hostname)
+    ) {
+      return true;
+    }
+    // Block non-http(s) protocols
+    if (!["http:", "https:"].includes(parsed.protocol)) {
+      return true;
+    }
+    return false;
+  } catch {
+    return true;
+  }
+}
+
 export async function fetchWithCheerio(
   sourceUrl: string,
   selectors: string[]
 ): Promise<string> {
+  if (isPrivateUrl(sourceUrl)) return "";
+
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
 
@@ -124,6 +147,8 @@ export async function fetchWithPuppeteer(
   sourceUrl: string,
   selectors: string[]
 ): Promise<string> {
+  if (isPrivateUrl(sourceUrl)) return "";
+
   let browser;
   try {
     let puppeteer;
