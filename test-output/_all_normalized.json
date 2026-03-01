@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4200425",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.339Z",
+    "scraped_at": "2026-03-01T18:28:49.762Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -35,7 +35,7 @@
     "source_url": "https://reliefweb.int/node/4200191",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.339Z",
+    "scraped_at": "2026-03-01T18:28:49.762Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -62,7 +62,7 @@
     "source_url": "https://reliefweb.int/node/4200169",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.339Z",
+    "scraped_at": "2026-03-01T18:28:49.762Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -89,7 +89,7 @@
     "source_url": "https://reliefweb.int/node/4199621",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.340Z",
+    "scraped_at": "2026-03-01T18:28:49.762Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -114,7 +114,7 @@
     "source_url": "https://reliefweb.int/node/4199345",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.340Z",
+    "scraped_at": "2026-03-01T18:28:49.763Z",
     "raw_fields": {
       "career_categories": [
         "Donor Relations/Grants Management"
@@ -139,7 +139,7 @@
     "source_url": "https://reliefweb.int/node/4199339",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.340Z",
+    "scraped_at": "2026-03-01T18:28:49.763Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -166,7 +166,7 @@
     "source_url": "https://reliefweb.int/node/4199137",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.340Z",
+    "scraped_at": "2026-03-01T18:28:49.763Z",
     "raw_fields": {
       "career_categories": [
         "Donor Relations/Grants Management"
@@ -191,7 +191,7 @@
     "source_url": "https://reliefweb.int/node/4198712",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.341Z",
+    "scraped_at": "2026-03-01T18:28:49.768Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -216,7 +216,7 @@
     "source_url": "https://reliefweb.int/node/4198332",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.341Z",
+    "scraped_at": "2026-03-01T18:28:49.768Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -243,7 +243,7 @@
     "source_url": "https://reliefweb.int/node/4197740",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.341Z",
+    "scraped_at": "2026-03-01T18:28:49.768Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -268,7 +268,7 @@
     "source_url": "https://reliefweb.int/node/4197502",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.342Z",
+    "scraped_at": "2026-03-01T18:28:49.769Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -295,7 +295,7 @@
     "source_url": "https://reliefweb.int/node/4192368",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.342Z",
+    "scraped_at": "2026-03-01T18:28:49.769Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -322,7 +322,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428136",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Consultant Qualification  Selection",
@@ -346,7 +346,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412637",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Individual Consultant Selection",
@@ -370,7 +370,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00409688",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Individual Consultant Selection",
@@ -394,7 +394,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428170",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Consultant Qualification  Selection",
@@ -418,7 +418,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412639",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Individual Consultant Selection",
@@ -442,7 +442,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428124",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.211Z",
+    "scraped_at": "2026-03-01T18:28:49.548Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "Quality And Cost-Based Selection",
@@ -466,7 +466,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -490,7 +490,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -514,7 +514,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429127",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -538,7 +538,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -562,7 +562,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -586,7 +586,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428064",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -610,7 +610,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00427002",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.619Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -634,7 +634,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426713",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.620Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -658,7 +658,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426309",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.620Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -682,7 +682,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:29.620Z",
+    "scraped_at": "2026-03-01T18:28:50.165Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -706,7 +706,7 @@
     "source_url": "https://www.drc.ngo/job?id=175361",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.503Z",
+    "scraped_at": "2026-03-01T18:28:49.738Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Mine Action",
@@ -727,7 +727,7 @@
     "source_url": "https://www.drc.ngo/job?id=175359",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.504Z",
+    "scraped_at": "2026-03-01T18:28:49.740Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Senior Management",
@@ -748,7 +748,7 @@
     "source_url": "https://www.drc.ngo/job?id=175358",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "scraped_at": "2026-03-01T18:28:49.740Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Administration",
@@ -769,7 +769,7 @@
     "source_url": "https://www.drc.ngo/job?id=175355",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "scraped_at": "2026-03-01T18:28:49.741Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -790,7 +790,7 @@
     "source_url": "https://www.drc.ngo/job?id=175354",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "scraped_at": "2026-03-01T18:28:49.741Z",
     "raw_fields": {
       "region": "Europe",
       "category": "IT",
@@ -811,7 +811,7 @@
     "source_url": "https://www.drc.ngo/job?id=175353",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "scraped_at": "2026-03-01T18:28:49.741Z",
     "raw_fields": {
       "region": "Roving/Global",
       "category": "Program/Project Management",
@@ -832,7 +832,7 @@
     "source_url": "https://www.drc.ngo/job?id=175352",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "scraped_at": "2026-03-01T18:28:49.742Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Other",
@@ -853,7 +853,7 @@
     "source_url": "https://www.drc.ngo/job?id=175351",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "scraped_at": "2026-03-01T18:28:49.742Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Social Work",
@@ -874,7 +874,7 @@
     "source_url": "https://www.drc.ngo/job?id=175350",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "scraped_at": "2026-03-01T18:28:49.742Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Communication",
@@ -895,7 +895,7 @@
     "source_url": "https://www.drc.ngo/job?id=174787",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "scraped_at": "2026-03-01T18:28:49.743Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Investigation",
@@ -916,7 +916,7 @@
     "source_url": "https://www.drc.ngo/job?id=175348",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "scraped_at": "2026-03-01T18:28:49.743Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Communication",
@@ -937,7 +937,7 @@
     "source_url": "https://www.drc.ngo/job?id=175347",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "scraped_at": "2026-03-01T18:28:49.743Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Human Resources",
@@ -958,7 +958,7 @@
     "source_url": "https://www.drc.ngo/job?id=175346",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "scraped_at": "2026-03-01T18:28:49.744Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Other",
@@ -979,7 +979,7 @@
     "source_url": "https://www.drc.ngo/job?id=175344",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "scraped_at": "2026-03-01T18:28:49.744Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1000,7 +1000,7 @@
     "source_url": "https://www.drc.ngo/job?id=175342",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "scraped_at": "2026-03-01T18:28:49.744Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1021,7 +1021,7 @@
     "source_url": "https://www.drc.ngo/job?id=175341",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "scraped_at": "2026-03-01T18:28:49.745Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1042,7 +1042,7 @@
     "source_url": "https://www.drc.ngo/job?id=174955",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "scraped_at": "2026-03-01T18:28:49.745Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -1063,7 +1063,7 @@
     "source_url": "https://www.drc.ngo/job?id=175339",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "scraped_at": "2026-03-01T18:28:49.745Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1084,7 +1084,7 @@
     "source_url": "https://www.drc.ngo/job?id=175338",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "scraped_at": "2026-03-01T18:28:49.745Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -1105,7 +1105,7 @@
     "source_url": "https://www.drc.ngo/job?id=175337",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "scraped_at": "2026-03-01T18:28:49.746Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Communication",
@@ -1126,7 +1126,7 @@
     "source_url": "https://www.drc.ngo/job?id=175336",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "scraped_at": "2026-03-01T18:28:49.746Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Finance",
@@ -1147,7 +1147,7 @@
     "source_url": "https://www.drc.ngo/job?id=175334",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "scraped_at": "2026-03-01T18:28:49.746Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -1168,7 +1168,7 @@
     "source_url": "https://www.drc.ngo/job?id=175332",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "scraped_at": "2026-03-01T18:28:49.746Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -1189,7 +1189,7 @@
     "source_url": "https://www.drc.ngo/job?id=175319",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "scraped_at": "2026-03-01T18:28:49.746Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Monitoring & Evaluation",
@@ -1210,7 +1210,7 @@
     "source_url": "https://www.drc.ngo/job?id=175328",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "scraped_at": "2026-03-01T18:28:49.747Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Finance",
@@ -1231,7 +1231,7 @@
     "source_url": "https://www.drc.ngo/job?id=175327",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "scraped_at": "2026-03-01T18:28:49.747Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Safety & Security",
@@ -1252,7 +1252,7 @@
     "source_url": "https://www.drc.ngo/job?id=175322",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "scraped_at": "2026-03-01T18:28:49.747Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -1273,7 +1273,7 @@
     "source_url": "https://www.drc.ngo/job?id=175324",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "scraped_at": "2026-03-01T18:28:49.747Z",
     "raw_fields": {
       "region": "Roving/Global",
       "category": "Donor & Partner Relations",
@@ -1294,7 +1294,7 @@
     "source_url": "https://www.drc.ngo/job?id=175321",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "scraped_at": "2026-03-01T18:28:49.748Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Monitoring & Evaluation",
@@ -1315,7 +1315,7 @@
     "source_url": "https://www.drc.ngo/job?id=175320",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "scraped_at": "2026-03-01T18:28:49.748Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Volunteers, Internships & Student Positions",
@@ -1336,7 +1336,7 @@
     "source_url": "https://www.drc.ngo/job?id=175318",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "scraped_at": "2026-03-01T18:28:49.748Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -1357,7 +1357,7 @@
     "source_url": "https://www.drc.ngo/job?id=175317",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "scraped_at": "2026-03-01T18:28:49.748Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1378,7 +1378,7 @@
     "source_url": "https://www.drc.ngo/job?id=175315",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "scraped_at": "2026-03-01T18:28:49.748Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -1399,7 +1399,7 @@
     "source_url": "https://www.drc.ngo/job?id=175314",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "scraped_at": "2026-03-01T18:28:49.749Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Communication",
@@ -1420,7 +1420,7 @@
     "source_url": "https://www.drc.ngo/job?id=175312",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "scraped_at": "2026-03-01T18:28:49.749Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -1441,7 +1441,7 @@
     "source_url": "https://www.drc.ngo/job?id=175309",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "scraped_at": "2026-03-01T18:28:49.749Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -1462,7 +1462,7 @@
     "source_url": "https://www.drc.ngo/job?id=175310",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "scraped_at": "2026-03-01T18:28:49.749Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Grants Management",
@@ -1483,7 +1483,7 @@
     "source_url": "https://www.drc.ngo/job?id=175302",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "scraped_at": "2026-03-01T18:28:49.749Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Supply Chain",
@@ -1504,7 +1504,7 @@
     "source_url": "https://www.drc.ngo/job?id=175259",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "scraped_at": "2026-03-01T18:28:49.750Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Communication",
@@ -1525,7 +1525,7 @@
     "source_url": "https://www.drc.ngo/job?id=175300",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "scraped_at": "2026-03-01T18:28:49.750Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Volunteers, Internships & Student Positions",
@@ -1546,7 +1546,7 @@
     "source_url": "https://www.drc.ngo/job?id=175297",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "scraped_at": "2026-03-01T18:28:49.750Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -1567,7 +1567,7 @@
     "source_url": "https://www.drc.ngo/job?id=175296",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "scraped_at": "2026-03-01T18:28:49.750Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -1588,7 +1588,7 @@
     "source_url": "https://www.drc.ngo/job?id=175295",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "scraped_at": "2026-03-01T18:28:49.750Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -1609,7 +1609,7 @@
     "source_url": "https://www.drc.ngo/job?id=175293",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "scraped_at": "2026-03-01T18:28:49.751Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -1630,7 +1630,7 @@
     "source_url": "https://www.drc.ngo/job?id=175287",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.515Z",
+    "scraped_at": "2026-03-01T18:28:49.751Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Monitoring & Evaluation",
@@ -1651,7 +1651,7 @@
     "source_url": "https://www.drc.ngo/job?id=175291",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.515Z",
+    "scraped_at": "2026-03-01T18:28:49.751Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Supply Chain",
@@ -1672,7 +1672,7 @@
     "source_url": "https://www.drc.ngo/job?id=175289",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "scraped_at": "2026-03-01T18:28:49.751Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Finance",
@@ -1693,7 +1693,7 @@
     "source_url": "https://www.drc.ngo/job?id=175269",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "scraped_at": "2026-03-01T18:28:49.752Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Donor & Partner Relations",
@@ -1714,7 +1714,7 @@
     "source_url": "https://www.drc.ngo/job?id=175258",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "scraped_at": "2026-03-01T18:28:49.752Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Supply Chain",
@@ -1735,7 +1735,7 @@
     "source_url": "https://www.drc.ngo/job?id=174159",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "scraped_at": "2026-03-01T18:28:49.753Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Donor & Partner Relations",
@@ -1756,7 +1756,7 @@
     "source_url": "https://www.drc.ngo/job?id=175050",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "scraped_at": "2026-03-01T18:28:49.753Z",
     "raw_fields": {
       "region": "Roving/Global",
       "category": "Standby Roster",
@@ -1777,7 +1777,7 @@
     "source_url": "https://www.drc.ngo/job?id=174365",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "scraped_at": "2026-03-01T18:28:49.754Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Finance",
@@ -1798,7 +1798,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Dhaka-Bangladesh/STRIDES-Technical-Director_Requisition-2026200000",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1818,7 +1818,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Senegal-Any/People-and-Culture-Partner-II_Requisition-2025200651",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1838,7 +1838,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Manila-Philippines/Supply-Chain-Management-Specialist_Requisition-2026200128",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1858,7 +1858,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Bangkok-Thailand/People---Culture-Partner-I_Requisition-2026200032",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1878,7 +1878,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Bangkok-Thailand/Programme-Manager--Grants-and-Impact-_Requisition-2026200335",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1898,7 +1898,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Kampala-Uganda/Technical-Advisor-Polio_Requisition-2026200339",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1918,7 +1918,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Dakar-Senegal/Director--Finance-and-Administration_Requisition-2026200315",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1938,7 +1938,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Bangkok-Thailand/Technical-Officer--Global-Health-Security_Requisition-2026200332",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1958,7 +1958,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Manila-Philippines/Project-Operations-Manager--STRIDES-Philippines_Requisition-2026200306",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1978,7 +1978,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Bangkok-Thailand/Senior-Monitoring--Evaluation-and-Learning-Officer---Global-Health-Security_Requisition-2026200331",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1998,7 +1998,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Bangkok-Thailand/Senior-Procurement-Officer--Purchasing-Associate-III----STRIDES-Thailand-_Requisition-2026200323",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2018,7 +2018,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Phnom-Penh-Cambodia/Technical-Advisor_Requisition-2026200320-1",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2038,7 +2038,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Hanoi-Vietnam/Project-Manager--Contracts-and-Subcontracts-_Requisition-2026200337",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2058,7 +2058,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Hanoi-Vietnam/Laboratory-and-Diagnostic-Officer_Requisition-2026200336-1",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2078,7 +2078,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Accra-Ghana/Financial-Analyst-III_Requisition-2026200333",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2098,7 +2098,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Abuja-Nigeria/Senior-Program-Officer_Requisition-2026200321",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2118,7 +2118,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Abuja-Nigeria/Program-Officer--Subcontracts_Requisition-2026200322",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2138,7 +2138,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Hanoi-Vietnam/Financial-Officer-I_Requisition-2026200329",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2158,7 +2158,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Hanoi-Vietnam/Program-Assistant_Requisition-2026200330",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2178,7 +2178,7 @@
     "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Hanoi-Vietnam/Senior-Monitoring--Evaluation--and-Learning--MEL--Officer_Requisition-2026200327",
     "source_domain": "fhi.wd1.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.606Z",
+    "scraped_at": "2026-03-01T18:28:50.433Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2198,7 +2198,7 @@
     "source_url": "https://unhcr.wd3.myworkdayjobs.com/en-US/External/job/Nairobi-RB-Kenya/Education-Officer_JR2664814-2",
     "source_domain": "unhcr.wd3.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:29.126Z",
+    "scraped_at": "2026-03-01T18:28:49.660Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2218,7 +2218,7 @@
     "source_url": "https://mastercardfoundation.wd10.myworkdayjobs.com/en-US/mastercardfdn/job/Lagos-Nigeria/Head--Program-Risks_JR-0000000522-1",
     "source_domain": "mastercardfoundation.wd10.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.436Z",
+    "scraped_at": "2026-03-01T18:28:51.284Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2238,7 +2238,7 @@
     "source_url": "https://mastercardfoundation.wd10.myworkdayjobs.com/en-US/mastercardfdn/job/Kenya/Head--Enterprise---Strategic-Initiatives_JR-0000000521-1",
     "source_domain": "mastercardfoundation.wd10.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.436Z",
+    "scraped_at": "2026-03-01T18:28:51.284Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2258,7 +2258,7 @@
     "source_url": "https://mastercardfoundation.wd10.myworkdayjobs.com/en-US/mastercardfdn/job/Lagos-Nigeria/Director--Enterprise-Risk_JR-0000000523",
     "source_domain": "mastercardfoundation.wd10.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.436Z",
+    "scraped_at": "2026-03-01T18:28:51.284Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -2278,7 +2278,7 @@
     "source_url": "https://careers-sos-kd.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625949272",
     "source_domain": "careers-sos-kd.icims.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.518Z",
+    "scraped_at": "2026-03-01T18:28:51.231Z",
     "raw_fields": {
       "location": ""
     },
@@ -2297,7 +2297,7 @@
     "source_url": "https://careers-sos-kd.icims.com/jobs/2404/project-fsp-officer%2c-livelihood-for-diredawa-cissp/job?in_iframe=1",
     "source_domain": "careers-sos-kd.icims.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.519Z",
+    "scraped_at": "2026-03-01T18:28:51.232Z",
     "raw_fields": {
       "location": ""
     },
@@ -2316,7 +2316,7 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oYJIzfwI",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.415Z",
+    "scraped_at": "2026-03-01T18:28:51.983Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 6:23 AM",
       "department": "Ethiopia"
@@ -2324,26 +2324,6 @@
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
-  },
-  {
-    "title": "Capacity Building and Workforce Development Specialist",
-    "organization": "Heifer International",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Creation Date: 2/23/26, 5:20 AM",
-    "city": null,
-    "source_url": "https://jobs.jobvite.com/heifer/job/oWHIzfwE",
-    "source_domain": "jobvite.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.415Z",
-    "raw_fields": {
-      "location": "Creation Date: 2/23/26, 5:20 AM",
-      "department": "Ethiopia"
-    },
-    "sector_norm": "Education",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
   },
   {
     "title": "Horticultural Value Chains Development Expert",
@@ -2356,7 +2336,7 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oyLIzfwk",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.416Z",
+    "scraped_at": "2026-03-01T18:28:51.984Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 7:16 AM",
       "department": "Ethiopia"
@@ -2364,6 +2344,26 @@
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
+  },
+  {
+    "title": "Capacity Building and Workforce Development Specialist",
+    "organization": "Heifer International",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Creation Date: 2/23/26, 5:20 AM",
+    "city": null,
+    "source_url": "https://jobs.jobvite.com/heifer/job/oWHIzfwE",
+    "source_domain": "jobvite.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-01T18:28:51.984Z",
+    "raw_fields": {
+      "location": "Creation Date: 2/23/26, 5:20 AM",
+      "department": "Ethiopia"
+    },
+    "sector_norm": "Education",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
   },
   {
     "title": "Consultant - Market Systems Development (MSD) Capacity Strengthening - RLP Program Team, Africa\n                \n                \n\n        \n            United Kingdom",
@@ -2376,7 +2376,7 @@
     "source_url": "https://jobs.jobvite.com/mercycorps/job/oTEJzfwz",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:30.929Z",
+    "scraped_at": "2026-03-01T18:28:52.092Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2392,7 +2392,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=846",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.345Z",
+    "scraped_at": "2026-03-01T18:28:54.273Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2408,7 +2408,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=847",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.346Z",
+    "scraped_at": "2026-03-01T18:28:54.273Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2424,7 +2424,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=860",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.346Z",
+    "scraped_at": "2026-03-01T18:28:54.274Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2440,7 +2440,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=850",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.346Z",
+    "scraped_at": "2026-03-01T18:28:54.274Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2456,7 +2456,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=872",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.347Z",
+    "scraped_at": "2026-03-01T18:28:54.274Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2472,7 +2472,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=871",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.347Z",
+    "scraped_at": "2026-03-01T18:28:54.275Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2488,7 +2488,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=859",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.348Z",
+    "scraped_at": "2026-03-01T18:28:54.275Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2504,7 +2504,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=861",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.349Z",
+    "scraped_at": "2026-03-01T18:28:54.275Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2520,7 +2520,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=834",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.349Z",
+    "scraped_at": "2026-03-01T18:28:54.276Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2536,7 +2536,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal_cand.login?p_web_site_id=5514",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.195Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2557,7 +2557,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal_cand.prefs?p_web_site_id=5514&p_web_page_id=&p_candidate_id=0&p_response_data_id=0&p_ccp_path=NEWPROFILE",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2578,7 +2578,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal.search_start?p_web_site_id=5514&p_template_id=&p_search_agent=Y",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2599,7 +2599,7 @@
     "source_url": "https://careers.gggi.org/vacancies.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2620,7 +2620,7 @@
     "source_url": "https://careers.gggi.org/speculative.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2641,7 +2641,7 @@
     "source_url": "https://gggi.org/site/assets/uploads/2020/09/Staff-Rules_September-9_2020.pdf",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2662,7 +2662,7 @@
     "source_url": "https://careers.gggi.org/login.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:32.196Z",
+    "scraped_at": "2026-03-01T18:28:54.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2683,7 +2683,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/59905-ilri-msc-graduate-fellowship-creep-feeding-experiment-strategic-use-of-resources-to-benefit-ugandan-smallholder-farming-families-and-their-piglets/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.067Z",
+    "scraped_at": "2026-03-01T18:28:55.776Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2704,7 +2704,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/59799-team-leader-advocacy-and-engagement-glad-4/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.067Z",
+    "scraped_at": "2026-03-01T18:28:55.776Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2725,7 +2725,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/59739-knowledge-management-lead-re-advertisement/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.068Z",
+    "scraped_at": "2026-03-01T18:28:55.776Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2746,7 +2746,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.068Z",
+    "scraped_at": "2026-03-01T18:28:55.776Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2767,7 +2767,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43186",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.005Z",
+    "scraped_at": "2026-03-01T18:28:55.947Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2788,7 +2788,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42941",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.006Z",
+    "scraped_at": "2026-03-01T18:28:55.948Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2809,7 +2809,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42871",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.006Z",
+    "scraped_at": "2026-03-01T18:28:55.948Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2830,7 +2830,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42685",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.007Z",
+    "scraped_at": "2026-03-01T18:28:55.949Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2851,7 +2851,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42319",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.007Z",
+    "scraped_at": "2026-03-01T18:28:55.949Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2872,7 +2872,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42157",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-01T16:07:33.008Z",
+    "scraped_at": "2026-03-01T18:28:55.950Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -2881,111 +2881,6 @@
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
-  },
-  {
-    "title": "Veterinarian 3 (800095) Veterinarian 3 (800095) Veterinarian 3 (800095)",
-    "organization": "International Committee of the Red Cross (ICRC)",
-    "description": "What we do\n \nThe International Committee of the Red Cross (ICRC) works worldwide to provide protection and humanitarian assistance to people affected by conflict and armed violence. We take action in response to emergencies and, at the same time, promote respect for international humanitarian law. We are an independent and neutral organization, and our mandate stems essentially from the Geneva Conventions of 1949. We work closely with National Red Cross and Red Crescent Societies and with their International Federation in order to ensure a concerted, rational and rapid humanitarian response to the needs of the victims of armed conflict or any other situation of internal violence. We direct and coordinate the international activities conducted in these situations.\n Purpose\n \nVeterinary 3 designs, plans, implements and monitors the Economic Security (EcoSec) Unit’s programs in accordance with the objectives and activities set in the PFR yearly exercise and under the supervision of the Head of SubDelegation/JIJ. In addition to that, he provides support to the EcoSec interventions in Oromia, Amhara, Tigray for any issue related to livestock. He represents the ICRC with the livestock local authorities.\n Relationships\n \n\nInternally, interacts with the delegation's EcoSec team and with technical reference persons at headquarters or regional level.\nExternally, represents the ICRC to technical authorities and organizations whose work relates to the EcoSec livestock programme.\n\n Accountabilities & functional responsibilities\n \nSituation Analysis\n\nContribute to the Delegation’s analysis of the humanitarian and economic situation, including displacement trends, needs gaps, and economic/livestock security challenges for target populations (displaced, returnees, host communities).\nInclude regularly inputs on the Situation in the country contributing  to multi-sectoral assessments (e.g. livestock  health, livestock services) to identify gaps in market  and veterinary services.\n\n \nProject Implementation\n\nContribute to define the input needed for the implementation of livestock program. (e.g., tools, training materials, M&E budgets). The inputs provided are considering the adapt quantity as well technical specifications for proper and timely procurement of seasonal seeds variety.\nOversee the countrywide implementation of livestock activities: needs assessments, beneficiary selection, input distribution, and post-harvest evaluation in collaboration and coordination with the teams on the ground.\nEnsure the compliance of all the ICRC responses implemented under his technical guidance to ICRC Guidelines in relation to Economic and Financial Guidelines and Due Diligence Guidelines.\nAs technical adivssor he ensure the correct implementation of  the  Procurement Manual and other  technical resources for livestock.\nDevelops and favors the adoption of a multidisciplinary approach aimed at addressing the needs of affected communities. \n\n \nAssessments & Response\n\nSupport teams on the ground and lead needs assessments and design context-appropriate responses using the Response Analysis and Response Frameworks tool.\nWhen conducting an assessment, he demonstrates the capacity to conduct a household level assessment and/or can consistently apply the EcoSec Assessment guidelines.\nHe includes the necessary technical inputs aimed at increasing the Food production capacity of the communites as well the Food consumption and Income. \nDesign agriculture and livelihoods projects (e.g., restocking) aligned with ICRC’s Planning for Results framework.  \nBeneficiary Management\n \n\nHe plays a key role in the targeting process by ensuring the correct resource/inputs distributions depending on the regions of intervention and crop-seasonality. In the selection of beneficiaries he ensure the adherence to the defined vulnerability criteria and explains them to the communities as well as AAP principles on registration\nEnsure the correct beneficiary selection/verification, ensure inclusive targeting, and establish tailored feedback/complaints mechanisms. He ensures the follow-up of complains and act upon proposing to ADD/Co solutions to address eventual wrongdoings.\nIf necessary, he cross-check beneficiary lists with community leaders/ERCS volunteers to avoid duplication or exclusion errors with the support of ADD and the SubDelegation team. When duplications are identified, he/she acts upon it and remove names.\n\n \nData & Reporting\n \n\nCoordinate and supervise the collection of data using standardized tools, perform qualitative/quantitative analysis, and produce visualizations for reports in collaboration with the SubDelegations that benefit of his expertise. \nContribute timely to the compilation of institutional reports (weekly highlights, monthly statistics, quarterly EcoSec reports) per ICRC guidelines. He provides agricultural related metrics  to improve quality and ensure coherence.\nProvide timely inputs to PAM both independently and/or upon request from ",
-    "deadline": "Application deadline\n                \n                08/03/2026\n                \n            \n                \n                    Application deadline\n                \n                08/03/2026\n                \n            \n                \n                    Application deadline\n                \n                08/03/2026",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://careers.icrc.org/job/Addis-Abeba-%28ADD%29-Veterinarian-3-%28800095%29-31598/1368461933/",
-    "source_domain": "icrc.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.544Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "sector_norm": "Protection & Human Rights",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Humanitarian Affairs Adviser 2 (800400) Humanitarian Affairs Adviser 2 (800400) Humanitarian Affairs Adviser 2 (800400)",
-    "organization": "International Committee of the Red Cross (ICRC)",
-    "description": "What we do\n \nThe International Committee of the Red Cross (ICRC) works worldwide to provide protection and humanitarian assistance to people affected by conflict and armed violence. We take action in response to emergencies and, at the same time, promote respect for international humanitarian law. We are an independent and neutral organization, and our mandate stems essentially from the Geneva Conventions of 1949. We work closely with National Red Cross and Red Crescent Societies and with their International Federation in order to ensure a concerted, rational and rapid humanitarian response to the needs of the victims of armed conflict or any other situation of internal violence. We direct and coordinate the international activities conducted in these situations.\n \nThe African Humanitarian Agency (AfHA) was established by the African Union (AU) in 2023 charged with the responsibility to coordinate and provide humanitarian responses in coordination with affected Member States. The mandate of AfHA is to: a) provide assistance and ensure effective coordination of humanitarian action on the continent, while taking into account early warning, response, adaptation and building resilience; (b) build and strengthen the capabilities and capacities of AU Member States, Regional Bodies and Mechanisms in preventing, responding, managing effectively, alleviating and contributing to resolving the humanitarian crises on the continent. AfHA will be based in Kampala. The operationalization of AfHA presents a strategic opportunity for the RC/RC Movement to shape its trajectory in the best interest of the most vulnerable in Africa. Specifically for the ICRC, AfHA presents the right opportunities to engage in humanitarian matters in armed conflict and other situations of violence, while at the same time drawing on the agency’s mandate to promote respect for IHL, facilitate safe access, and ensure protection of civilians and humanitarian personnel in conflicts in Africa, but also enhance the recognition of the ICRC’s intermediary role. Secondment of the Health Affairs Adviser 2 (HAA) to the African Union will help ICRC to optimize these opportunities. \n \n Purpose\n \nThe Humanitarian Affairs Adviser 2 (HAA) is seconded to the Department of Health, Humanitarian Affairs and Social Development (HHS) of the African Union to support and influence the set-up of an AU humanitarian architecture - namely by contributing to the operationalization of the AfHA through legal and technical support, in coordination with the International Federation of Red Cross and Red Crescent Societies (IFRC). The objective is to help AfHA become of real added value for Africans affected by armed conflict and other situations of violence, guided by International Humanitarian Law (IHL) and fundamental humanitarian principles. The HAA also helps shape the ICRC’s engagement with HHS, AfHA, key member States (e.g., Uganda, AfHA board members), Regional Economic Communities (RECs, who also sit on the AfHA board), and the AU Specialized Technical Committee on Migration, Refugees and Internally Displaced Persons (STC). The HAA will report to the Dpty Head of Delegation of the ICRC Delegation to the African Union (ADO)Relationships\n \n\nInternally, interacts with the ADO HoD/DHoD, ADO HAAs, ADO FAS, as well as the ICRC delegation in Kampala (AfHA will be based in Uganda), the Regional Director for Movement Affairs in Nairobi, and the diplomatic hubs (DAK, ALG, PRE, NAI).\nExternally, can be tasked to independently interact with relevant AU officials (e.g., HHS), key member States, RECs. IFRC, and other humanitarian players. The HAA will be embedded in the Department of HHS at the African Union, with periodic stopovers at the ICRC Delegation in Addis (e.g., internal meetings). \nAs a new agency, the HAA periodically conducts a foresight analysis to take stock of  what is working, identify gaps/ challenges, and recommend/ chart the next course of action.\nMonitor the evolution of humanitarian dynamics in the prism of armed conflict and draw a roadmap for engagement by the AfHA and its core constituencies. \nUndertakes analysis and draws on the ICRC operational practices as well as those of other similar agencies ( ECHO, ASEAN, etc.) to guide AfHA’s policies, strategies, procedures, and actions on the ground when it comes to responding in conflict situations. \nAnalyse the global humanitarian paradigm, specifically on how it affects the AfHA policies and practices when it comes to handling humanitarian crises that emanate from conflict/post-conflict needs.  \nEnsure that IHL and the Geneva Conventions remain central to the work and undertaking of the agency (blueprint) \nProvide/ facilitate capacity building in the areas of IHL  (legal) as well as technical ( humanitarian response in conflict situations) through IHL seminars, trainings, etc\nSupport AfHA’s SoPs on humanitarian responses and coordination.\nAccountabilities & functional responsibilities \n \n\nListens to and understand",
-    "deadline": "Application deadline\n                \n                06/03/2026\n                \n            \n                \n                    Application deadline\n                \n                06/03/2026\n                \n            \n                \n                    Application deadline\n                \n                06/03/2026",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://careers.icrc.org/job/Addis-Ua-%28ADO%29-Humanitarian-Affairs-Adviser-2-%28800400%29-30781/1366828833/",
-    "source_domain": "icrc.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.544Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "sector_norm": "Protection & Human Rights",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
-  },
-  {
-    "title": "Title Location Job Family",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.999Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Reset",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.999Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Principal Operations Officer (SEFA), PERN3Principal Operations Officer (SEFA), PERN3",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Principal-Operations-Officer-%28SEFA%29%2C-PERN3/1292251501/",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:33.999Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
   },
   {
     "title": "Senior Talent Development Advisor - Ethiopia",
@@ -2998,7 +2893,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/6D303CB00F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "People & Culture"
@@ -3020,7 +2915,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/5C6529E52A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [],
       "work_type": ""
@@ -3040,7 +2935,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -3063,7 +2958,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/CBD3CEC1CA/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -3086,7 +2981,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -3109,7 +3004,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -3132,7 +3027,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:07:34.341Z",
+    "scraped_at": "2026-03-01T18:29:06.961Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -3145,18 +3040,18 @@
     "seniority": "Mid-level"
   },
   {
-    "title": "Internist MD , Regione di Oromia, Ethiopia",
-    "organization": "Doctors with Africa CUAMM",
+    "title": "HUMAN RIGHTS OFFICER (FOUR POSTS), Semera, Ethiopia",
+    "organization": "OHCHR - Office of the High Commissioner for Human Rights",
     "description": "",
-    "deadline": "2026-03-01T09:15:39Z",
+    "deadline": "2026-03-01T17:56:55Z",
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://unjobs.org/vacancies/1772210421296",
+    "source_url": "https://unjobs.org/vacancies/1772177605498",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
-    "sector_norm": "Other",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
+    "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
   },
@@ -3171,7 +3066,7 @@
     "source_url": "https://unjobs.org/vacancies/1772238948600",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3187,7 +3082,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221069261",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3203,7 +3098,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221067418",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3219,7 +3114,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221063919",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3235,7 +3130,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221057695",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3251,7 +3146,7 @@
     "source_url": "https://unjobs.org/vacancies/1772200107831",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3267,7 +3162,7 @@
     "source_url": "https://unjobs.org/vacancies/1772284936367",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3283,7 +3178,7 @@
     "source_url": "https://unjobs.org/vacancies/1772287133398",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3299,7 +3194,7 @@
     "source_url": "https://unjobs.org/vacancies/1771955889879",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3315,7 +3210,7 @@
     "source_url": "https://unjobs.org/vacancies/1772131005028",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3331,7 +3226,7 @@
     "source_url": "https://unjobs.org/vacancies/1772131023045",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3347,7 +3242,7 @@
     "source_url": "https://unjobs.org/vacancies/1772131039539",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3363,24 +3258,8 @@
     "source_url": "https://unjobs.org/vacancies/1772177579356",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "HUMAN RIGHTS OFFICER (4 POSTS - TJO), Semera, Ethiopia",
-    "organization": "OHCHR - Office of the High Commissioner for Human Rights",
-    "description": "",
-    "deadline": "2026-02-28T06:12:28Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1772177605498",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
-    "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
   },
@@ -3395,7 +3274,7 @@
     "source_url": "https://unjobs.org/vacancies/1772218617670",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3411,7 +3290,7 @@
     "source_url": "https://unjobs.org/vacancies/1772218634764",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3427,7 +3306,7 @@
     "source_url": "https://unjobs.org/vacancies/1772218752246",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3443,7 +3322,7 @@
     "source_url": "https://unjobs.org/vacancies/1772218761322",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3459,7 +3338,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221061943",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3475,7 +3354,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221071747",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3491,7 +3370,7 @@
     "source_url": "https://unjobs.org/vacancies/1772221073499",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3507,7 +3386,7 @@
     "source_url": "https://unjobs.org/vacancies/1772229826441",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3523,7 +3402,7 @@
     "source_url": "https://unjobs.org/vacancies/1772238940062",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3539,7 +3418,7 @@
     "source_url": "https://unjobs.org/vacancies/1772240817081",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.835Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3555,7 +3434,7 @@
     "source_url": "https://unjobs.org/vacancies/1772027652611",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:43.694Z",
     "sector_norm": "Environment",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3571,7 +3450,7 @@
     "source_url": "https://unjobs.org/vacancies/1772091061319",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3587,7 +3466,7 @@
     "source_url": "https://unjobs.org/vacancies/1772091207944",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3603,7 +3482,7 @@
     "source_url": "https://unjobs.org/vacancies/1772154792932",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3619,7 +3498,7 @@
     "source_url": "https://unjobs.org/vacancies/1771959444897",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3635,7 +3514,7 @@
     "source_url": "https://unjobs.org/vacancies/1772065957240",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3651,7 +3530,7 @@
     "source_url": "https://unjobs.org/vacancies/1772065923556",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3667,7 +3546,7 @@
     "source_url": "https://unjobs.org/vacancies/1772046776211",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3683,7 +3562,7 @@
     "source_url": "https://unjobs.org/vacancies/1770320780108",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3699,7 +3578,7 @@
     "source_url": "https://unjobs.org/vacancies/1771948409217",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3715,7 +3594,7 @@
     "source_url": "https://unjobs.org/vacancies/1771948395774",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3731,7 +3610,7 @@
     "source_url": "https://unjobs.org/vacancies/1771939285734",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3747,7 +3626,7 @@
     "source_url": "https://unjobs.org/vacancies/1771918400680",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3763,7 +3642,7 @@
     "source_url": "https://unjobs.org/vacancies/1771940764288",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3779,7 +3658,7 @@
     "source_url": "https://unjobs.org/vacancies/1771942032101",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3795,7 +3674,7 @@
     "source_url": "https://unjobs.org/vacancies/1771979754386",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3811,7 +3690,7 @@
     "source_url": "https://unjobs.org/vacancies/1771861672685",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "HR",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3827,7 +3706,7 @@
     "source_url": "https://unjobs.org/vacancies/1771596760639",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3843,7 +3722,7 @@
     "source_url": "https://unjobs.org/vacancies/1771721068565",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3859,7 +3738,7 @@
     "source_url": "https://unjobs.org/vacancies/1771721490894",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3875,7 +3754,7 @@
     "source_url": "https://unjobs.org/vacancies/1771508722793",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3891,7 +3770,7 @@
     "source_url": "https://unjobs.org/vacancies/1771420882116",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3907,7 +3786,7 @@
     "source_url": "https://unjobs.org/vacancies/1771420895027",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3923,7 +3802,7 @@
     "source_url": "https://unjobs.org/vacancies/1771508716989",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:13.910Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3939,7 +3818,7 @@
     "source_url": "https://unjobs.org/vacancies/1771516709388",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:49.756Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3955,7 +3834,7 @@
     "source_url": "https://unjobs.org/vacancies/1771516718433",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3971,7 +3850,7 @@
     "source_url": "https://unjobs.org/vacancies/1771516725257",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3987,7 +3866,7 @@
     "source_url": "https://unjobs.org/vacancies/1771516731290",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4003,7 +3882,7 @@
     "source_url": "https://unjobs.org/vacancies/1771516737241",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4019,7 +3898,7 @@
     "source_url": "https://unjobs.org/vacancies/1771007463123",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4035,7 +3914,7 @@
     "source_url": "https://unjobs.org/vacancies/1771336878512",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4051,7 +3930,7 @@
     "source_url": "https://unjobs.org/vacancies/1771452700255",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4067,7 +3946,7 @@
     "source_url": "https://unjobs.org/vacancies/1771343569342",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4083,7 +3962,7 @@
     "source_url": "https://unjobs.org/vacancies/1770943980237",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4099,7 +3978,7 @@
     "source_url": "https://unjobs.org/vacancies/1770990136704",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4115,7 +3994,7 @@
     "source_url": "https://unjobs.org/vacancies/1771165660277",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4131,7 +4010,7 @@
     "source_url": "https://unjobs.org/vacancies/1770739002151",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4147,7 +4026,7 @@
     "source_url": "https://unjobs.org/vacancies/1770652663516",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4163,7 +4042,7 @@
     "source_url": "https://unjobs.org/vacancies/1770235784673",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4179,7 +4058,7 @@
     "source_url": "https://unjobs.org/vacancies/1770253921519",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4195,7 +4074,7 @@
     "source_url": "https://unjobs.org/vacancies/1770017547374",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4211,7 +4090,7 @@
     "source_url": "https://unjobs.org/vacancies/1769874719983",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4227,7 +4106,7 @@
     "source_url": "https://unjobs.org/vacancies/1769874728325",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4243,7 +4122,7 @@
     "source_url": "https://unjobs.org/vacancies/1769692257765",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4259,7 +4138,7 @@
     "source_url": "https://unjobs.org/vacancies/1769183258418",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4275,7 +4154,7 @@
     "source_url": "https://unjobs.org/vacancies/1769270019556",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4291,7 +4170,7 @@
     "source_url": "https://unjobs.org/vacancies/1769003368923",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4307,7 +4186,7 @@
     "source_url": "https://unjobs.org/vacancies/1768060292581",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:19.717Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4323,7 +4202,7 @@
     "source_url": "https://unjobs.org/vacancies/1768233488425",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:29:55.781Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4339,7 +4218,7 @@
     "source_url": "https://unjobs.org/vacancies/1768146692191",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4355,7 +4234,7 @@
     "source_url": "https://unjobs.org/vacancies/1768146699816",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4371,7 +4250,7 @@
     "source_url": "https://unjobs.org/vacancies/1766603227510",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4387,7 +4266,7 @@
     "source_url": "https://unjobs.org/vacancies/1767887810886",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4403,7 +4282,7 @@
     "source_url": "https://unjobs.org/vacancies/1767639873210",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4419,7 +4298,7 @@
     "source_url": "https://unjobs.org/vacancies/1767639879481",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4435,7 +4314,7 @@
     "source_url": "https://unjobs.org/vacancies/1767639886156",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4451,7 +4330,7 @@
     "source_url": "https://unjobs.org/vacancies/1767639892995",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4467,7 +4346,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279072969",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4483,7 +4362,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279079173",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4499,7 +4378,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279085014",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4515,7 +4394,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279090487",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4531,7 +4410,7 @@
     "source_url": "https://unjobs.org/vacancies/1765541656439",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4547,7 +4426,7 @@
     "source_url": "https://unjobs.org/vacancies/1765541693276",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4563,7 +4442,7 @@
     "source_url": "https://unjobs.org/vacancies/1763689962357",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -4579,7 +4458,7 @@
     "source_url": "https://unjobs.org/vacancies/1762223564377",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4595,7 +4474,7 @@
     "source_url": "https://unjobs.org/vacancies/1761875055043",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4611,7 +4490,7 @@
     "source_url": "https://unjobs.org/vacancies/1761789400010",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4627,7 +4506,7 @@
     "source_url": "https://unjobs.org/vacancies/1761789406721",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4643,7 +4522,7 @@
     "source_url": "https://unjobs.org/vacancies/1761702973268",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4659,7 +4538,7 @@
     "source_url": "https://unjobs.org/vacancies/1760143205944",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4675,7 +4554,7 @@
     "source_url": "https://unjobs.org/vacancies/1761241648189",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4691,7 +4570,7 @@
     "source_url": "https://unjobs.org/vacancies/1761241630098",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:25.519Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4707,7 +4586,7 @@
     "source_url": "https://unjobs.org/vacancies/1761097799496",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:01.816Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4723,7 +4602,7 @@
     "source_url": "https://unjobs.org/vacancies/1760920533665",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4739,7 +4618,7 @@
     "source_url": "https://unjobs.org/vacancies/1760920520694",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4755,7 +4634,7 @@
     "source_url": "https://unjobs.org/vacancies/1760920528027",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4771,7 +4650,7 @@
     "source_url": "https://unjobs.org/vacancies/1760744901623",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4787,7 +4666,7 @@
     "source_url": "https://unjobs.org/vacancies/1760658662534",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4803,7 +4682,7 @@
     "source_url": "https://unjobs.org/vacancies/1760658656697",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4819,7 +4698,7 @@
     "source_url": "https://unjobs.org/vacancies/1760143212189",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4835,7 +4714,7 @@
     "source_url": "https://unjobs.org/vacancies/1760143198560",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -4851,7 +4730,7 @@
     "source_url": "https://unjobs.org/vacancies/1759889764225",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4867,7 +4746,7 @@
     "source_url": "https://unjobs.org/vacancies/1759889758072",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4883,7 +4762,7 @@
     "source_url": "https://unjobs.org/vacancies/1759045088296",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4899,7 +4778,7 @@
     "source_url": "https://unjobs.org/vacancies/1759045099639",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4915,7 +4794,7 @@
     "source_url": "https://unjobs.org/vacancies/1758673854134",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4931,7 +4810,7 @@
     "source_url": "https://unjobs.org/vacancies/1757805376986",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4947,7 +4826,7 @@
     "source_url": "https://unjobs.org/vacancies/1757374202996",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4963,7 +4842,7 @@
     "source_url": "https://unjobs.org/vacancies/1756248392638",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4979,7 +4858,7 @@
     "source_url": "https://unjobs.org/vacancies/1756248398161",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4995,7 +4874,7 @@
     "source_url": "https://unjobs.org/vacancies/1755732822036",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5011,7 +4890,7 @@
     "source_url": "https://unjobs.org/vacancies/1755988011752",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5027,7 +4906,7 @@
     "source_url": "https://unjobs.org/vacancies/1755731213692",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -5043,7 +4922,7 @@
     "source_url": "https://unjobs.org/vacancies/1755299929726",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5059,7 +4938,7 @@
     "source_url": "https://unjobs.org/vacancies/1754433240625",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -5075,331 +4954,26 @@
     "source_url": "https://unjobs.org/vacancies/1753746278449",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:31.504Z",
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
   },
   {
-    "title": "Internship Program",
-    "organization": "African Union",
+    "title": "DEPUTY CHIEF OF PARTY, Addis Ababa, Ethiopia",
+    "organization": "Mercy Corps",
     "description": "",
-    "deadline": "March 1, 2024",
+    "deadline": "2025-07-29T13:34:48Z",
     "published": null,
     "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Internship-Program/1506-en_US",
-    "source_domain": "au.int",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1753746272882",
+    "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.436Z",
-    "raw_fields": {
-      "grade": "Internship"
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Director General of the African Medicines Agency",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 15, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Director-General-of-the-African-Medicines-Agency/2389-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.436Z",
-    "raw_fields": {
-      "grade": "SP03"
-    },
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Senior Technical Officer - Grants Management (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 31, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Senior-Technical-Officer-Grants-Management-%28AfCDC%29/2405-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.436Z",
-    "raw_fields": {
-      "grade": "P3"
-    },
-    "sector_norm": "Admin & Finance",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
-  },
-  {
-    "title": "Senior Staff Counsellor (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 31, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Senior-Staff-Counsellor-%28AfCDC%29/2404-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.437Z",
-    "raw_fields": {
-      "grade": "P3"
-    },
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
-  },
-  {
-    "title": "Driver (ACHPR)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 1, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Driver-%28ACHPR%29/2385-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.437Z",
-    "raw_fields": {
-      "grade": "GB7"
-    },
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "IT Officer (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 1, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/IT-Officer-%28AfCDC%29/2411-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.437Z",
-    "raw_fields": {
-      "grade": "P2"
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Legal Officer - Institutional and General Legal Affairs (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Institutional-and-General-Legal-Affairs-%28OLC%29/2326-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.437Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "sector_norm": "Legal",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Legal Officer - Administrative and Justice Matters (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Administrative-and-Justice-Matters-%28OLC%29/2325-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.437Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "sector_norm": "Admin & Finance",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Legal Officer - Treaty and African Affairs (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Treaty-and-African-Affairs-%28OLC%29/2324-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.438Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "sector_norm": "Legal",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Director Coordination and Programmes (AfCFTA)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Director-Coordination-and-Programmes-%28AfCFTA%29/2434-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.438Z",
-    "raw_fields": {
-      "grade": "D01"
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Head of Division Strategic Planning, Resource Mobilization & Partnerships (AfCFTA)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Head-of-Division-Strategic-Planning%2C-Resource-Mobilization-&-Partnerships-%28AfCFTA%29/2436-en_US",
-    "source_domain": "au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:07.438Z",
-    "raw_fields": {
-      "grade": "P05"
-    },
+    "scraped_at": "2026-03-01T18:30:08.150Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
-  },
-  {
-    "title": "%28Egypt%29 Political Officer %28Perm_ Mission League of Arab States%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Cairo-%28Egypt%29-Political-Officer-%28Perm_-Mission-League-of-Arab-States%29/1351829157/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.292Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "%28Egypt%29 Charg%C3%A9 des affaires politiques %28Mission Permanente LAS%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Cairo-%28Egypt%29-Charg%C3%A9-des-affaires-politiques-%28Mission-Permanente-LAS%29/1351829257/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Programme de stages",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "All AU Member States AVoHC Kofi Annan Scholars Program Accreditation and Standards Specialist %28AfCDC%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVoHC-Kofi-Annan-Scholars-Program-Accreditation-and-Standards-Specialist-%28AfCDC%29/822523802/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Senior"
-  },
-  {
-    "title": "All AU Member States AVOHC Programme de Bourses Kofi Annan Sp%C3%A9cialiste de l'accr%C3%A9ditation et des normes",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVOHC-Programme-de-Bourses-Kofi-Annan-Sp%C3%A9cialiste-de-l'accr%C3%A9ditation-et-des-normes/822523902/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Internship Program TranslatorInterpreter %28AfCFTA%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Accra-Internship-Program-TranslatorInterpreter-%28AfCFTA%29/1353914857/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Programme de stages TraducteurInterpr%C3%A8te %28ZLECAf%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Accra-Programme-de-stages-TraducteurInterpr%C3%A8te-%28ZLECAf%29/1353914957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:08.293Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
   },
   {
     "title": "Contract Management Assistant - G5/1 level",
@@ -5412,7 +4986,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/273153?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:10.016Z",
+    "scraped_at": "2026-03-01T18:29:59.843Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -5435,7 +5009,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/273154?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:10.016Z",
+    "scraped_at": "2026-03-01T18:29:59.843Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -5458,7 +5032,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/273000?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:10.016Z",
+    "scraped_at": "2026-03-01T18:29:59.844Z",
     "raw_fields": {
       "jobLevel": "P-3",
       "categoryCode": "PD",
@@ -5481,7 +5055,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/272966?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:10.017Z",
+    "scraped_at": "2026-03-01T18:29:59.845Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -5504,7 +5078,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/272836?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:10.017Z",
+    "scraped_at": "2026-03-01T18:29:59.845Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -5527,7 +5101,7 @@
     "source_url": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/requisitions?keyword=NORCAP",
     "source_domain": "oraclecloud.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:09:01.817Z",
+    "scraped_at": "2026-03-01T18:30:49.384Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5543,7 +5117,7 @@
     "source_url": "https://jobs.unicef.org/",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5559,7 +5133,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591386/temporary-appointment-partnerships-manager-p4-in-riyadh-gulf-area-office-for-12-months",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -5575,7 +5149,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591387/international-consultant-for-nutrition-emergency-guideline-development-and-tot-facilitator-unicef-libya-duration-70-days-work-remotely",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5591,7 +5165,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/590875/child-protection-specialist-noc-ft-djibouti-djibouti-mena-104599",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -5607,7 +5181,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591302/national-consultant-to-provide-technical-support-to-the-ministry-of-education-and-science-tajikistan-in-enhancing-learning-assessments-390-wds-dushanbe-tajikistan-for-tajik-nationals-only",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5623,7 +5197,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591279/administrative-officer-no1-ciudad-guayana-venezuela-temp-appointment",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5639,7 +5213,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591324/programme-assistant-sbc-youth-engagement-gs5-managua-nicaragua-136418-temp-appointment-364-day",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -5655,7 +5229,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/589414/fund-raising-digital-officer-temporary-appointment-365-days-nob-s%C3%A3o-paulo-brazil-135799",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5671,7 +5245,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591375/humanitarian-planning-and-monitoring-consultant-florence-italy-ose-remotehome-based-req-591375",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5687,7 +5261,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591362/consultant-national-charg%C3%A9-e-de-la-gestion-des-vaccins-pour-la-r%C3%A9gion-de-kankan-guin%C3%A9e-3-mois",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5703,7 +5277,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591336/communication-and-partnerships-consultant-remote-internationals-only-591336",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5719,7 +5293,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/590928/vacancy-announcement-health-officer-supply-and-logistics-nob-fixed-term-abuja-nigeria-123449",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5735,7 +5309,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/584973/republication-sp%C3%A9cialiste-en-nutrition-first-food-132873-grade-noc-fixed-term-cotonou-b%C3%A9nin-wcar",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5751,7 +5325,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/590799/internal-external-va-charg%C3%A9e-de-l-administration-et-des-finances-no1-ft-kananga-drc-127523",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5767,7 +5341,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591332/social-behavior-change-specialist",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -5783,7 +5357,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591345/consultation-nationale-recrutement-dune-consultante-pour-la-documentation-du-processus-de-mise-en-%C5%93uvre-dune-strat%C3%A9gie-de-communication-de-proximit%C3%A9-09-mois",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5799,7 +5373,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591357/new-consultancy-pandemic-and-outbreak-coordination-and-management-support-consultant-unicef-supply-division-copenhagen-remote-5-months",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5815,7 +5389,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591370/jpoeducation-officer-digital-learning-p2-luandaangola-for-finnish-nationals-only",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5831,7 +5405,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591374/innovation-specialist-market-scoping-p3-systems-services-office-of-innovation-temporary-appointment-364-days-00136398",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -5847,7 +5421,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591378/gender-adolescent-programme-officer-temporary-appointment-364-days-grade-p2-136135-cotonou-benin-wcar",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.059Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5863,7 +5437,7 @@
     "source_url": "https://jobs.unicef.org/cw/en-us/job/591381/consultancy-sustainable-and-blended-finance-specialist-carbon-credit-projects-climate-finance-models-office-of-innovation-copenhagen-denmark-6-months-remote",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.060Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -5879,7 +5453,7 @@
     "source_url": "https://www.unicef.org/careers/beware-fraudulent-job-offers",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.060Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5895,7 +5469,7 @@
     "source_url": "https://www.unicef.org/careers/unicef-job-categories",
     "source_domain": "unicef.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:08:51.602Z",
+    "scraped_at": "2026-03-01T18:30:39.060Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5911,7 +5485,7 @@
     "source_url": "https://jobs.unops.org/Pages/ViewVacancy/VAListing.aspx",
     "source_domain": "unops.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:09:04.013Z",
+    "scraped_at": "2026-03-01T18:30:53.190Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5927,7 +5501,7 @@
     "source_url": "https://jobs.unops.org/Pages/ViewVacancy/InternshipListing.aspx",
     "source_domain": "unops.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:09:04.013Z",
+    "scraped_at": "2026-03-01T18:30:53.190Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5943,7 +5517,7 @@
     "source_url": "https://jobs.unops.org/Pages/ViewVacancy/RosterListing.aspx",
     "source_domain": "unops.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:09:04.013Z",
+    "scraped_at": "2026-03-01T18:30:53.190Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -5959,7 +5533,7 @@
     "source_url": "https://jobs.unops.org/Pages/ViewVacancy/TBListing.aspx",
     "source_domain": "unops.org",
     "content_type": "job",
-    "scraped_at": "2026-03-01T16:09:04.013Z",
+    "scraped_at": "2026-03-01T18:30:53.190Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
