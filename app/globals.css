@@ -121,8 +121,8 @@
     padding-env: safe-area-inset-top safe-area-inset-right safe-area-inset-bottom safe-area-inset-left;
   }
 
-  /* Prevent horizontal overflow on mobile */
-  main, section, footer, header {
+  /* Prevent horizontal overflow on mobile (not header — clips dropdowns) */
+  main, section, footer {
     max-width: 100vw;
     overflow-x: hidden;
   }

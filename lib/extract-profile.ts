@@ -113,7 +113,13 @@ export async function extractProfileFromCV(
   const response = await client.messages.create({
     model: modelId,
     max_tokens: 1500,
-    system: SYSTEM_PROMPT,
+    system: [
+      {
+        type: "text" as const,
+        text: SYSTEM_PROMPT,
+        cache_control: { type: "ephemeral" as const },
+      },
+    ],
     messages: [
       {
         role: "user",
@@ -122,15 +128,18 @@ export async function extractProfileFromCV(
     ],
   });
 
-  // Track usage (non-blocking)
-  const { input_tokens, output_tokens } = response.usage;
+  // Track usage including prompt cache hits
+  const usage = response.usage as unknown as Record<string, number>;
+  const input_tokens = usage.input_tokens || 0;
+  const output_tokens = usage.output_tokens || 0;
+  const cacheRead = usage.cache_read_input_tokens || 0;
   logUsage({
     model: modelId,
     feature: "profile_extract",
     input_tokens,
     output_tokens,
     cost_usd: calculateCost(modelId, input_tokens, output_tokens),
-    cached: false,
+    cached: cacheRead > 0,
   });
 
   const raw =

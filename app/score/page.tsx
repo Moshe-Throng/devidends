@@ -189,6 +189,9 @@ function CvScorerPage() {
   const [oppOpen, setOppOpen] = useState(false);
   const oppRef = useRef<HTMLDivElement>(null);
 
+  /* ─── Score limit tracking ─────────────────────────────── */
+  const [scoresRemaining, setScoresRemaining] = useState<number | null>(null);
+
   /* ─── Custom opportunity (URL / ToR paste) ─────────────── */
   const [oppMode, setOppMode] = useState<"browse" | "custom">("browse");
   const [customUrl, setCustomUrl] = useState("");
@@ -471,7 +474,12 @@ function CvScorerPage() {
       }
 
       const res = await fetch("/api/cv/score", { method: "POST", body: fd });
-      const json = (await res.json()) as ScoreResponse | ScoreErrorResponse;
+      const json = await res.json();
+
+      // Track remaining scores
+      if (typeof json.scores_remaining === "number") {
+        setScoresRemaining(json.scores_remaining);
+      }
 
       if (!json.success) throw new Error(json.error || "Scoring failed");
 
@@ -736,29 +744,39 @@ function CvScorerPage() {
 
               {/* Opportunity selector */}
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
-                    Score Against Opportunity{" "}
-                    <span className="text-dark-300 font-medium normal-case tracking-normal">
-                      (optional)
-                    </span>
-                  </p>
-                  <div className="flex items-center bg-dark-50 rounded-lg p-0.5">
-                    <button
-                      type="button"
-                      onClick={() => setOppMode("browse")}
-                      className={`px-3 py-1 text-xs font-semibold rounded-md transition-all ${oppMode === "browse" ? "bg-white text-dark-900 shadow-sm" : "text-dark-400 hover:text-dark-600"}`}
-                    >
-                      Browse
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setOppMode("custom")}
-                      className={`px-3 py-1 text-xs font-semibold rounded-md transition-all ${oppMode === "custom" ? "bg-white text-dark-900 shadow-sm" : "text-dark-400 hover:text-dark-600"}`}
-                    >
-                      Paste URL / ToR
-                    </button>
-                  </div>
+                <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em] mb-3">
+                  Score Against Opportunity{" "}
+                  <span className="text-dark-300 font-medium normal-case tracking-normal">
+                    (optional)
+                  </span>
+                </p>
+
+                {/* Tab selector */}
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  <button
+                    type="button"
+                    onClick={() => setOppMode("browse")}
+                    className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all border-2 ${
+                      oppMode === "browse"
+                        ? "border-cyan-500 bg-cyan-50/60 text-cyan-700 shadow-sm shadow-cyan-500/10"
+                        : "border-dark-100 text-dark-400 hover:border-dark-200 hover:text-dark-600"
+                    }`}
+                  >
+                    <Globe className="w-4 h-4" />
+                    Browse Live
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setOppMode("custom")}
+                    className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all border-2 ${
+                      oppMode === "custom"
+                        ? "border-cyan-500 bg-cyan-50/60 text-cyan-700 shadow-sm shadow-cyan-500/10"
+                        : "border-dark-100 text-dark-400 hover:border-dark-200 hover:text-dark-600"
+                    }`}
+                  >
+                    <ClipboardList className="w-4 h-4" />
+                    Paste URL / ToR
+                  </button>
                 </div>
 
                 {oppMode === "browse" ? (
@@ -973,13 +991,35 @@ function CvScorerPage() {
               </div>
             </div>
 
+            {/* Daily limit info */}
+            {scoresRemaining !== null && (
+              <div className={`flex items-center gap-2.5 p-3.5 rounded-xl border ${
+                scoresRemaining === 0
+                  ? "bg-red-50 border-red-200"
+                  : scoresRemaining <= 2
+                    ? "bg-amber-50 border-amber-200"
+                    : "bg-dark-50 border-dark-100"
+              }`}>
+                <Lock className={`w-4 h-4 shrink-0 ${
+                  scoresRemaining === 0 ? "text-red-500" : scoresRemaining <= 2 ? "text-amber-500" : "text-dark-400"
+                }`} />
+                <p className={`text-xs font-medium ${
+                  scoresRemaining === 0 ? "text-red-700" : scoresRemaining <= 2 ? "text-amber-700" : "text-dark-500"
+                }`}>
+                  {scoresRemaining === 0
+                    ? "Daily limit reached (5/5 used). Try again tomorrow."
+                    : `${scoresRemaining} of 5 daily scores remaining`}
+                </p>
+              </div>
+            )}
+
             {/* CTA */}
             <div className="flex justify-center pt-2">
               <button
                 onClick={handleScore}
-                disabled={!file || isProcessing}
+                disabled={!file || isProcessing || scoresRemaining === 0}
                 className={`inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 ${
-                  file && !isProcessing
+                  file && !isProcessing && scoresRemaining !== 0
                     ? "bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 animate-pulseGlow"
                     : "bg-dark-100 text-dark-400 cursor-not-allowed"
                 }`}

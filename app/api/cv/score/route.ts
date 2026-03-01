@@ -12,8 +12,8 @@ export const maxDuration = 60;
 
 const MAX_FILE_SIZE = 15 * 1024 * 1024; // 15 MB
 const MIN_TEXT_LENGTH = 100;
-const RATE_LIMIT = 10; // per hour
-const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT = 5; // per day per user
+const RATE_WINDOW = 24 * 60 * 60 * 1000; // 24 hours
 
 function errorJson(message: string, status = 400) {
   const body: ScoreErrorResponse = { success: false, error: message };
@@ -52,12 +52,16 @@ function parseOpportunity(raw: unknown): OpportunityInput | undefined {
 
 export async function POST(req: NextRequest) {
   try {
-    // Rate limit
+    // Rate limit — 5 scores per 24 hours
     const ip = getClientIp(req.headers);
     const rl = checkRateLimit(`cv-score:${ip}`, RATE_LIMIT, RATE_WINDOW);
     if (!rl.allowed) {
       return NextResponse.json(
-        { success: false, error: "Rate limit exceeded. Try again later." },
+        {
+          success: false,
+          error: "You've reached your daily limit of 5 CV scores. Try again tomorrow.",
+          scores_remaining: 0,
+        },
         {
           status: 429,
           headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
@@ -106,9 +110,10 @@ export async function POST(req: NextRequest) {
 
     const result = await scoreCv(cvText, opportunity);
 
-    const response: ScoreResponse = {
-      success: true,
+    const response = {
+      success: true as const,
       data: { ...result, cv_text: cvText },
+      scores_remaining: rl.remaining,
     };
 
     return NextResponse.json(response);

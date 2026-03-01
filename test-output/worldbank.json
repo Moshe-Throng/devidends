@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-02-28T11:40:38.129Z",
+    "scraped_at": "2026-03-01T15:13:16.995Z",
     "total_fetched": 46,
     "unique_count": 46,
     "active_count": 15,
@@ -26,7 +26,7 @@
       "project_id": "P148850",
       "bid_reference": "ET-RSIDP-527869-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Development of MESOB Design Standard",
@@ -43,24 +43,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-530392-CS-CQS",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.367Z"
-    },
-    {
-      "title": "Selection of System Quality Assurance Specialist",
-      "description": "Selection of System Quality Assurance Specialist\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-477802-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-03-10",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412637",
-      "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Individual Consultant Selection",
-      "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-      "project_id": "P178808",
-      "bid_reference": "ET-CSC-477802-CS-INDV",
-      "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.368Z"
+      "scraped_at": "2026-03-01T15:13:12.707Z"
     },
     {
       "title": "Selection of Senior Database Administrator",
@@ -77,7 +60,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-473014-CS-QBS",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.368Z"
+      "scraped_at": "2026-03-01T15:13:12.708Z"
     },
     {
       "title": "Review the existing performance management system and develop a result-oriented system",
@@ -94,7 +77,24 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-519385-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.368Z"
+      "scraped_at": "2026-03-01T15:13:12.708Z"
+    },
+    {
+      "title": "Selection of System Quality Assurance Specialist",
+      "description": "Selection of System Quality Assurance Specialist\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-477802-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
+      "deadline": "2026-03-10",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412637",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+      "project_id": "P178808",
+      "bid_reference": "ET-CSC-477802-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-03-01T15:13:12.708Z"
     },
     {
       "title": "Selection of System Administrator",
@@ -111,7 +111,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-477803-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.368Z"
+      "scraped_at": "2026-03-01T15:13:12.708Z"
     },
     {
       "title": "Consultancy Service for TOT and Master Assessors",
@@ -128,7 +128,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-528725-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:36.368Z"
+      "scraped_at": "2026-03-01T15:13:12.708Z"
     },
     {
       "title": "Procurement of Safety Materials for Gondar City",
@@ -145,7 +145,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AMHARA-GONDAR-515474-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Procurement of Safety Materials for Lami Kura sub city",
@@ -162,7 +162,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AA FSPSNA-LAMI KURA-517979-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Supply and installation of situation room equipment's and furniture",
@@ -179,7 +179,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EMI-516551-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Procurement of Safety Materials for Nifasilk Lafto sub city",
@@ -196,7 +196,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AA FSPSNA-NIFASILK-518294-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Procurement of Safety Materials for Akaki kality sub city",
@@ -213,7 +213,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AA FSPSNA-AKAKI-518288-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Construction of 37 meter span length Boka River medium bridge for Dembe Woreda Kamash Zone.",
@@ -230,7 +230,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-527567-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Fulfilling IT infrastructure and facilities of EMI for better institutional data exchange mechanism.",
@@ -247,7 +247,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EMI-515449-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     },
     {
       "title": "Civil Work Construction, Supply and Installation of Solar Pump and Commissioning for Selected Project Woredas under Amhara, Oromia, Afar & Benishangul Gumuz Regional States!",
@@ -264,7 +264,7 @@
       "project_id": "P177233",
       "bid_reference": "ET-MOF-509927-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-02-28T11:40:37.190Z"
+      "scraped_at": "2026-03-01T15:13:16.314Z"
     }
   ],
   "projects": [
@@ -289,16 +289,6 @@
       "implementing_agency": "Ministry of Finance"
     },
     {
-      "id": "P176303",
-      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
-      "status": "Active",
-      "sector": "",
-      "total_commitment": "300",
-      "approval_date": "2024-03-29T00:00:00Z",
-      "closing_date": "3/31/2029 12:00:00 AM",
-      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
-    },
-    {
       "id": "P181545",
       "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
       "status": "Active",
@@ -307,6 +297,16 @@
       "approval_date": "2024-03-29T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
+    },
+    {
+      "id": "P176303",
+      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
+      "status": "Active",
+      "sector": "",
+      "total_commitment": "300",
+      "approval_date": "2024-03-29T00:00:00Z",
+      "closing_date": "3/31/2029 12:00:00 AM",
+      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
     },
     {
       "id": "P181626",
@@ -349,16 +349,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P176255",
-      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
-      "status": "Active",
-      "sector": "Public Administration - Industry, Trade and Services",
-      "total_commitment": "90",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "",
-      "implementing_agency": "Ethiopian Maritime Affairs Authority"
-    },
-    {
       "id": "P179040",
       "name": "Ethiopia Digital ID for Inclusion and Services Project",
       "status": "Active",
@@ -367,6 +357,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "1/7/2029 12:00:00 AM",
       "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
+    },
+    {
+      "id": "P176255",
+      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
+      "status": "Active",
+      "sector": "Public Administration - Industry, Trade and Services",
+      "total_commitment": "90",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "",
+      "implementing_agency": "Ethiopian Maritime Affairs Authority"
     }
   ]
 }

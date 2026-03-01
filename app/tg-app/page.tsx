@@ -241,11 +241,9 @@ export default function TgAppHome() {
         ) : (
           <div className="space-y-2.5">
             {recentOpps.map((opp, i) => (
-              <a
+              <Link
                 key={i}
-                href={opp.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/tg-app/opportunities/${opp.id}`}
                 className="block bg-white border border-dark-100 rounded-xl px-4 py-3 hover:border-cyan-200 transition-colors"
               >
                 <p className="text-sm font-bold text-dark-900 leading-snug line-clamp-2">
@@ -276,7 +274,7 @@ export default function TgAppHome() {
                     </span>
                   )}
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         )}

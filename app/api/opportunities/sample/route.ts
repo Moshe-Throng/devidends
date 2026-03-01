@@ -88,7 +88,10 @@ export async function GET(req: NextRequest) {
           { status: 404 }
         );
       }
-      return NextResponse.json({ success: true, opportunity: opp });
+      return NextResponse.json(
+        { success: true, opportunity: opp },
+        { headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600" } }
+      );
     }
 
     // Apply quality + expiry filters for feed
@@ -104,11 +107,20 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({
-      count: opportunities.length,
-      total: allOpportunities.length,
-      opportunities,
-    });
+    // Cache for 5 minutes (CDN) / 10 minutes (stale-while-revalidate)
+    // Opportunities only change after daily scrape, so aggressive caching is safe
+    return NextResponse.json(
+      {
+        count: opportunities.length,
+        total: allOpportunities.length,
+        opportunities,
+      },
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+        },
+      }
+    );
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(

@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createHash } from "crypto";
+import { createClient } from "@supabase/supabase-js";
 import type { CvScoreResult, OpportunityInput } from "./types/cv-score";
 import { calculateCost, logUsage } from "./usage-tracker";
 
@@ -157,16 +158,59 @@ function buildSystemPrompt(opportunity?: OpportunityInput): string {
   return prompt;
 }
 
+/**
+ * Check Supabase cv_scores for an existing score with the same CV text hash.
+ * Persists across cold starts — saves AI calls for re-scored CVs.
+ */
+async function getPersistedScore(cvHash: string): Promise<CvScoreResult | null> {
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+    const { data } = await supabase
+      .from("cv_scores")
+      .select("overall_score, dimensions, improvements, donor_tips")
+      .eq("cv_hash", cvHash)
+      .order("scored_at", { ascending: false })
+      .limit(1)
+      .single();
+
+    if (!data || !data.dimensions) return null;
+
+    return {
+      overall_score: data.overall_score,
+      dimensions: data.dimensions as CvScoreResult["dimensions"],
+      top_3_improvements: (data.improvements || []) as string[],
+      donor_specific_tips: (data.donor_tips || {}) as Record<string, string>,
+    };
+  } catch {
+    // If cv_hash column doesn't exist yet or query fails, skip gracefully
+    return null;
+  }
+}
+
 export async function scoreCv(
   cvText: string,
   opportunity?: OpportunityInput
 ): Promise<CvScoreResult> {
   const truncatedText = cvText.slice(0, MAX_CV_LENGTH);
 
-  // Check cache
+  // Layer 1: In-memory cache (fast, survives within same warm function)
   const cacheKey = computeCacheKey(truncatedText, opportunity);
   const cached = getCached(cacheKey);
   if (cached) return cached;
+
+  // Layer 2: Persistent dedup via Supabase (survives cold starts)
+  // Only for generic scoring (no opportunity) — opportunity-specific scores are unique
+  if (!opportunity) {
+    const persisted = await getPersistedScore(cacheKey);
+    if (persisted) {
+      setCache(cacheKey, persisted); // Warm the in-memory cache too
+      console.log("[cv-score] Persistent cache hit — skipped AI call");
+      return persisted;
+    }
+  }
 
   const anthropic = new Anthropic();
   const systemPrompt = buildSystemPrompt(opportunity);
@@ -180,19 +224,31 @@ export async function scoreCv(
   const message = await anthropic.messages.create({
     model: modelId,
     max_tokens: 2500,
-    system: systemPrompt,
+    // Structured system block with cache_control enables prompt caching.
+    // The system prompt (~2000 tokens) is identical across calls —
+    // cached reads cost 90% less on input tokens.
+    system: [
+      {
+        type: "text" as const,
+        text: systemPrompt,
+        cache_control: { type: "ephemeral" as const },
+      },
+    ],
     messages: [{ role: "user", content: userMessage }],
   });
 
-  // Track usage (non-blocking)
-  const { input_tokens, output_tokens } = message.usage;
+  // Track usage including prompt cache hits
+  const usage = message.usage as unknown as Record<string, number>;
+  const input_tokens = usage.input_tokens || 0;
+  const output_tokens = usage.output_tokens || 0;
+  const cacheRead = usage.cache_read_input_tokens || 0;
   logUsage({
     model: modelId,
     feature: "cv_score",
     input_tokens,
     output_tokens,
     cost_usd: calculateCost(modelId, input_tokens, output_tokens),
-    cached: false,
+    cached: cacheRead > 0,
   });
 
   const responseText = message.content

@@ -26,6 +26,13 @@ const SECTOR_CHIPS = [
   "Governance",
   "Gender",
   "Environment",
+  "Humanitarian",
+  "Energy",
+  "Economic",
+  "Legal",
+  "Research",
+  "Media",
+  "Project Management",
 ];
 
 export default function TgAppOpportunities() {
@@ -185,11 +192,9 @@ export default function TgAppOpportunities() {
         ) : (
           <div className="space-y-2.5">
             {filtered.map((opp, i) => (
-              <a
+              <Link
                 key={i}
-                href={opp.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/tg-app/opportunities/${opp.id}`}
                 className="block bg-white border border-dark-100 rounded-xl p-4 active:bg-dark-50 transition-colors"
               >
                 <div className="flex items-start justify-between gap-2">
@@ -240,7 +245,7 @@ export default function TgAppOpportunities() {
                     </span>
                   )}
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         )}

@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Profile, CvScore, ProfileEdit } from "./database.types";
 import type { CvScoreResult, SampleOpportunity } from "./types/cv-score";
@@ -146,6 +147,11 @@ export async function saveCvScore(
   cvText?: string,
   fileName?: string
 ): Promise<void> {
+  // Compute CV text hash for persistent score deduplication
+  const cvHash = cvText
+    ? createHash("sha256").update(cvText.slice(0, 25_000)).digest("hex")
+    : null;
+
   const { error } = await supabase.from("cv_scores").insert({
     user_id: userId,
     profile_id: profileId,
@@ -154,6 +160,7 @@ export async function saveCvScore(
     improvements: scoreData.top_3_improvements,
     donor_tips: scoreData.donor_specific_tips,
     cv_text: cvText || null,
+    cv_hash: cvHash,
     file_name: fileName || null,
   });
 

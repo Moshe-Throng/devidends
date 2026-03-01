@@ -133,7 +133,13 @@ export async function extractCvData(
   const message = await anthropic.messages.create({
     model: modelId,
     max_tokens: 6000,
-    system: SYSTEM_PROMPT,
+    system: [
+      {
+        type: "text" as const,
+        text: SYSTEM_PROMPT,
+        cache_control: { type: "ephemeral" as const },
+      },
+    ],
     messages: [
       {
         role: "user",
@@ -142,15 +148,18 @@ export async function extractCvData(
     ],
   });
 
-  // Track usage (non-blocking)
-  const { input_tokens, output_tokens } = message.usage;
+  // Track usage including prompt cache hits
+  const usage = message.usage as unknown as Record<string, number>;
+  const input_tokens = usage.input_tokens || 0;
+  const output_tokens = usage.output_tokens || 0;
+  const cacheRead = usage.cache_read_input_tokens || 0;
   logUsage({
     model: modelId,
     feature: "cv_extract",
     input_tokens,
     output_tokens,
     cost_usd: calculateCost(modelId, input_tokens, output_tokens),
-    cached: false,
+    cached: cacheRead > 0,
   });
 
   const raw =
