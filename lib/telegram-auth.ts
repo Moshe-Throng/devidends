@@ -62,9 +62,9 @@ export function verifyInitData(
     const user: TelegramUser = JSON.parse(userStr);
     const authDate = parseInt(params.get("auth_date") || "0", 10);
 
-    // Reject data older than 1 hour
+    // Reject data older than 24 hours
     const now = Math.floor(Date.now() / 1000);
-    if (now - authDate > 3600) return null;
+    if (now - authDate > 86400) return null;
 
     return {
       user,
