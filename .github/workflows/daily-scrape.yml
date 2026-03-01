@@ -1,0 +1,79 @@
+name: Daily Scrape & Deploy
+
+on:
+  schedule:
+    # 5:00 AM UTC = 8:00 AM EAT (Nairobi)
+    - cron: '0 5 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Puppeteer browser
+        run: npx puppeteer browsers install chrome
+
+      - name: Run ReliefWeb scraper
+        run: node scripts/poc/test-reliefweb.js
+
+      - name: Run World Bank scraper
+        run: node scripts/poc/test-worldbank.js
+
+      - name: Run Workday scraper
+        run: node scripts/poc/test-workday.js
+
+      - name: Run Kifiya scraper
+        run: node scripts/poc/test-kifiya.js
+        continue-on-error: true
+
+      - name: Run AU scraper
+        run: node scripts/poc/test-au.js
+        continue-on-error: true
+
+      - name: Run UN Careers scraper
+        run: node scripts/poc/test-uncareers.js
+        continue-on-error: true
+
+      - name: Run Oracle scraper
+        run: node scripts/poc/test-oracle.js
+        continue-on-error: true
+
+      - name: Run UNJobs scraper
+        run: node scripts/poc/test-unjobs.js
+        continue-on-error: true
+
+      - name: Run DRC scraper
+        run: node scripts/poc/test-drc.js
+        continue-on-error: true
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add test-output/*.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Update opportunity data [$(date -u '+%Y-%m-%d')]"
+            git push
+          fi
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

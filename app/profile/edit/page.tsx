@@ -33,45 +33,7 @@ import type { Profile } from "@/lib/database.types";
 
 /* ─── Constants ───────────────────────────────────────────── */
 
-const SECTORS = [
-  "Humanitarian Aid",
-  "Global Health",
-  "Finance & Banking",
-  "Project Management",
-  "Innovation & ICT",
-  "Agriculture",
-  "Economic Development",
-  "Gender & Social Inclusion",
-  "Environment & Natural Resources",
-  "Education",
-  "WASH",
-  "Governance",
-  "Media & Communications",
-  "Research",
-  "Legal",
-  "Energy",
-] as const;
-
-const DONORS = [
-  "GIZ",
-  "World Bank",
-  "EU",
-  "UNDP",
-  "USAID",
-  "AfDB",
-  "UNICEF",
-  "DFID/FCDO",
-  "KfW",
-  "SIDA",
-  "WHO",
-  "FAO",
-  "UNHCR",
-  "WFP",
-  "ILO",
-  "JICA",
-  "Gates Foundation",
-  "Mastercard Foundation",
-] as const;
+import { SECTORS, DONORS } from "@/lib/constants";
 
 const PROFILE_TYPES = [
   "Expert",

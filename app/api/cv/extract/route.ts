@@ -38,11 +38,11 @@ export async function POST(req: NextRequest) {
       const formData = await req.formData();
       const file = formData.get("file") as File | null;
 
-      if (!file) return errorJson("No file provided. Upload a PDF or DOCX.");
+      if (!file) return errorJson("No file provided. Upload a PDF, DOCX, DOC, or TXT file.");
 
       const fileType = detectFileType(file.name);
       if (fileType === "unknown")
-        return errorJson("Unsupported file type. Upload a PDF or DOCX.");
+        return errorJson("Unsupported file type. Upload a PDF, DOCX, DOC, or TXT file.");
 
       if (file.size > MAX_FILE_SIZE)
         return errorJson("File too large. Maximum size is 15 MB.");

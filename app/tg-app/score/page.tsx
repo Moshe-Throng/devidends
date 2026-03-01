@@ -77,8 +77,8 @@ export default function TgAppScore() {
     if (!f) return;
 
     const ext = f.name.toLowerCase().split(".").pop();
-    if (ext !== "pdf" && ext !== "docx") {
-      setError("Please upload a PDF or DOCX file");
+    if (!["pdf", "docx", "doc", "txt", "rtf"].includes(ext || "")) {
+      setError("Please upload a PDF, DOCX, DOC, or TXT file");
       return;
     }
 
@@ -131,7 +131,7 @@ export default function TgAppScore() {
           <input
             ref={fileRef}
             type="file"
-            accept=".pdf,.docx"
+            accept=".pdf,.docx,.doc,.txt,.rtf"
             onChange={handleFileSelect}
             className="hidden"
           />
@@ -145,7 +145,7 @@ export default function TgAppScore() {
               <p className="text-sm font-semibold text-dark-600">
                 Tap to upload your CV
               </p>
-              <p className="text-xs text-dark-400">PDF or DOCX, up to 10MB</p>
+              <p className="text-xs text-dark-400">PDF, DOCX, DOC, or TXT — up to 10MB</p>
             </button>
           ) : (
             <div className="bg-cyan-50 border border-cyan-200 rounded-xl px-4 py-3 flex items-center gap-3">

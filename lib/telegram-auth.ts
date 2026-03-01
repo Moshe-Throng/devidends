@@ -175,3 +175,48 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
 
   return newProfile;
 }
+
+/**
+ * Update a Telegram user's profile fields.
+ */
+export async function updateTelegramProfile(
+  telegramId: string,
+  updates: Record<string, unknown>
+) {
+  const supabase = getSupabaseAdmin();
+
+  // Only allow safe fields
+  const allowed = [
+    "headline", "sectors", "donors", "countries", "skills",
+    "qualifications", "linkedin_url", "email", "years_of_experience",
+    "phone",
+  ];
+  const safeUpdates: Record<string, unknown> = {};
+  for (const key of allowed) {
+    if (key in updates) {
+      safeUpdates[key] = updates[key];
+    }
+  }
+
+  // Recalculate profile completeness
+  const fields = ["headline", "sectors", "donors", "countries", "skills", "qualifications", "linkedin_url"];
+  let filled = 1; // name always counts
+  for (const f of fields) {
+    const val = safeUpdates[f] ?? undefined;
+    if (Array.isArray(val) ? val.length > 0 : val) filled++;
+  }
+  safeUpdates.profile_score_pct = Math.round((filled / (fields.length + 1)) * 100);
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .update(safeUpdates)
+    .eq("telegram_id", telegramId)
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(`Failed to update profile: ${error.message}`);
+  }
+
+  return data;
+}

@@ -14,10 +14,12 @@ export async function extractTextFromDocx(buffer: Buffer): Promise<string> {
 
 export function detectFileType(
   filename: string
-): "pdf" | "docx" | "unknown" {
+): "pdf" | "docx" | "doc" | "txt" | "unknown" {
   const ext = filename.toLowerCase().split(".").pop();
   if (ext === "pdf") return "pdf";
   if (ext === "docx") return "docx";
+  if (ext === "doc") return "doc";
+  if (ext === "txt" || ext === "rtf") return "txt";
   return "unknown";
 }
 
@@ -28,7 +30,9 @@ export async function extractText(
   const type = detectFileType(filename);
   if (type === "pdf") return extractTextFromPdf(buffer);
   if (type === "docx") return extractTextFromDocx(buffer);
+  if (type === "doc") return extractTextFromDocx(buffer); // mammoth handles .doc too
+  if (type === "txt") return buffer.toString("utf-8");
   throw new Error(
-    `Unsupported file type: ${filename}. Only PDF and DOCX are supported.`
+    `Unsupported file type: ${filename}. Supported: PDF, DOCX, DOC, TXT.`
   );
 }

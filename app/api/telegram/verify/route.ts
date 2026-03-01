@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifyInitData, getOrCreateTelegramProfile } from "@/lib/telegram-auth";
+import { verifyInitData, getOrCreateTelegramProfile, updateTelegramProfile } from "@/lib/telegram-auth";
 
 export async function POST(req: NextRequest) {
   try {
-    const { initData } = await req.json();
+    const { initData, updateProfile } = await req.json();
 
     if (!initData || typeof initData !== "string") {
       return NextResponse.json(
@@ -34,6 +34,11 @@ export async function POST(req: NextRequest) {
     let profile;
     try {
       profile = await getOrCreateTelegramProfile(verified.user);
+
+      // If updateProfile data is provided, update the profile
+      if (updateProfile && profile) {
+        profile = await updateTelegramProfile(String(verified.user.id), updateProfile);
+      }
     } catch (profileErr) {
       console.error("[telegram-verify] Profile error:", profileErr);
       // Return user even if profile fails — the app can still work

@@ -48,3 +48,5 @@ docs/BidFlow*
 /test-output/debug/
 /test-output/*_debug*
 /test-output/_summary.json
+
+.vercel

@@ -111,6 +111,8 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
         const rawInitData = sdk.retrieveRawInitData();
         if (rawInitData) {
           setInitDataRaw(rawInitData);
+          // Store for use by profile edit page
+          try { sessionStorage.setItem("tg_init_data", rawInitData); } catch {}
         }
 
         // Extract user from launch params for immediate display

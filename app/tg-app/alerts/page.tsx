@@ -10,21 +10,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
-
-const SECTORS = [
-  "Humanitarian Aid",
-  "Global Health",
-  "Finance",
-  "ICT",
-  "Agriculture",
-  "Project Management",
-  "Economic Development",
-  "Gender",
-  "Environment",
-  "Education",
-  "WASH",
-  "Governance",
-];
+import { SECTORS } from "@/lib/constants";
 
 export default function TgAppAlerts() {
   const { tgUser, profile, loading } = useTelegram();
