@@ -150,26 +150,43 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
     .filter(Boolean)
     .join(" ");
 
-  const { data: newProfile, error } = await supabase
+  // Try inserting without user_id first (nullable after migration)
+  // Falls back to synthetic user_id if column requires NOT NULL
+  let insertPayload: Record<string, unknown> = {
+    name: fullName,
+    telegram_id: telegramId,
+    telegram_username: user.username || null,
+    source: "telegram",
+    sectors: [],
+    donors: [],
+    countries: [],
+    skills: [],
+    profile_score_pct: 10, // Just having a name = 10%
+    version: 1,
+    is_public: false,
+  };
+
+  let { data: newProfile, error } = await supabase
     .from("profiles")
-    .insert({
-      name: fullName,
-      user_id: `tg_${user.id}`, // Synthetic user_id for Telegram-only users
-      telegram_id: telegramId,
-      telegram_username: user.username || null,
-      source: "telegram",
-      sectors: [],
-      donors: [],
-      countries: [],
-      skills: [],
-      profile_score_pct: 10, // Just having a name = 10%
-      version: 1,
-      is_public: false,
-    })
+    .insert(insertPayload)
     .select()
     .single();
 
+  // If it failed because user_id is NOT NULL, retry with a synthetic UUID
+  if (error && (error.message.includes("null") || error.message.includes("not-null") || error.code === "23502")) {
+    console.warn("[telegram-auth] user_id NOT NULL — retrying with synthetic UUID");
+    insertPayload.user_id = `tg_${user.id}`;
+    const retry = await supabase
+      .from("profiles")
+      .insert(insertPayload)
+      .select()
+      .single();
+    newProfile = retry.data;
+    error = retry.error;
+  }
+
   if (error) {
+    console.error("[telegram-auth] Insert failed:", error.code, error.message, error.details);
     throw new Error(`Failed to create Telegram profile: ${error.message}`);
   }
 

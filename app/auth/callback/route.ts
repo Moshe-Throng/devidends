@@ -6,6 +6,15 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/";
 
+  // Handle OAuth errors (e.g., Google provider not configured)
+  const errorParam = searchParams.get("error");
+  const errorDesc = searchParams.get("error_description");
+  if (errorParam) {
+    console.error("[auth/callback] OAuth error:", errorParam, errorDesc);
+    const msg = encodeURIComponent(errorDesc || errorParam || "Authentication failed");
+    return NextResponse.redirect(`${origin}/login?error=${msg}`);
+  }
+
   if (code) {
     const response = NextResponse.redirect(`${origin}${next}`);
 
@@ -26,7 +35,13 @@ export async function GET(request: NextRequest) {
       }
     );
 
-    await supabase.auth.exchangeCodeForSession(code);
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (error) {
+      console.error("[auth/callback] Code exchange failed:", error.message);
+      const msg = encodeURIComponent(error.message);
+      return NextResponse.redirect(`${origin}/login?error=${msg}`);
+    }
+
     return response;
   }
 

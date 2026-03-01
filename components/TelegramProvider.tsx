@@ -169,6 +169,9 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
         if (data.profile) {
           setProfile(data.profile);
         }
+        if (data.profileError) {
+          console.warn("[TelegramProvider] Profile creation issue:", data.profileError);
+        }
       } catch (err) {
         console.error("[TelegramProvider] Verify error:", err);
         setError("Connection error");

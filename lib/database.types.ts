@@ -106,7 +106,7 @@ export type Database = {
       };
       profiles: {
         Row: Profile;
-        Insert: Partial<Profile> & { name: string; user_id: string };
+        Insert: Partial<Profile> & { name: string; user_id?: string | null };
         Update: Partial<Profile>;
       };
       profile_edits: {

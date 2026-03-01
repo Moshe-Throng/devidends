@@ -40,12 +40,14 @@ export async function POST(req: NextRequest) {
         profile = await updateTelegramProfile(String(verified.user.id), updateProfile);
       }
     } catch (profileErr) {
-      console.error("[telegram-verify] Profile error:", profileErr);
-      // Return user even if profile fails — the app can still work
+      const errMsg = profileErr instanceof Error ? profileErr.message : String(profileErr);
+      console.error("[telegram-verify] Profile error:", errMsg);
+      // Return user and the error reason so client can surface it
       return NextResponse.json({
         ok: true,
         user: verified.user,
         profile: null,
+        profileError: errMsg,
       });
     }
 

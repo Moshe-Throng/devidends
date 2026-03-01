@@ -33,35 +33,22 @@ export default function TgAppScore() {
     setError("");
 
     try {
-      // Step 1: Extract text
-      const formData = new FormData();
-      formData.append("file", file);
+      // Send file directly to score API (handles extraction + scoring in one call)
+      const fd = new FormData();
+      fd.append("file", file);
 
-      const extractRes = await fetch("/api/cv/extract", {
+      const res = await fetch("/api/cv/score", {
         method: "POST",
-        body: formData,
+        body: fd,
       });
 
-      if (!extractRes.ok) {
-        throw new Error("Failed to read your CV file");
+      const json = await res.json();
+
+      if (!res.ok || !json.success) {
+        throw new Error(json.error || "Scoring failed — please try again");
       }
 
-      const extractData = await extractRes.json();
-      const text = extractData.raw_text || extractData.text;
-
-      // Step 2: Score
-      const scoreRes = await fetch("/api/cv/score", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cv_text: text }),
-      });
-
-      if (!scoreRes.ok) {
-        throw new Error("Scoring failed — please try again");
-      }
-
-      const scoreData: CvScoreResult = await scoreRes.json();
-      setResult(scoreData);
+      setResult(json.data as CvScoreResult);
       setPhase("results");
 
       // Refresh profile to get updated cv_score

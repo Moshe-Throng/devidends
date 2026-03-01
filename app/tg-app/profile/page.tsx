@@ -119,14 +119,24 @@ export default function TgAppProfile() {
               <User className="w-8 h-8 text-dark-300" />
             </div>
             <div className="space-y-1">
-              <p className="text-sm font-semibold text-dark-700">No profile yet</p>
+              <p className="text-sm font-semibold text-dark-700">
+                {tgUser ? `Hi ${tgUser.first_name}!` : "No profile yet"}
+              </p>
               <p className="text-xs text-dark-400">
-                Close and reopen the app to create your profile automatically
+                {tgUser
+                  ? "Setting up your profile — tap retry if it doesn't load"
+                  : "Open this app from Telegram to create your profile"}
               </p>
             </div>
+            <button
+              onClick={() => refreshProfile()}
+              className="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+            >
+              Retry
+            </button>
             <Link
               href="/tg-app"
-              className="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+              className="block text-xs text-dark-400 font-medium hover:text-dark-600"
             >
               Back to Home
             </Link>

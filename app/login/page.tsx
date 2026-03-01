@@ -1,15 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Mail, Lock, ArrowRight, Loader2, Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex flex-col">
+        <SiteHeader />
+        <main className="flex-1 flex items-center justify-center">
+          <Loader2 className="w-6 h-6 animate-spin text-cyan-500" />
+        </main>
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
+  );
+}
+
+function LoginContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { signInWithEmail, signUpWithEmail, signInWithGoogle, resetPassword } = useAuth();
 
   const [mode, setMode] = useState<"login" | "signup" | "forgot">("login");
@@ -19,6 +35,14 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+
+  // Show OAuth errors from redirect (e.g., Google sign-in failures)
+  useEffect(() => {
+    const oauthError = searchParams.get("error");
+    if (oauthError) {
+      setError(decodeURIComponent(oauthError));
+    }
+  }, [searchParams]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
