@@ -118,6 +118,7 @@ interface Subscription {
   sectors_filter: string[] | null;
   donor_filter: string[] | null;
   country_filter: string[] | null;
+  work_type_filter: string[] | null;
 }
 
 /**
@@ -149,6 +150,22 @@ function matchesSubscriber(
     if (!match) return false;
   }
 
+  // Work type filter — match against classified_type
+  if (sub.work_type_filter && sub.work_type_filter.length > 0) {
+    const oppType = (opp.classified_type || opp.type || "").toLowerCase();
+    const typeMap: Record<string, string[]> = {
+      "full-time": ["job", "full-time", "fulltime"],
+      "consultancy": ["consulting", "consultancy", "consultant", "advisory"],
+      "contract": ["contract", "fixed-term"],
+      "internship": ["internship", "intern", "trainee", "graduate"],
+    };
+    const match = sub.work_type_filter.some((filter) => {
+      const patterns = typeMap[filter.toLowerCase()] || [filter.toLowerCase()];
+      return patterns.some((p) => oppType.includes(p));
+    });
+    if (!match) return false;
+  }
+
   return true;
 }
 
@@ -169,7 +186,7 @@ export async function notifySubscribers(
   // Fetch all active Telegram subscribers
   const { data: subscribers, error } = await supabase
     .from("subscriptions")
-    .select("id, telegram_id, sectors_filter, donor_filter, country_filter")
+    .select("id, telegram_id, sectors_filter, donor_filter, country_filter, work_type_filter")
     .eq("channel", "telegram")
     .eq("is_active", true)
     .not("telegram_id", "is", null);
@@ -200,8 +217,8 @@ export async function notifySubscribers(
         continue;
       }
 
-      // Send at most 5 per subscriber per batch
-      const toSend = matched.slice(0, 5);
+      // Send at most 10 per subscriber per digest
+      const toSend = matched.slice(0, 10);
       const header =
         toSend.length === 1
           ? "\ud83d\udd14 <b>New opportunity matching your interests:</b>\n"

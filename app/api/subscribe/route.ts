@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { email, telegram_id, channel, sectors_filter, donor_filter, country_filter } = body;
+    const { email, telegram_id, channel, sectors_filter, donor_filter, country_filter, work_type_filter, frequency } = body;
 
     // Validate
     if (!email && !telegram_id) {
@@ -89,6 +89,8 @@ export async function POST(req: NextRequest) {
       sectors_filter: sectors_filter || [],
       donor_filter: donor_filter || [],
       country_filter: country_filter || ["Ethiopia"],
+      work_type_filter: work_type_filter || [],
+      frequency: frequency || "weekly",
       is_active: true,
     });
 

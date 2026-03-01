@@ -96,17 +96,30 @@ function FaqItem({
    SUBSCRIBE PAGE
    ═══════════════════════════════════════════════════════════════ */
 
+const WORK_TYPES = ["Full-time", "Consultancy", "Contract", "Internship"] as const;
+
 export default function SubscribePage() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error" | "already"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [frequency, setFrequency] = useState<"weekly" | "daily">("weekly");
+  const [workTypeFilter, setWorkTypeFilter] = useState<Set<string>>(new Set());
+  const [showFilters, setShowFilters] = useState(false);
 
   const cardsReveal = useReveal(0.1);
   const featuresReveal = useReveal(0.15);
   const sourcesReveal = useReveal(0.1);
   const faqReveal = useReveal(0.15);
+
+  function toggleWorkType(type: string) {
+    setWorkTypeFilter((prev) => {
+      const next = new Set(prev);
+      next.has(type) ? next.delete(type) : next.add(type);
+      return next;
+    });
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -130,6 +143,8 @@ export default function SubscribePage() {
           email,
           channel: "email",
           country_filter: ["Ethiopia"],
+          frequency,
+          work_type_filter: Array.from(workTypeFilter),
         }),
       });
 
@@ -374,6 +389,60 @@ export default function SubscribePage() {
                           </p>
                         )}
                       </div>
+
+                      {/* Frequency toggle */}
+                      <div className="flex items-center gap-2 p-1 rounded-lg bg-dark-50 border border-dark-100">
+                        {(["weekly", "daily"] as const).map((f) => (
+                          <button
+                            key={f}
+                            type="button"
+                            onClick={() => setFrequency(f)}
+                            className={`flex-1 py-2 rounded-md text-xs font-bold transition-all ${
+                              frequency === f
+                                ? "bg-white text-cyan-700 shadow-sm"
+                                : "text-dark-400 hover:text-dark-600"
+                            }`}
+                          >
+                            {f === "weekly" ? "Weekly Digest" : "Daily Digest"}
+                          </button>
+                        ))}
+                      </div>
+
+                      {/* Filters toggle */}
+                      <button
+                        type="button"
+                        onClick={() => setShowFilters(!showFilters)}
+                        className="flex items-center gap-1.5 text-xs text-dark-400 hover:text-dark-600 transition-colors"
+                      >
+                        <Filter className="w-3 h-3" />
+                        {showFilters ? "Hide filters" : "Add type filters"}
+                        <ChevronDown className={`w-3 h-3 transition-transform ${showFilters ? "rotate-180" : ""}`} />
+                      </button>
+
+                      {/* Work type filter chips */}
+                      {showFilters && (
+                        <div className="flex flex-wrap gap-1.5 animate-fadeInUp">
+                          {WORK_TYPES.map((type) => (
+                            <button
+                              key={type}
+                              type="button"
+                              onClick={() => toggleWorkType(type)}
+                              className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
+                                workTypeFilter.has(type)
+                                  ? "bg-cyan-50 text-cyan-700 border-cyan-200"
+                                  : "bg-white text-dark-400 border-dark-100 hover:border-dark-200"
+                              }`}
+                            >
+                              {workTypeFilter.has(type) && <Check className="w-3 h-3 inline mr-1 -mt-0.5" />}
+                              {type}
+                            </button>
+                          ))}
+                          <p className="w-full text-[10px] text-dark-300 mt-1">
+                            No selection = all types
+                          </p>
+                        </div>
+                      )}
+
                       <button
                         type="submit"
                         disabled={status === "loading" || !email.trim()}
