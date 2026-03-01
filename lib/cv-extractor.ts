@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createHash } from "crypto";
 import type { StructuredCvData } from "./types/cv-data";
+import { calculateCost, logUsage } from "./usage-tracker";
 
 const MAX_CV_LENGTH = 25_000;
 
@@ -127,8 +128,10 @@ export async function extractCvData(
 
   const anthropic = new Anthropic();
 
+  // Haiku 4.5 for extraction (structured data parsing) — 73% cheaper than Sonnet
+  const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: modelId,
     max_tokens: 6000,
     system: SYSTEM_PROMPT,
     messages: [
@@ -137,6 +140,17 @@ export async function extractCvData(
         content: `Extract structured CV data from the following text:\n\n${truncated}`,
       },
     ],
+  });
+
+  // Track usage (non-blocking)
+  const { input_tokens, output_tokens } = message.usage;
+  logUsage({
+    model: modelId,
+    feature: "cv_extract",
+    input_tokens,
+    output_tokens,
+    cost_usd: calculateCost(modelId, input_tokens, output_tokens),
+    cached: false,
   });
 
   const raw =

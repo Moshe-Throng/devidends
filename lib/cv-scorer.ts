@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createHash } from "crypto";
 import type { CvScoreResult, OpportunityInput } from "./types/cv-score";
+import { calculateCost, logUsage } from "./usage-tracker";
 
 const MAX_CV_LENGTH = 25_000;
 
@@ -175,11 +176,23 @@ export async function scoreCv(
     userMessage += `\n\n---\nScore this CV against the opportunity: "${opportunity.title}" at ${opportunity.organization}`;
   }
 
+  const modelId = "claude-sonnet-4-20250514";
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: modelId,
     max_tokens: 2500,
     system: systemPrompt,
     messages: [{ role: "user", content: userMessage }],
+  });
+
+  // Track usage (non-blocking)
+  const { input_tokens, output_tokens } = message.usage;
+  logUsage({
+    model: modelId,
+    feature: "cv_score",
+    input_tokens,
+    output_tokens,
+    cost_usd: calculateCost(modelId, input_tokens, output_tokens),
+    cached: false,
   });
 
   const responseText = message.content

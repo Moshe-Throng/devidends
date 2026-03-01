@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServer } from "@/lib/supabase-server";
 import { isAdmin, isAdminConfigured } from "@/lib/admin";
+import { getUsageStats, MODEL_PRICING_INFO } from "@/lib/usage-tracker";
 import fs from "fs";
 import path from "path";
 
@@ -128,6 +129,9 @@ export async function GET() {
         )
       : 0;
 
+  // AI usage stats (non-blocking, graceful fallback)
+  const usageStats = await getUsageStats(30);
+
   return NextResponse.json({
     opportunities: {
       total: totalOpportunities,
@@ -154,5 +158,7 @@ export async function GET() {
       total: cvScores.length,
       avg_score: avgCvScore,
     },
+    ai_usage: usageStats,
+    model_pricing: MODEL_PRICING_INFO,
   });
 }

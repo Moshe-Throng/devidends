@@ -82,18 +82,18 @@ function AnimatedStat({
 
   return (
     <div
-      className={`flex flex-col items-center px-6 py-6 transition-all duration-700 ${
+      className={`flex flex-col items-center px-3 sm:px-6 py-5 sm:py-6 transition-all duration-700 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <span className="text-4xl md:text-5xl font-extrabold tabular-nums">
+      <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold tabular-nums">
         <span className="bg-gradient-to-r from-cyan-500 to-teal-400 bg-clip-text text-transparent">
           {count}
         </span>
-        <span className="text-cyan-400/70 text-3xl">{suffix}</span>
+        <span className="text-cyan-400/70 text-2xl sm:text-3xl">{suffix}</span>
       </span>
-      <span className="text-dark-400 text-sm font-semibold mt-2 tracking-[0.15em] uppercase">
+      <span className="text-dark-400 text-xs sm:text-sm font-semibold mt-2 tracking-[0.1em] sm:tracking-[0.15em] uppercase">
         {label}
       </span>
     </div>
@@ -113,7 +113,7 @@ function SourceBadge({
 }) {
   return (
     <div
-      className={`flex items-center gap-2 px-5 py-2.5 bg-white border border-dark-100 rounded-full text-dark-500 text-sm font-medium transition-all duration-500 hover:border-cyan-300 hover:text-cyan-700 hover:shadow-md hover:shadow-cyan-500/5 ${
+      className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 bg-white border border-dark-100 rounded-full text-dark-500 text-xs sm:text-sm font-medium transition-all duration-500 hover:border-cyan-300 hover:text-cyan-700 hover:shadow-md hover:shadow-cyan-500/5 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{ transitionDelay: `${delay}ms` }}

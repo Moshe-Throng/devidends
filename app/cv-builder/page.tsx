@@ -604,7 +604,7 @@ export default function CvBuilderPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <button
                 onClick={() => setPhase("uploading")}
-                className="group text-left p-8 rounded-2xl border-2 border-dark-100 hover:border-cyan-400 hover:shadow-[0_12px_40px_-12px_rgba(39,171,210,0.18)] transition-all duration-500 hover:-translate-y-1 animate-slideInLeft"
+                className="group text-left p-5 sm:p-8 rounded-2xl border-2 border-dark-100 hover:border-cyan-400 hover:shadow-[0_12px_40px_-12px_rgba(39,171,210,0.18)] transition-all duration-500 hover:-translate-y-1 animate-slideInLeft"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50 group-hover:from-cyan-100 group-hover:to-teal-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105">
                   <Upload className="w-7 h-7 text-cyan-600" strokeWidth={1.8} />
@@ -626,7 +626,7 @@ export default function CvBuilderPage() {
                   setCvData(emptyCvData());
                   setPhase("editing");
                 }}
-                className="group text-left p-8 rounded-2xl border-2 border-dark-100 hover:border-teal-400 hover:shadow-[0_12px_40px_-12px_rgba(36,207,214,0.18)] transition-all duration-500 hover:-translate-y-1 animate-slideInRight"
+                className="group text-left p-5 sm:p-8 rounded-2xl border-2 border-dark-100 hover:border-teal-400 hover:shadow-[0_12px_40px_-12px_rgba(36,207,214,0.18)] transition-all duration-500 hover:-translate-y-1 animate-slideInRight"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-50 to-cyan-50 group-hover:from-teal-100 group-hover:to-cyan-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105">
                   <PenTool className="w-7 h-7 text-teal-600" strokeWidth={1.8} />
@@ -1180,7 +1180,7 @@ export default function CvBuilderPage() {
                                 className="flex items-center gap-3 flex-wrap"
                               >
                                 <input
-                                  className={`${INPUT} flex-1 min-w-[140px]`}
+                                  className={`${INPUT} flex-1 min-w-0 sm:min-w-[140px]`}
                                   placeholder="Language"
                                   value={lang.language}
                                   onChange={(e) =>

@@ -402,8 +402,8 @@ function CvScorerPage() {
 
   const validateFile = useCallback((f: File): string | null => {
     const ext = f.name.split(".").pop()?.toLowerCase();
-    if (ext !== "pdf" && ext !== "docx")
-      return "Only PDF and DOCX files are accepted.";
+    if (!["pdf", "docx", "doc", "txt", "rtf"].includes(ext || ""))
+      return "Unsupported file type. Upload a PDF, DOCX, DOC, or TXT file.";
     if (f.size > 15 * 1024 * 1024) return "File too large. Maximum 15 MB.";
     return null;
   }, []);
@@ -689,7 +689,7 @@ function CvScorerPage() {
                   <input
                     ref={fileRef}
                     type="file"
-                    accept=".pdf,.docx"
+                    accept=".pdf,.docx,.doc,.txt,.rtf"
                     className="hidden"
                     onChange={onFileChange}
                   />
@@ -726,7 +726,7 @@ function CvScorerPage() {
                           Drop your CV here
                         </p>
                         <p className="text-dark-400 text-sm mt-1">
-                          PDF or DOCX &middot; up to 15 MB
+                          PDF, DOCX, DOC, or TXT &middot; up to 15 MB
                         </p>
                       </div>
                     </div>
@@ -978,7 +978,7 @@ function CvScorerPage() {
               <button
                 onClick={handleScore}
                 disabled={!file || isProcessing}
-                className={`inline-flex items-center gap-3 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
+                className={`inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 ${
                   file && !isProcessing
                     ? "bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 animate-pulseGlow"
                     : "bg-dark-100 text-dark-400 cursor-not-allowed"
@@ -999,7 +999,7 @@ function CvScorerPage() {
         {phase === "scoring" && (
           <div className="flex flex-col items-center justify-center py-20 animate-fadeInUp">
             {/* Multi-ring concentric spinner */}
-            <div className="relative mb-12 w-52 h-52">
+            <div className="relative mb-10 sm:mb-12 w-40 h-40 sm:w-52 sm:h-52">
               {/* Outer ring — slowest */}
               <div
                 className="absolute inset-0 rounded-full border-[3px] border-dark-100 border-t-cyan-400/60 border-r-teal-400/40 animate-spin"
@@ -1037,13 +1037,13 @@ function CvScorerPage() {
             </p>
 
             {/* Step progress cards */}
-            <div className="flex gap-3 mt-10">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-10 px-4">
               {DIMENSION_META.map((d, i) => {
                 const Icon = d.icon;
                 return (
                   <div
                     key={i}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-500 ${
+                    className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-500 ${
                       i === scoringStep
                         ? "bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-md shadow-cyan-500/20 scale-105"
                         : i < scoringStep
@@ -1448,12 +1448,12 @@ function CvScorerPage() {
                   <Globe className="w-4 h-4 inline-block mr-1.5 -mt-0.5 text-cyan-500" />
                   Donor-Specific Tips
                 </p>
-                <div className="relative flex gap-1.5 mb-5 p-1 bg-dark-50 rounded-xl">
+                <div className="relative flex flex-wrap gap-1.5 mb-5 p-1 bg-dark-50 rounded-xl">
                   {Object.keys(result.donor_specific_tips).map((donor) => (
                     <button
                       key={donor}
                       onClick={() => setDonorTab(donor)}
-                      className={`relative z-10 px-5 py-2 rounded-lg text-xs font-bold transition-all duration-300 ${
+                      className={`relative z-10 px-3 sm:px-5 py-2 rounded-lg text-xs font-bold transition-all duration-300 ${
                         donorTab === donor
                           ? "text-white"
                           : "text-dark-500 hover:text-dark-700"

@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { createHash } from "crypto";
+import { calculateCost, logUsage } from "./usage-tracker";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -107,8 +108,10 @@ export async function extractProfileFromCV(
 
   const client = new Anthropic();
 
+  // Haiku 4.5 for profile extraction — simpler structured extraction task
+  const modelId = "claude-haiku-4-5-20251001";
   const response = await client.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: modelId,
     max_tokens: 1500,
     system: SYSTEM_PROMPT,
     messages: [
@@ -117,6 +120,17 @@ export async function extractProfileFromCV(
         content: `Extract profile data from this CV:\n\n${cvText.slice(0, 15000)}`,
       },
     ],
+  });
+
+  // Track usage (non-blocking)
+  const { input_tokens, output_tokens } = response.usage;
+  logUsage({
+    model: modelId,
+    feature: "profile_extract",
+    input_tokens,
+    output_tokens,
+    cost_usd: calculateCost(modelId, input_tokens, output_tokens),
+    cached: false,
   });
 
   const raw =
