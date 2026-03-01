@@ -13,20 +13,27 @@ echo.
 
 cd /d "C:\Users\HP\Claude Projects\devidends"
 
-echo [1/3] Running crawl engine (all sources)...
+echo [1/4] Running crawl engine (all sources)...
 npx tsx scripts/crawl-engine/engine.ts
 if %errorlevel% neq 0 (
     echo WARNING: Crawl engine exited with code %errorlevel%, continuing with available data...
 )
 echo.
 
-echo [2/3] Committing updated data...
+echo [2/4] Broadcasting to Telegram group...
+npx tsx scripts/broadcast-group.ts
+if %errorlevel% neq 0 (
+    echo WARNING: Group broadcast failed, continuing...
+)
+echo.
+
+echo [3/4] Committing updated data...
 git add test-output/*.json
 git diff --cached --quiet
 if %errorlevel% neq 0 (
     git commit -m "Update opportunity data [%date%]"
     echo.
-    echo [3/3] Pushing to GitHub (triggers Vercel deploy)...
+    echo [4/4] Pushing to GitHub (triggers Vercel deploy)...
     git push origin main
 ) else (
     echo No changes to commit, skipping push.

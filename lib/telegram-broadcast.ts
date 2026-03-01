@@ -109,6 +109,113 @@ export async function broadcastToChannel(
 }
 
 // ---------------------------------------------------------------------------
+// Group broadcast (daily digest to devidendstest/jobs topic)
+// ---------------------------------------------------------------------------
+
+/**
+ * Post a single daily digest message to a Telegram group's forum topic.
+ * Uses TELEGRAM_GROUP_ID and TELEGRAM_JOBS_TOPIC_ID env vars.
+ */
+export async function broadcastToGroup(
+  opportunities: SampleOpportunity[]
+): Promise<{ sent: boolean; count: number }> {
+  const groupId = process.env.TELEGRAM_GROUP_ID;
+  const topicId = process.env.TELEGRAM_JOBS_TOPIC_ID;
+
+  if (!groupId) {
+    console.warn("[telegram-broadcast] TELEGRAM_GROUP_ID not set, skipping group broadcast");
+    return { sent: false, count: 0 };
+  }
+
+  if (opportunities.length === 0) {
+    console.log("[telegram-broadcast] No opportunities to broadcast to group");
+    return { sent: false, count: 0 };
+  }
+
+  const bot = getTelegramBot();
+
+  // Group by content type
+  const jobs = opportunities.filter((o) => (o.classified_type || o.type) !== "tender");
+  const tenders = opportunities.filter((o) => (o.classified_type || o.type) === "tender");
+
+  // Build single digest message
+  const today = new Date().toLocaleDateString("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const parts: string[] = [
+    `\ud83d\udce2 <b>Devidends Daily Brief \u2014 ${escHtml(today)}</b>`,
+    `\ud83d\udcca ${opportunities.length} new opportunities today`,
+    "",
+  ];
+
+  if (jobs.length > 0) {
+    parts.push(`\ud83d\udcbc <b>JOBS (${jobs.length})</b>`);
+    parts.push("");
+    for (const opp of jobs.slice(0, 15)) {
+      const title = escHtml(truncate(opp.title, 80));
+      const org = escHtml(truncate(opp.organization, 40));
+      const deadline = opp.deadline
+        ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
+        : "Open";
+      const url = opp.source_url || `${SITE_URL}/opportunities`;
+      parts.push(`\u2022 <a href="${url}">${title}</a>`);
+      parts.push(`  ${org} | \u23f0 ${escHtml(deadline)}`);
+    }
+    if (jobs.length > 15) {
+      parts.push(`  <i>...and ${jobs.length - 15} more</i>`);
+    }
+    parts.push("");
+  }
+
+  if (tenders.length > 0) {
+    parts.push(`\ud83d\udcc4 <b>TENDERS (${tenders.length})</b>`);
+    parts.push("");
+    for (const opp of tenders.slice(0, 10)) {
+      const title = escHtml(truncate(opp.title, 80));
+      const org = escHtml(truncate(opp.organization, 40));
+      const url = opp.source_url || `${SITE_URL}/opportunities`;
+      parts.push(`\u2022 <a href="${url}">${title}</a>`);
+      parts.push(`  ${org}`);
+    }
+    if (tenders.length > 10) {
+      parts.push(`  <i>...and ${tenders.length - 10} more</i>`);
+    }
+    parts.push("");
+  }
+
+  parts.push(`\ud83d\udd17 <a href="${SITE_URL}/opportunities">Browse all on Devidends</a>`);
+  parts.push(`\ud83d\udc64 <a href="${SITE_URL}/subscribe">Subscribe for personalized alerts</a>`);
+
+  const html = parts.join("\n");
+
+  try {
+    const sendOptions: Record<string, unknown> = {
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+    };
+
+    // If topic ID is set, post to that specific forum topic
+    if (topicId) {
+      sendOptions.message_thread_id = parseInt(topicId, 10);
+    }
+
+    await bot.sendMessage(groupId, html, sendOptions);
+
+    console.log(
+      `[telegram-broadcast] Group digest sent: ${opportunities.length} opportunities to ${groupId}${topicId ? ` topic ${topicId}` : ""}`
+    );
+    return { sent: true, count: opportunities.length };
+  } catch (err) {
+    console.error("[telegram-broadcast] Failed to send group digest:", err);
+    return { sent: false, count: 0 };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Subscriber notifications
 // ---------------------------------------------------------------------------
 
