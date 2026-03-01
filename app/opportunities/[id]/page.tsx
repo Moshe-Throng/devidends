@@ -545,6 +545,13 @@ export default function OpportunityDetailPage() {
                   opportunityUrl={opportunity.source_url}
                   variant="button"
                 />
+                <Link
+                  href={`/score?oppId=${opportunity.id}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-base hover:bg-cyan-50 transition-all"
+                >
+                  <Target className="w-5 h-5" />
+                  Score My CV
+                </Link>
               </div>
             )}
 

@@ -584,6 +584,10 @@ function CvScorerPage() {
 
   /* ─── Derived ───────────────────────────────────────────── */
 
+  const hasOpportunity = oppMode === "browse"
+    ? !!selectedOpp
+    : !!(customUrl.trim() || customTor.trim());
+
   const filteredOpps = opportunities.filter((o) => {
     const q = oppSearch.toLowerCase();
     return (
@@ -1017,20 +1021,30 @@ function CvScorerPage() {
             <div className="flex justify-center pt-2">
               <button
                 onClick={handleScore}
-                disabled={!file || isProcessing || scoresRemaining === 0}
+                disabled={!file || isProcessing || scoresRemaining === 0 || !user || !hasOpportunity}
                 className={`inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 ${
-                  file && !isProcessing && scoresRemaining !== 0
+                  file && !isProcessing && scoresRemaining !== 0 && user && hasOpportunity
                     ? "bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 animate-pulseGlow"
                     : "bg-dark-100 text-dark-400 cursor-not-allowed"
                 }`}
               >
                 {isProcessing ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
+                ) : !user ? (
+                  <Lock className="w-5 h-5" />
                 ) : (
                   <Target className="w-5 h-5" />
                 )}
-                {isProcessing ? "Scoring\u2026" : "Score My CV"}
+                {isProcessing ? "Scoring\u2026" : !user ? "Sign in to Score" : !hasOpportunity ? "Select an Opportunity First" : "Score My CV"}
               </button>
+              {!user && (
+                <p className="text-xs text-dark-400 mt-3 text-center">
+                  <Link href="/login" className="text-cyan-600 font-semibold hover:text-cyan-700">Sign in</Link>
+                  {" "}or{" "}
+                  <Link href="/login" className="text-cyan-600 font-semibold hover:text-cyan-700">create an account</Link>
+                  {" "}to score your CV
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -1649,6 +1663,23 @@ function CvScorerPage() {
                 </div>
               </>
             )}
+
+            {/* ── Mobile CTA: Edit CV on desktop ─────────── */}
+            <div className="sm:hidden bg-cyan-50 border border-cyan-200 rounded-xl p-4 text-center">
+              <p className="text-sm font-semibold text-cyan-800">
+                Want to improve your score?
+              </p>
+              <p className="text-xs text-cyan-600 mt-1">
+                Use the CV Builder on desktop to tailor your CV for this role
+              </p>
+              <Link
+                href="/cv-builder"
+                className="inline-flex items-center gap-2 mt-3 px-5 py-2.5 rounded-lg bg-cyan-500 text-white text-sm font-bold"
+              >
+                <Edit3 className="w-3.5 h-3.5" />
+                Open CV Builder
+              </Link>
+            </div>
 
             {/* ── Score Another CV (everyone) ─────────────── */}
             <div className="flex justify-center pt-4 pb-8">
