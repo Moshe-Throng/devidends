@@ -176,14 +176,14 @@ export default function TgAppHome() {
             </div>
           </Link>
 
-          <Link href="/tg-app/score">
+          <Link href="/tg-app/cv-builder">
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
                 <FileText className="w-5 h-5 text-teal-600" />
               </div>
-              <p className="text-sm font-bold text-dark-900">Score CV</p>
+              <p className="text-sm font-bold text-dark-900">Build CV</p>
               <p className="text-[11px] text-dark-400 mt-0.5">
-                AI-powered analysis
+                Donor-ready format
               </p>
             </div>
           </Link>

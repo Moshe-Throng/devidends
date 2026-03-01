@@ -206,7 +206,7 @@ export async function updateTelegramProfile(
   const allowed = [
     "headline", "sectors", "donors", "countries", "skills",
     "qualifications", "linkedin_url", "email", "years_of_experience",
-    "phone",
+    "phone", "cv_structured_data",
   ];
   const safeUpdates: Record<string, unknown> = {};
   for (const key of allowed) {
