@@ -7,67 +7,43 @@ import {
   type RawOpportunity,
 } from "@/lib/opportunity-quality";
 
-const TEST_OUTPUT_DIR = path.join(process.cwd(), "test-output");
-
-const SOURCE_FILES = [
-  "reliefweb.json",
-  "worldbank.json",
-  "unjobs.json",
-  "drc.json",
-  "au.json",
-  "workday.json",
-  "uncareers.json",
-  "kifiya.json",
-  "oracle.json", // kept in list but excluded by quality layer
-];
-
-function parseRawOpportunity(
-  raw: Record<string, unknown>,
-  sourceDomain: string
-): RawOpportunity | null {
-  const title = (raw.title as string) || "";
-  if (!title) return null;
-
-  return {
-    title,
-    organization:
-      (raw.organization as string) || (raw.source as string) || "Unknown",
-    description: (raw.description as string) || "",
-    deadline: (raw.deadline as string) || null,
-    country: (raw.country as string) || "Ethiopia",
-    source_url: (raw.source_url as string) || (raw.url as string) || "",
-    source_domain: (raw.source_domain as string) || sourceDomain,
-    type: (raw.type as string) || "job",
-  };
-}
+const NORMALIZED_FILE = path.join(
+  process.cwd(),
+  "test-output",
+  "_all_normalized.json"
+);
 
 function loadAndProcessOpportunities(): SampleOpportunity[] {
-  const rawItems: RawOpportunity[] = [];
-
-  for (const file of SOURCE_FILES) {
-    const filePath = path.join(TEST_OUTPUT_DIR, file);
-    if (!fs.existsSync(filePath)) continue;
-
-    try {
-      const raw = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      const items = Array.isArray(raw)
-        ? raw
-        : Array.isArray(raw.opportunities)
-          ? raw.opportunities
-          : [];
-
-      const sourceDomain = file.replace(".json", "");
-
-      for (const item of items) {
-        const parsed = parseRawOpportunity(item, sourceDomain);
-        if (parsed) rawItems.push(parsed);
-      }
-    } catch {
-      // Skip malformed files
-    }
+  if (!fs.existsSync(NORMALIZED_FILE)) {
+    return [];
   }
 
-  return processOpportunities(rawItems);
+  try {
+    const raw = JSON.parse(fs.readFileSync(NORMALIZED_FILE, "utf-8"));
+    const items: Record<string, unknown>[] = Array.isArray(raw) ? raw : [];
+
+    const rawItems: RawOpportunity[] = [];
+    for (const item of items) {
+      const title = (item.title as string) || "";
+      if (!title) continue;
+
+      rawItems.push({
+        title,
+        organization:
+          (item.organization as string) || (item.source as string) || "Unknown",
+        description: (item.description as string) || "",
+        deadline: (item.deadline as string) || null,
+        country: (item.country as string) || "Ethiopia",
+        source_url: (item.source_url as string) || "",
+        source_domain: (item.source_domain as string) || "",
+        type: (item.content_type as string) || (item.type as string) || "job",
+      });
+    }
+
+    return processOpportunities(rawItems);
+  } catch {
+    return [];
+  }
 }
 
 export async function GET(req: NextRequest) {
