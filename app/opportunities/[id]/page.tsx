@@ -136,21 +136,89 @@ function isSparse(desc: string | null | undefined): boolean {
   return !cleanDescription(desc);
 }
 
-/** Render description as paragraphs, preserving line breaks */
-function renderDescription(text: string) {
-  return text.split(/\n\n+/).map((paragraph, pIdx) => {
-    const lines = paragraph.split(/\n/);
-    return (
-      <p key={pIdx} className="mb-4 last:mb-0">
-        {lines.map((line, lIdx) => (
-          <span key={lIdx}>
-            {lIdx > 0 && <br />}
-            {line}
-          </span>
-        ))}
-      </p>
-    );
+/** Render a single line with inline formatting (bold) */
+function renderInline(text: string) {
+  // Handle **bold** and __bold__
+  const parts = text.split(/(\*\*[^*]+\*\*|__[^_]+__)/g);
+  return parts.map((part, i) => {
+    if (/^\*\*(.+)\*\*$/.test(part) || /^__(.+)__$/.test(part)) {
+      return <strong key={i}>{part.replace(/^\*\*|\*\*$|^__|__$/g, "")}</strong>;
+    }
+    return <span key={i}>{part}</span>;
   });
+}
+
+/** Render description with smart formatting (bullets, headers, numbered lists) */
+function renderDescription(text: string) {
+  const blocks = text.split(/\n\n+/);
+  const elements: React.ReactNode[] = [];
+
+  for (let bIdx = 0; bIdx < blocks.length; bIdx++) {
+    const block = blocks[bIdx].trim();
+    if (!block) continue;
+    const lines = block.split(/\n/);
+
+    // Check if this block is a list (all lines start with bullet/number)
+    const isBulletList = lines.every((l) => /^\s*[-•●▪◦]\s/.test(l));
+    const isNumberedList = lines.every((l) => /^\s*\d+[.)]\s/.test(l));
+
+    if (isBulletList) {
+      elements.push(
+        <ul key={bIdx} className="mb-4 last:mb-0 list-disc list-inside space-y-1">
+          {lines.map((line, i) => (
+            <li key={i} className="text-sm text-dark-600">
+              {renderInline(line.replace(/^\s*[-•●▪◦]\s*/, ""))}
+            </li>
+          ))}
+        </ul>
+      );
+    } else if (isNumberedList) {
+      elements.push(
+        <ol key={bIdx} className="mb-4 last:mb-0 list-decimal list-inside space-y-1">
+          {lines.map((line, i) => (
+            <li key={i} className="text-sm text-dark-600">
+              {renderInline(line.replace(/^\s*\d+[.)]\s*/, ""))}
+            </li>
+          ))}
+        </ol>
+      );
+    } else {
+      // Mixed content — render line by line
+      for (let lIdx = 0; lIdx < lines.length; lIdx++) {
+        const line = lines[lIdx].trim();
+        if (!line) continue;
+
+        // Header-like line (short, title case or ALL CAPS, no period at end)
+        if (
+          line.length < 80 &&
+          !line.endsWith(".") &&
+          (/^[A-Z][A-Z\s&/,:-]+$/.test(line) || /^#{1,3}\s/.test(line))
+        ) {
+          elements.push(
+            <h4 key={`${bIdx}-${lIdx}`} className="text-sm font-bold text-dark-800 mt-4 mb-2 first:mt-0">
+              {line.replace(/^#{1,3}\s*/, "")}
+            </h4>
+          );
+        } else if (/^\s*[-•●▪◦]\s/.test(line)) {
+          // Lone bullet in a mixed block
+          elements.push(
+            <div key={`${bIdx}-${lIdx}`} className="flex gap-2 mb-1 ml-2">
+              <span className="text-cyan-500 mt-0.5">&#8226;</span>
+              <span className="text-sm text-dark-600">{renderInline(line.replace(/^\s*[-•●▪◦]\s*/, ""))}</span>
+            </div>
+          );
+        } else {
+          elements.push(
+            <p key={`${bIdx}-${lIdx}`} className="mb-3 last:mb-0">
+              {renderInline(line)}
+            </p>
+          );
+        }
+      }
+    }
+  }
+
+  return elements;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -444,9 +512,16 @@ export default function OpportunityDetailPage() {
                 <p className="text-sm text-dark-500 font-medium">
                   Full details available on the application page
                 </p>
-                <p className="text-xs text-dark-400 mt-1">
-                  Use the Apply button below to view the complete listing
-                </p>
+                {opportunity.source_url && (
+                  <a
+                    href={opportunity.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 text-sm text-cyan-600 font-semibold hover:text-cyan-700"
+                  >
+                    View original posting <ChevronRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             )}
 

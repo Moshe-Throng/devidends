@@ -63,7 +63,11 @@
       "deadlineSelector": ".timestamp.deadline",
       "publishedSelector": ".timestamp.published",
       "countryFromTitle": true,
-      "defaultCountry": "Unknown"
+      "defaultCountry": "Unknown",
+      "fetchDetails": true,
+      "detailSelector": ".node-inner .field--name-field-body, .job-description, .field--type-text-long",
+      "detailDelay": 1500,
+      "maxDetails": 20
     }
   },
   {
