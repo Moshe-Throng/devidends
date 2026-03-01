@@ -416,62 +416,38 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            {/* ── Danger Zone ──────────────────────────────── */}
+            {/* ── Sign Out ──────────────────────────────── */}
             <div
-              className="bg-white rounded-xl border border-red-200 shadow-sm p-6 animate-fadeInUp"
+              className="bg-white rounded-xl border border-dark-100 shadow-sm p-6 animate-fadeInUp"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center">
-                  <AlertCircle className="w-4.5 h-4.5 text-red-500" />
-                </div>
+              <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-sm font-bold text-dark-900">
-                    Danger Zone
-                  </h2>
+                  <p className="text-sm font-semibold text-dark-700">
+                    Sign out
+                  </p>
                   <p className="text-xs text-dark-400">
-                    Irreversible account actions
+                    Sign out of your account on this device
                   </p>
                 </div>
+                <button
+                  onClick={() => signOut()}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dark-200 text-sm font-semibold text-dark-600 hover:bg-dark-50 transition-colors"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Sign Out
+                </button>
               </div>
+            </div>
 
-              <div className="space-y-3 border-t border-red-100 pt-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-semibold text-dark-700">
-                      Sign out
-                    </p>
-                    <p className="text-xs text-dark-400">
-                      Sign out of your account on this device
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => signOut()}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-dark-200 text-sm font-semibold text-dark-600 hover:bg-dark-50 transition-colors"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Sign Out
-                  </button>
-                </div>
-
-                <div className="flex items-center justify-between pt-2 border-t border-red-100">
-                  <div>
-                    <p className="text-sm font-semibold text-dark-700">
-                      Delete account
-                    </p>
-                    <p className="text-xs text-dark-400">
-                      Permanently delete your account and all data
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => setShowDeleteModal(true)}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-red-200 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                    Delete
-                  </button>
-                </div>
-              </div>
+            {/* ── Delete account (subtle) ─── */}
+            <div className="text-center pt-4">
+              <button
+                onClick={() => setShowDeleteModal(true)}
+                className="text-xs text-dark-300 hover:text-dark-500 transition-colors"
+              >
+                Need to delete your account?
+              </button>
             </div>
           </>
         )}

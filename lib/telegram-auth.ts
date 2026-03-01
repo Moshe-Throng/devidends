@@ -215,6 +215,49 @@ export async function updateTelegramProfile(
     }
   }
 
+  // If email is being set, check if a web profile exists with that email → merge
+  if (safeUpdates.email && typeof safeUpdates.email === "string") {
+    const { data: webProfile } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("email", safeUpdates.email)
+      .neq("telegram_id", telegramId)
+      .single();
+
+    if (webProfile) {
+      // Merge: link TG identity to the existing web profile
+      const { data: tgProfile } = await supabase
+        .from("profiles")
+        .select("telegram_username")
+        .eq("telegram_id", telegramId)
+        .single();
+
+      await supabase
+        .from("profiles")
+        .update({
+          telegram_id: telegramId,
+          telegram_username: tgProfile?.telegram_username || null,
+          ...safeUpdates,
+        })
+        .eq("id", webProfile.id);
+
+      // Delete the old TG-only profile to avoid duplicates
+      await supabase
+        .from("profiles")
+        .delete()
+        .eq("telegram_id", telegramId)
+        .neq("id", webProfile.id);
+
+      const { data: merged } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", webProfile.id)
+        .single();
+
+      return merged;
+    }
+  }
+
   // Recalculate profile completeness
   const fields = ["headline", "sectors", "donors", "countries", "skills", "qualifications", "linkedin_url"];
   let filled = 1; // name always counts

@@ -81,9 +81,9 @@ export async function POST(req: NextRequest) {
         return errorJson("No file provided. Upload a PDF or DOCX.");
       }
 
-      const fileType = detectFileType(file.name);
+      const fileType = detectFileType(file.name, file.type);
       if (fileType === "unknown") {
-        return errorJson("Unsupported file type. Upload a PDF or DOCX.");
+        return errorJson("Unsupported file type. Upload a PDF, DOCX, or DOC file.");
       }
 
       if (file.size > MAX_FILE_SIZE) {
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
       }
 
       const buffer = Buffer.from(await file.arrayBuffer());
-      cvText = await extractText(buffer, file.name);
+      cvText = await extractText(buffer, file.name, file.type);
 
       opportunity = parseOpportunity(formData.get("opportunity"));
     } else {
