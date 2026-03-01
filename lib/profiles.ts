@@ -107,6 +107,39 @@ export async function updateProfile(
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   STRUCTURED CV DATA (used by CV Builder)
+   ═══════════════════════════════════════════════════════════════ */
+
+/** Save structured CV data to the profile */
+export async function saveCvStructuredData(
+  supabase: AnySupabase,
+  userId: string,
+  cvData: Record<string, unknown>
+): Promise<void> {
+  const { error } = await supabase
+    .from("profiles")
+    .update({ cv_structured_data: cvData })
+    .eq("user_id", userId);
+
+  if (error) throw new Error(`Failed to save CV data: ${error.message}`);
+}
+
+/** Load structured CV data from the profile */
+export async function getCvStructuredData(
+  supabase: AnySupabase,
+  userId: string
+): Promise<Record<string, unknown> | null> {
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("cv_structured_data")
+    .eq("user_id", userId)
+    .single();
+
+  if (error || !data) return null;
+  return (data as { cv_structured_data: Record<string, unknown> | null }).cv_structured_data;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    PROFILE SCORE CALCULATION (pure function)
    ═══════════════════════════════════════════════════════════════ */
 

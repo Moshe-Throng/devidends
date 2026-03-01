@@ -118,7 +118,6 @@ function filledCount(data: StructuredCvData): number {
 
 const CACHE_KEY_PREFIX = "dv_cv_extract_";
 const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
-const CV_BUILDER_KEY_PREFIX = "dv_cv_builder_";
 
 async function hashFile(file: File): Promise<string> {
   const buf = await file.arrayBuffer();
@@ -232,37 +231,31 @@ export default function CvBuilderPage() {
     }
   }, [user, authLoading]);
 
-  // Auto-load saved CV data from localStorage on mount
-  const [loadedFromStorage, setLoadedFromStorage] = useState(false);
+  // Auto-load saved CV data from Supabase on mount
+  const [loadedFromDb, setLoadedFromDb] = useState(false);
   useEffect(() => {
-    if (authLoading || loadedFromStorage) return;
-    if (!user) { setLoadedFromStorage(true); return; }
+    if (authLoading || loadedFromDb) return;
+    if (!user) { setLoadedFromDb(true); return; }
 
     // Don't override if already past entry (e.g. OAuth restore set download phase)
-    if (phase !== "entry") { setLoadedFromStorage(true); return; }
+    if (phase !== "entry") { setLoadedFromDb(true); return; }
 
-    try {
-      const key = CV_BUILDER_KEY_PREFIX + user.id;
-      const raw = localStorage.getItem(key);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed.cvData?.personal?.full_name) {
-          setCvData(parsed.cvData);
-          setPhase("editing");
-          setLoadedFromStorage(true);
-          return;
-        }
-      }
-    } catch {
-      // Corrupted data — ignore
-    }
-
-    // No saved CV data — pre-fill from profile if available
     (async () => {
       try {
         const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
-        const { getProfile } = await import("@/lib/profiles");
+        const { getCvStructuredData, getProfile } = await import("@/lib/profiles");
         const supabase = createSupabaseBrowser();
+
+        // Try loading full structured CV data first
+        const saved = await getCvStructuredData(supabase, user.id);
+        if (saved && (saved as any)?.personal?.full_name) {
+          setCvData(saved as unknown as StructuredCvData);
+          setPhase("editing");
+          setLoadedFromDb(true);
+          return;
+        }
+
+        // No structured data — pre-fill from profile fields
         const profile = await getProfile(supabase, user.id);
         if (profile) {
           setCvData((prev) => ({
@@ -278,13 +271,13 @@ export default function CvBuilderPage() {
           }));
         }
       } catch {
-        // Profile fetch failed — continue with empty data
+        // DB fetch failed — continue with empty data
       }
-      setLoadedFromStorage(true);
+      setLoadedFromDb(true);
     })();
-  }, [user, authLoading, loadedFromStorage, phase]);
+  }, [user, authLoading, loadedFromDb, phase]);
 
-  // Auto-save CV data to localStorage on edits (debounced)
+  // Auto-save CV data to Supabase on edits (debounced 2s)
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     if (!user) return;
@@ -292,14 +285,16 @@ export default function CvBuilderPage() {
     if (!cvData.personal.full_name.trim()) return;
 
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-    saveTimerRef.current = setTimeout(() => {
+    saveTimerRef.current = setTimeout(async () => {
       try {
-        const key = CV_BUILDER_KEY_PREFIX + user.id;
-        localStorage.setItem(key, JSON.stringify({ cvData, savedAt: Date.now() }));
+        const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+        const { saveCvStructuredData } = await import("@/lib/profiles");
+        const supabase = createSupabaseBrowser();
+        await saveCvStructuredData(supabase, user.id, cvData as unknown as Record<string, unknown>);
       } catch {
-        // Storage full — ignore
+        // Save failed — silently ignore (will retry on next edit)
       }
-    }, 1000);
+    }, 2000);
 
     return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
   }, [user, phase, cvData]);
@@ -759,9 +754,13 @@ export default function CvBuilderPage() {
               </button>
 
               <button
-                onClick={() => {
+                onClick={async () => {
                   if (user) {
-                    try { localStorage.removeItem(CV_BUILDER_KEY_PREFIX + user.id); } catch {}
+                    try {
+                      const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+                      const { saveCvStructuredData } = await import("@/lib/profiles");
+                      await saveCvStructuredData(createSupabaseBrowser(), user.id, null as unknown as Record<string, unknown>);
+                    } catch {}
                   }
                   setCvData(emptyCvData());
                   setPhase("editing");
@@ -939,16 +938,20 @@ export default function CvBuilderPage() {
         {/* ─────────────── EDITING PHASE ─────────────── */}
         {phase === "editing" && (
           <div className="animate-fadeInUp space-y-8">
-            {/* Loaded-from-storage notice */}
-            {loadedFromStorage && confidence === 0 && cvData.personal.full_name.trim() && (
+            {/* Loaded-from-DB notice */}
+            {loadedFromDb && confidence === 0 && cvData.personal.full_name.trim() && (
               <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-dark-50/60 border border-dark-100">
                 <p className="text-sm text-dark-600">
                   Continuing with your saved CV.
                 </p>
                 <button
-                  onClick={() => {
+                  onClick={async () => {
                     if (user) {
-                      try { localStorage.removeItem(CV_BUILDER_KEY_PREFIX + user.id); } catch {}
+                      try {
+                        const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+                        const { saveCvStructuredData } = await import("@/lib/profiles");
+                        await saveCvStructuredData(createSupabaseBrowser(), user.id, null as unknown as Record<string, unknown>);
+                      } catch {}
                     }
                     setCvData(emptyCvData());
                     setConfidence(0);

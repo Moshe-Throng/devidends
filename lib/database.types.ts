@@ -29,6 +29,7 @@ export type Profile = {
   source: string;
   is_public: boolean;
   version: number;
+  cv_structured_data: Record<string, unknown> | null;
   created_at: string;
   updated_at: string;
 };
