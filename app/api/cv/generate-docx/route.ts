@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateWbCvDocx } from "@/lib/cv-docx-generator";
+import { generateCvDocx } from "@/lib/cv-docx-generator";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limiter";
-import type { StructuredCvData, GenerateDocxError } from "@/lib/types/cv-data";
+import type { StructuredCvData, GenerateDocxError, CvTemplate } from "@/lib/types/cv-data";
 
 const RATE_LIMIT = 30; // per hour (no AI cost, pure code)
 const RATE_WINDOW = 60 * 60 * 1000;
@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
     const cvData = body.cv_data as StructuredCvData | undefined;
+    const template = (body.template as CvTemplate) || "wb-standard";
 
     if (!cvData || !cvData.personal) {
       return errorJson("Missing cv_data with personal information.");
@@ -36,17 +37,17 @@ export async function POST(req: NextRequest) {
       return errorJson("Full name is required.");
     }
 
-    const buffer = await generateWbCvDocx(cvData);
-    const base64 = buffer.toString("base64");
+    const validTemplates: CvTemplate[] = ["wb-standard", "europass", "au-standard", "un-php", "generic-professional"];
+    if (!validTemplates.includes(template)) {
+      return errorJson(`Invalid template. Choose from: ${validTemplates.join(", ")}`);
+    }
 
-    const safeName = cvData.personal.full_name
-      .replace(/[^a-zA-Z0-9 ]/g, "")
-      .replace(/\s+/g, "_")
-      .slice(0, 40);
+    const { buffer, filename } = await generateCvDocx(cvData, template);
+    const base64 = buffer.toString("base64");
 
     return NextResponse.json({
       success: true,
-      filename: `CV_${safeName}_WB_Format.docx`,
+      filename,
       docx_base64: base64,
     });
   } catch (err: unknown) {

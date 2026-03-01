@@ -185,12 +185,21 @@ export default function CvBuilderPage() {
   const [countryInput, setCountryInput] = useState("");
   const [certInput, setCertInput] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<
-    "wb-standard" | "custom"
+    "wb-standard" | "europass" | "au-standard" | "un-php" | "generic-professional"
   >("wb-standard");
   const [docxResult, setDocxResult] = useState<{
     filename: string;
     docx_base64: string;
   } | null>(null);
+
+  // AI Suggestions state
+  const [suggestions, setSuggestions] = useState<
+    { section: string; field?: string; text: string; suggestion: string; suggested_edit?: string; priority: "high" | "medium" | "low" }[]
+  >([]);
+  const [suggestionsNote, setSuggestionsNote] = useState("");
+  const [suggestionsLoading, setSuggestionsLoading] = useState(false);
+  const [suggestionsRemaining, setSuggestionsRemaining] = useState<number | null>(null);
+  const [dismissedSuggestions, setDismissedSuggestions] = useState<Set<number>>(new Set());
 
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -356,6 +365,61 @@ export default function CvBuilderPage() {
     } finally {
       setIsProcessing(false);
     }
+  };
+
+  const handleGetSuggestions = async () => {
+    if (suggestionsLoading || !user) return;
+    setSuggestionsLoading(true);
+    setError(null);
+    setDismissedSuggestions(new Set());
+
+    try {
+      const res = await fetch("/api/cv/suggest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cv_data: cvData }),
+      });
+      const json = await res.json();
+
+      if (!json.success) throw new Error(json.error || "Suggestion failed");
+
+      setSuggestions(json.data.suggestions || []);
+      setSuggestionsNote(json.data.overall_notes || "");
+      if (json.remaining !== undefined) setSuggestionsRemaining(json.remaining);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Could not get suggestions.");
+    } finally {
+      setSuggestionsLoading(false);
+    }
+  };
+
+  const handleAcceptSuggestion = (index: number) => {
+    const s = suggestions[index];
+    if (!s?.suggested_edit) return;
+
+    // Apply the suggested edit to the CV data
+    if (s.section === "summary" && s.suggested_edit) {
+      setCvData((prev) => ({ ...prev, professional_summary: s.suggested_edit! }));
+    } else if (s.section === "skills" && s.suggested_edit) {
+      setCvData((prev) => ({ ...prev, key_qualifications: s.suggested_edit! }));
+    } else if (s.section.startsWith("experience_")) {
+      const idx = parseInt(s.section.split("_")[1], 10);
+      if (!isNaN(idx) && s.suggested_edit) {
+        setCvData((prev) => {
+          const emp = [...prev.employment];
+          if (emp[idx]) {
+            emp[idx] = { ...emp[idx], description_of_duties: s.suggested_edit! };
+          }
+          return { ...prev, employment: emp };
+        });
+      }
+    }
+
+    setDismissedSuggestions((prev) => new Set(prev).add(index));
+  };
+
+  const handleDismissSuggestion = (index: number) => {
+    setDismissedSuggestions((prev) => new Set(prev).add(index));
   };
 
   const handleGenerate = async () => {
@@ -810,6 +874,116 @@ export default function CvBuilderPage() {
                   </span>
                   . Review each section below.
                 </p>
+              </div>
+            )}
+
+            {/* AI Suggestions panel */}
+            {user && (
+              <div className="space-y-3">
+                {suggestions.length === 0 && !suggestionsLoading && (
+                  <button
+                    onClick={handleGetSuggestions}
+                    disabled={suggestionsLoading || !cvData.personal.full_name.trim()}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-amber-200 bg-amber-50/50 text-amber-700 text-sm font-semibold hover:bg-amber-100/60 transition-all disabled:opacity-40 disabled:pointer-events-none"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    Get AI Suggestions
+                    {suggestionsRemaining !== null && (
+                      <span className="text-xs text-amber-500 font-normal ml-1">
+                        ({suggestionsRemaining} remaining)
+                      </span>
+                    )}
+                  </button>
+                )}
+
+                {suggestionsLoading && (
+                  <div className="flex items-center gap-2 p-4 rounded-xl bg-amber-50/60 border border-amber-100">
+                    <Loader2 className="w-4 h-4 text-amber-600 animate-spin" />
+                    <p className="text-sm text-amber-700">Analyzing your CV for improvements...</p>
+                  </div>
+                )}
+
+                {suggestions.length > 0 && (
+                  <div className="rounded-xl border border-amber-200 bg-amber-50/30 overflow-hidden">
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-amber-100">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-amber-600" />
+                        <span className="text-sm font-bold text-amber-800">
+                          AI Suggestions ({suggestions.filter((_, i) => !dismissedSuggestions.has(i)).length})
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => { setSuggestions([]); setSuggestionsNote(""); setDismissedSuggestions(new Set()); }}
+                        className="text-xs text-amber-500 hover:text-amber-700 font-medium"
+                      >
+                        Clear All
+                      </button>
+                    </div>
+
+                    {suggestionsNote && (
+                      <p className="px-4 py-2 text-xs text-amber-700 bg-amber-50/60 border-b border-amber-100">
+                        {suggestionsNote}
+                      </p>
+                    )}
+
+                    <div className="divide-y divide-amber-100">
+                      {suggestions.map((s, i) => {
+                        if (dismissedSuggestions.has(i)) return null;
+                        const priorityColors = {
+                          high: "bg-red-100 text-red-700",
+                          medium: "bg-amber-100 text-amber-700",
+                          low: "bg-dark-100 text-dark-500",
+                        };
+                        return (
+                          <div key={i} className="px-4 py-3 space-y-1.5">
+                            <div className="flex items-start gap-2">
+                              <span className={`inline-flex px-1.5 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider flex-shrink-0 mt-0.5 ${priorityColors[s.priority]}`}>
+                                {s.priority}
+                              </span>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-xs font-medium text-dark-500 mb-0.5">
+                                  {s.section.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}
+                                  {s.field && <span className="text-dark-300"> &middot; {s.field}</span>}
+                                </p>
+                                <p className="text-sm text-dark-700">{s.suggestion}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 pl-10">
+                              {s.suggested_edit && (
+                                <button
+                                  onClick={() => handleAcceptSuggestion(i)}
+                                  className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-colors"
+                                >
+                                  <Check className="w-3 h-3" /> Apply
+                                </button>
+                              )}
+                              <button
+                                onClick={() => handleDismissSuggestion(i)}
+                                className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg bg-dark-100 text-dark-400 hover:bg-dark-200 transition-colors"
+                              >
+                                <X className="w-3 h-3" /> Dismiss
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="px-4 py-2 border-t border-amber-100 bg-amber-50/40">
+                      <button
+                        onClick={handleGetSuggestions}
+                        disabled={suggestionsLoading}
+                        className="text-xs font-semibold text-amber-600 hover:text-amber-800 flex items-center gap-1"
+                      >
+                        <RefreshCw className="w-3 h-3" /> Refresh Suggestions
+                        {suggestionsRemaining !== null && (
+                          <span className="text-amber-400 font-normal ml-1">({suggestionsRemaining} left)</span>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
@@ -1458,7 +1632,7 @@ export default function CvBuilderPage() {
 
         {/* ─────────────── TEMPLATE PHASE ─────────────── */}
         {phase === "template" && (
-          <div className="max-w-2xl mx-auto animate-fadeInUp space-y-6">
+          <div className="max-w-3xl mx-auto animate-fadeInUp space-y-6">
             <button
               onClick={() => setPhase("editing")}
               className="flex items-center gap-1.5 text-sm text-dark-400 hover:text-dark-700 font-medium transition-colors"
@@ -1466,62 +1640,114 @@ export default function CvBuilderPage() {
               <ArrowLeft className="w-4 h-4" /> Back to Editor
             </button>
 
-            <h2 className="text-xl font-extrabold text-dark-900">
-              Select Template
-            </h2>
+            <div>
+              <h2 className="text-xl font-extrabold text-dark-900">
+                Select Template
+              </h2>
+              <p className="text-sm text-dark-400 mt-1">
+                Choose the format that best matches your target organization.
+              </p>
+            </div>
 
-            <div className="space-y-3">
-              {/* WB Standard */}
-              <button
-                onClick={() => setSelectedTemplate("wb-standard")}
-                className={`w-full text-left p-5 rounded-xl border-2 transition-all duration-200 ${
-                  selectedTemplate === "wb-standard"
-                    ? "border-cyan-500 bg-cyan-50/30 shadow-md shadow-cyan-500/10"
-                    : "border-dark-100 hover:border-dark-200"
-                }`}
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                      selectedTemplate === "wb-standard"
-                        ? "border-cyan-500"
-                        : "border-dark-200"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {([
+                {
+                  id: "wb-standard" as const,
+                  name: "World Bank Standard",
+                  org: "WB / UNDP / GIZ",
+                  desc: "Standard consulting proposal CV used by World Bank, UNDP, GIZ, and other multilateral donors.",
+                  color: "cyan",
+                  badge: "Most Popular",
+                },
+                {
+                  id: "europass" as const,
+                  name: "Europass",
+                  org: "EU / EuropeAid",
+                  desc: "EU standard format with CEFR language grid and competence sections. Widely used for EU-funded projects.",
+                  color: "blue",
+                  badge: null,
+                },
+                {
+                  id: "au-standard" as const,
+                  name: "African Union",
+                  org: "AU / AfDB / AUDA-NEPAD",
+                  desc: "AU-specific format with nationality emphasis, AU working languages, and competency framework.",
+                  color: "green",
+                  badge: null,
+                },
+                {
+                  id: "un-php" as const,
+                  name: "UN PHP",
+                  org: "UN Agencies",
+                  desc: "UN Personal History Profile format. Formal numbered sections used across all UN agency applications.",
+                  color: "indigo",
+                  badge: null,
+                },
+                {
+                  id: "generic-professional" as const,
+                  name: "Professional",
+                  org: "NGOs / Consulting Firms",
+                  desc: "Clean, modern format suitable for NGOs, INGOs, consulting firms, and private sector applications.",
+                  color: "slate",
+                  badge: null,
+                },
+              ]).map((tmpl) => {
+                const isSelected = selectedTemplate === tmpl.id;
+                const colorMap: Record<string, { border: string; bg: string; shadow: string; radio: string; badge: string }> = {
+                  cyan: { border: "border-cyan-500", bg: "bg-cyan-50/30", shadow: "shadow-cyan-500/10", radio: "border-cyan-500", badge: "bg-cyan-100 text-cyan-700" },
+                  blue: { border: "border-blue-500", bg: "bg-blue-50/30", shadow: "shadow-blue-500/10", radio: "border-blue-500", badge: "" },
+                  green: { border: "border-emerald-500", bg: "bg-emerald-50/30", shadow: "shadow-emerald-500/10", radio: "border-emerald-500", badge: "" },
+                  indigo: { border: "border-indigo-500", bg: "bg-indigo-50/30", shadow: "shadow-indigo-500/10", radio: "border-indigo-500", badge: "" },
+                  slate: { border: "border-dark-400", bg: "bg-dark-50/30", shadow: "shadow-dark-400/10", radio: "border-dark-400", badge: "" },
+                };
+                const colors = colorMap[tmpl.color] || colorMap.cyan;
+
+                return (
+                  <button
+                    key={tmpl.id}
+                    onClick={() => setSelectedTemplate(tmpl.id)}
+                    className={`relative w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${
+                      isSelected
+                        ? `${colors.border} ${colors.bg} shadow-md ${colors.shadow}`
+                        : "border-dark-100 hover:border-dark-200"
                     }`}
                   >
-                    {selectedTemplate === "wb-standard" && (
-                      <div className="w-2.5 h-2.5 rounded-full bg-cyan-500" />
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-dark-900">
-                      World Bank / UN Standard
-                    </p>
-                    <p className="text-xs text-dark-400 mt-0.5">
-                      Standard consulting proposal CV format used by WB, UNDP,
-                      GIZ, and other major donors.
-                    </p>
-                  </div>
-                </div>
-              </button>
-
-              {/* Custom (disabled) */}
-              <div className="relative w-full text-left p-5 rounded-xl border-2 border-dark-100 opacity-50 cursor-not-allowed">
-                <div className="flex items-start gap-4">
-                  <div className="w-5 h-5 rounded-full border-2 border-dark-200 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-bold text-dark-900">
-                      Upload Custom Template
-                      <span className="ml-2 inline-flex items-center px-2 py-0.5 text-[10px] font-bold rounded-full bg-dark-100 text-dark-400 uppercase tracking-wider">
-                        Coming Soon
+                    {tmpl.badge && (
+                      <span className={`absolute -top-2.5 right-3 inline-flex items-center px-2 py-0.5 text-[10px] font-bold rounded-full uppercase tracking-wider ${colors.badge}`}>
+                        {tmpl.badge}
                       </span>
-                    </p>
-                    <p className="text-xs text-dark-400 mt-0.5">
-                      Upload a DOCX file with {"{{placeholder}}"} tags for
-                      custom formatting.
-                    </p>
-                  </div>
-                </div>
-              </div>
+                    )}
+                    <div className="flex items-start gap-3">
+                      <div
+                        className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                          isSelected ? colors.radio : "border-dark-200"
+                        }`}
+                      >
+                        {isSelected && (
+                          <div className={`w-2 h-2 rounded-full ${
+                            tmpl.color === "cyan" ? "bg-cyan-500" :
+                            tmpl.color === "blue" ? "bg-blue-500" :
+                            tmpl.color === "green" ? "bg-emerald-500" :
+                            tmpl.color === "indigo" ? "bg-indigo-500" :
+                            "bg-dark-400"
+                          }`} />
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-dark-900 leading-tight">
+                          {tmpl.name}
+                        </p>
+                        <p className="text-[11px] font-medium text-dark-400 mt-0.5">
+                          {tmpl.org}
+                        </p>
+                        <p className="text-xs text-dark-400 mt-1.5 leading-relaxed">
+                          {tmpl.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
             <button
@@ -1534,7 +1760,13 @@ export default function CvBuilderPage() {
               ) : (
                 <FileCheck className="w-4 h-4" />
               )}
-              Generate CV
+              Generate CV — {
+                selectedTemplate === "wb-standard" ? "World Bank" :
+                selectedTemplate === "europass" ? "Europass" :
+                selectedTemplate === "au-standard" ? "African Union" :
+                selectedTemplate === "un-php" ? "UN PHP" :
+                "Professional"
+              } Format
             </button>
           </div>
         )}

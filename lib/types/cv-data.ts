@@ -70,9 +70,16 @@ export interface ExtractCvError {
   error: string;
 }
 
+export type CvTemplate =
+  | "wb-standard"
+  | "europass"
+  | "au-standard"
+  | "un-php"
+  | "generic-professional";
+
 export interface GenerateDocxRequest {
   cv_data: StructuredCvData;
-  template: "wb-standard" | "custom";
+  template: CvTemplate;
   custom_template_base64?: string;
 }
 
