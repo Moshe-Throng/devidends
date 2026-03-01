@@ -45,16 +45,9 @@ $$;
 -- 3. FULL-TEXT SEARCH ON PROFILES (Phase 3D)
 -- ══════════════════════════════════════════════════════════════
 
--- Weighted tsvector: skills/headline (A) rank higher than full CV text (C)
+-- Add tsvector column (plain column, NOT generated — to_tsvector is STABLE, not IMMUTABLE)
 ALTER TABLE profiles
-  ADD COLUMN IF NOT EXISTS cv_search tsvector
-    GENERATED ALWAYS AS (
-      setweight(to_tsvector('english', coalesce(headline, '')), 'A') ||
-      setweight(to_tsvector('english', coalesce(array_to_string(skills, ' '), '')), 'A') ||
-      setweight(to_tsvector('english', coalesce(qualifications, '')), 'B') ||
-      setweight(to_tsvector('english', coalesce(cv_text, '')), 'C') ||
-      setweight(to_tsvector('english', coalesce(name, '')), 'D')
-    ) STORED;
+  ADD COLUMN IF NOT EXISTS cv_search tsvector;
 
 -- GIN index for fast FTS queries
 CREATE INDEX IF NOT EXISTS idx_profiles_search ON profiles USING GIN (cv_search);
@@ -64,6 +57,35 @@ ALTER TABLE profiles
   ADD COLUMN IF NOT EXISTS skills_normalized TEXT[] DEFAULT '{}';
 
 CREATE INDEX IF NOT EXISTS idx_profiles_skills_norm ON profiles USING GIN (skills_normalized);
+
+-- Trigger function: recompute cv_search on every insert/update
+CREATE OR REPLACE FUNCTION profiles_update_search_vector()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.cv_search :=
+    setweight(to_tsvector('english', coalesce(NEW.headline, '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(array_to_string(NEW.skills, ' '), '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(NEW.qualifications, '')), 'B') ||
+    setweight(to_tsvector('english', coalesce(NEW.cv_text, '')), 'C') ||
+    setweight(to_tsvector('english', coalesce(NEW.name, '')), 'D');
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_profiles_search_vector ON profiles;
+CREATE TRIGGER trg_profiles_search_vector
+  BEFORE INSERT OR UPDATE ON profiles
+  FOR EACH ROW
+  EXECUTE FUNCTION profiles_update_search_vector();
+
+-- Backfill: update cv_search for all existing rows
+UPDATE profiles SET cv_search =
+  setweight(to_tsvector('english', coalesce(headline, '')), 'A') ||
+  setweight(to_tsvector('english', coalesce(array_to_string(skills, ' '), '')), 'A') ||
+  setweight(to_tsvector('english', coalesce(qualifications, '')), 'B') ||
+  setweight(to_tsvector('english', coalesce(cv_text, '')), 'C') ||
+  setweight(to_tsvector('english', coalesce(name, '')), 'D')
+WHERE cv_search IS NULL;
 
 -- ══════════════════════════════════════════════════════════════
 -- 4. SUBSCRIPTION SECURITY — RLS POLICIES
