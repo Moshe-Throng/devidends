@@ -53,7 +53,7 @@ export default function TgAppScore() {
       const scoreRes = await fetch("/api/cv/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cvText: text }),
+        body: JSON.stringify({ cv_text: text }),
       });
 
       if (!scoreRes.ok) {

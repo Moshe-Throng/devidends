@@ -27,7 +27,8 @@ export async function extractTextFromPdf(buffer: Buffer): Promise<string> {
 }
 
 export async function extractTextFromDocx(buffer: Buffer): Promise<string> {
-  const mammoth = await import("mammoth");
+  // Use require() for reliable CJS loading on Vercel serverless (matches pdf-parse pattern)
+  const mammoth = require("mammoth") as typeof import("mammoth");
   const result = await mammoth.extractRawText({ buffer });
   return result.value;
 }

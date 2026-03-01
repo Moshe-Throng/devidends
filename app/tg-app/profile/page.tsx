@@ -101,10 +101,36 @@ export default function TgAppProfile() {
 
   if (!profile) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center space-y-3">
-          <AlertCircle className="w-8 h-8 text-dark-300 mx-auto" />
-          <p className="text-sm text-dark-500">Profile not found</p>
+      <div className="min-h-screen flex flex-col">
+        {/* Header with back button */}
+        <div className="bg-white border-b border-dark-100 px-4 pt-3 pb-3 sticky top-0 z-30">
+          <div className="flex items-center gap-3">
+            <Link href="/tg-app" className="text-dark-400 hover:text-dark-600">
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
+            <h1 className="text-lg font-extrabold text-dark-900 tracking-tight">
+              My Profile
+            </h1>
+          </div>
+        </div>
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 rounded-full bg-dark-50 flex items-center justify-center mx-auto">
+              <User className="w-8 h-8 text-dark-300" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-dark-700">No profile yet</p>
+              <p className="text-xs text-dark-400">
+                Close and reopen the app to create your profile automatically
+              </p>
+            </div>
+            <Link
+              href="/tg-app"
+              className="inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
       </div>
     );
