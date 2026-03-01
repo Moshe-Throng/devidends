@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Title Location Job Family",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:33.999Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Reset",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:33.999Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Principal Operations Officer (SEFA), PERN3Principal Operations Officer (SEFA), PERN3",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Principal-Operations-Officer-%28SEFA%29%2C-PERN3/1292251501/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:33.999Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  }
+]

@@ -1,797 +1,938 @@
 [
   {
     "title": "Explosive Ordnance Risk Education (EORE) Team Leader - Syria",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "11 Mar 2026",
     "published": "01 Mar 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Syria",
-    "region": "Middle East",
-    "category": "Mine Action",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175361",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.548Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.503Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Mine Action",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Area Support Services Manager - Bangladesh",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "01 Mar 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Bangladesh",
-    "region": "Asia",
-    "category": "Senior Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175359",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.550Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.504Z",
+    "raw_fields": {
+      "region": "Asia",
+      "category": "Senior Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Head of Support Services - Venezuela",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "13 Mar 2026",
     "published": "27 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Americas",
-    "category": "Administration",
-    "contract_type": "Expatriate or national",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175358",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.551Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Administration",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Organizational Development Lead - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "27 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Other",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175355",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.552Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Other",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Global Head of IT Service and Operations - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "27 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "IT",
-    "contract_type": "National",
+    "country": "Global",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175354",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.552Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.505Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "IT",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Global Solutions Coordinator - Strategy, Programming & Results (HQ)",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "20 Mar 2026",
     "published": "27 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Global",
-    "region": "Roving/Global",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175353",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.552Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "raw_fields": {
+      "region": "Roving/Global",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Programme Coordinator-Partnership Coordinator - Myanmar",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "13 Mar 2026",
     "published": "27 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Myanmar",
-    "region": "Asia",
-    "category": "Other",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175352",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.553Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "raw_fields": {
+      "region": "Asia",
+      "category": "Other",
+      "contract_type": "National"
+    }
   },
   {
     "title": "DFUNK - Dansk Flygtningehjælp Ungdom søger projektleder til lokale fællesskaber - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Social Work",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175351",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.553Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Social Work",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Asistente de Comunicaciones - Colombia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Colombia",
-    "region": "Americas",
-    "category": "Communication",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175350",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.553Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.506Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Communication",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Re-advertised: Roving Risk and Compliance, Safeguarding and Code of Conduct Officer - Nigeria",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "11 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Nigeria",
-    "region": "Africa",
-    "category": "Investigation",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=174787",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.553Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Investigation",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Communication Officer - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "11 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Communication",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175348",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.553Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Communication",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Human Ressources and Administrative Officer - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "12 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Human Resources",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175347",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.554Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Human Resources",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Programme Coordinator – Humanitarian Coordinator (INGO FORUM) - Myanmar",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "12 Mar 2026",
     "published": "26 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Myanmar",
-    "region": "Asia",
-    "category": "Other",
-    "contract_type": "Expatriate",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175346",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.555Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.507Z",
+    "raw_fields": {
+      "region": "Asia",
+      "category": "Other",
+      "contract_type": "Expatriate"
+    }
   },
   {
     "title": "Protection Manager - Sudan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "05 Mar 2026",
     "published": "25 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Sudan",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175344",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.556Z"
-  },
-  {
-    "title": "Protection Manager - Sudan",
-    "description": "",
-    "deadline": "12 Mar 2026",
-    "published": "25 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Sudan",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate or national",
-    "source_url": "https://www.drc.ngo/job?id=175343",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.556Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "Expatriate"
+    }
   },
   {
     "title": "Protection Coordinator - Sudan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "07 Mar 2026",
     "published": "25 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Sudan",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate or national",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175342",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.557Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Child Protection Coordinator (Emergency) - South Sudan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "11 Mar 2026",
     "published": "25 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Sudan",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate",
+    "country": "South Sudan",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175341",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.557Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.508Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "Expatriate"
+    }
   },
   {
     "title": "Finance and Administration Officer - Libya",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "12 Mar 2026",
     "published": "25 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Libya",
-    "region": "Africa",
-    "category": "Finance",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=174955",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.558Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Protection Assistant – GBV Case Worker - Ethiopia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "05 Mar 2026",
     "published": "24 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ethiopia",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175339",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.558Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Monitoring, Evaluation, Accountability and Learning Manager - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "13 Mar 2026",
     "published": "24 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate or national",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175338",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.558Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Program/Project Management",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Advocacy and Communications Coordinator - Syria",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "10 Mar 2026",
     "published": "24 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Syria",
-    "region": "Middle East",
-    "category": "Communication",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175337",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.558Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Communication",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Finance Manager - Afghanistan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "10 Mar 2026",
     "published": "24 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Afghanistan",
-    "region": "Asia",
-    "category": "Finance",
-    "contract_type": "Expatriate or national",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175336",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.559Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.509Z",
+    "raw_fields": {
+      "region": "Asia",
+      "category": "Finance",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Líder de Equipo de Protección - Venezuela",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "15 Mar 2026",
     "published": "23 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Americas",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175334",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.559Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Economic Recovery Team Leader (Urban and Rural Livelihoods Team Leader) - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "01 Mar 2026",
     "published": "23 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175332",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.559Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "MEAL&IM Specialist Maternity Cover (Internal and External Recruitment) - Cameroon",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "01 Mar 2026",
     "published": "23 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Cameroon",
-    "region": "Africa",
-    "category": "Monitoring & Evaluation",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175319",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.559Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Monitoring & Evaluation",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Finance Assistant - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "01 Mar 2026",
     "published": "22 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Finance",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175328",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.560Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Safety Coordinator - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "13 Mar 2026",
     "published": "22 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Safety & Security",
-    "contract_type": "Expatriate or national",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175327",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.560Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.510Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Safety & Security",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Deltidskonsulent i København til opstart af et nyt seniorfællesskab målrettet ældre med flygtningebaggrund - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175322",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.560Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Partnership and Localization Advisor (Country-Focused) - Danish Refugee Council",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Roving/Global",
-    "category": "Donor & Partner Relations",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175324",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.560Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "raw_fields": {
+      "region": "Roving/Global",
+      "category": "Donor & Partner Relations",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Monitoring, Evaluation, Accountability and Learning Team Leader - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "02 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Monitoring & Evaluation",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175321",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.560Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Monitoring & Evaluation",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Student Assistants - LMU, Diaspora & GPS / Grants Management Unit - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Volunteers, Internships & Student Positions",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175320",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.561Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Volunteers, Internships & Student Positions",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Driver - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "01 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Other",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175318",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.561Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.511Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Other",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Protection Coordinator - South Sudan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "05 Mar 2026",
     "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Sudan",
-    "region": "Africa",
-    "category": "Program/Project Management",
-    "contract_type": "Expatriate or national",
+    "country": "South Sudan",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175317",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.561Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "Expatriate or national"
+    }
   },
   {
     "title": "Head of Localization Management Unit - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "19 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175315",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.562Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Communication and Graphic Design Officer – Regional - Jordan",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "05 Mar 2026",
     "published": "19 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Middle East",
-    "category": "Communication",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175314",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.562Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Communication",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Finance and Compliance Coordinator - Consortium - Nigeria",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "05 Mar 2026",
     "published": "19 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Nigeria",
-    "region": "Africa",
-    "category": "Finance",
-    "contract_type": "Expatriate",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175312",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.562Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Finance",
+      "contract_type": "Expatriate"
+    }
   },
   {
     "title": "Protection Cluster & Sector Co-Coordinator - Colombia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "03 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Colombia",
-    "region": "Americas",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175309",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.563Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.512Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Contracts & Sub-Grants Advisor - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Grants Management",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175310",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.563Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Grants Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Supply Chain Assistant – Warehouse/Fleet - Ethiopia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "04 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ethiopia",
-    "region": "Africa",
-    "category": "Supply Chain",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175302",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.563Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Supply Chain",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Consultancy for Developing P2P Communications Strategy - Tunisia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "01 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Tunisia",
-    "region": "Africa",
-    "category": "Communication",
-    "contract_type": "Consultant",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175259",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.563Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Communication",
+      "contract_type": "Consultant"
+    }
   },
   {
     "title": "Stagiaire en Gestion des Subventions - Chad",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "10 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Africa",
-    "category": "Volunteers, Internships & Student Positions",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175300",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.563Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.513Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Volunteers, Internships & Student Positions",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Roving Finance Specialist - Ethiopia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "18 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ethiopia",
-    "region": "Africa",
-    "category": "Finance",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175297",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Finance Specialist - Ethiopia",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ethiopia",
-    "region": "Africa",
-    "category": "Finance",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175296",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Economic Recovery Specialist (re-advertisement) - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "02 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175295",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Humanitarian Mine Action Assistant (NTS/EORE Assistant) - Ukraine",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "08 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Ukraine",
-    "region": "Europe",
-    "category": "Other",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175293",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.514Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Other",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Research Assistant (part-time / 30 hours) - Denmark",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "02 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Monitoring & Evaluation",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175287",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.515Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Monitoring & Evaluation",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Supply Chain Coordinator - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "02 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Supply Chain",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175291",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.564Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.515Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Supply Chain",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Finance Manager - National Amman - Occupied Palestinian Territory",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "02 Mar 2026",
     "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Finance",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175289",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.565Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Partnership Specialist (National) - Venezuela",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "11 Mar 2026",
     "published": "11 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Americas",
-    "category": "Donor & Partner Relations",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175269",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.565Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Donor & Partner Relations",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Supply Chain Assistant / Driver - Libya",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "06 Mar 2026",
     "published": "11 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Libya",
-    "region": "Africa",
-    "category": "Supply Chain",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175258",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.565Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.516Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Supply Chain",
+      "contract_type": "National"
+    }
   },
   {
     "title": "Grants and Partnerships Officer (Re-advertisement) - Turkey",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "06 Mar 2026",
     "published": "10 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "Unknown",
-    "region": "Middle East",
-    "category": "Donor & Partner Relations",
-    "contract_type": "National",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=174159",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.565Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Donor & Partner Relations",
+      "contract_type": "National"
+    }
   },
   {
     "title": "DRC Humanitarian Response Roster – Candidate Database - DRC Humanitarian Response Roster",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "31 Dec 2026",
     "published": "09 Jan 2026",
-    "organization": "Danish Refugee Council (DRC)",
     "country": "DRC (Congo)",
-    "region": "Roving/Global",
-    "category": "Standby Roster",
-    "contract_type": "Expatriate",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=175050",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.565Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "raw_fields": {
+      "region": "Roving/Global",
+      "category": "Standby Roster",
+      "contract_type": "Expatriate"
+    }
   },
   {
     "title": "Finance Manager - Reannouncement - Myanmar",
+    "organization": "Danish Refugee Council (DRC)",
     "description": "",
     "deadline": "31 Mar 2026",
     "published": "21 Oct 2025",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Myanmar",
-    "region": "Asia",
-    "category": "Finance",
-    "contract_type": "National",
+    "country": "Unknown",
+    "city": null,
     "source_url": "https://www.drc.ngo/job?id=174365",
     "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-01T15:13:54.566Z"
+    "content_type": "job",
+    "scraped_at": "2026-03-01T16:07:29.517Z",
+    "raw_fields": {
+      "region": "Asia",
+      "category": "Finance",
+      "contract_type": "National"
+    }
   }
 ]

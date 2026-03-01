@@ -1,0 +1,425 @@
+[
+  {
+    "id": "reliefweb",
+    "name": "ReliefWeb",
+    "adapter": "reliefweb",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 40,
+    "config": {
+      "url": "https://api.reliefweb.int/v1/jobs",
+      "appname": "DevidendslWobR5bzg4nrbI2JUvPj",
+      "limit": 50,
+      "countryFilter": ["Ethiopia"]
+    }
+  },
+  {
+    "id": "worldbank",
+    "name": "World Bank Procurement",
+    "adapter": "worldbank",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "noticeTypes": [
+        "Request for Expression of Interest",
+        "Invitation for Bids"
+      ],
+      "rows": 50,
+      "searchTerm": "Ethiopia"
+    }
+  },
+  {
+    "id": "unjobs",
+    "name": "UNJobs",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 35,
+    "config": {
+      "url": "https://unjobs.org/duty_stations/ethiopia",
+      "orgName": "Various UN Agencies",
+      "sourceDomain": "unjobs.org",
+      "defaultCountry": "Ethiopia",
+      "mode": "unjobs",
+      "maxPages": 5,
+      "pageDelay": 2500
+    }
+  },
+  {
+    "id": "drc",
+    "name": "Danish Refugee Council",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://www.drc.ngo/jobs/",
+      "orgName": "Danish Refugee Council (DRC)",
+      "sourceDomain": "drc.ngo",
+      "jobSelector": ".job-item",
+      "titleSelector": ".job-title",
+      "linkSelector": "a[href]",
+      "deadlineSelector": ".timestamp.deadline",
+      "publishedSelector": ".timestamp.published",
+      "countryFromTitle": true,
+      "defaultCountry": "Unknown"
+    }
+  },
+  {
+    "id": "au",
+    "name": "African Union",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://au.int/en/careers",
+      "orgName": "African Union",
+      "sourceDomain": "au.int",
+      "defaultCountry": "Ethiopia",
+      "mode": "au"
+    }
+  },
+  {
+    "id": "fhi360",
+    "name": "FHI 360",
+    "adapter": "workday",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://fhi.wd1.myworkdayjobs.com",
+      "tenant": "fhi",
+      "siteId": "FHI_360_External_Career_Portal",
+      "orgName": "FHI 360",
+      "searchText": "Ethiopia",
+      "fetchDetails": true
+    }
+  },
+  {
+    "id": "unhcr-workday",
+    "name": "UNHCR",
+    "adapter": "workday",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://unhcr.wd3.myworkdayjobs.com",
+      "tenant": "unhcr",
+      "siteId": "External",
+      "orgName": "UNHCR",
+      "searchText": "Ethiopia",
+      "fetchDetails": true
+    }
+  },
+  {
+    "id": "uncareers",
+    "name": "UN Careers",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 35,
+    "config": {
+      "url": "https://careers.un.org/jobSearchDescription?location=Ethiopia",
+      "orgName": "United Nations",
+      "sourceDomain": "careers.un.org",
+      "defaultCountry": "Ethiopia",
+      "mode": "uncareers"
+    }
+  },
+  {
+    "id": "kifiya",
+    "name": "Kifiya Financial Technology",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 15,
+    "config": {
+      "url": "https://kifiya.com/work-with-us/",
+      "orgName": "Kifiya Financial Technology",
+      "sourceDomain": "kifiya.com",
+      "defaultCountry": "Ethiopia",
+      "mode": "generic",
+      "jobSelector": ".sjb-listing .list-data, .sjb-page a[href*='kifiya.com/'], .sjb-archive a",
+      "scrollCount": 2,
+      "scrollDelay": 2000
+    }
+  },
+  {
+    "id": "oracle-nrc",
+    "name": "NRC (Norwegian Refugee Council)",
+    "adapter": "oracle-hcm",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "portalUrl": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions",
+      "orgName": "Norwegian Refugee Council (NRC)",
+      "sourceDomain": "oraclecloud.com",
+      "searchText": "Ethiopia",
+      "defaultCountry": "Ethiopia"
+    }
+  },
+
+  {
+    "id": "mastercardfdn",
+    "name": "Mastercard Foundation",
+    "adapter": "workday",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://mastercardfoundation.wd10.myworkdayjobs.com",
+      "tenant": "mastercardfoundation",
+      "siteId": "mastercardfdn",
+      "orgName": "Mastercard Foundation",
+      "searchText": "Ethiopia",
+      "fetchDetails": true
+    }
+  },
+
+  {
+    "id": "sos-icims",
+    "name": "SOS Children's Villages",
+    "adapter": "icims",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://careers-sos-kd.icims.com",
+      "orgName": "SOS Children's Villages",
+      "searchText": "Ethiopia",
+      "locale": "en"
+    }
+  },
+  {
+    "id": "heifer-jobvite",
+    "name": "Heifer International",
+    "adapter": "jobvite",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "heifer",
+      "orgName": "Heifer International",
+      "searchText": "Ethiopia"
+    }
+  },
+  {
+    "id": "mercycorps-jobvite",
+    "name": "Mercy Corps",
+    "adapter": "jobvite",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "mercycorps",
+      "orgName": "Mercy Corps",
+      "searchText": "Ethiopia"
+    }
+  },
+  {
+    "id": "edc-smartrecruiters",
+    "name": "Education Development Center",
+    "adapter": "smartrecruiters",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companyId": "EDC1",
+      "orgName": "Education Development Center (EDC)",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "hi-workable",
+    "name": "Humanity & Inclusion",
+    "adapter": "workable",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "hi-jobs",
+      "orgName": "Humanity & Inclusion",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "girleffect-greenhouse",
+    "name": "Girl Effect",
+    "adapter": "greenhouse",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "boardToken": "girleffect",
+      "orgName": "Girl Effect",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "vitalstrategies-taleo",
+    "name": "Vital Strategies",
+    "adapter": "taleo",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://phg.tbe.taleo.net/phg01/ats/careers/v2",
+      "orgCode": "VITASTRA",
+      "orgName": "Vital Strategies",
+      "searchText": "Ethiopia"
+    }
+  },
+
+  {
+    "id": "gggi",
+    "name": "Global Green Growth Institute",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://careers.gggi.org/vacancies.html",
+      "orgName": "Global Green Growth Institute (GGGI)",
+      "sourceDomain": "gggi.org",
+      "jobSelector": ".vacancy, .job-listing, a[href*='vacancy'], tr, li",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "ilri",
+    "name": "ILRI (CGIAR)",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://ilri.simplicant.com/",
+      "orgName": "International Livestock Research Institute (ILRI)",
+      "sourceDomain": "ilri.org",
+      "jobSelector": ".job-listing, a[href*='jobs/'], .vacancy, article",
+      "titleSelector": "a, h3, h2",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": true,
+      "detailSelector": ".field--name-body, .node__content, article",
+      "detailDelay": 1500,
+      "maxDetails": 15
+    }
+  },
+  {
+    "id": "unicef-jobs",
+    "name": "UNICEF Jobs",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://jobs.unicef.org/cw/en-us/listing/?q=Ethiopia",
+      "orgName": "UNICEF",
+      "sourceDomain": "unicef.org",
+      "defaultCountry": "Ethiopia",
+      "mode": "generic",
+      "jobSelector": ".job-card, .job-listing, a[href*='job']",
+      "scrollCount": 3,
+      "scrollDelay": 2000
+    }
+  },
+  {
+    "id": "unops-jobs",
+    "name": "UNOPS Jobs",
+    "adapter": "puppeteer-spa",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://jobs.unops.org/Pages/ViewVacancy/VAListing.aspx?Country=Ethiopia",
+      "orgName": "UNOPS",
+      "sourceDomain": "unops.org",
+      "defaultCountry": "Ethiopia",
+      "mode": "generic",
+      "jobSelector": ".vacancy-item, .job-card, a[href*='Vacancy']",
+      "scrollCount": 3,
+      "scrollDelay": 2000
+    }
+  },
+  {
+    "id": "undp-procurement",
+    "name": "UNDP Procurement",
+    "adapter": "cheerio-html",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://procurement-notices.undp.org/search.cfm",
+      "orgName": "United Nations Development Programme (UNDP)",
+      "sourceDomain": "undp.org",
+      "method": "POST",
+      "postBody": "search_form=search_form&cur_title=&cur_notice_id=&cur_agency=ETH&cur_sm_id=&date_from1={YEAR_START}&date_to1={YEAR_END}",
+      "jobSelector": "a.vacanciesTableLink",
+      "titleSelector": ".vacanciesTable__cell:nth-child(1) span",
+      "linkSelector": "a.vacanciesTableLink",
+      "deadlineSelector": ".vacanciesTable__cell:nth-child(5) span",
+      "publishedSelector": ".vacanciesTable__cell:nth-child(6) span",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "icrc",
+    "name": "International Committee of the Red Cross",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://careers.icrc.org/search/?q=Ethiopia",
+      "orgName": "International Committee of the Red Cross (ICRC)",
+      "sourceDomain": "icrc.org",
+      "jobSelector": ".job-tile",
+      "titleSelector": ".job-tile-cell a",
+      "linkSelector": ".job-tile-cell a[href]",
+      "deadlineSelector": ".section-field:last-child",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": true,
+      "detailSelector": ".jobdescription",
+      "detailDelay": 1500,
+      "maxDetails": 10
+    }
+  },
+  {
+    "id": "afdb",
+    "name": "African Development Bank",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://afdb.jobs2web.com/search/?q=&sortColumn=referencedate&sortDirection=desc",
+      "orgName": "African Development Bank (AfDB)",
+      "sourceDomain": "afdb.org",
+      "jobSelector": "tr, .job-listing, a[href*='/job/']",
+      "titleSelector": "a, h3, h2",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia"
+    }
+  },
+  {
+    "id": "inkomoko-workable",
+    "name": "Inkomoko",
+    "adapter": "workable",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "inkomoko",
+      "orgName": "Inkomoko",
+      "countryFilter": "Ethiopia"
+    }
+  }
+]
