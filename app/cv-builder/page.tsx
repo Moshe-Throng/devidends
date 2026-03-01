@@ -118,6 +118,7 @@ function filledCount(data: StructuredCvData): number {
 
 const CACHE_KEY_PREFIX = "dv_cv_extract_";
 const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+const CV_BUILDER_KEY_PREFIX = "dv_cv_builder_";
 
 async function hashFile(file: File): Promise<string> {
   const buf = await file.arrayBuffer();
@@ -230,6 +231,78 @@ export default function CvBuilderPage() {
       sessionStorage.removeItem("devidends_builder_state");
     }
   }, [user, authLoading]);
+
+  // Auto-load saved CV data from localStorage on mount
+  const [loadedFromStorage, setLoadedFromStorage] = useState(false);
+  useEffect(() => {
+    if (authLoading || loadedFromStorage) return;
+    if (!user) { setLoadedFromStorage(true); return; }
+
+    // Don't override if already past entry (e.g. OAuth restore set download phase)
+    if (phase !== "entry") { setLoadedFromStorage(true); return; }
+
+    try {
+      const key = CV_BUILDER_KEY_PREFIX + user.id;
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.cvData?.personal?.full_name) {
+          setCvData(parsed.cvData);
+          setPhase("editing");
+          setLoadedFromStorage(true);
+          return;
+        }
+      }
+    } catch {
+      // Corrupted data — ignore
+    }
+
+    // No saved CV data — pre-fill from profile if available
+    (async () => {
+      try {
+        const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+        const { getProfile } = await import("@/lib/profiles");
+        const supabase = createSupabaseBrowser();
+        const profile = await getProfile(supabase, user.id);
+        if (profile) {
+          setCvData((prev) => ({
+            ...prev,
+            personal: {
+              ...prev.personal,
+              full_name: profile.name || prev.personal.full_name,
+              email: profile.email || prev.personal.email,
+              phone: profile.phone || prev.personal.phone,
+            },
+            countries_of_experience: profile.countries?.length ? profile.countries : prev.countries_of_experience,
+            key_qualifications: profile.qualifications || prev.key_qualifications,
+          }));
+        }
+      } catch {
+        // Profile fetch failed — continue with empty data
+      }
+      setLoadedFromStorage(true);
+    })();
+  }, [user, authLoading, loadedFromStorage, phase]);
+
+  // Auto-save CV data to localStorage on edits (debounced)
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!user) return;
+    if (phase !== "editing" && phase !== "template" && phase !== "download") return;
+    if (!cvData.personal.full_name.trim()) return;
+
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      try {
+        const key = CV_BUILDER_KEY_PREFIX + user.id;
+        localStorage.setItem(key, JSON.stringify({ cvData, savedAt: Date.now() }));
+      } catch {
+        // Storage full — ignore
+      }
+    }, 1000);
+
+    return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
+  }, [user, phase, cvData]);
 
   // Show auth modal when reaching download phase without auth
   useEffect(() => {
@@ -687,6 +760,9 @@ export default function CvBuilderPage() {
 
               <button
                 onClick={() => {
+                  if (user) {
+                    try { localStorage.removeItem(CV_BUILDER_KEY_PREFIX + user.id); } catch {}
+                  }
                   setCvData(emptyCvData());
                   setPhase("editing");
                 }}
@@ -863,6 +939,28 @@ export default function CvBuilderPage() {
         {/* ─────────────── EDITING PHASE ─────────────── */}
         {phase === "editing" && (
           <div className="animate-fadeInUp space-y-8">
+            {/* Loaded-from-storage notice */}
+            {loadedFromStorage && confidence === 0 && cvData.personal.full_name.trim() && (
+              <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-dark-50/60 border border-dark-100">
+                <p className="text-sm text-dark-600">
+                  Continuing with your saved CV.
+                </p>
+                <button
+                  onClick={() => {
+                    if (user) {
+                      try { localStorage.removeItem(CV_BUILDER_KEY_PREFIX + user.id); } catch {}
+                    }
+                    setCvData(emptyCvData());
+                    setConfidence(0);
+                    setPhase("entry");
+                  }}
+                  className="text-xs font-semibold text-dark-400 hover:text-dark-700 underline underline-offset-2 whitespace-nowrap transition-colors"
+                >
+                  Start a new CV
+                </button>
+              </div>
+            )}
+
             {/* Confidence badge */}
             {confidence > 0 && (
               <div className="flex items-center gap-3 p-4 rounded-xl bg-cyan-50/60 border border-cyan-100">
