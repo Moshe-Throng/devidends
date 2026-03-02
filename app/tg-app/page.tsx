@@ -181,9 +181,11 @@ export default function TgAppHome() {
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
                 <FileText className="w-5 h-5 text-teal-600" />
               </div>
-              <p className="text-sm font-bold text-dark-900">Build CV</p>
+              <p className="text-sm font-bold text-dark-900">
+                {profile?.cv_structured_data ? "My CV" : "Build CV"}
+              </p>
               <p className="text-[11px] text-dark-400 mt-0.5">
-                Donor-ready format
+                {profile?.cv_structured_data ? "View & edit" : "Donor-ready format"}
               </p>
             </div>
           </Link>

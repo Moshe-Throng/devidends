@@ -349,14 +349,14 @@ export default function TgOpportunityDetail() {
           </button>
         )}
 
-        {/* Secondary: Score CV for this role */}
+        {/* Secondary: Build/edit CV */}
         {!opp.is_expired && (
           <Link
-            href={`/tg-app/score?oppId=${encodeURIComponent(opp.id)}`}
+            href="/tg-app/cv-builder"
             className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-sm active:bg-cyan-50 transition-colors"
           >
             <FileText className="w-4 h-4" />
-            Score My CV for This Role
+            Build My CV
           </Link>
         )}
 

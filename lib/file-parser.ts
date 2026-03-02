@@ -14,10 +14,16 @@ export async function extractTextFromDocx(buffer: Buffer): Promise<string> {
 
 export async function extractTextFromDoc(buffer: Buffer): Promise<string> {
   // word-extractor handles binary .doc (Word 97-2003) format
-  const WordExtractor = require("word-extractor");
-  const extractor = new WordExtractor();
-  const doc = await extractor.extract(buffer);
-  return doc.getBody();
+  try {
+    const WordExtractor = require("word-extractor");
+    const extractor = new WordExtractor();
+    const doc = await extractor.extract(buffer);
+    return doc.getBody();
+  } catch {
+    throw new Error(
+      "Could not parse .doc file. Try converting to PDF or DOCX first."
+    );
+  }
 }
 
 export function detectFileType(
