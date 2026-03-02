@@ -13,6 +13,7 @@ import {
   TrendingUp,
   MapPin,
   Clock,
+  Newspaper,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
@@ -202,14 +203,14 @@ export default function TgAppHome() {
             </div>
           </Link>
 
-          <Link href="/tg-app/alerts">
+          <Link href="/tg-app/news">
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
-                <Bell className="w-5 h-5 text-teal-600" />
+                <Newspaper className="w-5 h-5 text-teal-600" />
               </div>
-              <p className="text-sm font-bold text-dark-900">Alerts</p>
+              <p className="text-sm font-bold text-dark-900">Dev News</p>
               <p className="text-[11px] text-dark-400 mt-0.5">
-                Sector preferences
+                Latest updates
               </p>
             </div>
           </Link>

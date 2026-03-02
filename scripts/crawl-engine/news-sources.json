@@ -1,0 +1,52 @@
+[
+  {
+    "id": "reliefweb-ethiopia",
+    "name": "ReliefWeb",
+    "type": "reliefweb-api",
+    "url": "https://api.reliefweb.int/v1/reports?appname=devidends&filter[field]=country.name&filter[value]=Ethiopia&sort[]=date:desc&limit=50&fields[include][]=title&fields[include][]=url_alias&fields[include][]=date.original&fields[include][]=source.name&fields[include][]=body-html",
+    "scope": "ethiopia",
+    "enabled": true
+  },
+  {
+    "id": "un-news-africa",
+    "name": "UN News Africa",
+    "url": "https://news.un.org/feed/subscribe/en/news/region/africa/feed/rss.xml",
+    "scope": "africa",
+    "enabled": true
+  },
+  {
+    "id": "the-new-humanitarian",
+    "name": "The New Humanitarian",
+    "url": "https://www.thenewhumanitarian.org/feed",
+    "scope": "global",
+    "enabled": true
+  },
+  {
+    "id": "google-news-ethiopia-dev",
+    "name": "Google News - Ethiopia Dev",
+    "url": "https://news.google.com/rss/search?q=Ethiopia+development+aid+donor&hl=en&gl=US&ceid=US:en",
+    "scope": "ethiopia",
+    "enabled": true
+  },
+  {
+    "id": "google-news-africa-dev",
+    "name": "Google News - Africa Dev",
+    "url": "https://news.google.com/rss/search?q=Africa+international+development+humanitarian&hl=en&gl=US&ceid=US:en",
+    "scope": "africa",
+    "enabled": true
+  },
+  {
+    "id": "google-news-ethiopia-ngo",
+    "name": "Google News - Ethiopia NGO",
+    "url": "https://news.google.com/rss/search?q=Ethiopia+NGO+USAID+UNDP+humanitarian&hl=en&gl=US&ceid=US:en",
+    "scope": "ethiopia",
+    "enabled": true
+  },
+  {
+    "id": "google-news-africa-funding",
+    "name": "Google News - Africa Funding",
+    "url": "https://news.google.com/rss/search?q=Africa+development+funding+World+Bank+AfDB&hl=en&gl=US&ceid=US:en",
+    "scope": "africa",
+    "enabled": true
+  }
+]

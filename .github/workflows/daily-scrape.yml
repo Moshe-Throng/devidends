@@ -27,8 +27,12 @@ jobs:
       - name: Install Puppeteer browser
         run: npx puppeteer browsers install chrome
 
-      - name: Run crawl engine
+      - name: Run crawl engine (opportunities)
         run: npx tsx scripts/crawl-engine/engine.ts
+
+      - name: Crawl development news
+        continue-on-error: true
+        run: npx tsx scripts/crawl-news.ts
 
       - name: Broadcast to Telegram
         continue-on-error: true
@@ -46,7 +50,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes."
           else
-            git commit -m "Update opportunity data [$(date -u '+%a %m/%d/%Y')]"
+            git commit -m "Update opportunity + news data [$(date -u '+%a %m/%d/%Y')]"
             git push
           fi
 
