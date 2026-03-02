@@ -136,16 +136,30 @@ export async function broadcastToGroup(
     return { sent: false, count: 0 };
   }
 
-  if (opportunities.length === 0) {
-    console.log("[telegram-broadcast] No opportunities to broadcast to group");
+  const bot = getTelegramBot();
+
+  // Filter out procurement/supply tenders — only keep individual consultant roles
+  const PROCUREMENT_PATTERN = /\b(procurement|supply|rfp|rfq|bid|tender|construction|installation|purchase|provision of goods)\b/i;
+  const filtered = opportunities.filter((o) => {
+    const type = (o.classified_type || o.type || "").toLowerCase();
+    if (type === "tender") {
+      // Only keep if it looks like an individual consultant role
+      const title = (o.title || "").toLowerCase();
+      return /\b(consult|advisor|specialist|expert|individual)\b/i.test(title);
+    }
+    // For unclassified, exclude procurement-style titles
+    if (PROCUREMENT_PATTERN.test(o.title || "")) return false;
+    return true;
+  });
+
+  if (filtered.length === 0 && (!newsArticles || newsArticles.length === 0)) {
+    console.log("[telegram-broadcast] No opportunities or news to broadcast");
     return { sent: false, count: 0 };
   }
 
-  const bot = getTelegramBot();
-
   // Group by content type
-  const jobs = opportunities.filter((o) => (o.classified_type || o.type) !== "tender");
-  const tenders = opportunities.filter((o) => (o.classified_type || o.type) === "tender");
+  const jobs = filtered.filter((o) => (o.classified_type || o.type) !== "tender");
+  const tenders = filtered.filter((o) => (o.classified_type || o.type) === "tender");
 
   // Build single digest message
   const today = new Date().toLocaleDateString("en-GB", {

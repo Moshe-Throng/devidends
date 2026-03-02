@@ -13,6 +13,9 @@ import {
   FileCheck,
   Briefcase,
   ChevronRight,
+  Newspaper,
+  Clock,
+  ExternalLink,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -128,12 +131,44 @@ function SourceBadge({
    LANDING PAGE
    ═══════════════════════════════════════════════════════════════ */
 
+interface NewsItem {
+  id: string;
+  title: string;
+  summary: string;
+  url: string;
+  source_name: string;
+  published_at: string | null;
+  category: string;
+}
+
+function timeAgo(dateStr: string | null): string {
+  if (!dateStr) return "";
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days < 7) return `${days}d ago`;
+  return new Date(dateStr).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+}
+
 export default function LandingPage() {
   const doors = useReveal(0.1);
   const howItWorks = useReveal(0.15);
   const sourcesReveal = useReveal(0.1);
   const statsReveal = useReveal(0.15);
+  const newsReveal = useReveal(0.1);
   const ctaReveal = useReveal(0.1);
+
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    fetch("/api/news?limit=6")
+      .then((r) => r.json())
+      .then((d) => setNewsItems(d.articles || []))
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -594,6 +629,96 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          LATEST DEV NEWS
+          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+      {newsItems.length > 0 && (
+        <section className="py-16 md:py-20 bg-dark-50/40" ref={newsReveal.ref}>
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+            <div
+              className={`flex items-center justify-between mb-8 transition-all duration-700 ${
+                newsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <div>
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center">
+                    <Newspaper className="w-4 h-4 text-white" />
+                  </div>
+                  <p className="text-[11px] font-bold text-dark-300 tracking-[0.25em] uppercase">
+                    Intel Feed
+                  </p>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-dark-900 tracking-tight">
+                  Development News
+                </h2>
+              </div>
+              <Link
+                href="/news"
+                className="hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-cyan-600 hover:text-cyan-700 transition-colors"
+              >
+                View all
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {newsItems.slice(0, 6).map((article, i) => (
+                <a
+                  key={article.id}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block transition-all duration-500 ${
+                    newsReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                  }`}
+                  style={{ transitionDelay: `${150 + i * 80}ms` }}
+                >
+                  <div className="h-full bg-white border border-dark-100 rounded-xl p-5 hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-200 hover:-translate-y-0.5">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">
+                        {article.category}
+                      </span>
+                      <ExternalLink className="w-3.5 h-3.5 text-dark-200 group-hover:text-cyan-500 shrink-0 transition-colors" />
+                    </div>
+                    <h3 className="text-sm font-bold text-dark-900 leading-snug line-clamp-2 group-hover:text-cyan-700 transition-colors">
+                      {article.title}
+                    </h3>
+                    {article.summary && (
+                      <p className="mt-1.5 text-xs text-dark-400 leading-relaxed line-clamp-2">
+                        {article.summary}
+                      </p>
+                    )}
+                    <div className="flex items-center gap-2.5 mt-3 text-[11px] text-dark-400">
+                      <span className="flex items-center gap-1">
+                        <Globe className="w-3 h-3" />
+                        {article.source_name}
+                      </span>
+                      {article.published_at && (
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {timeAgo(article.published_at)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-6 text-center sm:hidden">
+              <Link
+                href="/news"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-cyan-600"
+              >
+                View all news
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           TRUSTED SOURCES

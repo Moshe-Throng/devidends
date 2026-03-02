@@ -212,8 +212,8 @@ export default function TgCvBuilder() {
     const f = e.target.files?.[0];
     if (!f) return;
     const ext = f.name.toLowerCase().split(".").pop();
-    if (!["pdf", "docx"].includes(ext || "")) {
-      setError("Only PDF and DOCX files accepted");
+    if (!["pdf", "docx", "doc"].includes(ext || "")) {
+      setError("Only PDF, DOCX, and DOC files accepted");
       return;
     }
     if (f.size > 15 * 1024 * 1024) {
@@ -234,7 +234,23 @@ export default function TgCvBuilder() {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await fetch("/api/cv/extract", { method: "POST", body: fd });
+
+      // 90s timeout for slow AI extraction on serverless
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 90000);
+
+      const res = await fetch("/api/cv/extract", {
+        method: "POST",
+        body: fd,
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({ error: `Server error (${res.status})` }));
+        throw new Error(errBody.error || `Server error (${res.status})`);
+      }
+
       const json = await res.json();
       if (!json.success) throw new Error(json.error || "Extraction failed");
 
@@ -242,7 +258,11 @@ export default function TgCvBuilder() {
       setOpenSections(new Set(["personal", "summary", "education", "employment"]));
       setPhase("editing");
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Extraction failed");
+      if (err instanceof DOMException && err.name === "AbortError") {
+        setError("Extraction timed out. Try a smaller file or convert to PDF.");
+      } else {
+        setError(err instanceof Error ? err.message : "Extraction failed — try again");
+      }
       setPhase("uploading");
     } finally {
       setIsProcessing(false);
@@ -571,7 +591,7 @@ export default function TgCvBuilder() {
           <input
             ref={fileRef}
             type="file"
-            accept=".pdf,.docx"
+            accept=".pdf,.docx,.doc"
             onChange={handleFileSelect}
             className="hidden"
           />
