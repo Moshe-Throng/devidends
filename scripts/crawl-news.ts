@@ -34,11 +34,11 @@ interface NewsArticle {
 
 /* ─── Relevance keywords ─────────────────────────────────── */
 
-const AFRICA_KEYWORDS = [
-  "ethiopia", "addis ababa", "african", "africa", "east africa",
-  "horn of africa", "kenya", "uganda", "somalia", "sudan", "south sudan",
-  "eritrea", "djibouti", "tanzania", "rwanda", "mozambique", "malawi",
-  "congo", "nigeria", "ghana", "senegal", "sahel", "sub-saharan",
+const MAX_ARTICLES = 30;
+
+const ETHIOPIA_KEYWORDS = [
+  "ethiopia", "ethiopian", "addis ababa", "tigray", "amhara", "oromia",
+  "somali region", "afar", "sidama", "snnpr", "horn of africa",
 ];
 
 const DEV_KEYWORDS = [
@@ -107,16 +107,16 @@ function classify(text: string): string {
 /* ─── Relevance filter ───────────────────────────────────── */
 
 function isRelevant(title: string, summary: string, scope: string): boolean {
-  // Ethiopia/Africa-scoped sources are always relevant
-  if (scope === "ethiopia" || scope === "africa") return true;
-
   const text = `${title} ${summary}`.toLowerCase();
 
-  // Must mention Africa/Ethiopia
-  const hasAfricaRef = AFRICA_KEYWORDS.some((kw) => text.includes(kw));
-  if (!hasAfricaRef) return false;
+  // Ethiopia-scoped sources: already filtered by query, just sanity check title exists
+  if (scope === "ethiopia") return true;
 
-  // Must be dev-sector related
+  // Global sources: must mention Ethiopia specifically
+  const mentionsEthiopia = ETHIOPIA_KEYWORDS.some((kw) => text.includes(kw));
+  if (!mentionsEthiopia) return false;
+
+  // Must also be dev-sector related
   const hasDevRef = DEV_KEYWORDS.some((kw) => text.includes(kw));
   return hasDevRef;
 }
@@ -258,14 +258,14 @@ async function crawlNews(): Promise<NewsArticle[]> {
     }
   }
 
-  // Sort by published date (newest first)
+  // Sort by published date (newest first), cap at MAX_ARTICLES
   allArticles.sort((a, b) => {
     const da = a.published_at ? new Date(a.published_at).getTime() : 0;
     const db = b.published_at ? new Date(b.published_at).getTime() : 0;
     return db - da;
   });
 
-  return allArticles;
+  return allArticles.slice(0, MAX_ARTICLES);
 }
 
 /* ─── Entry point ────────────────────────────────────────── */
