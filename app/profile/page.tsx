@@ -415,6 +415,47 @@ export default function ProfilePage() {
       {/* ══ MAIN CONTENT ═════════════════════════════════════════ */}
       <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10 lg:py-14 space-y-10">
         {/* ── Profile Completeness Nudges ─────────────────── */}
+        {/* Profile Score Breakdown */}
+        <div className="border border-dark-100 rounded-2xl p-5 bg-white animate-fadeInUp">
+          <div className="flex items-center gap-2 mb-3">
+            <Zap className="w-4 h-4 text-cyan-500" />
+            <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
+              Profile Score Breakdown
+            </p>
+            <span className="ml-auto text-sm font-bold text-dark-900">
+              {profile.profile_score_pct}%
+            </span>
+          </div>
+          <div className="space-y-1.5">
+            {[
+              { label: "Name", filled: !!profile.name?.trim(), pts: 10 },
+              { label: "Headline", filled: !!profile.headline?.trim(), pts: 10 },
+              { label: "CV uploaded", filled: !!(profile.cv_url || profile.cv_text), pts: 10 },
+              { label: "CV scored", filled: profile.cv_score != null && profile.cv_score > 0, pts: 5 },
+              { label: "Sectors", filled: profile.sectors?.length >= 1, pts: 10 },
+              { label: "Donors", filled: profile.donors?.length >= 1, pts: 10 },
+              { label: "Countries", filled: profile.countries?.length >= 1, pts: 10 },
+              { label: "Skills (3+)", filled: profile.skills?.length >= 3, pts: 10 },
+              { label: "Qualifications", filled: !!profile.qualifications?.trim(), pts: 10 },
+              { label: "Years of exp.", filled: profile.years_of_experience != null && profile.years_of_experience > 0, pts: 5 },
+              { label: "LinkedIn", filled: !!profile.linkedin_url?.trim(), pts: 5 },
+              { label: "Phone/Telegram", filled: !!(profile.phone?.trim() || profile.telegram_username?.trim()), pts: 5 },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2 text-xs">
+                <span className={`w-4 h-4 rounded flex items-center justify-center text-[10px] font-bold ${
+                  item.filled ? "bg-emerald-100 text-emerald-600" : "bg-dark-100 text-dark-400"
+                }`}>
+                  {item.filled ? "\u2713" : "\u00B7"}
+                </span>
+                <span className={item.filled ? "text-dark-700" : "text-dark-400"}>
+                  {item.label}
+                </span>
+                <span className="ml-auto text-dark-300">{item.pts}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {missingFields.length > 0 && profile.profile_score_pct < 80 && (
           <div className="border border-amber-200 rounded-2xl p-5 bg-amber-50/50 animate-fadeInUp">
             <div className="flex items-start gap-3 mb-4">

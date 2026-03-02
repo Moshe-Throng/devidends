@@ -138,17 +138,12 @@ export async function broadcastToGroup(
 
   const bot = getTelegramBot();
 
-  // Filter out procurement/supply tenders — only keep individual consultant roles
-  const PROCUREMENT_PATTERN = /\b(procurement|supply|rfp|rfq|bid|tender|construction|installation|purchase|provision of goods)\b/i;
+  // Remove all tenders and procurement-style listings
+  const TENDER_RE = /\b(procurement|supply|rfp|rfq|bid|tender|construction|installation|purchase|provision of goods)\b/i;
   const filtered = opportunities.filter((o) => {
     const type = (o.classified_type || o.type || "").toLowerCase();
-    if (type === "tender") {
-      // Only keep if it looks like an individual consultant role
-      const title = (o.title || "").toLowerCase();
-      return /\b(consult|advisor|specialist|expert|individual)\b/i.test(title);
-    }
-    // For unclassified, exclude procurement-style titles
-    if (PROCUREMENT_PATTERN.test(o.title || "")) return false;
+    if (type === "tender") return false;
+    if (TENDER_RE.test(o.title || "")) return false;
     return true;
   });
 
@@ -157,9 +152,7 @@ export async function broadcastToGroup(
     return { sent: false, count: 0 };
   }
 
-  // Group by content type
-  const jobs = filtered.filter((o) => (o.classified_type || o.type) !== "tender");
-  const tenders = filtered.filter((o) => (o.classified_type || o.type) === "tender");
+  const jobs = filtered;
 
   // Build single digest message
   const today = new Date().toLocaleDateString("en-GB", {
@@ -190,22 +183,6 @@ export async function broadcastToGroup(
     }
     if (jobs.length > 15) {
       parts.push(`  <i>...and ${jobs.length - 15} more</i>`);
-    }
-    parts.push("");
-  }
-
-  if (tenders.length > 0) {
-    parts.push(`\ud83d\udcc4 <b>TENDERS (${tenders.length})</b>`);
-    parts.push("");
-    for (const opp of tenders.slice(0, 10)) {
-      const title = escHtml(truncate(opp.title, 80));
-      const org = escHtml(truncate(opp.organization, 40));
-      const url = opp.source_url || `${SITE_URL}/opportunities`;
-      parts.push(`\u2022 <a href="${url}">${title}</a>`);
-      parts.push(`  ${org}`);
-    }
-    if (tenders.length > 10) {
-      parts.push(`  <i>...and ${tenders.length - 10} more</i>`);
     }
     parts.push("");
   }

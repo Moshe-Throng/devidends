@@ -83,14 +83,12 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    // Filter out procurement/supply tenders — only keep individual consultant roles
-    const PROCUREMENT_RE = /\b(procurement|supply of|rfp|rfq|bid invitation|construction|installation|purchase|provision of goods|civil work)\b/i;
+    // Remove all tenders and procurement-style listings
+    const TENDER_RE = /\b(procurement|supply of|rfp|rfq|bid invitation|construction|installation|purchase|provision of goods|civil work|tender)\b/i;
     opportunities = opportunities.filter((o) => {
       const type = (o.classified_type || o.type || "").toLowerCase();
-      if (type === "tender") {
-        return /\b(consult|advisor|specialist|expert|individual)\b/i.test(o.title);
-      }
-      if (PROCUREMENT_RE.test(o.title)) return false;
+      if (type === "tender") return false;
+      if (TENDER_RE.test(o.title)) return false;
       return true;
     });
 

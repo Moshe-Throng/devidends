@@ -180,7 +180,7 @@ export default function SettingsPage() {
                     Profile Visibility
                   </h2>
                   <p className="text-xs text-dark-400">
-                    Control who can see your expert profile
+                    Control who can see your expert profile in search results
                   </p>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function SettingsPage() {
                     Make profile public
                   </p>
                   <p className="text-xs text-dark-400 mt-0.5">
-                    Visible to potential employers and partners
+                    When enabled, your profile appears in the expert directory and can be found by recruiters, organizations, and partners searching for specialists in your sectors
                   </p>
                 </div>
                 <button
