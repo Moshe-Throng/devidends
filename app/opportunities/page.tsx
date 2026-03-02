@@ -22,6 +22,9 @@ import {
   Award,
   Eye,
   EyeOff,
+  Flame,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 
 import type { SampleOpportunity } from "@/lib/types/cv-score";
@@ -154,6 +157,9 @@ export default function OpportunitiesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  /* ─── View mode ────────────────────────────────────────── */
+  const [viewMode, setViewMode] = useState<"overview" | "browse">("overview");
+
   /* ─── Filter state ──────────────────────────────────────── */
   const [searchQuery, setSearchQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState("");
@@ -264,6 +270,23 @@ export default function OpportunitiesPage() {
     (sourceFilter ? 1 : 0) +
     (countryFilter ? 1 : 0);
 
+  /* ─── Overview sections ──────────────────────────────────── */
+  const closingSoon = useMemo(() => {
+    const now = Date.now();
+    const weekMs = 7 * 24 * 60 * 60 * 1000;
+    return opportunities
+      .filter((o) => o.deadline && !o.is_expired && new Date(o.deadline).getTime() - now < weekMs && new Date(o.deadline).getTime() > now)
+      .sort((a, b) => new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime())
+      .slice(0, 8);
+  }, [opportunities]);
+
+  const latestOpps = useMemo(() => {
+    return opportunities
+      .filter((o) => !o.is_expired)
+      .sort((a, b) => b.quality_score - a.quality_score)
+      .slice(0, 10);
+  }, [opportunities]);
+
   // Reset page when filters change
   useEffect(() => {
     setPage(1);
@@ -344,8 +367,149 @@ export default function OpportunitiesPage() {
             <AlertCircle className="w-5 h-5 flex-shrink-0" />
             <span className="text-sm font-medium">{error}</span>
           </div>
+        ) : viewMode === "overview" ? (
+          /* ═══════════ OVERVIEW MODE ═══════════ */
+          <div className="space-y-10">
+            {/* Closing Soon */}
+            {closingSoon.length > 0 && (
+              <section>
+                <div className="flex items-center gap-2.5 mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-amber-500 flex items-center justify-center">
+                    <Flame className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-extrabold text-dark-900 tracking-tight">
+                      Closing Soon
+                    </h2>
+                    <p className="text-[11px] text-dark-400">Deadlines within 7 days</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {closingSoon.map((opp) => {
+                    const badge = deadlineBadge(opp.deadline, opp.is_expired);
+                    return (
+                      <Link
+                        key={opp.id}
+                        href={`/opportunities/${opp.id}`}
+                        className="block p-4 rounded-xl border border-dark-100 hover:border-red-300 hover:shadow-md hover:shadow-red-500/5 transition-all group"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-sm font-bold text-dark-900 group-hover:text-red-600 transition-colors line-clamp-1">
+                              {opp.title}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-2.5 mt-1.5 text-xs text-dark-400">
+                              <span className="inline-flex items-center gap-1">
+                                <Building2 className="w-3 h-3" />
+                                {opp.organization}
+                              </span>
+                              {opp.country && (
+                                <span className="inline-flex items-center gap-1">
+                                  <MapPin className="w-3 h-3" />
+                                  {opp.country}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <span className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${badge.cls}`}>
+                            <Clock className="w-3 h-3" />
+                            {badge.label}
+                          </span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {/* Latest / Top Quality */}
+            <section>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-extrabold text-dark-900 tracking-tight">
+                    Top Opportunities
+                  </h2>
+                  <p className="text-[11px] text-dark-400">Highest quality listings</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {latestOpps.map((opp) => {
+                  const badge = deadlineBadge(opp.deadline, opp.is_expired);
+                  return (
+                    <Link
+                      key={opp.id}
+                      href={`/opportunities/${opp.id}`}
+                      className="block p-4 rounded-xl border border-dark-100 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 transition-all group"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center gap-2 mb-1">
+                            <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${typeColor(opp.classified_type)}`}>
+                              {opp.classified_type}
+                            </span>
+                            {opp.seniority && (
+                              <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${seniorityBadge(opp.seniority)}`}>
+                                {opp.seniority}
+                              </span>
+                            )}
+                          </div>
+                          <h3 className="text-sm font-bold text-dark-900 group-hover:text-cyan-600 transition-colors line-clamp-1">
+                            {opp.title}
+                          </h3>
+                          <div className="flex flex-wrap items-center gap-2.5 mt-1.5 text-xs text-dark-400">
+                            <span className="inline-flex items-center gap-1">
+                              <Building2 className="w-3 h-3" />
+                              {opp.organization}
+                            </span>
+                            {opp.country && (
+                              <span className="inline-flex items-center gap-1">
+                                <MapPin className="w-3 h-3" />
+                                {opp.country}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <span className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${badge.cls}`}>
+                          <Calendar className="w-3 h-3" />
+                          {badge.label}
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* Browse All CTA */}
+            <div className="text-center pt-4">
+              <button
+                onClick={() => setViewMode("browse")}
+                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-dark-900 text-white font-bold text-base transition-all hover:bg-dark-800 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                Browse All {opportunities.length} Opportunities
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <p className="text-xs text-dark-400 mt-2">
+                Search, filter by type, seniority, source, and country
+              </p>
+            </div>
+          </div>
         ) : (
+          /* ═══════════ BROWSE MODE ═══════════ */
           <div className="space-y-6">
+            {/* Back to overview */}
+            <button
+              onClick={() => { setViewMode("overview"); clearFilters(); }}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-dark-400 hover:text-dark-600 transition-colors"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              Back to overview
+            </button>
+
             {/* ── Search + Filter Bar ──────────────────────── */}
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
