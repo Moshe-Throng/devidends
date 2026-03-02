@@ -548,9 +548,11 @@ export default function TgCvBuilder() {
           </div>
 
           <div className="space-y-3">
-            <button
-              onClick={() => setPhase("uploading")}
-              className="w-full text-left p-4 rounded-xl border-2 border-dark-100 hover:border-cyan-400 transition-colors"
+            <a
+              href={`${typeof window !== "undefined" ? window.location.origin : ""}/cv-builder`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-left p-4 rounded-xl border-2 border-dark-100 hover:border-cyan-400 transition-colors block"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center shrink-0">
@@ -559,11 +561,11 @@ export default function TgCvBuilder() {
                 <div>
                   <p className="text-sm font-bold text-dark-900">Upload Existing CV</p>
                   <p className="text-xs text-dark-400 mt-0.5">
-                    AI extracts your data from PDF or DOCX
+                    Opens in browser for AI extraction
                   </p>
                 </div>
               </div>
-            </button>
+            </a>
 
             <button
               onClick={() => {
