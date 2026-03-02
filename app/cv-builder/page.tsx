@@ -333,8 +333,8 @@ export default function CvBuilderPage() {
 
   const validateFile = useCallback((f: File): string | null => {
     const ext = f.name.split(".").pop()?.toLowerCase();
-    if (ext !== "pdf" && ext !== "docx")
-      return "Only PDF and DOCX files accepted.";
+    if (ext !== "pdf" && ext !== "docx" && ext !== "doc")
+      return "Only PDF, DOCX, and DOC files accepted.";
     if (f.size > 15 * 1024 * 1024) return "File too large. Maximum 15 MB.";
     return null;
   }, []);
@@ -818,7 +818,7 @@ export default function CvBuilderPage() {
               <input
                 ref={fileRef}
                 type="file"
-                accept=".pdf,.docx"
+                accept=".pdf,.docx,.doc"
                 className="hidden"
                 onChange={onFileChange}
               />

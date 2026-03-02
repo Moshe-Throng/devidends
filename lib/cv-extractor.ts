@@ -71,10 +71,16 @@ Rules:
 - If certifications appear under a "Skills" or "Qualifications" heading mixed with other text, extract them into the certifications array separately.`;
 
 function stripFences(text: string): string {
-  return text
-    .replace(/^```(?:json)?\s*\n?/i, "")
-    .replace(/\n?```\s*$/i, "")
-    .trim();
+  let cleaned = text.trim();
+  // Remove markdown code fences
+  cleaned = cleaned.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "");
+  // If still not starting with {, try to find the JSON object
+  const firstBrace = cleaned.indexOf("{");
+  const lastBrace = cleaned.lastIndexOf("}");
+  if (firstBrace >= 0 && lastBrace > firstBrace) {
+    cleaned = cleaned.slice(firstBrace, lastBrace + 1);
+  }
+  return cleaned.trim();
 }
 
 /* ─── Response cache (same file → same extraction) ─────── */
@@ -169,8 +175,9 @@ export async function extractCvData(
   let parsed: Record<string, unknown>;
   try {
     parsed = JSON.parse(cleaned);
-  } catch {
-    throw new Error("Failed to parse extraction response as JSON");
+  } catch (parseErr) {
+    console.error("[cv-extractor] JSON parse failed. Raw response:", raw.slice(0, 500));
+    throw new Error("CV extraction produced an invalid response. Please try again or use a different file format.");
   }
 
   const confidence =
