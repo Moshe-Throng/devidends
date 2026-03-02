@@ -258,14 +258,32 @@ async function crawlNews(): Promise<NewsArticle[]> {
     }
   }
 
+  // Deduplicate by title similarity (>60% word overlap = duplicate)
+  const deduped: NewsArticle[] = [];
+  for (const article of allArticles) {
+    const words = new Set(article.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+    const isDupe = deduped.some((existing) => {
+      const existingWords = new Set(existing.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+      if (words.size === 0 || existingWords.size === 0) return false;
+      let overlap = 0;
+      for (const w of words) {
+        if (existingWords.has(w)) overlap++;
+      }
+      return overlap / Math.min(words.size, existingWords.size) > 0.6;
+    });
+    if (!isDupe) deduped.push(article);
+  }
+
+  console.log(`[news] Deduped: ${allArticles.length} → ${deduped.length}`);
+
   // Sort by published date (newest first), cap at MAX_ARTICLES
-  allArticles.sort((a, b) => {
+  deduped.sort((a, b) => {
     const da = a.published_at ? new Date(a.published_at).getTime() : 0;
     const db = b.published_at ? new Date(b.published_at).getTime() : 0;
     return db - da;
   });
 
-  return allArticles.slice(0, MAX_ARTICLES);
+  return deduped.slice(0, MAX_ARTICLES);
 }
 
 /* ─── Entry point ────────────────────────────────────────── */

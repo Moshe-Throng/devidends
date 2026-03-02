@@ -83,6 +83,17 @@ export async function GET(req: NextRequest) {
       );
     }
 
+    // Filter out procurement/supply tenders — only keep individual consultant roles
+    const PROCUREMENT_RE = /\b(procurement|supply of|rfp|rfq|bid invitation|construction|installation|purchase|provision of goods|civil work)\b/i;
+    opportunities = opportunities.filter((o) => {
+      const type = (o.classified_type || o.type || "").toLowerCase();
+      if (type === "tender") {
+        return /\b(consult|advisor|specialist|expert|individual)\b/i.test(o.title);
+      }
+      if (PROCUREMENT_RE.test(o.title)) return false;
+      return true;
+    });
+
     // Cache for 5 minutes (CDN) / 10 minutes (stale-while-revalidate)
     // Opportunities only change after daily scrape, so aggressive caching is safe
     return NextResponse.json(

@@ -3,7 +3,7 @@
     "id": "reliefweb-ethiopia",
     "name": "ReliefWeb",
     "type": "reliefweb-api",
-    "url": "https://api.reliefweb.int/v1/reports?appname=devidends&filter[field]=country.name&filter[value]=Ethiopia&sort[]=date:desc&limit=30&fields[include][]=title&fields[include][]=url_alias&fields[include][]=date.original&fields[include][]=source.name&fields[include][]=body-html",
+    "url": "https://api.reliefweb.int/v1/reports?appname=DevidendslWobR5bzg4nrbI2JUvPj&filter[field]=country.name&filter[value]=Ethiopia&sort[]=date:desc&limit=20&fields[include][]=title&fields[include][]=url_alias&fields[include][]=date.original&fields[include][]=source.name&fields[include][]=body-html",
     "scope": "ethiopia",
     "enabled": true
   },
@@ -15,16 +15,23 @@
     "enabled": true
   },
   {
-    "id": "google-news-ethiopia-dev",
-    "name": "Google News",
-    "url": "https://news.google.com/rss/search?q=%22Ethiopia%22+AND+(development+OR+aid+OR+donor+OR+humanitarian+OR+USAID+OR+UNDP+OR+UNICEF+OR+World+Bank)&hl=en&gl=US&ceid=US:en",
+    "id": "un-news-ethiopia",
+    "name": "UN News",
+    "url": "https://news.un.org/feed/subscribe/en/news/topic/humanitarian-aid/feed/rss.xml",
+    "scope": "global",
+    "enabled": true
+  },
+  {
+    "id": "fews-net",
+    "name": "FEWS NET",
+    "url": "https://fews.net/east-africa/ethiopia/rss.xml",
     "scope": "ethiopia",
     "enabled": true
   },
   {
-    "id": "google-news-ethiopia-ngo",
+    "id": "google-news-ethiopia-dev",
     "name": "Google News",
-    "url": "https://news.google.com/rss/search?q=%22Ethiopia%22+AND+(NGO+OR+UN+OR+refugee+OR+displacement+OR+food+security+OR+drought)&hl=en&gl=US&ceid=US:en",
+    "url": "https://news.google.com/rss/search?q=%22Ethiopia%22+AND+(development+OR+aid+OR+donor+OR+humanitarian+OR+USAID+OR+UNDP+OR+World+Bank)&hl=en&gl=US&ceid=US:en",
     "scope": "ethiopia",
     "enabled": true
   }

@@ -51,7 +51,19 @@ export async function POST(req: NextRequest) {
       cvText = await extractText(buffer, file.name, file.type);
     } else {
       const body = await req.json();
-      cvText = body.cv_text;
+
+      // Support base64-encoded file upload (used by Telegram Mini App to avoid FormData issues)
+      if (body.file_base64 && body.file_name) {
+        const buffer = Buffer.from(body.file_base64, "base64");
+        const fileType = detectFileType(body.file_name, body.file_type);
+        if (fileType === "unknown")
+          return errorJson("Unsupported file type. Upload a PDF, DOCX, DOC, or TXT file.");
+        if (buffer.length > MAX_FILE_SIZE)
+          return errorJson("File too large. Maximum size is 15 MB.");
+        cvText = await extractText(buffer, body.file_name, body.file_type);
+      } else {
+        cvText = body.cv_text;
+      }
     }
 
     if (!cvText || cvText.trim().length < MIN_TEXT_LENGTH) {

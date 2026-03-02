@@ -232,27 +232,31 @@ export default function TgCvBuilder() {
     setError(null);
 
     try {
-      const fd = new FormData();
-      fd.append("file", file);
+      // Read file as base64 text and send as JSON (avoids FormData issues in Telegram WebView)
+      const buffer = await file.arrayBuffer();
+      const base64 = btoa(
+        new Uint8Array(buffer).reduce((s, b) => s + String.fromCharCode(b), "")
+      );
 
-      // 90s timeout for slow AI extraction on serverless
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 90000);
 
       const res = await fetch("/api/cv/extract", {
         method: "POST",
-        body: fd,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          file_base64: base64,
+          file_name: file.name,
+          file_type: file.type,
+        }),
         signal: controller.signal,
       });
       clearTimeout(timeout);
 
-      if (!res.ok) {
-        const errBody = await res.json().catch(() => ({ error: `Server error (${res.status})` }));
-        throw new Error(errBody.error || `Server error (${res.status})`);
+      const json = await res.json().catch(() => ({ success: false, error: `Server error (${res.status})` }));
+      if (!res.ok || !json.success) {
+        throw new Error(json.error || "Extraction failed");
       }
-
-      const json = await res.json();
-      if (!json.success) throw new Error(json.error || "Extraction failed");
 
       setCvData(json.data);
       setOpenSections(new Set(["personal", "summary", "education", "employment"]));
