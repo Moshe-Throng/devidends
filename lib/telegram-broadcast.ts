@@ -116,8 +116,17 @@ export async function broadcastToChannel(
  * Post a single daily digest message to a Telegram group's forum topic.
  * Uses TELEGRAM_GROUP_ID and TELEGRAM_JOBS_TOPIC_ID env vars.
  */
+/** A news article from the crawled feed. */
+export interface NewsArticle {
+  title: string;
+  url: string;
+  source_name: string;
+  category: string;
+}
+
 export async function broadcastToGroup(
-  opportunities: SampleOpportunity[]
+  opportunities: SampleOpportunity[],
+  newsArticles?: NewsArticle[]
 ): Promise<{ sent: boolean; count: number }> {
   const groupId = process.env.TELEGRAM_GROUP_ID;
   const topicId = process.env.TELEGRAM_JOBS_TOPIC_ID;
@@ -187,7 +196,23 @@ export async function broadcastToGroup(
     parts.push("");
   }
 
-  parts.push(`\ud83d\udd17 <a href="${SITE_URL}/opportunities">Browse all on Devidends</a>`);
+  // News section
+  const news = newsArticles || [];
+  if (news.length > 0) {
+    parts.push(`\ud83d\udcf0 <b>DEV NEWS (${news.length})</b>`);
+    parts.push("");
+    for (const article of news.slice(0, 5)) {
+      const title = escHtml(truncate(article.title, 80));
+      parts.push(`\u2022 <a href="${article.url}">${title}</a>`);
+      parts.push(`  ${escHtml(article.source_name)} | ${escHtml(article.category)}`);
+    }
+    if (news.length > 5) {
+      parts.push(`  <i>...and ${news.length - 5} more on the feed</i>`);
+    }
+    parts.push("");
+  }
+
+  parts.push(`\ud83d\udd17 <a href="${SITE_URL}/opportunities">Browse opportunities</a> | <a href="${SITE_URL}/news">Dev news feed</a>`);
   parts.push(`\ud83d\udc64 <a href="${SITE_URL}/subscribe">Subscribe for personalized alerts</a>`);
 
   const html = parts.join("\n");

@@ -48,14 +48,26 @@ async function main() {
   });
   console.log(`${recent.length} opportunities scraped in last 24h`);
 
-  if (recent.length === 0) {
-    console.log("No recent opportunities to broadcast.");
+  // Load news articles
+  const newsPath = path.join(__dirname, "..", "test-output", "news.json");
+  let newsArticles: { title: string; url: string; source_name: string; category: string }[] = [];
+  if (fs.existsSync(newsPath)) {
+    try {
+      newsArticles = JSON.parse(fs.readFileSync(newsPath, "utf-8"));
+      console.log(`Loaded ${newsArticles.length} news articles`);
+    } catch {
+      console.warn("Failed to parse news.json");
+    }
+  }
+
+  if (recent.length === 0 && newsArticles.length === 0) {
+    console.log("No opportunities or news to broadcast.");
     return;
   }
 
   // Import and call the broadcast function
   const { broadcastToGroup } = await import("../lib/telegram-broadcast");
-  const result = await broadcastToGroup(recent);
+  const result = await broadcastToGroup(recent, newsArticles);
   console.log(`Broadcast result: sent=${result.sent}, count=${result.count}`);
 }
 
