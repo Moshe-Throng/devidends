@@ -1,5 +1,95 @@
 [
   {
+    "title": "Operational Tracking Assistant - Occupied Palestinian Territory",
+    "description": "",
+    "deadline": "08 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Palestine",
+    "region": "Middle East",
+    "category": "Safety & Security",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175368",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.285Z"
+  },
+  {
+    "title": "Cleaner - Ukraine",
+    "description": "",
+    "deadline": "16 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Ukraine",
+    "region": "Europe",
+    "category": "Administration",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175367",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.289Z"
+  },
+  {
+    "title": "Child Protection Specialist (ABA Consortium) - Ukraine",
+    "description": "",
+    "deadline": "12 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Ukraine",
+    "region": "Europe",
+    "category": "Program/Project Management",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175366",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.290Z"
+  },
+  {
+    "title": "Assistants programme - Mali",
+    "description": "",
+    "deadline": "15 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Mali",
+    "region": "Africa",
+    "category": "Program/Project Management",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175365",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.290Z"
+  },
+  {
+    "title": "Human Resources Assistant - Ukraine",
+    "description": "",
+    "deadline": "16 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Ukraine",
+    "region": "Europe",
+    "category": "Human Resources",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175364",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.291Z"
+  },
+  {
+    "title": "Human Resources and Administration Team Leader - Ukraine",
+    "description": "",
+    "deadline": "09 Mar 2026",
+    "published": "02 Mar 2026",
+    "organization": "Danish Refugee Council (DRC)",
+    "country": "Ukraine",
+    "region": "Europe",
+    "category": "Other",
+    "contract_type": "National",
+    "source_url": "https://www.drc.ngo/job?id=175356",
+    "source_domain": "drc.ngo",
+    "type": "job",
+    "scraped_at": "2026-03-03T06:15:25.291Z"
+  },
+  {
     "title": "Risk Education Officer - Afghanistan",
     "description": "",
     "deadline": "15 Mar 2026",
@@ -12,7 +102,7 @@
     "source_url": "https://www.drc.ngo/job?id=175363",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.413Z"
+    "scraped_at": "2026-03-03T06:15:25.292Z"
   },
   {
     "title": "Area Programme Manager - Bangladesh",
@@ -27,7 +117,7 @@
     "source_url": "https://www.drc.ngo/job?id=175360",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.419Z"
+    "scraped_at": "2026-03-03T06:15:25.292Z"
   },
   {
     "title": "Radio Operator - Syria",
@@ -42,7 +132,7 @@
     "source_url": "https://www.drc.ngo/job?id=175362",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.420Z"
+    "scraped_at": "2026-03-03T06:15:25.292Z"
   },
   {
     "title": "Explosive Ordnance Risk Education (EORE) Team Leader - Syria",
@@ -57,7 +147,7 @@
     "source_url": "https://www.drc.ngo/job?id=175361",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.421Z"
+    "scraped_at": "2026-03-03T06:15:25.293Z"
   },
   {
     "title": "Area Support Services Manager - Bangladesh",
@@ -72,7 +162,7 @@
     "source_url": "https://www.drc.ngo/job?id=175359",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.422Z"
+    "scraped_at": "2026-03-03T06:15:25.293Z"
   },
   {
     "title": "Head of Support Services - Venezuela",
@@ -87,7 +177,7 @@
     "source_url": "https://www.drc.ngo/job?id=175358",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.423Z"
+    "scraped_at": "2026-03-03T06:15:25.294Z"
   },
   {
     "title": "Organizational Development Lead - Denmark",
@@ -102,7 +192,7 @@
     "source_url": "https://www.drc.ngo/job?id=175355",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.424Z"
+    "scraped_at": "2026-03-03T06:15:25.294Z"
   },
   {
     "title": "Global Head of IT Service and Operations - Denmark",
@@ -117,7 +207,7 @@
     "source_url": "https://www.drc.ngo/job?id=175354",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.424Z"
+    "scraped_at": "2026-03-03T06:15:25.294Z"
   },
   {
     "title": "Global Solutions Coordinator - Strategy, Programming & Results (HQ)",
@@ -132,7 +222,7 @@
     "source_url": "https://www.drc.ngo/job?id=175353",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.425Z"
+    "scraped_at": "2026-03-03T06:15:25.294Z"
   },
   {
     "title": "Programme Coordinator-Partnership Coordinator - Myanmar",
@@ -147,7 +237,7 @@
     "source_url": "https://www.drc.ngo/job?id=175352",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.425Z"
+    "scraped_at": "2026-03-03T06:15:25.295Z"
   },
   {
     "title": "DFUNK - Dansk Flygtningehjælp Ungdom søger projektleder til lokale fællesskaber - Denmark",
@@ -162,7 +252,7 @@
     "source_url": "https://www.drc.ngo/job?id=175351",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.426Z"
+    "scraped_at": "2026-03-03T06:15:25.295Z"
   },
   {
     "title": "Asistente de Comunicaciones - Colombia",
@@ -177,7 +267,7 @@
     "source_url": "https://www.drc.ngo/job?id=175350",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.426Z"
+    "scraped_at": "2026-03-03T06:15:25.296Z"
   },
   {
     "title": "Re-advertised: Roving Risk and Compliance, Safeguarding and Code of Conduct Officer - Nigeria",
@@ -192,7 +282,7 @@
     "source_url": "https://www.drc.ngo/job?id=174787",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.427Z"
+    "scraped_at": "2026-03-03T06:15:25.296Z"
   },
   {
     "title": "Communication Officer - Occupied Palestinian Territory",
@@ -207,7 +297,7 @@
     "source_url": "https://www.drc.ngo/job?id=175348",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.427Z"
+    "scraped_at": "2026-03-03T06:15:25.296Z"
   },
   {
     "title": "Human Ressources and Administrative Officer - Occupied Palestinian Territory",
@@ -222,7 +312,7 @@
     "source_url": "https://www.drc.ngo/job?id=175347",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.428Z"
+    "scraped_at": "2026-03-03T06:15:25.296Z"
   },
   {
     "title": "Programme Coordinator – Humanitarian Coordinator (INGO FORUM) - Myanmar",
@@ -237,7 +327,7 @@
     "source_url": "https://www.drc.ngo/job?id=175346",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.430Z"
+    "scraped_at": "2026-03-03T06:15:25.297Z"
   },
   {
     "title": "Protection Manager - Sudan",
@@ -252,7 +342,7 @@
     "source_url": "https://www.drc.ngo/job?id=175344",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.433Z"
+    "scraped_at": "2026-03-03T06:15:25.298Z"
   },
   {
     "title": "Protection Manager - Sudan",
@@ -267,7 +357,7 @@
     "source_url": "https://www.drc.ngo/job?id=175343",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.435Z"
+    "scraped_at": "2026-03-03T06:15:25.298Z"
   },
   {
     "title": "Protection Coordinator - Sudan",
@@ -282,7 +372,7 @@
     "source_url": "https://www.drc.ngo/job?id=175342",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.436Z"
+    "scraped_at": "2026-03-03T06:15:25.298Z"
   },
   {
     "title": "Child Protection Coordinator (Emergency) - South Sudan",
@@ -297,7 +387,7 @@
     "source_url": "https://www.drc.ngo/job?id=175341",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.438Z"
+    "scraped_at": "2026-03-03T06:15:25.298Z"
   },
   {
     "title": "Finance and Administration Officer - Libya",
@@ -312,7 +402,7 @@
     "source_url": "https://www.drc.ngo/job?id=174955",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.439Z"
+    "scraped_at": "2026-03-03T06:15:25.299Z"
   },
   {
     "title": "Protection Assistant – GBV Case Worker - Ethiopia",
@@ -327,7 +417,7 @@
     "source_url": "https://www.drc.ngo/job?id=175339",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.441Z"
+    "scraped_at": "2026-03-03T06:15:25.299Z"
   },
   {
     "title": "Monitoring, Evaluation, Accountability and Learning Manager - Ukraine",
@@ -342,7 +432,7 @@
     "source_url": "https://www.drc.ngo/job?id=175338",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.441Z"
+    "scraped_at": "2026-03-03T06:15:25.299Z"
   },
   {
     "title": "Advocacy and Communications Coordinator - Syria",
@@ -357,7 +447,7 @@
     "source_url": "https://www.drc.ngo/job?id=175337",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.442Z"
+    "scraped_at": "2026-03-03T06:15:25.300Z"
   },
   {
     "title": "Finance Manager - Afghanistan",
@@ -372,7 +462,7 @@
     "source_url": "https://www.drc.ngo/job?id=175336",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.444Z"
+    "scraped_at": "2026-03-03T06:15:25.300Z"
   },
   {
     "title": "Líder de Equipo de Protección - Venezuela",
@@ -387,7 +477,7 @@
     "source_url": "https://www.drc.ngo/job?id=175334",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.445Z"
+    "scraped_at": "2026-03-03T06:15:25.300Z"
   },
   {
     "title": "Safety Coordinator - Occupied Palestinian Territory",
@@ -402,7 +492,7 @@
     "source_url": "https://www.drc.ngo/job?id=175327",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.447Z"
+    "scraped_at": "2026-03-03T06:15:25.300Z"
   },
   {
     "title": "Deltidskonsulent i København til opstart af et nyt seniorfællesskab målrettet ældre med flygtningebaggrund - Denmark",
@@ -417,7 +507,7 @@
     "source_url": "https://www.drc.ngo/job?id=175322",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.448Z"
+    "scraped_at": "2026-03-03T06:15:25.301Z"
   },
   {
     "title": "Partnership and Localization Advisor (Country-Focused) - Danish Refugee Council",
@@ -432,22 +522,7 @@
     "source_url": "https://www.drc.ngo/job?id=175324",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.449Z"
-  },
-  {
-    "title": "Monitoring, Evaluation, Accountability and Learning Team Leader - Ukraine",
-    "description": "",
-    "deadline": "02 Mar 2026",
-    "published": "20 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Ukraine",
-    "region": "Europe",
-    "category": "Monitoring & Evaluation",
-    "contract_type": "National",
-    "source_url": "https://www.drc.ngo/job?id=175321",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.450Z"
+    "scraped_at": "2026-03-03T06:15:25.301Z"
   },
   {
     "title": "Student Assistants - LMU, Diaspora & GPS / Grants Management Unit - Denmark",
@@ -462,7 +537,7 @@
     "source_url": "https://www.drc.ngo/job?id=175320",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.450Z"
+    "scraped_at": "2026-03-03T06:15:25.301Z"
   },
   {
     "title": "Protection Coordinator - South Sudan",
@@ -477,7 +552,7 @@
     "source_url": "https://www.drc.ngo/job?id=175317",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.451Z"
+    "scraped_at": "2026-03-03T06:15:25.302Z"
   },
   {
     "title": "Head of Localization Management Unit - Denmark",
@@ -492,7 +567,7 @@
     "source_url": "https://www.drc.ngo/job?id=175315",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.451Z"
+    "scraped_at": "2026-03-03T06:15:25.302Z"
   },
   {
     "title": "Communication and Graphic Design Officer – Regional - Jordan",
@@ -507,7 +582,7 @@
     "source_url": "https://www.drc.ngo/job?id=175314",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.452Z"
+    "scraped_at": "2026-03-03T06:15:25.302Z"
   },
   {
     "title": "Finance and Compliance Coordinator - Consortium - Nigeria",
@@ -522,7 +597,7 @@
     "source_url": "https://www.drc.ngo/job?id=175312",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.453Z"
+    "scraped_at": "2026-03-03T06:15:25.303Z"
   },
   {
     "title": "Protection Cluster & Sector Co-Coordinator - Colombia",
@@ -537,7 +612,7 @@
     "source_url": "https://www.drc.ngo/job?id=175309",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.454Z"
+    "scraped_at": "2026-03-03T06:15:25.303Z"
   },
   {
     "title": "Contracts & Sub-Grants Advisor - Denmark",
@@ -552,7 +627,7 @@
     "source_url": "https://www.drc.ngo/job?id=175310",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.455Z"
+    "scraped_at": "2026-03-03T06:15:25.303Z"
   },
   {
     "title": "Supply Chain Assistant – Warehouse/Fleet - Ethiopia",
@@ -567,7 +642,7 @@
     "source_url": "https://www.drc.ngo/job?id=175302",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.455Z"
+    "scraped_at": "2026-03-03T06:15:25.303Z"
   },
   {
     "title": "Stagiaire en Gestion des Subventions - Chad",
@@ -582,7 +657,7 @@
     "source_url": "https://www.drc.ngo/job?id=175300",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.456Z"
+    "scraped_at": "2026-03-03T06:15:25.304Z"
   },
   {
     "title": "Roving Finance Specialist - Ethiopia",
@@ -597,7 +672,7 @@
     "source_url": "https://www.drc.ngo/job?id=175297",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.456Z"
+    "scraped_at": "2026-03-03T06:15:25.305Z"
   },
   {
     "title": "Finance Specialist - Ethiopia",
@@ -612,22 +687,7 @@
     "source_url": "https://www.drc.ngo/job?id=175296",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.457Z"
-  },
-  {
-    "title": "Economic Recovery Specialist (re-advertisement) - Ukraine",
-    "description": "",
-    "deadline": "02 Mar 2026",
-    "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Ukraine",
-    "region": "Europe",
-    "category": "Program/Project Management",
-    "contract_type": "National",
-    "source_url": "https://www.drc.ngo/job?id=175295",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.457Z"
+    "scraped_at": "2026-03-03T06:15:25.306Z"
   },
   {
     "title": "Humanitarian Mine Action Assistant (NTS/EORE Assistant) - Ukraine",
@@ -642,52 +702,7 @@
     "source_url": "https://www.drc.ngo/job?id=175293",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.458Z"
-  },
-  {
-    "title": "Research Assistant (part-time / 30 hours) - Denmark",
-    "description": "",
-    "deadline": "02 Mar 2026",
-    "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Denmark",
-    "region": "Europe",
-    "category": "Monitoring & Evaluation",
-    "contract_type": "National",
-    "source_url": "https://www.drc.ngo/job?id=175287",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.458Z"
-  },
-  {
-    "title": "Supply Chain Coordinator - Occupied Palestinian Territory",
-    "description": "",
-    "deadline": "02 Mar 2026",
-    "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Supply Chain",
-    "contract_type": "National",
-    "source_url": "https://www.drc.ngo/job?id=175291",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.459Z"
-  },
-  {
-    "title": "Finance Manager - National Amman - Occupied Palestinian Territory",
-    "description": "",
-    "deadline": "02 Mar 2026",
-    "published": "17 Feb 2026",
-    "organization": "Danish Refugee Council (DRC)",
-    "country": "Palestine",
-    "region": "Middle East",
-    "category": "Finance",
-    "contract_type": "National",
-    "source_url": "https://www.drc.ngo/job?id=175289",
-    "source_domain": "drc.ngo",
-    "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.459Z"
+    "scraped_at": "2026-03-03T06:15:25.306Z"
   },
   {
     "title": "Partnership Specialist (National) - Venezuela",
@@ -702,7 +717,7 @@
     "source_url": "https://www.drc.ngo/job?id=175269",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.460Z"
+    "scraped_at": "2026-03-03T06:15:25.307Z"
   },
   {
     "title": "Supply Chain Assistant / Driver - Libya",
@@ -717,7 +732,7 @@
     "source_url": "https://www.drc.ngo/job?id=175258",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.461Z"
+    "scraped_at": "2026-03-03T06:15:25.307Z"
   },
   {
     "title": "Grants and Partnerships Officer (Re-advertisement) - Turkey",
@@ -732,7 +747,7 @@
     "source_url": "https://www.drc.ngo/job?id=174159",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.462Z"
+    "scraped_at": "2026-03-03T06:15:25.307Z"
   },
   {
     "title": "DRC Humanitarian Response Roster – Candidate Database - DRC Humanitarian Response Roster",
@@ -747,7 +762,7 @@
     "source_url": "https://www.drc.ngo/job?id=175050",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.463Z"
+    "scraped_at": "2026-03-03T06:15:25.308Z"
   },
   {
     "title": "Finance Manager - Reannouncement - Myanmar",
@@ -762,6 +777,6 @@
     "source_url": "https://www.drc.ngo/job?id=174365",
     "source_domain": "drc.ngo",
     "type": "job",
-    "scraped_at": "2026-03-02T07:12:12.464Z"
+    "scraped_at": "2026-03-03T06:15:25.308Z"
   }
 ]
