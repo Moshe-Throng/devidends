@@ -37,12 +37,12 @@ import { SaveButton } from "@/components/SaveButton";
 
 const PAGE_SIZE = 20;
 
-const TYPE_OPTIONS = [
-  { value: "", label: "All Types" },
-  { value: "job", label: "Jobs" },
-  { value: "tender", label: "Tenders" },
-  { value: "consulting", label: "Consulting" },
-  { value: "internship", label: "Internships" },
+const CATEGORY_TABS = [
+  { value: "", label: "All", icon: Globe },
+  { value: "job", label: "Jobs", icon: Briefcase },
+  { value: "consulting", label: "Consulting", icon: Target },
+  { value: "tender", label: "Tenders", icon: Award },
+  { value: "internship", label: "Internships", icon: Sparkles },
 ];
 
 const SENIORITY_OPTIONS = [
@@ -165,12 +165,9 @@ export default function OpportunitiesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  /* ─── View mode ────────────────────────────────────────── */
-  const [viewMode, setViewMode] = useState<"overview" | "browse">("overview");
-
   /* ─── Filter state ──────────────────────────────────────── */
   const [searchQuery, setSearchQuery] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
+  const [activeTab, setActiveTab] = useState("");
   const [seniorityFilter, setSeniorityFilter] = useState("");
   const [sourceFilter, setSourceFilter] = useState("");
   const [countryFilter, setCountryFilter] = useState("");
@@ -210,6 +207,16 @@ export default function OpportunitiesPage() {
     return Array.from(set).sort();
   }, [opportunities]);
 
+  // Category counts (computed from unfiltered data)
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { "": opportunities.length };
+    for (const opp of opportunities) {
+      const t = opp.classified_type.toLowerCase();
+      counts[t] = (counts[t] || 0) + 1;
+    }
+    return counts;
+  }, [opportunities]);
+
   const filtered = useMemo(() => {
     let result = [...opportunities];
 
@@ -224,10 +231,10 @@ export default function OpportunitiesPage() {
       );
     }
 
-    // Type filter — use classified_type
-    if (typeFilter) {
+    // Category tab filter
+    if (activeTab) {
       result = result.filter(
-        (o) => o.classified_type.toLowerCase() === typeFilter.toLowerCase()
+        (o) => o.classified_type.toLowerCase() === activeTab.toLowerCase()
       );
     }
 
@@ -269,38 +276,45 @@ export default function OpportunitiesPage() {
     });
 
     return result;
-  }, [opportunities, searchQuery, typeFilter, seniorityFilter, sourceFilter, countryFilter, sortBy]);
+  }, [opportunities, searchQuery, activeTab, seniorityFilter, sourceFilter, countryFilter, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const activeFilters =
-    (typeFilter ? 1 : 0) +
     (seniorityFilter ? 1 : 0) +
     (sourceFilter ? 1 : 0) +
     (countryFilter ? 1 : 0);
 
-  /* ─── Overview sections ──────────────────────────────────── */
+  /* ─── Closing soon ──────────────────────────────────────── */
   const closingSoon = useMemo(() => {
     const now = Date.now();
     const weekMs = 7 * 24 * 60 * 60 * 1000;
-    return opportunities
-      .filter((o) => o.deadline && !o.is_expired && new Date(o.deadline).getTime() - now < weekMs && new Date(o.deadline).getTime() > now)
-      .sort((a, b) => new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime())
-      .slice(0, 8);
-  }, [opportunities]);
-
-  const latestOpps = useMemo(() => {
-    return opportunities
-      .filter((o) => !o.is_expired)
-      .sort((a, b) => b.quality_score - a.quality_score)
-      .slice(0, 10);
-  }, [opportunities]);
+    let pool = opportunities.filter(
+      (o) =>
+        o.deadline &&
+        !o.is_expired &&
+        new Date(o.deadline).getTime() - now < weekMs &&
+        new Date(o.deadline).getTime() > now
+    );
+    // If a tab is active, scope the closing-soon to that type
+    if (activeTab) {
+      pool = pool.filter(
+        (o) => o.classified_type.toLowerCase() === activeTab.toLowerCase()
+      );
+    }
+    return pool
+      .sort(
+        (a, b) =>
+          new Date(a.deadline!).getTime() - new Date(b.deadline!).getTime()
+      )
+      .slice(0, 5);
+  }, [opportunities, activeTab]);
 
   // Reset page when filters change
   useEffect(() => {
     setPage(1);
-  }, [searchQuery, typeFilter, seniorityFilter, sourceFilter, countryFilter, sortBy, showExpired]);
+  }, [searchQuery, activeTab, seniorityFilter, sourceFilter, countryFilter, sortBy, showExpired]);
 
   // Scroll to top of listings when page changes
   useEffect(() => {
@@ -314,7 +328,6 @@ export default function OpportunitiesPage() {
 
   const clearFilters = () => {
     setSearchQuery("");
-    setTypeFilter("");
     setSeniorityFilter("");
     setSourceFilter("");
     setCountryFilter("");
@@ -342,8 +355,8 @@ export default function OpportunitiesPage() {
         />
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-12 lg:py-16">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="relative max-w-6xl mx-auto px-6 py-10 lg:py-14">
+          <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/25">
               <Globe className="w-5 h-5 text-white" />
             </div>
@@ -351,30 +364,65 @@ export default function OpportunitiesPage() {
               Opportunities
             </span>
           </div>
-          <h1 className="text-3xl lg:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
             Find Your Next Assignment
           </h1>
-          <p className="mt-3 text-dark-300 text-base lg:text-lg max-w-2xl leading-relaxed">
+          <p className="mt-2 text-dark-300 text-sm lg:text-base max-w-2xl leading-relaxed">
             Browse live opportunities from GIZ, World Bank, UNDP, African Union,
-            and more. Filter by source, type, seniority, and location.
+            and more.
           </p>
           {!loading && (
-            <div className="flex flex-wrap items-center gap-4 mt-4">
-              <p className="text-cyan-400 text-sm font-semibold">
-                {opportunities.length} active opportunities from {sources.length} sources
-              </p>
-              {totalCount > opportunities.length && (
-                <p className="text-dark-500 text-xs">
-                  ({totalCount - opportunities.length} expired / low-quality hidden)
-                </p>
-              )}
-            </div>
+            <p className="text-cyan-400 text-sm font-semibold mt-3">
+              {opportunities.length} active opportunities from {sources.length} sources
+            </p>
           )}
         </div>
       </section>
 
+      {/* ── Category Tabs — sticky ────────────────────────── */}
+      <div className="sticky top-0 z-30 bg-white border-b border-dark-100 shadow-sm">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex gap-1 overflow-x-auto no-scrollbar py-1">
+            {CATEGORY_TABS.map((tab) => {
+              const count = categoryCounts[tab.value] || 0;
+              const isActive = activeTab === tab.value;
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.value}
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`relative shrink-0 inline-flex items-center gap-2 px-4 py-3 text-sm font-semibold transition-colors ${
+                    isActive
+                      ? "text-cyan-700"
+                      : "text-dark-400 hover:text-dark-600"
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  {tab.label}
+                  {!loading && (
+                    <span
+                      className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full ${
+                        isActive
+                          ? "bg-cyan-100 text-cyan-700"
+                          : "bg-dark-50 text-dark-400"
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  )}
+                  {/* Active indicator bar */}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-cyan-500 rounded-full" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       {/* Content */}
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10 lg:py-14">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-8 lg:py-10">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-24">
             <Loader2 className="w-10 h-10 text-cyan-500 animate-spin mb-4" />
@@ -387,52 +435,37 @@ export default function OpportunitiesPage() {
             <AlertCircle className="w-5 h-5 flex-shrink-0" />
             <span className="text-sm font-medium">{error}</span>
           </div>
-        ) : viewMode === "overview" ? (
-          /* ═══════════ OVERVIEW MODE ═══════════ */
-          <div className="space-y-10">
-            {/* Closing Soon */}
+        ) : (
+          <div className="space-y-6">
+            {/* ── Closing Soon Banner ─────────────────────── */}
             {closingSoon.length > 0 && (
-              <section>
-                <div className="flex items-center gap-2.5 mb-4">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-amber-500 flex items-center justify-center">
-                    <Flame className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-extrabold text-dark-900 tracking-tight">
-                      Closing Soon
-                    </h2>
-                    <p className="text-[11px] text-dark-400">Deadlines within 7 days</p>
-                  </div>
+              <div className="rounded-xl border border-amber-200 bg-gradient-to-r from-amber-50/80 to-red-50/40 p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <Flame className="w-4 h-4 text-red-500" />
+                  <span className="text-xs font-bold text-red-600 uppercase tracking-[0.1em]">
+                    Closing within 7 days
+                  </span>
                 </div>
-                <div className="space-y-3">
+                <div className="flex gap-3 overflow-x-auto no-scrollbar pb-1">
                   {closingSoon.map((opp) => {
                     const badge = deadlineBadge(opp.deadline, opp.is_expired);
                     return (
                       <Link
                         key={opp.id}
                         href={`/opportunities/${opp.id}`}
-                        className="block p-4 rounded-xl border border-dark-100 hover:border-red-300 hover:shadow-md hover:shadow-red-500/5 transition-all group"
+                        className="shrink-0 w-[280px] p-3 rounded-lg bg-white border border-dark-100 hover:border-red-300 hover:shadow-sm transition-all group"
                       >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-sm font-bold text-dark-900 group-hover:text-red-600 transition-colors line-clamp-1">
-                              {opp.title}
-                            </h3>
-                            <div className="flex flex-wrap items-center gap-2.5 mt-1.5 text-xs text-dark-400">
-                              <span className="inline-flex items-center gap-1">
-                                <Building2 className="w-3 h-3" />
-                                {opp.organization}
-                              </span>
-                              {opp.country && (
-                                <span className="inline-flex items-center gap-1">
-                                  <MapPin className="w-3 h-3" />
-                                  {opp.country}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          <span className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${badge.cls}`}>
-                            <Clock className="w-3 h-3" />
+                        <h4 className="text-xs font-bold text-dark-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">
+                          {opp.title}
+                        </h4>
+                        <div className="flex items-center justify-between mt-2">
+                          <span className="text-[11px] text-dark-400 truncate mr-2">
+                            {opp.organization}
+                          </span>
+                          <span
+                            className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold border ${badge.cls}`}
+                          >
+                            <Clock className="w-2.5 h-2.5" />
                             {badge.label}
                           </span>
                         </div>
@@ -440,95 +473,8 @@ export default function OpportunitiesPage() {
                     );
                   })}
                 </div>
-              </section>
+              </div>
             )}
-
-            {/* Latest / Top Quality */}
-            <section>
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-lg font-extrabold text-dark-900 tracking-tight">
-                    Top Opportunities
-                  </h2>
-                  <p className="text-[11px] text-dark-400">Highest quality listings</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                {latestOpps.map((opp) => {
-                  const badge = deadlineBadge(opp.deadline, opp.is_expired);
-                  return (
-                    <Link
-                      key={opp.id}
-                      href={`/opportunities/${opp.id}`}
-                      className="block p-4 rounded-xl border border-dark-100 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 transition-all group"
-                    >
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-center gap-2 mb-1">
-                            <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${typeColor(opp.classified_type)}`}>
-                              {opp.classified_type}
-                            </span>
-                            {opp.seniority && (
-                              <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${seniorityBadge(opp.seniority)}`}>
-                                {opp.seniority}
-                              </span>
-                            )}
-                          </div>
-                          <h3 className="text-sm font-bold text-dark-900 group-hover:text-cyan-600 transition-colors line-clamp-1">
-                            {opp.title}
-                          </h3>
-                          <div className="flex flex-wrap items-center gap-2.5 mt-1.5 text-xs text-dark-400">
-                            <span className="inline-flex items-center gap-1">
-                              <Building2 className="w-3 h-3" />
-                              {opp.organization}
-                            </span>
-                            {opp.country && (
-                              <span className="inline-flex items-center gap-1">
-                                <MapPin className="w-3 h-3" />
-                                {opp.country}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                        <span className={`shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${badge.cls}`}>
-                          <Calendar className="w-3 h-3" />
-                          {badge.label}
-                        </span>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </section>
-
-            {/* Browse All CTA */}
-            <div className="text-center pt-4">
-              <button
-                onClick={() => setViewMode("browse")}
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-dark-900 text-white font-bold text-base transition-all hover:bg-dark-800 hover:shadow-lg hover:-translate-y-0.5"
-              >
-                Browse All {opportunities.length} Opportunities
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <p className="text-xs text-dark-400 mt-2">
-                Search, filter by type, seniority, source, and country
-              </p>
-            </div>
-          </div>
-        ) : (
-          /* ═══════════ BROWSE MODE ═══════════ */
-          <div className="space-y-6">
-            {/* Back to overview */}
-            <button
-              onClick={() => { setViewMode("overview"); clearFilters(); }}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-dark-400 hover:text-dark-600 transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Back to overview
-            </button>
 
             {/* ── Search + Filter Bar ──────────────────────── */}
             <div className="flex flex-col lg:flex-row gap-4">
@@ -609,27 +555,7 @@ export default function OpportunitiesPage() {
             {/* ── Filter Panel ─────────────────────────────── */}
             {filtersOpen && (
               <div className="p-5 rounded-2xl border border-dark-100 bg-dark-50/30 animate-fadeInUp">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div>
-                    <label className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-1.5 block">
-                      Type
-                    </label>
-                    <div className="relative">
-                      <select
-                        value={typeFilter}
-                        onChange={(e) => setTypeFilter(e.target.value)}
-                        className="w-full appearance-none px-3 py-2.5 pr-8 rounded-lg border border-dark-100 text-sm bg-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500"
-                      >
-                        {TYPE_OPTIONS.map((opt) => (
-                          <option key={opt.value} value={opt.value}>
-                            {opt.label}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-300 pointer-events-none" />
-                    </div>
-                  </div>
-
+                <div className="grid sm:grid-cols-3 gap-4">
                   <div>
                     <label className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-1.5 block">
                       Seniority
@@ -717,14 +643,6 @@ export default function OpportunitiesPage() {
               </p>
               {activeFilters > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {typeFilter && (
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cyan-50 text-cyan-700 text-xs font-semibold border border-cyan-200">
-                      {typeFilter}
-                      <button onClick={() => setTypeFilter("")}>
-                        <X className="w-3 h-3" />
-                      </button>
-                    </span>
-                  )}
                   {seniorityFilter && (
                     <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-violet-50 text-violet-700 text-xs font-semibold border border-violet-200">
                       {seniorityFilter}
@@ -797,7 +715,7 @@ export default function OpportunitiesPage() {
                               title={quality.label}
                             />
 
-                            {/* Type badge — use classified_type */}
+                            {/* Type badge */}
                             <span
                               className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-[0.1em] border ${typeColor(opp.classified_type)}`}
                             >
@@ -828,11 +746,13 @@ export default function OpportunitiesPage() {
                           </div>
 
                           {/* Title */}
-                          <h3 className={`text-base font-bold transition-colors line-clamp-2 ${
-                            opp.is_expired
-                              ? "text-dark-500"
-                              : "text-dark-900 group-hover:text-cyan-600"
-                          }`}>
+                          <h3
+                            className={`text-base font-bold transition-colors line-clamp-2 ${
+                              opp.is_expired
+                                ? "text-dark-500"
+                                : "text-dark-900 group-hover:text-cyan-600"
+                            }`}
+                          >
                             {opp.title}
                           </h3>
 
@@ -995,6 +915,11 @@ export default function OpportunitiesPage() {
       </main>
 
       <SiteFooter />
+
+      <style jsx global>{`
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
     </div>
   );
 }

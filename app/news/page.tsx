@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Loader2,
   ExternalLink,
@@ -8,6 +8,8 @@ import {
   Clock,
   Globe,
   AlertCircle,
+  ArrowUpRight,
+  TrendingUp,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -49,6 +51,17 @@ const CATEGORY_COLORS: Record<string, string> = {
   General: "bg-dark-50 text-dark-600 border-dark-200",
 };
 
+const CATEGORY_ACCENT: Record<string, string> = {
+  Humanitarian: "border-l-red-400",
+  "Policy & Governance": "border-l-indigo-400",
+  "Economy & Trade": "border-l-emerald-400",
+  Health: "border-l-pink-400",
+  Education: "border-l-violet-400",
+  "Climate & Environment": "border-l-lime-500",
+  "Funding & Donors": "border-l-amber-400",
+  General: "border-l-dark-200",
+};
+
 const PAGE_SIZE = 30;
 
 /* ─── Helpers ────────────────────────────────────────────── */
@@ -68,14 +81,6 @@ function timeAgo(dateStr: string | null): string {
   });
 }
 
-function domain(url: string): string {
-  try {
-    return new URL(url).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
-}
-
 /* ═══════════════════════════════════════════════════════════════
    COMPONENT
    ═══════════════════════════════════════════════════════════════ */
@@ -93,7 +98,10 @@ export default function NewsPage() {
     else setLoading(true);
 
     try {
-      const params = new URLSearchParams({ limit: String(PAGE_SIZE), offset: String(off) });
+      const params = new URLSearchParams({
+        limit: String(PAGE_SIZE),
+        offset: String(off),
+      });
       if (cat !== "All") params.set("category", cat);
       const res = await fetch(`/api/news?${params}`);
       const json = await res.json();
@@ -123,6 +131,20 @@ export default function NewsPage() {
     fetchArticles(category, newOffset, true);
   }
 
+  // Split articles into featured + rest
+  const featured = articles[0] || null;
+  const topStories = articles.slice(1, 4);
+  const remainingArticles = articles.slice(4);
+
+  // Category counts from loaded articles
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const a of articles) {
+      counts[a.category] = (counts[a.category] || 0) + 1;
+    }
+    return counts;
+  }, [articles]);
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <SiteHeader activeHref="/news" />
@@ -144,7 +166,7 @@ export default function NewsPage() {
         </div>
         <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-teal-500/5 blur-3xl" />
 
-        <div className="relative max-w-5xl mx-auto px-5 sm:px-8 py-8 lg:py-10">
+        <div className="relative max-w-6xl mx-auto px-5 sm:px-8 py-8 lg:py-10">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/15">
               <Newspaper className="w-5 h-5 text-white" strokeWidth={2} />
@@ -157,14 +179,15 @@ export default function NewsPage() {
             Development News
           </h1>
           <p className="mt-1.5 text-dark-400 text-sm lg:text-base max-w-2xl leading-relaxed">
-            International development news and updates relevant to Africa and Ethiopia.
+            International development news and updates relevant to Africa and
+            Ethiopia.
           </p>
         </div>
       </section>
 
-      {/* Category chips */}
+      {/* Category chips — sticky */}
       <div className="border-b border-dark-50 bg-white sticky top-0 z-20">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-3">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-3">
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {CATEGORIES.map((cat) => (
               <button
@@ -184,7 +207,7 @@ export default function NewsPage() {
       </div>
 
       {/* Content */}
-      <main className="flex-1 max-w-5xl w-full mx-auto px-5 sm:px-8 py-8">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-5 sm:px-8 py-8">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <Loader2 className="w-6 h-6 animate-spin text-cyan-500" />
@@ -192,7 +215,9 @@ export default function NewsPage() {
         ) : articles.length === 0 ? (
           <div className="text-center py-20">
             <AlertCircle className="w-10 h-10 text-dark-200 mx-auto mb-3" />
-            <p className="text-sm font-semibold text-dark-500">No articles found</p>
+            <p className="text-sm font-semibold text-dark-500">
+              No articles found
+            </p>
             <p className="text-xs text-dark-400 mt-1">
               {category !== "All"
                 ? `No ${category} articles available. Try a different category.`
@@ -201,56 +226,184 @@ export default function NewsPage() {
           </div>
         ) : (
           <>
-            <div className="space-y-3">
-              {articles.map((article) => (
+            {/* ── Featured + Top Stories ─────────────────── */}
+            {featured && (
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
+                {/* Featured article — large */}
                 <a
-                  key={article.id}
-                  href={article.url}
+                  href={featured.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block group"
+                  className="lg:col-span-3 group"
                 >
-                  <div className="border border-dark-100 rounded-xl px-5 py-4 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 transition-all duration-200">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-bold text-dark-900 leading-snug group-hover:text-cyan-700 transition-colors line-clamp-2">
-                          {article.title}
-                        </h3>
-                        {article.summary && (
-                          <p className="mt-1.5 text-xs text-dark-400 leading-relaxed line-clamp-2">
-                            {article.summary}
-                          </p>
+                  <div className="relative h-full rounded-2xl border border-dark-100 overflow-hidden hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-200">
+                    {/* Category color bar */}
+                    <div
+                      className={`h-1 ${
+                        CATEGORY_COLORS[featured.category]
+                          ?.split(" ")[0]
+                          .replace("bg-", "bg-") || "bg-cyan-500"
+                      }`}
+                    />
+                    <div className="p-6 lg:p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span
+                          className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${
+                            CATEGORY_COLORS[featured.category] ||
+                            CATEGORY_COLORS.General
+                          }`}
+                        >
+                          {featured.category}
+                        </span>
+                        {featured.published_at && (
+                          <span className="text-[11px] text-dark-400 flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {timeAgo(featured.published_at)}
+                          </span>
                         )}
-                        <div className="flex items-center gap-3 mt-2.5 flex-wrap">
-                          <span className="flex items-center gap-1 text-[11px] text-dark-400">
-                            <Globe className="w-3 h-3" />
-                            {article.source_name}
-                          </span>
-                          {article.published_at && (
-                            <span className="flex items-center gap-1 text-[11px] text-dark-400">
-                              <Clock className="w-3 h-3" />
-                              {timeAgo(article.published_at)}
-                            </span>
-                          )}
-                          <span
-                            className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
-                              CATEGORY_COLORS[article.category] || CATEGORY_COLORS.General
-                            }`}
-                          >
-                            {article.category}
-                          </span>
-                        </div>
                       </div>
-                      <ExternalLink className="w-4 h-4 text-dark-200 group-hover:text-cyan-500 shrink-0 mt-1 transition-colors" />
+                      <h2 className="text-xl lg:text-2xl font-extrabold text-dark-900 leading-tight group-hover:text-cyan-700 transition-colors">
+                        {featured.title}
+                      </h2>
+                      {featured.summary && (
+                        <p className="mt-3 text-sm text-dark-500 leading-relaxed line-clamp-4">
+                          {featured.summary}
+                        </p>
+                      )}
+                      <div className="flex items-center justify-between mt-5">
+                        <span className="flex items-center gap-1.5 text-xs text-dark-400 font-medium">
+                          <Globe className="w-3.5 h-3.5" />
+                          {featured.source_name}
+                        </span>
+                        <span className="text-xs text-cyan-600 font-semibold group-hover:text-cyan-700 transition-colors flex items-center gap-1">
+                          Read article
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </a>
-              ))}
-            </div>
+
+                {/* Top stories — sidebar stack */}
+                {topStories.length > 0 && (
+                  <div className="lg:col-span-2 flex flex-col gap-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <TrendingUp className="w-4 h-4 text-cyan-600" />
+                      <span className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
+                        Top Stories
+                      </span>
+                    </div>
+                    {topStories.map((article) => (
+                      <a
+                        key={article.id}
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block"
+                      >
+                        <div
+                          className={`border border-dark-100 rounded-xl px-4 py-3.5 hover:border-cyan-300 hover:shadow-sm transition-all duration-200 border-l-[3px] ${
+                            CATEGORY_ACCENT[article.category] ||
+                            CATEGORY_ACCENT.General
+                          }`}
+                        >
+                          <h3 className="text-sm font-bold text-dark-900 leading-snug group-hover:text-cyan-700 transition-colors line-clamp-2">
+                            {article.title}
+                          </h3>
+                          <div className="flex items-center gap-2.5 mt-2">
+                            <span className="text-[11px] text-dark-400">
+                              {article.source_name}
+                            </span>
+                            {article.published_at && (
+                              <span className="text-[11px] text-dark-300">
+                                {timeAgo(article.published_at)}
+                              </span>
+                            )}
+                            <span
+                              className={`px-1.5 py-0.5 rounded text-[9px] font-bold border ${
+                                CATEGORY_COLORS[article.category] ||
+                                CATEGORY_COLORS.General
+                              }`}
+                            >
+                              {article.category}
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ── Remaining articles — two-column grid ──── */}
+            {remainingArticles.length > 0 && (
+              <>
+                <div className="flex items-center gap-2 mb-4 pt-2 border-t border-dark-50">
+                  <Newspaper className="w-4 h-4 text-dark-400" />
+                  <span className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
+                    Latest Updates
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {remainingArticles.map((article) => (
+                    <a
+                      key={article.id}
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <div
+                        className={`border border-dark-100 rounded-xl px-5 py-4 hover:border-cyan-300 hover:shadow-md hover:shadow-cyan-500/5 transition-all duration-200 h-full border-l-[3px] ${
+                          CATEGORY_ACCENT[article.category] ||
+                          CATEGORY_ACCENT.General
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-sm font-bold text-dark-900 leading-snug group-hover:text-cyan-700 transition-colors line-clamp-2">
+                              {article.title}
+                            </h3>
+                            {article.summary && (
+                              <p className="mt-1.5 text-xs text-dark-400 leading-relaxed line-clamp-2">
+                                {article.summary}
+                              </p>
+                            )}
+                            <div className="flex items-center gap-3 mt-2.5 flex-wrap">
+                              <span className="flex items-center gap-1 text-[11px] text-dark-400">
+                                <Globe className="w-3 h-3" />
+                                {article.source_name}
+                              </span>
+                              {article.published_at && (
+                                <span className="flex items-center gap-1 text-[11px] text-dark-400">
+                                  <Clock className="w-3 h-3" />
+                                  {timeAgo(article.published_at)}
+                                </span>
+                              )}
+                              <span
+                                className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                                  CATEGORY_COLORS[article.category] ||
+                                  CATEGORY_COLORS.General
+                                }`}
+                              >
+                                {article.category}
+                              </span>
+                            </div>
+                          </div>
+                          <ExternalLink className="w-4 h-4 text-dark-200 group-hover:text-cyan-500 shrink-0 mt-1 transition-colors" />
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
 
             {/* Load more */}
             {articles.length < total && (
-              <div className="mt-6 text-center">
+              <div className="mt-8 text-center">
                 <button
                   onClick={loadMore}
                   disabled={loadingMore}
@@ -259,7 +412,7 @@ export default function NewsPage() {
                   {loadingMore ? (
                     <Loader2 className="w-4 h-4 animate-spin inline mr-2" />
                   ) : null}
-                  Load more
+                  Load more articles
                 </button>
               </div>
             )}
@@ -274,8 +427,13 @@ export default function NewsPage() {
       <SiteFooter />
 
       <style jsx global>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
     </div>
   );

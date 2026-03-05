@@ -249,10 +249,17 @@ function CvScorerPage() {
   }, [user, authLoading]);
 
   useEffect(() => {
-    fetch("/api/opportunities/sample")
+    fetch("/api/opportunities/sample?hideExpired=true&minQuality=40")
       .then((r) => r.json())
       .then((d) => {
-        setOpportunities(d.opportunities || []);
+        // Only show jobs and consulting — exclude tenders/ToRs
+        const opps = (d.opportunities || []).filter(
+          (o: SampleOpportunity) => {
+            const t = (o.classified_type || "").toLowerCase();
+            return t !== "tender";
+          }
+        );
+        setOpportunities(opps);
         setOppsLoading(false);
       })
       .catch(() => setOppsLoading(false));

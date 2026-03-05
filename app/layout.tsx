@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
+import { ProfileOnboarding } from "@/components/ProfileOnboarding";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -96,7 +97,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`${montserrat.variable} antialiased`}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <ProfileOnboarding />
+        </AuthProvider>
       </body>
     </html>
   );
