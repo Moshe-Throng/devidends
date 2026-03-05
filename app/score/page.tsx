@@ -285,16 +285,8 @@ function CvScorerPage() {
     return () => clearInterval(iv);
   }, [phase]);
 
-  // Show auth modal when results are ready and user is not authenticated
-  useEffect(() => {
-    if (phase !== "results" || !result || authLoading) return;
-    if (user) {
-      setShowAuthModal(false);
-      return;
-    }
-    const timer = setTimeout(() => setShowAuthModal(true), 1200);
-    return () => clearTimeout(timer);
-  }, [phase, result, user, authLoading]);
+  // Don't auto-show auth modal — let users see their results without interruption.
+  // They can sign in manually if they want to save or access full features.
 
   // Check for existing profile when user changes
   useEffect(() => {

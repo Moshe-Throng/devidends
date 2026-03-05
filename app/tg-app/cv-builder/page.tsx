@@ -548,10 +548,21 @@ export default function TgCvBuilder() {
           </div>
 
           <div className="space-y-3">
-            <a
-              href={`${typeof window !== "undefined" ? window.location.origin : ""}/cv-builder`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                const initData = sessionStorage.getItem("tg_init_data");
+                const base = `${window.location.origin}/cv-builder`;
+                if (initData) {
+                  try {
+                    const encoded = btoa(unescape(encodeURIComponent(initData)));
+                    window.open(`${base}?tg_auth=${encoded}`, "_blank");
+                  } catch {
+                    window.open(base, "_blank");
+                  }
+                } else {
+                  window.open(base, "_blank");
+                }
+              }}
               className="w-full text-left p-4 rounded-xl border-2 border-dark-100 hover:border-cyan-400 transition-colors block"
             >
               <div className="flex items-center gap-4">
@@ -565,7 +576,7 @@ export default function TgCvBuilder() {
                   </p>
                 </div>
               </div>
-            </a>
+            </button>
 
             <button
               onClick={() => {

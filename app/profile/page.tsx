@@ -6,10 +6,8 @@ import { useRouter } from "next/navigation";
 import {
   Edit3,
   MapPin,
-  Briefcase,
   GraduationCap,
   Globe,
-  Linkedin,
   Calendar,
   Building2,
   ExternalLink,
@@ -28,13 +26,11 @@ import { useAuth } from "@/components/AuthProvider";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 import {
   getProfile,
-  getCvScoreHistory,
   getMatchedOpportunities,
 } from "@/lib/profiles";
-import { ScoreRing } from "@/components/ScoreRing";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import type { Profile, CvScore } from "@/lib/database.types";
+import type { Profile } from "@/lib/database.types";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
 
 /* ─── Helpers ──────────────────────────────────────────────── */
@@ -168,7 +164,7 @@ export default function ProfilePage() {
   const router = useRouter();
 
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [scores, setScores] = useState<CvScore[]>([]);
+  // CV score history removed (scores now only accessible after explicit CV save)
   const [matchedOpps, setMatchedOpps] = useState<SampleOpportunity[]>([]);
   const [loading, setLoading] = useState(true);
   const [oppsLoading, setOppsLoading] = useState(true);
@@ -186,7 +182,7 @@ export default function ProfilePage() {
       .then((p) => {
         setProfile(p);
         if (p) {
-          getCvScoreHistory(supabase, p.id).then(setScores);
+          // Score history removed from profile page
           getMatchedOpportunities(p, 8).then((opps) => {
             setMatchedOpps(opps);
             setOppsLoading(false);
@@ -335,71 +331,14 @@ export default function ProfilePage() {
                     Add a headline to stand out
                   </p>
                 )}
-
-                {/* Meta row */}
-                <div className="flex flex-wrap items-center gap-3 mt-3">
-                  {profile.years_of_experience != null && (
-                    <span className="inline-flex items-center gap-1.5 text-xs text-dark-300">
-                      <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
-                      {profile.years_of_experience} years
-                    </span>
-                  )}
-                  {profile.countries?.length > 0 && (
-                    <span className="inline-flex items-center gap-1.5 text-xs text-dark-300">
-                      <MapPin className="w-3.5 h-3.5 text-teal-400" />
-                      {profile.countries.slice(0, 3).join(", ")}
-                      {profile.countries.length > 3 &&
-                        ` +${profile.countries.length - 3}`}
-                    </span>
-                  )}
-                  {profile.linkedin_url && (
-                    <a
-                      href={profile.linkedin_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
-                    >
-                      <Linkedin className="w-3.5 h-3.5" />
-                      LinkedIn
-                    </a>
-                  )}
-                </div>
               </div>
             </div>
 
-            {/* Score rings + Edit */}
+            {/* Edit button */}
             <div
-              className="flex items-center gap-6 animate-staggerFadeUp"
+              className="animate-staggerFadeUp"
               style={{ animationDelay: "0.2s" }}
             >
-              {/* Profile completeness ring */}
-              <div className="text-center">
-                <ScoreRing
-                  score={profile.profile_score_pct}
-                  size={100}
-                  stroke={8}
-                  label="complete"
-                />
-                <p className="text-[10px] text-dark-400 mt-1 font-medium uppercase tracking-wider">
-                  Profile
-                </p>
-              </div>
-
-              {/* CV Score ring */}
-              {profile.cv_score != null && profile.cv_score > 0 && (
-                <div className="text-center">
-                  <ScoreRing
-                    score={profile.cv_score}
-                    size={100}
-                    stroke={8}
-                  />
-                  <p className="text-[10px] text-dark-400 mt-1 font-medium uppercase tracking-wider">
-                    CV Score
-                  </p>
-                </div>
-              )}
-
-              {/* Edit button */}
               <Link
                 href="/profile/edit"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-bold hover:bg-white/20 transition-all"
@@ -415,46 +354,6 @@ export default function ProfilePage() {
       {/* ══ MAIN CONTENT ═════════════════════════════════════════ */}
       <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10 lg:py-14 space-y-10">
         {/* ── Profile Completeness Nudges ─────────────────── */}
-        {/* Profile Score Breakdown */}
-        <div className="border border-dark-100 rounded-2xl p-5 bg-white animate-fadeInUp">
-          <div className="flex items-center gap-2 mb-3">
-            <Zap className="w-4 h-4 text-cyan-500" />
-            <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
-              Profile Score Breakdown
-            </p>
-            <span className="ml-auto text-sm font-bold text-dark-900">
-              {profile.profile_score_pct}%
-            </span>
-          </div>
-          <div className="space-y-1.5">
-            {[
-              { label: "Name", filled: !!profile.name?.trim(), pts: 10 },
-              { label: "Headline", filled: !!profile.headline?.trim(), pts: 10 },
-              { label: "CV uploaded", filled: !!(profile.cv_url || profile.cv_text), pts: 10 },
-              { label: "CV scored", filled: profile.cv_score != null && profile.cv_score > 0, pts: 5 },
-              { label: "Sectors", filled: profile.sectors?.length >= 1, pts: 10 },
-              { label: "Donors", filled: profile.donors?.length >= 1, pts: 10 },
-              { label: "Countries", filled: profile.countries?.length >= 1, pts: 10 },
-              { label: "Skills (3+)", filled: profile.skills?.length >= 3, pts: 10 },
-              { label: "Qualifications", filled: !!profile.qualifications?.trim(), pts: 10 },
-              { label: "Years of exp.", filled: profile.years_of_experience != null && profile.years_of_experience > 0, pts: 5 },
-              { label: "LinkedIn", filled: !!profile.linkedin_url?.trim(), pts: 5 },
-              { label: "Phone/Telegram", filled: !!(profile.phone?.trim() || profile.telegram_username?.trim()), pts: 5 },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-xs">
-                <span className={`w-4 h-4 rounded flex items-center justify-center text-[10px] font-bold ${
-                  item.filled ? "bg-emerald-100 text-emerald-600" : "bg-dark-100 text-dark-400"
-                }`}>
-                  {item.filled ? "\u2713" : "\u00B7"}
-                </span>
-                <span className={item.filled ? "text-dark-700" : "text-dark-400"}>
-                  {item.label}
-                </span>
-                <span className="ml-auto text-dark-300">{item.pts}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {missingFields.length > 0 && profile.profile_score_pct < 80 && (
           <div className="border border-amber-200 rounded-2xl p-5 bg-amber-50/50 animate-fadeInUp">
@@ -685,84 +584,47 @@ export default function ProfilePage() {
           )}
         </div>
 
-        {/* ── CV Score History ────────────────────────────── */}
-        <div>
-          <div className="flex items-center gap-2 mb-5">
-            <div className="w-8 h-8 rounded-lg bg-dark-50 flex items-center justify-center">
-              <TrendingUp className="w-4 h-4 text-dark-500" />
-            </div>
-            <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
-              CV Score History
-            </p>
-          </div>
-
-          {scores.length > 0 ? (
-            <div className="space-y-3">
-              {scores.map((score, i) => {
-                const prev = scores[i + 1];
-                const diff =
-                  prev?.overall_score != null && score.overall_score != null
-                    ? score.overall_score - prev.overall_score
-                    : null;
-
-                return (
-                  <div
-                    key={score.id}
-                    className="flex items-center gap-5 p-4 border border-dark-100 rounded-xl hover:border-dark-200 transition-colors animate-staggerFadeUp"
-                    style={{ animationDelay: `${0.1 + i * 0.05}s` }}
-                  >
-                    <div className="flex-shrink-0">
-                      <ScoreRing
-                        score={score.overall_score ?? 0}
-                        size={56}
-                        stroke={5}
-                        animated={false}
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold text-dark-900">
-                          Score: {score.overall_score}
-                        </span>
-                        {diff !== null && diff !== 0 && (
-                          <span
-                            className={`text-xs font-bold ${
-                              diff > 0 ? "text-emerald-600" : "text-red-500"
-                            }`}
-                          >
-                            {diff > 0 ? "+" : ""}
-                            {diff}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-dark-400 mt-0.5">
-                        {fmtDate(score.scored_at)}
-                      </p>
-                    </div>
-                    {i === 0 && (
-                      <span className="px-2.5 py-1 rounded-lg bg-cyan-50 text-cyan-700 text-[10px] font-bold border border-cyan-200">
-                        Latest
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="text-center py-12 border border-dashed border-dark-200 rounded-2xl">
-              <TrendingUp className="w-8 h-8 text-dark-300 mx-auto mb-3" />
-              <p className="text-sm text-dark-500 font-medium">
-                Score your CV to start tracking progress
+        {/* ── My CV (only shown after explicit save with consent) ── */}
+        {(profile as any).cv_structured_data && (
+          <div className="border border-dark-100 rounded-2xl p-5 bg-white animate-fadeInUp">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center">
+                <GraduationCap className="w-4 h-4 text-cyan-600" />
+              </div>
+              <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em]">
+                My CV
               </p>
-              <Link
-                href="/score"
-                className="inline-flex items-center gap-1.5 mt-3 text-xs font-bold text-cyan-600 hover:text-cyan-700"
-              >
-                Score my CV <ArrowRight className="w-3 h-3" />
-              </Link>
             </div>
-          )}
-        </div>
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm font-bold text-dark-900">
+                  {(profile as any).cv_structured_data?.personal?.full_name || profile.name}
+                </p>
+                {(profile as any).cv_structured_data?.personal?.headline && (
+                  <p className="text-xs text-dark-400 mt-0.5 line-clamp-1">
+                    {(profile as any).cv_structured_data.personal.headline}
+                  </p>
+                )}
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <Link
+                  href="/score"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-dark-50 border border-dark-100 text-xs font-semibold text-dark-600 hover:border-cyan-300 hover:text-cyan-700 transition-all"
+                >
+                  <TrendingUp className="w-3.5 h-3.5" />
+                  Score
+                </Link>
+                <Link
+                  href="/cv-builder"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-700 hover:bg-cyan-100 transition-all"
+                >
+                  View &amp; Edit
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* ── Profile Meta ───────────────────────────────── */}
         <div className="flex items-center justify-between text-xs text-dark-400 pt-4 border-t border-dark-100">

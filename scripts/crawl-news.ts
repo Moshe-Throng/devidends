@@ -143,13 +143,27 @@ async function fetchReliefWeb(
   seenUrls: Set<string>,
   now: string
 ): Promise<NewsArticle[]> {
-  const res = await fetch(source.url, {
+  // Use POST with JSON body (same pattern as the jobs adapter — more reliable than GET bracket notation)
+  const appname = "DevidendslWobR5bzg4nrbI2JUvPj";
+  const apiBase = "https://api.reliefweb.int/v1/reports";
+  const body = {
+    filter: { field: "country.name", value: "Ethiopia" },
+    sort: ["date.created:desc"],
+    limit: 20,
+    fields: {
+      include: ["title", "url_alias", "date.created", "source.name", "body-html"],
+    },
+  };
+  const res = await fetch(`${apiBase}?appname=${encodeURIComponent(appname)}`, {
+    method: "POST",
     headers: {
+      "Content-Type": "application/json",
       "User-Agent": "Mozilla/5.0 (compatible; Devidends/1.0)",
       "Accept": "application/json",
     },
+    body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error(`Status ${res.status}`);
+  if (!res.ok) throw new Error(`Status ${res.status}: ${await res.text().then(t => t.slice(0, 200))}`);
   const json = await res.json();
   const data = json.data || [];
   console.log(`  [${source.id}] ${data.length} items (API)`);
@@ -176,7 +190,7 @@ async function fetchReliefWeb(
       url,
       source_name: sourceName,
       source_id: source.id,
-      published_at: fields.date?.original || null,
+      published_at: fields.date?.created || fields.date?.original || null,
       category: classify(`${title} ${summary}`),
       fetched_at: now,
     });

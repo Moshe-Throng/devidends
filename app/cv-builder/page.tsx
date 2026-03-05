@@ -212,6 +212,65 @@ export default function CvBuilderPage() {
   const [authSubmitting, setAuthSubmitting] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
 
+  /* ─── Telegram session (auto-login from mini-app) ────────── */
+  const [tgSession, setTgSession] = useState<{ user: { first_name: string; id: number }; profile: Record<string, unknown>; initData: string } | null>(null);
+  const [cvSaved, setCvSaved] = useState(false);
+
+  /* ─── Explicit save with consent (web flow) ──────────────── */
+  const [cvSavedToProfile, setCvSavedToProfile] = useState(false);
+  const [isSavingToProfile, setIsSavingToProfile] = useState(false);
+
+  // Auto-login from Telegram mini-app via ?tg_auth= URL param
+  useEffect(() => {
+    // Try URL param first (fresh handoff from TG app)
+    const params = new URLSearchParams(window.location.search);
+    const encoded = params.get("tg_auth");
+    if (encoded) {
+      try {
+        const initData = decodeURIComponent(escape(atob(encoded)));
+        fetch("/api/telegram/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ initData }),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (data.ok) {
+              const session = { initData, user: data.user, profile: data.profile };
+              sessionStorage.setItem("tg_web_session", JSON.stringify(session));
+              setTgSession(session);
+              // Pre-fill CV data from existing profile if available
+              const existing = data.profile?.cv_structured_data;
+              if (existing?.personal?.full_name) {
+                setCvData(existing as StructuredCvData);
+                setPhase("editing");
+              }
+            }
+          })
+          .catch(() => {});
+        // Clean the token from the URL so it doesn't linger
+        window.history.replaceState({}, "", window.location.pathname);
+      } catch {}
+      return;
+    }
+    // Restore TG session from sessionStorage (user refreshed the page)
+    try {
+      const stored = sessionStorage.getItem("tg_web_session");
+      if (stored) {
+        const session = JSON.parse(stored);
+        if (session?.initData && session?.user) {
+          setTgSession(session);
+          const existing = session.profile?.cv_structured_data;
+          if (existing?.personal?.full_name) {
+            setCvData(existing as StructuredCvData);
+            setPhase("editing");
+          }
+        }
+      }
+    } catch {}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Restore state from sessionStorage after Google OAuth redirect
   useEffect(() => {
     if (authLoading) return;
@@ -251,6 +310,7 @@ export default function CvBuilderPage() {
         if (saved && (saved as any)?.personal?.full_name) {
           setCvData(saved as unknown as StructuredCvData);
           setPhase("editing");
+          setCvSavedToProfile(true); // User previously consented and saved
           setLoadedFromDb(true);
           return;
         }
@@ -276,28 +336,6 @@ export default function CvBuilderPage() {
       setLoadedFromDb(true);
     })();
   }, [user, authLoading, loadedFromDb, phase]);
-
-  // Auto-save CV data to Supabase on edits (debounced 2s)
-  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => {
-    if (!user) return;
-    if (phase !== "editing" && phase !== "template" && phase !== "download") return;
-    if (!cvData.personal.full_name.trim()) return;
-
-    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-    saveTimerRef.current = setTimeout(async () => {
-      try {
-        const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
-        const { saveCvStructuredData } = await import("@/lib/profiles");
-        const supabase = createSupabaseBrowser();
-        await saveCvStructuredData(supabase, user.id, cvData as unknown as Record<string, unknown>);
-      } catch {
-        // Save failed — silently ignore (will retry on next edit)
-      }
-    }, 2000);
-
-    return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
-  }, [user, phase, cvData]);
 
   // Show auth modal when reaching download phase without auth
   useEffect(() => {
@@ -422,6 +460,27 @@ export default function CvBuilderPage() {
         new Set(["personal", "summary", "education", "employment"])
       );
       setPhase("editing");
+
+      // Auto-save to Telegram profile if user came from the mini-app
+      try {
+        const storedSession = sessionStorage.getItem("tg_web_session");
+        if (storedSession) {
+          const session = JSON.parse(storedSession);
+          if (session?.initData) {
+            fetch("/api/telegram/verify", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                initData: session.initData,
+                updateProfile: { cv_structured_data: json.data },
+              }),
+            })
+              .then((r) => r.json())
+              .then((res) => { if (res.ok) setCvSaved(true); })
+              .catch(() => {});
+          }
+        }
+      } catch {}
     } catch (err: unknown) {
       clearInterval(iv);
       setError(
@@ -533,6 +592,22 @@ export default function CvBuilderPage() {
     a.download = docxResult.filename;
     a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const handleSaveToProfile = async () => {
+    if (!user || !cvData.personal.full_name.trim() || isSavingToProfile) return;
+    setIsSavingToProfile(true);
+    try {
+      const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+      const { saveCvStructuredData } = await import("@/lib/profiles");
+      const supabase = createSupabaseBrowser();
+      await saveCvStructuredData(supabase, user.id, cvData as unknown as Record<string, unknown>);
+      setCvSavedToProfile(true);
+    } catch {
+      // Save failed — surface nothing, user can retry
+    } finally {
+      setIsSavingToProfile(false);
+    }
   };
 
   const toggleSection = (key: string) => {
@@ -670,6 +745,24 @@ export default function CvBuilderPage() {
 
       {/* Gradient accent strip */}
       <div className="h-[3px] bg-gradient-to-r from-cyan-500 via-teal-400 to-cyan-500" />
+
+      {/* Telegram auto-login banner */}
+      {tgSession && (
+        <div className="bg-cyan-50 border-b border-cyan-200 px-5 sm:px-8 py-2.5 flex items-center gap-2 text-sm text-cyan-800">
+          <svg className="w-4 h-4 shrink-0 text-cyan-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.01c-.12.59-.46.73-.94.45l-2.6-1.92-1.25 1.21c-.14.14-.26.26-.53.26l.19-2.66 4.83-4.37c.21-.19-.05-.29-.32-.1L7.9 15.17 5.34 14.4c-.56-.18-.57-.56.12-.83l8.96-3.45c.47-.18.88.11.72.83l-.5.85z"/>
+          </svg>
+          <span>
+            Signed in via Telegram as <strong>{tgSession.user.first_name}</strong>
+          </span>
+          {cvSaved && (
+            <span className="ml-auto flex items-center gap-1 text-green-700 font-medium">
+              <Check className="w-3.5 h-3.5" />
+              Saved to your profile
+            </span>
+          )}
+        </div>
+      )}
 
       {/* Hero area */}
       <section className="relative overflow-hidden border-b border-dark-50">
@@ -1925,14 +2018,39 @@ export default function CvBuilderPage() {
                   </button>
                 </div>
 
-                <Link
-                  href="/score"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors"
-                >
-                  <BarChart3 className="w-4 h-4" />
-                  Score This CV
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                {/* Explicit save with consent — unlocks Score CV */}
+                {cvSavedToProfile ? (
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex items-center gap-2 text-sm text-green-700 font-medium">
+                      <CheckCircle className="w-4 h-4" />
+                      CV saved to your profile
+                    </div>
+                    <Link
+                      href="/score"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors"
+                    >
+                      <BarChart3 className="w-4 h-4" />
+                      Score This CV
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center gap-2">
+                    <button
+                      onClick={handleSaveToProfile}
+                      disabled={isSavingToProfile}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-dark-700 border-2 border-dark-100 px-5 py-2.5 rounded-xl hover:border-cyan-400 hover:text-cyan-700 transition-all duration-200 disabled:opacity-50"
+                    >
+                      {isSavingToProfile ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <ShieldCheck className="w-4 h-4" />
+                      )}
+                      Save CV to My Profile
+                    </button>
+                    <p className="text-xs text-dark-400">Save to unlock CV scoring & profile visibility</p>
+                  </div>
+                )}
               </>
             ) : (
               <div className="space-y-3">

@@ -260,9 +260,11 @@ export default function OpportunitiesPage() {
           if (!a.deadline && !b.deadline) return 0;
           if (!a.deadline) return 1;
           if (!b.deadline) return -1;
-          return (
-            new Date(a.deadline).getTime() - new Date(b.deadline).getTime()
-          );
+          {
+            const da = safeParseDate(a.deadline)?.getTime() ?? Infinity;
+            const db = safeParseDate(b.deadline)?.getTime() ?? Infinity;
+            return da - db;
+          }
       }
     });
 
@@ -299,6 +301,16 @@ export default function OpportunitiesPage() {
   useEffect(() => {
     setPage(1);
   }, [searchQuery, typeFilter, seniorityFilter, sourceFilter, countryFilter, sortBy, showExpired]);
+
+  // Scroll to top of listings when page changes
+  useEffect(() => {
+    const listEl = document.getElementById("opportunities-list");
+    if (listEl) {
+      listEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [page]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -761,7 +773,7 @@ export default function OpportunitiesPage() {
                 )}
               </div>
             ) : (
-              <div className="space-y-4">
+              <div id="opportunities-list" className="space-y-4">
                 {paginated.map((opp) => {
                   const badge = deadlineBadge(opp.deadline, opp.is_expired);
                   const quality = qualityDot(opp.quality_score);

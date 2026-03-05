@@ -31,14 +31,16 @@ import { SaveButton } from "@/components/SaveButton";
 function fmtDate(d: string | null) {
   if (!d) return "Open / Ongoing";
   try {
-    return new Date(d).toLocaleDateString("en-US", {
+    const parsed = new Date(d);
+    if (isNaN(parsed.getTime())) return "Open / Ongoing";
+    return parsed.toLocaleDateString("en-US", {
       weekday: "long",
       month: "long",
       day: "numeric",
       year: "numeric",
     });
   } catch {
-    return d;
+    return "Open / Ongoing";
   }
 }
 
@@ -56,7 +58,9 @@ function deadlineStatus(d: string | null, isExpired: boolean) {
       cls: "text-red-600 bg-red-50 border-red-200",
     };
   try {
-    const diff = new Date(d).getTime() - Date.now();
+    const parsed = new Date(d);
+    if (isNaN(parsed.getTime())) return { label: "Open", daysLeft: null, cls: "text-dark-500 bg-dark-50 border-dark-100" };
+    const diff = parsed.getTime() - Date.now();
     const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
     if (days <= 3)
       return {

@@ -765,7 +765,7 @@ export default function LandingPage() {
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="py-16 md:py-24" ref={ctaReveal.ref}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-dark-900 p-10 md:p-16">
+          <div className="relative overflow-hidden rounded-3xl bg-slate-800 p-10 md:p-16">
             {/* Animated gradient blobs */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-cyan-500/12 to-teal-400/6 blur-3xl animate-blobMove" />
             <div
@@ -796,7 +796,7 @@ export default function LandingPage() {
                   opportunity
                 </span>
               </h2>
-              <p className="mt-4 text-dark-300 text-lg leading-relaxed">
+              <p className="mt-4 text-slate-300 text-lg leading-relaxed">
                 Get curated opportunities delivered to your inbox or Telegram
                 every week. Filtered by your sector, donor preference, and
                 location.
