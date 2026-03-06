@@ -10,27 +10,9 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oYJIzfwI",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-06T14:57:49.771Z",
+    "scraped_at": "2026-03-06T15:15:39.794Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 6:23 AM",
-      "department": "Ethiopia"
-    },
-    "_sourceId": "heifer-jobvite"
-  },
-  {
-    "title": "Horticultural Value Chains Development Expert",
-    "organization": "Heifer International",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Creation Date: 2/23/26, 7:16 AM",
-    "city": null,
-    "source_url": "https://jobs.jobvite.com/heifer/job/oyLIzfwk",
-    "source_domain": "jobvite.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-06T14:57:49.772Z",
-    "raw_fields": {
-      "location": "Creation Date: 2/23/26, 7:16 AM",
       "department": "Ethiopia"
     },
     "_sourceId": "heifer-jobvite"
@@ -46,9 +28,27 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oWHIzfwE",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-06T14:57:49.772Z",
+    "scraped_at": "2026-03-06T15:15:39.795Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 5:20 AM",
+      "department": "Ethiopia"
+    },
+    "_sourceId": "heifer-jobvite"
+  },
+  {
+    "title": "Horticultural Value Chains Development Expert",
+    "organization": "Heifer International",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Creation Date: 2/23/26, 7:16 AM",
+    "city": null,
+    "source_url": "https://jobs.jobvite.com/heifer/job/oyLIzfwk",
+    "source_domain": "jobvite.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-06T15:15:39.796Z",
+    "raw_fields": {
+      "location": "Creation Date: 2/23/26, 7:16 AM",
       "department": "Ethiopia"
     },
     "_sourceId": "heifer-jobvite"

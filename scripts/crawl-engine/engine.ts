@@ -317,7 +317,9 @@ async function runEngine() {
       continue;
     }
     // Write new sources to their own files
-    if (result.opportunities.length > 0) {
+    // Always write on success (even empty) so stale data doesn't persist.
+    // Only skip if the source errored out — preserve last-known-good data in that case.
+    if (result.status !== "error") {
       fs.writeFileSync(
         path.join(outDir, `${result.sourceId}.json`),
         JSON.stringify(result.opportunities, null, 2)
