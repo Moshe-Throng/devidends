@@ -324,7 +324,7 @@ export default function TgCvBuilder() {
     }
   }
 
-  function handleDownload() {
+  async function handleDownload() {
     if (!docxResult) return;
 
     if (docxResult.mode === "telegram") {
