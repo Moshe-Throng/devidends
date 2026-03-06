@@ -97,7 +97,7 @@ const TEXTAREA = `${INPUT} resize-none`;
    ═══════════════════════════════════════════════════════════════ */
 
 export default function TgCvBuilder() {
-  const { profile, refreshProfile, loading: tgLoading } = useTelegram();
+  const { profile, refreshProfile, loading: tgLoading, tgUser, isTelegram } = useTelegram();
 
   /* ─── State ─────────────────────────────────────── */
   const [phase, setPhase] = useState<BuilderPhase>("entry");
@@ -285,8 +285,8 @@ export default function TgCvBuilder() {
     setError(null);
 
     try {
-      const twa = (window as any).Telegram?.WebApp;
-      const tgUserId: number | undefined = twa?.initDataUnsafe?.user?.id;
+      // Use tgUser from TelegramProvider (uses @telegram-apps/sdk, not legacy WebApp)
+      const tgUserId = isTelegram ? tgUser?.id : undefined;
 
       if (tgUserId) {
         // Inside Telegram: send the DOCX directly to the user's chat via Bot API.
@@ -329,8 +329,13 @@ export default function TgCvBuilder() {
 
     if (docxResult.mode === "telegram") {
       // Already delivered to chat — close the mini app so user can see it
-      const twa = (window as any).Telegram?.WebApp;
-      twa?.close();
+      try {
+        const sdk = await import("@telegram-apps/sdk");
+        if (sdk.miniApp.close.isAvailable()) sdk.miniApp.close();
+        else (window as any).Telegram?.WebApp?.close?.();
+      } catch {
+        (window as any).Telegram?.WebApp?.close?.();
+      }
       return;
     }
 
