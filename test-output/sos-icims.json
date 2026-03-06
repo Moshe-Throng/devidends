@@ -10,7 +10,24 @@
     "source_url": "https://careers-sos-kd.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625949272",
     "source_domain": "careers-sos-kd.icims.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:28:51.231Z",
+    "scraped_at": "2026-03-06T14:57:48.777Z",
+    "raw_fields": {
+      "location": ""
+    },
+    "_sourceId": "sos-icims"
+  },
+  {
+    "title": "Job Title\n\nProject Driver",
+    "organization": "SOS Children's Villages",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://careers-sos-kd.icims.com/jobs/2410/project-driver/job?in_iframe=1",
+    "source_domain": "careers-sos-kd.icims.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-06T14:57:48.779Z",
     "raw_fields": {
       "location": ""
     },
@@ -27,7 +44,7 @@
     "source_url": "https://careers-sos-kd.icims.com/jobs/2404/project-fsp-officer%2c-livelihood-for-diredawa-cissp/job?in_iframe=1",
     "source_domain": "careers-sos-kd.icims.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:28:51.232Z",
+    "scraped_at": "2026-03-06T14:57:48.780Z",
     "raw_fields": {
       "location": ""
     },

@@ -1,43 +1,5 @@
 [
   {
-    "title": "Senior Talent Development Advisor - Ethiopia",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-02-18T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/6D303CB00F/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
-    "raw_fields": {
-      "department": [
-        "People & Culture"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "People and Culture Graduate Trainee - Ethiopia",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-02-18T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/5C6529E52A/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
-    "raw_fields": {
-      "department": [],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
     "title": "Business Development Advisor - Gambella",
     "organization": "Inkomoko",
     "description": "",
@@ -48,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -69,7 +31,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/CBD3CEC1CA/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -90,7 +52,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -111,7 +73,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -132,7 +94,28 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-01T18:29:06.961Z",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
+    "raw_fields": {
+      "department": [
+        "Program",
+        "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Program Design Manager - Client Success",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-03-05T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/54CA25B9FF/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-06T14:58:10.139Z",
     "raw_fields": {
       "department": [
         "Program",
