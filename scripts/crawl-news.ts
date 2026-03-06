@@ -14,9 +14,9 @@ import Parser from "rss-parser";
 interface NewsSource {
   id: string;
   name: string;
-  type?: "reliefweb-api"; // special handler for ReliefWeb JSON API
+  type?: "reliefweb-api";
   url: string;
-  scope: "ethiopia" | "africa" | "global";
+  scope: "ethiopia" | "africa" | "global" | "humanitarian";
   enabled: boolean;
 }
 
@@ -32,9 +32,12 @@ interface NewsArticle {
   fetched_at: string;
 }
 
-/* ─── Relevance keywords ─────────────────────────────────── */
+/* ─── Constants ──────────────────────────────────────────── */
 
-const MAX_ARTICLES = 30;
+const MAX_ARTICLES = 50;
+const RSS_TIMEOUT_MS = 30000; // 30s
+
+/* ─── Relevance keywords ─────────────────────────────────── */
 
 const ETHIOPIA_KEYWORDS = [
   "ethiopia", "ethiopian", "addis ababa", "tigray", "amhara", "oromia",
@@ -109,10 +112,15 @@ function classify(text: string): string {
 function isRelevant(title: string, summary: string, scope: string): boolean {
   const text = `${title} ${summary}`.toLowerCase();
 
-  // Ethiopia-scoped sources: already filtered by query, just sanity check title exists
+  // Ethiopia-scoped sources: already filtered by source query
   if (scope === "ethiopia") return true;
 
-  // Global sources: must mention Ethiopia specifically
+  // Humanitarian-scoped sources (e.g. The New Humanitarian): accept all dev/humanitarian content
+  if (scope === "humanitarian") {
+    return DEV_KEYWORDS.some((kw) => text.includes(kw));
+  }
+
+  // Global/Africa sources: must mention Ethiopia specifically
   const mentionsEthiopia = ETHIOPIA_KEYWORDS.some((kw) => text.includes(kw));
   if (!mentionsEthiopia) return false;
 
@@ -121,7 +129,7 @@ function isRelevant(title: string, summary: string, scope: string): boolean {
   return hasDevRef;
 }
 
-/* ─── Strip HTML tags from summaries ─────────────────────── */
+/* ─── Strip HTML tags ────────────────────────────────────── */
 
 function stripHtml(html: string): string {
   return html
@@ -136,16 +144,15 @@ function stripHtml(html: string): string {
     .trim();
 }
 
+
 /* ─── ReliefWeb JSON API handler ──────────────────────────── */
 
-async function fetchReliefWeb(
+async function fetchReliefWebApi(
   source: NewsSource,
   seenUrls: Set<string>,
   now: string
 ): Promise<NewsArticle[]> {
-  // Use POST with JSON body (same pattern as the jobs adapter — more reliable than GET bracket notation)
   const appname = "DevidendslWobR5bzg4nrbI2JUvPj";
-  const apiBase = "https://api.reliefweb.int/v1/reports";
   const body = {
     filter: { field: "country.name", value: "Ethiopia" },
     sort: ["date.created:desc"],
@@ -154,18 +161,24 @@ async function fetchReliefWeb(
       include: ["title", "url_alias", "date.created", "source.name", "body-html"],
     },
   };
-  const res = await fetch(`${apiBase}?appname=${encodeURIComponent(appname)}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "User-Agent": "Mozilla/5.0 (compatible; Devidends/1.0)",
-      "Accept": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`Status ${res.status}: ${await res.text().then(t => t.slice(0, 200))}`);
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), RSS_TIMEOUT_MS);
+  let res: Response;
+  try {
+    res = await fetch(`${source.url}?appname=${encodeURIComponent(appname)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
-  const data = json.data || [];
+  const data: any[] = json.data || [];
   console.log(`  [${source.id}] ${data.length} items (API)`);
 
   const articles: NewsArticle[] = [];
@@ -173,18 +186,16 @@ async function fetchReliefWeb(
     const fields = item.fields || {};
     const alias: string = fields.url_alias || "";
     const url = alias
-      ? alias.startsWith("http")
-        ? alias
-        : `https://reliefweb.int${alias}`
+      ? alias.startsWith("http") ? alias : `https://reliefweb.int${alias}`
       : `https://reliefweb.int/node/${item.id}`;
 
     if (seenUrls.has(url)) continue;
     seenUrls.add(url);
 
-    const title = fields.title || "";
-    const body = fields["body-html"] || "";
-    const summary = stripHtml(body).slice(0, 500);
-    const sourceName = fields.source?.[0]?.name || source.name;
+    const title: string = fields.title || "";
+    const bodyHtml: string = fields["body-html"] || "";
+    const summary = stripHtml(bodyHtml).slice(0, 500);
+    const sourceName: string = fields.source?.[0]?.name || source.name;
 
     articles.push({
       id: Buffer.from(url).toString("base64url").slice(0, 32),
@@ -193,7 +204,7 @@ async function fetchReliefWeb(
       url,
       source_name: sourceName,
       source_id: source.id,
-      published_at: fields.date?.created || fields.date?.original || null,
+      published_at: fields.date?.created || null,
       category: classify(`${title} ${summary}`),
       fetched_at: now,
     });
@@ -211,12 +222,42 @@ async function crawlNews(): Promise<NewsArticle[]> {
 
   console.log(`[news] Crawling ${enabled.length} RSS sources...`);
 
+  // We use parseString (not parseURL) so we can pre-fetch with native fetch
+  // which follows redirects properly (including HTTPS→HTTP downgrade redirects
+  // that rss-parser's built-in http client doesn't follow).
   const parser = new Parser({
-    timeout: 15000,
-    headers: {
-      "User-Agent": "Devidends-NewsBot/1.0 (+https://devidends.vercel.app)",
+    customFields: {
+      item: [
+        ["source", "source"],
+        ["content:encoded", "contentEncoded"],
+      ],
     },
   });
+
+  /**
+   * Fetch RSS feed content as text, following all redirects.
+   * Falls back to null on error.
+   */
+  async function fetchRss(url: string): Promise<string | null> {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), RSS_TIMEOUT_MS);
+    try {
+      const res = await fetch(url, {
+        redirect: "follow",
+        signal: controller.signal,
+        headers: {
+          "User-Agent": "Mozilla/5.0 (compatible; Devidends-NewsBot/1.0)",
+          "Accept": "application/rss+xml, application/xml, text/xml, */*",
+        },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.text();
+    } catch (err) {
+      throw err;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
 
   const allArticles: NewsArticle[] = [];
   const seenUrls = new Set<string>();
@@ -229,23 +270,30 @@ async function crawlNews(): Promise<NewsArticle[]> {
 
         // Special handler for ReliefWeb JSON API
         if (source.type === "reliefweb-api") {
-          return await fetchReliefWeb(source, seenUrls, now);
+          return await fetchReliefWebApi(source, seenUrls, now);
         }
 
-        const feed = await parser.parseURL(source.url);
+        const xml = await fetchRss(source.url);
+        if (!xml) throw new Error("Empty response");
+        const feed = await parser.parseString(xml);
         const items = feed.items || [];
         console.log(`  [${source.id}] ${items.length} items`);
 
         const articles: NewsArticle[] = [];
         for (const item of items) {
-          const url = item.link?.trim();
-          if (!url || seenUrls.has(url)) continue;
+          const rawLink = item.link?.trim();
+          if (!rawLink) continue;
+
+          const url = rawLink;
+          const descHtml: string = (item as any).contentEncoded || item.content || item.summary || "";
+
+          if (seenUrls.has(url)) continue;
 
           const title = item.title?.trim() || "";
-          const summary = stripHtml(item.contentSnippet || item.content || item.summary || "");
+          const summary = stripHtml(descHtml || item.contentSnippet || "");
           if (!title) continue;
 
-          // Relevance check for global sources
+          // Relevance check for non-Ethiopia-scoped sources
           if (!isRelevant(title, summary, source.scope)) continue;
 
           seenUrls.add(url);
@@ -261,6 +309,8 @@ async function crawlNews(): Promise<NewsArticle[]> {
             fetched_at: now,
           });
         }
+
+        console.log(`  [${source.id}] ${articles.length} relevant articles`);
         return articles;
       } catch (err) {
         console.error(`  [${source.id}] FAILED:`, (err as Error).message);
@@ -275,12 +325,13 @@ async function crawlNews(): Promise<NewsArticle[]> {
     }
   }
 
-  // Deduplicate by title similarity (>60% word overlap = duplicate)
+  // Deduplicate by URL first, then by title similarity (>60% word overlap)
   const deduped: NewsArticle[] = [];
+  const seenTitles = new Set<string>();
   for (const article of allArticles) {
     const words = new Set(article.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
-    const isDupe = deduped.some((existing) => {
-      const existingWords = new Set(existing.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3));
+    const isDupe = [...seenTitles].some((existing) => {
+      const existingWords = new Set(existing.split(" "));
       if (words.size === 0 || existingWords.size === 0) return false;
       let overlap = 0;
       for (const w of words) {
@@ -288,7 +339,11 @@ async function crawlNews(): Promise<NewsArticle[]> {
       }
       return overlap / Math.min(words.size, existingWords.size) > 0.6;
     });
-    if (!isDupe) deduped.push(article);
+    if (!isDupe) {
+      const wordKey = [...words].sort().join(" ");
+      seenTitles.add(wordKey);
+      deduped.push(article);
+    }
   }
 
   console.log(`[news] Deduped: ${allArticles.length} → ${deduped.length}`);
@@ -314,7 +369,7 @@ async function main() {
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
   const outPath = path.join(outDir, "news.json");
-  // Only overwrite if we actually got articles — prevents wiping good data on network failures
+  // Only overwrite if we got articles — prevents wiping good data on total network failure
   if (articles.length > 0) {
     fs.writeFileSync(outPath, JSON.stringify(articles, null, 2));
   } else {
