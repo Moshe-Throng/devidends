@@ -110,9 +110,14 @@ export default function TgCvBuilder() {
     new Set(["personal", "summary"])
   );
   const [selectedTemplate, setSelectedTemplate] = useState<CvTemplate>("wb-standard");
+  // mode="telegram" → sent to user's Telegram chat (most reliable)
+  // mode="url"      → signed URL from Supabase Storage (fallback)
+  // mode="base64"   → browser blob download (web fallback)
   const [docxResult, setDocxResult] = useState<{
     filename: string;
-    url: string; // signed Supabase Storage URL for Telegram.WebApp.downloadFile
+    mode: "telegram" | "url" | "base64";
+    url?: string;
+    base64?: string;
   } | null>(null);
   const [countryInput, setCountryInput] = useState("");
   const [certInput, setCertInput] = useState("");
@@ -280,16 +285,36 @@ export default function TgCvBuilder() {
     setError(null);
 
     try {
-      // Use upload endpoint so we get a real URL (needed for Telegram.WebApp.downloadFile)
-      const res = await fetch("/api/cv/generate-download-url", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cv_data: cvData, template: selectedTemplate }),
-      });
-      const json = await res.json();
-      if (json.error) throw new Error(json.error);
+      const twa = (window as any).Telegram?.WebApp;
+      const tgUserId: number | undefined = twa?.initDataUnsafe?.user?.id;
 
-      setDocxResult({ filename: json.filename, url: json.url });
+      if (tgUserId) {
+        // Inside Telegram: send the DOCX directly to the user's chat via Bot API.
+        // This is the most reliable delivery method — no Supabase, no signed URLs.
+        const res = await fetch("/api/cv/send-to-telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cv_data: cvData,
+            template: selectedTemplate,
+            telegram_user_id: tgUserId,
+          }),
+        });
+        const json = await res.json();
+        if (json.error) throw new Error(json.error);
+        setDocxResult({ filename: json.filename, mode: "telegram" });
+      } else {
+        // Web browser (outside Telegram): use base64 + blob download
+        const res = await fetch("/api/cv/generate-docx", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cv_data: cvData, template: selectedTemplate }),
+        });
+        const json = await res.json();
+        if (json.error || !json.success) throw new Error(json.error || "Generation failed");
+        setDocxResult({ filename: json.filename, mode: "base64", base64: json.docx_base64 });
+      }
+
       setPhase("download");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Generation failed");
@@ -301,27 +326,48 @@ export default function TgCvBuilder() {
 
   function handleDownload() {
     if (!docxResult) return;
-    const twa = (window as any).Telegram?.WebApp;
 
-    // Telegram.WebApp.downloadFile — Bot API 7.10+ (preferred)
-    if (typeof twa?.downloadFile === "function") {
-      twa.downloadFile({ url: docxResult.url, file_name: docxResult.filename });
+    if (docxResult.mode === "telegram") {
+      // Already delivered to chat — close the mini app so user can see it
+      const twa = (window as any).Telegram?.WebApp;
+      twa?.close();
       return;
     }
 
-    // Fallback: openLink opens the URL in device browser which can handle the download
-    if (typeof twa?.openLink === "function") {
-      twa.openLink(docxResult.url, { try_instant_view: false });
+    if (docxResult.mode === "base64" && docxResult.base64) {
+      // Browser blob download
+      const bytes = Uint8Array.from(atob(docxResult.base64), (c) => c.charCodeAt(0));
+      const blob = new Blob([bytes], {
+        type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = docxResult.filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
       return;
     }
 
-    // Web fallback: direct anchor navigation (works outside Telegram)
-    const a = document.createElement("a");
-    a.href = docxResult.url;
-    a.download = docxResult.filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    if (docxResult.mode === "url" && docxResult.url) {
+      const twa = (window as any).Telegram?.WebApp;
+      if (typeof twa?.downloadFile === "function") {
+        twa.downloadFile({ url: docxResult.url, file_name: docxResult.filename });
+        return;
+      }
+      if (typeof twa?.openLink === "function") {
+        twa.openLink(docxResult.url, { try_instant_view: false });
+        return;
+      }
+      const a = document.createElement("a");
+      a.href = docxResult.url;
+      a.download = docxResult.filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   }
 
   function handleStartFresh() {
@@ -1289,10 +1335,10 @@ export default function TgCvBuilder() {
         <div className="px-4 mt-16 text-center">
           <Loader2 className="w-10 h-10 animate-spin text-cyan-500 mx-auto" />
           <h2 className="text-lg font-bold text-dark-900 mt-4">
-            Generating your CV...
+            Building your CV...
           </h2>
           <p className="text-sm text-dark-400 mt-1">
-            Building your {TEMPLATES.find((t) => t.id === selectedTemplate)?.label} document
+            Generating {TEMPLATES.find((t) => t.id === selectedTemplate)?.label} format and sending to your chat
           </p>
         </div>
       )}
@@ -1310,8 +1356,19 @@ export default function TgCvBuilder() {
             />
             <div className="relative z-10">
               <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-              <h2 className="text-xl font-extrabold text-white">CV Ready!</h2>
-              <p className="text-sm text-white/60 mt-1">{docxResult.filename}</p>
+              {docxResult.mode === "telegram" ? (
+                <>
+                  <h2 className="text-xl font-extrabold text-white">CV Sent!</h2>
+                  <p className="text-sm text-white/70 mt-1">
+                    Check your Telegram chat — the file was sent by the bot.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-xl font-extrabold text-white">CV Ready!</h2>
+                  <p className="text-sm text-white/60 mt-1">{docxResult.filename}</p>
+                </>
+              )}
             </div>
           </div>
 
@@ -1320,7 +1377,7 @@ export default function TgCvBuilder() {
             className="w-full mt-4 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
           >
             <Download className="w-4 h-4" />
-            Download DOCX
+            {docxResult.mode === "telegram" ? "Open Chat" : "Download DOCX"}
           </button>
 
           <div className="flex gap-3 mt-3">

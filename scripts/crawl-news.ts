@@ -171,8 +171,11 @@ async function fetchReliefWeb(
   const articles: NewsArticle[] = [];
   for (const item of data) {
     const fields = item.fields || {};
-    const url = fields.url_alias
-      ? `https://reliefweb.int${fields.url_alias}`
+    const alias: string = fields.url_alias || "";
+    const url = alias
+      ? alias.startsWith("http")
+        ? alias
+        : `https://reliefweb.int${alias}`
       : `https://reliefweb.int/node/${item.id}`;
 
     if (seenUrls.has(url)) continue;
@@ -311,7 +314,12 @@ async function main() {
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
   const outPath = path.join(outDir, "news.json");
-  fs.writeFileSync(outPath, JSON.stringify(articles, null, 2));
+  // Only overwrite if we actually got articles — prevents wiping good data on network failures
+  if (articles.length > 0) {
+    fs.writeFileSync(outPath, JSON.stringify(articles, null, 2));
+  } else {
+    console.log("[news] Skipping write — 0 articles (all sources failed). Keeping existing file.");
+  }
 
   // Summary
   const categories = new Map<string, number>();
