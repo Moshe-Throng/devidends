@@ -112,7 +112,7 @@ export default function TgCvBuilder() {
   const [selectedTemplate, setSelectedTemplate] = useState<CvTemplate>("wb-standard");
   const [docxResult, setDocxResult] = useState<{
     filename: string;
-    docx_base64: string;
+    url: string; // signed Supabase Storage URL for Telegram.WebApp.downloadFile
   } | null>(null);
   const [countryInput, setCountryInput] = useState("");
   const [certInput, setCertInput] = useState("");
@@ -280,15 +280,16 @@ export default function TgCvBuilder() {
     setError(null);
 
     try {
-      const res = await fetch("/api/cv/generate-docx", {
+      // Use upload endpoint so we get a real URL (needed for Telegram.WebApp.downloadFile)
+      const res = await fetch("/api/cv/generate-download-url", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cv_data: cvData, template: selectedTemplate }),
       });
       const json = await res.json();
-      if (!json.success) throw new Error(json.error || "Generation failed");
+      if (json.error) throw new Error(json.error);
 
-      setDocxResult({ filename: json.filename, docx_base64: json.docx_base64 });
+      setDocxResult({ filename: json.filename, url: json.url });
       setPhase("download");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Generation failed");
@@ -300,16 +301,27 @@ export default function TgCvBuilder() {
 
   function handleDownload() {
     if (!docxResult) return;
-    const blob = new Blob(
-      [Uint8Array.from(atob(docxResult.docx_base64), (c) => c.charCodeAt(0))],
-      { type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
-    );
-    const url = URL.createObjectURL(blob);
+    const twa = (window as any).Telegram?.WebApp;
+
+    // Telegram.WebApp.downloadFile — Bot API 7.10+ (preferred)
+    if (typeof twa?.downloadFile === "function") {
+      twa.downloadFile({ url: docxResult.url, file_name: docxResult.filename });
+      return;
+    }
+
+    // Fallback: openLink opens the URL in device browser which can handle the download
+    if (typeof twa?.openLink === "function") {
+      twa.openLink(docxResult.url, { try_instant_view: false });
+      return;
+    }
+
+    // Web fallback: direct anchor navigation (works outside Telegram)
     const a = document.createElement("a");
-    a.href = url;
+    a.href = docxResult.url;
     a.download = docxResult.filename;
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
   }
 
   function handleStartFresh() {

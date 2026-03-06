@@ -28,7 +28,7 @@ export class IcimsAdapter implements CrawlAdapter {
 
     const searchText = cfg.searchText || "Ethiopia";
     const locale = cfg.locale || "en";
-    const url = `${cfg.baseUrl}/jobs/search?ss=1&searchKeyword=${encodeURIComponent(searchText)}&searchCategory=&in_iframe=1`;
+    const url = `${cfg.baseUrl}/jobs/search?ss=1&searchKeyword=${encodeURIComponent(searchText)}&searchCategory=`;
     log.info(`Fetching ${url}...`);
 
     const res = await fetchWithRetry(url);
@@ -69,6 +69,18 @@ export class IcimsAdapter implements CrawlAdapter {
         href = `${cfg.baseUrl}${href.startsWith("/") ? "" : "/"}${href}`;
       }
 
+      // Strip in_iframe=1 param so links open properly in a browser
+      if (href) {
+        try {
+          const u = new URL(href);
+          u.searchParams.delete("in_iframe");
+          href = u.toString();
+        } catch { /* keep original */ }
+      }
+
+      // Skip login redirects and bare search page URLs — not linkable job pages
+      if (!href || href.includes("loginOnly=1") || href.includes("/jobs/search")) return;
+
       // Extract location
       const location = $el.find(".iCIMS_JobLocation, .location").text().trim();
 
@@ -80,7 +92,7 @@ export class IcimsAdapter implements CrawlAdapter {
         published: null,
         country: location || "Unknown",
         city: null,
-        source_url: href || url,
+        source_url: href,
         source_domain: cfg.sourceDomain || new URL(cfg.baseUrl).hostname,
         content_type: source.content_type,
         scraped_at: new Date().toISOString(),
