@@ -9,7 +9,7 @@ on:
 jobs:
   scrape-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
@@ -25,10 +25,12 @@ jobs:
         run: npm ci
 
       - name: Install Puppeteer browser
+        continue-on-error: true
         run: npx puppeteer browsers install chrome
 
       - name: Run crawl engine (opportunities)
-        run: npx tsx scripts/crawl-engine/engine.ts
+        continue-on-error: true
+        run: npx tsx scripts/crawl-engine/engine.ts --concurrency 3
 
       - name: Crawl development news
         continue-on-error: true
@@ -56,6 +58,3 @@ jobs:
 
       - name: Deploy to Vercel
         run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

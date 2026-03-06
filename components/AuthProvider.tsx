@@ -16,7 +16,6 @@ interface AuthContextType {
   loading: boolean;
   signInWithEmail: (email: string, password: string) => Promise<{ error: string | null }>;
   signUpWithEmail: (email: string, password: string) => Promise<{ error: string | null }>;
-  signInWithGoogle: (redirectPath?: string) => Promise<void>;
   resetPassword: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
 }
@@ -27,7 +26,6 @@ const AuthContext = createContext<AuthContextType>({
   loading: true,
   signInWithEmail: async () => ({ error: null }),
   signUpWithEmail: async () => ({ error: null }),
-  signInWithGoogle: async () => {},
   resetPassword: async () => ({ error: null }),
   signOut: async () => {},
 });
@@ -87,16 +85,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [supabase.auth]
   );
 
-  const signInWithGoogle = useCallback(async (redirectPath?: string) => {
-    const next = redirectPath || window.location.pathname;
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
-      },
-    });
-  }, [supabase.auth]);
-
   const resetPassword = useCallback(
     async (email: string) => {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -119,7 +107,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         loading,
         signInWithEmail,
         signUpWithEmail,
-        signInWithGoogle,
         resetPassword,
         signOut,
       }}

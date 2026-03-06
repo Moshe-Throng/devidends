@@ -12,7 +12,6 @@ import {
   Building2,
   ExternalLink,
   Target,
-  TrendingUp,
   ArrowRight,
   AlertCircle,
   Zap,
@@ -228,22 +227,21 @@ export default function ProfilePage() {
               No profile yet
             </h1>
             <p className="text-dark-500 mb-8 leading-relaxed">
-              Score your CV to automatically create your professional profile,
-              or create one manually.
+              Upload your CV or build one from scratch to get started.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/score"
+                href="/cv-builder"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30"
               >
-                Score My CV
+                Build Your CV
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/profile/edit"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-dark-200 text-dark-600 font-bold text-sm hover:bg-dark-50 hover:border-dark-300 transition-all"
               >
-                Create Manually
+                Edit Profile
               </Link>
             </div>
           </div>
@@ -607,13 +605,6 @@ export default function ProfilePage() {
                 )}
               </div>
               <div className="flex items-center gap-2 shrink-0">
-                <Link
-                  href="/score"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-dark-50 border border-dark-100 text-xs font-semibold text-dark-600 hover:border-cyan-300 hover:text-cyan-700 transition-all"
-                >
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  Score
-                </Link>
                 <Link
                   href="/cv-builder"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200 text-xs font-semibold text-cyan-700 hover:bg-cyan-100 transition-all"
