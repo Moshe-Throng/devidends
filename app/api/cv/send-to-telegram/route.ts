@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     );
     form.append(
       "document",
-      new Blob([buffer], {
+      new Blob([new Uint8Array(buffer)], {
         type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       }),
       filename
