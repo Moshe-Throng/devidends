@@ -351,6 +351,29 @@ export default function ProfilePage() {
 
       {/* ══ MAIN CONTENT ═════════════════════════════════════════ */}
       <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10 lg:py-14 space-y-10">
+        {/* ── Telegram-only: connect email ─────────────────── */}
+        {user?.email?.endsWith("@users.devidends.app") && (
+          <div className="border border-cyan-200 rounded-2xl p-5 bg-cyan-50/50 animate-fadeInUp">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center flex-shrink-0">
+                <AlertCircle className="w-5 h-5 text-cyan-600" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold text-dark-900">Connect your email</p>
+                <p className="text-xs text-dark-500 mt-0.5">
+                  You signed in via Telegram. Add an email to access your account from any browser.
+                </p>
+              </div>
+              <Link
+                href="/settings"
+                className="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500 text-white text-xs font-bold hover:bg-cyan-600 transition-colors"
+              >
+                Add email
+              </Link>
+            </div>
+          </div>
+        )}
+
         {/* ── Profile Completeness Nudges ─────────────────── */}
 
         {missingFields.length > 0 && profile.profile_score_pct < 80 && (

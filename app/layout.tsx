@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { AuthProvider } from "@/components/AuthProvider";
 import { ProfileOnboarding } from "@/components/ProfileOnboarding";
+import { TelegramAutoAuth } from "@/components/TelegramAutoAuth";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -98,6 +99,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} antialiased`}>
         <AuthProvider>
+          <TelegramAutoAuth />
           {children}
           <ProfileOnboarding />
         </AuthProvider>

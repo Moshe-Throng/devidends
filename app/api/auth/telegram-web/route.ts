@@ -1,57 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createHmac, createHash } from "crypto";
 import { createClient } from "@supabase/supabase-js";
-
-interface TelegramWidgetUser {
-  id: number;
-  first_name: string;
-  last_name?: string;
-  username?: string;
-  photo_url?: string;
-  auth_date: number;
-  hash: string;
-}
+import { verifyInitData } from "@/lib/telegram-auth";
+import { getOrCreateTelegramProfile } from "@/lib/telegram-auth";
 
 /**
- * Verify Telegram Login Widget hash.
- * Different from Mini App — uses SHA256(botToken) as the secret key.
+ * POST /api/auth/telegram-web
+ *
+ * Accepts Telegram Mini App initData (sent by TelegramAutoAuth on the web).
+ * Verifies it server-side, creates/finds a Supabase auth user for the Telegram user,
+ * and returns a magic-link token the client can use to establish a real Supabase session.
+ *
+ * Body: { initData: string }  — raw URLSearchParams string from window.Telegram.WebApp.initData
  */
-function verifyWidgetHash(data: TelegramWidgetUser, botToken: string): boolean {
-  try {
-    const { hash, ...fields } = data;
-    const dataCheckString = Object.entries(fields)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([k, v]) => `${k}=${v}`)
-      .join("\n");
-
-    const secret = createHash("sha256").update(botToken).digest();
-    const computed = createHmac("sha256", secret)
-      .update(dataCheckString)
-      .digest("hex");
-
-    if (computed !== hash) return false;
-
-    // Reject data older than 24 hours
-    const now = Math.floor(Date.now() / 1000);
-    if (now - data.auth_date > 86400) return false;
-
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const body: TelegramWidgetUser = await req.json();
+    const { initData } = await req.json();
+    if (!initData || typeof initData !== "string") {
+      return NextResponse.json({ error: "initData required" }, { status: 400 });
+    }
 
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     if (!botToken) {
       return NextResponse.json({ error: "Bot not configured" }, { status: 500 });
     }
 
-    if (!verifyWidgetHash(body, botToken)) {
-      return NextResponse.json({ error: "Invalid Telegram data" }, { status: 401 });
+    // Verify initData using Mini App HMAC method
+    const verified = verifyInitData(initData, botToken);
+    if (!verified) {
+      return NextResponse.json({ error: "Invalid or expired Telegram data" }, { status: 401 });
     }
 
     const supabase = createClient(
@@ -59,26 +35,30 @@ export async function POST(req: NextRequest) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    const telegramId = String(body.id);
-    const fullName = [body.first_name, body.last_name].filter(Boolean).join(" ");
+    const { user: tgUser } = verified;
+    const telegramId = String(tgUser.id);
     const syntheticEmail = `tg_${telegramId}@users.devidends.app`;
 
-    // Find or create Supabase auth user
-    let supabaseUserId: string;
+    // Ensure profile exists
+    await getOrCreateTelegramProfile(tgUser);
 
-    const { data: listData } = await supabase.auth.admin.listUsers();
+    // Find or create Supabase auth user
+    const { data: listData } = await supabase.auth.admin.listUsers({ perPage: 1000 });
     const existingUser = listData?.users?.find((u) => u.email === syntheticEmail);
+
+    let supabaseUserId: string;
 
     if (existingUser) {
       supabaseUserId = existingUser.id;
     } else {
+      const fullName = [tgUser.first_name, tgUser.last_name].filter(Boolean).join(" ");
       const { data: created, error: createErr } = await supabase.auth.admin.createUser({
         email: syntheticEmail,
         email_confirm: true,
         user_metadata: {
           telegram_id: telegramId,
           name: fullName,
-          username: body.username,
+          username: tgUser.username,
         },
       });
       if (createErr || !created.user) {
@@ -87,26 +67,27 @@ export async function POST(req: NextRequest) {
       supabaseUserId = created.user.id;
     }
 
-    // Link Supabase user to profile (if profile exists via telegram_id)
+    // Link Supabase user ID to profile
     await supabase
       .from("profiles")
       .update({ user_id: supabaseUserId })
       .eq("telegram_id", telegramId)
       .is("user_id", null);
 
-    // Generate magic link token
+    // Generate a one-time magic link token
     const { data: linkData, error: linkErr } = await supabase.auth.admin.generateLink({
       type: "magiclink",
       email: syntheticEmail,
     });
 
     if (linkErr || !linkData?.properties?.hashed_token) {
-      return NextResponse.json({ error: "Failed to generate session" }, { status: 500 });
+      return NextResponse.json({ error: "Failed to generate session token" }, { status: 500 });
     }
 
     return NextResponse.json({
       token_hash: linkData.properties.hashed_token,
       email: syntheticEmail,
+      profile: { telegram_id: telegramId },
     });
   } catch (err) {
     console.error("[telegram-web auth]", err);
