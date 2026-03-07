@@ -363,8 +363,9 @@ export async function generateWbCvDocx(
 }
 
 /* ═══════════════════════════════════════════════════════════
-   EUROPASS TEMPLATE — EU Standard CV Format
-   Blue theme (#003399), CEFR language grid, competence sections
+   EUROPASS TEMPLATE — EuropeAid Consultant CV Format
+   Standard EU development consultant format (GIZ, EC, UN-funded projects)
+   Blue theme (#003399), CEFR language grid, professional experience table
    ═══════════════════════════════════════════════════════════ */
 
 const EU_BLUE = "003399";
@@ -372,37 +373,49 @@ const EU_LIGHT = "E8EEF7";
 const EU_BORDER = { style: BorderStyle.SINGLE, size: 1, color: "BBBBBB" };
 const EU_BORDERS = { top: EU_BORDER, bottom: EU_BORDER, left: EU_BORDER, right: EU_BORDER };
 
-function euHeading(text: string): Paragraph {
+/** Blue-background section heading bar (EuropeAid style) */
+function epSection(title: string): Paragraph {
   return new Paragraph({
-    spacing: { before: 300, after: 80 },
-    border: { bottom: { style: BorderStyle.SINGLE, size: 2, color: EU_BLUE } },
+    spacing: { before: 280, after: 80 },
+    shading: { fill: EU_BLUE, type: ShadingType.CLEAR, color: "auto" },
     children: [
-      new TextRun({ text: text.toUpperCase(), bold: true, size: 24, font: "Arial", color: EU_BLUE }),
+      new TextRun({ text: `  ${title.toUpperCase()}`, bold: true, size: 22, font: "Arial", color: "FFFFFF" }),
     ],
   });
 }
 
-function euLabelValue(label: string, value: string): Table {
+/** Two-column label/value table for personal info */
+function epInfoTable(rows: [string, string][]): Table {
   return new Table({
     layout: TableLayoutType.FIXED,
     width: { size: 9000, type: WidthType.DXA },
-    rows: [
+    rows: rows.map(([label, value]) =>
       new TableRow({
         children: [
           new TableCell({
-            borders: { top: EU_BORDER, bottom: EU_BORDER, left: EU_BORDER, right: EU_BORDER },
-            width: { size: 2800, type: WidthType.DXA },
+            borders: EU_BORDERS,
+            width: { size: 2600, type: WidthType.DXA },
             shading: { fill: EU_LIGHT, type: ShadingType.CLEAR, color: "auto" },
             children: [new Paragraph({ children: [new TextRun({ text: label, bold: true, size: 20, font: "Arial", color: EU_BLUE })] })],
           }),
           new TableCell({
-            borders: { top: EU_BORDER, bottom: EU_BORDER, left: EU_BORDER, right: EU_BORDER },
-            width: { size: 6200, type: WidthType.DXA },
+            borders: EU_BORDERS,
+            width: { size: 6400, type: WidthType.DXA },
             children: [new Paragraph({ children: [new TextRun({ text: value, size: 20, font: "Arial" })] })],
           }),
         ],
-      }),
-    ],
+      })
+    ),
+  });
+}
+
+/** Blue header cell for table column headers */
+function epHeaderCell(text: string, width: number): TableCell {
+  return new TableCell({
+    borders: EU_BORDERS,
+    width: { size: width, type: WidthType.DXA },
+    shading: { fill: EU_BLUE, type: ShadingType.CLEAR, color: "auto" },
+    children: [new Paragraph({ children: [new TextRun({ text, bold: true, size: 18, font: "Arial", color: "FFFFFF" })] })],
   });
 }
 
@@ -410,119 +423,87 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
   const children: (Paragraph | Table)[] = [];
   const p = data.personal;
 
-  // Title
+  // ── Header ─────────────────────────────────────────────────
   children.push(new Paragraph({
-    alignment: AlignmentType.LEFT,
-    spacing: { after: 60 },
-    children: [new TextRun({ text: "Europass", bold: true, size: 36, font: "Arial", color: EU_BLUE })],
-  }));
-  children.push(new Paragraph({
-    spacing: { after: 200 },
-    children: [new TextRun({ text: "Curriculum Vitae", italics: true, size: 28, font: "Arial", color: "666666" })],
+    spacing: { after: 40 },
+    children: [new TextRun({ text: "CURRICULUM VITAE", bold: true, size: 44, font: "Arial", color: EU_BLUE })],
   }));
 
-  // Personal Information
-  children.push(euHeading("Personal Information"));
-  const personalFields = [
-    ["Full Name", p.full_name],
-    ["Nationality", p.nationality],
-    ["Date of Birth", p.date_of_birth],
-    ["Email", p.email],
-    ["Phone", p.phone],
-    ["Address", p.address],
-  ].filter(([, v]) => v);
+  // ── Personal Information ────────────────────────────────────
+  children.push(epSection("Personal Information"));
 
-  for (const [label, value] of personalFields) {
-    children.push(euLabelValue(label, value));
-  }
+  // Split full_name into family name (last token) and first name(s)
+  const nameParts = p.full_name.trim().split(/\s+/);
+  const familyName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : p.full_name;
+  const firstNames = nameParts.length > 1 ? nameParts.slice(0, -1).join(" ") : p.full_name;
 
-  // Professional Summary
-  if (data.professional_summary) {
-    children.push(euHeading("Professional Profile"));
-    children.push(new Paragraph({
-      spacing: { after: 100 },
-      children: [new TextRun({ text: data.professional_summary, size: 20, font: "Arial" })],
-    }));
-  }
+  const personalRows: [string, string][] = [
+    ["Family name:", familyName],
+    ["First name(s):", firstNames],
+    ...(p.date_of_birth ? [["Date of birth:", p.date_of_birth] as [string, string]] : []),
+    ...(p.nationality ? [["Nationality:", p.nationality] as [string, string]] : []),
+    ...(p.phone ? [["Phone:", p.phone] as [string, string]] : []),
+    ...(p.email ? [["Email:", p.email] as [string, string]] : []),
+    ...(p.address ? [["Address:", p.address] as [string, string]] : []),
+  ];
+  children.push(epInfoTable(personalRows));
 
-  // Work Experience (reverse chronological)
-  if (data.employment.length > 0) {
-    children.push(euHeading("Work Experience"));
-    for (const emp of data.employment) {
-      children.push(new Table({
-        layout: TableLayoutType.FIXED,
-        width: { size: 9000, type: WidthType.DXA },
-        rows: [
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: EU_BORDERS,
-                width: { size: 2800, type: WidthType.DXA },
-                shading: { fill: EU_LIGHT, type: ShadingType.CLEAR, color: "auto" },
-                children: [
-                  new Paragraph({ children: [new TextRun({ text: `${emp.from_date} – ${emp.to_date}`, bold: true, size: 20, font: "Arial", color: EU_BLUE })] }),
-                ],
-              }),
-              new TableCell({
-                borders: EU_BORDERS,
-                width: { size: 6200, type: WidthType.DXA },
-                children: [
-                  new Paragraph({ children: [new TextRun({ text: emp.position, bold: true, size: 20, font: "Arial" })] }),
-                  new Paragraph({ children: [new TextRun({ text: `${emp.employer}${emp.country ? `, ${emp.country}` : ""}`, italics: true, size: 20, font: "Arial", color: "555555" })] }),
-                  new Paragraph({ spacing: { before: 60 }, children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Arial" })] }),
-                ],
-              }),
-            ],
-          }),
-        ],
-      }));
-      children.push(new Paragraph({ spacing: { after: 60 }, children: [] }));
-    }
-  }
-
-  // Education and Training
+  // ── Education ───────────────────────────────────────────────
   if (data.education.length > 0) {
-    children.push(euHeading("Education and Training"));
-    for (const edu of data.education) {
-      children.push(new Table({
-        layout: TableLayoutType.FIXED,
-        width: { size: 9000, type: WidthType.DXA },
-        rows: [
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: EU_BORDERS,
-                width: { size: 2800, type: WidthType.DXA },
-                shading: { fill: EU_LIGHT, type: ShadingType.CLEAR, color: "auto" },
-                children: [new Paragraph({ children: [new TextRun({ text: String(edu.year_graduated), bold: true, size: 20, font: "Arial", color: EU_BLUE })] })],
-              }),
-              new TableCell({
-                borders: EU_BORDERS,
-                width: { size: 6200, type: WidthType.DXA },
-                children: [
-                  new Paragraph({ children: [new TextRun({ text: `${edu.degree} — ${edu.field_of_study}`, bold: true, size: 20, font: "Arial" })] }),
-                  new Paragraph({ children: [new TextRun({ text: `${edu.institution}${edu.country ? `, ${edu.country}` : ""}`, italics: true, size: 20, font: "Arial", color: "555555" })] }),
-                ],
-              }),
-            ],
-          }),
-        ],
-      }));
-      children.push(new Paragraph({ spacing: { after: 60 }, children: [] }));
-    }
-  }
-
-  // Languages (Europass self-assessment grid)
-  if (data.languages.length > 0) {
-    children.push(euHeading("Language Skills"));
+    children.push(epSection("Education"));
     children.push(new Table({
       layout: TableLayoutType.FIXED,
       width: { size: 9000, type: WidthType.DXA },
       rows: [
         new TableRow({
-          children: ["Language", "Understanding", "Speaking", "Writing"].map(h =>
+          children: [
+            epHeaderCell("Institution (Date)", 3600),
+            epHeaderCell("Degree(s) or Diploma(s) obtained", 5400),
+          ],
+        }),
+        ...data.education.map(edu =>
+          new TableRow({
+            children: [
+              new TableCell({
+                borders: EU_BORDERS,
+                width: { size: 3600, type: WidthType.DXA },
+                children: [
+                  new Paragraph({ children: [new TextRun({ text: edu.institution, bold: true, size: 20, font: "Arial" })] }),
+                  new Paragraph({ children: [new TextRun({ text: `${edu.country ? edu.country + ", " : ""}${edu.year_graduated}`, size: 18, font: "Arial", color: "555555" })] }),
+                ],
+              }),
+              new TableCell({
+                borders: EU_BORDERS,
+                width: { size: 5400, type: WidthType.DXA },
+                children: [
+                  new Paragraph({ children: [new TextRun({ text: edu.degree, bold: true, size: 20, font: "Arial" })] }),
+                  ...(edu.field_of_study ? [new Paragraph({ children: [new TextRun({ text: edu.field_of_study, size: 18, font: "Arial", color: "444444" })] })] : []),
+                ],
+              }),
+            ],
+          })
+        ),
+      ],
+    }));
+  }
+
+  // ── Language Skills ─────────────────────────────────────────
+  if (data.languages.length > 0) {
+    children.push(epSection("Language Skills"));
+    children.push(new Paragraph({
+      spacing: { before: 60, after: 60 },
+      children: [new TextRun({ text: "Indicate competence on a scale of C2 to A1 (C2 – excellent; A1 – basic)", italics: true, size: 18, font: "Arial", color: "666666" })],
+    }));
+    const langColW = [3000, 2000, 2000, 2000];
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9000, type: WidthType.DXA },
+      rows: [
+        new TableRow({
+          children: ["Language", "Reading", "Speaking", "Writing"].map((h, i) =>
             new TableCell({
               borders: EU_BORDERS,
+              width: { size: langColW[i], type: WidthType.DXA },
               shading: { fill: EU_BLUE, type: ShadingType.CLEAR, color: "auto" },
               children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: h, bold: true, size: 18, font: "Arial", color: "FFFFFF" })] })],
             })
@@ -531,10 +512,10 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
         ...data.languages.map(l =>
           new TableRow({
             children: [
-              new TableCell({ borders: EU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: l.language, bold: true, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.reading, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.speaking, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.writing, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: langColW[0], type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: l.language, bold: true, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: langColW[1], type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.reading, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: langColW[2], type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.speaking, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: langColW[3], type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.writing, size: 18, font: "Arial" })] })] }),
             ],
           })
         ),
@@ -542,33 +523,143 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
     }));
   }
 
-  // Key Qualifications & Skills
+  // ── Qualifications & Skills ─────────────────────────────────
   if (data.key_qualifications) {
-    children.push(euHeading("Personal Skills and Competences"));
-    children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Arial" })] }));
-  }
-
-  // Certifications
-  if (data.certifications.length > 0) {
-    children.push(euHeading("Additional Information"));
-    children.push(new Paragraph({ spacing: { after: 40 }, children: [new TextRun({ text: "Certifications & Training", bold: true, size: 20, font: "Arial" })] }));
-    for (const cert of data.certifications) {
-      children.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: cert, size: 18, font: "Arial" })] }));
+    children.push(epSection("Qualifications & Skills"));
+    const quals = data.key_qualifications
+      .split(/\n/)
+      .map(s => s.replace(/^[\s•\-*]+/, "").trim())
+      .filter(Boolean);
+    for (const q of quals) {
+      children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: q, size: 20, font: "Arial" })] }));
     }
   }
 
-  // Publications
+  // ── General Professional Experience ─────────────────────────
+  if (data.professional_summary) {
+    children.push(epSection("General Professional Experience"));
+    const lines = data.professional_summary
+      .split(/\n/)
+      .map(s => s.replace(/^[\s•\-*]+/, "").trim())
+      .filter(Boolean);
+    // If single block of prose, split on sentences ending with period
+    const bullets = lines.length === 1
+      ? lines[0].split(/(?<=\.)\s+/).map(s => s.trim()).filter(Boolean)
+      : lines;
+    for (const b of bullets) {
+      children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: b, size: 20, font: "Arial" })] }));
+    }
+  }
+
+  // ── Specific Experience by Region ───────────────────────────
+  if (data.countries_of_experience.length > 0) {
+    children.push(epSection("Specific Experience in the Region"));
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9000, type: WidthType.DXA },
+      rows: [
+        new TableRow({ children: [epHeaderCell("Country", 4500), epHeaderCell("Dates", 4500)] }),
+        ...data.countries_of_experience.map(country =>
+          new TableRow({
+            children: [
+              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: country, size: 20, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "", size: 20, font: "Arial" })] })] }),
+            ],
+          })
+        ),
+      ],
+    }));
+  }
+
+  // ── Professional Experience ─────────────────────────────────
+  if (data.employment.length > 0) {
+    children.push(epSection("Professional Experience"));
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9000, type: WidthType.DXA },
+      rows: [
+        new TableRow({
+          children: [
+            epHeaderCell("Location / Dates", 2400),
+            epHeaderCell("Company & Reference", 2200),
+            epHeaderCell("Position / Description", 4400),
+          ],
+        }),
+        ...data.employment.map(emp => {
+          const duties = emp.description_of_duties
+            .split(/\n/)
+            .map(s => s.replace(/^[\s•\-*]+/, "").trim())
+            .filter(Boolean);
+          const dutyParas = duties.length > 0
+            ? duties.map(d => new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: d, size: 16, font: "Arial" })] }))
+            : [new Paragraph({ children: [new TextRun({ text: emp.description_of_duties, size: 16, font: "Arial" })] })];
+
+          return new TableRow({
+            children: [
+              new TableCell({
+                borders: EU_BORDERS,
+                width: { size: 2400, type: WidthType.DXA },
+                children: [
+                  new Paragraph({ children: [new TextRun({ text: emp.country || "", bold: true, size: 18, font: "Arial" })] }),
+                  new Paragraph({ children: [new TextRun({ text: `${emp.from_date} – ${emp.to_date}`, size: 18, font: "Arial", color: EU_BLUE })] }),
+                ],
+              }),
+              new TableCell({
+                borders: EU_BORDERS,
+                width: { size: 2200, type: WidthType.DXA },
+                children: [new Paragraph({ children: [new TextRun({ text: emp.employer, bold: true, size: 18, font: "Arial" })] })],
+              }),
+              new TableCell({
+                borders: EU_BORDERS,
+                width: { size: 4400, type: WidthType.DXA },
+                children: [
+                  new Paragraph({ children: [new TextRun({ text: emp.position, bold: true, size: 18, font: "Arial" })] }),
+                  ...dutyParas,
+                ],
+              }),
+            ],
+          });
+        }),
+      ],
+    }));
+  }
+
+  // ── Trainings and Courses ────────────────────────────────────
+  if (data.certifications.length > 0) {
+    children.push(epSection("Trainings and Courses"));
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9000, type: WidthType.DXA },
+      rows: [
+        new TableRow({ children: [epHeaderCell("Training / Course", 5400), epHeaderCell("Provider / Location", 3600)] }),
+        ...data.certifications.map(cert => {
+          // Split "Course — Provider" or "Course (Provider)" patterns
+          const dashMatch = cert.match(/^(.+?)\s*[—–]\s*(.+)$/);
+          const parenMatch = !dashMatch && cert.match(/^(.+?)\s*\((.+)\)$/);
+          const courseName = dashMatch ? dashMatch[1].trim() : parenMatch ? parenMatch[1].trim() : cert;
+          const provider = dashMatch ? dashMatch[2].trim() : parenMatch ? parenMatch[2].trim() : "";
+          return new TableRow({
+            children: [
+              new TableCell({ borders: EU_BORDERS, width: { size: 5400, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: courseName, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 3600, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: provider, size: 18, font: "Arial" })] })] }),
+            ],
+          });
+        }),
+      ],
+    }));
+  }
+
+  // ── Publications ─────────────────────────────────────────────
   if (data.publications.length > 0) {
-    if (data.certifications.length === 0) children.push(euHeading("Additional Information"));
-    children.push(new Paragraph({ spacing: { before: 100, after: 40 }, children: [new TextRun({ text: "Publications", bold: true, size: 20, font: "Arial" })] }));
+    children.push(epSection("Publications"));
     for (const pub of data.publications) {
-      children.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: pub, size: 18, font: "Arial" })] }));
+      children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 60 }, children: [new TextRun({ text: pub, size: 18, font: "Arial" })] }));
     }
   }
 
   const doc = new Document({
     sections: [{
-      properties: { page: { margin: { top: 1200, bottom: 1200, left: 1440, right: 1440 } } },
+      properties: { page: { margin: { top: 1000, bottom: 1000, left: 1200, right: 1200 } } },
       children,
     }],
   });
