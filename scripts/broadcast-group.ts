@@ -1,13 +1,15 @@
 /**
- * Broadcast daily digest to Telegram group.
+ * Broadcast daily digest to Telegram group + notify individual subscribers.
  * Called from daily pipeline after crawl engine completes.
  *
  * Usage: npx tsx scripts/broadcast-group.ts
  *
  * Requires env vars:
  *   TELEGRAM_BOT_TOKEN
- *   TELEGRAM_GROUP_ID      — chat ID of the target group
- *   TELEGRAM_JOBS_TOPIC_ID — forum topic ID for "jobs" (optional)
+ *   TELEGRAM_GROUP_ID         — chat ID of the target group
+ *   TELEGRAM_JOBS_TOPIC_ID    — forum topic ID for "jobs" (optional)
+ *   NEXT_PUBLIC_SUPABASE_URL  — for subscriber lookups
+ *   SUPABASE_SERVICE_ROLE_KEY — for subscriber lookups
  */
 
 import * as fs from "fs";
@@ -65,10 +67,23 @@ async function main() {
     return;
   }
 
-  // Import and call the broadcast function
-  const { broadcastToGroup } = await import("../lib/telegram-broadcast");
-  const result = await broadcastToGroup(recent, newsArticles);
-  console.log(`Broadcast result: sent=${result.sent}, count=${result.count}`);
+  const { broadcastToGroup, notifySubscribers, notifySubscribersNews } = await import("../lib/telegram-broadcast");
+
+  // 1. Group digest (public channel/topic)
+  const groupResult = await broadcastToGroup(recent, newsArticles);
+  console.log(`Group broadcast: sent=${groupResult.sent}, count=${groupResult.count}`);
+
+  // 2. Individual job alerts (personalised per subscriber sector prefs)
+  if (recent.length > 0) {
+    const jobResult = await notifySubscribers(recent);
+    console.log(`Subscriber job alerts: notified=${jobResult.notified}, skipped=${jobResult.skipped}, failed=${jobResult.failed}`);
+  }
+
+  // 3. Individual news digest (all active Telegram subscribers)
+  if (newsArticles.length > 0) {
+    const newsResult = await notifySubscribersNews(newsArticles);
+    console.log(`Subscriber news digest: notified=${newsResult.notified}, failed=${newsResult.failed}`);
+  }
 }
 
 main().catch((err) => {

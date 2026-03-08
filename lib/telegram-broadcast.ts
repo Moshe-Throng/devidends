@@ -378,3 +378,71 @@ export async function notifySubscribers(
   );
   return { notified, failed, skipped };
 }
+
+// ---------------------------------------------------------------------------
+// News digest for individual subscribers
+// ---------------------------------------------------------------------------
+
+/**
+ * Send a news digest DM to all active Telegram subscribers.
+ * Every subscriber gets the same top-5 articles regardless of sector prefs.
+ */
+export async function notifySubscribersNews(
+  articles: NewsArticle[]
+): Promise<{ notified: number; failed: number }> {
+  if (articles.length === 0) return { notified: 0, failed: 0 };
+
+  const bot = getTelegramBot();
+  const supabase = getSupabaseAdmin();
+
+  const { data: subscribers, error } = await supabase
+    .from("subscriptions")
+    .select("id, telegram_id")
+    .eq("channel", "telegram")
+    .eq("is_active", true)
+    .not("telegram_id", "is", null);
+
+  if (error || !subscribers || subscribers.length === 0) {
+    if (error) console.error("[telegram-broadcast] News: failed to fetch subscribers:", error);
+    return { notified: 0, failed: 0 };
+  }
+
+  const today = new Date().toLocaleDateString("en-GB", {
+    weekday: "short", day: "numeric", month: "short",
+  });
+
+  const top = articles.slice(0, 5);
+  const lines: string[] = [
+    `\ud83d\udcf0 <b>Dev News — ${escHtml(today)}</b>`,
+    "",
+    ...top.map((a) =>
+      `\u2022 <a href="${a.url}">${escHtml(truncate(a.title, 90))}</a>\n  <i>${escHtml(a.source_name)}</i>`
+    ),
+  ];
+  if (articles.length > 5) {
+    lines.push(`\n<i>...and ${articles.length - 5} more on the feed</i>`);
+  }
+  lines.push(`\n\ud83d\udd17 <a href="${SITE_URL}/news">Full news feed</a>`);
+
+  const html = lines.join("\n");
+
+  let notified = 0;
+  let failed = 0;
+
+  for (const sub of subscribers as { id: string; telegram_id: string }[]) {
+    try {
+      await bot.sendMessage(Number(sub.telegram_id), html, {
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      });
+      notified++;
+    } catch (err) {
+      console.error(`[telegram-broadcast] News: failed to notify ${sub.telegram_id}:`, err);
+      failed++;
+    }
+    await sleep(100);
+  }
+
+  console.log(`[telegram-broadcast] News digest: ${notified} notified, ${failed} failed`);
+  return { notified, failed };
+}
