@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Preferences saved!", updated: true });
     }
 
-    const insertPayload = { email: email || null, telegram_id: telegram_id || null, ...payload };
+    const insertPayload: Record<string, unknown> = { email: email || null, telegram_id: telegram_id || null, ...payload };
     let { error } = await supabase.from("subscriptions").insert(insertPayload);
     if (error?.message?.includes("news_categories_filter")) {
       const { news_categories_filter: _ncf, ...rest } = insertPayload;
