@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-08T18:47:45.022Z",
+    "scraped_at": "2026-03-08T19:03:56.019Z",
     "count": 17
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429854",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -36,34 +36,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429851",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-MOA-529785-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Development of MESOB Design Standard",
-      "organization": "World Bank",
-      "description": "Development of MESOB Design Standard\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-530392-CS-CQS\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-03-10",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428136",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Consultant Qualification  Selection",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-CSC-530392-CS-CQS",
         "sector": ""
       }
     },
@@ -78,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00409688",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -99,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428170",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -110,23 +89,23 @@
       }
     },
     {
-      "title": "Selection of System Quality Assurance Specialist",
+      "title": "Development of MESOB Design Standard",
       "organization": "World Bank",
-      "description": "Selection of System Quality Assurance Specialist\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-477802-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
+      "description": "Development of MESOB Design Standard\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-530392-CS-CQS\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
       "deadline": "2026-03-10",
       "published": null,
       "country": "Ethiopia",
       "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412637",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428136",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Individual Consultant Selection",
+        "procurement_method": "Consultant Qualification  Selection",
         "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
         "project_id": "P178808",
-        "bid_reference": "ET-CSC-477802-CS-INDV",
+        "bid_reference": "ET-CSC-530392-CS-CQS",
         "sector": ""
       }
     },
@@ -141,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412639",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -162,13 +141,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428124",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.030Z",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
         "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
         "project_id": "P178808",
         "bid_reference": "ET-CSC-528725-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of System Quality Assurance Specialist",
+      "organization": "World Bank",
+      "description": "Selection of System Quality Assurance Specialist\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-477802-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
+      "deadline": "2026-03-10",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412637",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-08T19:02:37.519Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "Individual Consultant Selection",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-CSC-477802-CS-INDV",
         "sector": ""
       }
     },
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429127",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -288,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428064",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -309,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426713",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -330,7 +330,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426309",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -351,7 +351,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-08T18:46:27.312Z",
+      "scraped_at": "2026-03-08T19:02:37.867Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
