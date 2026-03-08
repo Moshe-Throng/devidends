@@ -10,27 +10,9 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oYJIzfwI",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-07T12:11:18.623Z",
+    "scraped_at": "2026-03-08T18:46:30.248Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 6:23 AM",
-      "department": "Ethiopia"
-    },
-    "_sourceId": "heifer-jobvite"
-  },
-  {
-    "title": "Capacity Building and Workforce Development Specialist",
-    "organization": "Heifer International",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Creation Date: 2/23/26, 5:20 AM",
-    "city": null,
-    "source_url": "https://jobs.jobvite.com/heifer/job/oWHIzfwE",
-    "source_domain": "jobvite.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-07T12:11:18.623Z",
-    "raw_fields": {
-      "location": "Creation Date: 2/23/26, 5:20 AM",
       "department": "Ethiopia"
     },
     "_sourceId": "heifer-jobvite"
@@ -46,9 +28,27 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/oyLIzfwk",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-03-07T12:11:18.624Z",
+    "scraped_at": "2026-03-08T18:46:30.248Z",
     "raw_fields": {
       "location": "Creation Date: 2/23/26, 7:16 AM",
+      "department": "Ethiopia"
+    },
+    "_sourceId": "heifer-jobvite"
+  },
+  {
+    "title": "Capacity Building and Workforce Development Specialist",
+    "organization": "Heifer International",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Creation Date: 2/23/26, 5:20 AM",
+    "city": null,
+    "source_url": "https://jobs.jobvite.com/heifer/job/oWHIzfwE",
+    "source_domain": "jobvite.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-08T18:46:30.249Z",
+    "raw_fields": {
+      "location": "Creation Date: 2/23/26, 5:20 AM",
       "department": "Ethiopia"
     },
     "_sourceId": "heifer-jobvite"
