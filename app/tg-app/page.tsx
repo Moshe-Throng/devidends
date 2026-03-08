@@ -215,6 +215,22 @@ export default function TgAppHome() {
             </div>
           </Link>
         </div>
+
+        {/* Alerts — full-width row */}
+        <Link href="/tg-app/alerts" className="block mt-3">
+          <div className="bg-gradient-to-r from-cyan-50 to-teal-50 border border-cyan-200 rounded-xl px-4 py-3.5 flex items-center gap-3 hover:border-cyan-300 transition-colors">
+            <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0">
+              <Bell className="w-5 h-5 text-cyan-600" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-bold text-dark-900">Job Alerts</p>
+              <p className="text-[11px] text-dark-400 mt-0.5">
+                Choose sectors to get notified
+              </p>
+            </div>
+            <ChevronRight className="w-4 h-4 text-cyan-400 shrink-0" />
+          </div>
+        </Link>
       </div>
 
       {/* ── Latest Opportunities ── */}
