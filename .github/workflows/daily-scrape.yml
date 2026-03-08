@@ -48,7 +48,7 @@ jobs:
           TELEGRAM_JOBS_TOPIC_ID: ${{ secrets.TELEGRAM_JOBS_TOPIC_ID }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          NEXT_PUBLIC_SITE_URL: https://devidends.vercel.app
+          NEXT_PUBLIC_SITE_URL: https://devidends-eta.vercel.app
 
       - name: Commit updated data
         run: |
@@ -65,4 +65,4 @@ jobs:
 
       - name: Deploy to Vercel
         continue-on-error: true
-        run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }} --scope moshe-throngs-projects
