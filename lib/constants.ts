@@ -80,6 +80,18 @@ export const COUNTRIES = [
   "Remote / Global",
 ] as const;
 
+export const NEWS_CATEGORIES = [
+  { id: "Humanitarian",        label: "Humanitarian",          emoji: "🆘" },
+  { id: "Policy & Governance", label: "Policy & Governance",   emoji: "🏛️" },
+  { id: "Funding & Donors",    label: "Funding & Donors",      emoji: "💰" },
+  { id: "Health",              label: "Health",                emoji: "🏥" },
+  { id: "Economy & Trade",     label: "Economy & Trade",       emoji: "📈" },
+  { id: "Climate & Environment", label: "Climate & Environment", emoji: "🌍" },
+  { id: "Education",           label: "Education",             emoji: "📚" },
+  { id: "General",             label: "General",               emoji: "📰" },
+] as const;
+
+export type NewsCategory = (typeof NEWS_CATEGORIES)[number]["id"];
 export type Sector = (typeof SECTORS)[number];
 export type Donor = (typeof DONORS)[number];
 export type Country = (typeof COUNTRIES)[number];

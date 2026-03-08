@@ -3,52 +3,100 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  ArrowLeft,
-  Bell,
-  CheckCircle,
-  Loader2,
-  AlertCircle,
+  ArrowLeft, Bell, CheckCircle, Loader2, AlertCircle,
+  Briefcase, Newspaper, ChevronDown, ChevronUp,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
-import { SECTORS } from "@/lib/constants";
+import { SECTORS, NEWS_CATEGORIES } from "@/lib/constants";
+
+const SECTOR_ICONS: Record<string, string> = {
+  "Humanitarian Aid & Emergency": "🆘",
+  "Global Health": "🏥",
+  "Food Security & Nutrition": "🌾",
+  "Agriculture & Rural Development": "🚜",
+  "WASH (Water, Sanitation & Hygiene)": "💧",
+  "Education & Training": "📚",
+  "Environment & Climate Change": "🌍",
+  "Energy & Infrastructure": "⚡",
+  "Economic Development & Trade": "📈",
+  "Governance & Rule of Law": "⚖️",
+  "Gender & Social Inclusion": "♀️",
+  "Peace & Security": "🕊️",
+  "Migration & Displacement": "🚶",
+  "Finance & Banking": "🏦",
+  "Innovation & ICT": "💻",
+  "Project Management & M&E": "📊",
+  "Supply Chain & Logistics": "📦",
+  "Human Resources & Admin": "👥",
+  "Media & Communications": "📡",
+  "Research & Data Analytics": "🔬",
+  "Legal & Compliance": "📋",
+  "Procurement & Grants": "📝",
+  "Child Protection": "🛡️",
+  "Youth & Livelihoods": "🌱",
+  "Urban Development & Housing": "🏙️",
+  "Transport": "🚌",
+  "Mining & Extractives": "⛏️",
+  "Private Sector Development": "🏢",
+};
+
+type SaveStatus = "idle" | "saving" | "saved" | "error";
 
 export default function TgAppAlerts() {
   const { tgUser, profile, loading } = useTelegram();
-  const [selected, setSelected] = useState<Set<string>>(new Set());
-  const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
+
+  const [sectors, setSectors] = useState<Set<string>>(new Set());
+  const [newsCategories, setNewsCategories] = useState<Set<string>>(new Set());
+  const [sectorsOpen, setSectorsOpen] = useState(true);
+  const [newsOpen, setNewsOpen] = useState(true);
+  const [loadingPrefs, setLoadingPrefs] = useState(true);
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>("idle");
   const [error, setError] = useState("");
 
-  // Pre-fill from profile sectors
+  // Load existing preferences from Supabase
   useEffect(() => {
-    if (profile?.sectors && profile.sectors.length > 0) {
-      setSelected(new Set(profile.sectors));
-    }
-  }, [profile]);
-
-  function toggleSector(sector: string) {
-    setSelected((prev) => {
-      const next = new Set(prev);
-      if (next.has(sector)) {
-        next.delete(sector);
-      } else {
-        next.add(sector);
+    if (!tgUser) return;
+    (async () => {
+      try {
+        const res = await fetch(`/api/subscribe?telegram_id=${tgUser.id}`);
+        const { subscription } = await res.json();
+        if (subscription) {
+          if (subscription.sectors_filter?.length) {
+            setSectors(new Set(subscription.sectors_filter));
+          } else if (profile?.sectors?.length) {
+            setSectors(new Set(profile.sectors));
+          }
+          if (subscription.news_categories_filter?.length) {
+            setNewsCategories(new Set(subscription.news_categories_filter));
+          }
+        } else if (profile?.sectors?.length) {
+          setSectors(new Set(profile.sectors));
+        }
+      } catch {
+        if (profile?.sectors?.length) setSectors(new Set(profile.sectors));
+      } finally {
+        setLoadingPrefs(false);
       }
-      return next;
-    });
-    setSaved(false);
+    })();
+  }, [tgUser, profile]);
+
+  function toggleSector(s: string) {
+    setSectors((prev) => { const n = new Set(prev); n.has(s) ? n.delete(s) : n.add(s); return n; });
+    setSaveStatus("idle");
+  }
+  function toggleNews(c: string) {
+    setNewsCategories((prev) => { const n = new Set(prev); n.has(c) ? n.delete(c) : n.add(c); return n; });
+    setSaveStatus("idle");
   }
 
   async function handleSave() {
     if (!tgUser) return;
-    if (selected.size === 0) {
-      setError("Select at least one sector");
+    if (sectors.size === 0 && newsCategories.size === 0) {
+      setError("Select at least one sector or news category");
       return;
     }
-
-    setSaving(true);
+    setSaveStatus("saving");
     setError("");
-
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -56,121 +104,210 @@ export default function TgAppAlerts() {
         body: JSON.stringify({
           telegram_id: String(tgUser.id),
           channel: "telegram",
-          sectors_filter: Array.from(selected),
+          sectors_filter: Array.from(sectors),
+          news_categories_filter: Array.from(newsCategories),
           country_filter: ["Ethiopia"],
+          frequency: "daily",
         }),
       });
-
-      if (!res.ok) {
-        throw new Error("Failed to save preferences");
-      }
-
-      setSaved(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
-    } finally {
-      setSaving(false);
+      if (!res.ok) throw new Error("Failed to save");
+      setSaveStatus("saved");
+    } catch {
+      setSaveStatus("error");
+      setError("Couldn't save preferences. Try again.");
     }
   }
 
-  if (loading) {
+  if (loading || loadingPrefs) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-6 h-6 animate-spin text-cyan-500" />
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center shadow-lg">
+            <Bell className="w-6 h-6 text-white" />
+          </div>
+          <Loader2 className="w-5 h-5 animate-spin text-cyan-500" />
+          <p className="text-xs text-slate-400 font-medium">Loading your preferences…</p>
+        </div>
       </div>
     );
   }
 
+  const hasChanges = sectors.size > 0 || newsCategories.size > 0;
+
   return (
-    <div className="pb-6">
-      {/* ── Header ── */}
-      <div className="bg-white border-b border-dark-100 px-4 pt-3 pb-3 sticky top-0 z-30">
-        <div className="flex items-center gap-3">
-          <Link href="/tg-app" className="text-dark-400 hover:text-dark-600">
-            <ArrowLeft className="w-5 h-5" />
+    <div className="min-h-screen bg-slate-50 pb-24">
+      {/* Sticky Header */}
+      <div className="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+        <div className="flex items-center gap-3 px-4 h-14">
+          <Link href="/tg-app" className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-slate-100 transition-colors">
+            <ArrowLeft className="w-4 h-4 text-slate-500" />
           </Link>
-          <h1 className="text-lg font-extrabold text-dark-900 tracking-tight">
-            Alert Preferences
-          </h1>
+          <div className="flex-1">
+            <h1 className="text-[15px] font-extrabold text-slate-900 tracking-tight">Alert Preferences</h1>
+            <p className="text-[10px] text-slate-400 font-medium">Daily at 8:00 AM EAT</p>
+          </div>
+          <div className="flex items-center gap-1.5">
+            {sectors.size > 0 && (
+              <span className="px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-700 text-[10px] font-bold">
+                {sectors.size} jobs
+              </span>
+            )}
+            {newsCategories.size > 0 && (
+              <span className="px-2 py-0.5 rounded-full bg-teal-100 text-teal-700 text-[10px] font-bold">
+                {newsCategories.size} news
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
-      <div className="px-4 mt-5">
-        <div className="text-center mb-5">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mx-auto mb-3">
-            <Bell className="w-7 h-7 text-white" />
+      {/* Hero strip */}
+      <div className="bg-gradient-to-r from-cyan-500 to-teal-500 px-4 py-5">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+            <Bell className="w-5 h-5 text-white" />
           </div>
-          <h2 className="text-lg font-bold text-dark-900">
-            Select Your Sectors
-          </h2>
-          <p className="text-sm text-dark-400 mt-1">
-            Get notified when new opportunities match your interests
-          </p>
+          <div>
+            <p className="text-sm font-bold text-white">Personalised Daily Alerts</p>
+            <p className="text-[11px] text-cyan-100 mt-0.5">
+              Matching jobs &amp; news sent to your Telegram every morning
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-4 mt-4 space-y-3">
+
+        {/* Job Alerts Section */}
+        <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <button
+            onClick={() => setSectorsOpen((v) => !v)}
+            className="w-full flex items-center gap-3 px-4 py-3.5"
+          >
+            <div className="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center shrink-0">
+              <Briefcase className="w-4 h-4 text-cyan-600" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-bold text-slate-900">Job Alerts</p>
+              <p className="text-[11px] text-slate-400">
+                {sectors.size === 0 ? "No sectors selected" : `${sectors.size} sector${sectors.size !== 1 ? "s" : ""} selected`}
+              </p>
+            </div>
+            {sectorsOpen ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+          </button>
+
+          {sectorsOpen && (
+            <div className="px-4 pb-4 border-t border-slate-50">
+              <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mt-3 mb-2.5">
+                Tap sectors to receive matching opportunities
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {SECTORS.map((sector) => {
+                  const active = sectors.has(sector);
+                  return (
+                    <button
+                      key={sector}
+                      onClick={() => toggleSector(sector)}
+                      className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all active:scale-95 ${
+                        active
+                          ? "bg-cyan-500 border-cyan-500 text-white shadow-sm"
+                          : "bg-slate-50 border-slate-200 text-slate-600 hover:border-cyan-300"
+                      }`}
+                    >
+                      <span>{SECTOR_ICONS[sector] || "🔹"}</span>
+                      <span>{sector.split("(")[0].trim()}</span>
+                      {active && <CheckCircle className="w-3 h-3 opacity-80" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Sector grid */}
-        <div className="grid grid-cols-2 gap-2">
-          {SECTORS.map((sector) => {
-            const isSelected = selected.has(sector);
-            return (
-              <button
-                key={sector}
-                onClick={() => toggleSector(sector)}
-                className={`px-3 py-3 rounded-xl text-sm font-semibold text-left transition-all border ${
-                  isSelected
-                    ? "bg-cyan-50 border-cyan-300 text-cyan-800"
-                    : "bg-white border-dark-100 text-dark-600 hover:border-dark-200"
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <div
-                    className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 ${
-                      isSelected
-                        ? "bg-cyan-500"
-                        : "border border-dark-200"
-                    }`}
-                  >
-                    {isSelected && (
-                      <CheckCircle className="w-3.5 h-3.5 text-white" />
-                    )}
-                  </div>
-                  <span className="text-xs leading-tight">{sector}</span>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+        {/* News Alerts Section */}
+        <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <button
+            onClick={() => setNewsOpen((v) => !v)}
+            className="w-full flex items-center gap-3 px-4 py-3.5"
+          >
+            <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center shrink-0">
+              <Newspaper className="w-4 h-4 text-teal-600" />
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-bold text-slate-900">Dev News</p>
+              <p className="text-[11px] text-slate-400">
+                {newsCategories.size === 0 ? "All categories (no filter)" : `${newsCategories.size} categor${newsCategories.size !== 1 ? "ies" : "y"} selected`}
+              </p>
+            </div>
+            {newsOpen ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+          </button>
 
-        {/* Count */}
-        <p className="text-center text-xs text-dark-400 mt-3">
-          {selected.size} sector{selected.size !== 1 ? "s" : ""} selected
-        </p>
+          {newsOpen && (
+            <div className="px-4 pb-4 border-t border-slate-50">
+              <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mt-3 mb-2.5">
+                Leave all off to receive every category
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {NEWS_CATEGORIES.map((cat) => {
+                  const active = newsCategories.has(cat.id);
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => toggleNews(cat.id)}
+                      className={`flex items-center gap-2 px-3 py-2.5 rounded-xl border text-left transition-all active:scale-95 ${
+                        active
+                          ? "bg-teal-500 border-teal-500 text-white shadow-sm"
+                          : "bg-slate-50 border-slate-200 text-slate-600 hover:border-teal-300"
+                      }`}
+                    >
+                      <span className="text-base leading-none">{cat.emoji}</span>
+                      <span className="text-[11px] font-semibold leading-tight">{cat.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
 
         {error && (
-          <div className="mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-xl px-3 py-2.5">
             <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
             <p className="text-xs text-red-700">{error}</p>
           </div>
         )}
 
-        {saved && (
-          <div className="mt-3 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2 flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />
-            <p className="text-xs text-emerald-700">
-              Preferences saved! You&apos;ll receive alerts via Telegram.
-            </p>
+        {saveStatus === "saved" && (
+          <div className="flex items-start gap-2 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-3">
+            <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+            <div>
+              <p className="text-xs font-bold text-emerald-800">Preferences saved!</p>
+              <p className="text-[10px] text-emerald-600 mt-0.5">
+                You&apos;ll receive daily alerts at 8:00 AM EAT.
+              </p>
+            </div>
           </div>
         )}
+      </div>
 
+      {/* Floating Save Button */}
+      <div className="fixed bottom-0 left-0 right-0 px-4 pb-6 pt-3 bg-gradient-to-t from-slate-50 via-slate-50/95 to-transparent pointer-events-none">
         <button
           onClick={handleSave}
-          disabled={saving || selected.size === 0}
-          className="w-full mt-4 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm disabled:opacity-50 flex items-center justify-center gap-2"
+          disabled={saveStatus === "saving" || !hasChanges}
+          className={`pointer-events-auto w-full py-4 rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98] ${
+            saveStatus === "saved"
+              ? "bg-emerald-500 text-white shadow-lg shadow-emerald-200"
+              : "bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg shadow-cyan-200 disabled:opacity-40 disabled:shadow-none"
+          }`}
         >
-          {saving ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
+          {saveStatus === "saving" ? (
+            <><Loader2 className="w-4 h-4 animate-spin" /> Saving…</>
+          ) : saveStatus === "saved" ? (
+            <><CheckCircle className="w-4 h-4" /> Saved!</>
           ) : (
-            "Save Preferences"
+            <><Bell className="w-4 h-4" /> Save Alert Preferences</>
           )}
         </button>
       </div>

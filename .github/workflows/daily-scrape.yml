@@ -39,6 +39,15 @@ jobs:
         continue-on-error: true
         run: npx tsx scripts/crawl-news.ts
 
+      - name: Send email alerts
+        continue-on-error: true
+        run: npx tsx scripts/send-alerts-email.ts
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEXT_PUBLIC_SITE_URL: https://devidends.vercel.app
+
       - name: Broadcast to Telegram
         continue-on-error: true
         run: npx tsx scripts/broadcast-group.ts

@@ -38,29 +38,38 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Format a single opportunity as an HTML card for Telegram. */
-function formatOpportunityHtml(opp: SampleOpportunity): string {
-  const title = escHtml(truncate(opp.title, 100));
-  const org = escHtml(truncate(opp.organization, 60));
-  const country = escHtml(opp.country || "N/A");
-  const deadline = opp.deadline
-    ? escHtml(new Date(opp.deadline).toLocaleDateString("en-GB"))
-    : "Open";
-  const type = opp.classified_type || opp.type || "Opportunity";
-  const typeBadge = escHtml(type.charAt(0).toUpperCase() + type.slice(1));
-  const url = opp.source_url || `${SITE_URL}/jobs`;
+const TYPE_EMOJI: Record<string, string> = {
+  job: "💼", consultancy: "📋", tender: "📦", internship: "🎓",
+  contract: "📄", fellowship: "🎖️", volunteer: "🤝",
+};
+const CAT_EMOJI: Record<string, string> = {
+  "Humanitarian": "🆘", "Policy & Governance": "🏛️", "Funding & Donors": "💰",
+  "Health": "🏥", "Economy & Trade": "📈", "Climate & Environment": "🌍",
+  "Education": "📚", "General": "📰",
+};
 
-  return [
-    `\ud83d\udccc <b>${title}</b>`,
-    `\ud83c\udfe2 ${org}`,
-    `\ud83d\udccd ${country} | \u23f0 ${deadline} | \ud83c\udff7 ${typeBadge}`,
-    opp.seniority ? `\ud83c\udfaf Level: ${escHtml(opp.seniority)}` : "",
-    `\ud83d\udd17 <a href="${url}">Apply Here</a>`,
-    "",
-    `\u2014 <a href="${SITE_URL}">Devidends</a>`,
-  ]
-    .filter(Boolean)
-    .join("\n");
+/** Format a single opportunity as a rich HTML card for Telegram DMs. */
+function formatOpportunityHtml(opp: SampleOpportunity): string {
+  const title = escHtml(truncate(opp.title, 90));
+  const org = escHtml(truncate(opp.organization, 50));
+  const country = escHtml(opp.country || "Remote");
+  const deadline = opp.deadline
+    ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+    : "Rolling";
+  const type = (opp.classified_type || opp.type || "opportunity").toLowerCase();
+  const typeEmoji = TYPE_EMOJI[type] || "📌";
+  const url = opp.source_url || `${SITE_URL}/opportunities`;
+
+  const lines = [
+    `${typeEmoji} <b>${title}</b>`,
+    ``,
+    `🏢 <i>${org}</i>`,
+    `📍 ${country}${opp.seniority ? ` · 🎯 ${escHtml(opp.seniority)}` : ""}`,
+    `⏰ Deadline: <b>${deadline}</b>`,
+    ``,
+    `<a href="${url}">→ View &amp; Apply</a>`,
+  ];
+  return lines.join("\n");
 }
 
 // ---------------------------------------------------------------------------
@@ -163,48 +172,56 @@ export async function broadcastToGroup(
   });
 
   const parts: string[] = [
-    `\ud83d\udce2 <b>Devidends Daily Brief \u2014 ${escHtml(today)}</b>`,
-    `\ud83d\udcca ${opportunities.length} new opportunities today`,
-    "",
+    `┌─────────────────────────────┐`,
+    `│  📡 <b>DEVIDENDS DAILY BRIEF</b>   │`,
+    `└─────────────────────────────┘`,
+    ``,
+    `📅 <b>${escHtml(today)}</b>`,
+    ``,
   ];
 
   if (jobs.length > 0) {
-    parts.push(`\ud83d\udcbc <b>JOBS (${jobs.length})</b>`);
-    parts.push("");
-    for (const opp of jobs.slice(0, 15)) {
-      const title = escHtml(truncate(opp.title, 80));
-      const org = escHtml(truncate(opp.organization, 40));
+    parts.push(`💼 <b>NEW OPPORTUNITIES</b> <i>(${jobs.length} total)</i>`);
+    parts.push(`─────────────────────────`);
+    for (const opp of jobs.slice(0, 12)) {
+      const title = escHtml(truncate(opp.title, 75));
+      const org = escHtml(truncate(opp.organization, 35));
       const deadline = opp.deadline
         ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
         : "Open";
+      const type = (opp.classified_type || opp.type || "").toLowerCase();
+      const tEmoji = TYPE_EMOJI[type] || "📌";
       const url = opp.source_url || `${SITE_URL}/opportunities`;
-      parts.push(`\u2022 <a href="${url}">${title}</a>`);
-      parts.push(`  ${org} | \u23f0 ${escHtml(deadline)}`);
+      parts.push(`${tEmoji} <a href="${url}"><b>${title}</b></a>`);
+      parts.push(`   🏢 ${org}  ·  ⏰ ${escHtml(deadline)}`);
+      parts.push(``);
     }
-    if (jobs.length > 15) {
-      parts.push(`  <i>...and ${jobs.length - 15} more</i>`);
+    if (jobs.length > 12) {
+      parts.push(`<i>+${jobs.length - 12} more → <a href="${SITE_URL}/opportunities">Browse all</a></i>`);
+      parts.push(``);
     }
-    parts.push("");
   }
 
   // News section
   const news = newsArticles || [];
   if (news.length > 0) {
-    parts.push(`\ud83d\udcf0 <b>DEV NEWS (${news.length})</b>`);
-    parts.push("");
+    parts.push(`📰 <b>DEVELOPMENT NEWS</b> <i>(${news.length} articles)</i>`);
+    parts.push(`─────────────────────────`);
     for (const article of news.slice(0, 5)) {
       const title = escHtml(truncate(article.title, 80));
-      parts.push(`\u2022 <a href="${article.url}">${title}</a>`);
-      parts.push(`  ${escHtml(article.source_name)} | ${escHtml(article.category)}`);
+      const catEmoji = CAT_EMOJI[article.category] || "📰";
+      parts.push(`${catEmoji} <a href="${article.url}">${title}</a>`);
+      parts.push(`   <i>${escHtml(article.source_name)}</i>`);
+      parts.push(``);
     }
     if (news.length > 5) {
-      parts.push(`  <i>...and ${news.length - 5} more on the feed</i>`);
+      parts.push(`<i>+${news.length - 5} more → <a href="${SITE_URL}/news">Full feed</a></i>`);
+      parts.push(``);
     }
-    parts.push("");
   }
 
-  parts.push(`\ud83d\udd17 <a href="${SITE_URL}/opportunities">Browse opportunities</a> | <a href="${SITE_URL}/news">Dev news feed</a>`);
-  parts.push(`\ud83d\udc64 <a href="${SITE_URL}/subscribe">Subscribe for personalized alerts</a>`);
+  parts.push(`─────────────────────────`);
+  parts.push(`🔔 <a href="${SITE_URL}/tg-app/alerts">Set your personal alerts</a>  |  <a href="${SITE_URL}/opportunities">Browse all</a>`);
 
   const html = parts.join("\n");
 
@@ -340,25 +357,28 @@ export async function notifySubscribers(
         continue;
       }
 
-      // Send at most 10 per subscriber per digest
-      const toSend = matched.slice(0, 10);
-      const header =
-        toSend.length === 1
-          ? "\ud83d\udd14 <b>New opportunity matching your interests:</b>\n"
-          : `\ud83d\udd14 <b>${toSend.length} new opportunities matching your interests:</b>\n`;
+      // Send at most 8 per subscriber per digest
+      const toSend = matched.slice(0, 8);
+      const today = new Date().toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 
-      const body = toSend.map(formatOpportunityHtml).join("\n\n");
+      const lines: string[] = [
+        `🔔 <b>Your Daily Job Alerts</b> · <i>${today}</i>`,
+        ``,
+        `<i>${toSend.length} opportunit${toSend.length !== 1 ? "ies" : "y"} matching your interests</i>`,
+        `━━━━━━━━━━━━━━━━━━━━━━━━`,
+        ``,
+        ...toSend.map((opp, i) => `${formatOpportunityHtml(opp)}${i < toSend.length - 1 ? "\n\n──────────────────────\n" : ""}`),
+        ``,
+        `━━━━━━━━━━━━━━━━━━━━━━━━`,
+        `📌 <a href="${SITE_URL}/opportunities">Browse all ${matched.length > 8 ? `(+${matched.length - 8} more)` : "opportunities"}</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>`,
+        ``,
+        `<i>Powered by <a href="${SITE_URL}">Devidends</a></i>`,
+      ];
 
-      const footer = `\n\n\ud83d\udccd <a href="${SITE_URL}/jobs">See all opportunities</a> | /subscribe to update your preferences`;
-
-      await bot.sendMessage(
-        Number(sub.telegram_id),
-        header + "\n" + body + footer,
-        {
-          parse_mode: "HTML",
-          disable_web_page_preview: true,
-        }
-      );
+      await bot.sendMessage(Number(sub.telegram_id), lines.join("\n"), {
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      });
 
       notified++;
     } catch (err) {
@@ -397,7 +417,7 @@ export async function notifySubscribersNews(
 
   const { data: subscribers, error } = await supabase
     .from("subscriptions")
-    .select("id, telegram_id")
+    .select("id, telegram_id, news_categories_filter")
     .eq("channel", "telegram")
     .eq("is_active", true)
     .not("telegram_id", "is", null);
@@ -407,31 +427,50 @@ export async function notifySubscribersNews(
     return { notified: 0, failed: 0 };
   }
 
-  const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "short", day: "numeric", month: "short",
-  });
-
-  const top = articles.slice(0, 5);
-  const lines: string[] = [
-    `\ud83d\udcf0 <b>Dev News — ${escHtml(today)}</b>`,
-    "",
-    ...top.map((a) =>
-      `\u2022 <a href="${a.url}">${escHtml(truncate(a.title, 90))}</a>\n  <i>${escHtml(a.source_name)}</i>`
-    ),
-  ];
-  if (articles.length > 5) {
-    lines.push(`\n<i>...and ${articles.length - 5} more on the feed</i>`);
-  }
-  lines.push(`\n\ud83d\udd17 <a href="${SITE_URL}/news">Full news feed</a>`);
-
-  const html = lines.join("\n");
+  const today = new Date().toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 
   let notified = 0;
   let failed = 0;
 
-  for (const sub of subscribers as { id: string; telegram_id: string }[]) {
+  for (const sub of subscribers as { id: string; telegram_id: string; news_categories_filter?: string[] }[]) {
     try {
-      await bot.sendMessage(Number(sub.telegram_id), html, {
+      // Filter articles by subscriber's chosen categories (empty = all categories)
+      const catFilter = sub.news_categories_filter || [];
+      const filtered = catFilter.length > 0
+        ? articles.filter((a) => catFilter.includes(a.category))
+        : articles;
+
+      if (filtered.length === 0) continue;
+
+      const top = filtered.slice(0, 6);
+      const lines: string[] = [
+        `📰 <b>Your Dev News Digest</b> · <i>${today}</i>`,
+        ``,
+        catFilter.length > 0
+          ? `<i>${filtered.length} article${filtered.length !== 1 ? "s" : ""} in: ${catFilter.map(escHtml).join(", ")}</i>`
+          : `<i>${filtered.length} development news articles</i>`,
+        `━━━━━━━━━━━━━━━━━━━━━━━━`,
+        ``,
+      ];
+
+      for (const a of top) {
+        const catEmoji = CAT_EMOJI[a.category] || "📰";
+        lines.push(`${catEmoji} <a href="${a.url}"><b>${escHtml(truncate(a.title, 85))}</b></a>`);
+        lines.push(`   <i>${escHtml(a.source_name)}</i>`);
+        lines.push(``);
+      }
+
+      if (filtered.length > 6) {
+        lines.push(`<i>+${filtered.length - 6} more articles in your feed</i>`);
+        lines.push(``);
+      }
+
+      lines.push(`━━━━━━━━━━━━━━━━━━━━━━━━`);
+      lines.push(`📖 <a href="${SITE_URL}/news">Full news feed</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit preferences</a>`);
+      lines.push(``);
+      lines.push(`<i>Powered by <a href="${SITE_URL}">Devidends</a></i>`);
+
+      await bot.sendMessage(Number(sub.telegram_id), lines.join("\n"), {
         parse_mode: "HTML",
         disable_web_page_preview: true,
       });

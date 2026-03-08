@@ -7,9 +7,7 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-// Rate limit subscribe endpoint (per IP, 10/hour)
 const subscribeRateLimit = new Map<string, { count: number; resetAt: number }>();
-
 function checkSubscribeRate(ip: string): boolean {
   const now = Date.now();
   const entry = subscribeRateLimit.get(ip);
@@ -22,94 +20,95 @@ function checkSubscribeRate(ip: string): boolean {
   return true;
 }
 
+/** GET /api/subscribe?telegram_id=xxx — fetch existing subscription */
+export async function GET(req: NextRequest) {
+  const telegramId = req.nextUrl.searchParams.get("telegram_id");
+  if (!telegramId) {
+    return NextResponse.json({ error: "telegram_id required" }, { status: 400 });
+  }
+  const supabase = getSupabase();
+  const { data } = await supabase
+    .from("subscriptions")
+    .select("sectors_filter, news_categories_filter, country_filter, work_type_filter, frequency, is_active")
+    .eq("telegram_id", telegramId)
+    .eq("is_active", true)
+    .single();
+
+  return NextResponse.json({ subscription: data || null });
+}
+
+/** POST /api/subscribe — create or update subscription */
 export async function POST(req: NextRequest) {
   try {
-    // Rate limiting
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
     if (!checkSubscribeRate(ip)) {
-      return NextResponse.json(
-        { error: "Too many requests. Please try again later." },
-        { status: 429 }
-      );
+      return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
     }
 
     const body = await req.json();
-    const { email, telegram_id, channel, sectors_filter, donor_filter, country_filter, work_type_filter, frequency } = body;
+    const {
+      email,
+      telegram_id,
+      channel,
+      sectors_filter,
+      news_categories_filter,
+      donor_filter,
+      country_filter,
+      work_type_filter,
+      frequency,
+    } = body;
 
-    // Validate
     if (!email && !telegram_id) {
-      return NextResponse.json(
-        { error: "Email or Telegram ID is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email or Telegram ID is required" }, { status: 400 });
     }
-
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
 
     const supabase = getSupabase();
 
-    // Check for existing subscription
-    if (email) {
-      const { data: existing } = await supabase
-        .from("subscriptions")
-        .select("id, is_active")
-        .eq("email", email)
-        .single();
-
-      if (existing) {
-        if (existing.is_active) {
-          return NextResponse.json(
-            { message: "You're already subscribed!", alreadySubscribed: true },
-            { status: 200 }
-          );
-        }
-        // Reactivate
-        await supabase
-          .from("subscriptions")
-          .update({ is_active: true, channel: channel || "email" })
-          .eq("id", existing.id);
-
-        return NextResponse.json(
-          { message: "Welcome back! Your subscription has been reactivated." },
-          { status: 200 }
-        );
-      }
-    }
-
-    // Insert new subscription
-    const { error } = await supabase.from("subscriptions").insert({
-      email: email || null,
-      telegram_id: telegram_id || null,
+    const payload: Record<string, unknown> = {
       channel: channel || (email ? "email" : "telegram"),
       sectors_filter: sectors_filter || [],
       donor_filter: donor_filter || [],
       country_filter: country_filter || ["Ethiopia"],
       work_type_filter: work_type_filter || [],
-      frequency: frequency || "weekly",
+      frequency: frequency || "daily",
       is_active: true,
-    });
+      ...(news_categories_filter !== undefined && { news_categories_filter }),
+    };
 
-    if (error) {
-      console.error("Supabase insert error:", error);
-      return NextResponse.json(
-        { error: "Failed to subscribe. Please try again." },
-        { status: 500 }
-      );
+    const matchCol = email ? "email" : "telegram_id";
+    const matchVal = email || telegram_id;
+    const { data: existing } = await supabase
+      .from("subscriptions")
+      .select("id")
+      .eq(matchCol, matchVal)
+      .single();
+
+    if (existing) {
+      let { error } = await supabase.from("subscriptions").update(payload).eq("id", existing.id);
+      if (error?.message?.includes("news_categories_filter")) {
+        // Column not yet migrated — save without it
+        const { news_categories_filter: _ncf, ...rest } = payload;
+        void _ncf;
+        ({ error } = await supabase.from("subscriptions").update(rest).eq("id", existing.id));
+      }
+      if (error) return NextResponse.json({ error: "Failed to update." }, { status: 500 });
+      return NextResponse.json({ message: "Preferences saved!", updated: true });
     }
 
-    return NextResponse.json(
-      { message: "Successfully subscribed! You'll receive updates soon." },
-      { status: 201 }
-    );
+    const insertPayload = { email: email || null, telegram_id: telegram_id || null, ...payload };
+    let { error } = await supabase.from("subscriptions").insert(insertPayload);
+    if (error?.message?.includes("news_categories_filter")) {
+      const { news_categories_filter: _ncf, ...rest } = insertPayload;
+      void _ncf;
+      ({ error } = await supabase.from("subscriptions").insert(rest));
+    }
+    if (error) return NextResponse.json({ error: "Failed to subscribe." }, { status: 500 });
+
+    return NextResponse.json({ message: "Subscribed! You'll receive daily alerts.", created: true }, { status: 201 });
   } catch {
-    return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
   }
 }
