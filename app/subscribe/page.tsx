@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useAuth } from "@/components/AuthProvider";
 
 /* ─── Scroll reveal hook ──────────────────────────────────── */
 
@@ -99,6 +100,7 @@ function FaqItem({
 const WORK_TYPES = ["Full-time", "Consultancy", "Contract", "Internship"] as const;
 
 export default function SubscribePage() {
+  const { user } = useAuth();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error" | "already"
@@ -113,6 +115,26 @@ export default function SubscribePage() {
   const featuresReveal = useReveal(0.15);
   const sourcesReveal = useReveal(0.1);
   const faqReveal = useReveal(0.15);
+
+  // Auto-fill email from logged-in user and check for existing subscription
+  useEffect(() => {
+    if (!user?.email) return;
+    setEmail(user.email);
+    (async () => {
+      try {
+        const res = await fetch(`/api/subscribe?email=${encodeURIComponent(user.email!)}`);
+        const { subscription } = await res.json();
+        if (subscription) {
+          setExistingSubscription(true);
+          if (subscription.frequency) setFrequency(subscription.frequency);
+          if (subscription.work_type_filter?.length) {
+            setWorkTypeFilter(new Set(subscription.work_type_filter));
+            setShowFilters(true);
+          }
+        }
+      } catch { /* silent */ }
+    })();
+  }, [user]);
 
   function toggleWorkType(type: string) {
     setWorkTypeFilter((prev) => {
