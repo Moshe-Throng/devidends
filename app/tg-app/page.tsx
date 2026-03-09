@@ -14,6 +14,7 @@ import {
   MapPin,
   Clock,
   Newspaper,
+  BarChart3,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
@@ -171,25 +172,35 @@ export default function TgAppHome() {
                 <Briefcase className="w-5 h-5 text-cyan-600" />
               </div>
               <p className="text-sm font-bold text-dark-900">Opportunities</p>
-              <p className="text-[11px] text-dark-400 mt-0.5">
-                Browse & apply
-              </p>
+              <p className="text-[11px] text-dark-400 mt-0.5">Browse & apply</p>
             </div>
           </Link>
 
-          <Link href="/tg-app/cv-builder">
-            <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
-                <FileText className="w-5 h-5 text-teal-600" />
+          {profile?.cv_structured_data ? (
+            /* Has CV — single "My CV" card */
+            <Link href="/tg-app/cv-builder">
+              <div className="bg-white border border-teal-200 rounded-xl p-4 hover:border-teal-400 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
+                  <FileText className="w-5 h-5 text-teal-600" />
+                </div>
+                <p className="text-sm font-bold text-dark-900">My CV</p>
+                <p className="text-[11px] text-teal-600 mt-0.5 font-medium">View &amp; edit</p>
               </div>
-              <p className="text-sm font-bold text-dark-900">
-                {profile?.cv_structured_data ? "My CV" : "Build CV"}
-              </p>
-              <p className="text-[11px] text-dark-400 mt-0.5">
-                {profile?.cv_structured_data ? "View & edit" : "Donor-ready format"}
-              </p>
-            </div>
-          </Link>
+            </Link>
+          ) : (
+            /* No CV — Build + Score side by side */
+            <>
+              <Link href="/tg-app/cv-builder">
+                <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
+                    <FileText className="w-5 h-5 text-teal-600" />
+                  </div>
+                  <p className="text-sm font-bold text-dark-900">Build CV</p>
+                  <p className="text-[11px] text-dark-400 mt-0.5">Donor-ready format</p>
+                </div>
+              </Link>
+            </>
+          )}
 
           <Link href="/tg-app/profile">
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-cyan-300 transition-colors">
@@ -197,21 +208,29 @@ export default function TgAppHome() {
                 <User className="w-5 h-5 text-cyan-600" />
               </div>
               <p className="text-sm font-bold text-dark-900">My Profile</p>
-              <p className="text-[11px] text-dark-400 mt-0.5">
-                View & edit
-              </p>
+              <p className="text-[11px] text-dark-400 mt-0.5">View & edit</p>
             </div>
           </Link>
 
-          <Link href="/tg-app/news">
+          {!profile?.cv_structured_data && (
+            <Link href="/tg-app/score">
+              <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-indigo-300 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-2.5">
+                  <BarChart3 className="w-5 h-5 text-indigo-500" />
+                </div>
+                <p className="text-sm font-bold text-dark-900">Score CV</p>
+                <p className="text-[11px] text-dark-400 mt-0.5">ATS & donor match</p>
+              </div>
+            </Link>
+          )}
+
+          <Link href="/tg-app/news" className={!profile?.cv_structured_data ? "" : "col-span-1"}>
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
                 <Newspaper className="w-5 h-5 text-teal-600" />
               </div>
               <p className="text-sm font-bold text-dark-900">Dev News</p>
-              <p className="text-[11px] text-dark-400 mt-0.5">
-                Latest updates
-              </p>
+              <p className="text-[11px] text-dark-400 mt-0.5">Latest updates</p>
             </div>
           </Link>
         </div>

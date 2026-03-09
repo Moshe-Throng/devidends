@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
   const supabase = getSupabase();
   const { data } = await supabase
     .from("subscriptions")
-    .select("sectors_filter, news_categories_filter, country_filter, work_type_filter, frequency, is_active")
+    .select("sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active")
     .eq("telegram_id", telegramId)
     .eq("is_active", true)
     .single();
@@ -52,6 +52,7 @@ export async function POST(req: NextRequest) {
       channel,
       sectors_filter,
       news_categories_filter,
+      news_sectors_filter,
       donor_filter,
       country_filter,
       work_type_filter,
@@ -76,6 +77,7 @@ export async function POST(req: NextRequest) {
       frequency: frequency || "daily",
       is_active: true,
       ...(news_categories_filter !== undefined && { news_categories_filter }),
+      ...(news_sectors_filter !== undefined && { news_sectors_filter }),
     };
 
     const matchCol = email ? "email" : "telegram_id";
