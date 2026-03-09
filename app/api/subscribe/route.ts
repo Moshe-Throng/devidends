@@ -28,13 +28,23 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "telegram_id or email required" }, { status: 400 });
   }
   const supabase = getSupabase();
-  const query = supabase
-    .from("subscriptions")
-    .select("sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active");
 
-  const { data } = await (telegramId
-    ? query.eq("telegram_id", telegramId).eq("is_active", true).single()
-    : query.eq("email", email!).eq("is_active", true).single());
+  const buildQuery = (fields: string) => {
+    const q = supabase.from("subscriptions").select(fields);
+    return telegramId
+      ? q.eq("telegram_id", telegramId).eq("is_active", true).single()
+      : q.eq("email", email!).eq("is_active", true).single();
+  };
+
+  // Try full select first; fall back to base columns if new ones don't exist yet
+  let { data, error } = await buildQuery(
+    "sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active"
+  );
+  if (error?.message?.includes("news_sectors_filter") || error?.message?.includes("news_categories_filter")) {
+    ({ data } = await buildQuery(
+      "sectors_filter, country_filter, work_type_filter, frequency, is_active"
+    ));
+  }
 
   return NextResponse.json({ subscription: data || null });
 }
