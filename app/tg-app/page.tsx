@@ -99,17 +99,27 @@ export default function TgAppHome() {
                 {firstName}
               </h1>
             </div>
-            {tgUser?.photo_url ? (
-              <img
-                src={tgUser.photo_url}
-                alt=""
-                className="w-12 h-12 rounded-full border-2 border-white/30"
-              />
-            ) : (
-              <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                <User className="w-6 h-6 text-white" />
-              </div>
-            )}
+            <div className="flex flex-col items-center gap-1.5">
+              {tgUser?.photo_url ? (
+                <img
+                  src={tgUser.photo_url}
+                  alt=""
+                  className="w-12 h-12 rounded-full border-2 border-white/30"
+                />
+              ) : (
+                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                  <User className="w-6 h-6 text-white" />
+                </div>
+              )}
+              {profile?.cv_structured_data && (
+                <Link href="/tg-app/cv-builder">
+                  <span className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-colors px-2 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap">
+                    <FileText className="w-2.5 h-2.5" />
+                    My CV
+                  </span>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Quick stats */}
