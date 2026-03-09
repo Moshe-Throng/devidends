@@ -23,16 +23,18 @@ function checkSubscribeRate(ip: string): boolean {
 /** GET /api/subscribe?telegram_id=xxx — fetch existing subscription */
 export async function GET(req: NextRequest) {
   const telegramId = req.nextUrl.searchParams.get("telegram_id");
-  if (!telegramId) {
-    return NextResponse.json({ error: "telegram_id required" }, { status: 400 });
+  const email = req.nextUrl.searchParams.get("email");
+  if (!telegramId && !email) {
+    return NextResponse.json({ error: "telegram_id or email required" }, { status: 400 });
   }
   const supabase = getSupabase();
-  const { data } = await supabase
+  const query = supabase
     .from("subscriptions")
-    .select("sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active")
-    .eq("telegram_id", telegramId)
-    .eq("is_active", true)
-    .single();
+    .select("sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active");
+
+  const { data } = await (telegramId
+    ? query.eq("telegram_id", telegramId).eq("is_active", true).single()
+    : query.eq("email", email!).eq("is_active", true).single());
 
   return NextResponse.json({ subscription: data || null });
 }

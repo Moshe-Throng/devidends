@@ -107,6 +107,7 @@ export default function SubscribePage() {
   const [frequency, setFrequency] = useState<"weekly" | "daily">("weekly");
   const [workTypeFilter, setWorkTypeFilter] = useState<Set<string>>(new Set());
   const [showFilters, setShowFilters] = useState(false);
+  const [existingSubscription, setExistingSubscription] = useState(false);
 
   const cardsReveal = useReveal(0.1);
   const featuresReveal = useReveal(0.15);
@@ -119,6 +120,27 @@ export default function SubscribePage() {
       next.has(type) ? next.delete(type) : next.add(type);
       return next;
     });
+  }
+
+  async function handleEmailBlur() {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+    try {
+      const res = await fetch(`/api/subscribe?email=${encodeURIComponent(email)}`);
+      const { subscription } = await res.json();
+      if (subscription) {
+        setExistingSubscription(true);
+        if (subscription.frequency) setFrequency(subscription.frequency);
+        if (subscription.work_type_filter?.length) {
+          setWorkTypeFilter(new Set(subscription.work_type_filter));
+          setShowFilters(true);
+        }
+        setStatus("idle");
+      } else {
+        setExistingSubscription(false);
+      }
+    } catch {
+      // silent
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -347,10 +369,10 @@ export default function SubscribePage() {
                         <Check className="w-6 h-6 text-white" />
                       </div>
                       <p className="text-base font-bold text-emerald-800">
-                        You&apos;re subscribed!
+                        {existingSubscription ? "Preferences updated!" : "You're subscribed!"}
                       </p>
                       <p className="text-xs text-emerald-600 mt-1">
-                        Check your inbox on Monday
+                        {existingSubscription ? "Changes saved successfully" : "Check your inbox on Monday"}
                       </p>
                     </div>
                   ) : status === "already" ? (
@@ -359,14 +381,20 @@ export default function SubscribePage() {
                         <Check className="w-6 h-6 text-white" />
                       </div>
                       <p className="text-base font-bold text-cyan-800">
-                        Already subscribed!
+                        Preferences saved!
                       </p>
                       <p className="text-xs text-cyan-600 mt-1">
-                        You&apos;re all set — no action needed
+                        Your alerts have been updated
                       </p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-3">
+                      {existingSubscription && (
+                        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 border border-cyan-200">
+                          <Check className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                          <p className="text-xs text-cyan-700 font-medium">Existing subscription found — update your preferences below</p>
+                        </div>
+                      )}
                       <div className="relative">
                         <input
                           type="email"
@@ -374,11 +402,15 @@ export default function SubscribePage() {
                           onChange={(e) => {
                             setEmail(e.target.value);
                             if (status === "error") setStatus("idle");
+                            if (existingSubscription) setExistingSubscription(false);
                           }}
+                          onBlur={handleEmailBlur}
                           placeholder="your@email.com"
                           className={`w-full px-4 py-3.5 rounded-xl border-2 text-sm font-medium text-dark-900 placeholder:text-dark-300 outline-none transition-all duration-300 ${
                             status === "error"
                               ? "border-red-300 bg-red-50/50 focus:border-red-400 focus:shadow-md focus:shadow-red-500/5"
+                              : existingSubscription
+                              ? "border-cyan-300 bg-cyan-50/30 focus:border-cyan-400 focus:bg-white"
                               : "border-dark-100 bg-dark-50/50 focus:border-cyan-400 focus:bg-white focus:shadow-md focus:shadow-cyan-500/5"
                           }`}
                           disabled={status === "loading"}
@@ -451,11 +483,11 @@ export default function SubscribePage() {
                         {status === "loading" ? (
                           <>
                             <Loader2 className="w-4 h-4 animate-spin" />
-                            Subscribing...
+                            {existingSubscription ? "Updating..." : "Subscribing..."}
                           </>
                         ) : (
                           <>
-                            Subscribe
+                            {existingSubscription ? "Update Preferences" : "Subscribe"}
                             <ArrowRight className="w-4 h-4" />
                           </>
                         )}
