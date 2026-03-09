@@ -21,6 +21,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useAuth } from "@/components/AuthProvider";
+import { SECTORS } from "@/lib/constants";
 
 /* ─── Scroll reveal hook ──────────────────────────────────── */
 
@@ -107,7 +108,9 @@ export default function SubscribePage() {
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [frequency, setFrequency] = useState<"weekly" | "daily">("weekly");
+  const [sectorsFilter, setSectorsFilter] = useState<Set<string>>(new Set());
   const [workTypeFilter, setWorkTypeFilter] = useState<Set<string>>(new Set());
+  const [showSectors, setShowSectors] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [existingSubscription, setExistingSubscription] = useState(false);
 
@@ -127,6 +130,10 @@ export default function SubscribePage() {
         if (subscription) {
           setExistingSubscription(true);
           if (subscription.frequency) setFrequency(subscription.frequency);
+          if (subscription.sectors_filter?.length) {
+            setSectorsFilter(new Set(subscription.sectors_filter));
+            setShowSectors(true);
+          }
           if (subscription.work_type_filter?.length) {
             setWorkTypeFilter(new Set(subscription.work_type_filter));
             setShowFilters(true);
@@ -152,6 +159,10 @@ export default function SubscribePage() {
       if (subscription) {
         setExistingSubscription(true);
         if (subscription.frequency) setFrequency(subscription.frequency);
+        if (subscription.sectors_filter?.length) {
+          setSectorsFilter(new Set(subscription.sectors_filter));
+          setShowSectors(true);
+        }
         if (subscription.work_type_filter?.length) {
           setWorkTypeFilter(new Set(subscription.work_type_filter));
           setShowFilters(true);
@@ -188,6 +199,7 @@ export default function SubscribePage() {
           channel: "email",
           country_filter: ["Ethiopia"],
           frequency,
+          sectors_filter: Array.from(sectorsFilter),
           work_type_filter: Array.from(workTypeFilter),
         }),
       });
@@ -462,6 +474,44 @@ export default function SubscribePage() {
                         ))}
                       </div>
 
+                      {/* Sector selector */}
+                      <button
+                        type="button"
+                        onClick={() => setShowSectors(!showSectors)}
+                        className="flex items-center gap-1.5 text-xs text-dark-400 hover:text-dark-600 transition-colors"
+                      >
+                        <Filter className="w-3 h-3" />
+                        {showSectors ? "Hide sectors" : `Filter by sector${sectorsFilter.size > 0 ? ` (${sectorsFilter.size})` : ""}`}
+                        <ChevronDown className={`w-3 h-3 transition-transform ${showSectors ? "rotate-180" : ""}`} />
+                      </button>
+
+                      {showSectors && (
+                        <div className="animate-fadeInUp">
+                          <div className="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto pr-1">
+                            {SECTORS.map((sector) => (
+                              <button
+                                key={sector}
+                                type="button"
+                                onClick={() => setSectorsFilter((prev) => {
+                                  const next = new Set(prev);
+                                  next.has(sector) ? next.delete(sector) : next.add(sector);
+                                  return next;
+                                })}
+                                className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-colors ${
+                                  sectorsFilter.has(sector)
+                                    ? "bg-cyan-500 text-white border-cyan-500"
+                                    : "bg-white text-dark-400 border-dark-100 hover:border-cyan-300"
+                                }`}
+                              >
+                                {sectorsFilter.has(sector) && <Check className="w-3 h-3 inline mr-1 -mt-0.5" />}
+                                {sector.split("(")[0].trim()}
+                              </button>
+                            ))}
+                          </div>
+                          <p className="text-[10px] text-dark-300 mt-1.5">No selection = all sectors</p>
+                        </div>
+                      )}
+
                       {/* Filters toggle */}
                       <button
                         type="button"
@@ -469,7 +519,7 @@ export default function SubscribePage() {
                         className="flex items-center gap-1.5 text-xs text-dark-400 hover:text-dark-600 transition-colors"
                       >
                         <Filter className="w-3 h-3" />
-                        {showFilters ? "Hide filters" : "Add type filters"}
+                        {showFilters ? "Hide type filters" : "Filter by work type"}
                         <ChevronDown className={`w-3 h-3 transition-transform ${showFilters ? "rotate-180" : ""}`} />
                       </button>
 

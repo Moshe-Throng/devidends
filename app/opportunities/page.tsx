@@ -25,6 +25,7 @@ import {
   Flame,
   Sparkles,
   ArrowRight,
+  Bell,
 } from "lucide-react";
 
 import type { SampleOpportunity } from "@/lib/types/cv-score";
@@ -877,37 +878,42 @@ export default function OpportunitiesPage() {
               </div>
             )}
 
-            {/* ── CTA: Score My CV ──────────────────────────── */}
-            <div className="relative rounded-2xl overflow-hidden border border-dark-100 mt-8">
-              <div
-                className="absolute inset-0 opacity-[0.03]"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, #27ABD2 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
-                }}
-              />
-              <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 p-6 lg:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                    <Target className="w-6 h-6 text-white" />
+            {/* ── CTAs: Score + Subscribe ──────────────────── */}
+            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              {/* Score My CV */}
+              <div className="relative rounded-2xl overflow-hidden border border-dark-100">
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #27ABD2 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+                <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-md shadow-cyan-500/20 shrink-0">
+                      <Target className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-dark-900 text-sm">Found an opportunity?</p>
+                      <p className="text-xs text-dark-400 mt-0.5">Score your CV against it</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-dark-900">
-                      Found an interesting opportunity?
-                    </p>
-                    <p className="text-sm text-dark-400 mt-0.5">
-                      Score your CV against it to see how well you match
-                    </p>
-                  </div>
+                  <Link href="/score" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-md whitespace-nowrap">
+                    Score My CV <Target className="w-4 h-4" />
+                  </Link>
                 </div>
-                <Link
-                  href="/score"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5 whitespace-nowrap"
-                >
-                  Score My CV
-                  <Target className="w-4 h-4" />
-                </Link>
+              </div>
+              {/* Subscribe */}
+              <div className="relative rounded-2xl overflow-hidden border border-dark-100 bg-gradient-to-br from-dark-900 to-dark-800">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-md shadow-cyan-500/20 shrink-0">
+                      <Bell className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-white text-sm">Never miss a posting</p>
+                      <p className="text-xs text-dark-400 mt-0.5">Daily alerts by sector</p>
+                    </div>
+                  </div>
+                  <Link href="/subscribe" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-dark-900 font-bold text-sm hover:bg-dark-50 transition-all shadow-md whitespace-nowrap">
+                    Subscribe <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
