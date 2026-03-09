@@ -10,7 +10,11 @@ import {
   AlertCircle,
   ArrowUpRight,
   TrendingUp,
+  Bell,
+  Send,
+  ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -423,6 +427,49 @@ export default function NewsPage() {
           </>
         )}
       </main>
+
+      {/* ── Subscribe CTA ── */}
+      <section className="border-t border-dark-50 bg-gradient-to-br from-dark-900 to-dark-800 py-12">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+          <div className="text-center mb-8">
+            <p className="text-[10px] font-bold text-dark-400 tracking-[0.25em] uppercase mb-2">Never Miss a Story</p>
+            <h2 className="text-xl lg:text-2xl font-extrabold text-white tracking-tight">
+              Get the Intel Feed delivered daily
+            </h2>
+            <p className="mt-2 text-sm text-dark-400 max-w-lg mx-auto">
+              Subscribe once — receive both development news and job opportunities matched to your sector.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {/* Jobs alert */}
+            <Link href="/subscribe" className="group flex items-start gap-4 bg-dark-800 border border-dark-700 hover:border-cyan-500/50 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/5">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shrink-0 shadow-md shadow-cyan-500/20">
+                <Bell className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+                  Job Alerts
+                  <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200" />
+                </p>
+                <p className="text-xs text-dark-400 mt-0.5 leading-relaxed">Daily digest of jobs & tenders matched to your sectors</p>
+              </div>
+            </Link>
+            {/* News digest */}
+            <Link href="/subscribe" className="group flex items-start gap-4 bg-dark-800 border border-dark-700 hover:border-teal-500/50 rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal-500/5">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shrink-0 shadow-md shadow-teal-500/20">
+                <Send className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold text-white group-hover:text-teal-400 transition-colors flex items-center gap-1.5">
+                  News Digest
+                  <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 duration-200" />
+                </p>
+                <p className="text-xs text-dark-400 mt-0.5 leading-relaxed">Curated development news by topic, straight to your inbox</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <SiteFooter />
 

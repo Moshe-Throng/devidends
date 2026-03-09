@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useAuth } from "@/components/AuthProvider";
+import { createSupabaseBrowser } from "@/lib/supabase-browser";
 
 /* ─── Scroll-triggered reveal hook ─────────────────────────── */
 
@@ -154,6 +156,7 @@ function timeAgo(dateStr: string | null): string {
 }
 
 export default function LandingPage() {
+  const { user } = useAuth();
   const doors = useReveal(0.1);
   const howItWorks = useReveal(0.15);
   const sourcesReveal = useReveal(0.1);
@@ -162,6 +165,7 @@ export default function LandingPage() {
   const ctaReveal = useReveal(0.1);
 
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [hasCV, setHasCV] = useState(false);
 
   useEffect(() => {
     fetch("/api/news?limit=6")
@@ -169,6 +173,17 @@ export default function LandingPage() {
       .then((d) => setNewsItems(d.articles || []))
       .catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (!user) return;
+    const sb = createSupabaseBrowser();
+    (async () => {
+      try {
+        const { data } = await sb.from("profiles").select("cv_structured_data").eq("user_id", user.id).single();
+        if (data?.cv_structured_data) setHasCV(true);
+      } catch { /* silent */ }
+    })();
+  }, [user]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -371,20 +386,32 @@ export default function LandingPage() {
 
                   {/* CTAs */}
                   <div className="flex flex-wrap gap-3">
-                    <Link
-                      href="/score"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold text-sm transition-all duration-300 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-0.5 animate-pulseGlow"
-                    >
-                      Score My CV
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <Link
-                      href="/cv-builder"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-sm transition-all duration-300 hover:bg-cyan-50 hover:border-cyan-300"
-                    >
-                      Build CV
-                      <ChevronRight className="w-4 h-4" />
-                    </Link>
+                    {hasCV ? (
+                      <Link
+                        href="/cv-builder"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold text-sm transition-all duration-300 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-0.5"
+                      >
+                        Edit My CV
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    ) : (
+                      <>
+                        <Link
+                          href="/score"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-600 text-white font-bold text-sm transition-all duration-300 hover:from-cyan-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-0.5 animate-pulseGlow"
+                        >
+                          Score My CV
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <Link
+                          href="/cv-builder"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-sm transition-all duration-300 hover:bg-cyan-50 hover:border-cyan-300"
+                        >
+                          Build CV
+                          <ChevronRight className="w-4 h-4" />
+                        </Link>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

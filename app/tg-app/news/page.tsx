@@ -9,6 +9,8 @@ import {
   Globe,
   Clock,
   Newspaper,
+  Bell,
+  ChevronRight,
 } from "lucide-react";
 
 /* ─── Types ──────────────────────────────────────────────── */
@@ -215,6 +217,22 @@ export default function TgNewsPage() {
             )}
           </div>
         )}
+      </div>
+
+      {/* ── Subscribe strip ── */}
+      <div className="px-4 mt-4 mb-6">
+        <Link href="/tg-app/alerts">
+          <div className="bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl px-4 py-3.5 flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+              <Bell className="w-4.5 h-4.5 text-white" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-bold text-white">Get this in your daily digest</p>
+              <p className="text-[11px] text-cyan-100 mt-0.5">Customise job &amp; news alerts →</p>
+            </div>
+            <ChevronRight className="w-4 h-4 text-white/70 shrink-0" />
+          </div>
+        </Link>
       </div>
 
       <style jsx global>{`
