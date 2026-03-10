@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "title": "Title Location Job Family",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-10T05:54:23.949Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Reset",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-10T05:54:23.949Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Director, Independent Recourse Mechanism, BIRMDirector, Independent Recourse Mechanism, BIRM",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Director%2C-Independent-Recourse-Mechanism%2C-BIRM/1371746433/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-10T05:54:23.949Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  }
+]
