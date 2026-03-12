@@ -10,20 +10,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.033Z"
-  },
-  {
-    "title": "Internship Program",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
+    "scraped_at": "2026-03-12T05:59:02.122Z"
   },
   {
     "title": "All AU Member States AVoHC Kofi Annan Scholars Program Strategy Development Expert %28AfCDC%29",
@@ -36,7 +23,7 @@
     "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVoHC-Kofi-Annan-Scholars-Program-Strategy-Development-Expert-%28AfCDC%29/1354103857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
+    "scraped_at": "2026-03-12T05:59:02.122Z"
   },
   {
     "title": "All AU Member States AVOHC Programme de Bourses Kofi Annan Expert en D%C3%A9veloppement de Strat%C3%A9gies %28AfCDC%29",
@@ -49,33 +36,7 @@
     "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVOHC-Programme-de-Bourses-Kofi-Annan-Expert-en-D%C3%A9veloppement-de-Strat%C3%A9gies-%28AfCDC%29/1354103957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
-  },
-  {
-    "title": "Director Human Resources Management",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Human-Resources-Management/1354379357/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
-  },
-  {
-    "title": "Directeur de la Gestion des ressources humaines",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-de-la-Gestion-des-ressources-humaines/1354379457/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
+    "scraped_at": "2026-03-12T05:59:02.122Z"
   },
   {
     "title": "Internship Program TranslatorInterpreter %28AfCFTA%29",
@@ -88,7 +49,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Internship-Program-TranslatorInterpreter-%28AfCFTA%29/1353914857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
+    "scraped_at": "2026-03-12T05:59:02.122Z"
   },
   {
     "title": "Programme de stages TraducteurInterpr%C3%A8te %28ZLECAf%29",
@@ -101,6 +62,58 @@
     "source_url": "https://jobs.au.int/job/Accra-Programme-de-stages-TraducteurInterpr%C3%A8te-%28ZLECAf%29/1353914957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-03-11T05:57:17.034Z"
+    "scraped_at": "2026-03-12T05:59:02.122Z"
+  },
+  {
+    "title": "Director Human Resources Management",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Human-Resources-Management/1354379357/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-03-12T05:59:02.122Z"
+  },
+  {
+    "title": "Directeur de la Gestion des ressources humaines",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-de-la-Gestion-des-ressources-humaines/1354379457/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-03-12T05:59:02.122Z"
+  },
+  {
+    "title": "Finance Director %28AfCDC%29 9000043",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28AfCDC%29-9000043/1355057057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-03-12T05:59:02.122Z"
+  },
+  {
+    "title": "Directeur des Finances %28AfCDC%29 9000043",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28AfCDC%29-9000043/1355057157/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-03-12T05:59:02.122Z"
   }
 ]
