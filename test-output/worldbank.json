@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-13T05:58:07.422Z",
-    "count": 10
+    "scraped_at": "2026-03-14T05:55:26.413Z",
+    "count": 8
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429854",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.539Z",
+      "scraped_at": "2026-03-14T05:54:00.165Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429851",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.539Z",
+      "scraped_at": "2026-03-14T05:54:00.165Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429127",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,55 +141,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Urban Productive Safety Net and Jobs Project",
         "project_id": "P169943",
         "bid_reference": "ET-AA FSPSNA-AKAKI-518288-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Safety Materials for Lami Kura sub city",
-      "organization": "World Bank",
-      "description": "Procurement of Safety Materials for Lami Kura sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-LAMI KURA-517979-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-13",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428064",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Urban Productive Safety Net and Jobs Project",
-        "project_id": "P169943",
-        "bid_reference": "ET-AA FSPSNA-LAMI KURA-517979-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Supply and installation of situation room equipment's and furniture",
-      "organization": "World Bank",
-      "description": "Supply and installation of situation room equipment's and furniture\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EMI-516551-GO-RFB\n\nContact: P.O.BOX 1090,Addis Ababa, Ethiopia",
-      "deadline": "2026-03-13",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426713",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Flood Management Project",
-        "project_id": "P176327",
-        "bid_reference": "ET-EMI-516551-GO-RFB",
         "sector": ""
       }
     },
@@ -204,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-13T05:56:48.765Z",
+      "scraped_at": "2026-03-14T05:54:00.348Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
