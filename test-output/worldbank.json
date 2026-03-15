@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-14T05:55:26.413Z",
-    "count": 8
+    "scraped_at": "2026-03-15T06:09:07.993Z",
+    "count": 9
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429854",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.165Z",
+      "scraped_at": "2026-03-15T06:07:42.949Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -36,13 +36,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429851",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.165Z",
+      "scraped_at": "2026-03-15T06:07:42.949Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-MOA-529785-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4",
+      "organization": "World Bank",
+      "description": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-OROMIA-SHASHAMANE-519929-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-04-02",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-OROMIA-SHASHAMANE-519929-GO-RFB",
         "sector": ""
       }
     },
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429127",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-14T05:54:00.348Z",
+      "scraped_at": "2026-03-15T06:07:43.193Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
