@@ -1,67 +1,16 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-11T05:00:12.215Z",
-    "total_fetched": 46,
-    "unique_count": 46,
-    "active_count": 10,
+    "scraped_at": "2026-03-16T05:45:33.490Z",
+    "total_fetched": 47,
+    "unique_count": 47,
+    "active_count": 8,
     "active_projects": 50,
     "sources": {
       "reoi": 33,
-      "ifb": 13
+      "ifb": 14
     }
   },
   "opportunities": [
-    {
-      "title": "Procurement of Safety Materials for Gondar City",
-      "description": "Procurement of Safety Materials for Gondar City\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AMHARA-GONDAR-515474-GO-RFB\n\nContact: Amhara Region, Ethiopia",
-      "deadline": "2026-03-12",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426309",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Urban Productive Safety Net and Jobs Project",
-      "project_id": "P169943",
-      "bid_reference": "ET-AMHARA-GONDAR-515474-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
-    },
-    {
-      "title": "Procurement of Safety Materials for Lami Kura sub city",
-      "description": "Procurement of Safety Materials for Lami Kura sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-LAMI KURA-517979-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-13",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428064",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Urban Productive Safety Net and Jobs Project",
-      "project_id": "P169943",
-      "bid_reference": "ET-AA FSPSNA-LAMI KURA-517979-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
-    },
-    {
-      "title": "Supply and installation of situation room equipment's and furniture",
-      "description": "Supply and installation of situation room equipment's and furniture\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EMI-516551-GO-RFB\n\nContact: P.O.BOX 1090,Addis Ababa, Ethiopia",
-      "deadline": "2026-03-13",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00426713",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Ethiopia Flood Management Project",
-      "project_id": "P176327",
-      "bid_reference": "ET-EMI-516551-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
-    },
     {
       "title": "Procurement of Safety Materials for Nifasilk Lafto sub city",
       "description": "Procurement of Safety Materials for Nifasilk Lafto sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-NIFASILK-518294-GO-RFB\n\nContact: Addis Ababa",
@@ -77,7 +26,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AA FSPSNA-NIFASILK-518294-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
+      "scraped_at": "2026-03-16T05:45:32.728Z"
     },
     {
       "title": "Procurement of Safety Materials for Akaki kality sub city",
@@ -94,7 +43,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-AA FSPSNA-AKAKI-518288-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
+      "scraped_at": "2026-03-16T05:45:32.728Z"
     },
     {
       "title": "Consultancy service for Mapping Private Sector Linkages to Payment for Ecosystem Services (PES) in RLLP‑II Watersheds",
@@ -111,7 +60,7 @@
       "project_id": "P174385",
       "bid_reference": "ET-MOA-527306-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.196Z"
+      "scraped_at": "2026-03-16T05:45:32.281Z"
     },
     {
       "title": "Consultancy service to assess potential commodities for value chain connection and business plan development in RLLP II watersheds",
@@ -128,7 +77,7 @@
       "project_id": "P174385",
       "bid_reference": "ET-MOA-529785-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.204Z"
+      "scraped_at": "2026-03-16T05:45:32.281Z"
     },
     {
       "title": "Construction of 37 meter span length Boka River medium bridge for Dembe Woreda Kamash Zone.",
@@ -145,7 +94,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-527567-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
+      "scraped_at": "2026-03-16T05:45:32.728Z"
     },
     {
       "title": "Fulfilling IT infrastructure and facilities of EMI for better institutional data exchange mechanism.",
@@ -162,7 +111,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EMI-515449-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
+      "scraped_at": "2026-03-16T05:45:32.728Z"
     },
     {
       "title": "Civil Work Construction, Supply and Installation of Solar Pump and Commissioning for Selected Project Woredas under Amhara, Oromia, Afar & Benishangul Gumuz Regional States!",
@@ -179,7 +128,24 @@
       "project_id": "P177233",
       "bid_reference": "ET-MOF-509927-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-11T05:00:10.961Z"
+      "scraped_at": "2026-03-16T05:45:32.728Z"
+    },
+    {
+      "title": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4",
+      "description": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-OROMIA-SHASHAMANE-519929-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-04-02",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Urban Productive Safety Net and Jobs Project",
+      "project_id": "P169943",
+      "bid_reference": "ET-OROMIA-SHASHAMANE-519929-GO-RFB",
+      "sector": null,
+      "scraped_at": "2026-03-16T05:45:32.728Z"
     }
   ],
   "projects": [
