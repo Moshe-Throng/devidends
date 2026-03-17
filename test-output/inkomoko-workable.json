@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/AB1BE76090/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -31,7 +31,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -52,7 +52,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -73,7 +73,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -94,7 +94,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -114,28 +114,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
-    "raw_fields": {
-      "department": [
-        "Program",
-        "Business Growth Services"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Program Design Manager - Client Success",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-03-05T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/54CA25B9FF/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-16T06:22:19.807Z",
+    "scraped_at": "2026-03-17T06:04:37.067Z",
     "raw_fields": {
       "department": [
         "Program",

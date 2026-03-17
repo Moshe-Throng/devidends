@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-16T06:23:22.648Z",
-    "count": 9
+    "scraped_at": "2026-03-17T06:05:39.839Z",
+    "count": 7
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429854",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.505Z",
+      "scraped_at": "2026-03-17T06:04:23.656Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429851",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.505Z",
+      "scraped_at": "2026-03-17T06:04:23.656Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.874Z",
+      "scraped_at": "2026-03-17T06:04:24.081Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,34 +78,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.874Z",
+      "scraped_at": "2026-03-17T06:04:24.081Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
         "project_id": "P177233",
         "bid_reference": "ET-MOF-509927-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Safety Materials for Nifasilk Lafto sub city",
-      "organization": "World Bank",
-      "description": "Procurement of Safety Materials for Nifasilk Lafto sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-NIFASILK-518294-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.874Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Urban Productive Safety Net and Jobs Project",
-        "project_id": "P169943",
-        "bid_reference": "ET-AA FSPSNA-NIFASILK-518294-GO-RFB",
         "sector": ""
       }
     },
@@ -120,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429127",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.874Z",
+      "scraped_at": "2026-03-17T06:04:24.081Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,34 +120,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.875Z",
+      "scraped_at": "2026-03-17T06:04:24.081Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Flood Management Project",
         "project_id": "P176327",
         "bid_reference": "ET-EMI-515449-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Safety Materials for Akaki kality sub city",
-      "organization": "World Bank",
-      "description": "Procurement of Safety Materials for Akaki kality sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-AKAKI-518288-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.875Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Urban Productive Safety Net and Jobs Project",
-        "project_id": "P169943",
-        "bid_reference": "ET-AA FSPSNA-AKAKI-518288-GO-RFB",
         "sector": ""
       }
     },
@@ -183,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-16T06:22:07.875Z",
+      "scraped_at": "2026-03-17T06:04:24.081Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
