@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-16T05:45:33.490Z",
+    "scraped_at": "2026-03-18T05:26:33.745Z",
     "total_fetched": 47,
     "unique_count": 47,
-    "active_count": 8,
+    "active_count": 6,
     "active_projects": 50,
     "sources": {
       "reoi": 33,
@@ -11,57 +11,6 @@
     }
   },
   "opportunities": [
-    {
-      "title": "Procurement of Safety Materials for Nifasilk Lafto sub city",
-      "description": "Procurement of Safety Materials for Nifasilk Lafto sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-NIFASILK-518294-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-16",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429424",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Urban Productive Safety Net and Jobs Project",
-      "project_id": "P169943",
-      "bid_reference": "ET-AA FSPSNA-NIFASILK-518294-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
-    },
-    {
-      "title": "Procurement of Safety Materials for Akaki kality sub city",
-      "description": "Procurement of Safety Materials for Akaki kality sub city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AA FSPSNA-AKAKI-518288-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-03-16",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00428066",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Urban Productive Safety Net and Jobs Project",
-      "project_id": "P169943",
-      "bid_reference": "ET-AA FSPSNA-AKAKI-518288-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
-    },
-    {
-      "title": "Consultancy service for Mapping Private Sector Linkages to Payment for Ecosystem Services (PES) in RLLP‑II Watersheds",
-      "description": "Consultancy service for Mapping Private Sector Linkages to Payment for Ecosystem Services (PES) in RLLP‑II Watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOA-527306-CS-INDV\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
-      "deadline": "2026-03-17",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429854",
-      "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Individual Consultant Selection",
-      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-      "project_id": "P174385",
-      "bid_reference": "ET-MOA-527306-CS-INDV",
-      "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.281Z"
-    },
     {
       "title": "Consultancy service to assess potential commodities for value chain connection and business plan development in RLLP II watersheds",
       "description": "Consultancy service to assess potential commodities for value chain connection and business plan development in RLLP II watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOA-529785-CS-QCBS\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
@@ -77,7 +26,7 @@
       "project_id": "P174385",
       "bid_reference": "ET-MOA-529785-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.281Z"
+      "scraped_at": "2026-03-18T05:26:31.854Z"
     },
     {
       "title": "Construction of 37 meter span length Boka River medium bridge for Dembe Woreda Kamash Zone.",
@@ -94,7 +43,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-527567-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
+      "scraped_at": "2026-03-18T05:26:32.689Z"
     },
     {
       "title": "Fulfilling IT infrastructure and facilities of EMI for better institutional data exchange mechanism.",
@@ -111,7 +60,24 @@
       "project_id": "P176327",
       "bid_reference": "ET-EMI-515449-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
+      "scraped_at": "2026-03-18T05:26:32.689Z"
+    },
+    {
+      "title": "Recruiting procurement specialist for Southwest Region Project Coordination Unit",
+      "description": "Recruiting procurement specialist for Southwest Region Project Coordination Unit\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SWER-RLLP-520309-CS-INDV\n\nContact: Southwest Ethiopia",
+      "deadline": "2026-03-31",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00424411",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+      "project_id": "P174385",
+      "bid_reference": "ET-SWER-RLLP-520309-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-03-18T05:26:31.845Z"
     },
     {
       "title": "Civil Work Construction, Supply and Installation of Solar Pump and Commissioning for Selected Project Woredas under Amhara, Oromia, Afar & Benishangul Gumuz Regional States!",
@@ -128,7 +94,7 @@
       "project_id": "P177233",
       "bid_reference": "ET-MOF-509927-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
+      "scraped_at": "2026-03-18T05:26:32.689Z"
     },
     {
       "title": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4",
@@ -145,7 +111,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-OROMIA-SHASHAMANE-519929-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-16T05:45:32.728Z"
+      "scraped_at": "2026-03-18T05:26:32.689Z"
     }
   ],
   "projects": [
@@ -170,16 +136,6 @@
       "implementing_agency": "Ministry of Finance"
     },
     {
-      "id": "P176303",
-      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
-      "status": "Active",
-      "sector": "",
-      "total_commitment": "300",
-      "approval_date": "2024-03-29T00:00:00Z",
-      "closing_date": "3/31/2029 12:00:00 AM",
-      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
-    },
-    {
       "id": "P181545",
       "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
       "status": "Active",
@@ -188,6 +144,16 @@
       "approval_date": "2024-03-29T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
+    },
+    {
+      "id": "P176303",
+      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
+      "status": "Active",
+      "sector": "",
+      "total_commitment": "300",
+      "approval_date": "2024-03-29T00:00:00Z",
+      "closing_date": "3/31/2029 12:00:00 AM",
+      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
     },
     {
       "id": "P181626",
