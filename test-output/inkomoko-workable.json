@@ -10,28 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/AB1BE76090/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
-    "raw_fields": {
-      "department": [
-        "Program",
-        "Business Growth Services"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Business Development Advisor - Gambella",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2025-12-25T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Gambela",
-    "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -52,7 +31,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -73,7 +52,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -94,7 +73,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -114,7 +93,48 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-03-19T06:03:20.578Z",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
+    "raw_fields": {
+      "department": [
+        "Program",
+        "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Terms of Reference (TOR) Consultancy Service for Market Systems Assessment",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-03-19T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
+    "raw_fields": {
+      "department": [
+        "Program"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Business Development Advisor - Gambella",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2025-12-25T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Gambela",
+    "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-03-20T05:59:08.843Z",
     "raw_fields": {
       "department": [
         "Program",
