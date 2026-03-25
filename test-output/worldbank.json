@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-24T06:05:39.581Z",
-    "count": 8
+    "scraped_at": "2026-03-25T06:06:53.590Z",
+    "count": 10
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433171",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.377Z",
+      "scraped_at": "2026-03-25T06:05:39.819Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433120",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.377Z",
+      "scraped_at": "2026-03-25T06:05:39.819Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.377Z",
+      "scraped_at": "2026-03-25T06:05:39.819Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -78,13 +78,97 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00424411",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.377Z",
+      "scraped_at": "2026-03-25T06:05:39.819Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-SWER-RLLP-520309-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Fire Suppression and Rescue Equipment",
+      "organization": "World Bank",
+      "description": "Procurement of Fire Suppression and Rescue Equipment\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EDRMC-538775-GO-RFB\n\nContact: Africa Street, Behind Dembel City Center Mall, Addis Ababa, Ethiopia",
+      "deadline": "2026-04-21",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Flood Management Project",
+        "project_id": "P176327",
+        "bid_reference": "ET-EDRMC-538775-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.",
+      "organization": "World Bank",
+      "description": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-BEN-GUM-RPCU-536753-CW-RFB\n\nContact: Asossa,\nEthiopia",
+      "deadline": "2026-04-17",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434219",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-BEN-GUM-RPCU-536753-CW-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.",
+      "organization": "World Bank",
+      "description": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-BEN-GUM-RPCU-535305-GO-RFB\n\nContact: Asossa,\nEthiopia",
+      "deadline": "2026-04-17",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434221",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-BEN-GUM-RPCU-535305-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
+      "organization": "World Bank",
+      "description": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-537511-CW-RFB\n\nContact: Gembella,\nEthiopia",
+      "deadline": "2026-04-20",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
         "sector": ""
       }
     },
@@ -99,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.598Z",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,55 +204,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.598Z",
+      "scraped_at": "2026-03-25T06:05:40.063Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
         "project_id": "P177233",
         "bid_reference": "ET-MOF-509927-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Fulfilling IT infrastructure and facilities of EMI for better institutional data exchange mechanism.",
-      "organization": "World Bank",
-      "description": "Fulfilling IT infrastructure and facilities of EMI for better institutional data exchange mechanism.\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EMI-515449-GO-RFB\n\nContact: P.O.BOX 1090,Addis Ababa, Ethiopia",
-      "deadline": "2026-03-24",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00412299",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.598Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Flood Management Project",
-        "project_id": "P176327",
-        "bid_reference": "ET-EMI-515449-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of double cabin pick ups 22 Unit the PRIME I project execution unit",
-      "organization": "World Bank",
-      "description": "Procurement of double cabin pick ups 22 Unit the PRIME I project execution unit\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEU-442952-GO-RFB\n\nContact: General Wingate Street, Wastina Mega Building near Enat Bank Bldg.Piasa Addis Ababa Ethiopia",
-      "deadline": "2026-03-27",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00422673",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-24T06:04:29.598Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEU-442952-GO-RFB",
         "sector": ""
       }
     }
