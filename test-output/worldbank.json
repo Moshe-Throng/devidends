@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-25T06:33:59.794Z",
+    "scraped_at": "2026-03-26T08:09:34.021Z",
     "total_fetched": 47,
     "unique_count": 47,
     "active_count": 10,
@@ -26,7 +26,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-526217-CS-CQS",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.239Z"
+      "scraped_at": "2026-03-26T08:09:31.007Z"
     },
     {
       "title": "Recruiting procurement specialist for Southwest Region Project Coordination Unit",
@@ -43,7 +43,7 @@
       "project_id": "P174385",
       "bid_reference": "ET-SWER-RLLP-520309-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.239Z"
+      "scraped_at": "2026-03-26T08:09:31.007Z"
     },
     {
       "title": "Civil Work Construction, Supply and Installation of Solar Pump and Commissioning for Selected Project Woredas under Amhara, Oromia, Afar & Benishangul Gumuz Regional States!",
@@ -60,7 +60,7 @@
       "project_id": "P177233",
       "bid_reference": "ET-MOF-509927-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     },
     {
       "title": "A firm to conduct M&E on indicators, including a satisfaction survey on digital ID services",
@@ -77,7 +77,7 @@
       "project_id": "P179040",
       "bid_reference": "ET-NIDP-491112-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.239Z"
+      "scraped_at": "2026-03-26T08:09:31.007Z"
     },
     {
       "title": "Human Resource Planning Preparation for Wave 1 & 2 Federal Ministries",
@@ -94,7 +94,7 @@
       "project_id": "P178808",
       "bid_reference": "ET-CSC-520279-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.239Z"
+      "scraped_at": "2026-03-26T08:09:31.007Z"
     },
     {
       "title": "Procurement of Industrial Construction Materials Lot-1, Finishing construction Materials lot-2 , Water line installation Materials Lot-3 and Local Construction Materials Lot-4",
@@ -111,7 +111,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-OROMIA-SHASHAMANE-519929-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     },
     {
       "title": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.",
@@ -128,7 +128,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-536753-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     },
     {
       "title": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.",
@@ -145,7 +145,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-535305-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     },
     {
       "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
@@ -162,7 +162,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
@@ -179,7 +179,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EDRMC-538775-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-03-25T06:33:58.879Z"
+      "scraped_at": "2026-03-26T08:09:32.290Z"
     }
   ],
   "projects": [
@@ -264,16 +264,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P179040",
-      "name": "Ethiopia Digital ID for Inclusion and Services Project",
-      "status": "Active",
-      "sector": "ICT Services",
-      "total_commitment": "350",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "1/7/2029 12:00:00 AM",
-      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
-    },
-    {
       "id": "P176255",
       "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
       "status": "Active",
@@ -282,6 +272,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Ethiopian Maritime Affairs Authority"
+    },
+    {
+      "id": "P179040",
+      "name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "status": "Active",
+      "sector": "ICT Services",
+      "total_commitment": "350",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "1/7/2029 12:00:00 AM",
+      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
     }
   ]
 }
