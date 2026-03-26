@@ -1,93 +1,9 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-25T06:06:53.590Z",
-    "count": 10
+    "scraped_at": "2026-03-26T06:16:24.530Z",
+    "count": 6
   },
   "opportunities": [
-    {
-      "title": "A firm to conduct M&E on indicators, including a satisfaction survey on digital ID services",
-      "organization": "World Bank",
-      "description": "A firm to conduct M&E on indicators, including a satisfaction survey on digital ID services\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-491112-CS-QCBS\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
-      "deadline": "2026-04-01",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433171",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:39.819Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Quality And Cost-Based Selection",
-        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
-        "project_id": "P179040",
-        "bid_reference": "ET-NIDP-491112-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Human Resource Planning Preparation for Wave 1 & 2 Federal Ministries",
-      "organization": "World Bank",
-      "description": "Human Resource Planning Preparation for Wave 1 & 2 Federal Ministries\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-520279-CS-QCBS\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-04-02",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433120",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:39.819Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Consultant Qualification  Selection",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-CSC-520279-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Consultancy service to undertake comprehensive study on civil service pay and benefit packages",
-      "organization": "World Bank",
-      "description": "Consultancy service to undertake comprehensive study on civil service pay and benefit packages\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-526217-CS-CQS\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-03-30",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433221",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:39.819Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Consultant Qualification  Selection",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-CSC-526217-CS-CQS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Recruiting procurement specialist for Southwest Region Project Coordination Unit",
-      "organization": "World Bank",
-      "description": "Recruiting procurement specialist for Southwest Region Project Coordination Unit\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SWER-RLLP-520309-CS-INDV\n\nContact: Southwest Ethiopia",
-      "deadline": "2026-03-31",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00424411",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:39.819Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "Individual Consultant Selection",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-SWER-RLLP-520309-CS-INDV",
-        "sector": ""
-      }
-    },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
       "organization": "World Bank",
@@ -99,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434219",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-25T06:05:40.063Z",
+      "scraped_at": "2026-03-26T06:15:16.267Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",

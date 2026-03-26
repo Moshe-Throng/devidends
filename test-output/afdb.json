@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-03-25T06:05:49.064Z",
+    "scraped_at": "2026-03-26T06:15:25.884Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +29,26 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-03-25T06:05:49.064Z",
+    "scraped_at": "2026-03-26T06:15:25.884Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "2026 INTERNSHIP PROGRAM - SESSION 22026 INTERNSHIP PROGRAM - SESSION 2",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-2026-INTERNSHIP-PROGRAM-SESSION-2/1377557833/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-03-26T06:15:25.885Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +67,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Driver-%28STS%29%2C-VARIOUS-DEPARTMENT/1374617533/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-03-25T06:05:49.064Z",
+    "scraped_at": "2026-03-26T06:15:25.885Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +86,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Director%2C-Independent-Recourse-Mechanism%2C-BIRM/1371746433/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-03-25T06:05:49.065Z",
+    "scraped_at": "2026-03-26T06:15:25.885Z",
     "raw_fields": {
       "region": "",
       "category": "",
