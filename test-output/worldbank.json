@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-03-27T06:17:14.632Z",
-    "count": 10
+    "scraped_at": "2026-03-28T06:03:31.506Z",
+    "count": 11
   },
   "opportunities": [
+    {
+      "title": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support",
+      "organization": "World Bank",
+      "description": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-529318-CS-QCBS\n\nContact: Addis Ababa",
+      "deadline": "2026-04-14",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434853",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-03-28T06:02:17.566Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "Quality And Cost-Based Selection",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-MOUDI-529318-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "A firm to conduct M&E on indicators, including a satisfaction survey on digital ID services",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433171",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.561Z",
+      "scraped_at": "2026-03-28T06:02:17.566Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433120",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.561Z",
+      "scraped_at": "2026-03-28T06:02:17.566Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00433221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.561Z",
+      "scraped_at": "2026-03-28T06:02:17.566Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00424411",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.561Z",
+      "scraped_at": "2026-03-28T06:02:17.566Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Individual Consultant Selection",
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434219",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00432402",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00429400",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-03-27T06:16:05.870Z",
+      "scraped_at": "2026-03-28T06:02:17.849Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
