@@ -17,6 +17,7 @@ import {
   TrendingUp,
   ChevronRight,
   Share2,
+  PenTool,
 } from "lucide-react";
 import { useParams } from "next/navigation";
 
@@ -25,6 +26,8 @@ import type { SampleOpportunity } from "@/lib/types/cv-score";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SaveButton } from "@/components/SaveButton";
+import { useAuth } from "@/components/AuthProvider";
+import { createSupabaseBrowser } from "@/lib/supabase-browser";
 
 /* ─── Helpers ──────────────────────────────────────────────── */
 
@@ -140,86 +143,111 @@ function isSparse(desc: string | null | undefined): boolean {
   return !cleanDescription(desc);
 }
 
-/** Render a single line with inline formatting (bold) */
-function renderInline(text: string) {
-  // Handle **bold** and __bold__
+/**
+ * Professional job description renderer.
+ *
+ * Handles:
+ *  - Section headings (ALL CAPS, "Title:" patterns, short bold lines)
+ *  - Bullet lists (-, •, *, numbered)
+ *  - Paragraph text with proper spacing
+ *  - Inline bold (**text**)
+ *
+ * Design: clean, generous line-height, clear visual hierarchy.
+ */
+
+function renderInline(text: string): React.ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|__[^_]+__)/g);
   return parts.map((part, i) => {
     if (/^\*\*(.+)\*\*$/.test(part) || /^__(.+)__$/.test(part)) {
-      return <strong key={i}>{part.replace(/^\*\*|\*\*$|^__|__$/g, "")}</strong>;
+      return <strong key={i} className="font-semibold text-dark-800">{part.replace(/^\*\*|\*\*$|^__|__$/g, "")}</strong>;
     }
     return <span key={i}>{part}</span>;
   });
 }
 
-/** Render description with smart formatting (bullets, headers, numbered lists) */
+function isHeading(line: string): boolean {
+  if (line.length > 80 || line.length < 3) return false;
+  if (line.endsWith(".")) return false;
+  // "ABOUT THE ROLE" or "KEY RESPONSIBILITIES"
+  if (/^[A-Z][A-Z\s&/,:\-–]+$/.test(line)) return true;
+  // "About the role:" or "You Will:"
+  if (/^[A-Z][^.]{2,60}:$/.test(line)) return true;
+  // "## Heading" markdown
+  if (/^#{1,3}\s/.test(line)) return true;
+  return false;
+}
+
+function isBullet(line: string): boolean {
+  return /^\s*[-•●▪◦*]\s/.test(line) || /^\s*\d+[.)]\s/.test(line);
+}
+
+function stripBullet(line: string): string {
+  return line.replace(/^\s*[-•●▪◦*]\s+/, "").replace(/^\s*\d+[.)]\s+/, "").replace(/^#{1,3}\s+/, "");
+}
+
 function renderDescription(text: string) {
+  // Split on double newlines for paragraph blocks, then single newlines for lines
   const blocks = text.split(/\n\n+/);
   const elements: React.ReactNode[] = [];
+  let key = 0;
 
-  for (let bIdx = 0; bIdx < blocks.length; bIdx++) {
-    const block = blocks[bIdx].trim();
-    if (!block) continue;
-    const lines = block.split(/\n/);
+  for (const block of blocks) {
+    const lines = block.split(/\n/).map(l => l.trim()).filter(Boolean);
+    if (lines.length === 0) continue;
 
-    // Check if this block is a list (all lines start with bullet/number)
-    const isBulletList = lines.every((l) => /^\s*[-•●▪◦]\s/.test(l));
-    const isNumberedList = lines.every((l) => /^\s*\d+[.)]\s/.test(l));
+    // Collect consecutive bullets into a list
+    let i = 0;
+    while (i < lines.length) {
+      const line = lines[i];
 
-    if (isBulletList) {
-      elements.push(
-        <ul key={bIdx} className="mb-4 last:mb-0 list-disc list-inside space-y-1">
-          {lines.map((line, i) => (
-            <li key={i} className="text-sm text-dark-600">
-              {renderInline(line.replace(/^\s*[-•●▪◦]\s*/, ""))}
-            </li>
-          ))}
-        </ul>
-      );
-    } else if (isNumberedList) {
-      elements.push(
-        <ol key={bIdx} className="mb-4 last:mb-0 list-decimal list-inside space-y-1">
-          {lines.map((line, i) => (
-            <li key={i} className="text-sm text-dark-600">
-              {renderInline(line.replace(/^\s*\d+[.)]\s*/, ""))}
-            </li>
-          ))}
-        </ol>
-      );
-    } else {
-      // Mixed content — render line by line
-      for (let lIdx = 0; lIdx < lines.length; lIdx++) {
-        const line = lines[lIdx].trim();
-        if (!line) continue;
-
-        // Header-like line (short, title case or ALL CAPS, no period at end)
-        if (
-          line.length < 80 &&
-          !line.endsWith(".") &&
-          (/^[A-Z][A-Z\s&/,:-]+$/.test(line) || /^#{1,3}\s/.test(line))
-        ) {
-          elements.push(
-            <h4 key={`${bIdx}-${lIdx}`} className="text-sm font-bold text-dark-800 mt-4 mb-2 first:mt-0">
-              {line.replace(/^#{1,3}\s*/, "")}
-            </h4>
-          );
-        } else if (/^\s*[-•●▪◦]\s/.test(line)) {
-          // Lone bullet in a mixed block
-          elements.push(
-            <div key={`${bIdx}-${lIdx}`} className="flex gap-2 mb-1 ml-2">
-              <span className="text-cyan-500 mt-0.5">&#8226;</span>
-              <span className="text-sm text-dark-600">{renderInline(line.replace(/^\s*[-•●▪◦]\s*/, ""))}</span>
-            </div>
-          );
-        } else {
-          elements.push(
-            <p key={`${bIdx}-${lIdx}`} className="mb-3 last:mb-0">
-              {renderInline(line)}
-            </p>
-          );
+      if (isHeading(line)) {
+        elements.push(
+          <h4 key={key++} className="text-[13px] font-bold text-dark-900 tracking-wide uppercase mt-6 mb-2 first:mt-0 border-b border-dark-100 pb-1.5">
+            {stripBullet(line).replace(/:$/, "")}
+          </h4>
+        );
+        i++;
+      } else if (isBullet(line)) {
+        // Collect all consecutive bullets
+        const bullets: string[] = [];
+        while (i < lines.length && isBullet(lines[i])) {
+          bullets.push(stripBullet(lines[i]));
+          i++;
         }
+        elements.push(
+          <ul key={key++} className="mb-4 space-y-2 pl-1">
+            {bullets.map((b, bi) => (
+              <li key={bi} className="flex gap-3 text-[15px] text-dark-600 leading-relaxed">
+                <span className="text-cyan-500 mt-[7px] shrink-0 w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                <span>{renderInline(b)}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      } else {
+        // Regular paragraph line
+        elements.push(
+          <p key={key++} className="text-[15px] text-dark-600 leading-[1.8] mb-3">
+            {renderInline(line)}
+          </p>
+        );
+        i++;
       }
     }
+  }
+
+  // If there were no line breaks at all (wall of text), split by sentences
+  if (elements.length <= 1 && text.length > 300 && !text.includes("\n")) {
+    const sentences = text.split(/(?<=\.)\s+/).filter(s => s.trim());
+    const paras: string[] = [];
+    for (let si = 0; si < sentences.length; si += 3) {
+      paras.push(sentences.slice(si, si + 3).join(" "));
+    }
+    return paras.map((p, pi) => (
+      <p key={pi} className="text-[15px] text-dark-600 leading-[1.8] mb-4">
+        {p}
+      </p>
+    ));
   }
 
   return elements;
@@ -232,6 +260,7 @@ function renderDescription(text: string) {
 export default function OpportunityDetailPage() {
   const params = useParams();
   const id = params.id as string;
+  const { user } = useAuth();
 
   const [opportunity, setOpportunity] = useState<SampleOpportunity | null>(
     null
@@ -240,6 +269,20 @@ export default function OpportunityDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [hasCv, setHasCv] = useState(false);
+
+  // Check if user has a saved CV
+  useEffect(() => {
+    if (!user) { setHasCv(false); return; }
+    const sb = createSupabaseBrowser();
+    sb.from("profiles")
+      .select("cv_structured_data")
+      .eq("user_id", user.id)
+      .single()
+      .then(({ data }) => {
+        setHasCv(!!data?.cv_structured_data);
+      });
+  }, [user]);
 
   useEffect(() => {
     // Fetch this opportunity + all opportunities for related
@@ -254,7 +297,6 @@ export default function OpportunityDetailPage() {
       .then(([detail, feed]) => {
         if (detail.success && detail.opportunity) {
           setOpportunity(detail.opportunity);
-          // Find related: same org, different ID, max 4
           const org = detail.opportunity.organization?.toLowerCase();
           const others = (feed.opportunities || [])
             .filter(
@@ -502,11 +544,11 @@ export default function OpportunityDetailPage() {
             {/* ── Description ──────────────────────────────── */}
             {cleanDescription(opportunity.description) ? (
               <div className="border border-dark-100 rounded-2xl p-6 lg:p-8">
-                <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em] mb-4">
+                <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em] mb-5">
                   <FileText className="w-4 h-4 inline-block mr-1.5 -mt-0.5 text-cyan-500" />
                   Full Description
                 </p>
-                <div className="text-sm text-dark-600 leading-relaxed">
+                <div className="max-w-none">
                   {renderDescription(cleanDescription(opportunity.description))}
                 </div>
               </div>
@@ -549,13 +591,23 @@ export default function OpportunityDetailPage() {
                   opportunityUrl={opportunity.source_url}
                   variant="button"
                 />
-                <Link
-                  href={`/score?oppId=${opportunity.id}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-base hover:bg-cyan-50 transition-all"
-                >
-                  <Target className="w-5 h-5" />
-                  Score My CV
-                </Link>
+                {hasCv ? (
+                  <Link
+                    href={`/score?oppId=${opportunity.id}`}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-base hover:bg-cyan-50 transition-all"
+                  >
+                    <Target className="w-5 h-5" />
+                    Score My CV
+                  </Link>
+                ) : (
+                  <Link
+                    href="/cv-builder"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-base hover:bg-cyan-50 transition-all"
+                  >
+                    <PenTool className="w-5 h-5" />
+                    Build Your CV
+                  </Link>
+                )}
               </div>
             )}
 
@@ -575,7 +627,7 @@ export default function OpportunityDetailPage() {
               </div>
             )}
 
-            {/* ── CTA: Score your CV for this opportunity ──── */}
+            {/* ── CTA: Score or Build CV ──── */}
             {!opportunity.is_expired && (
               <div className="relative rounded-2xl overflow-hidden border border-dark-100">
                 <div
@@ -589,25 +641,36 @@ export default function OpportunityDetailPage() {
                 <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 p-6 lg:p-8">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                      <Target className="w-6 h-6 text-white" />
+                      {hasCv ? <Target className="w-6 h-6 text-white" /> : <PenTool className="w-6 h-6 text-white" />}
                     </div>
                     <div>
                       <p className="font-bold text-dark-900">
-                        Score your CV for this opportunity
+                        {hasCv ? "Score your CV for this opportunity" : "Build your CV first"}
                       </p>
                       <p className="text-sm text-dark-400 mt-0.5">
-                        See how well your profile matches this role and get
-                        actionable feedback
+                        {hasCv
+                          ? "See how well your profile matches this role and get actionable feedback"
+                          : "Create your CV to score it against opportunities, edit, and export in any format"}
                       </p>
                     </div>
                   </div>
-                  <Link
-                    href={`/score?oppId=${encodeURIComponent(opportunity.id)}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5 whitespace-nowrap"
-                  >
-                    Score My CV
-                    <Target className="w-4 h-4" />
-                  </Link>
+                  {hasCv ? (
+                    <Link
+                      href={`/score?oppId=${encodeURIComponent(opportunity.id)}`}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                      Score My CV
+                      <Target className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/cv-builder"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm hover:from-cyan-600 hover:to-teal-600 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                      Build Your CV
+                      <PenTool className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </div>
             )}

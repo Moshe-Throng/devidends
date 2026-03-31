@@ -36,7 +36,7 @@ async function main() {
 
   const { Resend } = await import("resend");
   const { createClient } = await import("@supabase/supabase-js");
-  const { jobAlertsEmail, newsDigestEmail } = await import("../lib/email-templates");
+  const { dailyDigestEmail } = await import("../lib/email-templates");
 
   const resend = new Resend(resendKey);
   const supabase = createClient(
@@ -99,27 +99,20 @@ async function main() {
         continue;
       }
 
-      // Send job alerts email if there are opportunities
-      if (matchedOpps.length > 0) {
-        const html = jobAlertsEmail(matchedOpps, undefined, sectorFilter);
-        await resend.emails.send({
-          from: "Devidends <alerts@devidends.net>",
-          to: sub.email,
-          subject: `🔔 ${matchedOpps.length} new opportunit${matchedOpps.length !== 1 ? "ies" : "y"} for you — Devidends`,
-          html,
-        });
-      }
+      // Send ONE combined daily digest email (jobs + news together)
+      const html = dailyDigestEmail(matchedOpps, matchedNews, undefined, sectorFilter, newsFilter);
+      const oppCount = matchedOpps.length;
+      const newsCount = matchedNews.length;
+      const subjectParts: string[] = [];
+      if (oppCount > 0) subjectParts.push(`${oppCount} opportunit${oppCount !== 1 ? "ies" : "y"}`);
+      if (newsCount > 0) subjectParts.push(`${newsCount} article${newsCount !== 1 ? "s" : ""}`);
 
-      // Send news digest email if there are articles
-      if (matchedNews.length > 0) {
-        const html = newsDigestEmail(matchedNews, undefined, newsFilter);
-        await resend.emails.send({
-          from: "Devidends <news@devidends.net>",
-          to: sub.email,
-          subject: `📰 Development News Digest — ${new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`,
-          html,
-        });
-      }
+      await resend.emails.send({
+        from: "Devidends <alerts@devidends.net>",
+        to: sub.email,
+        subject: `📡 ${subjectParts.join(" + ")} — Devidends Daily Brief`,
+        html,
+      });
 
       sent++;
       await new Promise((r) => setTimeout(r, 200)); // rate limit

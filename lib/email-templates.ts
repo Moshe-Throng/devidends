@@ -1,6 +1,8 @@
 /**
  * Branded HTML email templates for Devidends alerts.
  * Brand: #27ABD2 (cyan), #24CFD6 (teal), #212121 (dark), Montserrat font
+ *
+ * v2: Single combined daily digest (no more separate job + news emails)
  */
 
 export interface EmailOpp {
@@ -37,8 +39,17 @@ const CAT_COLORS: Record<string, string> = {
   "General": "#718096",
 };
 
+const TYPE_COLORS: Record<string, { bg: string; fg: string }> = {
+  job:         { bg: "#e6f7fc", fg: BRAND_CYAN },
+  consultancy: { bg: "#e6fcf5", fg: "#0d9488" },
+  tender:      { bg: "#f3e8ff", fg: "#7c3aed" },
+  internship:  { bg: "#fef9c3", fg: "#a16207" },
+  contract:    { bg: "#e0f2fe", fg: "#0369a1" },
+  fellowship:  { bg: "#fce7f3", fg: "#be185d" },
+};
+
 const TYPE_LABELS: Record<string, string> = {
-  job: "Full-time", consultancy: "Consultancy", tender: "Tender",
+  job: "Job", consultancy: "Consultancy", tender: "Tender",
   internship: "Internship", contract: "Contract", fellowship: "Fellowship",
 };
 
@@ -49,7 +60,7 @@ function wrap(content: string, preheader = ""): string {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Devidends Alert</title>
+<title>Devidends Daily Brief</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,10 +69,9 @@ function wrap(content: string, preheader = ""): string {
   a:hover { text-decoration: underline; }
   .btn { display: inline-block; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none !important; }
   .btn-primary { background: linear-gradient(135deg, ${BRAND_CYAN}, ${BRAND_TEAL}); color: #fff !important; }
-  .btn-outline { border: 1.5px solid ${BRAND_CYAN}; color: ${BRAND_CYAN} !important; }
+  .btn-outline { border: 1.5px solid ${BRAND_CYAN}; color: ${BRAND_CYAN} !important; background: transparent; }
   @media (max-width: 600px) {
     .container { width: 100% !important; }
-    .card-grid td { display: block; width: 100% !important; }
   }
 </style>
 </head>
@@ -83,7 +93,7 @@ ${preheader ? `<div style="display:none;max-height:0;overflow:hidden;color:#f0f4
               </td>
               <td align="right">
                 <span style="color:rgba(255,255,255,0.5);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase">
-                  Daily Alert
+                  Daily Brief
                 </span>
               </td>
             </tr>
@@ -105,7 +115,7 @@ ${preheader ? `<div style="display:none;max-height:0;overflow:hidden;color:#f0f4
             <tr>
               <td style="font-size:11px;color:#a0aec0;line-height:1.6">
                 You're receiving this because you subscribed to Devidends alerts.<br/>
-                <a href="${SITE_URL}/subscribe" style="color:#a0aec0">Manage preferences</a> &nbsp;·&nbsp;
+                <a href="${SITE_URL}/subscribe" style="color:#a0aec0">Manage preferences</a> &nbsp;&middot;&nbsp;
                 <a href="${SITE_URL}" style="color:#a0aec0">Visit Devidends</a>
               </td>
             </tr>
@@ -120,148 +130,178 @@ ${preheader ? `<div style="display:none;max-height:0;overflow:hidden;color:#f0f4
 </html>`;
 }
 
-function oppCard(opp: EmailOpp): string {
+/** Compact opportunity row — cleaner than full cards, less cluttered */
+function oppRow(opp: EmailOpp): string {
   const type = (opp.classified_type || opp.type || "opportunity").toLowerCase();
   const typeLabel = TYPE_LABELS[type] || type.charAt(0).toUpperCase() + type.slice(1);
+  const colors = TYPE_COLORS[type] || TYPE_COLORS.job;
   const deadline = opp.deadline
-    ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+    ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
     : "Rolling";
   const url = opp.source_url || `${SITE_URL}/opportunities`;
 
   return `
-<table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px;border:1.5px solid #e2e8f0;border-radius:10px;overflow:hidden">
-  <tr>
-    <td style="padding:0">
-      <!-- Color strip -->
-      <div style="height:3px;background:linear-gradient(90deg,${BRAND_CYAN},${BRAND_TEAL})"></div>
-      <div style="padding:16px">
-        <!-- Type badge + title -->
-        <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:8px">
-          <tr>
-            <td>
-              <span style="display:inline-block;background:#e6f7fc;color:${BRAND_CYAN};font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:4px">
-                ${typeLabel}
-              </span>
-            </td>
-          </tr>
-        </table>
-        <a href="${url}" style="color:${BRAND_DARK};font-size:14px;font-weight:700;line-height:1.4;display:block;margin-bottom:6px;text-decoration:none">
-          ${opp.title}
-        </a>
-        <p style="color:#4a5568;font-size:12px;margin-bottom:10px;font-weight:600">
-          ${opp.organization}
-        </p>
-        <!-- Meta row -->
-        <table cellpadding="0" cellspacing="0" style="margin-bottom:12px">
-          <tr>
-            ${opp.country ? `<td style="padding-right:14px;font-size:11px;color:#718096">📍 ${opp.country}</td>` : ""}
-            <td style="padding-right:14px;font-size:11px;color:#718096">⏰ ${deadline}</td>
-            ${opp.seniority ? `<td style="font-size:11px;color:#718096">🎯 ${opp.seniority}</td>` : ""}
-          </tr>
-        </table>
-        <a href="${url}" class="btn btn-primary" style="font-size:12px;padding:8px 18px">Apply Now →</a>
-      </div>
-    </td>
-  </tr>
-</table>`;
+<tr>
+  <td style="padding:12px 0;border-bottom:1px solid #f0f4f8">
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="vertical-align:top;width:100%">
+          <span style="display:inline-block;background:${colors.bg};color:${colors.fg};font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:2px 6px;border-radius:3px;margin-bottom:4px">
+            ${typeLabel}
+          </span>
+          ${opp.seniority ? `<span style="display:inline-block;background:#f7fafc;color:#718096;font-size:9px;font-weight:600;padding:2px 6px;border-radius:3px;margin-left:4px">${opp.seniority}</span>` : ""}
+          <a href="${url}" style="display:block;color:${BRAND_DARK};font-size:14px;font-weight:700;line-height:1.35;margin-top:4px;text-decoration:none">
+            ${opp.title}
+          </a>
+          <p style="color:#718096;font-size:11px;margin-top:3px;line-height:1.4">
+            ${opp.organization}${opp.country ? ` &middot; ${opp.country}` : ""} &middot; ${deadline}
+          </p>
+        </td>
+        <td style="vertical-align:middle;padding-left:12px;white-space:nowrap">
+          <a href="${url}" style="display:inline-block;padding:6px 14px;border-radius:6px;background:${BRAND_CYAN};color:#fff;font-size:11px;font-weight:700;text-decoration:none">Apply</a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>`;
 }
 
-/** Generate job alerts email HTML */
+/**
+ * Combined daily digest email — ONE email with both opportunities + news.
+ * Replaces the old separate jobAlertsEmail + newsDigestEmail.
+ */
+export function dailyDigestEmail(
+  opportunities: EmailOpp[],
+  articles: EmailNewsArticle[],
+  recipientName?: string,
+  sectors?: string[],
+  newsCategories?: string[]
+): string {
+  const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const greeting = recipientName ? `Hi ${recipientName},` : "Good morning,";
+
+  const oppCount = opportunities.length;
+  const newsCount = articles.length;
+  const summaryParts: string[] = [];
+  if (oppCount > 0) summaryParts.push(`<strong>${oppCount}</strong> new opportunit${oppCount !== 1 ? "ies" : "y"}`);
+  if (newsCount > 0) summaryParts.push(`<strong>${newsCount}</strong> article${newsCount !== 1 ? "s" : ""}`);
+
+  const filterNote = sectors?.length
+    ? `<p style="color:#a0aec0;font-size:11px;margin-top:6px">Filtered: ${sectors.join(", ")}</p>`
+    : "";
+
+  // --- Opportunities section ---
+  const toShowOpps = opportunities.slice(0, 8);
+  let oppsHtml = "";
+  if (toShowOpps.length > 0) {
+    oppsHtml = `
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:4px">
+        <tr>
+          <td style="padding:16px 0 8px">
+            <p style="font-size:11px;font-weight:800;color:${BRAND_CYAN};text-transform:uppercase;letter-spacing:1.5px;margin:0">
+              Opportunities
+            </p>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" cellpadding="0" cellspacing="0">
+        ${toShowOpps.map(oppRow).join("")}
+      </table>
+      ${oppCount > 8 ? `<p style="text-align:center;margin:10px 0 0;font-size:11px;color:#a0aec0">+${oppCount - 8} more &rarr; <a href="${SITE_URL}/opportunities" style="color:${BRAND_CYAN};font-weight:600">Browse all</a></p>` : ""}
+    `;
+  }
+
+  // --- News section ---
+  const toShowNews = articles.slice(0, 5);
+  let newsHtml = "";
+  if (toShowNews.length > 0) {
+    // Group by category
+    const grouped = new Map<string, EmailNewsArticle[]>();
+    for (const a of toShowNews) {
+      if (!grouped.has(a.category)) grouped.set(a.category, []);
+      grouped.get(a.category)!.push(a);
+    }
+
+    let groupedHtml = "";
+    for (const [cat, catArticles] of grouped) {
+      const catColor = CAT_COLORS[cat] || "#718096";
+      groupedHtml += catArticles.map((a) => `
+        <tr>
+          <td style="padding:8px 0;border-bottom:1px solid #f7fafc">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width:3px;background:${catColor};border-radius:2px"></td>
+                <td style="padding-left:10px">
+                  <a href="${a.url}" style="color:${BRAND_DARK};font-size:13px;font-weight:600;line-height:1.35;text-decoration:none;display:block">
+                    ${a.title}
+                  </a>
+                  <p style="color:#a0aec0;font-size:10px;margin-top:2px">
+                    ${a.source_name} &middot; <span style="color:${catColor}">${cat}</span>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>`).join("");
+    }
+
+    newsHtml = `
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:16px">
+        <tr>
+          <td style="padding:16px 0 8px;border-top:2px solid #f0f4f8">
+            <p style="font-size:11px;font-weight:800;color:${BRAND_CYAN};text-transform:uppercase;letter-spacing:1.5px;margin:0">
+              Development News
+            </p>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" cellpadding="0" cellspacing="0">
+        ${groupedHtml}
+      </table>
+      ${newsCount > 5 ? `<p style="text-align:center;margin:10px 0 0;font-size:11px;color:#a0aec0">+${newsCount - 5} more &rarr; <a href="${SITE_URL}/news" style="color:${BRAND_CYAN};font-weight:600">Full feed</a></p>` : ""}
+    `;
+  }
+
+  const content = `
+    <h2 style="font-size:18px;font-weight:800;color:${BRAND_DARK};margin-bottom:2px">${greeting}</h2>
+    <p style="color:#4a5568;font-size:13px;margin-bottom:0;line-height:1.5">
+      Your daily brief for ${today} — ${summaryParts.join(" and ")}.
+    </p>
+    ${filterNote}
+    <div style="height:2px;background:linear-gradient(90deg,${BRAND_CYAN},${BRAND_TEAL},transparent);margin:14px 0 4px;border-radius:2px"></div>
+
+    ${oppsHtml}
+    ${newsHtml}
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:20px">
+      <tr>
+        <td align="center" style="padding:0">
+          <a href="${SITE_URL}/opportunities" class="btn btn-primary" style="margin-right:8px">Browse Opportunities</a>
+          <a href="${SITE_URL}/score" class="btn btn-outline">Score My CV</a>
+        </td>
+      </tr>
+    </table>
+  `;
+
+  return wrap(content, `${summaryParts.join(" + ")} — Devidends Daily Brief`);
+}
+
+// --- Legacy exports (kept for backwards compatibility) ---
+
+/** @deprecated Use dailyDigestEmail instead */
 export function jobAlertsEmail(
   opportunities: EmailOpp[],
   recipientName?: string,
   sectors?: string[]
 ): string {
-  const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-  const toShow = opportunities.slice(0, 8);
-
-  const greeting = recipientName ? `Hi ${recipientName},` : "Hi there,";
-  const sectorNote = sectors?.length
-    ? `<p style="color:#718096;font-size:12px;margin-bottom:20px">Filtered for: <strong>${sectors.join(", ")}</strong></p>`
-    : "";
-
-  const content = `
-    <h2 style="font-size:20px;font-weight:800;color:${BRAND_DARK};margin-bottom:4px">${greeting}</h2>
-    <p style="color:#4a5568;font-size:13px;margin-bottom:6px">
-      Here are <strong>${toShow.length} new opportunit${toShow.length !== 1 ? "ies" : "y"}</strong> matching your interests — ${today}
-    </p>
-    ${sectorNote}
-    <div style="height:2px;background:linear-gradient(90deg,${BRAND_CYAN},${BRAND_TEAL},transparent);margin-bottom:20px;border-radius:2px"></div>
-
-    ${toShow.map(oppCard).join("")}
-
-    ${opportunities.length > 8 ? `
-    <p style="text-align:center;margin:16px 0 4px;font-size:12px;color:#718096">
-      +${opportunities.length - 8} more opportunities available
-    </p>` : ""}
-
-    <div style="text-align:center;margin-top:20px">
-      <a href="${SITE_URL}/opportunities" class="btn btn-outline">Browse All Opportunities</a>
-    </div>
-  `;
-
-  return wrap(content, `${toShow.length} new opportunities matching your profile`);
+  return dailyDigestEmail(opportunities, [], recipientName, sectors);
 }
 
-/** Generate news digest email HTML */
+/** @deprecated Use dailyDigestEmail instead */
 export function newsDigestEmail(
   articles: EmailNewsArticle[],
   recipientName?: string,
   categories?: string[]
 ): string {
-  const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-  const toShow = articles.slice(0, 6);
-  const greeting = recipientName ? `Hi ${recipientName},` : "Hi there,";
-  const catNote = categories?.length
-    ? `<p style="color:#718096;font-size:12px;margin-bottom:20px">Categories: <strong>${categories.join(", ")}</strong></p>`
-    : "";
-
-  // Group by category
-  const grouped = new Map<string, EmailNewsArticle[]>();
-  for (const a of toShow) {
-    if (!grouped.has(a.category)) grouped.set(a.category, []);
-    grouped.get(a.category)!.push(a);
-  }
-
-  let articleHtml = "";
-  for (const [cat, catArticles] of grouped) {
-    const catColor = CAT_COLORS[cat] || "#718096";
-    articleHtml += `
-      <div style="margin-bottom:16px">
-        <div style="display:inline-block;background:${catColor};color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:3px 10px;border-radius:4px;margin-bottom:10px">
-          ${cat}
-        </div>
-        ${catArticles.map((a) => `
-        <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:8px;border-left:3px solid ${catColor};padding-left:12px">
-          <tr><td style="padding-left:12px">
-            <a href="${a.url}" style="color:${BRAND_DARK};font-size:13px;font-weight:600;line-height:1.4;display:block;margin-bottom:3px">
-              ${a.title}
-            </a>
-            <span style="color:#a0aec0;font-size:11px">${a.source_name}</span>
-          </td></tr>
-        </table>`).join("")}
-      </div>`;
-  }
-
-  const content = `
-    <h2 style="font-size:20px;font-weight:800;color:${BRAND_DARK};margin-bottom:4px">${greeting}</h2>
-    <p style="color:#4a5568;font-size:13px;margin-bottom:6px">
-      Your development news digest for <strong>${today}</strong>
-    </p>
-    ${catNote}
-    <div style="height:2px;background:linear-gradient(90deg,${BRAND_CYAN},${BRAND_TEAL},transparent);margin-bottom:20px;border-radius:2px"></div>
-
-    ${articleHtml}
-
-    ${articles.length > 6 ? `
-    <p style="text-align:center;margin:8px 0 4px;font-size:12px;color:#718096">
-      +${articles.length - 6} more articles on the feed
-    </p>` : ""}
-
-    <div style="text-align:center;margin-top:20px">
-      <a href="${SITE_URL}/news" class="btn btn-primary">Read Full Feed</a>
-    </div>
-  `;
-
-  return wrap(content, `Development news digest — ${today}`);
+  return dailyDigestEmail([], articles, recipientName, undefined, categories);
 }

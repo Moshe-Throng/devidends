@@ -186,7 +186,7 @@ export default function CvBuilderPage() {
   const [certInput, setCertInput] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<
     "wb-standard" | "europass" | "au-standard" | "un-php" | "generic-professional"
-  >("wb-standard");
+  >("europass");
   const [docxResult, setDocxResult] = useState<{
     filename: string;
     docx_base64: string;
@@ -846,6 +846,7 @@ export default function CvBuilderPage() {
                 </div>
               </button>
 
+              {!cvSavedToProfile && (
               <button
                 onClick={async () => {
                   if (user) {
@@ -874,6 +875,7 @@ export default function CvBuilderPage() {
                   Get started <ArrowRight className="w-4 h-4 ml-1" />
                 </div>
               </button>
+              )}
             </div>
           </div>
         )}
@@ -1846,14 +1848,6 @@ export default function CvBuilderPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {([
                 {
-                  id: "wb-standard" as const,
-                  name: "World Bank Standard",
-                  org: "WB / UNDP / GIZ",
-                  desc: "Standard consulting proposal CV used by World Bank, UNDP, GIZ, and other multilateral donors.",
-                  color: "cyan",
-                  badge: "Most Popular",
-                },
-                {
                   id: "europass" as const,
                   name: "Europass",
                   org: "EU / EuropeAid",
@@ -1865,23 +1859,31 @@ export default function CvBuilderPage() {
                   id: "au-standard" as const,
                   name: "African Union",
                   org: "AU / AfDB / AUDA-NEPAD",
-                  desc: "AU-specific format with nationality emphasis, AU working languages, and competency framework.",
+                  desc: "Official AU CV layout with numbered sections, green & gold branding, and declaration block. Required for AU vacancies.",
                   color: "green",
+                  badge: "New",
+                },
+                {
+                  id: "wb-standard" as const,
+                  name: "World Bank",
+                  org: "WB / IFC / MIGA",
+                  desc: "Comprehensive multi-section format used for World Bank Group consulting assignments and staff positions.",
+                  color: "cyan",
                   badge: null,
                 },
                 {
                   id: "un-php" as const,
                   name: "UN PHP",
-                  org: "UN Agencies",
-                  desc: "UN Personal History Profile format. Formal numbered sections used across all UN agency applications.",
+                  org: "UN System / UNDP / UNICEF",
+                  desc: "Personal History Profile format with formal numbered sections matching UN application requirements.",
                   color: "indigo",
                   badge: null,
                 },
                 {
                   id: "generic-professional" as const,
                   name: "Professional",
-                  org: "NGOs / Consulting Firms",
-                  desc: "Clean, modern format suitable for NGOs, INGOs, consulting firms, and private sector applications.",
+                  org: "General / Corporate",
+                  desc: "Clean, modern format for private sector, NGOs, and general consulting applications.",
                   color: "slate",
                   badge: null,
                 },
@@ -1954,13 +1956,7 @@ export default function CvBuilderPage() {
               ) : (
                 <FileCheck className="w-4 h-4" />
               )}
-              Generate CV — {
-                selectedTemplate === "wb-standard" ? "World Bank" :
-                selectedTemplate === "europass" ? "Europass" :
-                selectedTemplate === "au-standard" ? "African Union" :
-                selectedTemplate === "un-php" ? "UN PHP" :
-                "Professional"
-              } Format
+              Generate CV — {selectedTemplate === "europass" ? "Europass" : selectedTemplate === "au-standard" ? "African Union" : selectedTemplate === "wb-standard" ? "World Bank" : selectedTemplate === "un-php" ? "UN PHP" : "Professional"} Format
             </button>
           </div>
         )}
