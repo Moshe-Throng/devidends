@@ -23,9 +23,10 @@
     "config": {
       "noticeTypes": [
         "Request for Expression of Interest",
-        "Invitation for Bids"
+        "Invitation for Bids",
+        "Request for Proposals"
       ],
-      "rows": 50,
+      "rows": 100,
       "searchTerm": "Ethiopia"
     }
   },
@@ -42,7 +43,7 @@
       "sourceDomain": "unjobs.org",
       "defaultCountry": "Ethiopia",
       "mode": "unjobs",
-      "maxPages": 5,
+      "maxPages": 10,
       "pageDelay": 2500
     }
   },
@@ -69,13 +70,31 @@
   },
   {
     "id": "au",
-    "name": "African Union",
+    "name": "African Union Jobs",
     "adapter": "puppeteer-spa",
     "content_type": "job",
     "enabled": true,
     "priority": 20,
     "config": {
-      "url": "https://au.int/en/careers",
+      "url": "https://jobs.au.int/",
+      "orgName": "African Union",
+      "sourceDomain": "jobs.au.int",
+      "defaultCountry": "Ethiopia",
+      "mode": "au",
+      "maxPages": 5,
+      "scrollCount": 5,
+      "scrollDelay": 2000
+    }
+  },
+  {
+    "id": "au-tenders",
+    "name": "African Union Tenders",
+    "adapter": "puppeteer-spa",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://au.int/en/bids",
       "orgName": "African Union",
       "sourceDomain": "au.int",
       "defaultCountry": "Ethiopia",
@@ -115,6 +134,38 @@
     }
   },
   {
+    "id": "ipas-workday",
+    "name": "Ipas",
+    "adapter": "workday",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "baseUrl": "https://ipas.wd5.myworkdayjobs.com",
+      "tenant": "ipas",
+      "siteId": "Ipas",
+      "orgName": "Ipas",
+      "searchText": "Ethiopia Africa",
+      "fetchDetails": true
+    }
+  },
+  {
+    "id": "wfp-workday",
+    "name": "World Food Programme",
+    "adapter": "workday",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "baseUrl": "https://wd3.myworkdaysite.com",
+      "tenant": "wfp",
+      "siteId": "Careers",
+      "orgName": "World Food Programme (WFP)",
+      "searchText": "Ethiopia",
+      "fetchDetails": true
+    }
+  },
+  {
     "id": "uncareers",
     "name": "UN Careers",
     "adapter": "puppeteer-spa",
@@ -126,7 +177,8 @@
       "orgName": "United Nations",
       "sourceDomain": "careers.un.org",
       "defaultCountry": "Ethiopia",
-      "mode": "uncareers"
+      "mode": "uncareers",
+      "maxPages": 5
     }
   },
   {
@@ -162,7 +214,21 @@
       "defaultCountry": "Ethiopia"
     }
   },
-
+  {
+    "id": "oracle-aau",
+    "name": "Oracle HCM (estm)",
+    "adapter": "oracle-hcm",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "portalUrl": "https://estm.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions",
+      "orgName": "Various (Oracle HCM)",
+      "sourceDomain": "oraclecloud.com",
+      "searchText": "Ethiopia",
+      "defaultCountry": "Ethiopia"
+    }
+  },
   {
     "id": "mastercardfdn",
     "name": "Mastercard Foundation",
@@ -175,11 +241,10 @@
       "tenant": "mastercardfoundation",
       "siteId": "mastercardfdn",
       "orgName": "Mastercard Foundation",
-      "searchText": "Ethiopia",
+      "searchText": "Ethiopia Africa",
       "fetchDetails": true
     }
   },
-
   {
     "id": "sos-icims",
     "name": "SOS Children's Villages",
@@ -221,6 +286,32 @@
     }
   },
   {
+    "id": "irc-jobvite",
+    "name": "International Rescue Committee",
+    "adapter": "jobvite",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "internationalrescuecommittee",
+      "orgName": "International Rescue Committee (IRC)",
+      "searchText": "Ethiopia"
+    }
+  },
+  {
+    "id": "pathfinder-jobvite",
+    "name": "Pathfinder International",
+    "adapter": "jobvite",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "companySlug": "pathfinder",
+      "orgName": "Pathfinder International",
+      "searchText": "Ethiopia"
+    }
+  },
+  {
     "id": "edc-smartrecruiters",
     "name": "Education Development Center",
     "adapter": "smartrecruiters",
@@ -230,6 +321,19 @@
     "config": {
       "companyId": "EDC1",
       "orgName": "Education Development Center (EDC)",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "acted-smartrecruiters",
+    "name": "ACTED",
+    "adapter": "smartrecruiters",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "companyId": "ACTED",
+      "orgName": "ACTED",
       "countryFilter": "Ethiopia"
     }
   },
@@ -247,6 +351,19 @@
     }
   },
   {
+    "id": "inkomoko-workable",
+    "name": "Inkomoko",
+    "adapter": "workable",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 30,
+    "config": {
+      "companySlug": "inkomoko",
+      "orgName": "Inkomoko",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
     "id": "girleffect-greenhouse",
     "name": "Girl Effect",
     "adapter": "greenhouse",
@@ -256,6 +373,45 @@
     "config": {
       "boardToken": "girleffect",
       "orgName": "Girl Effect",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "oneacrefund-greenhouse",
+    "name": "One Acre Fund",
+    "adapter": "greenhouse",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "boardToken": "oneacrefund",
+      "orgName": "One Acre Fund",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "idinsight-greenhouse",
+    "name": "IDinsight",
+    "adapter": "greenhouse",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "boardToken": "idinsight",
+      "orgName": "IDinsight",
+      "countryFilter": "Ethiopia"
+    }
+  },
+  {
+    "id": "livinggoods-greenhouse",
+    "name": "Living Goods",
+    "adapter": "greenhouse",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "boardToken": "livinggoods",
+      "orgName": "Living Goods",
       "countryFilter": "Ethiopia"
     }
   },
@@ -273,7 +429,20 @@
       "searchText": "Ethiopia"
     }
   },
-
+  {
+    "id": "care-taleo",
+    "name": "CARE",
+    "adapter": "taleo",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "baseUrl": "https://phg.tbe.taleo.net/phg02/ats/careers/v2",
+      "orgCode": "CAREUSA",
+      "orgName": "CARE",
+      "searchText": "Ethiopia"
+    }
+  },
   {
     "id": "gggi",
     "name": "Global Green Growth Institute",
@@ -327,7 +496,7 @@
       "defaultCountry": "Ethiopia",
       "mode": "generic",
       "jobSelector": ".job-card, .job-listing, a[href*='job']",
-      "scrollCount": 3,
+      "scrollCount": 5,
       "scrollDelay": 2000
     }
   },
@@ -411,16 +580,147 @@
     }
   },
   {
-    "id": "inkomoko-workable",
-    "name": "Inkomoko",
-    "adapter": "workable",
+    "id": "cowater",
+    "name": "Cowater International",
+    "adapter": "cheerio-html",
     "content_type": "job",
     "enabled": true,
-    "priority": 30,
+    "priority": 20,
     "config": {
-      "companySlug": "inkomoko",
-      "orgName": "Inkomoko",
-      "countryFilter": "Ethiopia"
+      "url": "https://www.cowater.com/career-opportunities/",
+      "orgName": "Cowater International",
+      "sourceDomain": "cowater.com",
+      "jobSelector": "a[href*='ja-job'], .job-listing, article",
+      "titleSelector": "a, h3, h2",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "plan-international",
+    "name": "Plan International",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://unjobs.org/organizations/plan-international?duty_station=ethiopia",
+      "orgName": "Plan International",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "iom",
+    "name": "International Organization for Migration",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://unjobs.org/organizations/iom?duty_station=ethiopia",
+      "orgName": "International Organization for Migration (IOM)",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "who-careers",
+    "name": "World Health Organization",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://unjobs.org/organizations/who?duty_station=ethiopia",
+      "orgName": "World Health Organization (WHO)",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "fao-careers",
+    "name": "Food and Agriculture Organization",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://unjobs.org/organizations/fao?duty_station=ethiopia",
+      "orgName": "Food and Agriculture Organization (FAO)",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "savethechildren",
+    "name": "Save the Children",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 25,
+    "config": {
+      "url": "https://unjobs.org/organizations/save-the-children?duty_station=ethiopia",
+      "orgName": "Save the Children",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "oxfam",
+    "name": "Oxfam",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://unjobs.org/organizations/oxfam?duty_station=ethiopia",
+      "orgName": "Oxfam",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
+    }
+  },
+  {
+    "id": "worldvision",
+    "name": "World Vision",
+    "adapter": "cheerio-html",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 20,
+    "config": {
+      "url": "https://unjobs.org/organizations/world-vision?duty_station=ethiopia",
+      "orgName": "World Vision",
+      "sourceDomain": "unjobs.org",
+      "jobSelector": "a[href*='/vacancies/']",
+      "titleSelector": "a",
+      "linkSelector": "a[href]",
+      "defaultCountry": "Ethiopia",
+      "fetchDetails": false
     }
   }
 ]
