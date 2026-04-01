@@ -185,7 +185,7 @@ export default function CvBuilderPage() {
   const [countryInput, setCountryInput] = useState("");
   const [certInput, setCertInput] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<
-    "wb-standard" | "europass" | "au-standard" | "un-php" | "generic-professional"
+    "wb-standard" | "europass" | "au-standard" | "un-php" | "generic-professional" | "modern-executive"
   >("europass");
   const [docxResult, setDocxResult] = useState<{
     filename: string;
