@@ -147,7 +147,7 @@ export default function TgCvBuilder() {
     const saved = profile.cv_structured_data as unknown as StructuredCvData | null;
     if (saved && (saved as any)?.personal?.full_name) {
       setCvData(saved);
-      setOpenSections(new Set(["personal", "summary", "education", "employment"]));
+      setOpenSections(new Set()); // All sections collapsed by default
       // User already has a CV — go straight to template selection
       setPhase("template");
     } else {
