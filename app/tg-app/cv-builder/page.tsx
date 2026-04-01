@@ -165,8 +165,22 @@ export default function TgCvBuilder() {
       return;
     }
 
-    const saved = profile.cv_structured_data as unknown as StructuredCvData | null;
-    if (saved && (saved as any)?.personal?.full_name) {
+    let saved: StructuredCvData | null = null;
+    try {
+      const raw = profile.cv_structured_data;
+      // If it's a string (corrupted JSONB), try parsing it
+      if (typeof raw === "string") {
+        saved = JSON.parse(raw) as StructuredCvData;
+      } else if (raw && typeof raw === "object") {
+        saved = raw as unknown as StructuredCvData;
+      }
+    } catch (e) {
+      console.warn("[cv-builder] Corrupted CV data in profile, starting fresh");
+      setError("Your saved CV data was corrupted. Please re-upload or start fresh.");
+      saved = null;
+    }
+
+    if (saved && saved?.personal?.full_name) {
       setCvData(saved);
       setOpenSections(new Set()); // All sections collapsed by default
       // Load cached score if available

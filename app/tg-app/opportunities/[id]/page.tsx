@@ -16,6 +16,7 @@ import {
   Loader2,
   AlertCircle,
   TrendingUp,
+  Target,
 } from "lucide-react";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
 
@@ -40,6 +41,7 @@ function deadlineStatus(d: string | null, isExpired: boolean) {
   if (isExpired) return { label: "Closed", cls: "text-red-700 bg-red-50" };
   const diff = new Date(d).getTime() - Date.now();
   const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  if (days <= 0) return { label: "Closed", cls: "text-red-700 bg-red-50" };
   if (days <= 3) return { label: `Closing in ${days}d`, cls: "text-red-700 bg-red-50" };
   if (days <= 7) return { label: `${days} days left`, cls: "text-amber-700 bg-amber-50" };
   return { label: `${days} days left`, cls: "text-emerald-700 bg-emerald-50" };
@@ -55,45 +57,89 @@ function cleanDescription(desc: string | null | undefined): string {
   return trimmed;
 }
 
-/** Render description with proper formatting — paragraphs, bullets, headings */
+/**
+ * Render description — handles both markdown (from AI formatter) and plain text.
+ * Markdown patterns: ## Heading, - bullet, **bold**, regular paragraphs
+ */
 function renderFormattedDescription(text: string) {
-  const blocks = text.split(/\n\n+/);
-  return blocks.map((block, bIdx) => {
-    const lines = block.split(/\n/).filter((l) => l.trim());
-    return (
-      <div key={bIdx} className="mb-4 last:mb-0">
-        {lines.map((line, lIdx) => {
-          const trimmed = line.trim();
-          // Heading-like (all caps or ending with colon)
-          if (
-            (trimmed.length < 80 && trimmed === trimmed.toUpperCase() && trimmed.length > 3) ||
-            (trimmed.length < 80 && /^[A-Z][^.]*:$/.test(trimmed))
-          ) {
-            return (
-              <p key={lIdx} className="text-xs font-bold text-dark-800 uppercase tracking-wider mt-3 mb-1.5 first:mt-0">
-                {trimmed}
-              </p>
-            );
-          }
-          // Bullet point
-          if (/^[-•●▪◦*]\s/.test(trimmed) || /^\d+[.)]\s/.test(trimmed)) {
-            const content = trimmed.replace(/^[-•●▪◦*]\s+/, "").replace(/^\d+[.)]\s+/, "");
-            return (
-              <div key={lIdx} className="flex gap-2 ml-1 mb-1">
-                <span className="text-cyan-500 text-xs mt-0.5 shrink-0">&#8226;</span>
-                <span className="text-sm text-dark-600 leading-relaxed">{content}</span>
-              </div>
-            );
-          }
-          // Regular paragraph line
-          return (
-            <p key={lIdx} className="text-sm text-dark-600 leading-relaxed mb-1.5 last:mb-0">
-              {trimmed}
-            </p>
-          );
-        })}
-      </div>
+  const lines = text.split(/\n/);
+  const elements: React.ReactNode[] = [];
+  let key = 0;
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i].trim();
+
+    // Skip empty lines
+    if (!line) { i++; continue; }
+
+    // Markdown heading: ## Title or ### Title
+    if (/^#{1,3}\s+/.test(line)) {
+      elements.push(
+        <h4 key={key++} className="text-[13px] font-bold text-dark-900 tracking-wide uppercase mt-5 mb-2 first:mt-0 pb-1 border-b border-dark-100">
+          {line.replace(/^#{1,3}\s+/, "")}
+        </h4>
+      );
+      i++; continue;
+    }
+
+    // ALL CAPS heading or "Title:" heading (plain text)
+    if (
+      line.length < 80 && !line.endsWith(".") &&
+      (/^[A-Z][A-Z\s&/,:\-–]+$/.test(line) || /^[A-Z][^.]{2,60}:$/.test(line))
+    ) {
+      elements.push(
+        <h4 key={key++} className="text-[13px] font-bold text-dark-900 tracking-wide uppercase mt-5 mb-2 first:mt-0 pb-1 border-b border-dark-100">
+          {line.replace(/:$/, "")}
+        </h4>
+      );
+      i++; continue;
+    }
+
+    // Bullet: - item, * item, • item, 1. item
+    if (/^\s*[-•●▪◦*]\s/.test(line) || /^\s*\d+[.)]\s/.test(line)) {
+      const bullets: string[] = [];
+      while (i < lines.length) {
+        const l = lines[i].trim();
+        if (/^\s*[-•●▪◦*]\s/.test(l) || /^\s*\d+[.)]\s/.test(l)) {
+          bullets.push(l.replace(/^\s*[-•●▪◦*]\s+/, "").replace(/^\s*\d+[.)]\s+/, ""));
+          i++;
+        } else break;
+      }
+      elements.push(
+        <ul key={key++} className="mb-4 space-y-2 pl-1">
+          {bullets.map((b, bi) => (
+            <li key={bi} className="flex gap-3 text-[13px] text-dark-600 leading-relaxed">
+              <span className="mt-[7px] shrink-0 w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              <span>{renderInlineBold(b)}</span>
+            </li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
+    // Regular paragraph
+    elements.push(
+      <p key={key++} className="text-[13px] text-dark-600 leading-[1.75] mb-3">
+        {renderInlineBold(line)}
+      </p>
     );
+    i++;
+  }
+
+  return elements;
+}
+
+/** Handle **bold** in text */
+function renderInlineBold(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) => {
+    if (/^\*\*(.+)\*\*$/.test(part)) {
+      return <strong key={i} className="font-semibold text-dark-800">{part.replace(/\*\*/g, "")}</strong>;
+    }
+    return <span key={i}>{part}</span>;
   });
 }
 
@@ -299,7 +345,7 @@ export default function TgOpportunityDetail() {
 
       {/* ── Description ── */}
       <div className="mx-4 mt-4">
-        {description ? (
+        {(description) ? (
           <div className="bg-white border border-dark-100 rounded-xl p-4">
             <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
               <FileText className="w-3.5 h-3.5 text-cyan-500" />
@@ -308,6 +354,13 @@ export default function TgOpportunityDetail() {
             <div>
               {renderFormattedDescription(description)}
             </div>
+          </div>
+        ) : !opp.description ? (
+          <div className="bg-dark-50 border border-dark-100 rounded-xl p-5 text-center">
+            <Loader2 className="w-5 h-5 text-dark-300 mx-auto mb-2 animate-spin" />
+            <p className="text-xs font-semibold text-dark-500">
+              Loading description...
+            </p>
           </div>
         ) : (
           <div className="bg-dark-50 border border-dark-100 rounded-xl p-5 text-center">
@@ -349,14 +402,14 @@ export default function TgOpportunityDetail() {
           </button>
         )}
 
-        {/* Secondary: Build/edit CV */}
+        {/* Secondary: Score CV for this opportunity */}
         {!opp.is_expired && (
           <Link
-            href="/tg-app/cv-builder"
+            href={`/tg-app/score?oppId=${opp.id}`}
             className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-cyan-200 text-cyan-700 font-bold text-sm active:bg-cyan-50 transition-colors"
           >
-            <FileText className="w-4 h-4" />
-            Build My CV
+            <Target className="w-4 h-4" />
+            Score My CV for This Role
           </Link>
         )}
 
