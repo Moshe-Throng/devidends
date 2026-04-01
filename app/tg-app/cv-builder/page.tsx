@@ -210,10 +210,24 @@ export default function TgCvBuilder() {
     setLoadedFromProfile(true);
   }, [tgLoading, profile, loadedFromProfile]);
 
-  /* ─── Auto-save to profile (debounced 2s) ────────── */
+  /* ─── Save to profile (on phase transition, not auto-debounce) ── */
   const saveCvToProfile = useCallback(async (data: StructuredCvData) => {
     const initData = sessionStorage.getItem("tg_init_data");
     if (!initData) return;
+    if (!data.personal.full_name.trim()) return;
+
+    // Validate JSON roundtrip — prevent saving corrupted data
+    try {
+      const serialized = JSON.stringify(data);
+      JSON.parse(serialized); // roundtrip test
+      if (serialized.length > 500000) {
+        console.warn("[cv-builder] CV data too large, skipping save");
+        return;
+      }
+    } catch {
+      console.error("[cv-builder] CV data failed JSON roundtrip, not saving");
+      return;
+    }
 
     setSaveStatus("saving");
     try {
@@ -234,17 +248,16 @@ export default function TgCvBuilder() {
     }
   }, []);
 
+  // Save when leaving editing phase (not on every keystroke)
+  const lastSavedPhaseRef = useRef<string>("");
   useEffect(() => {
-    if (phase !== "editing" && phase !== "template" && phase !== "download") return;
     if (!cvData.personal.full_name.trim()) return;
-
-    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-    saveTimerRef.current = setTimeout(() => saveCvToProfile(cvData), 2000);
-
-    return () => {
-      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-    };
-  }, [cvData, phase, saveCvToProfile]);
+    // Save when transitioning OUT of editing, or entering template/download
+    if ((phase === "template" || phase === "download") && lastSavedPhaseRef.current !== phase) {
+      lastSavedPhaseRef.current = phase;
+      saveCvToProfile(cvData);
+    }
+  }, [phase, cvData, saveCvToProfile]);
 
   /* ─── Extracting step animation ─────────────────── */
   useEffect(() => {
