@@ -60,11 +60,11 @@ const EXTRACT_STEPS = [
 ];
 
 const TEMPLATES: { id: CvTemplate; label: string; desc: string }[] = [
-  { id: "wb-standard", label: "World Bank", desc: "Standard WB format" },
-  { id: "europass", label: "Europass", desc: "EU standard CV" },
-  { id: "au-standard", label: "AU Standard", desc: "African Union format" },
-  { id: "un-php", label: "UN P11/PHP", desc: "United Nations format" },
-  { id: "generic-professional", label: "Professional", desc: "Clean modern CV" },
+  { id: "europass", label: "Europass", desc: "EU / EuropeAid standard" },
+  { id: "au-standard", label: "African Union", desc: "AU / AfDB / AUDA-NEPAD" },
+  { id: "wb-standard", label: "World Bank", desc: "WB / IFC consulting" },
+  { id: "un-php", label: "UN PHP", desc: "UN Personal History Profile" },
+  { id: "generic-professional", label: "Professional", desc: "General / Corporate" },
 ];
 
 const SECTIONS = [
@@ -641,6 +641,7 @@ export default function TgCvBuilder() {
               </div>
             </button>
 
+            {!(loadedFromProfile && profile?.cv_structured_data) && (
             <button
               onClick={() => {
                 setCvData(emptyCvData());
@@ -661,6 +662,7 @@ export default function TgCvBuilder() {
                 </div>
               </div>
             </button>
+            )}
           </div>
         </div>
       )}
