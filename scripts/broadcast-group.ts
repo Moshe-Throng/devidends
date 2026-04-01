@@ -67,23 +67,15 @@ async function main() {
     return;
   }
 
-  const { broadcastToGroup, notifySubscribers, notifySubscribersNews } = await import("../lib/telegram-broadcast");
+  const { broadcastToGroup, notifySubscribersDaily } = await import("../lib/telegram-broadcast");
 
   // 1. Group digest (public channel/topic)
   const groupResult = await broadcastToGroup(recent, newsArticles);
   console.log(`Group broadcast: sent=${groupResult.sent}, count=${groupResult.count}`);
 
-  // 2. Individual job alerts (personalised per subscriber sector prefs)
-  if (recent.length > 0) {
-    const jobResult = await notifySubscribers(recent);
-    console.log(`Subscriber job alerts: notified=${jobResult.notified}, skipped=${jobResult.skipped}, failed=${jobResult.failed}`);
-  }
-
-  // 3. Individual news digest (all active Telegram subscribers)
-  if (newsArticles.length > 0) {
-    const newsResult = await notifySubscribersNews(newsArticles);
-    console.log(`Subscriber news digest: notified=${newsResult.notified}, failed=${newsResult.failed}`);
-  }
+  // 2. Combined daily digest to individual subscribers (ONE message with jobs + news)
+  const digestResult = await notifySubscribersDaily(recent, newsArticles);
+  console.log(`Daily digest: notified=${digestResult.notified}, skipped=${digestResult.skipped}, failed=${digestResult.failed}`);
 }
 
 main().catch((err) => {
