@@ -251,7 +251,7 @@ function CvScorerPage() {
   // Auto-load saved CV from profile (so "Score My CV" from job pages works without re-uploading)
   useEffect(() => {
     if (authLoading || !user) return;
-    if (cvText) return; // Already have CV text
+    if (editText) return; // Already have CV text
     const sb = createSupabaseBrowser();
     sb.from("profiles")
       .select("cv_structured_data, cv_text")
@@ -273,14 +273,14 @@ function CvScorerPage() {
             ...(d.languages || []).map((l: any) => `${l.language}: ${l.speaking}`),
             "", "KEY QUALIFICATIONS", d.key_qualifications,
           ].filter(Boolean);
-          setCvText(lines.join("\n"));
+          setEditText(lines.join("\n"));
           setPhase("options");
         } else if (data?.cv_text) {
-          setCvText(data.cv_text);
+          setEditText(data.cv_text);
           setPhase("options");
         }
       });
-  }, [user, authLoading, cvText]);
+  }, [user, authLoading, editText]);
 
   useEffect(() => {
     fetch("/api/opportunities/sample?hideExpired=true&minQuality=40")
