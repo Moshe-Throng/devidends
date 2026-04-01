@@ -148,7 +148,8 @@ export default function TgCvBuilder() {
     if (saved && (saved as any)?.personal?.full_name) {
       setCvData(saved);
       setOpenSections(new Set(["personal", "summary", "education", "employment"]));
-      setPhase("editing");
+      // User already has a CV — go straight to template selection
+      setPhase("template");
     } else {
       // Pre-fill from profile basics
       setCvData((prev) => ({
