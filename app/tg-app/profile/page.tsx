@@ -19,6 +19,7 @@ import {
   Save,
   X,
   Link2,
+  Camera,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import { SECTORS, DONORS, COUNTRIES } from "@/lib/constants";
@@ -30,6 +31,10 @@ export default function TgAppProfile() {
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveMsg, setSaveMsg] = useState("");
+
+  // Photo upload
+  const [photoFileId, setPhotoFileId] = useState<string | null>(null);
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
 
   // Editable fields
   const [headline, setHeadline] = useState("");
@@ -52,8 +57,39 @@ export default function TgAppProfile() {
       setLinkedinUrl(profile.linkedin_url || "");
       setEmail(profile.email || "");
       setYearsExp(profile.years_of_experience != null ? String(profile.years_of_experience) : "");
+      setPhotoFileId((profile as any).photo_file_id || null);
     }
   }, [profile]);
+
+  async function handlePhotoUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) { setSaveMsg("Photo must be under 5MB"); return; }
+    setUploadingPhoto(true);
+    try {
+      const buffer = await file.arrayBuffer();
+      const base64 = btoa(new Uint8Array(buffer).reduce((s, b) => s + String.fromCharCode(b), ""));
+      const initData = sessionStorage.getItem("tg_init_data");
+      if (!initData) throw new Error("Not authenticated");
+      const res = await fetch("/api/telegram/upload-photo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ initData, imageBase64: base64 }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setPhotoFileId(data.photo_file_id);
+        setSaveMsg("Photo updated!");
+        refreshProfile();
+      } else {
+        throw new Error(data.error);
+      }
+    } catch (err) {
+      setSaveMsg(err instanceof Error ? err.message : "Photo upload failed");
+    } finally {
+      setUploadingPhoto(false);
+    }
+  }
 
   async function handleSave() {
     if (!tgUser) return;
@@ -212,17 +248,33 @@ export default function TgAppProfile() {
           />
           <div className="relative z-10">
             <div className="flex items-start gap-4">
-              {tgUser?.photo_url ? (
-                <img
-                  src={tgUser.photo_url}
-                  alt=""
-                  className="w-14 h-14 rounded-full border-2 border-white/20"
-                />
-              ) : (
-                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                  <User className="w-7 h-7 text-white/60" />
-                </div>
-              )}
+              <div className="relative flex-shrink-0">
+                {photoFileId ? (
+                  <img
+                    src={`/api/img/${photoFileId}`}
+                    alt=""
+                    className="w-14 h-14 rounded-full border-2 border-white/20 object-cover"
+                  />
+                ) : tgUser?.photo_url ? (
+                  <img
+                    src={tgUser.photo_url}
+                    alt=""
+                    className="w-14 h-14 rounded-full border-2 border-white/20"
+                  />
+                ) : (
+                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
+                    <User className="w-7 h-7 text-white/60" />
+                  </div>
+                )}
+                <label className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-cyan-500 flex items-center justify-center cursor-pointer shadow-lg">
+                  {uploadingPhoto ? (
+                    <Loader2 className="w-3 h-3 text-white animate-spin" />
+                  ) : (
+                    <Camera className="w-3 h-3 text-white" />
+                  )}
+                  <input type="file" accept="image/*" className="hidden" onChange={handlePhotoUpload} disabled={uploadingPhoto} />
+                </label>
+              </div>
               <div className="flex-1 min-w-0">
                 <h2 className="text-lg font-bold text-white truncate">
                   {profile.name}

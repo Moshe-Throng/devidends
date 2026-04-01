@@ -1826,39 +1826,47 @@ function generatePhotoPlaceholder(initials: string): Buffer {
   return tinyPng;
 }
 
-export async function generateModernExecDocx(data: StructuredCvData): Promise<Buffer> {
+export async function generateModernExecDocx(data: StructuredCvData, photoBuffer?: Buffer): Promise<Buffer> {
   const p = data.personal;
   const initials = p.full_name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
 
   /* ── SIDEBAR CONTENT ────────────────────────────── */
   const sidebarChildren: Paragraph[] = [];
 
-  // Photo placeholder area — initials circle
+  // Photo area — real photo if available, otherwise initials placeholder
   sidebarChildren.push(new Paragraph({ spacing: { before: 100, after: 20 }, alignment: AlignmentType.CENTER, children: [] }));
-  sidebarChildren.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 20 },
-    children: [new TextRun({ text: "┌─────────┐", size: 16, font: ME_FONT, color: ME_ACCENT })],
-  }));
-  sidebarChildren.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 20 },
-    children: [
-      new TextRun({ text: "│   ", size: 16, font: ME_FONT, color: ME_ACCENT }),
-      new TextRun({ text: initials, bold: true, size: 40, font: ME_FONT, color: ME_ACCENT }),
-      new TextRun({ text: "   │", size: 16, font: ME_FONT, color: ME_ACCENT }),
-    ],
-  }));
-  sidebarChildren.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 100 },
-    children: [new TextRun({ text: "└─────────┘", size: 16, font: ME_FONT, color: ME_ACCENT })],
-  }));
-  sidebarChildren.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 40 },
-    children: [new TextRun({ text: "PHOTO", size: 14, font: ME_FONT, color: ME_TEXT_MUTED })],
-  }));
+  if (photoBuffer) {
+    sidebarChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 100 },
+      children: [new ImageRun({ type: "png" as const, data: photoBuffer, transformation: { width: 120, height: 120 } })],
+    }));
+  } else {
+    sidebarChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 20 },
+      children: [new TextRun({ text: "┌─────────┐", size: 16, font: ME_FONT, color: ME_ACCENT })],
+    }));
+    sidebarChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 20 },
+      children: [
+        new TextRun({ text: "│   ", size: 16, font: ME_FONT, color: ME_ACCENT }),
+        new TextRun({ text: initials, bold: true, size: 40, font: ME_FONT, color: ME_ACCENT }),
+        new TextRun({ text: "   │", size: 16, font: ME_FONT, color: ME_ACCENT }),
+      ],
+    }));
+    sidebarChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 100 },
+      children: [new TextRun({ text: "└─────────┘", size: 16, font: ME_FONT, color: ME_ACCENT })],
+    }));
+    sidebarChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 40 },
+      children: [new TextRun({ text: "Add photo in Profile", size: 12, font: ME_FONT, color: ME_TEXT_MUTED })],
+    }));
+  }
 
   // Contact
   sidebarChildren.push(meSidebarLabel("Contact"));
@@ -2091,7 +2099,8 @@ export async function generateModernExecDocx(data: StructuredCvData): Promise<Bu
 
 export async function generateCvDocx(
   data: StructuredCvData,
-  template: CvTemplate = "wb-standard"
+  template: CvTemplate = "wb-standard",
+  photoBuffer?: Buffer
 ): Promise<{ buffer: Buffer; filename: string }> {
   const safeName = data.personal.full_name
     .replace(/[^a-zA-Z0-9 ]/g, "")
@@ -2122,7 +2131,7 @@ export async function generateCvDocx(
       buffer = await generateGenericDocx(data);
       break;
     case "modern-executive":
-      buffer = await generateModernExecDocx(data);
+      buffer = await generateModernExecDocx(data, photoBuffer);
       break;
     case "wb-standard":
     default:

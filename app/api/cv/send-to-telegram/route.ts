@@ -28,8 +28,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Bot not configured" }, { status: 500 });
     }
 
+    // Fetch photo for Executive template if available
+    let photoBuffer: Buffer | undefined;
+    if (template === "modern-executive" && body.photo_file_id) {
+      try {
+        const metaRes = await fetch(`https://api.telegram.org/bot${token}/getFile?file_id=${encodeURIComponent(body.photo_file_id)}`);
+        const meta = await metaRes.json();
+        if (meta.ok && meta.result?.file_path) {
+          const imgRes = await fetch(`https://api.telegram.org/file/bot${token}/${meta.result.file_path}`);
+          if (imgRes.ok) photoBuffer = Buffer.from(await imgRes.arrayBuffer());
+        }
+      } catch { /* continue without photo */ }
+    }
+
     // Generate DOCX
-    const { buffer, filename } = await generateCvDocx(cvData, template);
+    const { buffer, filename } = await generateCvDocx(cvData, template, photoBuffer);
 
     // Send via Telegram Bot API
     const form = new FormData();

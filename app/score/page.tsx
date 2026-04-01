@@ -248,6 +248,40 @@ function CvScorerPage() {
     }
   }, [user, authLoading]);
 
+  // Auto-load saved CV from profile (so "Score My CV" from job pages works without re-uploading)
+  useEffect(() => {
+    if (authLoading || !user) return;
+    if (cvText) return; // Already have CV text
+    const sb = createSupabaseBrowser();
+    sb.from("profiles")
+      .select("cv_structured_data, cv_text")
+      .eq("user_id", user.id)
+      .single()
+      .then(({ data }) => {
+        if (data?.cv_structured_data) {
+          const d = data.cv_structured_data as any;
+          const lines = [
+            d.personal?.full_name,
+            d.personal?.nationality && `Nationality: ${d.personal.nationality}`,
+            d.personal?.email && `Email: ${d.personal.email}`,
+            "", "PROFESSIONAL SUMMARY", d.professional_summary,
+            "", "EDUCATION",
+            ...(d.education || []).map((e: any) => `${e.degree} in ${e.field_of_study}, ${e.institution} (${e.country}, ${e.year_graduated})`),
+            "", "EMPLOYMENT",
+            ...(d.employment || []).map((e: any) => `${e.position} at ${e.employer} (${e.from_date} - ${e.to_date}, ${e.country})\n${e.description_of_duties}`),
+            "", "LANGUAGES",
+            ...(d.languages || []).map((l: any) => `${l.language}: ${l.speaking}`),
+            "", "KEY QUALIFICATIONS", d.key_qualifications,
+          ].filter(Boolean);
+          setCvText(lines.join("\n"));
+          setPhase("options");
+        } else if (data?.cv_text) {
+          setCvText(data.cv_text);
+          setPhase("options");
+        }
+      });
+  }, [user, authLoading, cvText]);
+
   useEffect(() => {
     fetch("/api/opportunities/sample?hideExpired=true&minQuality=40")
       .then((r) => r.json())

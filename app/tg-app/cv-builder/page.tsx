@@ -46,6 +46,25 @@ import {
   newLanguage,
 } from "@/lib/types/cv-data";
 
+/* ─── Helpers ──────────────────────────────────────────────── */
+
+/** Simple hash of CV data to detect changes (for score caching) */
+function cvDataHash(data: StructuredCvData): string {
+  const key = [
+    data.personal.full_name,
+    data.professional_summary?.slice(0, 100),
+    data.employment.length,
+    data.education.length,
+    data.employment[0]?.position,
+    data.key_qualifications?.slice(0, 50),
+  ].join("|");
+  let h = 0;
+  for (let i = 0; i < key.length; i++) {
+    h = ((h << 5) - h + key.charCodeAt(i)) | 0;
+  }
+  return String(h);
+}
+
 /* ─── Constants ────────────────────────────────────────────── */
 
 const PROFICIENCY: ProficiencyLevel[] = ["Excellent", "Good", "Fair", "None"];
@@ -125,7 +144,7 @@ export default function TgCvBuilder() {
   const [loadedFromProfile, setLoadedFromProfile] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved">("idle");
 
-  // Inline scoring state
+  // Inline scoring state — loaded from profile if available
   const [scoreResult, setScoreResult] = useState<{
     overall_score: number;
     dimensions?: { name: string; score: number }[];
@@ -133,6 +152,7 @@ export default function TgCvBuilder() {
   } | null>(null);
   const [scoring, setScoring] = useState(false);
   const [showScore, setShowScore] = useState(false);
+  const [scoredCvHash, setScoredCvHash] = useState<string>("");  // hash of CV when last scored
 
   const fileRef = useRef<HTMLInputElement>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -149,6 +169,14 @@ export default function TgCvBuilder() {
     if (saved && (saved as any)?.personal?.full_name) {
       setCvData(saved);
       setOpenSections(new Set()); // All sections collapsed by default
+      // Load cached score if available
+      const cachedScore = (profile as any).cv_score_data;
+      const cachedHash = (profile as any).cv_score_hash;
+      if (cachedScore && cachedHash === cvDataHash(saved)) {
+        setScoreResult(cachedScore);
+        setScoredCvHash(cachedHash);
+        setShowScore(true);
+      }
       // User already has a CV — go straight to template selection
       setPhase("template");
     } else {
@@ -300,6 +328,7 @@ export default function TgCvBuilder() {
             cv_data: cvData,
             template: selectedTemplate,
             telegram_user_id: tgUserId,
+            photo_file_id: (profile as any)?.photo_file_id || undefined,
           }),
         });
         const json = await res.json();
@@ -310,7 +339,7 @@ export default function TgCvBuilder() {
         const res = await fetch("/api/cv/generate-docx", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cv_data: cvData, template: selectedTemplate }),
+          body: JSON.stringify({ cv_data: cvData, template: selectedTemplate, photo_file_id: (profile as any)?.photo_file_id || undefined }),
         });
         const json = await res.json();
         if (json.error || !json.success) throw new Error(json.error || "Generation failed");
@@ -396,6 +425,14 @@ export default function TgCvBuilder() {
 
   async function handleScoreCv() {
     if (scoring) return;
+
+    // Check if CV hasn't changed since last score
+    const currentHash = cvDataHash(cvData);
+    if (scoreResult && scoredCvHash === currentHash) {
+      setShowScore(true);
+      return; // Use cached score
+    }
+
     setScoring(true);
     setError(null);
 
@@ -452,8 +489,28 @@ export default function TgCvBuilder() {
         throw new Error(json.error || "Scoring failed");
       }
 
-      setScoreResult(json.data);
+      const scoreData = json.data;
+      const hash = cvDataHash(cvData);
+      setScoreResult(scoreData);
+      setScoredCvHash(hash);
       setShowScore(true);
+
+      // Cache score to profile
+      const initData = sessionStorage.getItem("tg_init_data");
+      if (initData) {
+        fetch("/api/telegram/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            initData,
+            updateProfile: {
+              cv_score: scoreData.overall_score,
+              cv_score_data: scoreData,
+              cv_score_hash: hash,
+            },
+          }),
+        }).catch(() => {}); // fire-and-forget
+      }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Scoring failed — try again");
     } finally {

@@ -42,7 +42,27 @@ export async function POST(req: NextRequest) {
       return errorJson(`Invalid template. Choose from: ${validTemplates.join(", ")}`);
     }
 
-    const { buffer, filename } = await generateCvDocx(cvData, template);
+    // For Modern Executive: fetch profile photo from Telegram if available
+    let photoBuffer: Buffer | undefined;
+    if (template === "modern-executive" && body.photo_file_id) {
+      try {
+        const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+        if (BOT_TOKEN) {
+          const metaRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getFile?file_id=${encodeURIComponent(body.photo_file_id)}`);
+          const meta = await metaRes.json();
+          if (meta.ok && meta.result?.file_path) {
+            const imgRes = await fetch(`https://api.telegram.org/file/bot${BOT_TOKEN}/${meta.result.file_path}`);
+            if (imgRes.ok) {
+              photoBuffer = Buffer.from(await imgRes.arrayBuffer());
+            }
+          }
+        }
+      } catch {
+        // Photo fetch failed — continue without photo
+      }
+    }
+
+    const { buffer, filename } = await generateCvDocx(cvData, template, photoBuffer);
     const base64 = buffer.toString("base64");
 
     return NextResponse.json({
