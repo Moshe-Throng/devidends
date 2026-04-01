@@ -274,10 +274,10 @@ function CvScorerPage() {
             "", "KEY QUALIFICATIONS", d.key_qualifications,
           ].filter(Boolean);
           setEditText(lines.join("\n"));
-          setPhase("options");
+          setPhase("upload");
         } else if (data?.cv_text) {
           setEditText(data.cv_text);
-          setPhase("options");
+          setPhase("upload");
         }
       });
   }, [user, authLoading, editText]);
