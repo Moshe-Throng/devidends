@@ -830,7 +830,7 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
               alignment: AlignmentType.CENTER,
               spacing: { before: 0, after: 0 },
               children: idx === 0
-                ? [new TextRun({ text: "\u2605", size: 28, font: AU_FONT, color: AU_GOLD })] // star as logo placeholder
+                ? [new TextRun({ text: "AU", bold: true, size: 32, font: AU_FONT, color: AU_GOLD })]
                 : [],
             })],
           }),
@@ -911,8 +911,8 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
   }
 
   /* ── 3. Membership in Professional Societies ──────────── */
-  children.push(auSectionHeading("Membership in Professional Societies"));
   if (data.professional_associations.length > 0) {
+    children.push(auSectionHeading("Membership in Professional Societies"));
     for (const a of data.professional_associations) {
       children.push(new Paragraph({
         bullet: { level: 0 },
@@ -920,8 +920,6 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
         children: [new TextRun({ text: a, size: AU_FONT_SIZE, font: AU_FONT })],
       }));
     }
-  } else {
-    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
   }
 
   /* ── 4. Academic and Professional Qualifications ──────── */
@@ -953,34 +951,44 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
   }
 
   /* ── 5. Other Relevant Trainings/Certifications/Licenses */
-  children.push(auSectionHeading("Other Relevant Trainings/Certifications/Licenses"));
   {
-    const certRows: TableRow[] = [
-      auTableHeaderRow(["Course Title", "Certifying Body or Institution", "Address of Institution", "Year Attended"]),
-    ];
-    if (data.certifications.length > 0) {
-      for (const cert of data.certifications) {
-        // Parse certification string — try to extract year if present
-        const yearMatch = cert.match(/\b(19|20)\d{2}\b/);
+    // Combine certifications + professional_associations that contain years
+    const allCerts = [...data.certifications];
+    // Also pull professional_associations with year patterns as training
+    for (const a of data.professional_associations) {
+      if (/\b(19|20)\d{2}\b/.test(a) && !allCerts.includes(a)) {
+        allCerts.push(a);
+      }
+    }
+
+    if (allCerts.length > 0) {
+      children.push(auSectionHeading("Other Relevant Trainings/Certifications/Licenses"));
+      const certRows: TableRow[] = [
+        auTableHeaderRow(["Course Title", "Certifying Body or Institution", "Address of Institution", "Year Attended"]),
+      ];
+      for (const cert of allCerts) {
+        const yearMatch = cert.match(/\b(19|20)\d{2}(?:\/\d{2})?\b/);
         const year = yearMatch ? yearMatch[0] : "";
-        const title = cert.replace(/\b(19|20)\d{2}\b/, "").trim();
+        const title = cert.replace(/\s*\(?\b(19|20)\d{2}(?:\/\d{2})?\b\)?\s*/g, " ").trim();
+        // Try to split on common separators to extract institution
+        const parts = title.split(/\s*[-–—,]\s*/);
+        const courseTitle = parts[0] || title;
+        const institution = parts.length > 1 ? parts.slice(1).join(", ") : "";
         certRows.push(new TableRow({
           children: [
-            auCell(title),
-            auCell(""),
+            auCell(courseTitle),
+            auCell(institution),
             auCell(""),
             auCell(year, { alignment: AlignmentType.CENTER }),
           ],
         }));
       }
-    } else {
-      certRows.push(new TableRow({ children: [auCell(" "), auCell(" "), auCell(" "), auCell(" ")] }));
+      children.push(new Table({
+        layout: TableLayoutType.FIXED,
+        width: { size: 9400, type: WidthType.DXA },
+        rows: certRows,
+      }));
     }
-    children.push(new Table({
-      layout: TableLayoutType.FIXED,
-      width: { size: 9400, type: WidthType.DXA },
-      rows: certRows,
-    }));
   }
 
   /* ── 6. Employment and/or Professional Experiences ───── */
@@ -988,53 +996,45 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
 
   if (data.employment.length > 0) {
     for (const emp of data.employment) {
-      // Employer name (bold)
-      children.push(new Paragraph({
-        spacing: { before: 120, after: 40 },
-        children: [
-          new TextRun({ text: "Name of Organisation/Employer: ", bold: true, size: AU_FONT_SIZE, font: AU_FONT }),
-          new TextRun({ text: emp.employer, size: AU_FONT_SIZE, font: AU_FONT }),
-        ],
-      }));
-      children.push(new Paragraph({
-        spacing: { after: 60 },
-        children: [
-          new TextRun({ text: "Address of Organisation/Employer: ", bold: true, size: AU_FONT_SIZE, font: AU_FONT }),
-          new TextRun({ text: emp.country, size: AU_FONT_SIZE, font: AU_FONT }),
-        ],
-      }));
-
-      // Parse duties into responsibilities and achievements
+      // Parse duties into bullet points
       const dutyLines = emp.description_of_duties
         .split(/\n/)
         .map(s => s.replace(/^[\s\u2022\-*]+/, "").trim())
         .filter(Boolean);
-      const responsibilitiesText = dutyLines.length > 1
-        ? dutyLines.map(d => `\u2022 ${d}`).join("\n")
-        : emp.description_of_duties;
 
       const empRows: TableRow[] = [
+        // Employer name row (green header spanning full width)
         new TableRow({
           children: [
-            auCell("Position Held", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell("Name of Organisation/Employer:", { bold: true, width: 3200, shading: AU_SECTION_GREEN }),
+            auCell(emp.employer, { bold: true, columnSpan: 3 }),
+          ],
+        }),
+        // Address row
+        new TableRow({
+          children: [
+            auCell("Address:", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
+            auCell(emp.country || "", { columnSpan: 3 }),
+          ],
+        }),
+        // Position
+        new TableRow({
+          children: [
+            auCell("Position Held", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
             auCell(emp.position, { columnSpan: 3 }),
           ],
         }),
+        // Duration
         new TableRow({
           children: [
-            auCell("Duration", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell("Duration", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
             auCell(`${emp.from_date} \u2013 ${emp.to_date}`, { columnSpan: 3 }),
           ],
         }),
+        // Responsibilities
         new TableRow({
           children: [
-            auCell("Number of People Supervised", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
-            auCell("", { columnSpan: 3 }),
-          ],
-        }),
-        new TableRow({
-          children: [
-            auCell("Summary of relevant Responsibilities", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell("Responsibilities", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
             auMultiCell(
               dutyLines.length > 1
                 ? dutyLines.map(d => new Paragraph({
@@ -1044,16 +1044,10 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
                   }))
                 : [new Paragraph({
                     spacing: { after: 40 },
-                    children: [new TextRun({ text: emp.description_of_duties, size: AU_FONT_SIZE, font: AU_FONT })],
+                    children: [new TextRun({ text: emp.description_of_duties || "", size: AU_FONT_SIZE, font: AU_FONT })],
                   })],
               { columnSpan: 3 }
             ),
-          ],
-        }),
-        new TableRow({
-          children: [
-            auCell("Achievements", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
-            auCell("", { columnSpan: 3 }),
           ],
         }),
       ];
@@ -1063,7 +1057,7 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
         width: { size: 9400, type: WidthType.DXA },
         rows: empRows,
       }));
-      children.push(new Paragraph({ spacing: { after: 80 }, children: [] }));
+      children.push(new Paragraph({ spacing: { after: 100 }, children: [] }));
     }
   }
 
@@ -1097,24 +1091,25 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
   }
 
   /* ── 8. Other Achievements/Accomplishments (max 200 words) */
-  children.push(auSectionHeading("Other Achievements/Accomplishments"));
-  children.push(new Paragraph({
-    spacing: { before: 40, after: 20 },
-    children: [new TextRun({ text: "(Please describe in not more than 200 words)", italics: true, size: 16, font: AU_FONT, color: "777777" })],
-  }));
-  // Map countries of experience as accomplishment context if available
-  if (data.countries_of_experience.length > 0) {
-    children.push(new Paragraph({
-      spacing: { after: 100 },
-      children: [new TextRun({ text: `International experience across: ${data.countries_of_experience.join(", ")}`, size: AU_FONT_SIZE, font: AU_FONT })],
-    }));
-  } else {
-    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
+  // Only show if there's meaningful content
+  {
+    const achievementParts: string[] = [];
+    if (data.countries_of_experience.length > 0) {
+      achievementParts.push(`International professional experience across ${data.countries_of_experience.join(", ")}.`);
+    }
+    // Only render section if there's content
+    if (achievementParts.length > 0) {
+      children.push(auSectionHeading("Other Achievements/Accomplishments"));
+      children.push(new Paragraph({
+        spacing: { before: 60, after: 100 },
+        children: [new TextRun({ text: achievementParts.join(" "), size: AU_FONT_SIZE, font: AU_FONT })],
+      }));
+    }
   }
 
-  /* ── 9. Publications ──────────────────────────────────── */
-  children.push(auSectionHeading("Publications"));
+  /* ── 9. Publications (only if data exists) ───────────── */
   if (data.publications.length > 0) {
+    children.push(auSectionHeading("Publications"));
     for (const pub of data.publications) {
       children.push(new Paragraph({
         bullet: { level: 0 },
@@ -1122,8 +1117,6 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
         children: [new TextRun({ text: pub, size: AU_FONT_SIZE, font: AU_FONT })],
       }));
     }
-  } else {
-    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
   }
 
   /* ── 10. Working Languages ────────────────────────────── */
