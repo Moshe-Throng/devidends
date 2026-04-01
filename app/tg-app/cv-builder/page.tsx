@@ -1287,53 +1287,109 @@ export default function TgCvBuilder() {
         </div>
       )}
 
-      {/* ══════════════ TEMPLATE PHASE ══════════════ */}
+      {/* ══════════════ TEMPLATE PHASE (with CV summary) ══════════════ */}
       {phase === "template" && (
-        <div className="px-4 mt-5">
-          <div className="text-center mb-5">
-            <h2 className="text-lg font-extrabold text-dark-900">Choose a Template</h2>
-            <p className="text-xs text-dark-400 mt-1">
-              Select the format for your generated CV
-            </p>
+        <div className="px-4 mt-4 space-y-4">
+          {/* ── Compact CV Summary ── */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <h2 className="text-base font-extrabold text-dark-900">My CV</h2>
+              <button
+                onClick={() => setPhase("editing")}
+                className="text-xs text-cyan-600 font-semibold"
+              >
+                Edit CV
+              </button>
+            </div>
+
+            {/* Name card */}
+            <div className="bg-gradient-to-r from-cyan-500 to-teal-500 rounded-xl p-4 mb-3">
+              <p className="text-white font-bold text-lg">{cvData.personal.full_name || "—"}</p>
+              <p className="text-white/70 text-xs mt-0.5">
+                {[cvData.personal.email, cvData.personal.phone].filter(Boolean).join(" · ") || "No contact info"}
+              </p>
+            </div>
+
+            {/* Collapsible sections */}
+            <div className="space-y-1.5">
+              {[
+                { key: "summary", label: "Professional Summary", icon: FileText, content: cvData.professional_summary ? <p className="text-xs text-dark-500 leading-relaxed line-clamp-3">{cvData.professional_summary}</p> : null },
+                { key: "education", label: `Education (${cvData.education.filter(e => e.degree).length})`, icon: GraduationCap, content: cvData.education.filter(e => e.degree).length > 0 ? <div className="space-y-1">{cvData.education.filter(e => e.degree).map((e, i) => <p key={i} className="text-xs text-dark-500"><span className="font-semibold text-dark-700">{e.degree}</span> — {e.institution} ({e.year_graduated})</p>)}</div> : null },
+                { key: "employment", label: `Experience (${cvData.employment.filter(e => e.employer).length})`, icon: Briefcase, content: cvData.employment.filter(e => e.employer).length > 0 ? <div className="space-y-1">{cvData.employment.filter(e => e.employer).map((e, i) => <p key={i} className="text-xs text-dark-500"><span className="font-semibold text-dark-700">{e.position}</span> — {e.employer} ({e.from_date}–{e.to_date})</p>)}</div> : null },
+                { key: "languages", label: `Languages (${cvData.languages.filter(l => l.language).length})`, icon: Languages, content: cvData.languages.filter(l => l.language).length > 0 ? <p className="text-xs text-dark-500">{cvData.languages.filter(l => l.language).map(l => l.language).join(", ")}</p> : null },
+                { key: "qualifications", label: "Key Qualifications", icon: Award, content: cvData.key_qualifications ? <p className="text-xs text-dark-500 leading-relaxed line-clamp-2">{cvData.key_qualifications}</p> : null },
+                { key: "certifications", label: `Certifications (${cvData.certifications.filter(Boolean).length})`, icon: BookOpen, content: cvData.certifications.filter(Boolean).length > 0 ? <p className="text-xs text-dark-500">{cvData.certifications.filter(Boolean).join(", ")}</p> : null },
+              ].filter(s => s.content).map((section) => {
+                const Icon = section.icon;
+                const isOpen = openSections.has(section.key);
+                return (
+                  <button
+                    key={section.key}
+                    onClick={() => setOpenSections(prev => {
+                      const next = new Set(prev);
+                      if (next.has(section.key)) next.delete(section.key);
+                      else next.add(section.key);
+                      return next;
+                    })}
+                    className="w-full text-left rounded-lg border border-dark-100 bg-white overflow-hidden"
+                  >
+                    <div className="flex items-center gap-2.5 px-3 py-2.5">
+                      <Icon className="w-3.5 h-3.5 text-cyan-500 flex-shrink-0" />
+                      <span className="text-xs font-semibold text-dark-700 flex-1">{section.label}</span>
+                      {isOpen ? <ChevronUp className="w-3.5 h-3.5 text-dark-300" /> : <ChevronDown className="w-3.5 h-3.5 text-dark-300" />}
+                    </div>
+                    {isOpen && (
+                      <div className="px-3 pb-2.5 pt-0 border-t border-dark-50">
+                        {section.content}
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="space-y-2">
-            {TEMPLATES.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setSelectedTemplate(t.id)}
-                className={`w-full text-left p-4 rounded-xl border-2 transition-colors ${
-                  selectedTemplate === t.id
-                    ? "border-cyan-500 bg-cyan-50/50"
-                    : "border-dark-100 bg-white"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+          {/* ── Template Picker ── */}
+          <div>
+            <h3 className="text-sm font-bold text-dark-900 mb-2">Export as</h3>
+            <div className="space-y-2">
+              {TEMPLATES.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setSelectedTemplate(t.id)}
+                  className={`w-full text-left p-3.5 rounded-xl border-2 transition-colors ${
                     selectedTemplate === t.id
-                      ? "border-cyan-500 bg-cyan-500"
-                      : "border-dark-200"
-                  }`}>
-                    {selectedTemplate === t.id && (
-                      <div className="w-2 h-2 rounded-full bg-white" />
-                    )}
+                      ? "border-cyan-500 bg-cyan-50/50"
+                      : "border-dark-100 bg-white"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                      selectedTemplate === t.id
+                        ? "border-cyan-500 bg-cyan-500"
+                        : "border-dark-200"
+                    }`}>
+                      {selectedTemplate === t.id && (
+                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-dark-900">{t.label}</p>
+                      <p className="text-[11px] text-dark-400">{t.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-dark-900">{t.label}</p>
-                    <p className="text-[11px] text-dark-400">{t.desc}</p>
-                  </div>
-                </div>
-              </button>
-            ))}
+                </button>
+              ))}
+            </div>
           </div>
 
           <button
             onClick={handleGenerate}
             disabled={isProcessing}
-            className="w-full mt-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm disabled:opacity-50 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm disabled:opacity-50 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
           >
-            <FileText className="w-4 h-4" />
-            Generate CV
+            <Download className="w-4 h-4" />
+            Generate &amp; Download
           </button>
         </div>
       )}
