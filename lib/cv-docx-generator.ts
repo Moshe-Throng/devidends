@@ -422,13 +422,13 @@ function epInfoTable(rows: [string, string][]): Table {
         children: [
           new TableCell({
             borders: EU_BORDERS,
-            width: { size: 2600, type: WidthType.DXA },
+            width: { size: 1800, type: WidthType.DXA },
             shading: { fill: EU_LIGHT, type: ShadingType.CLEAR, color: "auto" },
             children: [new Paragraph({ children: [new TextRun({ text: label, bold: true, size: 20, font: "Arial", color: EU_BLUE })] })],
           }),
           new TableCell({
             borders: EU_BORDERS,
-            width: { size: 6400, type: WidthType.DXA },
+            width: { size: 7200, type: WidthType.DXA },
             children: [new Paragraph({ children: [new TextRun({ text: value, size: 20, font: "Arial" })] })],
           }),
         ],
@@ -485,8 +485,8 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
       rows: [
         new TableRow({
           children: [
-            epHeaderCell("Institution (Date)", 3600),
-            epHeaderCell("Degree(s) or Diploma(s) obtained", 5400),
+            epHeaderCell("Institution (Date)", 2400),
+            epHeaderCell("Degree(s) or Diploma(s) obtained", 6600),
           ],
         }),
         ...data.education.map(edu =>
@@ -494,7 +494,7 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
             children: [
               new TableCell({
                 borders: EU_BORDERS,
-                width: { size: 3600, type: WidthType.DXA },
+                width: { size: 2400, type: WidthType.DXA },
                 children: [
                   new Paragraph({ children: [new TextRun({ text: edu.institution, bold: true, size: 20, font: "Arial" })] }),
                   new Paragraph({ children: [new TextRun({ text: `${edu.country ? edu.country + ", " : ""}${edu.year_graduated}`, size: 18, font: "Arial", color: "555555" })] }),
@@ -502,7 +502,7 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
               }),
               new TableCell({
                 borders: EU_BORDERS,
-                width: { size: 5400, type: WidthType.DXA },
+                width: { size: 6600, type: WidthType.DXA },
                 children: [
                   new Paragraph({ children: [new TextRun({ text: edu.degree, bold: true, size: 20, font: "Arial" })] }),
                   ...(edu.field_of_study ? [new Paragraph({ children: [new TextRun({ text: edu.field_of_study, size: 18, font: "Arial", color: "444444" })] })] : []),
@@ -603,12 +603,12 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
       layout: TableLayoutType.FIXED,
       width: { size: 9000, type: WidthType.DXA },
       rows: [
-        new TableRow({ children: [epHeaderCell("Country", 4500), epHeaderCell("Dates", 4500)] }),
+        new TableRow({ children: [epHeaderCell("Country", 2400), epHeaderCell("Dates", 6600)] }),
         ...data.countries_of_experience.map(country =>
           new TableRow({
             children: [
-              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: country, size: 20, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: (countryDates[country] || []).join("; "), size: 20, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 2400, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: country, size: 20, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 6600, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: (countryDates[country] || []).join("; "), size: 20, font: "Arial" })] })] }),
             ],
           })
         ),
@@ -625,9 +625,9 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
       rows: [
         new TableRow({
           children: [
-            epHeaderCell("Location / Dates", 2400),
-            epHeaderCell("Company & Reference", 2200),
-            epHeaderCell("Position / Description", 4400),
+            epHeaderCell("Location / Dates", 1600),
+            epHeaderCell("Company & Reference", 1600),
+            epHeaderCell("Position / Description", 5800),
           ],
         }),
         ...data.employment.map(emp => {
@@ -643,7 +643,7 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
             children: [
               new TableCell({
                 borders: EU_BORDERS,
-                width: { size: 2400, type: WidthType.DXA },
+                width: { size: 1600, type: WidthType.DXA },
                 children: [
                   new Paragraph({ children: [new TextRun({ text: emp.country || "", bold: true, size: 18, font: "Arial" })] }),
                   new Paragraph({ children: [new TextRun({ text: `${emp.from_date} – ${emp.to_date}`, size: 18, font: "Arial", color: EU_BLUE })] }),
@@ -651,12 +651,12 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
               }),
               new TableCell({
                 borders: EU_BORDERS,
-                width: { size: 2200, type: WidthType.DXA },
+                width: { size: 1600, type: WidthType.DXA },
                 children: [new Paragraph({ children: [new TextRun({ text: emp.employer, bold: true, size: 18, font: "Arial" })] })],
               }),
               new TableCell({
                 borders: EU_BORDERS,
-                width: { size: 4400, type: WidthType.DXA },
+                width: { size: 5800, type: WidthType.DXA },
                 children: [
                   new Paragraph({ children: [new TextRun({ text: emp.position, bold: true, size: 18, font: "Arial" })] }),
                   ...dutyParas,
@@ -676,7 +676,7 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
       layout: TableLayoutType.FIXED,
       width: { size: 9000, type: WidthType.DXA },
       rows: [
-        new TableRow({ children: [epHeaderCell("Training / Course", 5400), epHeaderCell("Provider / Location", 3600)] }),
+        new TableRow({ children: [epHeaderCell("Training / Course", 6600), epHeaderCell("Provider / Location", 2400)] }),
         ...data.certifications.map(cert => {
           // Split "Course — Provider" or "Course (Provider)" patterns
           const dashMatch = cert.match(/^(.+?)\s*[—–]\s*(.+)$/);
@@ -685,8 +685,8 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
           const provider = dashMatch ? dashMatch[2].trim() : parenMatch ? parenMatch[2].trim() : "";
           return new TableRow({
             children: [
-              new TableCell({ borders: EU_BORDERS, width: { size: 5400, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: courseName, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, width: { size: 3600, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: provider, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 6600, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: courseName, size: 18, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 2400, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: provider, size: 18, font: "Arial" })] })] }),
             ],
           });
         }),
