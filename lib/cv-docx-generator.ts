@@ -832,7 +832,7 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
               alignment: AlignmentType.CENTER,
               spacing: { before: 0, after: 0 },
               children: idx === 0
-                ? [new ImageRun({ data: Buffer.from(AU_LOGO_BASE64, "base64"), transformation: { width: 65, height: 59 }, type: "png" })]
+                ? [new ImageRun({ data: Buffer.from(AU_LOGO_BASE64, "base64"), transformation: { width: 65, height: 59 } })]
                 : [],
             })],
           }),
@@ -1790,7 +1790,7 @@ function meSidebarLabel(text: string): Paragraph {
     spacing: { before: 200, after: 60 },
     children: [
       new TextRun({ text: "\u2501\u2501 ", size: 14, font: ME_FONT, color: ME_ACCENT }),
-      new TextRun({ text: text.toUpperCase(), bold: true, size: 16, font: ME_FONT, color: ME_ACCENT, characterSpacing: 120 }),
+      new TextRun({ text: text.toUpperCase(), bold: true, size: 16, font: ME_FONT, color: ME_ACCENT }),
     ],
   });
 }
@@ -1810,7 +1810,7 @@ function meMainSection(text: string): Paragraph {
     spacing: { before: 280, after: 80 },
     border: { bottom: { style: BorderStyle.SINGLE, size: 2, color: ME_ACCENT } },
     children: [
-      new TextRun({ text: text.toUpperCase(), bold: true, size: 22, font: ME_FONT, color: ME_DARK, characterSpacing: 80 }),
+      new TextRun({ text: text.toUpperCase(), bold: true, size: 22, font: ME_FONT, color: ME_DARK }),
     ],
   });
 }
@@ -1858,7 +1858,7 @@ export async function generateModernExecDocx(data: StructuredCvData): Promise<Bu
   sidebarChildren.push(new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 40 },
-    children: [new TextRun({ text: "PHOTO", size: 14, font: ME_FONT, color: ME_TEXT_MUTED, characterSpacing: 200 })],
+    children: [new TextRun({ text: "PHOTO", size: 14, font: ME_FONT, color: ME_TEXT_MUTED })],
   }));
 
   // Contact
@@ -1941,7 +1941,7 @@ export async function generateModernExecDocx(data: StructuredCvData): Promise<Bu
   // Name header
   mainChildren.push(new Paragraph({
     spacing: { before: 100, after: 0 },
-    children: [new TextRun({ text: p.full_name.toUpperCase(), bold: true, size: 36, font: ME_FONT, color: ME_DARK, characterSpacing: 60 })],
+    children: [new TextRun({ text: p.full_name.toUpperCase(), bold: true, size: 36, font: ME_FONT, color: ME_DARK })],
   }));
 
   // Gold accent line
