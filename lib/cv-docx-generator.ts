@@ -832,7 +832,7 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
               alignment: AlignmentType.CENTER,
               spacing: { before: 0, after: 0 },
               children: idx === 0
-                ? [new ImageRun({ data: Buffer.from(AU_LOGO_BASE64, "base64"), transformation: { width: 65, height: 59 } })]
+                ? [new ImageRun({ type: "png" as const, data: Buffer.from(AU_LOGO_BASE64, "base64"), transformation: { width: 65, height: 59 } })]
                 : [],
             })],
           }),
