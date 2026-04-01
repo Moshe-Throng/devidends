@@ -1848,14 +1848,6 @@ export default function CvBuilderPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {([
                 {
-                  id: "modern-executive" as const,
-                  name: "Modern Executive ✦",
-                  org: "Premium / Consulting",
-                  desc: "Sleek two-column layout with dark sidebar, photo placeholder, gold accents. Perfect for senior consultants.",
-                  color: "slate",
-                  badge: "New",
-                },
-                {
                   id: "europass" as const,
                   name: "Europass",
                   org: "EU / EuropeAid",
@@ -1894,6 +1886,14 @@ export default function CvBuilderPage() {
                   desc: "Clean, modern format for private sector, NGOs, and general consulting applications.",
                   color: "slate",
                   badge: null,
+                },
+                {
+                  id: "modern-executive" as const,
+                  name: "Modern Executive ✦",
+                  org: "Premium / Consulting",
+                  desc: "Sleek two-column layout with dark sidebar, photo placeholder, gold accents. Requires profile photo.",
+                  color: "slate",
+                  badge: "New",
                 },
               ]).map((tmpl) => {
                 const isSelected = selectedTemplate === tmpl.id;

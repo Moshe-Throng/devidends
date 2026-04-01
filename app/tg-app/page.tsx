@@ -73,7 +73,6 @@ export default function TgAppHome() {
 
   const firstName = tgUser?.first_name || profile?.name?.split(" ")[0] || "there";
   const profilePct = profile?.profile_score_pct ?? 0;
-  const cvScore = profile?.cv_score;
 
   return (
     <div className="pb-6">
@@ -100,17 +99,25 @@ export default function TgAppHome() {
               </h1>
             </div>
             <div className="flex flex-col items-center gap-1.5">
-              {tgUser?.photo_url ? (
-                <img
-                  src={tgUser.photo_url}
-                  alt=""
-                  className="w-12 h-12 rounded-full border-2 border-white/30"
-                />
-              ) : (
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" />
-                </div>
-              )}
+              <Link href="/tg-app/profile">
+                {(profile as any)?.photo_file_id ? (
+                  <img
+                    src={`/api/img/${(profile as any).photo_file_id}`}
+                    alt=""
+                    className="w-12 h-12 rounded-full border-2 border-white/30 object-cover"
+                  />
+                ) : tgUser?.photo_url ? (
+                  <img
+                    src={tgUser.photo_url}
+                    alt=""
+                    className="w-12 h-12 rounded-full border-2 border-white/30"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                    <User className="w-6 h-6 text-white" />
+                  </div>
+                )}
+              </Link>
               {profile?.cv_structured_data && (
                 <Link href="/tg-app/cv-builder">
                   <span className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-colors px-2 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap">
@@ -129,14 +136,6 @@ export default function TgAppHome() {
                 Profile
               </p>
               <p className="text-lg font-bold text-white">{profilePct}%</p>
-            </div>
-            <div className="flex-1 bg-white/15 backdrop-blur-sm rounded-xl px-3 py-2.5">
-              <p className="text-[10px] text-cyan-100 font-medium uppercase tracking-wider">
-                CV Score
-              </p>
-              <p className="text-lg font-bold text-white">
-                {cvScore != null ? `${cvScore}/100` : "—"}
-              </p>
             </div>
             <div className="flex-1 bg-white/15 backdrop-blur-sm rounded-xl px-3 py-2.5">
               <p className="text-[10px] text-cyan-100 font-medium uppercase tracking-wider">

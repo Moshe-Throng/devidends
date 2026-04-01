@@ -79,12 +79,12 @@ const EXTRACT_STEPS = [
 ];
 
 const TEMPLATES: { id: CvTemplate; label: string; desc: string }[] = [
-  { id: "modern-executive", label: "Modern Executive ✦", desc: "Premium two-column with photo" },
   { id: "europass", label: "Europass", desc: "EU / EuropeAid standard" },
   { id: "au-standard", label: "African Union", desc: "AU / AfDB / AUDA-NEPAD" },
   { id: "wb-standard", label: "World Bank", desc: "WB / IFC consulting" },
   { id: "un-php", label: "UN PHP", desc: "UN Personal History Profile" },
   { id: "generic-professional", label: "Professional", desc: "General / Corporate" },
+  { id: "modern-executive", label: "Modern Executive ✦", desc: "Premium two-column with photo" },
 ];
 
 const SECTIONS = [
@@ -310,6 +310,13 @@ export default function TgCvBuilder() {
 
   async function handleGenerate() {
     if (isProcessing) return;
+
+    // Modern Executive requires a photo — redirect to profile if missing
+    if (selectedTemplate === "modern-executive" && !(profile as any)?.photo_file_id) {
+      setError("The Modern Executive template requires a profile photo. Please upload one in your Profile first.");
+      return;
+    }
+
     setIsProcessing(true);
     setPhase("generating");
     setError(null);
@@ -645,12 +652,19 @@ export default function TgCvBuilder() {
 
       {/* ── Error Banner ── */}
       {error && (
-        <div className="mx-4 mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2 flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
-          <p className="text-xs text-red-700 flex-1">{error}</p>
-          <button onClick={() => setError(null)} className="text-red-400">
-            <X className="w-3.5 h-3.5" />
-          </button>
+        <div className="mx-4 mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2.5">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
+            <p className="text-xs text-red-700 flex-1">{error}</p>
+            <button onClick={() => setError(null)} className="text-red-400">
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+          {error.includes("profile photo") && (
+            <Link href="/tg-app/profile" className="mt-2 block text-center text-xs font-bold text-cyan-600 bg-cyan-50 rounded-lg py-2">
+              Go to Profile to Upload Photo
+            </Link>
+          )}
         </div>
       )}
 
