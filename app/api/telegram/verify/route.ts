@@ -23,9 +23,15 @@ export async function POST(req: NextRequest) {
     // Verify the initData signature
     const verified = verifyInitData(initData, botToken);
     if (!verified) {
-      console.error("[telegram-verify] Hash verification failed for initData:", initData.slice(0, 100));
+      // Debug: parse out auth_date to help diagnose
+      const params = new URLSearchParams(initData);
+      const authDate = parseInt(params.get("auth_date") || "0", 10);
+      const age = Math.floor(Date.now() / 1000) - authDate;
+      const hasHash = !!params.get("hash");
+      const hasUser = !!params.get("user");
+      console.error("[telegram-verify] FAILED — age:", age, "s, hasHash:", hasHash, "hasUser:", hasUser, "initData:", initData.slice(0, 200));
       return NextResponse.json(
-        { error: "Invalid or expired initData" },
+        { error: "Invalid or expired initData", debug: { age_seconds: age, has_hash: hasHash, has_user: hasUser } },
         { status: 401 }
       );
     }
