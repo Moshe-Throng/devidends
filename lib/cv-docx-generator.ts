@@ -6,6 +6,7 @@ import {
   TableRow,
   TableCell,
   TextRun,
+  ImageRun,
   AlignmentType,
   WidthType,
   BorderStyle,
@@ -18,6 +19,7 @@ import {
   VerticalAlign,
 } from "docx";
 import type { StructuredCvData, CvTemplate } from "./types/cv-data";
+import { AU_LOGO_BASE64 } from "./au-logo-data";
 
 /* ─── Style helpers ──────────────────────────────────────── */
 
@@ -830,7 +832,7 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
               alignment: AlignmentType.CENTER,
               spacing: { before: 0, after: 0 },
               children: idx === 0
-                ? [new TextRun({ text: "AU", bold: true, size: 32, font: AU_FONT, color: AU_GOLD })]
+                ? [new ImageRun({ data: Buffer.from(AU_LOGO_BASE64, "base64"), transformation: { width: 65, height: 59 }, type: "png" })]
                 : [],
             })],
           }),
