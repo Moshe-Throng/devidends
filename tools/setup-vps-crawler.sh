@@ -81,6 +81,10 @@ git pull origin main --quiet 2>> "$LOG" || true
 echo "Running crawl engine..." >> "$LOG"
 npx tsx scripts/crawl-engine/engine.ts --concurrency 3 >> "$LOG" 2>&1 || echo "Crawl engine had errors" >> "$LOG"
 
+# Publish to Supabase (so web feed has data)
+echo "Publishing to Supabase..." >> "$LOG"
+npx tsx scripts/publish-to-supabase.ts >> "$LOG" 2>&1 || echo "Publish had errors" >> "$LOG"
+
 # Crawl news
 echo "Running news crawl..." >> "$LOG"
 npx tsx scripts/crawl-news.ts >> "$LOG" 2>&1 || echo "News crawl had errors" >> "$LOG"

@@ -48,18 +48,18 @@ export async function GET(req: NextRequest) {
 
   const count = profile.referral_count || 0;
 
-  // Determine unlocked rewards
+  // Referral perks — cosmetic only, no feature gating
+  // Seniors don't want friction; value should drive sharing, not locks
   const rewards = {
-    cv_job_scoring: count >= 1,      // Score CV against specific job
-    all_templates: count >= 3,        // Unlock all 6 CV templates (default: 2 free)
-    pro_30_days: count >= 5,          // 30 days Pro
-    ambassador: count >= 10,          // Ambassador badge
+    badge_contributor: count >= 3,    // "Contributor" badge on profile
+    badge_ambassador: count >= 10,    // "Ambassador" badge
+    priority_recruiter: count >= 5,   // Priority in future recruiter search
+    analytics_access: count >= 10,    // See who viewed your profile (future)
   };
 
-  // Free templates (everyone gets these)
-  const freeTemplates = ["europass", "generic-professional"];
+  // All templates are free for everyone
   const allTemplates = ["europass", "generic-professional", "au-standard", "wb-standard", "un-php", "modern-executive"];
-  const unlockedTemplates = rewards.all_templates ? allTemplates : freeTemplates;
+  const unlockedTemplates = allTemplates;
 
   return NextResponse.json({
     referral_code: refCode,
