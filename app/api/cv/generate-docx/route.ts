@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       return errorJson("Full name is required.");
     }
 
-    const validTemplates: CvTemplate[] = ["wb-standard", "europass", "au-standard", "un-php", "generic-professional"];
+    const validTemplates: CvTemplate[] = ["wb-standard", "europass", "au-standard", "un-php", "generic-professional", "modern-executive"];
     if (!validTemplates.includes(template)) {
       return errorJson(`Invalid template. Choose from: ${validTemplates.join(", ")}`);
     }

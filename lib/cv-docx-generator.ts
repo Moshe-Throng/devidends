@@ -891,8 +891,8 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
     rows: personalRows.map(([label, value]) =>
       new TableRow({
         children: [
-          auCell(label, { bold: true, width: 3400 }),
-          auCell(value, { width: 6000 }),
+          auCell(label, { bold: true, width: 2800 }),
+          auCell(value, { width: 6600 }),
         ],
       })
     ),
@@ -1008,35 +1008,35 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
         // Employer name row (green header spanning full width)
         new TableRow({
           children: [
-            auCell("Name of Organisation/Employer:", { bold: true, width: 3200, shading: AU_SECTION_GREEN }),
-            auCell(emp.employer, { bold: true, columnSpan: 3 }),
+            auCell("Name of Organisation/Employer:", { bold: true, width: 2800, shading: AU_SECTION_GREEN }),
+            auCell(emp.employer, { bold: true, width: 6600 }),
           ],
         }),
         // Address row
         new TableRow({
           children: [
-            auCell("Address:", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
-            auCell(emp.country || "", { columnSpan: 3 }),
+            auCell("Address:", { bold: true, width: 2800, shading: AU_LIGHT_GREEN }),
+            auCell(emp.country || "", { width: 6600 }),
           ],
         }),
         // Position
         new TableRow({
           children: [
-            auCell("Position Held", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
-            auCell(emp.position, { columnSpan: 3 }),
+            auCell("Position Held", { bold: true, width: 2800, shading: AU_LIGHT_GREEN }),
+            auCell(emp.position, { width: 6600 }),
           ],
         }),
         // Duration
         new TableRow({
           children: [
-            auCell("Duration", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
-            auCell(`${emp.from_date} \u2013 ${emp.to_date}`, { columnSpan: 3 }),
+            auCell("Duration", { bold: true, width: 2800, shading: AU_LIGHT_GREEN }),
+            auCell(`${emp.from_date} \u2013 ${emp.to_date}`, { width: 6600 }),
           ],
         }),
         // Responsibilities
         new TableRow({
           children: [
-            auCell("Responsibilities", { bold: true, width: 3200, shading: AU_LIGHT_GREEN }),
+            auCell("Responsibilities", { bold: true, width: 2800, shading: AU_LIGHT_GREEN }),
             auMultiCell(
               dutyLines.length > 1
                 ? dutyLines.map(d => new Paragraph({
@@ -1048,7 +1048,6 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
                     spacing: { after: 40 },
                     children: [new TextRun({ text: emp.description_of_duties || "", size: AU_FONT_SIZE, font: AU_FONT })],
                   })],
-              { columnSpan: 3 }
             ),
           ],
         }),
@@ -1886,10 +1885,24 @@ export async function generateModernExecDocx(data: StructuredCvData): Promise<Bu
     }
   }
 
-  // Key skills (compact)
+  // Key skills (extract distinct skill phrases, not sentence fragments)
   if (data.key_qualifications) {
     sidebarChildren.push(meSidebarLabel("Expertise"));
-    const skills = data.key_qualifications.split(/[,\n•\-]/).map(s => s.trim()).filter(s => s.length > 3 && s.length < 60).slice(0, 8);
+    // Split on newlines first, then try to extract short skill phrases
+    const rawLines = data.key_qualifications.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+    let skills: string[];
+    if (rawLines.length >= 3) {
+      // Multiple lines — use first phrase of each (up to ~50 chars)
+      skills = rawLines.map(l => l.length > 50 ? l.slice(0, 50).replace(/,?\s+\S*$/, "") : l).slice(0, 8);
+    } else {
+      // Single block — extract key noun phrases by splitting on commas/semicolons, keeping only clean short ones
+      skills = data.key_qualifications
+        .replace(/\.\s+/g, ", ") // sentences to comma-separated
+        .split(/[;,]/)
+        .map(s => s.trim().replace(/^(and|including|such as|with|in|of|the|a)\s+/i, "").trim())
+        .filter(s => s.length > 5 && s.length < 55 && !/^(I |He |She |They |We |My |His |Her )/.test(s))
+        .slice(0, 8);
+    }
     for (const skill of skills) {
       sidebarChildren.push(new Paragraph({
         spacing: { after: 25 },
