@@ -1,16 +1,73 @@
 [
   {
+    "title": "Supply of ICT and Connectivity Equipment - National Firms",
+    "organization": "United Nations Development Programme (UNDP)",
+    "description": "",
+    "deadline": "09-Apr-2606:30 AM (New York time)",
+    "published": "31-Mar-26",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=44105",
+    "source_domain": "undp.org",
+    "content_type": "tender",
+    "scraped_at": "2026-04-01T06:50:03.892Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "undp-procurement"
+  },
+  {
+    "title": "Venue and Accommodation in Addis Ababa for TOT Training",
+    "organization": "United Nations Development Programme (UNDP)",
+    "description": "",
+    "deadline": "31-Mar-2611:17 AM (New York time)",
+    "published": "31-Mar-26",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=44111",
+    "source_domain": "undp.org",
+    "content_type": "tender",
+    "scraped_at": "2026-04-01T06:50:03.893Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "undp-procurement"
+  },
+  {
+    "title": "Venue and Accommodation in Addis Ababa for TOT Training",
+    "organization": "United Nations Development Programme (UNDP)",
+    "description": "",
+    "deadline": "31-Mar-2607:15 PM (New York time)",
+    "published": "31-Mar-26",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=44106",
+    "source_domain": "undp.org",
+    "content_type": "tender",
+    "scraped_at": "2026-04-01T06:50:03.893Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "undp-procurement"
+  },
+  {
     "title": "RFQ- Supply and Delivery of staff wellbeing and breakroom items(Local Firm Only)",
     "organization": "United Nations Development Programme (UNDP)",
     "description": "",
-    "deadline": "13-Apr-2604:34 AM (New York time)",
+    "deadline": "09-Apr-2604:34 AM (New York time)",
     "published": "30-Mar-26",
     "country": "Ethiopia",
     "city": null,
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=44066",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.419Z",
+    "scraped_at": "2026-04-01T06:50:03.893Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +86,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43988",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.420Z",
+    "scraped_at": "2026-04-01T06:50:03.894Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +105,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43890",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.421Z",
+    "scraped_at": "2026-04-01T06:50:03.894Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +124,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43623",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.421Z",
+    "scraped_at": "2026-04-01T06:50:03.894Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -86,7 +143,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43441",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.421Z",
+    "scraped_at": "2026-04-01T06:50:03.895Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -105,7 +162,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43372",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.422Z",
+    "scraped_at": "2026-04-01T06:50:03.895Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -124,7 +181,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43366",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.422Z",
+    "scraped_at": "2026-04-01T06:50:03.895Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -143,7 +200,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43374",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.422Z",
+    "scraped_at": "2026-04-01T06:50:03.895Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -162,7 +219,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43376",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.422Z",
+    "scraped_at": "2026-04-01T06:50:03.897Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -181,7 +238,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43378",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.423Z",
+    "scraped_at": "2026-04-01T06:50:03.897Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -200,7 +257,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43341",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.423Z",
+    "scraped_at": "2026-04-01T06:50:03.897Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -219,7 +276,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43310",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.423Z",
+    "scraped_at": "2026-04-01T06:50:03.897Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -238,7 +295,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=43186",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.423Z",
+    "scraped_at": "2026-04-01T06:50:03.898Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -257,7 +314,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42941",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.424Z",
+    "scraped_at": "2026-04-01T06:50:03.898Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -276,7 +333,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42871",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.424Z",
+    "scraped_at": "2026-04-01T06:50:03.898Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -295,7 +352,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42685",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.424Z",
+    "scraped_at": "2026-04-01T06:50:03.899Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -314,7 +371,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42319",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.425Z",
+    "scraped_at": "2026-04-01T06:50:03.899Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -333,7 +390,7 @@
     "source_url": "https://procurement-notices.undp.org/view_negotiation.cfm?nego_id=42157",
     "source_domain": "undp.org",
     "content_type": "tender",
-    "scraped_at": "2026-03-31T06:19:32.425Z",
+    "scraped_at": "2026-04-01T06:50:03.899Z",
     "raw_fields": {
       "region": "",
       "category": "",
