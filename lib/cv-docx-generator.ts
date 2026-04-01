@@ -1769,6 +1769,310 @@ export async function generateGenericDocx(data: StructuredCvData): Promise<Buffe
 }
 
 /* ═══════════════════════════════════════════════════════════
+   MODERN EXECUTIVE TEMPLATE
+   Two-column: dark sidebar (contact/skills/languages) + main content
+   Premium consulting firm aesthetic with photo placeholder
+   ═══════════════════════════════════════════════════════════ */
+
+const ME_DARK = "1A1A2E";
+const ME_ACCENT = "E2B93B";   // warm gold
+const ME_MID = "16213E";
+const ME_LIGHT_BG = "F8F9FA";
+const ME_TEXT_LIGHT = "FFFFFF";
+const ME_TEXT_MUTED = "94A3B8";
+const ME_TEXT_DARK = "1E293B";
+const ME_FONT = "Calibri";
+const ME_NO_BORDER = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+const ME_NO_BORDERS = { top: ME_NO_BORDER, bottom: ME_NO_BORDER, left: ME_NO_BORDER, right: ME_NO_BORDER };
+
+function meSidebarLabel(text: string): Paragraph {
+  return new Paragraph({
+    spacing: { before: 200, after: 60 },
+    children: [
+      new TextRun({ text: "\u2501\u2501 ", size: 14, font: ME_FONT, color: ME_ACCENT }),
+      new TextRun({ text: text.toUpperCase(), bold: true, size: 16, font: ME_FONT, color: ME_ACCENT, characterSpacing: 120 }),
+    ],
+  });
+}
+
+function meSidebarItem(icon: string, text: string): Paragraph {
+  return new Paragraph({
+    spacing: { after: 40 },
+    children: [
+      new TextRun({ text: `${icon}  `, size: 16, font: ME_FONT, color: ME_ACCENT }),
+      new TextRun({ text, size: 16, font: ME_FONT, color: ME_TEXT_LIGHT }),
+    ],
+  });
+}
+
+function meMainSection(text: string): Paragraph {
+  return new Paragraph({
+    spacing: { before: 280, after: 80 },
+    border: { bottom: { style: BorderStyle.SINGLE, size: 2, color: ME_ACCENT } },
+    children: [
+      new TextRun({ text: text.toUpperCase(), bold: true, size: 22, font: ME_FONT, color: ME_DARK, characterSpacing: 80 }),
+    ],
+  });
+}
+
+/** Generate a simple photo placeholder as PNG buffer — circle with initials */
+function generatePhotoPlaceholder(initials: string): Buffer {
+  // Create a minimal 1x1 pixel PNG (the docx library needs valid image data)
+  // We'll use a styled text placeholder instead since generating actual PNGs requires canvas
+  // Return a tiny transparent PNG as the image data
+  const tinyPng = Buffer.from(
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "base64"
+  );
+  return tinyPng;
+}
+
+export async function generateModernExecDocx(data: StructuredCvData): Promise<Buffer> {
+  const p = data.personal;
+  const initials = p.full_name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2);
+
+  /* ── SIDEBAR CONTENT ────────────────────────────── */
+  const sidebarChildren: Paragraph[] = [];
+
+  // Photo placeholder area — initials circle
+  sidebarChildren.push(new Paragraph({ spacing: { before: 100, after: 20 }, alignment: AlignmentType.CENTER, children: [] }));
+  sidebarChildren.push(new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 20 },
+    children: [new TextRun({ text: "┌─────────┐", size: 16, font: ME_FONT, color: ME_ACCENT })],
+  }));
+  sidebarChildren.push(new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 20 },
+    children: [
+      new TextRun({ text: "│   ", size: 16, font: ME_FONT, color: ME_ACCENT }),
+      new TextRun({ text: initials, bold: true, size: 40, font: ME_FONT, color: ME_ACCENT }),
+      new TextRun({ text: "   │", size: 16, font: ME_FONT, color: ME_ACCENT }),
+    ],
+  }));
+  sidebarChildren.push(new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 100 },
+    children: [new TextRun({ text: "└─────────┘", size: 16, font: ME_FONT, color: ME_ACCENT })],
+  }));
+  sidebarChildren.push(new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 40 },
+    children: [new TextRun({ text: "PHOTO", size: 14, font: ME_FONT, color: ME_TEXT_MUTED, characterSpacing: 200 })],
+  }));
+
+  // Contact
+  sidebarChildren.push(meSidebarLabel("Contact"));
+  if (p.email) sidebarChildren.push(meSidebarItem("✉", p.email));
+  if (p.phone) sidebarChildren.push(meSidebarItem("☎", p.phone));
+  if (p.address) sidebarChildren.push(meSidebarItem("⌂", p.address));
+  if (p.country_of_residence && p.country_of_residence !== p.address) {
+    sidebarChildren.push(meSidebarItem("◎", p.country_of_residence));
+  }
+  if (p.nationality) sidebarChildren.push(meSidebarItem("⚑", p.nationality));
+  if (p.date_of_birth) sidebarChildren.push(meSidebarItem("◆", p.date_of_birth));
+
+  // Languages
+  if (data.languages.length > 0) {
+    sidebarChildren.push(meSidebarLabel("Languages"));
+    for (const l of data.languages) {
+      sidebarChildren.push(new Paragraph({
+        spacing: { after: 30 },
+        children: [
+          new TextRun({ text: l.language, bold: true, size: 16, font: ME_FONT, color: ME_TEXT_LIGHT }),
+          new TextRun({ text: `  ${l.speaking}`, size: 14, font: ME_FONT, color: ME_TEXT_MUTED }),
+        ],
+      }));
+    }
+  }
+
+  // Key skills (compact)
+  if (data.key_qualifications) {
+    sidebarChildren.push(meSidebarLabel("Expertise"));
+    const skills = data.key_qualifications.split(/[,\n•\-]/).map(s => s.trim()).filter(s => s.length > 3 && s.length < 60).slice(0, 8);
+    for (const skill of skills) {
+      sidebarChildren.push(new Paragraph({
+        spacing: { after: 25 },
+        children: [
+          new TextRun({ text: "▪ ", size: 14, font: ME_FONT, color: ME_ACCENT }),
+          new TextRun({ text: skill, size: 14, font: ME_FONT, color: ME_TEXT_LIGHT }),
+        ],
+      }));
+    }
+  }
+
+  // Countries
+  if (data.countries_of_experience.length > 0) {
+    sidebarChildren.push(meSidebarLabel("Countries"));
+    sidebarChildren.push(new Paragraph({
+      spacing: { after: 40 },
+      children: [new TextRun({ text: data.countries_of_experience.join(", "), size: 14, font: ME_FONT, color: ME_TEXT_LIGHT })],
+    }));
+  }
+
+  // Certifications
+  if (data.certifications.length > 0) {
+    sidebarChildren.push(meSidebarLabel("Certifications"));
+    for (const cert of data.certifications.slice(0, 5)) {
+      sidebarChildren.push(new Paragraph({
+        spacing: { after: 25 },
+        children: [
+          new TextRun({ text: "▪ ", size: 14, font: ME_FONT, color: ME_ACCENT }),
+          new TextRun({ text: cert, size: 13, font: ME_FONT, color: ME_TEXT_LIGHT }),
+        ],
+      }));
+    }
+  }
+
+  // Associations
+  if (data.professional_associations.length > 0) {
+    sidebarChildren.push(meSidebarLabel("Affiliations"));
+    for (const a of data.professional_associations.slice(0, 4)) {
+      sidebarChildren.push(new Paragraph({
+        spacing: { after: 25 },
+        children: [new TextRun({ text: `▪ ${a}`, size: 13, font: ME_FONT, color: ME_TEXT_LIGHT })],
+      }));
+    }
+  }
+
+  /* ── MAIN CONTENT ───────────────────────────────── */
+  const mainChildren: (Paragraph | Table)[] = [];
+
+  // Name header
+  mainChildren.push(new Paragraph({
+    spacing: { before: 100, after: 0 },
+    children: [new TextRun({ text: p.full_name.toUpperCase(), bold: true, size: 36, font: ME_FONT, color: ME_DARK, characterSpacing: 60 })],
+  }));
+
+  // Gold accent line
+  mainChildren.push(new Paragraph({
+    spacing: { before: 40, after: 200 },
+    border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: ME_ACCENT } },
+    children: [],
+  }));
+
+  // Professional Summary
+  if (data.professional_summary) {
+    mainChildren.push(meMainSection("Profile"));
+    mainChildren.push(new Paragraph({
+      spacing: { after: 100 },
+      children: [new TextRun({ text: data.professional_summary, size: 19, font: ME_FONT, color: "475569" })],
+    }));
+  }
+
+  // Experience
+  if (data.employment.length > 0) {
+    mainChildren.push(meMainSection("Experience"));
+    for (const emp of data.employment) {
+      // Position title
+      mainChildren.push(new Paragraph({
+        spacing: { before: 120, after: 10 },
+        children: [new TextRun({ text: emp.position, bold: true, size: 21, font: ME_FONT, color: ME_DARK })],
+      }));
+      // Employer + dates
+      mainChildren.push(new Paragraph({
+        spacing: { after: 10 },
+        children: [
+          new TextRun({ text: emp.employer, bold: true, size: 18, font: ME_FONT, color: ME_ACCENT.replace("E2B93B", "B8860B") }),
+          new TextRun({ text: `  │  ${emp.country || ""}  │  ${emp.from_date} – ${emp.to_date}`, size: 16, font: ME_FONT, color: ME_TEXT_MUTED }),
+        ],
+      }));
+      // Duties
+      if (emp.description_of_duties) {
+        const lines = emp.description_of_duties.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+        if (lines.length > 1) {
+          for (const d of lines) {
+            mainChildren.push(new Paragraph({
+              spacing: { after: 15 },
+              indent: { left: 200 },
+              children: [
+                new TextRun({ text: "▸ ", size: 16, font: ME_FONT, color: ME_ACCENT }),
+                new TextRun({ text: d, size: 17, font: ME_FONT, color: "475569" }),
+              ],
+            }));
+          }
+        } else {
+          mainChildren.push(new Paragraph({
+            spacing: { after: 40 },
+            children: [new TextRun({ text: emp.description_of_duties, size: 17, font: ME_FONT, color: "475569" })],
+          }));
+        }
+      }
+      mainChildren.push(new Paragraph({ spacing: { after: 60 }, children: [] }));
+    }
+  }
+
+  // Education
+  if (data.education.length > 0) {
+    mainChildren.push(meMainSection("Education"));
+    for (const edu of data.education) {
+      mainChildren.push(new Paragraph({
+        spacing: { before: 60, after: 10 },
+        children: [
+          new TextRun({ text: `${edu.degree} in ${edu.field_of_study}`, bold: true, size: 20, font: ME_FONT, color: ME_DARK }),
+        ],
+      }));
+      mainChildren.push(new Paragraph({
+        spacing: { after: 40 },
+        children: [
+          new TextRun({ text: edu.institution, size: 18, font: ME_FONT, color: "B8860B" }),
+          new TextRun({ text: `  │  ${edu.country}  │  ${edu.year_graduated}`, size: 16, font: ME_FONT, color: ME_TEXT_MUTED }),
+        ],
+      }));
+    }
+  }
+
+  // Publications
+  if (data.publications.length > 0) {
+    mainChildren.push(meMainSection("Publications"));
+    for (const pub of data.publications) {
+      mainChildren.push(new Paragraph({
+        spacing: { after: 20 },
+        children: [
+          new TextRun({ text: "▸ ", size: 16, font: ME_FONT, color: ME_ACCENT }),
+          new TextRun({ text: pub, size: 17, font: ME_FONT, color: "475569" }),
+        ],
+      }));
+    }
+  }
+
+  /* ── BUILD TWO-COLUMN LAYOUT ─────────────────────── */
+  const mainTable = new Table({
+    layout: TableLayoutType.FIXED,
+    width: { size: 10400, type: WidthType.DXA },
+    rows: [new TableRow({
+      children: [
+        // SIDEBAR (dark background)
+        new TableCell({
+          borders: ME_NO_BORDERS,
+          width: { size: 3200, type: WidthType.DXA },
+          shading: { fill: ME_DARK, type: ShadingType.CLEAR, color: "auto" },
+          children: sidebarChildren,
+        }),
+        // MAIN CONTENT (white)
+        new TableCell({
+          borders: ME_NO_BORDERS,
+          width: { size: 7200, type: WidthType.DXA },
+          children: mainChildren,
+        }),
+      ],
+    })],
+  });
+
+  const doc = new Document({
+    sections: [{
+      properties: {
+        page: {
+          margin: { top: 400, bottom: 400, left: 400, right: 400 },
+        },
+      },
+      children: [mainTable],
+    }],
+  });
+  return Buffer.from(await Packer.toBuffer(doc));
+}
+
+/* ═══════════════════════════════════════════════════════════
    TEMPLATE DISPATCHER — routes template ID to generator
    ═══════════════════════════════════════════════════════════ */
 
@@ -1787,6 +2091,7 @@ export async function generateCvDocx(
     "au-standard": "AU_Standard",
     "un-php": "UN_PHP",
     "generic-professional": "Professional",
+    "modern-executive": "Executive",
   };
 
   let buffer: Buffer;
@@ -1802,6 +2107,9 @@ export async function generateCvDocx(
       break;
     case "generic-professional":
       buffer = await generateGenericDocx(data);
+      break;
+    case "modern-executive":
+      buffer = await generateModernExecDocx(data);
       break;
     case "wb-standard":
     default:

@@ -75,7 +75,8 @@ export type CvTemplate =
   | "europass"
   | "au-standard"
   | "un-php"
-  | "generic-professional";
+  | "generic-professional"
+  | "modern-executive";
 
 export interface GenerateDocxRequest {
   cv_data: StructuredCvData;

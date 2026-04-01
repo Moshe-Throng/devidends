@@ -1848,6 +1848,14 @@ export default function CvBuilderPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {([
                 {
+                  id: "modern-executive" as const,
+                  name: "Modern Executive ✦",
+                  org: "Premium / Consulting",
+                  desc: "Sleek two-column layout with dark sidebar, photo placeholder, gold accents. Perfect for senior consultants.",
+                  color: "slate",
+                  badge: "New",
+                },
+                {
                   id: "europass" as const,
                   name: "Europass",
                   org: "EU / EuropeAid",
@@ -1956,7 +1964,7 @@ export default function CvBuilderPage() {
               ) : (
                 <FileCheck className="w-4 h-4" />
               )}
-              Generate CV — {selectedTemplate === "europass" ? "Europass" : selectedTemplate === "au-standard" ? "African Union" : selectedTemplate === "wb-standard" ? "World Bank" : selectedTemplate === "un-php" ? "UN PHP" : "Professional"} Format
+              Generate CV — {selectedTemplate === "europass" ? "Europass" : selectedTemplate === "au-standard" ? "African Union" : selectedTemplate === "wb-standard" ? "World Bank" : selectedTemplate === "un-php" ? "UN PHP" : selectedTemplate === "modern-executive" ? "Executive" : "Professional"} Format
             </button>
           </div>
         )}

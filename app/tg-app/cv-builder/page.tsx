@@ -60,6 +60,7 @@ const EXTRACT_STEPS = [
 ];
 
 const TEMPLATES: { id: CvTemplate; label: string; desc: string }[] = [
+  { id: "modern-executive", label: "Modern Executive ✦", desc: "Premium two-column with photo" },
   { id: "europass", label: "Europass", desc: "EU / EuropeAid standard" },
   { id: "au-standard", label: "African Union", desc: "AU / AfDB / AUDA-NEPAD" },
   { id: "wb-standard", label: "World Bank", desc: "WB / IFC consulting" },
