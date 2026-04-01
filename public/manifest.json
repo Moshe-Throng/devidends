@@ -2,7 +2,7 @@
   "name": "Devidends",
   "short_name": "Devidends",
   "description": "International Development Intelligence Platform — Jobs, CV Tools & Alerts",
-  "start_url": "/",
+  "start_url": "/tg-app",
   "display": "standalone",
   "background_color": "#212121",
   "theme_color": "#27ABD2",
@@ -32,17 +32,17 @@
   "shortcuts": [
     {
       "name": "Browse Opportunities",
-      "url": "/opportunities",
+      "url": "/tg-app",
       "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
     },
     {
       "name": "Score My CV",
-      "url": "/score",
+      "url": "/tg-app/score",
       "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
     },
     {
       "name": "CV Builder",
-      "url": "/cv-builder",
+      "url": "/tg-app/cv-builder",
       "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
     }
   ]

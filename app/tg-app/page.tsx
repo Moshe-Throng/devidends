@@ -56,19 +56,11 @@ export default function TgAppHome() {
     );
   }
 
-  // Error state
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center space-y-3">
-          <AlertCircle className="w-8 h-8 text-red-400 mx-auto" />
-          <p className="text-sm text-red-600">{error}</p>
-          <p className="text-xs text-dark-400">
-            Please close and reopen the app.
-          </p>
-        </div>
-      </div>
-    );
+  // Error or not in Telegram — still show the app (PWA mode)
+  // Just skip personalization, show opportunities feed
+  if (error && !tgUser) {
+    // Not in Telegram at all — this is a PWA or direct browser visit
+    // Show a simplified version without personalization
   }
 
   const firstName = tgUser?.first_name || profile?.name?.split(" ")[0] || "there";
