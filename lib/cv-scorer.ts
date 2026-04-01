@@ -220,7 +220,7 @@ export async function scoreCv(
     userMessage += `\n\n---\nScore this CV against the opportunity: "${opportunity.title}" at ${opportunity.organization}`;
   }
 
-  const modelId = "claude-sonnet-4-20250514";
+  const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
     max_tokens: 2500,

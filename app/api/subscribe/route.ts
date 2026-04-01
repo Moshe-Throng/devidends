@@ -32,18 +32,23 @@ export async function GET(req: NextRequest) {
   const buildQuery = (fields: string) => {
     const q = supabase.from("subscriptions").select(fields);
     return telegramId
-      ? q.eq("telegram_id", telegramId).eq("is_active", true).single()
-      : q.eq("email", email!).eq("is_active", true).single();
+      ? q.eq("telegram_id", String(telegramId)).eq("is_active", true).order("created_at", { ascending: false }).limit(1).maybeSingle()
+      : q.eq("email", email!).eq("is_active", true).order("created_at", { ascending: false }).limit(1).maybeSingle();
   };
 
   // Try full select first; fall back to base columns if new ones don't exist yet
   let { data, error } = await buildQuery(
-    "sectors_filter, news_categories_filter, news_sectors_filter, country_filter, work_type_filter, frequency, is_active"
+    "id, sectors_filter, news_categories_filter, country_filter, work_type_filter, frequency, is_active"
   );
-  if (error?.message?.includes("news_sectors_filter") || error?.message?.includes("news_categories_filter")) {
-    ({ data } = await buildQuery(
-      "sectors_filter, country_filter, work_type_filter, frequency, is_active"
+  if (error) {
+    // Fallback: simpler query without potentially missing columns
+    console.warn("[subscribe GET] Full query failed:", error.message, "— trying fallback");
+    ({ data, error } = await buildQuery(
+      "id, sectors_filter, country_filter, work_type_filter, frequency, is_active"
     ));
+    if (error) {
+      console.error("[subscribe GET] Fallback also failed:", error.message);
+    }
   }
 
   return NextResponse.json({ subscription: data || null });
@@ -93,12 +98,13 @@ export async function POST(req: NextRequest) {
     };
 
     const matchCol = email ? "email" : "telegram_id";
-    const matchVal = email || telegram_id;
-    const { data: existing } = await supabase
+    const matchVal = String(email || telegram_id);
+    const { data: existing, error: existErr } = await supabase
       .from("subscriptions")
       .select("id")
       .eq(matchCol, matchVal)
-      .single();
+      .maybeSingle();
+    if (existErr) console.warn("[subscribe POST] Lookup error:", existErr.message);
 
     if (existing) {
       let { error } = await supabase.from("subscriptions").update(payload).eq("id", existing.id);
