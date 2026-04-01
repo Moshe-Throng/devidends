@@ -1318,7 +1318,7 @@ export async function generateUnPhpDocx(data: StructuredCvData): Promise<Buffer>
   // Section I — Personal Information
   children.push(unSectionHeader("I. PERSONAL INFORMATION"));
   const nameParts = p.full_name.split(" ");
-  const surname = nameParts.length > 1 ? nameParts.slice(-1).join("") : p.full_name;
+  const surname = nameParts.length > 1 ? nameParts.slice(-1).join(" ") : p.full_name;
   const firstName = nameParts.length > 1 ? nameParts.slice(0, -1).join(" ") : "";
 
   children.push(new Table({
@@ -1486,10 +1486,14 @@ export async function generateUnPhpDocx(data: StructuredCvData): Promise<Buffer>
           new TableRow({
             children: [
               new TableCell({ borders: UN_BORDERS_ALL, columnSpan: 4,
-                children: [
-                  new Paragraph({ children: [new TextRun({ text: "MAIN DUTIES AND RESPONSIBILITIES:", bold: true, size: 16, font: "Times New Roman", color: UN_BLUE })] }),
-                  new Paragraph({ spacing: { before: 40 }, children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Times New Roman" })] }),
-                ],
+                children: (() => {
+                  const header = new Paragraph({ children: [new TextRun({ text: "MAIN DUTIES AND RESPONSIBILITIES:", bold: true, size: 16, font: "Times New Roman", color: UN_BLUE })] });
+                  const dutyLines = emp.description_of_duties.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+                  if (dutyLines.length > 1) {
+                    return [header, ...dutyLines.map(d => new Paragraph({ bullet: { level: 0 }, spacing: { after: 20 }, children: [new TextRun({ text: d, size: 18, font: "Times New Roman" })] }))];
+                  }
+                  return [header, new Paragraph({ spacing: { before: 40 }, children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Times New Roman" })] })];
+                })(),
               }),
             ],
           }),
@@ -1502,7 +1506,14 @@ export async function generateUnPhpDocx(data: StructuredCvData): Promise<Buffer>
   // Section V — Skills & Qualifications
   if (data.key_qualifications) {
     children.push(unSectionHeader("V. RELEVANT SKILLS AND QUALIFICATIONS"));
-    children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Times New Roman" })] }));
+    const qualLines = data.key_qualifications.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+    if (qualLines.length > 1) {
+      for (const q of qualLines) {
+        children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 20 }, children: [new TextRun({ text: q, size: 18, font: "Times New Roman" })] }));
+      }
+    } else {
+      children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Times New Roman" })] }));
+    }
   }
 
   // Section VI — Certifications
@@ -1615,10 +1626,14 @@ export async function generateGenericDocx(data: StructuredCvData): Promise<Buffe
   // Key Qualifications (shown early in generic format)
   if (data.key_qualifications) {
     children.push(gpSection("Core Competencies"));
-    children.push(new Paragraph({
-      spacing: { after: 100 },
-      children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Calibri" })],
-    }));
+    const qualLines = data.key_qualifications.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+    if (qualLines.length > 1) {
+      for (const q of qualLines) {
+        children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 20 }, children: [new TextRun({ text: q, size: 18, font: "Calibri" })] }));
+      }
+    } else {
+      children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Calibri" })] }));
+    }
   }
 
   // Experience
@@ -1646,12 +1661,17 @@ export async function generateGenericDocx(data: StructuredCvData): Promise<Buffe
         ],
       }));
 
-      // Description
+      // Description — parse as bullets if multiline
       if (emp.description_of_duties) {
-        children.push(new Paragraph({
-          spacing: { after: 80 },
-          children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Calibri" })],
-        }));
+        const dutyLines = emp.description_of_duties.split(/\n/).map(s => s.replace(/^[\s•\-*]+/, "").trim()).filter(Boolean);
+        if (dutyLines.length > 1) {
+          for (const d of dutyLines) {
+            children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 15 }, children: [new TextRun({ text: d, size: 18, font: "Calibri" })] }));
+          }
+          children.push(new Paragraph({ spacing: { after: 60 }, children: [] }));
+        } else {
+          children.push(new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Calibri" })] }));
+        }
       }
     }
   }
