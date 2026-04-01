@@ -53,7 +53,10 @@ export function verifyInitData(
       .update(dataCheckString)
       .digest("hex");
 
-    if (computed !== hash) return null;
+    if (computed !== hash) {
+      console.error("[telegram-auth] Hash mismatch. computed:", computed.slice(0, 16), "expected:", hash.slice(0, 16));
+      return null;
+    }
 
     // Parse user from verified params
     const userStr = params.get("user");
@@ -62,9 +65,13 @@ export function verifyInitData(
     const user: TelegramUser = JSON.parse(userStr);
     const authDate = parseInt(params.get("auth_date") || "0", 10);
 
-    // Reject data older than 24 hours
+    // Reject data older than 7 days (generous for mini app sessions)
     const now = Math.floor(Date.now() / 1000);
-    if (now - authDate > 86400) return null;
+    const age = now - authDate;
+    if (age > 7 * 86400) {
+      console.error("[telegram-auth] initData too old:", age, "seconds");
+      return null;
+    }
 
     return {
       user,
