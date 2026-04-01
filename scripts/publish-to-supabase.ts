@@ -47,11 +47,21 @@ async function main() {
     return;
   }
 
+  // Sanitize deadline — only accept valid ISO dates
+  function parseDeadline(raw: string | null | undefined): string | null {
+    if (!raw) return null;
+    // Strip timezone descriptions like "(New York time)"
+    const cleaned = raw.replace(/\s*\([^)]*\)\s*/g, "").trim();
+    const d = new Date(cleaned);
+    if (isNaN(d.getTime())) return null;
+    return d.toISOString();
+  }
+
   // Map to Supabase schema
   const rows = opportunities.map((opp: any) => ({
     title: (opp.title || "").slice(0, 500),
     description: (opp.description || "").slice(0, 10000),
-    deadline: opp.deadline || null,
+    deadline: parseDeadline(opp.deadline),
     organization: (opp.organization || "Unknown").slice(0, 200),
     country: (opp.country || "Ethiopia").slice(0, 100),
     source_url: (opp.source_url || opp.url || "").slice(0, 1000),
