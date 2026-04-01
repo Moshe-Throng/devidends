@@ -11,6 +11,11 @@ import {
   BorderStyle,
   TableLayoutType,
   ShadingType,
+  Header,
+  Footer,
+  PageNumber,
+  NumberFormat,
+  VerticalAlign,
 } from "docx";
 import type { StructuredCvData, CvTemplate } from "./types/cv-data";
 
@@ -220,23 +225,41 @@ export async function generateWbCvDocx(
                 new TableCell({
                   borders: CELL_BORDERS,
                   columnSpan: 4,
-                  children: [
-                    new Paragraph({
-                      children: [
-                        new TextRun({
-                          text: "Description of Duties: ",
-                          bold: true,
-                          size: 20,
-                          font: FONT,
+                  children: (() => {
+                    // Split duties into paragraphs for readability
+                    const dutyLines = emp.description_of_duties
+                      .split(/\n/)
+                      .map(s => s.replace(/^[\s•\-*]+/, "").trim())
+                      .filter(Boolean);
+                    if (dutyLines.length <= 1) {
+                      // Single block — split on sentences for paragraph breaks
+                      const sentences = emp.description_of_duties
+                        .split(/(?<=\.)\s+/)
+                        .map(s => s.trim())
+                        .filter(Boolean);
+                      return [
+                        new Paragraph({
+                          spacing: { after: 40 },
+                          children: [new TextRun({ text: "Description of Duties:", bold: true, size: 20, font: FONT })],
                         }),
-                        new TextRun({
-                          text: emp.description_of_duties,
-                          size: 20,
-                          font: FONT,
-                        }),
-                      ],
-                    }),
-                  ],
+                        ...sentences.map(s => new Paragraph({
+                          spacing: { after: 40 },
+                          children: [new TextRun({ text: s, size: 20, font: FONT })],
+                        })),
+                      ];
+                    }
+                    return [
+                      new Paragraph({
+                        spacing: { after: 40 },
+                        children: [new TextRun({ text: "Description of Duties:", bold: true, size: 20, font: FONT })],
+                      }),
+                      ...dutyLines.map(d => new Paragraph({
+                        bullet: { level: 0 },
+                        spacing: { after: 30 },
+                        children: [new TextRun({ text: d, size: 20, font: FONT })],
+                      })),
+                    ];
+                  })(),
                 }),
               ],
             }),
@@ -276,18 +299,21 @@ export async function generateWbCvDocx(
   // ── Key Qualifications
   if (data.key_qualifications) {
     children.push(heading("6. Key Qualifications"));
-    children.push(
-      new Paragraph({
-        spacing: { after: 100 },
-        children: [
-          new TextRun({
-            text: data.key_qualifications,
-            size: 20,
-            font: FONT,
-          }),
-        ],
-      })
-    );
+    const qualLines = data.key_qualifications
+      .split(/\n/)
+      .map(s => s.replace(/^[\s•\-*]+/, "").trim())
+      .filter(Boolean);
+    if (qualLines.length > 1) {
+      for (const q of qualLines) {
+        children.push(new Paragraph({ bullet: { level: 0 }, spacing: { after: 40 }, children: [new TextRun({ text: q, size: 20, font: FONT })] }));
+      }
+    } else {
+      // Single block — split on sentences
+      const sentences = data.key_qualifications.split(/(?<=\.)\s+/).map(s => s.trim()).filter(Boolean);
+      for (const s of sentences) {
+        children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: s, size: 20, font: FONT })] }));
+      }
+    }
   }
 
   // ── Certifications & Accreditations
@@ -368,7 +394,7 @@ export async function generateWbCvDocx(
    Blue theme (#003399), CEFR language grid, professional experience table
    ═══════════════════════════════════════════════════════════ */
 
-const EU_BLUE = "003399";
+const EU_BLUE = "164194";
 const EU_LIGHT = "E8EEF7";
 const EU_BORDER = { style: BorderStyle.SINGLE, size: 1, color: "BBBBBB" };
 const EU_BORDERS = { top: EU_BORDER, bottom: EU_BORDER, left: EU_BORDER, right: EU_BORDER };
@@ -554,6 +580,23 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
   // ── Specific Experience by Region ───────────────────────────
   if (data.countries_of_experience.length > 0) {
     children.push(epSection("Specific Experience in the Region"));
+
+    // Derive dates from employment records — match country names to job date ranges
+    const countryDates: Record<string, string[]> = {};
+    for (const emp of data.employment) {
+      const empCountry = (emp.country || "").trim();
+      if (!empCountry) continue;
+      const dateRange = `${emp.from_date || ""}${emp.from_date && emp.to_date ? " – " : ""}${emp.to_date || ""}`.trim();
+      if (!dateRange) continue;
+      // Match against countries_of_experience (case-insensitive partial match)
+      for (const c of data.countries_of_experience) {
+        if (empCountry.toLowerCase().includes(c.toLowerCase()) || c.toLowerCase().includes(empCountry.toLowerCase())) {
+          if (!countryDates[c]) countryDates[c] = [];
+          if (!countryDates[c].includes(dateRange)) countryDates[c].push(dateRange);
+        }
+      }
+    }
+
     children.push(new Table({
       layout: TableLayoutType.FIXED,
       width: { size: 9000, type: WidthType.DXA },
@@ -563,7 +606,7 @@ export async function generateEuropassDocx(data: StructuredCvData): Promise<Buff
           new TableRow({
             children: [
               new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: country, size: 20, font: "Arial" })] })] }),
-              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "", size: 20, font: "Arial" })] })] }),
+              new TableCell({ borders: EU_BORDERS, width: { size: 4500, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: (countryDates[country] || []).join("; "), size: 20, font: "Arial" })] })] }),
             ],
           })
         ),
@@ -677,14 +720,77 @@ const AU_LIGHT_GREEN = "E8F5E9";
 const AU_BORDER_STYLE = { style: BorderStyle.SINGLE, size: 1, color: "AAAAAA" };
 const AU_BORDERS = { top: AU_BORDER_STYLE, bottom: AU_BORDER_STYLE, left: AU_BORDER_STYLE, right: AU_BORDER_STYLE };
 
-function auHeading(num: string, text: string): Paragraph {
+/* ── AU Template helpers ─────────────────────────────────── */
+
+const AU_SECTION_GREEN = "6BAB4F"; // official AU section header green
+const AU_THIN_BORDER = { style: BorderStyle.SINGLE, size: 1, color: "000000" };
+const AU_THIN_BORDERS = { top: AU_THIN_BORDER, bottom: AU_THIN_BORDER, left: AU_THIN_BORDER, right: AU_THIN_BORDER };
+const AU_NO_BORDERS = {
+  top: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
+  bottom: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
+  left: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
+  right: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
+};
+const AU_FONT = "Arial";
+const AU_FONT_SIZE = 20; // 10pt
+
+/** Green-background section header row spanning the full table width */
+function auSectionHeading(text: string): Paragraph {
   return new Paragraph({
-    spacing: { before: 300, after: 100 },
-    shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
+    spacing: { before: 240, after: 60 },
+    shading: { fill: AU_SECTION_GREEN, type: ShadingType.CLEAR, color: "auto" },
     children: [
-      new TextRun({ text: `${num}. `, bold: true, size: 24, font: "Arial", color: AU_GOLD }),
-      new TextRun({ text: text.toUpperCase(), bold: true, size: 22, font: "Arial", color: AU_GREEN }),
+      new TextRun({ text, bold: true, size: AU_FONT_SIZE, font: AU_FONT, color: "FFFFFF" }),
     ],
+  });
+}
+
+/** Simple bordered cell for AU tables */
+function auCell(text: string, opts?: { bold?: boolean; width?: number; shading?: string; alignment?: typeof AlignmentType[keyof typeof AlignmentType]; columnSpan?: number }): TableCell {
+  return new TableCell({
+    borders: AU_THIN_BORDERS,
+    width: opts?.width ? { size: opts.width, type: WidthType.DXA } : undefined,
+    columnSpan: opts?.columnSpan,
+    shading: opts?.shading ? { fill: opts.shading, type: ShadingType.CLEAR, color: "auto" } : undefined,
+    verticalAlign: VerticalAlign.CENTER,
+    children: [
+      new Paragraph({
+        alignment: opts?.alignment ?? AlignmentType.LEFT,
+        spacing: { before: 40, after: 40 },
+        children: [
+          new TextRun({ text, bold: opts?.bold ?? false, size: AU_FONT_SIZE, font: AU_FONT }),
+        ],
+      }),
+    ],
+  });
+}
+
+/** Multi-paragraph cell (for duties/descriptions) */
+function auMultiCell(paragraphs: Paragraph[], opts?: { columnSpan?: number }): TableCell {
+  return new TableCell({
+    borders: AU_THIN_BORDERS,
+    columnSpan: opts?.columnSpan,
+    children: paragraphs,
+  });
+}
+
+/** Table header row with green background */
+function auTableHeaderRow(labels: string[]): TableRow {
+  return new TableRow({
+    children: labels.map(l =>
+      new TableCell({
+        borders: AU_THIN_BORDERS,
+        shading: { fill: AU_SECTION_GREEN, type: ShadingType.CLEAR, color: "auto" },
+        verticalAlign: VerticalAlign.CENTER,
+        children: [
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            spacing: { before: 40, after: 40 },
+            children: [new TextRun({ text: l, bold: true, size: AU_FONT_SIZE, font: AU_FONT, color: "FFFFFF" })],
+          }),
+        ],
+      })
+    ),
   });
 }
 
@@ -692,245 +798,480 @@ export async function generateAuDocx(data: StructuredCvData): Promise<Buffer> {
   const children: (Paragraph | Table)[] = [];
   const p = data.personal;
 
-  // Title block
-  children.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 40 },
-    children: [new TextRun({ text: "AFRICAN UNION", bold: true, size: 28, font: "Arial", color: AU_GREEN })],
-  }));
-  children.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 100 },
-    children: [new TextRun({ text: "CURRICULUM VITAE", bold: true, size: 24, font: "Arial", color: AU_GOLD })],
-  }));
-  children.push(new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 200 },
-    border: { bottom: { style: BorderStyle.SINGLE, size: 3, color: AU_GREEN } },
-    children: [new TextRun({ text: `Position Applied For: ___________________________`, size: 20, font: "Arial", color: "555555" })],
-  }));
-
-  // Personal Data (AU emphasizes nationality, gender, marital status)
-  children.push(auHeading("1", "Personal Data"));
-  const auPersonalRows = [
-    ["Surname", p.full_name.split(" ").slice(-1).join("")],
-    ["First Name(s)", p.full_name.split(" ").slice(0, -1).join(" ")],
-    ["Nationality", p.nationality],
-    ["Date of Birth", p.date_of_birth],
-    ["Country of Residence", p.country_of_residence],
-    ["Postal Address", p.address],
-    ["Telephone", p.phone],
-    ["Email Address", p.email],
-  ].filter(([, v]) => v);
+  /* ── AU Multilingual Header (inline as table) ─────────── */
+  // Row 1: AFRICAN UNION | (logo placeholder) | UNION AFRICAINE
+  // Row 2: الاتحاد الأفريقي | | UNIÃO AFRICANA
+  // Row 3: UMOJA WA AFRIKA | | UNIÓN AFRICANA
+  const headerRows = [
+    ["AFRICAN UNION", "UNION AFRICAINE"],
+    ["\u0627\u0644\u0627\u062A\u062D\u0627\u062F \u0627\u0644\u0623\u0641\u0631\u064A\u0642\u064A", "UNI\u00C3O AFRICANA"],
+    ["UMOJA WA AFRIKA", "UNI\u00D3N AFRICANA"],
+  ];
 
   children.push(new Table({
     layout: TableLayoutType.FIXED,
-    width: { size: 9000, type: WidthType.DXA },
-    rows: auPersonalRows.map(([label, value]) =>
+    width: { size: 9400, type: WidthType.DXA },
+    rows: headerRows.map((row, idx) =>
       new TableRow({
         children: [
           new TableCell({
-            borders: AU_BORDERS, width: { size: 3200, type: WidthType.DXA },
-            shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
-            children: [new Paragraph({ children: [new TextRun({ text: label, bold: true, size: 20, font: "Arial", color: AU_GREEN })] })],
+            borders: AU_NO_BORDERS,
+            width: { size: 3200, type: WidthType.DXA },
+            children: [new Paragraph({
+              alignment: AlignmentType.LEFT,
+              spacing: { before: 0, after: 0 },
+              children: [new TextRun({ text: row[0], bold: idx === 0, size: idx === 0 ? 22 : 18, font: AU_FONT, color: AU_GREEN })],
+            })],
           }),
           new TableCell({
-            borders: AU_BORDERS, width: { size: 5800, type: WidthType.DXA },
-            children: [new Paragraph({ children: [new TextRun({ text: value, size: 20, font: "Arial" })] })],
+            borders: AU_NO_BORDERS,
+            width: { size: 3000, type: WidthType.DXA },
+            children: [new Paragraph({
+              alignment: AlignmentType.CENTER,
+              spacing: { before: 0, after: 0 },
+              children: idx === 0
+                ? [new TextRun({ text: "\u2605", size: 28, font: AU_FONT, color: AU_GOLD })] // star as logo placeholder
+                : [],
+            })],
+          }),
+          new TableCell({
+            borders: AU_NO_BORDERS,
+            width: { size: 3200, type: WidthType.DXA },
+            children: [new Paragraph({
+              alignment: AlignmentType.RIGHT,
+              spacing: { before: 0, after: 0 },
+              children: [new TextRun({ text: row[1], bold: idx === 0, size: idx === 0 ? 22 : 18, font: AU_FONT, color: AU_GREEN })],
+            })],
           }),
         ],
       })
     ),
   }));
 
-  // Professional Summary
-  if (data.professional_summary) {
-    children.push(auHeading("2", "Professional Summary"));
-    children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.professional_summary, size: 20, font: "Arial" })] }));
-  }
+  // Divider line
+  children.push(new Paragraph({
+    spacing: { before: 60, after: 120 },
+    border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: AU_GOLD } },
+    children: [],
+  }));
 
-  // Education
-  if (data.education.length > 0) {
-    children.push(auHeading("3", "Education / Academic Qualifications"));
-    children.push(new Table({
-      layout: TableLayoutType.FIXED,
-      width: { size: 9000, type: WidthType.DXA },
-      rows: [
-        new TableRow({
-          children: ["Institution", "Degree / Diploma", "Field of Study", "Country", "Year"].map(h =>
-            new TableCell({
-              borders: AU_BORDERS,
-              shading: { fill: AU_GREEN, type: ShadingType.CLEAR, color: "auto" },
-              children: [new Paragraph({ children: [new TextRun({ text: h, bold: true, size: 18, font: "Arial", color: "FFFFFF" })] })],
-            })
-          ),
-        }),
-        ...data.education.map(e =>
-          new TableRow({
-            children: [
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: e.institution, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: e.degree, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: e.field_of_study, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: e.country, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: String(e.year_graduated), size: 18, font: "Arial" })] })] }),
-            ],
-          })
-        ),
-      ],
+  /* ── Title ────────────────────────────────────────────── */
+  children.push(new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 200 },
+    children: [new TextRun({ text: "Curriculum Vitae (CV) Template", bold: true, italics: true, size: 26, font: AU_FONT })],
+  }));
+
+  /* ── Position field (green background) ────────────────── */
+  children.push(new Paragraph({
+    spacing: { after: 200 },
+    shading: { fill: AU_SECTION_GREEN, type: ShadingType.CLEAR, color: "auto" },
+    children: [
+      new TextRun({ text: "Position: ", bold: true, size: AU_FONT_SIZE, font: AU_FONT, color: "FFFFFF" }),
+      new TextRun({ text: "(Indicate the title of the position you are applying for and/or Reference No.)", italics: true, size: AU_FONT_SIZE, font: AU_FONT, color: "FFFFFF" }),
+    ],
+  }));
+
+  /* ── 1. Personal Details ──────────────────────────────── */
+  children.push(auSectionHeading("Personal Details"));
+
+  const personalRows = [
+    ["Full Name", p.full_name],
+    ["Nationality", p.nationality],
+    ["Current Residential Address", p.address || p.country_of_residence],
+    ["Phone Numbers", p.phone],
+    ["Email Addresses", p.email],
+  ].filter(([, v]) => v);
+
+  children.push(new Table({
+    layout: TableLayoutType.FIXED,
+    width: { size: 9400, type: WidthType.DXA },
+    rows: personalRows.map(([label, value]) =>
+      new TableRow({
+        children: [
+          auCell(label, { bold: true, width: 3400 }),
+          auCell(value, { width: 6000 }),
+        ],
+      })
+    ),
+  }));
+
+  /* ── 2. Professional Summary (max 1500 chars) ─────────── */
+  children.push(auSectionHeading("Professional Summary"));
+  children.push(new Paragraph({
+    spacing: { before: 60, after: 40 },
+    children: [new TextRun({ text: "(Please describe yourself in not more than 1500 characters)", italics: true, size: 16, font: AU_FONT, color: "777777" })],
+  }));
+  if (data.professional_summary) {
+    const summary = data.professional_summary.substring(0, 1500);
+    children.push(new Paragraph({
+      spacing: { after: 120 },
+      children: [new TextRun({ text: summary, size: AU_FONT_SIZE, font: AU_FONT })],
     }));
   }
 
-  // Professional Experience
+  /* ── 3. Membership in Professional Societies ──────────── */
+  children.push(auSectionHeading("Membership in Professional Societies"));
+  if (data.professional_associations.length > 0) {
+    for (const a of data.professional_associations) {
+      children.push(new Paragraph({
+        bullet: { level: 0 },
+        spacing: { after: 30 },
+        children: [new TextRun({ text: a, size: AU_FONT_SIZE, font: AU_FONT })],
+      }));
+    }
+  } else {
+    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
+  }
+
+  /* ── 4. Academic and Professional Qualifications ──────── */
+  children.push(auSectionHeading("Academic and Professional Qualifications"));
+  {
+    const eduTableRows: TableRow[] = [
+      auTableHeaderRow(["Name of Institution", "Address of Institution", "Qualification Received", "Summary Description", "Year Obtained"]),
+    ];
+    if (data.education.length > 0) {
+      for (const e of data.education) {
+        eduTableRows.push(new TableRow({
+          children: [
+            auCell(e.institution),
+            auCell(e.country), // address mapped to country
+            auCell(e.degree),
+            auCell(e.field_of_study),
+            auCell(String(e.year_graduated), { alignment: AlignmentType.CENTER }),
+          ],
+        }));
+      }
+    } else {
+      eduTableRows.push(new TableRow({ children: [auCell(" "), auCell(" "), auCell(" "), auCell(" "), auCell(" ")] }));
+    }
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9400, type: WidthType.DXA },
+      rows: eduTableRows,
+    }));
+  }
+
+  /* ── 5. Other Relevant Trainings/Certifications/Licenses */
+  children.push(auSectionHeading("Other Relevant Trainings/Certifications/Licenses"));
+  {
+    const certRows: TableRow[] = [
+      auTableHeaderRow(["Course Title", "Certifying Body or Institution", "Address of Institution", "Year Attended"]),
+    ];
+    if (data.certifications.length > 0) {
+      for (const cert of data.certifications) {
+        // Parse certification string — try to extract year if present
+        const yearMatch = cert.match(/\b(19|20)\d{2}\b/);
+        const year = yearMatch ? yearMatch[0] : "";
+        const title = cert.replace(/\b(19|20)\d{2}\b/, "").trim();
+        certRows.push(new TableRow({
+          children: [
+            auCell(title),
+            auCell(""),
+            auCell(""),
+            auCell(year, { alignment: AlignmentType.CENTER }),
+          ],
+        }));
+      }
+    } else {
+      certRows.push(new TableRow({ children: [auCell(" "), auCell(" "), auCell(" "), auCell(" ")] }));
+    }
+    children.push(new Table({
+      layout: TableLayoutType.FIXED,
+      width: { size: 9400, type: WidthType.DXA },
+      rows: certRows,
+    }));
+  }
+
+  /* ── 6. Employment and/or Professional Experiences ───── */
+  children.push(auSectionHeading("Employment and/or Professional Experiences"));
+
   if (data.employment.length > 0) {
-    children.push(auHeading("4", "Professional Experience"));
     for (const emp of data.employment) {
+      // Employer name (bold)
+      children.push(new Paragraph({
+        spacing: { before: 120, after: 40 },
+        children: [
+          new TextRun({ text: "Name of Organisation/Employer: ", bold: true, size: AU_FONT_SIZE, font: AU_FONT }),
+          new TextRun({ text: emp.employer, size: AU_FONT_SIZE, font: AU_FONT }),
+        ],
+      }));
+      children.push(new Paragraph({
+        spacing: { after: 60 },
+        children: [
+          new TextRun({ text: "Address of Organisation/Employer: ", bold: true, size: AU_FONT_SIZE, font: AU_FONT }),
+          new TextRun({ text: emp.country, size: AU_FONT_SIZE, font: AU_FONT }),
+        ],
+      }));
+
+      // Parse duties into responsibilities and achievements
+      const dutyLines = emp.description_of_duties
+        .split(/\n/)
+        .map(s => s.replace(/^[\s\u2022\-*]+/, "").trim())
+        .filter(Boolean);
+      const responsibilitiesText = dutyLines.length > 1
+        ? dutyLines.map(d => `\u2022 ${d}`).join("\n")
+        : emp.description_of_duties;
+
+      const empRows: TableRow[] = [
+        new TableRow({
+          children: [
+            auCell("Position Held", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell(emp.position, { columnSpan: 3 }),
+          ],
+        }),
+        new TableRow({
+          children: [
+            auCell("Duration", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell(`${emp.from_date} \u2013 ${emp.to_date}`, { columnSpan: 3 }),
+          ],
+        }),
+        new TableRow({
+          children: [
+            auCell("Number of People Supervised", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell("", { columnSpan: 3 }),
+          ],
+        }),
+        new TableRow({
+          children: [
+            auCell("Summary of relevant Responsibilities", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auMultiCell(
+              dutyLines.length > 1
+                ? dutyLines.map(d => new Paragraph({
+                    bullet: { level: 0 },
+                    spacing: { after: 20 },
+                    children: [new TextRun({ text: d, size: AU_FONT_SIZE, font: AU_FONT })],
+                  }))
+                : [new Paragraph({
+                    spacing: { after: 40 },
+                    children: [new TextRun({ text: emp.description_of_duties, size: AU_FONT_SIZE, font: AU_FONT })],
+                  })],
+              { columnSpan: 3 }
+            ),
+          ],
+        }),
+        new TableRow({
+          children: [
+            auCell("Achievements", { bold: true, width: 2600, shading: AU_LIGHT_GREEN }),
+            auCell("", { columnSpan: 3 }),
+          ],
+        }),
+      ];
+
       children.push(new Table({
         layout: TableLayoutType.FIXED,
-        width: { size: 9000, type: WidthType.DXA },
-        rows: [
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: AU_BORDERS, width: { size: 2200, type: WidthType.DXA },
-                shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
-                children: [new Paragraph({ children: [new TextRun({ text: "Period", bold: true, size: 18, font: "Arial", color: AU_GREEN })] })],
-              }),
-              new TableCell({ borders: AU_BORDERS, width: { size: 2500, type: WidthType.DXA },
-                children: [new Paragraph({ children: [new TextRun({ text: `${emp.from_date} – ${emp.to_date}`, size: 18, font: "Arial" })] })] }),
-              new TableCell({
-                borders: AU_BORDERS, width: { size: 1600, type: WidthType.DXA },
-                shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
-                children: [new Paragraph({ children: [new TextRun({ text: "Country", bold: true, size: 18, font: "Arial", color: AU_GREEN })] })],
-              }),
-              new TableCell({ borders: AU_BORDERS, width: { size: 2700, type: WidthType.DXA },
-                children: [new Paragraph({ children: [new TextRun({ text: emp.country, size: 18, font: "Arial" })] })] }),
-            ],
-          }),
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: AU_BORDERS,
-                shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
-                children: [new Paragraph({ children: [new TextRun({ text: "Organization", bold: true, size: 18, font: "Arial", color: AU_GREEN })] })],
-              }),
-              new TableCell({ borders: AU_BORDERS, columnSpan: 3,
-                children: [new Paragraph({ children: [new TextRun({ text: emp.employer, size: 18, font: "Arial" })] })] }),
-            ],
-          }),
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: AU_BORDERS,
-                shading: { fill: AU_LIGHT_GREEN, type: ShadingType.CLEAR, color: "auto" },
-                children: [new Paragraph({ children: [new TextRun({ text: "Position Title", bold: true, size: 18, font: "Arial", color: AU_GREEN })] })],
-              }),
-              new TableCell({ borders: AU_BORDERS, columnSpan: 3,
-                children: [new Paragraph({ children: [new TextRun({ text: emp.position, bold: true, size: 18, font: "Arial" })] })] }),
-            ],
-          }),
-          new TableRow({
-            children: [
-              new TableCell({
-                borders: AU_BORDERS, columnSpan: 4,
-                children: [
-                  new Paragraph({ children: [new TextRun({ text: "Key Responsibilities:", bold: true, size: 18, font: "Arial", color: AU_GREEN })] }),
-                  new Paragraph({ spacing: { before: 40 }, children: [new TextRun({ text: emp.description_of_duties, size: 18, font: "Arial" })] }),
-                ],
-              }),
-            ],
-          }),
-        ],
+        width: { size: 9400, type: WidthType.DXA },
+        rows: empRows,
       }));
       children.push(new Paragraph({ spacing: { after: 80 }, children: [] }));
     }
   }
 
-  // Language Proficiency
-  if (data.languages.length > 0) {
-    children.push(auHeading("5", "Language Proficiency"));
+  /* ── 7. Skills, Knowledge and Competencies (max 200 words) */
+  children.push(auSectionHeading("Skills, Knowledge and Competencies"));
+  children.push(new Paragraph({
+    spacing: { before: 40, after: 20 },
+    children: [new TextRun({ text: "(Please describe in not more than 200 words)", italics: true, size: 16, font: AU_FONT, color: "777777" })],
+  }));
+  if (data.key_qualifications) {
+    const qualLines = data.key_qualifications
+      .split(/\n/)
+      .map(s => s.replace(/^[\s\u2022\-*]+/, "").trim())
+      .filter(Boolean);
+    if (qualLines.length > 1) {
+      for (const q of qualLines) {
+        children.push(new Paragraph({
+          bullet: { level: 0 },
+          spacing: { after: 30 },
+          children: [new TextRun({ text: q, size: AU_FONT_SIZE, font: AU_FONT })],
+        }));
+      }
+    } else {
+      children.push(new Paragraph({
+        spacing: { after: 100 },
+        children: [new TextRun({ text: data.key_qualifications, size: AU_FONT_SIZE, font: AU_FONT })],
+      }));
+    }
+  } else {
+    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
+  }
+
+  /* ── 8. Other Achievements/Accomplishments (max 200 words) */
+  children.push(auSectionHeading("Other Achievements/Accomplishments"));
+  children.push(new Paragraph({
+    spacing: { before: 40, after: 20 },
+    children: [new TextRun({ text: "(Please describe in not more than 200 words)", italics: true, size: 16, font: AU_FONT, color: "777777" })],
+  }));
+  // Map countries of experience as accomplishment context if available
+  if (data.countries_of_experience.length > 0) {
     children.push(new Paragraph({
-      spacing: { after: 40 },
-      children: [new TextRun({ text: "AU Working Languages: Arabic, English, French, Kiswahili, Portuguese, Spanish", italics: true, size: 16, font: "Arial", color: "777777" })],
+      spacing: { after: 100 },
+      children: [new TextRun({ text: `International experience across: ${data.countries_of_experience.join(", ")}`, size: AU_FONT_SIZE, font: AU_FONT })],
     }));
-    children.push(new Table({
-      layout: TableLayoutType.FIXED,
-      width: { size: 9000, type: WidthType.DXA },
-      rows: [
-        new TableRow({
-          children: ["Language", "Reading", "Writing", "Speaking"].map(h =>
-            new TableCell({
-              borders: AU_BORDERS,
-              shading: { fill: AU_GREEN, type: ShadingType.CLEAR, color: "auto" },
-              children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: h, bold: true, size: 18, font: "Arial", color: "FFFFFF" })] })],
-            })
-          ),
-        }),
-        ...data.languages.map(l =>
-          new TableRow({
-            children: [
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ children: [new TextRun({ text: l.language, bold: true, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.reading, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.writing, size: 18, font: "Arial" })] })] }),
-              new TableCell({ borders: AU_BORDERS, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: l.speaking, size: 18, font: "Arial" })] })] }),
-            ],
-          })
-        ),
+  } else {
+    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
+  }
+
+  /* ── 9. Publications ──────────────────────────────────── */
+  children.push(auSectionHeading("Publications"));
+  if (data.publications.length > 0) {
+    for (const pub of data.publications) {
+      children.push(new Paragraph({
+        bullet: { level: 0 },
+        spacing: { after: 30 },
+        children: [new TextRun({ text: pub, size: AU_FONT_SIZE, font: AU_FONT })],
+      }));
+    }
+  } else {
+    children.push(new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: " ", size: AU_FONT_SIZE, font: AU_FONT })] }));
+  }
+
+  /* ── 10. Working Languages ────────────────────────────── */
+  children.push(auSectionHeading("Working Languages"));
+
+  // Build a map of user's languages for lookup
+  const langMap = new Map<string, { speaking: string; reading: string; writing: string }>();
+  for (const l of data.languages) {
+    langMap.set(l.language.toLowerCase(), { speaking: l.speaking, reading: l.reading, writing: l.writing });
+  }
+
+  const auWorkingLanguages = ["Arabic", "English", "French", "Kiswahili", "Portuguese", "Spanish"];
+  const langRows: TableRow[] = [
+    auTableHeaderRow(["Working Languages", "Speaking", "Reading", "Writing"]),
+  ];
+  for (const lang of auWorkingLanguages) {
+    const proficiency = langMap.get(lang.toLowerCase());
+    langRows.push(new TableRow({
+      children: [
+        auCell(lang, { bold: true }),
+        auCell(proficiency?.speaking ?? "", { alignment: AlignmentType.CENTER }),
+        auCell(proficiency?.reading ?? "", { alignment: AlignmentType.CENTER }),
+        auCell(proficiency?.writing ?? "", { alignment: AlignmentType.CENTER }),
       ],
     }));
   }
 
-  // Key Competencies
-  if (data.key_qualifications) {
-    children.push(auHeading("6", "Key Competencies"));
-    children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.key_qualifications, size: 20, font: "Arial" })] }));
-  }
-
-  // Certifications
-  if (data.certifications.length > 0) {
-    children.push(auHeading("7", "Certifications & Training"));
-    for (const cert of data.certifications) {
-      children.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: cert, size: 18, font: "Arial" })] }));
+  // Also add any user languages not in the AU6
+  for (const l of data.languages) {
+    const isAuLang = auWorkingLanguages.some(al => al.toLowerCase() === l.language.toLowerCase());
+    if (!isAuLang) {
+      langRows.push(new TableRow({
+        children: [
+          auCell(l.language, { bold: true }),
+          auCell(l.speaking, { alignment: AlignmentType.CENTER }),
+          auCell(l.reading, { alignment: AlignmentType.CENTER }),
+          auCell(l.writing, { alignment: AlignmentType.CENTER }),
+        ],
+      }));
     }
   }
 
-  // Countries of Experience
-  if (data.countries_of_experience.length > 0) {
-    children.push(auHeading("8", "Countries of Work Experience"));
-    children.push(new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: data.countries_of_experience.join(", "), size: 20, font: "Arial" })] }));
-  }
-
-  // Publications
-  if (data.publications.length > 0) {
-    children.push(auHeading("9", "Publications"));
-    for (const pub of data.publications) {
-      children.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: pub, size: 18, font: "Arial" })] }));
-    }
-  }
-
-  // Professional Associations
-  if (data.professional_associations.length > 0) {
-    children.push(auHeading("10", "Professional Associations / Memberships"));
-    for (const a of data.professional_associations) {
-      children.push(new Paragraph({ bullet: { level: 0 }, children: [new TextRun({ text: a, size: 18, font: "Arial" })] }));
-    }
-  }
-
-  // Declaration
-  children.push(new Paragraph({ spacing: { before: 400 }, children: [] }));
-  children.push(new Paragraph({
-    spacing: { after: 200 },
-    border: { top: { style: BorderStyle.SINGLE, size: 2, color: AU_GREEN } },
-    children: [new TextRun({ text: "I certify that the information provided above is true and correct to the best of my knowledge.", italics: true, size: 18, font: "Arial", color: "555555" })],
+  children.push(new Table({
+    layout: TableLayoutType.FIXED,
+    width: { size: 9400, type: WidthType.DXA },
+    rows: langRows,
   }));
+
+  /* ── 11. Referees ─────────────────────────────────────── */
+  children.push(auSectionHeading("Referees"));
   children.push(new Paragraph({
+    spacing: { before: 40, after: 60 },
+    children: [new TextRun({ text: "(Provide details of three referees)", italics: true, size: 16, font: AU_FONT, color: "777777" })],
+  }));
+
+  const refereeRows: TableRow[] = [
+    auTableHeaderRow(["Full Name", "Position and Organisation", "Email Address", "Telephone Number"]),
+  ];
+  // Always include 3 empty rows for referees
+  for (let i = 0; i < 3; i++) {
+    refereeRows.push(new TableRow({
+      children: [auCell(" "), auCell(" "), auCell(" "), auCell(" ")],
+    }));
+  }
+  children.push(new Table({
+    layout: TableLayoutType.FIXED,
+    width: { size: 9400, type: WidthType.DXA },
+    rows: refereeRows,
+  }));
+
+  /* ── 12. Certification ────────────────────────────────── */
+  children.push(auSectionHeading("Certification"));
+  children.push(new Paragraph({
+    spacing: { before: 80, after: 80 },
     children: [
-      new TextRun({ text: "Date: _________________    Signature: _________________", size: 20, font: "Arial" }),
+      new TextRun({
+        text: "I, the undersigned, certify that to the best of my knowledge and belief, this CV correctly describes me, my qualifications, and my experience, and I am available to undertake the assignment as described. I understand that any wilful misstatement described herein may lead to my disqualification or dismissal, if engaged.",
+        size: AU_FONT_SIZE,
+        font: AU_FONT,
+      }),
     ],
   }));
 
+  // Signature fields
+  children.push(new Table({
+    layout: TableLayoutType.FIXED,
+    width: { size: 9400, type: WidthType.DXA },
+    rows: [
+      new TableRow({
+        children: [
+          auCell("Full Name:", { bold: true, width: 2400 }),
+          auCell(p.full_name, { width: 7000 }),
+        ],
+      }),
+      new TableRow({
+        children: [
+          auCell("Signature:", { bold: true, width: 2400 }),
+          auCell("", { width: 7000 }),
+        ],
+      }),
+      new TableRow({
+        children: [
+          auCell("Date:", { bold: true, width: 2400 }),
+          auCell("", { width: 7000 }),
+        ],
+      }),
+    ],
+  }));
+
+  /* ── Build Document ───────────────────────────────────── */
   const doc = new Document({
     sections: [{
-      properties: { page: { margin: { top: 1200, bottom: 1200, left: 1300, right: 1300 } } },
+      properties: {
+        page: {
+          margin: { top: 1000, bottom: 1000, left: 1200, right: 1200 },
+          pageNumbers: { start: 1 },
+        },
+      },
+      headers: {
+        default: new Header({
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              spacing: { after: 0 },
+              children: [
+                new TextRun({ text: "AFRICAN UNION", bold: true, size: 16, font: AU_FONT, color: AU_GREEN }),
+                new TextRun({ text: "  |  ", size: 16, font: AU_FONT, color: "BBBBBB" }),
+                new TextRun({ text: "UNION AFRICAINE", bold: true, size: 16, font: AU_FONT, color: AU_GREEN }),
+              ],
+            }),
+          ],
+        }),
+      },
+      footers: {
+        default: new Footer({
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({ text: "Page ", size: 16, font: AU_FONT, color: "777777" }),
+                new TextRun({ children: [PageNumber.CURRENT], size: 16, font: AU_FONT, color: "777777" }),
+                new TextRun({ text: " of ", size: 16, font: AU_FONT, color: "777777" }),
+                new TextRun({ children: [PageNumber.TOTAL_PAGES], size: 16, font: AU_FONT, color: "777777" }),
+              ],
+            }),
+          ],
+        }),
+      },
       children,
     }],
   });
