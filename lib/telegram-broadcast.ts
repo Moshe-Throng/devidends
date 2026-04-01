@@ -130,6 +130,8 @@ export async function broadcastToGroup(
   }
 
   lines.push(`<a href="${SITE_URL}/opportunities">Browse all</a> · <a href="${SITE_URL}/tg-app/alerts">Set alerts</a>`);
+  lines.push(``);
+  lines.push(`<i>Powered by <a href="${SITE_URL}">Devidends</a> · Score your CV free</i>`);
 
   try {
     const opts: Record<string, unknown> = {
@@ -285,6 +287,7 @@ export async function notifySubscribersDaily(
       }
 
       lines.push(`<a href="${SITE_URL}/opportunities">Browse</a> · <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>`);
+      lines.push(`<i>Forward this to a colleague → <a href="${SITE_URL}/score">Score your CV</a></i>`);
 
       await bot.sendMessage(Number(sub.telegram_id), lines.join("\n"), {
         parse_mode: "HTML",

@@ -168,6 +168,23 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
         }
         if (data.profile) {
           setProfile(data.profile);
+
+          // Process referral if present (from t.me/bot?start=ref_XXXX or ?ref=XXXX)
+          try {
+            const refFromUrl = new URLSearchParams(window.location.search).get("ref");
+            const startParam = new URLSearchParams(initDataRaw || "").get("start_param");
+            const refCode = refFromUrl || (startParam?.startsWith("ref_") ? startParam.slice(4) : null);
+            if (refCode && !data.profile.referred_by) {
+              fetch("/api/referral", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  referral_code: refCode,
+                  referred_telegram_id: String(data.user.id),
+                }),
+              }).catch(() => {});
+            }
+          } catch {}
         }
         if (data.profileError) {
           console.warn("[TelegramProvider] Profile creation issue:", data.profileError);

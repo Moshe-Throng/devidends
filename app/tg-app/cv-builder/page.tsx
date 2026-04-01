@@ -1354,6 +1354,29 @@ export default function TgCvBuilder() {
                   </div>
                 </div>
               )}
+
+              {/* Share Score Card */}
+              <button
+                onClick={() => {
+                  const dims = (scoreResult.dimensions || []).map(d => `${d.name}:${d.score}`).join(",");
+                  const cardUrl = `/api/cv/score-card?score=${scoreResult.overall_score}&name=${encodeURIComponent(cvData.personal.full_name)}&dims=${encodeURIComponent(dims)}`;
+                  const shareText = `I scored ${scoreResult.overall_score}/100 on Devidends — the AI CV scorer for development professionals. Score yours free:`;
+                  const shareUrl = `https://devidends-eta-delta.vercel.app/score`;
+
+                  if (isTelegram && (window as any).Telegram?.WebApp) {
+                    (window as any).Telegram.WebApp.openTelegramLink(
+                      `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`
+                    );
+                  } else {
+                    navigator.share?.({ title: "My CV Score", text: shareText, url: shareUrl }).catch(() => {
+                      navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+                    });
+                  }
+                }}
+                className="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+              >
+                📤 Share My Score
+              </button>
             </div>
           )}
         </div>
