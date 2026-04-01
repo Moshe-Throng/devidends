@@ -175,9 +175,17 @@ export default function TgCvBuilder() {
         saved = raw as unknown as StructuredCvData;
       }
     } catch (e) {
-      console.warn("[cv-builder] Corrupted CV data in profile, starting fresh");
-      setError("Your saved CV data was corrupted. Please re-upload or start fresh.");
+      console.warn("[cv-builder] Corrupted CV data in profile, clearing it");
       saved = null;
+      // Auto-clear the corrupted data from Supabase
+      const initData = sessionStorage.getItem("tg_init_data");
+      if (initData) {
+        fetch("/api/telegram/verify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ initData, updateProfile: { cv_structured_data: null } }),
+        }).catch(() => {});
+      }
     }
 
     if (saved && saved?.personal?.full_name) {
@@ -294,23 +302,22 @@ export default function TgCvBuilder() {
     setError(null);
 
     try {
-      // Read file as base64 text and send as JSON (avoids FormData issues in Telegram WebView)
-      const buffer = await file.arrayBuffer();
-      const base64 = btoa(
-        new Uint8Array(buffer).reduce((s, b) => s + String.fromCharCode(b), "")
-      );
+      // Check file size before uploading
+      if (file.size > 10 * 1024 * 1024) {
+        throw new Error("File must be under 10MB");
+      }
+
+      // Use FormData instead of base64 JSON — more reliable in Telegram WebView
+      // Base64 inflates size by ~33% and can exceed webview fetch limits
+      const formData = new FormData();
+      formData.append("file", file);
 
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 90000);
 
       const res = await fetch("/api/cv/extract", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          file_base64: base64,
-          file_name: file.name,
-          file_type: file.type,
-        }),
+        body: formData,
         signal: controller.signal,
       });
       clearTimeout(timeout);
