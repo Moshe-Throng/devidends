@@ -1454,16 +1454,19 @@ export default function TgCvBuilder() {
                 {/* Share score */}
                 <button
                   onClick={() => {
+                    const refCode = tgUser?.id ? `ref_${tgUser.id}` : "ref_web";
                     const shareText = `I scored ${scoreResult.overall_score}/100 on Devidends — the AI CV scorer for development professionals. Score yours free:`;
-                    const shareUrl = `https://devidends-eta-delta.vercel.app/score`;
-                    if ((window as any).Telegram?.WebApp) {
-                      (window as any).Telegram.WebApp.openTelegramLink(
-                        `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`
-                      );
-                    } else {
-                      navigator.share?.({ title: "My CV Score", text: shareText, url: shareUrl }).catch(() => {
-                        navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
-                      });
+                    const shareUrl = `https://t.me/Devidends_Bot?start=${refCode}`;
+                    const fullShareUrl = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+                    try {
+                      const tg = (window as any).Telegram?.WebApp;
+                      if (tg?.openTelegramLink) {
+                        tg.openTelegramLink(fullShareUrl);
+                      } else {
+                        window.open(fullShareUrl, "_blank");
+                      }
+                    } catch {
+                      window.open(fullShareUrl, "_blank");
                     }
                   }}
                   className="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"

@@ -1079,9 +1079,26 @@ export default function CvBuilderPage() {
                   <p className="text-xs text-dark-400 mt-0.5 leading-relaxed">
                     Get field-by-field edits that auto-apply to your CV — tailored to GIZ, World Bank, and EU standards.
                   </p>
-                  <p className="text-xs text-amber-600 font-semibold mt-2">
-                    Refer 3 colleagues to unlock this feature
-                  </p>
+                  <div className="mt-2.5 flex items-center gap-2">
+                    <button
+                      onClick={async (e) => {
+                        const btn = e.currentTarget;
+                        const link = `https://t.me/Devidends_Bot?start=ref_web`;
+                        const text = `I just scored my CV on Devidends — the AI scorer for development professionals. Try it free: ${link}`;
+                        try {
+                          await navigator.clipboard.writeText(text);
+                          btn.textContent = "Copied!";
+                          setTimeout(() => { btn.innerHTML = '<svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> Share &amp; unlock (0/3)'; }, 2000);
+                        } catch {
+                          window.open(`https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(text)}`, "_blank");
+                        }
+                      }}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-100 text-amber-700 text-xs font-bold hover:bg-amber-200 transition-colors"
+                    >
+                      <Sparkles className="w-3 h-3" />
+                      Share &amp; unlock (0/3 referrals)
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
