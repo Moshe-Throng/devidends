@@ -505,13 +505,11 @@ export default function TgCvBuilder() {
     ].filter(Boolean).join("\n");
   }
 
-  /* ─── Score via SSE stream (keeps connection alive) ── */
-  const [scoreProgress, setScoreProgress] = useState("");
+  /* ─── Score CV (simple fetch, fast prompt) ──────── */
 
   async function handleScoreCv() {
     if (scoring) return;
 
-    // Check cache
     const currentHash = cvDataHash(cvData);
     if (scoreResult && scoredCvHash === currentHash) {
       setShowScore(true);
@@ -519,72 +517,36 @@ export default function TgCvBuilder() {
     }
 
     setScoring(true);
-    setScoreProgress("Starting...");
     setError(null);
 
     try {
       const cvText = buildCvText();
 
-      const res = await fetch("/api/cv/score-stream", {
+      const res = await fetch("/api/cv/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cv_text: cvText }),
       });
 
-      if (!res.ok || !res.body) {
+      if (!res.ok) {
+        const ct = res.headers.get("content-type") || "";
+        if (ct.includes("application/json")) {
+          const err = await res.json();
+          throw new Error(err.error || "Scoring failed");
+        }
         throw new Error(`Server error (${res.status})`);
       }
 
-      // Read SSE stream
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let scoreData: any = null;
+      const json = await res.json();
+      if (!json.success) throw new Error(json.error || "Scoring failed");
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || ""; // keep incomplete line in buffer
-
-        let currentEvent = "";
-        for (const line of lines) {
-          if (line.startsWith("event: ")) {
-            currentEvent = line.slice(7).trim();
-          } else if (line.startsWith("data: ") && currentEvent) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (currentEvent === "progress") {
-                setScoreProgress(data.step || "Processing...");
-              } else if (currentEvent === "score") {
-                scoreData = data;
-              } else if (currentEvent === "error") {
-                throw new Error(data.error || "Scoring failed");
-              }
-            } catch (parseErr) {
-              if (parseErr instanceof Error && parseErr.message !== "Scoring failed" && !parseErr.message.includes("limit")) {
-                // Ignore JSON parse errors on partial chunks
-              } else {
-                throw parseErr;
-              }
-            }
-            currentEvent = "";
-          }
-        }
-      }
-
-      if (!scoreData || typeof scoreData.overall_score !== "number") {
-        throw new Error("No score received — please try again");
-      }
-
+      const scoreData = json.data;
       const hash = cvDataHash(cvData);
       setScoreResult(scoreData);
       setScoredCvHash(hash);
       setShowScore(true);
 
-      // Cache score to profile
+      // Cache to profile
       const initData = sessionStorage.getItem("tg_init_data");
       if (initData) {
         fetch("/api/telegram/verify", {
@@ -604,23 +566,10 @@ export default function TgCvBuilder() {
       setError(err instanceof Error ? err.message : "Scoring failed — try again");
     } finally {
       setScoring(false);
-      setScoreProgress("");
     }
   }
 
-  /* ─── Auto-score when entering template phase ──── */
-  const autoScoreTriggered = useRef(false);
-  useEffect(() => {
-    if (phase !== "template") return;
-    if (autoScoreTriggered.current) return;
-    if (scoreResult) return; // already have a score
-    if (!cvData.personal.full_name) return;
-    autoScoreTriggered.current = true;
-    // Small delay to let the UI render first
-    const timer = setTimeout(() => handleScoreCv(), 500);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase]);
+  // No auto-score — user presses "Score" manually
 
   const toggleSection = (key: string) => {
     setOpenSections((prev) => {
@@ -1512,7 +1461,7 @@ export default function TgCvBuilder() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-dark-900">
-                      {scoreProgress || "Scoring your CV..."}
+                      Scoring your CV...
                     </p>
                     <p className="text-[10px] text-dark-400 mt-0.5">
                       Takes about 30 seconds

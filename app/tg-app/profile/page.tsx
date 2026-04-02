@@ -6,29 +6,25 @@ import {
   ArrowLeft,
   User,
   MapPin,
-  Briefcase,
-  GraduationCap,
   Target,
   Linkedin,
-  Mail,
   ChevronRight,
   AlertCircle,
   Loader2,
   CheckCircle,
-  Edit3,
   Save,
-  X,
   Link2,
   Camera,
+  Mail,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
-import { SECTORS, DONORS, COUNTRIES } from "@/lib/constants";
+import { SECTORS, COUNTRIES } from "@/lib/constants";
 
 export default function TgAppProfile() {
   const { tgUser, profile, loading, refreshProfile } = useTelegram();
 
-  /* ─── Edit state ──────────────────────────────── */
-  const [editing, setEditing] = useState(false);
+  /* ─── Always-editable state ────────────────────── */
+  const editing = true; // always editable, no toggle
   const [saving, setSaving] = useState(false);
   const [saveMsg, setSaveMsg] = useState("");
 
@@ -118,7 +114,6 @@ export default function TgAppProfile() {
       if (!res.ok) throw new Error("Save failed");
 
       setSaveMsg("Profile updated!");
-      setEditing(false);
       refreshProfile();
     } catch {
       setSaveMsg("Failed to save — try again");
@@ -197,32 +192,14 @@ export default function TgAppProfile() {
               My Profile
             </h1>
           </div>
-          {!editing ? (
-            <button
-              onClick={() => setEditing(true)}
-              className="flex items-center gap-1.5 text-xs font-bold text-cyan-600 px-3 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200"
-            >
-              <Edit3 className="w-3.5 h-3.5" />
-              Edit
-            </button>
-          ) : (
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setEditing(false)}
-                className="text-xs font-semibold text-dark-400 px-2 py-1.5"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSave}
-                disabled={saving}
-                className="flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1.5 rounded-lg bg-cyan-500 disabled:opacity-50"
-              >
-                {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
-                Save
-              </button>
-            </div>
-          )}
+          <button
+            onClick={handleSave}
+            disabled={saving}
+            className="flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1.5 rounded-lg bg-cyan-500 disabled:opacity-50"
+          >
+            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
+            Save
+          </button>
         </div>
       </div>
 
@@ -357,24 +334,6 @@ export default function TgAppProfile() {
           display={profile.sectors}
         />
 
-        {/* Donors */}
-        <ChipSection
-          icon={Briefcase}
-          title="Donor Experience"
-          color="teal"
-          editing={editing}
-          options={[...DONORS]}
-          selected={selectedDonors}
-          onToggle={(s) => {
-            setSelectedDonors((prev) => {
-              const next = new Set(prev);
-              next.has(s) ? next.delete(s) : next.add(s);
-              return next;
-            });
-          }}
-          display={profile.donors}
-        />
-
         {/* Countries */}
         <ChipSection
           icon={MapPin}
@@ -393,53 +352,16 @@ export default function TgAppProfile() {
           display={profile.countries}
         />
 
-        {/* Qualifications */}
-        <div className="bg-white border border-dark-100 rounded-xl p-4">
-          <div className="flex items-center gap-2 mb-2.5">
-            <div className="w-6 h-6 rounded-md bg-dark-50 flex items-center justify-center">
-              <GraduationCap className="w-3.5 h-3.5 text-dark-500" />
-            </div>
-            <h3 className="text-xs font-bold text-dark-600 uppercase tracking-wider">Qualifications</h3>
-          </div>
-          {editing ? (
-            <textarea
-              value={qualifications}
-              onChange={(e) => setQualifications(e.target.value)}
-              placeholder="e.g. MSc Development Studies, PMP certified"
-              rows={2}
-              className="w-full bg-dark-50 border border-dark-200 rounded-lg px-3 py-2 text-sm text-dark-800 placeholder-dark-400 focus:outline-none focus:border-cyan-400 resize-none"
-            />
-          ) : profile.qualifications ? (
-            <p className="text-sm text-dark-700">{profile.qualifications}</p>
-          ) : (
-            <p className="text-xs text-dark-400 italic">Add your qualifications</p>
-          )}
-        </div>
-
-        {/* Experience + LinkedIn row */}
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white border border-dark-100 rounded-xl px-4 py-3">
-            <p className="text-xs text-dark-400 font-medium mb-1">Years of experience</p>
-            {editing ? (
-              <input
-                type="number"
-                value={yearsExp}
-                onChange={(e) => setYearsExp(e.target.value)}
-                placeholder="0"
-                className="w-full bg-dark-50 border border-dark-200 rounded-lg px-2 py-1.5 text-sm font-bold text-dark-900 focus:outline-none focus:border-cyan-400"
-              />
-            ) : (
-              <p className="text-lg font-bold text-dark-900">
-                {profile.years_of_experience ?? "—"}
-              </p>
-            )}
-          </div>
-          <div className="bg-white border border-dark-100 rounded-xl px-4 py-3">
-            <p className="text-xs text-dark-400 font-medium mb-1">CV Score</p>
-            <p className="text-lg font-bold text-dark-900">
-              {profile.cv_score != null ? `${profile.cv_score}/100` : "—"}
-            </p>
-          </div>
+        {/* Years of experience */}
+        <div className="bg-white border border-dark-100 rounded-xl px-4 py-3">
+          <p className="text-xs text-dark-400 font-medium mb-1">Years of experience</p>
+          <input
+            type="number"
+            value={yearsExp}
+            onChange={(e) => setYearsExp(e.target.value)}
+            placeholder="0"
+            className="w-full bg-dark-50 border border-dark-200 rounded-lg px-3 py-2 text-sm font-bold text-dark-900 focus:outline-none focus:border-cyan-400"
+          />
         </div>
 
         {/* LinkedIn */}
@@ -470,17 +392,6 @@ export default function TgAppProfile() {
         </div>
       </div>
 
-      {/* ── Bottom Edit CTA (if not already editing) ── */}
-      {!editing && profilePct < 60 && (
-        <div className="px-4 mt-5">
-          <button
-            onClick={() => setEditing(true)}
-            className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
-          >
-            Complete Your Profile
-          </button>
-        </div>
-      )}
     </div>
   );
 }
@@ -545,7 +456,7 @@ function ChipSection({
           ))}
         </div>
       ) : (
-        <p className="text-xs text-dark-400 italic">Not set yet — tap Edit to add</p>
+        <p className="text-xs text-dark-400 italic">Tap to select</p>
       )}
     </div>
   );

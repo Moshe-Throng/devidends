@@ -40,122 +40,13 @@ function setCache(key: string, result: CvScoreResult) {
   scoreCache.set(key, { result, cachedAt: Date.now() });
 }
 
-const BASE_SYSTEM_PROMPT = `You are Devidends's CV Scorer for international development consulting (GIZ, World Bank, EU, UNDP, AfDB projects in Africa).
+const SYSTEM_PROMPT = `You are a CV scorer for international development consulting (GIZ, World Bank, EU, UNDP, AfDB). Score 0-100 across 6 dimensions. Be specific to THIS CV's content. Weak CVs score <40, strong >80. Never default to 65.
 
-Score this CV on a 0-100 scale across these 6 dimensions:
+Return ONLY this JSON (no markdown):
+{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>},{"name":"Summary","score":<0-100>},{"name":"Experience","score":<0-100>},{"name":"Skills","score":<0-100>},{"name":"Education","score":<0-100>},{"name":"Donor Readiness","score":<0-100>}],"top_3_improvements":["specific improvement 1","specific improvement 2","specific improvement 3"]}`;
 
-1. Structure & Format (15%): Standard sections present? Logical flow? Appropriate length (2-4 pages)? Clear headings?
-2. Professional Summary (15%): Clear, compelling, sector-relevant? Keywords present? Tailored to development consulting?
-3. Experience Relevance (25%): Donor project experience depth? Sector alignment? Quantified impact (budgets, beneficiaries, outcomes)?
-4. Skills & Keywords (15%): Technical skills, methodologies (logframes, ToC, RBM), tools, donor-specific terminology?
-5. Education & Certifications (10%): Relevant qualifications? Professional certifications? Languages (especially UN languages)?
-6. Donor Readiness (20%): Would this pass initial screening for a GIZ/World Bank assignment? Formatted per donor standards? Results-oriented language?
-
-CRITICAL RULES:
-- Your scores and feedback MUST reference SPECIFIC content from the CV text provided
-- Do NOT give generic advice — every gap and suggestion must point to something concrete in THIS CV
-- If the CV mentions "managed a $2M WASH project for GIZ in Ethiopia", reference that specifically
-- Scores must vary meaningfully between different CVs — do not default to 65/100
-- Be honest: a weak CV should score below 40, an excellent one above 80`;
-
-const OPPORTUNITY_ADDENDUM = `
-
-OPPORTUNITY CONTEXT:
-You are also scoring this CV against a SPECIFIC opportunity. Evaluate how well this candidate fits THIS role.
-
-Opportunity details:
-- Title: {title}
-- Organization: {organization}
-- Description: {description}
-
-When scoring with an opportunity:
-- Experience Relevance should heavily weight match to THIS opportunity's requirements
-- Skills & Keywords should check for THIS opportunity's specific technical needs
-- Suggestions should be targeted: "For this {organization} role, you should highlight..."
-- Add an "opportunity_fit" section with: match_percentage (0-100), matching_strengths (what in the CV aligns), missing_requirements (what the opportunity needs that the CV lacks), recommendation (1-2 sentence verdict)`;
-
-const JSON_SCHEMA = `
-Return ONLY valid JSON matching this exact schema (no markdown, no explanation, just JSON):
-{
-  "overall_score": <number 0-100>,
-  "dimensions": [
-    {
-      "name": "Structure & Format",
-      "score": <number 0-100>,
-      "weight": 15,
-      "gaps": ["specific gap referencing CV content"],
-      "suggestions": ["specific actionable suggestion"]
-    },
-    {
-      "name": "Professional Summary",
-      "score": <number 0-100>,
-      "weight": 15,
-      "gaps": [],
-      "suggestions": []
-    },
-    {
-      "name": "Experience Relevance",
-      "score": <number 0-100>,
-      "weight": 25,
-      "gaps": [],
-      "suggestions": []
-    },
-    {
-      "name": "Skills & Keywords",
-      "score": <number 0-100>,
-      "weight": 15,
-      "gaps": [],
-      "suggestions": []
-    },
-    {
-      "name": "Education & Certifications",
-      "score": <number 0-100>,
-      "weight": 10,
-      "gaps": [],
-      "suggestions": []
-    },
-    {
-      "name": "Donor Readiness",
-      "score": <number 0-100>,
-      "weight": 20,
-      "gaps": [],
-      "suggestions": []
-    }
-  ],
-  "top_3_improvements": ["improvement 1", "improvement 2", "improvement 3"],
-  "donor_specific_tips": {
-    "GIZ": "specific tip for GIZ formatting based on THIS CV",
-    "World Bank": "specific tip for WB formatting based on THIS CV",
-    "EU": "specific tip for EU formatting based on THIS CV"
-  }OPPORTUNITY_FIT_PLACEHOLDER
-}`;
-
-const OPPORTUNITY_FIT_JSON = `,
-  "opportunity_fit": {
-    "match_percentage": <number 0-100>,
-    "matching_strengths": ["strength 1 from CV that matches this role"],
-    "missing_requirements": ["requirement from the opportunity not found in CV"],
-    "recommendation": "1-2 sentence verdict on fit"
-  }`;
-
-function buildSystemPrompt(opportunity?: OpportunityInput): string {
-  let prompt = BASE_SYSTEM_PROMPT;
-
-  if (opportunity) {
-    prompt += OPPORTUNITY_ADDENDUM
-      .replace("{title}", opportunity.title)
-      .replace("{organization}", opportunity.organization)
-      .replace("{description}", opportunity.description || "Not provided")
-      .replace("{organization}", opportunity.organization);
-  }
-
-  const schema = JSON_SCHEMA.replace(
-    "OPPORTUNITY_FIT_PLACEHOLDER",
-    opportunity ? OPPORTUNITY_FIT_JSON : ""
-  );
-
-  prompt += "\n" + schema;
-  return prompt;
+function buildSystemPrompt(_opportunity?: OpportunityInput): string {
+  return SYSTEM_PROMPT;
 }
 
 /**
@@ -223,7 +114,7 @@ export async function scoreCv(
   const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
-    max_tokens: 4000,
+    max_tokens: 800,
     // Structured system block with cache_control enables prompt caching.
     // The system prompt (~2000 tokens) is identical across calls —
     // cached reads cost 90% less on input tokens.
@@ -289,16 +180,14 @@ export async function scoreCv(
     try {
       parsed = JSON.parse(fixedJson) as CvScoreResult;
     } catch {
-      console.error("[cv-score] Failed to parse AI response:", responseText.slice(0, 500));
+      console.error("[cv-score] Failed to parse AI response. Raw:", responseText.slice(0, 800));
+      console.error("[cv-score] Extracted JSON:", jsonStr.slice(0, 500));
       throw new Error("CV scoring returned invalid data — please try again");
     }
   }
 
-  if (
-    typeof parsed.overall_score !== "number" ||
-    !Array.isArray(parsed.dimensions) ||
-    parsed.dimensions.length !== 6
-  ) {
+  if (typeof parsed.overall_score !== "number" || !Array.isArray(parsed.dimensions)) {
+    console.error("[cv-score] Bad structure:", JSON.stringify(parsed).slice(0, 300));
     throw new Error("Invalid score response structure from AI");
   }
 
