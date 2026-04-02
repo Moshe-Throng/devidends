@@ -33,27 +33,16 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const TYPE_EMOJI: Record<string, string> = {
-  job: "💼", consultancy: "📋", tender: "📦", internship: "🎓",
-  contract: "📄", fellowship: "🎖️", volunteer: "🤝",
-};
-const CAT_EMOJI: Record<string, string> = {
-  "Humanitarian": "🆘", "Policy & Governance": "🏛️", "Funding & Donors": "💰",
-  "Health": "🏥", "Economy & Trade": "📈", "Climate & Environment": "🌍",
-  "Education": "📚", "General": "📰",
-};
-
-/** Compact one-line opportunity format for digests */
+/** Clean single-line opportunity: title (org, deadline) */
 function oppLine(opp: SampleOpportunity): string {
-  const type = (opp.classified_type || opp.type || "").toLowerCase();
-  const emoji = TYPE_EMOJI[type] || "📌";
-  const title = escHtml(truncate(opp.title, 65));
-  const org = escHtml(truncate(opp.organization, 30));
+  const title = escHtml(truncate(opp.title, 55));
+  const org = escHtml(truncate(opp.organization, 25));
   const deadline = opp.deadline
     ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
-    : "Open";
+    : "";
   const url = opp.source_url || `${SITE_URL}/opportunities`;
-  return `${emoji} <a href="${url}">${title}</a>\n    ${org} · ${deadline}`;
+  const meta = [org, deadline].filter(Boolean).join(" · ");
+  return `  <a href="${url}">${title}</a>\n  <i>${meta}</i>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -98,40 +87,39 @@ export async function broadcastToGroup(
     return { sent: false, count: 0 };
   }
 
-  const date = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const date = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
 
   const lines: string[] = [
-    `📡 <b>Daily Brief</b> — ${escHtml(date)}`,
+    `<b>Devidends</b>  ·  ${escHtml(date)}`,
     ``,
   ];
 
-  // Jobs (max 10, compact)
+  // Jobs
   if (jobs.length > 0) {
-    lines.push(`<b>💼 ${jobs.length} New Opportunities</b>`);
-    lines.push(``);
+    lines.push(`<b>${jobs.length} new opportunities</b>`);
+    lines.push(`─────────────────────`);
     for (const opp of jobs.slice(0, 10)) {
       lines.push(oppLine(opp));
+      lines.push(``);
     }
     if (jobs.length > 10) {
-      lines.push(`\n<i>+${jobs.length - 10} more</i>`);
+      lines.push(`  <i>… and ${jobs.length - 10} more</i>`);
+      lines.push(``);
     }
-    lines.push(``);
   }
 
-  // News (max 4, compact)
+  // News
   if (news.length > 0) {
-    lines.push(`<b>📰 Dev News</b>`);
-    lines.push(``);
+    lines.push(`<b>In the news</b>`);
+    lines.push(`─────────────────────`);
     for (const a of news.slice(0, 4)) {
-      const catEmoji = CAT_EMOJI[a.category] || "📰";
-      lines.push(`${catEmoji} <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
+      lines.push(`  <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
+      lines.push(`  <i>${escHtml(a.source_name || a.category)}</i>`);
+      lines.push(``);
     }
-    lines.push(``);
   }
 
-  lines.push(`<a href="${SITE_URL}/opportunities">Browse all</a> · <a href="${SITE_URL}/tg-app/alerts">Set alerts</a>`);
-  lines.push(``);
-  lines.push(`<i>Powered by <a href="${SITE_URL}">Devidends</a> · Score your CV free</i>`);
+  lines.push(`<a href="${SITE_URL}/tg-app">Open app</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>  ·  <a href="${SITE_URL}/score">Score CV</a>`);
 
   try {
     const opts: Record<string, unknown> = {
@@ -282,37 +270,38 @@ export async function notifySubscribersDaily(
         continue;
       }
 
-      // Build compact single message
-      const lines: string[] = [`📡 <b>Daily Brief</b> · ${escHtml(date)}`, ``];
+      // Build clean digest message
+      const lines: string[] = [
+        `<b>Devidends</b>  ·  ${escHtml(date)}`,
+        ``,
+      ];
 
       // Jobs (max 5)
       if (matchedJobs.length > 0) {
-        lines.push(`💼 <b>${matchedJobs.length} Opportunities</b>`);
-        lines.push(``);
+        lines.push(`<b>${matchedJobs.length} opportunities for you</b>`);
+        lines.push(`─────────────────────`);
         for (const opp of matchedJobs.slice(0, 5)) {
           lines.push(oppLine(opp));
+          lines.push(``);
         }
         if (matchedJobs.length > 5) {
-          lines.push(`<i>+${matchedJobs.length - 5} more</i>`);
+          lines.push(`  <i>… and ${matchedJobs.length - 5} more</i>`);
+          lines.push(``);
         }
-        lines.push(``);
       }
 
       // News (max 3)
       if (matchedNews.length > 0) {
-        lines.push(`📰 <b>News</b>`);
+        lines.push(`<b>In the news</b>`);
+        lines.push(`─────────────────────`);
         for (const a of matchedNews.slice(0, 3)) {
-          const catEmoji = CAT_EMOJI[a.category] || "📰";
-          lines.push(`${catEmoji} <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
+          lines.push(`  <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
+          lines.push(`  <i>${escHtml(a.source_name || a.category)}</i>`);
+          lines.push(``);
         }
-        if (matchedNews.length > 3) {
-          lines.push(`<i>+${matchedNews.length - 3} more</i>`);
-        }
-        lines.push(``);
       }
 
-      lines.push(`<a href="${SITE_URL}/opportunities">Browse</a> · <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>`);
-      lines.push(`<i>Forward this to a colleague → <a href="${SITE_URL}/score">Score your CV</a></i>`);
+      lines.push(`<a href="${SITE_URL}/tg-app">Open app</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>`);
 
       await bot.sendMessage(Number(sub.telegram_id), lines.join("\n"), {
         parse_mode: "HTML",
