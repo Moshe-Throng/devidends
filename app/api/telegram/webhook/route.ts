@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTelegramBot } from "@/lib/telegram";
 import { handleUpdate } from "@/lib/telegram-handlers";
+import { logException } from "@/lib/logger";
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,7 +10,7 @@ export async function POST(req: NextRequest) {
     await handleUpdate(bot, body);
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[telegram-webhook] Error:", err);
+    logException("telegram-webhook", err, { update_id: "unknown" });
     // Always return 200 to prevent Telegram from retrying failed updates
     return NextResponse.json({ ok: true });
   }

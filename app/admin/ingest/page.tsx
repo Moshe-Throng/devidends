@@ -72,6 +72,13 @@ export default function AdminIngestPage() {
     }
   }
 
+  // Metadata fields for batch ingestion
+  const [metaRecommendedBy, setMetaRecommendedBy] = useState("");
+  const [metaGender, setMetaGender] = useState("");
+  const [metaIsRecommender, setMetaIsRecommender] = useState(false);
+  const [metaTags, setMetaTags] = useState("");
+  const [metaNotes, setMetaNotes] = useState("");
+
   async function handleUpload(files: FileList | null) {
     if (!files || files.length === 0) return;
     setError(null);
@@ -87,6 +94,11 @@ export default function AdminIngestPage() {
       try {
         const form = new FormData();
         form.append("cv", file);
+        if (metaRecommendedBy) form.append("recommended_by", metaRecommendedBy);
+        if (metaGender) form.append("gender", metaGender);
+        if (metaIsRecommender) form.append("is_recommender", "true");
+        if (metaTags) form.append("tags", metaTags);
+        if (metaNotes) form.append("admin_notes", metaNotes);
 
         const res = await fetch("/api/admin/ingest", {
           method: "POST",
@@ -172,6 +184,39 @@ export default function AdminIngestPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-6 space-y-6">
+        {/* Metadata fields (apply to all CVs in this batch) */}
+        <div className="bg-white rounded-xl border border-dark-100 p-4">
+          <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-3">Batch metadata (applied to all uploads)</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div>
+              <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Recommended By</label>
+              <input value={metaRecommendedBy} onChange={e => setMetaRecommendedBy(e.target.value)} placeholder="Name" className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none" />
+            </div>
+            <div>
+              <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Gender</label>
+              <select value={metaGender} onChange={e => setMetaGender(e.target.value)} className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none bg-white">
+                <option value="">Auto-detect</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Tags</label>
+              <input value={metaTags} onChange={e => setMetaTags(e.target.value)} placeholder="priority, verified" className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none" />
+            </div>
+            <div className="flex items-end gap-2">
+              <label className="flex items-center gap-2 text-xs text-dark-600 cursor-pointer">
+                <input type="checkbox" checked={metaIsRecommender} onChange={e => setMetaIsRecommender(e.target.checked)} className="rounded border-dark-300" />
+                Is Recommender
+              </label>
+            </div>
+          </div>
+          <div className="mt-3">
+            <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Admin Notes</label>
+            <input value={metaNotes} onChange={e => setMetaNotes(e.target.value)} placeholder="Optional notes about this batch" className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none" />
+          </div>
+        </div>
+
         {/* Upload zone */}
         <div
           className={`border-2 border-dashed rounded-2xl p-8 text-center transition-colors ${

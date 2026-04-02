@@ -3,6 +3,7 @@ import { createHash } from "crypto";
 import { createClient } from "@supabase/supabase-js";
 import type { CvScoreResult, OpportunityInput } from "./types/cv-score";
 import { calculateCost, logUsage } from "./usage-tracker";
+import { logException } from "./logger";
 
 const MAX_CV_LENGTH = 25_000;
 
@@ -183,14 +184,13 @@ export async function scoreCv(
     try {
       parsed = JSON.parse(fixedJson) as CvScoreResult;
     } catch {
-      console.error("[cv-score] Failed to parse AI response. Raw:", responseText.slice(0, 800));
-      console.error("[cv-score] Extracted JSON:", jsonStr.slice(0, 500));
+      logException("cv-scorer", new Error("JSON parse failed"), { raw: responseText.slice(0, 500), extracted: jsonStr.slice(0, 300) });
       throw new Error("CV scoring returned invalid data — please try again");
     }
   }
 
   if (typeof parsed.overall_score !== "number" || !Array.isArray(parsed.dimensions)) {
-    console.error("[cv-score] Bad structure:", JSON.stringify(parsed).slice(0, 300));
+    logException("cv-scorer", new Error("Invalid structure"), { parsed: JSON.stringify(parsed).slice(0, 300) });
     throw new Error("Invalid score response structure from AI");
   }
 

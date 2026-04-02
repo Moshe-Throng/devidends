@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { verifyInitData } from "@/lib/telegram-auth";
+import { logException, trackEvent } from "@/lib/logger";
 
 function getAdmin() {
   return createClient(
@@ -111,6 +112,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to claim profile" }, { status: 500 });
     }
 
+    trackEvent({ event: "claim_completed", profile_id: claimProfile.id, telegram_id: telegramId, metadata: { token: claimToken } });
     return NextResponse.json({
       success: true,
       profile_id: claimProfile.id,
@@ -118,7 +120,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "Claim failed";
-    console.error("[claim]", msg);
+    logException("api/claim", err);
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

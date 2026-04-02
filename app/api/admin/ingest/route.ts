@@ -5,6 +5,7 @@ import { extractCvData } from "@/lib/cv-extractor";
 import { scoreCv } from "@/lib/cv-scorer";
 import { createClient } from "@supabase/supabase-js";
 import { randomUUID } from "crypto";
+import { logException, trackEvent } from "@/lib/logger";
 
 export const maxDuration = 60;
 
@@ -26,6 +27,14 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
     const file = formData.get("cv") as File | null;
+
+    // Admin-provided metadata fields
+    const recommendedBy = (formData.get("recommended_by") as string) || null;
+    const isRecommender = formData.get("is_recommender") === "true";
+    const gender = (formData.get("gender") as string) || null;
+    const adminNotes = (formData.get("admin_notes") as string) || null;
+    const tagsRaw = (formData.get("tags") as string) || "";
+    const tags = tagsRaw ? tagsRaw.split(",").map(t => t.trim()).filter(Boolean) : [];
 
     if (!file) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
@@ -85,6 +94,14 @@ export async function POST(req: NextRequest) {
       dupWarning = `Possible duplicate: "${dupes[0].name}" already exists (source: ${dupes[0].source}, score: ${dupes[0].cv_score ?? "n/a"})`;
     }
 
+    // Extract nationality, languages, education_level from structured CV
+    const nationality = cvStructured?.personal?.nationality || null;
+    const languages = cvStructured?.languages?.map((l: any) => l.language).filter(Boolean) || [];
+    const eduLevel = cvStructured?.education?.[0]?.degree?.match(/PhD|Doctorate/i) ? "PhD"
+      : cvStructured?.education?.[0]?.degree?.match(/Master|MSc|MA|MBA|MPH/i) ? "Masters"
+      : cvStructured?.education?.[0]?.degree?.match(/Bachelor|BSc|BA|BEng/i) ? "Bachelors"
+      : cvStructured?.education?.[0]?.degree?.match(/Diploma/i) ? "Diploma" : null;
+
     // Create profile in Supabase
     const { data: created, error: insertErr } = await sb
       .from("profiles")
@@ -103,8 +120,16 @@ export async function POST(req: NextRequest) {
         cv_score: cvScore,
         claim_token: claimToken,
         source: "admin_ingest",
+        recommended_by: recommendedBy,
+        is_recommender: isRecommender,
+        gender: gender,
+        nationality: nationality,
+        languages: languages,
+        education_level: eduLevel,
+        tags: tags,
+        admin_notes: adminNotes,
       })
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, created_at")
       .single();
 
     if (insertErr) {
@@ -115,6 +140,8 @@ export async function POST(req: NextRequest) {
     const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
     const tgLink = `https://t.me/Devidends_Bot?start=claim_${claimToken}`;
     const webLink = `${SITE}/claim?token=${claimToken}`;
+
+    trackEvent({ event: "cv_ingested", profile_id: created.id, metadata: { name: profile.name, score: cvScore, source: "admin_ingest" } });
 
     return NextResponse.json({
       success: true,
@@ -128,7 +155,7 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "Unknown error";
-    console.error("[admin/ingest]", msg);
+    logException("admin/ingest", err);
     return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

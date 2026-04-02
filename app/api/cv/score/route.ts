@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { extractText, detectFileType } from "@/lib/file-parser";
 import { scoreCv } from "@/lib/cv-scorer";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limiter";
+import { logException, trackEvent } from "@/lib/logger";
 import type {
   OpportunityInput,
   ScoreResponse,
@@ -116,11 +117,12 @@ export async function POST(req: NextRequest) {
       scores_remaining: rl.remaining,
     };
 
+    trackEvent({ event: "cv_scored", metadata: { score: result.overall_score, ip } });
     return NextResponse.json(response);
   } catch (err: unknown) {
     const message =
       err instanceof Error ? err.message : "Unknown scoring error";
-    console.error("CV Score error:", message);
+    logException("api/cv/score", err, { ip: getClientIp(req.headers) });
     return errorJson(message, 500);
   }
 }
