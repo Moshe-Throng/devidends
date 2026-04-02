@@ -124,6 +124,68 @@ function formatOpportunity(opp: OpportunityRecord): string {
 }
 
 // ---------------------------------------------------------------------------
+// Claim handler — expert clicks t.me/Devidends_Bot?start=claim_XXXXXXXX
+// ---------------------------------------------------------------------------
+
+async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: string) {
+  const chatId = msg.chat.id;
+  const firstName = msg.from?.first_name || "there";
+
+  try {
+    // Verify claim token exists via API
+    const res = await fetch(`${SITE_URL}/api/claim?token=${claimToken}`);
+    const data = await res.json();
+
+    if (!data.success) {
+      await bot.sendMessage(
+        chatId,
+        `Sorry, this claim link is no longer valid\\. It may have already been claimed\\.`,
+        { parse_mode: "MarkdownV2" }
+      );
+      return;
+    }
+
+    const name = data.profile.name ? escapeMarkdown(data.profile.name) : firstName;
+    const score = data.profile.cv_score ? ` \\(Score: ${data.profile.cv_score}/100\\)` : "";
+
+    await bot.sendMessage(
+      chatId,
+      [
+        `*Welcome, ${name}\\!*`,
+        "",
+        `Your professional profile has been prepared on Devidends${score}\\.`,
+        "",
+        "Tap below to review and claim it:",
+      ].join("\n"),
+      {
+        parse_mode: "MarkdownV2",
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: "\u2705 Review & Claim My Profile",
+                web_app: { url: `${SITE_URL}/tg-app/claim?token=${claimToken}` },
+              },
+            ],
+          ],
+        },
+      }
+    );
+  } catch (err) {
+    console.error("[telegram] claim start error:", err);
+    await bot.sendMessage(
+      chatId,
+      "Something went wrong\\. Please try again or contact support\\.",
+      { parse_mode: "MarkdownV2" }
+    );
+  }
+}
+
+function escapeMarkdown(text: string): string {
+  return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+}
+
+// ---------------------------------------------------------------------------
 // Command handlers
 // ---------------------------------------------------------------------------
 
@@ -676,7 +738,12 @@ export async function handleUpdate(
     const text = msg.text || "";
 
     if (text.startsWith("/start")) {
-      await handleStart(bot, msg);
+      const payload = text.replace(/^\/start\s*/, "").trim();
+      if (payload.startsWith("claim_")) {
+        await handleClaimStart(bot, msg, payload.slice(6));
+      } else {
+        await handleStart(bot, msg);
+      }
     } else if (text.startsWith("/help")) {
       await handleHelp(bot, msg);
     } else if (text.startsWith("/subscribe")) {

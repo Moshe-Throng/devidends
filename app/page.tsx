@@ -235,7 +235,7 @@ export default function LandingPage() {
 
             {/* Headline */}
             <h1
-              className="animate-staggerFadeUp text-4xl sm:text-5xl md:text-[3.75rem] font-extrabold text-dark-900 leading-[1.08] tracking-tight"
+              className="animate-staggerFadeUp text-3xl sm:text-5xl md:text-[3.75rem] font-extrabold text-dark-900 leading-[1.08] tracking-tight"
               style={{ animationDelay: "0.1s" }}
             >
               Empowering Your

@@ -169,10 +169,19 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
         if (data.profile) {
           setProfile(data.profile);
 
-          // Process referral if present (from t.me/bot?start=ref_XXXX or ?ref=XXXX)
+          // Process start_param (referral or claim)
           try {
             const refFromUrl = new URLSearchParams(window.location.search).get("ref");
             const startParam = new URLSearchParams(initDataRaw || "").get("start_param");
+
+            // Claim redirect: if start_param is claim_XXXX, redirect to claim page
+            if (startParam?.startsWith("claim_") && !window.location.pathname.includes("/claim")) {
+              const claimToken = startParam.slice(6);
+              window.location.href = `/tg-app/claim?token=${claimToken}`;
+              return;
+            }
+
+            // Referral tracking
             const refCode = refFromUrl || (startParam?.startsWith("ref_") ? startParam.slice(4) : null);
             if (refCode && !data.profile.referred_by) {
               fetch("/api/referral", {
