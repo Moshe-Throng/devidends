@@ -56,13 +56,7 @@ export default function TgAppHome() {
     );
   }
 
-  // Error or not in Telegram — still show the app (PWA mode)
-  // Just skip personalization, show opportunities feed
-  if (error && !tgUser) {
-    // Not in Telegram at all — this is a PWA or direct browser visit
-    // Show a simplified version without personalization
-  }
-
+  const isTelegram = !!tgUser;
   const firstName = tgUser?.first_name || profile?.name?.split(" ")[0] || "there";
   const profilePct = profile?.profile_score_pct ?? 0;
 
@@ -120,6 +114,30 @@ export default function TgAppHome() {
               )}
             </div>
           </div>
+
+          {/* PWA/browser login prompt — shown when not inside Telegram */}
+          {!isTelegram && !profile && (
+            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 mb-3">
+              <p className="text-xs text-white/90 font-medium mb-2">Sign in to save your CV, set alerts, and score opportunities</p>
+              <div className="flex gap-2">
+                <a
+                  href="https://t.me/Devidends_Bot?start=login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-white text-cyan-700 font-bold text-xs"
+                >
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                  Sign in with Telegram
+                </a>
+                <Link
+                  href="/login"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg border border-white/30 text-white font-bold text-xs"
+                >
+                  Email Sign In
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* Quick stats */}
           <div className="flex gap-3">

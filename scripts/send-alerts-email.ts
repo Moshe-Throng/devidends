@@ -59,20 +59,38 @@ async function main() {
     ? (JSON.parse(fs.readFileSync(newsPath, "utf-8")) as any[])
     : [];
 
-  // Fetch email subscribers
-  const { data: subscribers, error } = await supabase
+  // Fetch ALL subscriptions with an email (any channel)
+  const { data: rawSubs, error } = await supabase
     .from("subscriptions")
     .select("email, sectors_filter, news_categories_filter")
-    .eq("channel", "email")
     .eq("is_active", true)
     .not("email", "is", null);
 
-  if (error || !subscribers?.length) {
+  if (error || !rawSubs?.length) {
     console.log("[email] No email subscribers or error:", error?.message);
     return;
   }
 
-  console.log(`[email] Sending to ${subscribers.length} email subscribers`);
+  // Deduplicate by email — each person gets exactly ONE email
+  const byEmail = new Map<string, typeof rawSubs[0]>();
+  for (const sub of rawSubs) {
+    const email = sub.email!.toLowerCase();
+    const existing = byEmail.get(email);
+    if (!existing) {
+      byEmail.set(email, { ...sub, email });
+    } else {
+      // Merge filters
+      if (sub.sectors_filter?.length) {
+        existing.sectors_filter = [...new Set([...(existing.sectors_filter || []), ...sub.sectors_filter])];
+      }
+      if (sub.news_categories_filter?.length) {
+        existing.news_categories_filter = [...new Set([...(existing.news_categories_filter || []), ...sub.news_categories_filter])];
+      }
+    }
+  }
+
+  const subscribers = Array.from(byEmail.values());
+  console.log(`[email] ${rawSubs.length} subscription rows → ${subscribers.length} unique emails`);
 
   let sent = 0, failed = 0, skipped = 0;
 

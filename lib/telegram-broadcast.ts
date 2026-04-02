@@ -227,23 +227,48 @@ export async function notifySubscribersDaily(
   const bot = getTelegramBot();
   const supabase = getSupabaseAdmin();
 
-  const { data: subscribers, error } = await supabase
+  // Fetch ALL subscriptions with a telegram_id (any channel: telegram, email, both)
+  const { data: rawSubs, error } = await supabase
     .from("subscriptions")
     .select("id, telegram_id, sectors_filter, donor_filter, country_filter, work_type_filter, news_categories_filter")
-    .eq("channel", "telegram")
     .eq("is_active", true)
     .not("telegram_id", "is", null);
 
-  if (error || !subscribers?.length) {
+  if (error || !rawSubs?.length) {
     if (error) console.error("[telegram-broadcast] Subscriber fetch error:", error);
     return { notified: 0, failed: 0, skipped: 0 };
   }
+
+  // DEDUPLICATE by telegram_id — each person gets exactly ONE message
+  // If they have multiple subscription rows, merge their filters
+  const byTgId = new Map<string, DailySubscription>();
+  for (const sub of rawSubs as DailySubscription[]) {
+    const tgId = String(sub.telegram_id);
+    const existing = byTgId.get(tgId);
+    if (!existing) {
+      byTgId.set(tgId, { ...sub, telegram_id: tgId });
+    } else {
+      // Merge filters from multiple subscription rows
+      if (sub.sectors_filter?.length) {
+        existing.sectors_filter = [...new Set([...(existing.sectors_filter || []), ...sub.sectors_filter])];
+      }
+      if (sub.news_categories_filter?.length) {
+        existing.news_categories_filter = [...new Set([...(existing.news_categories_filter || []), ...sub.news_categories_filter])];
+      }
+      if (sub.country_filter?.length) {
+        existing.country_filter = [...new Set([...(existing.country_filter || []), ...sub.country_filter])];
+      }
+    }
+  }
+
+  const subscribers = Array.from(byTgId.values());
+  console.log(`[telegram-broadcast] ${rawSubs.length} subscription rows → ${subscribers.length} unique users`);
 
   const date = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 
   let notified = 0, failed = 0, skipped = 0;
 
-  for (const sub of subscribers as DailySubscription[]) {
+  for (const sub of subscribers) {
     try {
       const matchedJobs = newOpportunities.filter((o) => matchesSubscriber(o, sub));
 
