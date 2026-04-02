@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
         claim_token: claimToken,
         source: "admin_ingest",
       })
-      .select("id, name, headline, sectors, cv_score, claim_token, profile_type, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, created_at")
       .single();
 
     if (insertErr) {
@@ -89,13 +89,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to create profile: " + insertErr.message }, { status: 500 });
     }
 
-    const claimLink = `https://t.me/Devidends_Bot?start=claim_${claimToken}`;
+    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
+    const tgLink = `https://t.me/Devidends_Bot?start=claim_${claimToken}`;
+    const webLink = `${SITE}/claim?token=${claimToken}`;
 
     return NextResponse.json({
       success: true,
       profile: {
         ...created,
-        claim_link: claimLink,
+        claim_link_tg: tgLink,
+        claim_link_web: webLink,
       },
     });
   } catch (err: unknown) {
@@ -111,9 +114,10 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   try {
     const sb = getAdmin();
+    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
     const { data, error } = await sb
       .from("profiles")
-      .select("id, name, headline, sectors, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, created_at")
       .eq("source", "admin_ingest")
       .order("created_at", { ascending: false });
 
@@ -123,7 +127,8 @@ export async function GET() {
 
     const profiles = (data || []).map((p: any) => ({
       ...p,
-      claim_link: p.claim_token ? `https://t.me/Devidends_Bot?start=claim_${p.claim_token}` : null,
+      claim_link_tg: p.claim_token ? `https://t.me/Devidends_Bot?start=claim_${p.claim_token}` : null,
+      claim_link_web: p.claim_token ? `${SITE}/claim?token=${p.claim_token}` : null,
       is_claimed: !!p.claimed_at,
     }));
 
