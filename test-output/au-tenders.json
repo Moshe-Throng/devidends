@@ -1,192 +1,5 @@
 [
   {
-    "title": "Internship Program",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "March 1, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Internship-Program/1506-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "Internship"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Director General of the African Medicines Agency",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 15, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Director-General-of-the-African-Medicines-Agency/2389-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "SP03"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Senior Technical Officer - Grants Management (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 31, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Senior-Technical-Officer-Grants-Management-%28AfCDC%29/2405-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "P3"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Senior Staff Counsellor (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "October 31, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Senior-Staff-Counsellor-%28AfCDC%29/2404-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "P3"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Driver (ACHPR)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 1, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Driver-%28ACHPR%29/2385-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "GB7"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "IT Officer (AfCDC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 1, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/IT-Officer-%28AfCDC%29/2411-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.809Z",
-    "raw_fields": {
-      "grade": "P2"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Legal Officer - Institutional and General Legal Affairs (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Institutional-and-General-Legal-Affairs-%28OLC%29/2326-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.810Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Legal Officer - Administrative and Justice Matters (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Administrative-and-Justice-Matters-%28OLC%29/2325-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.810Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Legal Officer - Treaty and African Affairs (OLC)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Legal-Officer-Treaty-and-African-Affairs-%28OLC%29/2324-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.810Z",
-    "raw_fields": {
-      "grade": "P02"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Director Coordination and Programmes (AfCFTA)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Director-Coordination-and-Programmes-%28AfCFTA%29/2434-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.810Z",
-    "raw_fields": {
-      "grade": "D01"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Head of Division Strategic Planning, Resource Mobilization & Partnerships (AfCFTA)",
-    "organization": "African Union",
-    "description": "",
-    "deadline": "November 4, 2024",
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Head-of-Division-Strategic-Planning%2C-Resource-Mobilization-&-Partnerships-%28AfCFTA%29/2436-en_US",
-    "source_domain": "au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.810Z",
-    "raw_fields": {
-      "grade": "P05"
-    },
-    "_sourceId": "au-tenders"
-  },
-  {
     "title": "Technical Officer Mortality Surveillance AfCDC",
     "organization": "African Union",
     "description": "",
@@ -197,7 +10,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Technical-Officer-Mortality-Surveillance-AfCDC/1355160957/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -211,35 +24,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Responsable-technique-Surveillance-de-la-mortalit%C3%A9-%28AfCDC%29/1355161057/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Director Human Resources Management",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Human-Resources-Management/1354379357/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Directeur de la Gestion des ressources humaines",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-de-la-Gestion-des-ressources-humaines/1354379457/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -253,7 +38,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -267,7 +52,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -281,7 +66,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28AfCDC%29-9000043/1355057057/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -295,35 +80,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28AfCDC%29-9000043/1355057157/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Responsable Technique Principal Renseignement %C3%A9pid%C3%A9mique 1",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Responsable-Technique-Principal-Renseignement-%C3%A9pid%C3%A9mique-1/1355745057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "Principal Technical Officer Epidemic Intelligence%28AfCDC%29 1",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Principal-Technical-Officer-Epidemic-Intelligence%28AfCDC%29-1/1355744957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -337,7 +94,7 @@
     "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVoHC-Kofi-Annan-Scholars-Program-Strategy-Development-Expert-%28AfCDC%29/1354103857/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -351,7 +108,7 @@
     "source_url": "https://jobs.au.int/job/All-AU-Member-States-AVOHC-Programme-de-Bourses-Kofi-Annan-Expert-en-D%C3%A9veloppement-de-Strat%C3%A9gies-%28AfCDC%29/1354103957/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -365,7 +122,7 @@
     "source_url": "https://jobs.au.int/job/Seriti-Principal-Technical-Officer-Public-Financial-Management-Lusaka-Agenda-%28PFM-LA%29-%28AfCDC%29-MULTI/1355851157/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -379,35 +136,7 @@
     "source_url": "https://jobs.au.int/job/Seriti-Responsable-Technique-Principal%28e%29-en-Gestion-des-Finances-Publiques-L'Agenda-de-Lusaka-%28AfCDC%29-MULTI/1355851257/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "AVoHC Kofi Annan Scholars Program Procurement Specialist %28AfCDC%29",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-AVoHC-Kofi-Annan-Scholars-Program-Procurement-Specialist-%28AfCDC%29/821952802/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
-    "_sourceId": "au-tenders"
-  },
-  {
-    "title": "AVOHC Programme de Bourses Kofi Anan Sp%C3%A9cialiste de l'approvisionnement",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-AVOHC-Programme-de-Bourses-Kofi-Anan-Sp%C3%A9cialiste-de-l'approvisionnement/821952902/",
-    "source_domain": "jobs.au.int",
-    "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -421,7 +150,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Corps-des-Jeunes-Volontaires-de-l'Union-Africaine-%28CJV-UA%29/1356524157/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   },
   {
@@ -435,7 +164,63 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-African-Union-Youth-Volunteer-Corps-%28AU-YVC%29/1356524057/",
     "source_domain": "jobs.au.int",
     "content_type": "tender",
-    "scraped_at": "2026-04-01T13:42:08.836Z",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
+    "_sourceId": "au-tenders"
+  },
+  {
+    "title": "Director Human Resources Management",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Human-Resources-Management/1354379357/",
+    "source_domain": "jobs.au.int",
+    "content_type": "tender",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
+    "_sourceId": "au-tenders"
+  },
+  {
+    "title": "Directeur de la Gestion des ressources humaines",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-de-la-Gestion-des-ressources-humaines/1354379457/",
+    "source_domain": "jobs.au.int",
+    "content_type": "tender",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
+    "_sourceId": "au-tenders"
+  },
+  {
+    "title": "AVoHC Kofi Annan Scholars Program Procurement Specialist %28AfCDC%29",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-AVoHC-Kofi-Annan-Scholars-Program-Procurement-Specialist-%28AfCDC%29/821952802/",
+    "source_domain": "jobs.au.int",
+    "content_type": "tender",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
+    "_sourceId": "au-tenders"
+  },
+  {
+    "title": "AVOHC Programme de Bourses Kofi Anan Sp%C3%A9cialiste de l'approvisionnement",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-AVOHC-Programme-de-Bourses-Kofi-Anan-Sp%C3%A9cialiste-de-l'approvisionnement/821952902/",
+    "source_domain": "jobs.au.int",
+    "content_type": "tender",
+    "scraped_at": "2026-04-02T05:00:45.725Z",
     "_sourceId": "au-tenders"
   }
 ]
