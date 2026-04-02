@@ -1068,115 +1068,23 @@ export default function CvBuilderPage() {
               </div>
             )}
 
-            {/* AI Suggestions panel */}
-            {user && (
-              <div className="space-y-3">
-                {suggestions.length === 0 && !suggestionsLoading && (
-                  <button
-                    onClick={handleGetSuggestions}
-                    disabled={suggestionsLoading || !cvData.personal.full_name.trim()}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-amber-200 bg-amber-50/50 text-amber-700 text-sm font-semibold hover:bg-amber-100/60 transition-all disabled:opacity-40 disabled:pointer-events-none"
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Get AI Suggestions
-                    {suggestionsRemaining !== null && (
-                      <span className="text-xs text-amber-500 font-normal ml-1">
-                        ({suggestionsRemaining} remaining)
-                      </span>
-                    )}
-                  </button>
-                )}
-
-                {suggestionsLoading && (
-                  <div className="flex items-center gap-2 p-4 rounded-xl bg-amber-50/60 border border-amber-100">
-                    <Loader2 className="w-4 h-4 text-amber-600 animate-spin" />
-                    <p className="text-sm text-amber-700">Analyzing your CV for improvements...</p>
-                  </div>
-                )}
-
-                {suggestions.length > 0 && (
-                  <div className="rounded-xl border border-amber-200 bg-amber-50/30 overflow-hidden">
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-amber-100">
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-bold text-amber-800">
-                          AI Suggestions ({suggestions.filter((_, i) => !dismissedSuggestions.has(i)).length})
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => { setSuggestions([]); setSuggestionsNote(""); setDismissedSuggestions(new Set()); }}
-                        className="text-xs text-amber-500 hover:text-amber-700 font-medium"
-                      >
-                        Clear All
-                      </button>
-                    </div>
-
-                    {suggestionsNote && (
-                      <p className="px-4 py-2 text-xs text-amber-700 bg-amber-50/60 border-b border-amber-100">
-                        {suggestionsNote}
-                      </p>
-                    )}
-
-                    <div className="divide-y divide-amber-100">
-                      {suggestions.map((s, i) => {
-                        if (dismissedSuggestions.has(i)) return null;
-                        const priorityColors = {
-                          high: "bg-red-100 text-red-700",
-                          medium: "bg-amber-100 text-amber-700",
-                          low: "bg-dark-100 text-dark-500",
-                        };
-                        return (
-                          <div key={i} className="px-4 py-3 space-y-1.5">
-                            <div className="flex items-start gap-2">
-                              <span className={`inline-flex px-1.5 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider flex-shrink-0 mt-0.5 ${priorityColors[s.priority]}`}>
-                                {s.priority}
-                              </span>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-xs font-medium text-dark-500 mb-0.5">
-                                  {s.section.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}
-                                  {s.field && <span className="text-dark-300"> &middot; {s.field}</span>}
-                                </p>
-                                <p className="text-sm text-dark-700">{s.suggestion}</p>
-                              </div>
-                            </div>
-
-                            <div className="flex items-center gap-2 pl-10">
-                              {s.suggested_edit && (
-                                <button
-                                  onClick={() => handleAcceptSuggestion(i)}
-                                  className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-colors"
-                                >
-                                  <Check className="w-3 h-3" /> Apply
-                                </button>
-                              )}
-                              <button
-                                onClick={() => handleDismissSuggestion(i)}
-                                className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg bg-dark-100 text-dark-400 hover:bg-dark-200 transition-colors"
-                              >
-                                <X className="w-3 h-3" /> Dismiss
-                              </button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="px-4 py-2 border-t border-amber-100 bg-amber-50/40">
-                      <button
-                        onClick={handleGetSuggestions}
-                        disabled={suggestionsLoading}
-                        className="text-xs font-semibold text-amber-600 hover:text-amber-800 flex items-center gap-1"
-                      >
-                        <RefreshCw className="w-3 h-3" /> Refresh Suggestions
-                        {suggestionsRemaining !== null && (
-                          <span className="text-amber-400 font-normal ml-1">({suggestionsRemaining} left)</span>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                )}
+            {/* AI Suggestions — locked teaser (unlocked via referrals) */}
+            <div className="rounded-xl border border-dashed border-dark-200 bg-dark-50/50 p-4 relative overflow-hidden">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                  <Lock className="w-4 h-4 text-amber-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-bold text-dark-800">AI Improvement Suggestions</p>
+                  <p className="text-xs text-dark-400 mt-0.5 leading-relaxed">
+                    Get field-by-field edits that auto-apply to your CV — tailored to GIZ, World Bank, and EU standards.
+                  </p>
+                  <p className="text-xs text-amber-600 font-semibold mt-2">
+                    Refer 3 colleagues to unlock this feature
+                  </p>
+                </div>
               </div>
-            )}
+            </div>
 
             {/* Progress bar */}
             <div className="flex items-center gap-4">
