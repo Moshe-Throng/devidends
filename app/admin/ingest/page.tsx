@@ -27,6 +27,7 @@ interface IngestedProfile {
   qualifications: string | null;
   years_of_experience: number | null;
   cv_score: number | null;
+  cv_structured_data: any | null;
   claim_token: string | null;
   claim_link_tg: string | null;
   claim_link_web: string | null;
@@ -274,6 +275,69 @@ export default function AdminIngestPage() {
                         <ChipField label="Countries" items={p.countries} color="neutral" />
                         <ChipField label="Skills" items={p.skills} color="neutral" />
                       </div>
+
+                      {/* Full structured CV data */}
+                      {p.cv_structured_data && (
+                        <div className="pt-2 border-t border-dark-100 space-y-3">
+                          <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">Extracted CV Data</p>
+
+                          {/* Education */}
+                          {p.cv_structured_data.education?.length > 0 && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Education ({p.cv_structured_data.education.length})</p>
+                              <div className="space-y-1">
+                                {p.cv_structured_data.education.map((e: any, i: number) => (
+                                  <p key={i} className="text-xs text-dark-600">
+                                    <span className="font-semibold">{e.degree}</span>
+                                    {e.field_of_study && ` in ${e.field_of_study}`}
+                                    {e.institution && ` — ${e.institution}`}
+                                    {e.year_graduated && ` (${e.year_graduated})`}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Employment */}
+                          {p.cv_structured_data.employment?.length > 0 && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Employment ({p.cv_structured_data.employment.length})</p>
+                              <div className="space-y-1.5">
+                                {p.cv_structured_data.employment.map((e: any, i: number) => (
+                                  <div key={i} className="text-xs">
+                                    <p className="text-dark-700">
+                                      <span className="font-semibold">{e.position}</span>
+                                      {e.employer && ` at ${e.employer}`}
+                                    </p>
+                                    <p className="text-dark-400">
+                                      {[e.from_date, e.to_date].filter(Boolean).join(" – ")}
+                                      {e.country && ` · ${e.country}`}
+                                    </p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Languages */}
+                          {p.cv_structured_data.languages?.length > 0 && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Languages</p>
+                              <p className="text-xs text-dark-600">
+                                {p.cv_structured_data.languages.map((l: any) => l.language).filter(Boolean).join(", ")}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Summary */}
+                          {p.cv_structured_data.professional_summary && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Summary</p>
+                              <p className="text-xs text-dark-600 line-clamp-3">{p.cv_structured_data.professional_summary}</p>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       {/* Claim links */}
                       {!p.is_claimed && (

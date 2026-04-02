@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractText, detectFileType } from "@/lib/file-parser";
 import { extractProfileFromCV } from "@/lib/extract-profile";
+import { extractCvData } from "@/lib/cv-extractor";
 import { scoreCv } from "@/lib/cv-scorer";
 import { createClient } from "@supabase/supabase-js";
 import { randomUUID } from "crypto";
@@ -47,8 +48,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Could not extract enough text from file" }, { status: 400 });
     }
 
-    // Extract profile fields
+    // Extract profile summary fields (name, sectors, donors, etc.)
     const profile = await extractProfileFromCV(cvText);
+
+    // Extract full structured CV data (personal, education, employment, languages, etc.)
+    let cvStructured: any = null;
+    try {
+      const { data: structured } = await extractCvData(cvText);
+      cvStructured = structured;
+    } catch (e) {
+      console.warn("[admin/ingest] Structured extraction failed, continuing with summary only:", (e as Error).message);
+    }
 
     // Score CV
     let cvScore: number | null = null;
@@ -77,11 +87,12 @@ export async function POST(req: NextRequest) {
         years_of_experience: profile.years_of_experience,
         profile_type: profile.profile_type,
         cv_text: cvText.slice(0, 50000),
+        cv_structured_data: cvStructured,
         cv_score: cvScore,
         claim_token: claimToken,
         source: "admin_ingest",
       })
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, created_at")
       .single();
 
     if (insertErr) {
@@ -117,7 +128,7 @@ export async function GET() {
     const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
     const { data, error } = await sb
       .from("profiles")
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, cv_structured_data, created_at")
       .eq("source", "admin_ingest")
       .order("created_at", { ascending: false });
 
