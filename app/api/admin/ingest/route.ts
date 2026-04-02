@@ -72,8 +72,20 @@ export async function POST(req: NextRequest) {
     // Generate claim token (8-char alphanumeric)
     const claimToken = randomUUID().replace(/-/g, "").slice(0, 8);
 
-    // Create profile in Supabase
+    // Dedup check — look for existing profiles with same name
     const sb = getAdmin();
+    const nameNorm = profile.name.trim().toLowerCase();
+    const { data: dupes } = await sb
+      .from("profiles")
+      .select("id, name, cv_score, source, created_at")
+      .ilike("name", nameNorm);
+
+    let dupWarning: string | null = null;
+    if (dupes && dupes.length > 0) {
+      dupWarning = `Possible duplicate: "${dupes[0].name}" already exists (source: ${dupes[0].source}, score: ${dupes[0].cv_score ?? "n/a"})`;
+    }
+
+    // Create profile in Supabase
     const { data: created, error: insertErr } = await sb
       .from("profiles")
       .insert({
@@ -110,7 +122,9 @@ export async function POST(req: NextRequest) {
         ...created,
         claim_link_tg: tgLink,
         claim_link_web: webLink,
+        is_claimed: false,
       },
+      dup_warning: dupWarning,
     });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "Unknown error";
@@ -146,5 +160,24 @@ export async function GET() {
     return NextResponse.json({ profiles });
   } catch (err: unknown) {
     return NextResponse.json({ error: "Failed to list profiles" }, { status: 500 });
+  }
+}
+
+/**
+ * DELETE /api/admin/ingest — Delete an ingested profile
+ * Body: { id: string }
+ */
+export async function DELETE(req: NextRequest) {
+  try {
+    const { id } = await req.json();
+    if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
+
+    const sb = getAdmin();
+    const { error } = await sb.from("profiles").delete().eq("id", id).eq("source", "admin_ingest");
+
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ error: "Delete failed" }, { status: 500 });
   }
 }

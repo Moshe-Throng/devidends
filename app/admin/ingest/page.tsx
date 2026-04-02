@@ -95,9 +95,12 @@ export default function AdminIngestPage() {
 
         const data = await res.json();
         if (data.success && data.profile) {
-          results.push({ ...data.profile, is_claimed: false });
+          results.push(data.profile);
+          if (data.dup_warning) {
+            setWarnings((prev) => ({ ...prev, [data.profile.id]: data.dup_warning }));
+          }
         } else {
-          console.error(`Failed to ingest ${file.name}:`, data.error);
+          setError(`${file.name}: ${data.error || "Failed"}`);
         }
       } catch (err) {
         console.error(`Error ingesting ${file.name}:`, err);
@@ -113,11 +116,26 @@ export default function AdminIngestPage() {
   }
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [warnings, setWarnings] = useState<Record<string, string>>({});
 
   function copyText(text: string, id: string) {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
+  }
+
+  async function handleDelete(id: string, name: string) {
+    if (!confirm(`Delete "${name}"? This cannot be undone.`)) return;
+    try {
+      const res = await fetch("/api/admin/ingest", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      if (res.ok) {
+        setProfiles((prev) => prev.filter((p) => p.id !== id));
+      }
+    } catch {}
   }
 
   if (authLoading || !user) {
@@ -365,6 +383,25 @@ export default function AdminIngestPage() {
                           </div>
                         </div>
                       )}
+
+                      {/* Dup warning */}
+                      {warnings[p.id] && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 text-xs text-amber-700 flex items-center gap-2">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                          {warnings[p.id]}
+                        </div>
+                      )}
+
+                      {/* Delete */}
+                      <div className="pt-2 border-t border-dark-100 flex justify-end">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); handleDelete(p.id, p.name); }}
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-red-500 hover:bg-red-50 transition-colors"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                          Delete &amp; Re-ingest
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
