@@ -348,14 +348,12 @@ export default function AdminIngestPage() {
                           {p.cv_structured_data.education?.length > 0 && (
                             <div>
                               <p className="text-[10px] font-bold text-dark-500 mb-1">Education ({p.cv_structured_data.education.length})</p>
-                              <div className="space-y-1">
+                              <div className="space-y-1.5">
                                 {p.cv_structured_data.education.map((e: any, i: number) => (
-                                  <p key={i} className="text-xs text-dark-600">
-                                    <span className="font-semibold">{e.degree}</span>
-                                    {e.field_of_study && ` in ${e.field_of_study}`}
-                                    {e.institution && ` — ${e.institution}`}
-                                    {e.year_graduated && ` (${e.year_graduated})`}
-                                  </p>
+                                  <div key={i} className="text-xs bg-white rounded-lg px-2.5 py-2 border border-dark-100">
+                                    <p className="text-dark-800 font-semibold">{e.degree}{e.field_of_study && ` in ${e.field_of_study}`}</p>
+                                    <p className="text-dark-500">{e.institution}{e.country && ` · ${e.country}`}{e.year_graduated && ` · ${e.year_graduated}`}</p>
+                                  </div>
                                 ))}
                               </div>
                             </div>
@@ -365,17 +363,20 @@ export default function AdminIngestPage() {
                           {p.cv_structured_data.employment?.length > 0 && (
                             <div>
                               <p className="text-[10px] font-bold text-dark-500 mb-1">Employment ({p.cv_structured_data.employment.length})</p>
-                              <div className="space-y-1.5">
+                              <div className="space-y-3">
                                 {p.cv_structured_data.employment.map((e: any, i: number) => (
-                                  <div key={i} className="text-xs">
-                                    <p className="text-dark-700">
-                                      <span className="font-semibold">{e.position}</span>
-                                      {e.employer && ` at ${e.employer}`}
-                                    </p>
-                                    <p className="text-dark-400">
-                                      {[e.from_date, e.to_date].filter(Boolean).join(" – ")}
+                                  <div key={i} className="text-xs bg-white rounded-lg p-2.5 border border-dark-100">
+                                    <p className="text-dark-800 font-semibold">{e.position}</p>
+                                    <p className="text-dark-500">
+                                      {e.employer}
                                       {e.country && ` · ${e.country}`}
+                                      {(e.from_date || e.to_date) && ` · ${[e.from_date, e.to_date].filter(Boolean).join(" – ")}`}
                                     </p>
+                                    {e.description_of_duties && (
+                                      <p className="text-dark-500 mt-1 leading-relaxed whitespace-pre-line text-[11px]">
+                                        {e.description_of_duties}
+                                      </p>
+                                    )}
                                   </div>
                                 ))}
                               </div>
@@ -392,11 +393,31 @@ export default function AdminIngestPage() {
                             </div>
                           )}
 
+                          {/* Certifications */}
+                          {p.cv_structured_data.certifications?.filter(Boolean).length > 0 && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Certifications</p>
+                              <div className="flex flex-wrap gap-1">
+                                {p.cv_structured_data.certifications.filter(Boolean).map((c: string, i: number) => (
+                                  <span key={i} className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">{c}</span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Key Qualifications */}
+                          {p.cv_structured_data.key_qualifications && (
+                            <div>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Key Qualifications</p>
+                              <p className="text-xs text-dark-600 leading-relaxed whitespace-pre-line">{p.cv_structured_data.key_qualifications}</p>
+                            </div>
+                          )}
+
                           {/* Summary */}
                           {p.cv_structured_data.professional_summary && (
                             <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Summary</p>
-                              <p className="text-xs text-dark-600 line-clamp-3">{p.cv_structured_data.professional_summary}</p>
+                              <p className="text-[10px] font-bold text-dark-500 mb-1">Professional Summary</p>
+                              <p className="text-xs text-dark-600 leading-relaxed whitespace-pre-line">{p.cv_structured_data.professional_summary}</p>
                             </div>
                           )}
                         </div>
