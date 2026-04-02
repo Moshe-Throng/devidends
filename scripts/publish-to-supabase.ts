@@ -4,7 +4,8 @@
  *
  * Usage: npx tsx scripts/publish-to-supabase.ts
  *
- * Strategy: upsert by source_url (dedup), mark stale listings as inactive.
+ * Strategy: upsert by source_url (dedup), format descriptions with Claude Haiku,
+ * deactivate expired listings.
  */
 
 import * as fs from "fs";
@@ -21,6 +22,39 @@ if (fs.existsSync(envPath)) {
     const key = t.slice(0, idx).trim();
     const val = t.slice(idx + 1).trim().replace(/^["']|["']$/g, "");
     if (!process.env[key]) process.env[key] = val;
+  }
+}
+
+/* ── Description formatter (Claude Haiku) ── */
+
+const FORMAT_SYSTEM = `You format job/opportunity descriptions into clean, scannable markdown. Rules:
+- Use ## for section headers (Responsibilities, Qualifications, About, How to Apply, etc.)
+- Use - for bullet points
+- Keep ALL factual content — never add, remove, or rephrase information
+- If already well-formatted, return as-is
+- If very short or just a title, return unchanged
+- Output ONLY the formatted description, nothing else.`;
+
+async function formatDescription(raw: string): Promise<string> {
+  if (!raw || raw.length < 100) return raw; // Too short to format
+  // Already formatted (has markdown)
+  if ((raw.includes("##") || raw.includes("**")) && (raw.includes("- ") || raw.includes("• "))) {
+    return raw;
+  }
+
+  try {
+    const Anthropic = (await import("@anthropic-ai/sdk")).default;
+    const client = new Anthropic();
+    const msg = await client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 3000,
+      system: FORMAT_SYSTEM,
+      messages: [{ role: "user", content: "Format this job description:\n\n" + raw.slice(0, 8000) }],
+    });
+    return (msg.content[0] as { text: string }).text || raw;
+  } catch (err) {
+    console.warn("[publish] Format failed, using raw description:", (err as Error).message?.slice(0, 80));
+    return raw;
   }
 }
 
@@ -73,6 +107,23 @@ async function main() {
     scraped_at: opp.scraped_at || new Date().toISOString(),
   })).filter((r: any) => r.source_url && r.title);
 
+  // Format descriptions with Claude Haiku (only unformatted ones)
+  console.log(`[publish] Formatting descriptions with Claude Haiku...`);
+  let formatCount = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const raw = rows[i].description;
+    if (raw && raw.length >= 100) {
+      const hasMarkdown = (raw.includes("##") || raw.includes("**")) && (raw.includes("- ") || raw.includes("• "));
+      if (!hasMarkdown) {
+        rows[i].description = await formatDescription(raw);
+        formatCount++;
+        // Rate limit: ~5 per second
+        if (formatCount % 5 === 0) await new Promise(r => setTimeout(r, 1000));
+      }
+    }
+  }
+  console.log(`[publish] Formatted ${formatCount} descriptions`);
+
   console.log(`[publish] Publishing ${rows.length} valid opportunities to Supabase...`);
 
   // Upsert in batches of 50
@@ -97,25 +148,42 @@ async function main() {
     }
   }
 
-  // Mark old listings as inactive (not seen in today's crawl)
-  const activeUrls = new Set(rows.map((r: any) => r.source_url));
-  const { data: existing } = await supabase
+  // Mark listings as inactive ONLY if their deadline has passed (not based on crawl presence).
+  // This prevents wiping out jobs from scrapers that are temporarily broken.
+  const now = new Date();
+  const { data: withDeadlines } = await supabase
     .from("opportunities")
-    .select("id, source_url")
-    .eq("is_active", true);
+    .select("id, deadline")
+    .eq("is_active", true)
+    .not("deadline", "is", null);
 
-  if (existing) {
-    const staleIds = existing
-      .filter((e: any) => !activeUrls.has(e.source_url))
+  if (withDeadlines) {
+    const expiredIds = withDeadlines
+      .filter((e: any) => new Date(e.deadline) < now)
       .map((e: any) => e.id);
 
-    if (staleIds.length > 0) {
-      await supabase
-        .from("opportunities")
-        .update({ is_active: false })
-        .in("id", staleIds);
-      console.log(`[publish] Marked ${staleIds.length} stale listings as inactive`);
+    if (expiredIds.length > 0) {
+      // Batch deactivation in chunks (Supabase .in() has a limit)
+      for (let i = 0; i < expiredIds.length; i += 100) {
+        await supabase
+          .from("opportunities")
+          .update({ is_active: false })
+          .in("id", expiredIds.slice(i, i + 100));
+      }
+      console.log(`[publish] Deactivated ${expiredIds.length} expired listings (past deadline)`);
     }
+  }
+
+  // Also deactivate very old listings with NO deadline (scraped > 60 days ago)
+  const sixtyDaysAgo = new Date(now.getTime() - 60 * 24 * 60 * 60 * 1000).toISOString();
+  const { count: staleNoDeadline } = await supabase
+    .from("opportunities")
+    .update({ is_active: false })
+    .eq("is_active", true)
+    .is("deadline", null)
+    .lt("scraped_at", sixtyDaysAgo);
+  if (staleNoDeadline && staleNoDeadline > 0) {
+    console.log(`[publish] Deactivated ${staleNoDeadline} stale listings (no deadline, >60 days old)`);
   }
 
   console.log(`[publish] Done: ${inserted} published, ${failed} failed`);

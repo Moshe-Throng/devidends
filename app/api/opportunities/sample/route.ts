@@ -1,49 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
 import {
   processOpportunities,
   type RawOpportunity,
 } from "@/lib/opportunity-quality";
 
-const NORMALIZED_FILE = path.join(
-  process.cwd(),
-  "test-output",
-  "_all_normalized.json"
-);
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
 
-function loadAndProcessOpportunities(): SampleOpportunity[] {
-  if (!fs.existsSync(NORMALIZED_FILE)) {
+async function loadFromSupabase(): Promise<SampleOpportunity[]> {
+  const sb = getSupabase();
+
+  const { data, error } = await sb
+    .from("opportunities")
+    .select("title, description, deadline, organization, country, source_url, source_domain, type, experience_level, sectors, is_active")
+    .eq("is_active", true)
+    .order("scraped_at", { ascending: false })
+    .limit(1000);
+
+  if (error) {
+    console.error("[opportunities/sample] Supabase error:", error.message);
     return [];
   }
 
-  try {
-    const raw = JSON.parse(fs.readFileSync(NORMALIZED_FILE, "utf-8"));
-    const items: Record<string, unknown>[] = Array.isArray(raw) ? raw : [];
+  if (!data || data.length === 0) return [];
 
-    const rawItems: RawOpportunity[] = [];
-    for (const item of items) {
-      const title = (item.title as string) || "";
-      if (!title) continue;
+  const rawItems: RawOpportunity[] = data.map((row) => ({
+    title: row.title || "",
+    organization: row.organization || "Unknown",
+    description: row.description || "",
+    deadline: row.deadline || null,
+    country: row.country || "Ethiopia",
+    source_url: row.source_url || "",
+    source_domain: row.source_domain || "",
+    type: row.type || "job",
+  }));
 
-      rawItems.push({
-        title,
-        organization:
-          (item.organization as string) || (item.source as string) || "Unknown",
-        description: (item.description as string) || "",
-        deadline: (item.deadline as string) || null,
-        country: (item.country as string) || "Ethiopia",
-        source_url: (item.source_url as string) || "",
-        source_domain: (item.source_domain as string) || "",
-        type: (item.content_type as string) || (item.type as string) || "job",
-      });
-    }
-
-    return processOpportunities(rawItems);
-  } catch {
-    return [];
-  }
+  return processOpportunities(rawItems);
 }
 
 export async function GET(req: NextRequest) {
@@ -51,9 +49,9 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("id");
     const hideExpired = searchParams.get("hideExpired") !== "false";
-    const minQuality = parseInt(searchParams.get("minQuality") || "40", 10);
+    const minQuality = parseInt(searchParams.get("minQuality") || "0", 10);
 
-    const allOpportunities = loadAndProcessOpportunities();
+    const allOpportunities = await loadFromSupabase();
 
     // Single opportunity lookup (no filtering — show any by ID)
     if (id) {
@@ -92,8 +90,6 @@ export async function GET(req: NextRequest) {
       return true;
     });
 
-    // Cache for 5 minutes (CDN) / 10 minutes (stale-while-revalidate)
-    // Opportunities only change after daily scrape, so aggressive caching is safe
     return NextResponse.json(
       {
         count: opportunities.length,

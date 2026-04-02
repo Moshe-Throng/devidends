@@ -104,14 +104,6 @@ export default function TgAppHome() {
                   </div>
                 )}
               </Link>
-              {profile?.cv_structured_data && (
-                <Link href="/tg-app/cv-builder">
-                  <span className="flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-colors px-2 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap">
-                    <FileText className="w-2.5 h-2.5" />
-                    My CV
-                  </span>
-                </Link>
-              )}
             </div>
           </div>
 

@@ -47,7 +47,7 @@ export default function TgAppOpportunities() {
     async function fetchOpps() {
       try {
         const res = await fetch(
-          "/api/opportunities/sample?hideExpired=true&minQuality=30"
+          "/api/opportunities/sample?hideExpired=true&minQuality=20"
         );
         if (res.ok) {
           const data = await res.json();

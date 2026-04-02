@@ -223,7 +223,7 @@ export async function scoreCv(
   const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
-    max_tokens: 2500,
+    max_tokens: 4000,
     // Structured system block with cache_control enables prompt caching.
     // The system prompt (~2000 tokens) is identical across calls —
     // cached reads cost 90% less on input tokens.
@@ -256,13 +256,43 @@ export async function scoreCv(
     .map((block) => block.text)
     .join("");
 
-  // Strip markdown code fences if present
-  const jsonStr = responseText
-    .replace(/^```json?\n?/m, "")
-    .replace(/\n?```$/m, "")
+  // Robust JSON extraction — handles code fences, leading text, trailing text, and truncation
+  let jsonStr = responseText;
+
+  // Strip markdown code fences (greedy — handles ```json ... ```)
+  const fenceMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)```/);
+  if (fenceMatch) {
+    jsonStr = fenceMatch[1];
+  }
+
+  // Find the first { and last } to extract just the JSON object
+  const firstBrace = jsonStr.indexOf("{");
+  const lastBrace = jsonStr.lastIndexOf("}");
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
+  }
+
+  // Fix common AI JSON issues: trailing commas before } or ]
+  jsonStr = jsonStr
+    .replace(/,\s*}/g, "}")
+    .replace(/,\s*]/g, "]")
     .trim();
 
-  const parsed = JSON.parse(jsonStr) as CvScoreResult;
+  let parsed: CvScoreResult;
+  try {
+    parsed = JSON.parse(jsonStr) as CvScoreResult;
+  } catch (e) {
+    // Last resort: try to fix unterminated strings by closing them
+    const fixedJson = jsonStr
+      .replace(/:\s*"([^"]*?)$/gm, ': "$1"')  // close unterminated strings at line end
+      .replace(/,\s*$/, "");  // remove trailing comma
+    try {
+      parsed = JSON.parse(fixedJson) as CvScoreResult;
+    } catch {
+      console.error("[cv-score] Failed to parse AI response:", responseText.slice(0, 500));
+      throw new Error("CV scoring returned invalid data — please try again");
+    }
+  }
 
   if (
     typeof parsed.overall_score !== "number" ||

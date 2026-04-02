@@ -519,11 +519,34 @@ export default function TgCvBuilder() {
 
       const cvText = lines.join("\n");
 
-      const res = await fetch("/api/cv/score", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cv_text: cvText }),
-      });
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 55000); // 55s client timeout
+
+      let res: Response;
+      try {
+        res = await fetch("/api/cv/score", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cv_text: cvText }),
+          signal: controller.signal,
+        });
+      } catch (fetchErr: unknown) {
+        clearTimeout(timeout);
+        if (fetchErr instanceof DOMException && fetchErr.name === "AbortError") {
+          throw new Error("Scoring is taking too long — please try again");
+        }
+        throw new Error("Network error — check your connection and try again");
+      }
+      clearTimeout(timeout);
+
+      // Handle non-JSON responses (e.g. Vercel timeout HTML pages)
+      const contentType = res.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        throw new Error(
+          res.status === 504 ? "Server timed out — please try again" :
+          `Server error (${res.status}) — please try again`
+        );
+      }
 
       const json = await res.json();
       if (!res.ok || !json.success) {
@@ -885,6 +908,23 @@ export default function TgCvBuilder() {
               >
                 Start new
               </button>
+            </div>
+          )}
+
+          {/* Save prompt for newly extracted CVs */}
+          {cvData.personal.full_name && saveStatus !== "saved" && !profile?.cv_structured_data && (
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl px-4 py-3 mb-4">
+              <div className="flex items-start gap-2.5">
+                <Sparkles className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-xs font-bold text-amber-800">
+                    CV extracted! Review &amp; save to unlock scoring and templates.
+                  </p>
+                  <p className="text-[10px] text-amber-600 mt-0.5">
+                    Check the sections below, then tap &quot;Save &amp; Continue&quot; at the bottom.
+                  </p>
+                </div>
+              </div>
             </div>
           )}
 
@@ -1287,8 +1327,17 @@ export default function TgCvBuilder() {
               disabled={filledCount < 2}
               className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 disabled:opacity-40 active:scale-[0.98] transition-transform"
             >
-              Choose Template
-              <ArrowRight className="w-4 h-4" />
+              {!profile?.cv_structured_data ? (
+                <>
+                  <CheckCircle className="w-4 h-4" />
+                  Save &amp; Continue
+                </>
+              ) : (
+                <>
+                  Choose Template
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
             </button>
 
             <button
@@ -1476,6 +1525,100 @@ export default function TgCvBuilder() {
                 );
               })}
             </div>
+          </div>
+
+          {/* ── CV Score Section ── */}
+          <div className="rounded-xl border border-dark-100 bg-white overflow-hidden">
+            {scoreResult && showScore ? (
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-bold text-dark-900">CV Score</h3>
+                  <button
+                    onClick={handleScoreCv}
+                    disabled={scoring}
+                    className="text-[11px] text-cyan-600 font-semibold flex items-center gap-1"
+                  >
+                    <RefreshCw className={`w-3 h-3 ${scoring ? "animate-spin" : ""}`} />
+                    Re-score
+                  </button>
+                </div>
+                {/* Overall score */}
+                <div className="flex items-center gap-4 mb-3">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-extrabold text-xl ${
+                    scoreResult.overall_score >= 70 ? "bg-emerald-500" :
+                    scoreResult.overall_score >= 50 ? "bg-amber-500" : "bg-red-500"
+                  }`}>
+                    {scoreResult.overall_score}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs font-semibold text-dark-700">
+                      {scoreResult.overall_score >= 70 ? "Strong CV" :
+                       scoreResult.overall_score >= 50 ? "Decent — room to improve" : "Needs work"}
+                    </p>
+                    <p className="text-[10px] text-dark-400 mt-0.5">
+                      Scored against GIZ, World Bank, EU & UN standards
+                    </p>
+                  </div>
+                </div>
+                {/* Dimension bars */}
+                {scoreResult.dimensions && (
+                  <div className="space-y-1.5">
+                    {scoreResult.dimensions.map((d, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <span className="text-[10px] text-dark-500 w-24 truncate">{d.name}</span>
+                        <div className="flex-1 h-1.5 bg-dark-100 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full ${
+                              d.score >= 70 ? "bg-emerald-500" :
+                              d.score >= 50 ? "bg-amber-500" : "bg-red-400"
+                            }`}
+                            style={{ width: `${d.score}%` }}
+                          />
+                        </div>
+                        <span className="text-[10px] font-bold text-dark-600 w-6 text-right">{d.score}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {/* Top improvements */}
+                {scoreResult.top_3_improvements && scoreResult.top_3_improvements.length > 0 && (
+                  <div className="mt-3 pt-3 border-t border-dark-50">
+                    <p className="text-[10px] font-bold text-dark-500 uppercase tracking-wider mb-1.5">Top improvements</p>
+                    <ul className="space-y-1">
+                      {scoreResult.top_3_improvements.map((tip, i) => (
+                        <li key={i} className="text-[11px] text-dark-600 flex gap-1.5">
+                          <TrendingUp className="w-3 h-3 text-amber-500 shrink-0 mt-0.5" />
+                          <span>{tip}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                onClick={handleScoreCv}
+                disabled={scoring}
+                className="w-full p-4 flex items-center gap-3 hover:bg-dark-50 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
+                  {scoring ? (
+                    <Loader2 className="w-5 h-5 animate-spin text-indigo-500" />
+                  ) : (
+                    <BarChart3 className="w-5 h-5 text-indigo-500" />
+                  )}
+                </div>
+                <div className="text-left flex-1">
+                  <p className="text-sm font-bold text-dark-900">
+                    {scoring ? "Scoring your CV..." : "Score My CV"}
+                  </p>
+                  <p className="text-[11px] text-dark-400">
+                    {scoring ? "Analyzing against donor standards" : "See how you rank against GIZ, WB, EU standards"}
+                  </p>
+                </div>
+                {!scoring && <Sparkles className="w-4 h-4 text-indigo-400" />}
+              </button>
+            )}
           </div>
 
           {/* ── Template Picker ── */}
