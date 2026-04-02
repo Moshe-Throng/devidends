@@ -114,7 +114,7 @@ export async function scoreCv(
   const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
-    max_tokens: 800,
+    max_tokens: 2000,
     // Structured system block with cache_control enables prompt caching.
     // The system prompt (~2000 tokens) is identical across calls —
     // cached reads cost 90% less on input tokens.
@@ -150,10 +150,13 @@ export async function scoreCv(
   // Robust JSON extraction — handles code fences, leading text, trailing text, and truncation
   let jsonStr = responseText;
 
-  // Strip markdown code fences (greedy — handles ```json ... ```)
+  // Strip markdown code fences (handles ```json ... ``` and truncated responses without closing fence)
   const fenceMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)```/);
   if (fenceMatch) {
     jsonStr = fenceMatch[1];
+  } else if (jsonStr.startsWith("```")) {
+    // Truncated: opening fence but no closing fence
+    jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "");
   }
 
   // Find the first { and last } to extract just the JSON object

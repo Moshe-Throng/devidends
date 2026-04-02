@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft, Bell, CheckCircle, Loader2, AlertCircle,
-  Briefcase, Newspaper, ChevronDown, ChevronUp, Tag,
+  Briefcase, Newspaper, ChevronDown, ChevronUp,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import { SECTORS, NEWS_CATEGORIES } from "@/lib/constants";
@@ -47,10 +47,8 @@ export default function TgAppAlerts() {
 
   const [sectors, setSectors] = useState<Set<string>>(new Set());
   const [newsCategories, setNewsCategories] = useState<Set<string>>(new Set());
-  const [newsSectors, setNewsSectors] = useState<Set<string>>(new Set());
   const [sectorsOpen, setSectorsOpen] = useState(true);
   const [newsOpen, setNewsOpen] = useState(true);
-  const [newsSectorsOpen, setNewsSectorsOpen] = useState(false);
   const [loadingPrefs, setLoadingPrefs] = useState(true);
   const [saveStatus, setSaveStatus] = useState<SaveStatus>("idle");
   const [error, setError] = useState("");
@@ -71,9 +69,7 @@ export default function TgAppAlerts() {
           if (subscription.news_categories_filter?.length) {
             setNewsCategories(new Set(subscription.news_categories_filter));
           }
-          if (subscription.news_sectors_filter?.length) {
-            setNewsSectors(new Set(subscription.news_sectors_filter));
-          }
+
         } else if (profile?.sectors?.length) {
           setSectors(new Set(profile.sectors));
         }
@@ -93,14 +89,9 @@ export default function TgAppAlerts() {
     setNewsCategories((prev) => { const n = new Set(prev); n.has(c) ? n.delete(c) : n.add(c); return n; });
     setSaveStatus("idle");
   }
-  function toggleNewsSector(s: string) {
-    setNewsSectors((prev) => { const n = new Set(prev); n.has(s) ? n.delete(s) : n.add(s); return n; });
-    setSaveStatus("idle");
-  }
-
   async function handleSave() {
     if (!tgUser) return;
-    if (sectors.size === 0 && newsCategories.size === 0 && newsSectors.size === 0) {
+    if (sectors.size === 0 && newsCategories.size === 0) {
       setError("Select at least one sector or news category");
       return;
     }
@@ -115,7 +106,6 @@ export default function TgAppAlerts() {
           channel: "telegram",
           sectors_filter: Array.from(sectors),
           news_categories_filter: Array.from(newsCategories),
-          news_sectors_filter: Array.from(newsSectors),
           country_filter: ["Ethiopia"],
           frequency: "daily",
         }),
@@ -142,8 +132,8 @@ export default function TgAppAlerts() {
     );
   }
 
-  const hasChanges = sectors.size > 0 || newsCategories.size > 0 || newsSectors.size > 0;
-  const newsFilterCount = newsCategories.size + newsSectors.size;
+  const hasChanges = sectors.size > 0 || newsCategories.size > 0;
+  const newsFilterCount = newsCategories.size;
 
   return (
     <div className="min-h-screen bg-slate-50 pb-24">
@@ -285,52 +275,6 @@ export default function TgAppAlerts() {
                 </div>
               </div>
 
-              {/* By Sector — collapsible sub-section */}
-              <div className="border-t border-slate-100 pt-3">
-                <button
-                  onClick={() => setNewsSectorsOpen((v) => !v)}
-                  className="w-full flex items-center gap-2 mb-2"
-                >
-                  <Tag className="w-3.5 h-3.5 text-teal-500 shrink-0" />
-                  <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider flex-1 text-left">
-                    Also filter by sector
-                    {newsSectors.size > 0 && (
-                      <span className="ml-1.5 px-1.5 py-0.5 rounded-full bg-teal-100 text-teal-700 normal-case tracking-normal font-bold">
-                        {newsSectors.size}
-                      </span>
-                    )}
-                  </p>
-                  {newsSectorsOpen
-                    ? <ChevronUp className="w-3 h-3 text-slate-400" />
-                    : <ChevronDown className="w-3 h-3 text-slate-400" />}
-                </button>
-                {!newsSectorsOpen && (
-                  <p className="text-[10px] text-slate-400 leading-relaxed">
-                    Receive news relevant to your professional sectors
-                  </p>
-                )}
-                {newsSectorsOpen && (
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {SECTORS.map((sector) => {
-                      const active = newsSectors.has(sector);
-                      return (
-                        <button
-                          key={sector}
-                          onClick={() => toggleNewsSector(sector)}
-                          className={`flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-semibold border transition-all active:scale-95 ${
-                            active
-                              ? "bg-teal-500 border-teal-500 text-white shadow-sm"
-                              : "bg-slate-50 border-slate-200 text-slate-500 hover:border-teal-300"
-                          }`}
-                        >
-                          <span>{SECTOR_ICONS[sector] || "🔹"}</span>
-                          <span>{sector.split("(")[0].trim()}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
             </div>
           )}
         </div>

@@ -110,6 +110,7 @@ function deadlineBadge(d: string | null, isExpired: boolean) {
   if (!parsed) return { label: "Open", cls: "bg-dark-50 text-dark-500 border-dark-100" };
   const diff = parsed.getTime() - Date.now();
   const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  if (days <= 0) return { label: "Closed", cls: "bg-red-50 text-red-600 border-red-200" };
   if (days <= 3) return { label: `${days}d left`, cls: "bg-red-50 text-red-600 border-red-200" };
   if (days <= 7) return { label: `${days}d left`, cls: "bg-amber-50 text-amber-600 border-amber-200" };
   return { label: fmtDeadline(d), cls: "bg-emerald-50 text-emerald-600 border-emerald-200" };

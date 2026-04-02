@@ -223,7 +223,7 @@ export default function LandingPage() {
         {/* Diagonal line accent */}
         <div className="hidden xl:block absolute top-28 right-[18%] w-[120px] h-[2px] bg-gradient-to-r from-transparent via-cyan-300/30 to-transparent rotate-[35deg]" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-12 md:pt-24 md:pb-20">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-12 pb-8 md:pt-16 md:pb-12">
           <div className="max-w-3xl">
             {/* Eyebrow */}
             <div className="animate-staggerFadeUp inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-dark-900 mb-8">
@@ -284,17 +284,17 @@ export default function LandingPage() {
         </div>
 
         {/* Bottom fade */}
-        <div className="h-20 bg-gradient-to-b from-transparent to-white" />
+        <div className="h-10 bg-gradient-to-b from-transparent to-white" />
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           TWO DOORS
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="two-doors" className="py-16 md:py-24" ref={doors.ref}>
+      <section id="two-doors" className="py-10 md:py-14" ref={doors.ref}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           {/* Section header */}
           <div
-            className={`text-center mb-14 transition-all duration-700 ${
+            className={`text-center mb-10 transition-all duration-700 ${
               doors.visible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -508,12 +508,12 @@ export default function LandingPage() {
           HOW IT WORKS
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section
-        className="py-20 md:py-28 bg-dark-50/40"
+        className="py-12 md:py-16 bg-dark-50/40"
         ref={howItWorks.ref}
       >
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <div
-            className={`text-center mb-16 transition-all duration-700 ${
+            className={`text-center mb-10 transition-all duration-700 ${
               howItWorks.visible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
@@ -661,7 +661,7 @@ export default function LandingPage() {
           LATEST DEV NEWS
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       {newsItems.length > 0 && (
-        <section className="py-16 md:py-20 bg-dark-50/40" ref={newsReveal.ref}>
+        <section className="py-10 md:py-14 bg-dark-50/40" ref={newsReveal.ref}>
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div
               className={`flex items-center justify-between mb-8 transition-all duration-700 ${
@@ -750,7 +750,7 @@ export default function LandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           TRUSTED SOURCES
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-16 md:py-20" ref={sourcesReveal.ref}>
+      <section className="py-10 md:py-14" ref={sourcesReveal.ref}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <p
             className={`text-center text-[11px] font-bold text-dark-300 tracking-[0.25em] uppercase mb-8 transition-all duration-500 ${
@@ -790,7 +790,7 @@ export default function LandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           CTA
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-16 md:py-24" ref={ctaReveal.ref}>
+      <section className="py-10 md:py-16" ref={ctaReveal.ref}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-slate-800 p-10 md:p-16">
             {/* Animated gradient blobs */}

@@ -232,12 +232,6 @@ export default function TgAppProfile() {
                     alt=""
                     className="w-14 h-14 rounded-full border-2 border-white/20 object-cover"
                   />
-                ) : tgUser?.photo_url ? (
-                  <img
-                    src={tgUser.photo_url}
-                    alt=""
-                    className="w-14 h-14 rounded-full border-2 border-white/20"
-                  />
                 ) : (
                   <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
                     <User className="w-7 h-7 text-white/60" />

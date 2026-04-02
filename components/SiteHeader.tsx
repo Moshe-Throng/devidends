@@ -10,6 +10,8 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Opportunities", href: "/opportunities" },
   { label: "News", href: "/news" },
+  { label: "Build CV", href: "/cv-builder" },
+  { label: "Score CV", href: "/score" },
 ];
 
 export function SiteHeader({ activeHref }: { activeHref?: string }) {

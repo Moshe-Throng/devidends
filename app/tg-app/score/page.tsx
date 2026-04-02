@@ -109,8 +109,12 @@ export default function TgAppScore() {
               Score Your CV
             </h2>
             <p className="text-sm text-dark-400 mt-1 max-w-xs mx-auto">
-              Upload your CV and get an AI-powered analysis against
-              international development standards
+              Upload your CV and get an AI-powered analysis scored
+              against GIZ, World Bank, EU, and UN donor CV standards
+            </p>
+            <p className="text-[11px] text-dark-300 mt-2 max-w-xs mx-auto">
+              Evaluates structure, donor readiness, experience relevance,
+              keywords, and formatting — not matched against a specific job
             </p>
           </div>
 
