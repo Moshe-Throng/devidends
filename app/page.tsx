@@ -750,7 +750,7 @@ export default function LandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           TRUSTED SOURCES
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-10 md:py-14" ref={sourcesReveal.ref}>
+      <section className="py-8 md:py-10" ref={sourcesReveal.ref}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <p
             className={`text-center text-[11px] font-bold text-dark-300 tracking-[0.25em] uppercase mb-8 transition-all duration-500 ${
