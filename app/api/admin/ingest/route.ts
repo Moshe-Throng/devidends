@@ -163,15 +163,20 @@ export async function POST(req: NextRequest) {
 /**
  * GET /api/admin/ingest — List all ingested profiles with claim status
  */
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
     const sb = getAdmin();
     const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
-    const { data, error } = await sb
+    const showAll = new URL(req.url).searchParams.get("all") === "true";
+
+    let query = sb
       .from("profiles")
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, cv_structured_data, created_at")
-      .eq("source", "admin_ingest")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, claimed_at, telegram_id, profile_type, source, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, availability, daily_rate_usd, certifications, created_at")
       .order("created_at", { ascending: false });
+
+    if (!showAll) query = query.eq("source", "admin_ingest");
+
+    const { data, error } = await query;
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
@@ -187,6 +192,45 @@ export async function GET() {
     return NextResponse.json({ profiles });
   } catch (err: unknown) {
     return NextResponse.json({ error: "Failed to list profiles" }, { status: 500 });
+  }
+}
+
+/**
+ * PATCH /api/admin/ingest — Update editable fields on a profile
+ * Body: { id, ...fields }
+ */
+export async function PATCH(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { id, ...fields } = body;
+    if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
+
+    // Whitelist of editable fields
+    const allowed = [
+      "name", "headline", "gender", "nationality", "email", "phone", "city",
+      "recommended_by", "is_recommender", "profile_type", "education_level",
+      "availability", "daily_rate_usd", "travel_willingness",
+      "tags", "admin_notes",
+      "sectors", "donors", "countries", "languages", "certifications",
+      "preferred_role_types", "preferred_regions",
+    ];
+
+    const update: Record<string, unknown> = {};
+    for (const key of allowed) {
+      if (key in fields) update[key] = fields[key];
+    }
+
+    if (Object.keys(update).length === 0) {
+      return NextResponse.json({ error: "No valid fields to update" }, { status: 400 });
+    }
+
+    const sb = getAdmin();
+    const { error } = await sb.from("profiles").update(update).eq("id", id);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+    return NextResponse.json({ success: true });
+  } catch (err: unknown) {
+    return NextResponse.json({ error: "Update failed" }, { status: 500 });
   }
 }
 

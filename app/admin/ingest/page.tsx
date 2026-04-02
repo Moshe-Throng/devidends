@@ -28,6 +28,20 @@ interface IngestedProfile {
   years_of_experience: number | null;
   cv_score: number | null;
   cv_structured_data: any | null;
+  gender: string | null;
+  nationality: string | null;
+  languages: string[] | null;
+  education_level: string | null;
+  recommended_by: string | null;
+  is_recommender: boolean;
+  tags: string[];
+  admin_notes: string | null;
+  email: string | null;
+  phone: string | null;
+  city: string | null;
+  availability: string | null;
+  daily_rate_usd: number | null;
+  certifications: string[] | null;
   claim_token: string | null;
   claim_link_tg: string | null;
   claim_link_web: string | null;
@@ -150,6 +164,25 @@ export default function AdminIngestPage() {
     } catch {}
   }
 
+  // Search + filter
+  const [search, setSearch] = useState("");
+  const [filterStatus, setFilterStatus] = useState<"all" | "claimed" | "pending">("all");
+
+  const filtered = profiles.filter(p => {
+    if (filterStatus === "claimed" && !p.is_claimed) return false;
+    if (filterStatus === "pending" && p.is_claimed) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      return (p.name || "").toLowerCase().includes(q) ||
+        (p.headline || "").toLowerCase().includes(q) ||
+        (p.sectors || []).some(s => s.toLowerCase().includes(q)) ||
+        (p.recommended_by || "").toLowerCase().includes(q) ||
+        (p.tags || []).some(t => t.toLowerCase().includes(q)) ||
+        (p.nationality || "").toLowerCase().includes(q);
+    }
+    return true;
+  });
+
   if (authLoading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -185,6 +218,26 @@ export default function AdminIngestPage() {
 
       <div className="max-w-5xl mx-auto px-6 py-6 space-y-6">
         {/* Metadata fields (apply to all CVs in this batch) */}
+        {/* Search + filters */}
+        <div className="flex items-center gap-3">
+          <div className="flex-1 relative">
+            <input
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="Search by name, sector, nationality, tag..."
+              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none bg-white"
+            />
+            <svg className="w-4 h-4 text-dark-300 absolute left-3 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
+            {(["all", "pending", "claimed"] as const).map(s => (
+              <button key={s} onClick={() => setFilterStatus(s)} className={`px-3 py-2 font-semibold capitalize transition-colors ${filterStatus === s ? "bg-cyan-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
+                {s}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="bg-white rounded-xl border border-dark-100 p-4">
           <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-3">Batch metadata (applied to all uploads)</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -280,13 +333,13 @@ export default function AdminIngestPage() {
           <div className="text-center py-12">
             <Loader2 className="w-6 h-6 animate-spin text-dark-300 mx-auto" />
           </div>
-        ) : profiles.length === 0 ? (
+        ) : filtered.length === 0 ? (
           <div className="text-center py-12 text-dark-400 text-sm">
             No CVs ingested yet. Upload some above.
           </div>
         ) : (
           <div className="space-y-2">
-            {profiles.map((p) => {
+            {filtered.map((p) => {
               const isExpanded = expandedId === p.id;
               return (
                 <div key={p.id} className="bg-white rounded-xl border border-dark-100 overflow-hidden">
@@ -423,6 +476,9 @@ export default function AdminIngestPage() {
                         </div>
                       )}
 
+                      {/* Editable admin fields */}
+                      <AdminFields profile={p} onSave={(updated) => setProfiles(prev => prev.map(x => x.id === p.id ? { ...x, ...updated } : x))} />
+
                       {/* Claim links */}
                       {!p.is_claimed && (
                         <div className="pt-2 border-t border-dark-100 space-y-2">
@@ -505,6 +561,160 @@ function ChipField({ label, items, color }: { label: string; items: string[] | n
       ) : (
         <p className="text-xs text-dark-300 italic">None extracted</p>
       )}
+    </div>
+  );
+}
+
+/* ── Editable admin fields ── */
+
+function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave: (updated: Partial<IngestedProfile>) => void }) {
+  const [editing, setEditing] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const [gender, setGender] = useState(p.gender || "");
+  const [nationality, setNationality] = useState(p.nationality || "");
+  const [email, setEmail] = useState(p.email || "");
+  const [phone, setPhone] = useState(p.phone || "");
+  const [city, setCity] = useState(p.city || "");
+  const [recommendedBy, setRecommendedBy] = useState(p.recommended_by || "");
+  const [isRecommender, setIsRecommender] = useState(p.is_recommender || false);
+  const [profileType, setProfileType] = useState(p.profile_type || "");
+  const [educationLevel, setEducationLevel] = useState(p.education_level || "");
+  const [availability, setAvailability] = useState(p.availability || "");
+  const [dailyRate, setDailyRate] = useState(p.daily_rate_usd != null ? String(p.daily_rate_usd) : "");
+  const [tags, setTags] = useState((p.tags || []).join(", "));
+  const [adminNotes, setAdminNotes] = useState(p.admin_notes || "");
+
+  async function handleSave() {
+    setSaving(true);
+    try {
+      const update: any = {
+        id: p.id,
+        gender: gender || null,
+        nationality: nationality || null,
+        email: email || null,
+        phone: phone || null,
+        city: city || null,
+        recommended_by: recommendedBy || null,
+        is_recommender: isRecommender,
+        profile_type: profileType || null,
+        education_level: educationLevel || null,
+        availability: availability || null,
+        daily_rate_usd: dailyRate ? parseInt(dailyRate) : null,
+        tags: tags ? tags.split(",").map((t: string) => t.trim()).filter(Boolean) : [],
+        admin_notes: adminNotes || null,
+      };
+      const res = await fetch("/api/admin/ingest", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(update) });
+      if (res.ok) {
+        onSave(update);
+        setSaved(true);
+        setTimeout(() => { setSaved(false); setEditing(false); }, 1500);
+      }
+    } catch {} finally { setSaving(false); }
+  }
+
+  const INPUT = "w-full px-2.5 py-1.5 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none";
+
+  if (!editing) {
+    return (
+      <div className="pt-2 border-t border-dark-100">
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">Admin Fields</p>
+          <button onClick={(e) => { e.stopPropagation(); setEditing(true); }} className="text-[10px] font-bold text-cyan-600 hover:text-cyan-700">Edit</button>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-xs">
+          <div><span className="text-dark-400">Gender:</span> <span className="text-dark-700 font-medium">{p.gender || "—"}</span></div>
+          <div><span className="text-dark-400">Nationality:</span> <span className="text-dark-700 font-medium">{p.nationality || "—"}</span></div>
+          <div><span className="text-dark-400">City:</span> <span className="text-dark-700 font-medium">{p.city || "—"}</span></div>
+          <div><span className="text-dark-400">Type:</span> <span className="text-dark-700 font-medium">{p.profile_type || "—"}</span></div>
+          <div><span className="text-dark-400">Education:</span> <span className="text-dark-700 font-medium">{p.education_level || "—"}</span></div>
+          <div><span className="text-dark-400">Rate:</span> <span className="text-dark-700 font-medium">{p.daily_rate_usd ? `$${p.daily_rate_usd}/day` : "—"}</span></div>
+          <div><span className="text-dark-400">Recommended by:</span> <span className="text-dark-700 font-medium">{p.recommended_by || "—"}</span></div>
+          <div><span className="text-dark-400">Recommender:</span> <span className="text-dark-700 font-medium">{p.is_recommender ? "Yes" : "No"}</span></div>
+          <div><span className="text-dark-400">Availability:</span> <span className="text-dark-700 font-medium">{p.availability || "—"}</span></div>
+          {p.tags?.length > 0 && <div className="col-span-3"><span className="text-dark-400">Tags:</span> {p.tags.map((t: string) => <span key={t} className="ml-1 px-1.5 py-0.5 rounded text-[10px] bg-dark-100 text-dark-600">{t}</span>)}</div>}
+          {p.admin_notes && <div className="col-span-3"><span className="text-dark-400">Notes:</span> <span className="text-dark-600">{p.admin_notes}</span></div>}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="pt-2 border-t border-dark-100" onClick={e => e.stopPropagation()}>
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">Edit Admin Fields</p>
+        <div className="flex gap-2">
+          <button onClick={() => setEditing(false)} className="text-[10px] font-semibold text-dark-400">Cancel</button>
+          <button onClick={handleSave} disabled={saving} className="text-[10px] font-bold text-white bg-cyan-500 px-2.5 py-1 rounded-lg disabled:opacity-50">
+            {saved ? "Saved!" : saving ? "Saving..." : "Save"}
+          </button>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Gender</label>
+          <select value={gender} onChange={e => setGender(e.target.value)} className={INPUT + " bg-white"}>
+            <option value="">—</option><option value="male">Male</option><option value="female">Female</option>
+          </select>
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Nationality</label>
+          <input value={nationality} onChange={e => setNationality(e.target.value)} className={INPUT} placeholder="Ethiopian" />
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">City</label>
+          <input value={city} onChange={e => setCity(e.target.value)} className={INPUT} placeholder="Addis Ababa" />
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Email</label>
+          <input value={email} onChange={e => setEmail(e.target.value)} className={INPUT} placeholder="email@example.com" />
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Phone</label>
+          <input value={phone} onChange={e => setPhone(e.target.value)} className={INPUT} placeholder="+251..." />
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Profile Type</label>
+          <select value={profileType} onChange={e => setProfileType(e.target.value)} className={INPUT + " bg-white"}>
+            <option value="">—</option><option value="Expert">Expert (15+yr)</option><option value="Senior">Senior (10-14)</option><option value="Mid-level">Mid-level (5-9)</option><option value="Junior">Junior (2-4)</option><option value="Entry">Entry (0-1)</option>
+          </select>
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Education Level</label>
+          <select value={educationLevel} onChange={e => setEducationLevel(e.target.value)} className={INPUT + " bg-white"}>
+            <option value="">—</option><option value="PhD">PhD</option><option value="Masters">Masters</option><option value="Bachelors">Bachelors</option><option value="Diploma">Diploma</option>
+          </select>
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Daily Rate (USD)</label>
+          <input type="number" value={dailyRate} onChange={e => setDailyRate(e.target.value)} className={INPUT} placeholder="500" />
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Availability</label>
+          <select value={availability} onChange={e => setAvailability(e.target.value)} className={INPUT + " bg-white"}>
+            <option value="">—</option><option value="immediate">Immediate</option><option value="1_month">1 month</option><option value="3_months">3 months</option><option value="unavailable">Unavailable</option>
+          </select>
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Recommended By</label>
+          <input value={recommendedBy} onChange={e => setRecommendedBy(e.target.value)} className={INPUT} placeholder="Name" />
+        </div>
+        <div className="flex items-end pb-1">
+          <label className="flex items-center gap-2 text-xs text-dark-600 cursor-pointer">
+            <input type="checkbox" checked={isRecommender} onChange={e => setIsRecommender(e.target.checked)} className="rounded" />
+            Is Recommender
+          </label>
+        </div>
+        <div>
+          <label className="text-[10px] text-dark-400 block mb-0.5">Tags (comma-separated)</label>
+          <input value={tags} onChange={e => setTags(e.target.value)} className={INPUT} placeholder="priority, verified" />
+        </div>
+        <div className="col-span-2 md:col-span-3">
+          <label className="text-[10px] text-dark-400 block mb-0.5">Admin Notes</label>
+          <input value={adminNotes} onChange={e => setAdminNotes(e.target.value)} className={INPUT} placeholder="Internal notes about this expert" />
+        </div>
+      </div>
     </div>
   );
 }
