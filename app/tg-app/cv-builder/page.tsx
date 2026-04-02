@@ -464,96 +464,121 @@ export default function TgCvBuilder() {
     }
   }
 
+  /* ─── Build CV plain text for scoring ──────────── */
+  function buildCvText(): string {
+    const p = cvData.personal;
+    return [
+      p.full_name,
+      p.nationality && `Nationality: ${p.nationality}`,
+      p.email && `Email: ${p.email}`,
+      p.phone && `Phone: ${p.phone}`,
+      p.address,
+      p.country_of_residence && `Country: ${p.country_of_residence}`,
+      "",
+      "PROFESSIONAL SUMMARY",
+      cvData.professional_summary,
+      "",
+      "KEY QUALIFICATIONS",
+      cvData.key_qualifications,
+      "",
+      "EDUCATION",
+      ...cvData.education.map(
+        (e) => `${e.degree} in ${e.field_of_study}, ${e.institution} (${e.country}, ${e.year_graduated})`
+      ),
+      "",
+      "EMPLOYMENT",
+      ...cvData.employment.map(
+        (e) =>
+          `${e.position} at ${e.employer} (${e.from_date} - ${e.to_date}, ${e.country})\n${e.description_of_duties}`
+      ),
+      "",
+      "LANGUAGES",
+      ...cvData.languages.map(
+        (l) => `${l.language}: Reading ${l.reading}, Writing ${l.writing}, Speaking ${l.speaking}`
+      ),
+      "",
+      "CERTIFICATIONS",
+      ...cvData.certifications,
+      "",
+      "COUNTRIES OF EXPERIENCE",
+      ...cvData.countries_of_experience,
+    ].filter(Boolean).join("\n");
+  }
+
+  /* ─── Score via SSE stream (keeps connection alive) ── */
+  const [scoreProgress, setScoreProgress] = useState("");
+
   async function handleScoreCv() {
     if (scoring) return;
 
-    // Check if CV hasn't changed since last score
+    // Check cache
     const currentHash = cvDataHash(cvData);
     if (scoreResult && scoredCvHash === currentHash) {
       setShowScore(true);
-      return; // Use cached score
+      return;
     }
 
     setScoring(true);
+    setScoreProgress("Starting...");
     setError(null);
 
     try {
-      // Convert structured CV data to plain text for scoring
-      const p = cvData.personal;
-      const lines = [
-        p.full_name,
-        p.nationality && `Nationality: ${p.nationality}`,
-        p.email && `Email: ${p.email}`,
-        p.phone && `Phone: ${p.phone}`,
-        p.address,
-        p.country_of_residence && `Country: ${p.country_of_residence}`,
-        "",
-        "PROFESSIONAL SUMMARY",
-        cvData.professional_summary,
-        "",
-        "KEY QUALIFICATIONS",
-        cvData.key_qualifications,
-        "",
-        "EDUCATION",
-        ...cvData.education.map(
-          (e) => `${e.degree} in ${e.field_of_study}, ${e.institution} (${e.country}, ${e.year_graduated})`
-        ),
-        "",
-        "EMPLOYMENT",
-        ...cvData.employment.map(
-          (e) =>
-            `${e.position} at ${e.employer} (${e.from_date} - ${e.to_date}, ${e.country})\n${e.description_of_duties}`
-        ),
-        "",
-        "LANGUAGES",
-        ...cvData.languages.map(
-          (l) => `${l.language}: Reading ${l.reading}, Writing ${l.writing}, Speaking ${l.speaking}`
-        ),
-        "",
-        "CERTIFICATIONS",
-        ...cvData.certifications,
-        "",
-        "COUNTRIES OF EXPERIENCE",
-        ...cvData.countries_of_experience,
-      ].filter(Boolean);
+      const cvText = buildCvText();
 
-      const cvText = lines.join("\n");
+      const res = await fetch("/api/cv/score-stream", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cv_text: cvText }),
+      });
 
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 55000); // 55s client timeout
+      if (!res.ok || !res.body) {
+        throw new Error(`Server error (${res.status})`);
+      }
 
-      let res: Response;
-      try {
-        res = await fetch("/api/cv/score", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cv_text: cvText }),
-          signal: controller.signal,
-        });
-      } catch (fetchErr: unknown) {
-        clearTimeout(timeout);
-        if (fetchErr instanceof DOMException && fetchErr.name === "AbortError") {
-          throw new Error("Scoring is taking too long — please try again");
+      // Read SSE stream
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let scoreData: any = null;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || ""; // keep incomplete line in buffer
+
+        let currentEvent = "";
+        for (const line of lines) {
+          if (line.startsWith("event: ")) {
+            currentEvent = line.slice(7).trim();
+          } else if (line.startsWith("data: ") && currentEvent) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (currentEvent === "progress") {
+                setScoreProgress(data.step || "Processing...");
+              } else if (currentEvent === "score") {
+                scoreData = data;
+              } else if (currentEvent === "error") {
+                throw new Error(data.error || "Scoring failed");
+              }
+            } catch (parseErr) {
+              if (parseErr instanceof Error && parseErr.message !== "Scoring failed" && !parseErr.message.includes("limit")) {
+                // Ignore JSON parse errors on partial chunks
+              } else {
+                throw parseErr;
+              }
+            }
+            currentEvent = "";
+          }
         }
-        throw new Error("Network error — check your connection and try again");
-      }
-      clearTimeout(timeout);
-
-      // Handle non-JSON responses (e.g. Vercel timeout HTML pages)
-      const contentType = res.headers.get("content-type") || "";
-      if (!contentType.includes("application/json")) {
-        throw new Error(
-          res.status === 504 ? "Server timed out — please try again" :
-          `Server error (${res.status}) — please try again`
-        );
       }
 
-      const json = await res.json();
-      if (!res.ok || !json.success) {
-        throw new Error(json.error || "Scoring failed");
+      if (!scoreData || typeof scoreData.overall_score !== "number") {
+        throw new Error("No score received — please try again");
       }
 
-      const scoreData = json.data;
       const hash = cvDataHash(cvData);
       setScoreResult(scoreData);
       setScoredCvHash(hash);
@@ -573,14 +598,29 @@ export default function TgCvBuilder() {
               cv_score_hash: hash,
             },
           }),
-        }).catch(() => {}); // fire-and-forget
+        }).catch(() => {});
       }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Scoring failed — try again");
     } finally {
       setScoring(false);
+      setScoreProgress("");
     }
   }
+
+  /* ─── Auto-score when entering template phase ──── */
+  const autoScoreTriggered = useRef(false);
+  useEffect(() => {
+    if (phase !== "template") return;
+    if (autoScoreTriggered.current) return;
+    if (scoreResult) return; // already have a score
+    if (!cvData.personal.full_name) return;
+    autoScoreTriggered.current = true;
+    // Small delay to let the UI render first
+    const timer = setTimeout(() => handleScoreCv(), 500);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]);
 
   const toggleSection = (key: string) => {
     setOpenSections((prev) => {
@@ -1340,128 +1380,8 @@ export default function TgCvBuilder() {
               )}
             </button>
 
-            <button
-              onClick={handleScoreCv}
-              disabled={scoring || filledCount < 2}
-              className="w-full py-3 rounded-xl border-2 border-dark-200 text-dark-600 font-bold text-sm flex items-center justify-center gap-2 disabled:opacity-40 active:scale-[0.98] transition-transform hover:border-amber-400 hover:text-amber-700"
-            >
-              {scoring ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Scoring...
-                </>
-              ) : (
-                <>
-                  <BarChart3 className="w-4 h-4" />
-                  Score My CV
-                </>
-              )}
-            </button>
           </div>
 
-          {/* Inline Score Results */}
-          {showScore && scoreResult && (
-            <div className="mt-4">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs font-bold text-dark-400 uppercase tracking-wider">
-                  CV Score
-                </h3>
-                <button
-                  onClick={() => setShowScore(false)}
-                  className="text-dark-300 hover:text-dark-500"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {/* Overall score */}
-              <div className="bg-gradient-to-br from-dark-900 to-dark-800 rounded-xl p-4 text-center relative overflow-hidden">
-                <div
-                  className="absolute inset-0 opacity-5"
-                  style={{
-                    backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)",
-                    backgroundSize: "14px 14px",
-                  }}
-                />
-                <div className="relative z-10">
-                  <p className="text-[10px] text-cyan-300 font-medium uppercase tracking-wider">
-                    Overall Score
-                  </p>
-                  <p className="text-4xl font-extrabold text-white mt-0.5">
-                    {scoreResult.overall_score}
-                    <span className="text-sm text-white/40">/100</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Dimensions */}
-              {scoreResult.dimensions && scoreResult.dimensions.length > 0 && (
-                <div className="mt-2.5 space-y-1.5">
-                  {scoreResult.dimensions.map((d) => (
-                    <div key={d.name} className="bg-white border border-dark-100 rounded-lg px-3 py-2">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[11px] font-bold text-dark-700">{d.name}</span>
-                        <span className="text-[11px] font-bold text-dark-900">{d.score}/100</span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-dark-100">
-                        <div
-                          className="h-1.5 rounded-full transition-all duration-700"
-                          style={{
-                            width: `${d.score}%`,
-                            background: d.score >= 70
-                              ? "linear-gradient(to right, #27ABD2, #24CFD6)"
-                              : d.score >= 40
-                              ? "linear-gradient(to right, #f59e0b, #fbbf24)"
-                              : "linear-gradient(to right, #ef4444, #f87171)",
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Improvements */}
-              {scoreResult.top_3_improvements && scoreResult.top_3_improvements.length > 0 && (
-                <div className="mt-3">
-                  <h4 className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-1.5">
-                    Improvements
-                  </h4>
-                  <div className="space-y-1.5">
-                    {scoreResult.top_3_improvements.map((imp, i) => (
-                      <div key={i} className="bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 flex items-start gap-2">
-                        <span className="text-xs font-bold text-amber-600 mt-0.5">{i + 1}.</span>
-                        <p className="text-xs text-amber-800 leading-relaxed">{imp}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Share Score Card */}
-              <button
-                onClick={() => {
-                  const dims = (scoreResult.dimensions || []).map(d => `${d.name}:${d.score}`).join(",");
-                  const cardUrl = `/api/cv/score-card?score=${scoreResult.overall_score}&name=${encodeURIComponent(cvData.personal.full_name)}&dims=${encodeURIComponent(dims)}`;
-                  const shareText = `I scored ${scoreResult.overall_score}/100 on Devidends — the AI CV scorer for development professionals. Score yours free:`;
-                  const shareUrl = `https://devidends-eta-delta.vercel.app/score`;
-
-                  if (isTelegram && (window as any).Telegram?.WebApp) {
-                    (window as any).Telegram.WebApp.openTelegramLink(
-                      `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`
-                    );
-                  } else {
-                    navigator.share?.({ title: "My CV Score", text: shareText, url: shareUrl }).catch(() => {
-                      navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
-                    });
-                  }
-                }}
-                className="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
-              >
-                📤 Share My Score
-              </button>
-            </div>
-          )}
         </div>
       )}
 
@@ -1527,22 +1447,12 @@ export default function TgCvBuilder() {
             </div>
           </div>
 
-          {/* ── CV Score Section ── */}
+          {/* ── CV Score (permanent, auto-scored) ── */}
           <div className="rounded-xl border border-dark-100 bg-white overflow-hidden">
-            {scoreResult && showScore ? (
+            {scoreResult ? (
+              /* ── Standing score — always visible ── */
               <div className="p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-bold text-dark-900">CV Score</h3>
-                  <button
-                    onClick={handleScoreCv}
-                    disabled={scoring}
-                    className="text-[11px] text-cyan-600 font-semibold flex items-center gap-1"
-                  >
-                    <RefreshCw className={`w-3 h-3 ${scoring ? "animate-spin" : ""}`} />
-                    Re-score
-                  </button>
-                </div>
-                {/* Overall score */}
+                <h3 className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-3">Your CV Score</h3>
                 <div className="flex items-center gap-4 mb-3">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-extrabold text-xl ${
                     scoreResult.overall_score >= 70 ? "bg-emerald-500" :
@@ -1556,11 +1466,10 @@ export default function TgCvBuilder() {
                        scoreResult.overall_score >= 50 ? "Decent — room to improve" : "Needs work"}
                     </p>
                     <p className="text-[10px] text-dark-400 mt-0.5">
-                      Scored against GIZ, World Bank, EU & UN standards
+                      GIZ · World Bank · EU · UN standards
                     </p>
                   </div>
                 </div>
-                {/* Dimension bars */}
                 {scoreResult.dimensions && (
                   <div className="space-y-1.5">
                     {scoreResult.dimensions.map((d, i) => (
@@ -1568,7 +1477,7 @@ export default function TgCvBuilder() {
                         <span className="text-[10px] text-dark-500 w-24 truncate">{d.name}</span>
                         <div className="flex-1 h-1.5 bg-dark-100 rounded-full overflow-hidden">
                           <div
-                            className={`h-full rounded-full ${
+                            className={`h-full rounded-full transition-all duration-700 ${
                               d.score >= 70 ? "bg-emerald-500" :
                               d.score >= 50 ? "bg-amber-500" : "bg-red-400"
                             }`}
@@ -1580,10 +1489,9 @@ export default function TgCvBuilder() {
                     ))}
                   </div>
                 )}
-                {/* Top improvements */}
                 {scoreResult.top_3_improvements && scoreResult.top_3_improvements.length > 0 && (
                   <div className="mt-3 pt-3 border-t border-dark-50">
-                    <p className="text-[10px] font-bold text-dark-500 uppercase tracking-wider mb-1.5">Top improvements</p>
+                    <p className="text-[10px] font-bold text-dark-500 uppercase tracking-wider mb-1.5">How to improve</p>
                     <ul className="space-y-1">
                       {scoreResult.top_3_improvements.map((tip, i) => (
                         <li key={i} className="text-[11px] text-dark-600 flex gap-1.5">
@@ -1595,28 +1503,41 @@ export default function TgCvBuilder() {
                   </div>
                 )}
               </div>
+            ) : scoring ? (
+              /* ── Scoring in progress (auto-triggered or manual) ── */
+              <div className="p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center shrink-0">
+                    <Loader2 className="w-6 h-6 animate-spin text-indigo-500" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-dark-900">
+                      {scoreProgress || "Scoring your CV..."}
+                    </p>
+                    <p className="text-[10px] text-dark-400 mt-0.5">
+                      Takes about 30 seconds
+                    </p>
+                    {/* Animated progress bar */}
+                    <div className="mt-2 h-1 bg-dark-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-indigo-400 rounded-full animate-pulse" style={{ width: "60%", animationDuration: "1.5s" }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : (
+              /* ── Not yet scored — will auto-trigger, but show manual button too ── */
               <button
                 onClick={handleScoreCv}
-                disabled={scoring}
                 className="w-full p-4 flex items-center gap-3 hover:bg-dark-50 transition-colors"
               >
                 <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
-                  {scoring ? (
-                    <Loader2 className="w-5 h-5 animate-spin text-indigo-500" />
-                  ) : (
-                    <BarChart3 className="w-5 h-5 text-indigo-500" />
-                  )}
+                  <BarChart3 className="w-5 h-5 text-indigo-500" />
                 </div>
                 <div className="text-left flex-1">
-                  <p className="text-sm font-bold text-dark-900">
-                    {scoring ? "Scoring your CV..." : "Score My CV"}
-                  </p>
-                  <p className="text-[11px] text-dark-400">
-                    {scoring ? "Analyzing against donor standards" : "See how you rank against GIZ, WB, EU standards"}
-                  </p>
+                  <p className="text-sm font-bold text-dark-900">Score My CV</p>
+                  <p className="text-[11px] text-dark-400">See how you rank against donor standards</p>
                 </div>
-                {!scoring && <Sparkles className="w-4 h-4 text-indigo-400" />}
+                <Sparkles className="w-4 h-4 text-indigo-400" />
               </button>
             )}
           </div>
