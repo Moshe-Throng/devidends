@@ -94,20 +94,32 @@ export async function POST(req: NextRequest) {
       dupWarning = `Possible duplicate: "${dupes[0].name}" already exists (source: ${dupes[0].source}, score: ${dupes[0].cv_score ?? "n/a"})`;
     }
 
-    // Extract nationality, languages, education_level from structured CV
-    const nationality = cvStructured?.personal?.nationality || null;
-    const languages = cvStructured?.languages?.map((l: any) => l.language).filter(Boolean) || [];
-    const eduLevel = cvStructured?.education?.[0]?.degree?.match(/PhD|Doctorate/i) ? "PhD"
-      : cvStructured?.education?.[0]?.degree?.match(/Master|MSc|MA|MBA|MPH/i) ? "Masters"
-      : cvStructured?.education?.[0]?.degree?.match(/Bachelor|BSc|BA|BEng/i) ? "Bachelors"
-      : cvStructured?.education?.[0]?.degree?.match(/Diploma/i) ? "Diploma" : null;
+    // Extract ALL fields from structured CV into profile-level columns
+    const p = cvStructured?.personal || {};
+    const cvEmail = p.email || null;
+    const cvPhone = p.phone || null;
+    const cvNationality = p.nationality || null;
+    const cvCity = p.address || p.country_of_residence || null;
+    const cvLanguages = cvStructured?.languages?.map((l: any) => l.language).filter(Boolean) || [];
+    const cvCertifications = cvStructured?.certifications?.filter(Boolean) || [];
+
+    // Derive education level from highest degree
+    const degrees = (cvStructured?.education || []).map((e: any) => e.degree || "");
+    const eduLevel = degrees.some((d: string) => /PhD|Doctorate/i.test(d)) ? "PhD"
+      : degrees.some((d: string) => /Master|MSc|MA|MBA|MPH|MPA|MEng/i.test(d)) ? "Masters"
+      : degrees.some((d: string) => /Bachelor|BSc|BA|BEng|LLB/i.test(d)) ? "Bachelors"
+      : degrees.some((d: string) => /Diploma/i.test(d)) ? "Diploma" : null;
 
     // Create profile in Supabase
     const { data: created, error: insertErr } = await sb
       .from("profiles")
       .insert({
-        name: profile.name,
+        name: p.full_name || profile.name,
         headline: profile.headline,
+        email: cvEmail,
+        phone: cvPhone,
+        nationality: cvNationality,
+        city: cvCity,
         sectors: profile.sectors,
         donors: profile.donors,
         countries: profile.countries,
@@ -120,16 +132,18 @@ export async function POST(req: NextRequest) {
         cv_score: cvScore,
         claim_token: claimToken,
         source: "admin_ingest",
+        // Admin-provided fields (override CV-extracted if set)
         recommended_by: recommendedBy,
         is_recommender: isRecommender,
-        gender: gender,
-        nationality: nationality,
-        languages: languages,
+        gender: gender || null,
+        // CV-extracted fields
+        languages: cvLanguages,
+        certifications: cvCertifications,
         education_level: eduLevel,
         tags: tags,
         admin_notes: adminNotes,
       })
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, created_at")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, certifications, created_at")
       .single();
 
     if (insertErr) {
