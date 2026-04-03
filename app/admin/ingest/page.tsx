@@ -48,6 +48,7 @@ interface IngestedProfile {
   claimed_at: string | null;
   is_claimed: boolean;
   profile_type: string | null;
+  source: string | null;
   created_at: string;
 }
 
@@ -76,7 +77,7 @@ export default function AdminIngestPage() {
 
   async function fetchProfiles() {
     try {
-      const res = await fetch("/api/admin/ingest");
+      const res = await fetch("/api/admin/ingest?all=true");
       const data = await res.json();
       setProfiles(data.profiles || []);
     } catch {
@@ -167,10 +168,12 @@ export default function AdminIngestPage() {
   // Search + filter
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState<"all" | "claimed" | "pending">("all");
+  const [filterSource, setFilterSource] = useState<"all" | "admin_ingest" | "telegram" | "web">("all");
 
   const filtered = profiles.filter(p => {
     if (filterStatus === "claimed" && !p.is_claimed) return false;
     if (filterStatus === "pending" && p.is_claimed) return false;
+    if (filterSource !== "all" && (p as any).source !== filterSource) return false;
     if (search) {
       const q = search.toLowerCase();
       return (p.name || "").toLowerCase().includes(q) ||
@@ -217,7 +220,9 @@ export default function AdminIngestPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-6 space-y-6">
-        {/* Metadata fields (apply to all CVs in this batch) */}
+        {/* AI Expert Matching */}
+        <ExpertMatcher />
+
         {/* Search + filters */}
         <div className="flex items-center gap-3">
           <div className="flex-1 relative">
@@ -233,6 +238,13 @@ export default function AdminIngestPage() {
             {(["all", "pending", "claimed"] as const).map(s => (
               <button key={s} onClick={() => setFilterStatus(s)} className={`px-3 py-2 font-semibold capitalize transition-colors ${filterStatus === s ? "bg-cyan-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
                 {s}
+              </button>
+            ))}
+          </div>
+          <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
+            {(["all", "admin_ingest", "telegram", "web"] as const).map(s => (
+              <button key={s} onClick={() => setFilterSource(s)} className={`px-3 py-2 font-semibold transition-colors ${filterSource === s ? "bg-teal-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
+                {s === "all" ? "All Sources" : s === "admin_ingest" ? "Ingested" : s === "telegram" ? "Telegram" : "Web"}
               </button>
             ))}
           </div>
@@ -661,6 +673,164 @@ function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave:
 }
 
 /* ── Collapsible, editable CV data viewer ── */
+
+/* ── AI Expert Matcher ── */
+
+function ExpertMatcher() {
+  const [torText, setTorText] = useState("");
+  const [matching, setMatching] = useState(false);
+  const [results, setResults] = useState<any[] | null>(null);
+  const [reqs, setReqs] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [collapsed, setCollapsed] = useState(true);
+
+  async function handleMatch() {
+    if (matching || torText.length < 50) return;
+    setMatching(true);
+    setError(null);
+    setResults(null);
+
+    try {
+      const res = await fetch("/api/admin/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tor_text: torText, max_results: 15 }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || "Matching failed");
+      setReqs(data.requirements);
+      setResults(data.results);
+    } catch (err: any) {
+      setError(err.message || "Matching failed");
+    } finally {
+      setMatching(false);
+    }
+  }
+
+  return (
+    <div className="bg-white rounded-xl border border-dark-100 overflow-hidden">
+      <button
+        onClick={() => setCollapsed(!collapsed)}
+        className="w-full flex items-center justify-between px-5 py-3 hover:bg-dark-50/50 transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <div className="text-left">
+            <p className="text-sm font-bold text-dark-900">AI Expert Matching</p>
+            <p className="text-[10px] text-dark-400">Paste a ToR or job description to find matching experts</p>
+          </div>
+        </div>
+        <svg className={`w-4 h-4 text-dark-300 transition-transform ${collapsed ? "" : "rotate-180"}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/></svg>
+      </button>
+
+      {!collapsed && (
+        <div className="border-t border-dark-100 px-5 py-4 space-y-4">
+          <textarea
+            value={torText}
+            onChange={e => setTorText(e.target.value)}
+            placeholder="Paste Terms of Reference, Job Description, or key requirements here...&#10;&#10;Example: Looking for a Senior WASH Specialist with 10+ years of GIZ/World Bank experience in Ethiopia, Masters in Public Health, fluent in English and Amharic..."
+            className="w-full h-32 px-3 py-2.5 rounded-xl border border-dark-200 text-sm focus:border-indigo-400 focus:outline-none resize-y placeholder:text-dark-300"
+          />
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleMatch}
+              disabled={matching || torText.length < 50}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 text-white font-bold text-sm hover:bg-indigo-600 disabled:opacity-40 transition-colors"
+            >
+              {matching ? <Loader2 className="w-4 h-4 animate-spin" /> : <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>}
+              {matching ? "Matching..." : "Find Experts"}
+            </button>
+            {torText.length > 0 && torText.length < 50 && (
+              <span className="text-xs text-dark-400">Need at least 50 characters</span>
+            )}
+          </div>
+
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg px-3 py-2 text-xs text-red-700 flex items-center gap-2">
+              <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+              {error}
+            </div>
+          )}
+
+          {/* Extracted requirements */}
+          {reqs && (
+            <div className="bg-indigo-50/50 rounded-xl px-4 py-3 space-y-1.5">
+              <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Extracted Requirements</p>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {reqs.title && <span className="px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 font-semibold">{reqs.title}</span>}
+                {reqs.donor && <span className="px-2 py-0.5 rounded bg-teal-100 text-teal-700 font-semibold">{reqs.donor}</span>}
+                {reqs.required_experience_years && <span className="px-2 py-0.5 rounded bg-dark-100 text-dark-600">{reqs.required_experience_years}+ years</span>}
+                {reqs.required_education && <span className="px-2 py-0.5 rounded bg-dark-100 text-dark-600">{reqs.required_education}</span>}
+                {(reqs.sectors || []).map((s: string) => <span key={s} className="px-2 py-0.5 rounded bg-cyan-100 text-cyan-700">{s}</span>)}
+                {(reqs.required_languages || []).map((l: string) => <span key={l} className="px-2 py-0.5 rounded bg-amber-100 text-amber-700">{l}</span>)}
+                {(reqs.required_countries || []).map((c: string) => <span key={c} className="px-2 py-0.5 rounded bg-dark-100 text-dark-600">{c}</span>)}
+              </div>
+            </div>
+          )}
+
+          {/* Results */}
+          {results && (
+            <div className="space-y-2">
+              <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">{results.length} matches found</p>
+              {results.map((r, i) => (
+                <div key={r.id} className="bg-dark-50/30 rounded-xl p-3 flex items-start gap-3">
+                  {/* Rank + score */}
+                  <div className="text-center shrink-0 w-12">
+                    <p className="text-lg font-extrabold text-dark-300">#{i + 1}</p>
+                    <div className={`mt-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${
+                      (r.ai_fit_score || r.match_score) >= 70 ? "bg-emerald-500" :
+                      (r.ai_fit_score || r.match_score) >= 50 ? "bg-amber-500" : "bg-red-400"
+                    }`}>
+                      {r.ai_fit_score || r.match_score}%
+                    </div>
+                  </div>
+
+                  {/* Details */}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-dark-900">{r.name}</p>
+                    <p className="text-[11px] text-dark-500">{r.headline || [r.profile_type, ...(r.sectors || []).slice(0, 2)].filter(Boolean).join(" · ")}</p>
+
+                    {/* AI reason */}
+                    {r.ai_reason && (
+                      <p className="text-[11px] text-indigo-600 mt-1 italic">{r.ai_reason}</p>
+                    )}
+
+                    {/* Quick stats */}
+                    <div className="flex flex-wrap gap-2 mt-1.5 text-[10px]">
+                      {r.years_of_experience && <span className="text-dark-400">{r.years_of_experience}yr exp</span>}
+                      {r.education_level && <span className="text-dark-400">{r.education_level}</span>}
+                      {r.nationality && <span className="text-dark-400">{r.nationality}</span>}
+                      {r.cv_score && <span className="text-dark-400">CV: {r.cv_score}/100</span>}
+                    </div>
+
+                    {/* Recent roles */}
+                    {r.recent_roles?.length > 0 && (
+                      <div className="mt-1.5 space-y-0.5">
+                        {r.recent_roles.map((role: any, j: number) => (
+                          <p key={j} className="text-[10px] text-dark-400">
+                            {role.position} at {role.employer} ({role.from_date}–{role.to_date})
+                          </p>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Contact */}
+                    <div className="flex gap-3 mt-1.5 text-[10px]">
+                      {r.email && <span className="text-cyan-600">{r.email}</span>}
+                      {r.phone && <span className="text-dark-400">{r.phone}</span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function CvDataView({ profileId, cv, onUpdate }: { profileId: string; cv: any; onUpdate: (cv: any) => void }) {
   const [openSection, setOpenSection] = useState<string | null>(null);
