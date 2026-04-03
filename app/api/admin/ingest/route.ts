@@ -18,6 +18,38 @@ function getAdmin() {
 
 const ADMIN_IDS = (process.env.ADMIN_USER_IDS || "").split(",").map(s => s.trim());
 
+/** Auto-generate tags from CV data */
+function autoGenerateTags(profile: any, cv: any, score: number | null): string[] {
+  const tags: string[] = [];
+  const yrs = profile.years_of_experience || 0;
+  if (yrs >= 15) tags.push("expert");
+  else if (yrs >= 10) tags.push("senior");
+
+  if (score && score >= 70) tags.push("strong_cv");
+  else if (score && score < 40) tags.push("needs_improvement");
+
+  const employers = (cv?.employment || []).map((e: any) => (e.employer || "").toLowerCase());
+  const donorKeywords = ["giz", "world bank", "undp", "unicef", "usaid", "eu", "afdb", "dfid", "fcdo", "who", "fao", "unhcr"];
+  const matchedDonors = new Set<string>();
+  for (const emp of employers) {
+    for (const d of donorKeywords) {
+      if (emp.includes(d)) matchedDonors.add(d);
+    }
+  }
+  if (matchedDonors.size >= 3) tags.push("multi_donor");
+  if (matchedDonors.size >= 1) tags.push("donor_experienced");
+
+  const countries = new Set((cv?.employment || []).map((e: any) => e.country).filter(Boolean));
+  if (countries.size >= 3) tags.push("multi_country");
+
+  const langs = (cv?.languages || []).length;
+  if (langs >= 3) tags.push("multilingual");
+
+  if ((cv?.education || []).some((e: any) => /PhD|Doctorate/i.test(e.degree || ""))) tags.push("phd");
+
+  return tags;
+}
+
 /**
  * POST /api/admin/ingest — Upload a single CV, extract, score, create profile with claim token.
  * Body: FormData with file field "cv"
@@ -140,7 +172,7 @@ export async function POST(req: NextRequest) {
         languages: cvLanguages,
         certifications: cvCertifications,
         education_level: eduLevel,
-        tags: tags,
+        tags: tags.length > 0 ? tags : autoGenerateTags(profile, cvStructured, cvScore),
         admin_notes: adminNotes,
       })
       .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, certifications, created_at")
@@ -223,10 +255,11 @@ export async function PATCH(req: NextRequest) {
     const allowed = [
       "name", "headline", "gender", "nationality", "email", "phone", "city",
       "recommended_by", "is_recommender", "profile_type", "education_level",
-      "availability", "daily_rate_usd", "travel_willingness",
-      "tags", "admin_notes",
+      "availability", "daily_rate_usd", "travel_willingness", "years_of_experience",
+      "tags", "admin_notes", "qualifications",
       "sectors", "donors", "countries", "languages", "certifications",
       "preferred_role_types", "preferred_regions",
+      "cv_structured_data", "cv_score", "professional_summary",
     ];
 
     const update: Record<string, unknown> = {};
@@ -258,7 +291,7 @@ export async function DELETE(req: NextRequest) {
     if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
 
     const sb = getAdmin();
-    const { error } = await sb.from("profiles").delete().eq("id", id).eq("source", "admin_ingest");
+    const { error } = await sb.from("profiles").delete().eq("id", id);
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ success: true });

@@ -392,88 +392,9 @@ export default function AdminIngestPage() {
                         <ChipField label="Skills" items={p.skills} color="neutral" />
                       </div>
 
-                      {/* Full structured CV data */}
+                      {/* Full structured CV data — collapsible sections */}
                       {p.cv_structured_data && (
-                        <div className="pt-2 border-t border-dark-100 space-y-3">
-                          <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">Extracted CV Data</p>
-
-                          {/* Education */}
-                          {p.cv_structured_data.education?.length > 0 && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Education ({p.cv_structured_data.education.length})</p>
-                              <div className="space-y-1.5">
-                                {p.cv_structured_data.education.map((e: any, i: number) => (
-                                  <div key={i} className="text-xs bg-white rounded-lg px-2.5 py-2 border border-dark-100">
-                                    <p className="text-dark-800 font-semibold">{e.degree}{e.field_of_study && ` in ${e.field_of_study}`}</p>
-                                    <p className="text-dark-500">{e.institution}{e.country && ` · ${e.country}`}{e.year_graduated && ` · ${e.year_graduated}`}</p>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Employment */}
-                          {p.cv_structured_data.employment?.length > 0 && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Employment ({p.cv_structured_data.employment.length})</p>
-                              <div className="space-y-3">
-                                {p.cv_structured_data.employment.map((e: any, i: number) => (
-                                  <div key={i} className="text-xs bg-white rounded-lg p-2.5 border border-dark-100">
-                                    <p className="text-dark-800 font-semibold">{e.position}</p>
-                                    <p className="text-dark-500">
-                                      {e.employer}
-                                      {e.country && ` · ${e.country}`}
-                                      {(e.from_date || e.to_date) && ` · ${[e.from_date, e.to_date].filter(Boolean).join(" – ")}`}
-                                    </p>
-                                    {e.description_of_duties && (
-                                      <p className="text-dark-500 mt-1 leading-relaxed whitespace-pre-line text-[11px]">
-                                        {e.description_of_duties}
-                                      </p>
-                                    )}
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Languages */}
-                          {p.cv_structured_data.languages?.length > 0 && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Languages</p>
-                              <p className="text-xs text-dark-600">
-                                {p.cv_structured_data.languages.map((l: any) => l.language).filter(Boolean).join(", ")}
-                              </p>
-                            </div>
-                          )}
-
-                          {/* Certifications */}
-                          {p.cv_structured_data.certifications?.filter(Boolean).length > 0 && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Certifications</p>
-                              <div className="flex flex-wrap gap-1">
-                                {p.cv_structured_data.certifications.filter(Boolean).map((c: string, i: number) => (
-                                  <span key={i} className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">{c}</span>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Key Qualifications */}
-                          {p.cv_structured_data.key_qualifications && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Key Qualifications</p>
-                              <p className="text-xs text-dark-600 leading-relaxed whitespace-pre-line">{p.cv_structured_data.key_qualifications}</p>
-                            </div>
-                          )}
-
-                          {/* Summary */}
-                          {p.cv_structured_data.professional_summary && (
-                            <div>
-                              <p className="text-[10px] font-bold text-dark-500 mb-1">Professional Summary</p>
-                              <p className="text-xs text-dark-600 leading-relaxed whitespace-pre-line">{p.cv_structured_data.professional_summary}</p>
-                            </div>
-                          )}
-                        </div>
+                        <CvDataView profileId={p.id} cv={p.cv_structured_data} onUpdate={(newCv) => setProfiles(prev => prev.map(x => x.id === p.id ? { ...x, cv_structured_data: newCv } : x))} />
                       )}
 
                       {/* Editable admin fields */}
@@ -514,14 +435,34 @@ export default function AdminIngestPage() {
                         </div>
                       )}
 
-                      {/* Delete */}
-                      <div className="pt-2 border-t border-dark-100 flex justify-end">
+                      {/* Update CV + Delete */}
+                      <div className="pt-2 border-t border-dark-100 flex items-center justify-between">
+                        <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-600 hover:bg-cyan-50 transition-colors cursor-pointer">
+                          <Upload className="w-3 h-3" />
+                          Re-upload CV
+                          <input type="file" accept=".pdf,.docx,.doc" className="hidden" onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            const form = new FormData();
+                            form.append("cv", file);
+                            try {
+                              const res = await fetch("/api/admin/ingest", { method: "POST", body: form });
+                              const data = await res.json();
+                              if (data.success) {
+                                // Delete old, add new
+                                await fetch("/api/admin/ingest", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: p.id }) });
+                                setProfiles(prev => [data.profile, ...prev.filter(x => x.id !== p.id)]);
+                              }
+                            } catch {}
+                            e.target.value = "";
+                          }} />
+                        </label>
                         <button
                           onClick={(e) => { e.stopPropagation(); handleDelete(p.id, p.name); }}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-red-500 hover:bg-red-50 transition-colors"
                         >
                           <Trash2 className="w-3 h-3" />
-                          Delete &amp; Re-ingest
+                          Delete
                         </button>
                       </div>
                     </div>
@@ -715,6 +656,133 @@ function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave:
           <input value={adminNotes} onChange={e => setAdminNotes(e.target.value)} className={INPUT} placeholder="Internal notes about this expert" />
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ── Collapsible, editable CV data viewer ── */
+
+function CvDataView({ profileId, cv, onUpdate }: { profileId: string; cv: any; onUpdate: (cv: any) => void }) {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [editCv, setEditCv] = useState<any>(null);
+
+  function startEdit() { setEditCv(JSON.parse(JSON.stringify(cv))); }
+
+  async function saveEdit() {
+    if (!editCv) return;
+    setSaving(true);
+    try {
+      const res = await fetch("/api/admin/ingest", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: profileId, cv_structured_data: editCv }),
+      });
+      if (res.ok) { onUpdate(editCv); setEditCv(null); }
+    } catch {} finally { setSaving(false); }
+  }
+
+  const data = editCv || cv;
+  const isEditing = !!editCv;
+  const INP = "w-full px-2 py-1 rounded border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none";
+  const toggle = (key: string) => setOpenSection(openSection === key ? null : key);
+
+  const sections = [
+    { key: "summary", label: "Professional Summary", count: data.professional_summary ? 1 : 0 },
+    { key: "employment", label: "Employment", count: (data.employment || []).length },
+    { key: "education", label: "Education", count: (data.education || []).length },
+    { key: "languages", label: "Languages", count: (data.languages || []).length },
+    { key: "certifications", label: "Certifications", count: (data.certifications || []).filter(Boolean).length },
+    { key: "qualifications", label: "Key Qualifications", count: data.key_qualifications ? 1 : 0 },
+  ].filter(s => s.count > 0);
+
+  return (
+    <div className="pt-2 border-t border-dark-100 space-y-1" onClick={e => e.stopPropagation()}>
+      <div className="flex items-center justify-between mb-1">
+        <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider">CV Data</p>
+        {!isEditing ? (
+          <button onClick={startEdit} className="text-[10px] font-bold text-cyan-600">Edit CV Data</button>
+        ) : (
+          <div className="flex gap-2">
+            <button onClick={() => setEditCv(null)} className="text-[10px] text-dark-400">Cancel</button>
+            <button onClick={saveEdit} disabled={saving} className="text-[10px] font-bold text-white bg-cyan-500 px-2.5 py-1 rounded-lg disabled:opacity-50">
+              {saving ? "Saving..." : "Save Changes"}
+            </button>
+          </div>
+        )}
+      </div>
+      {sections.map(s => (
+        <div key={s.key} className="rounded-lg border border-dark-100 overflow-hidden">
+          <button onClick={() => toggle(s.key)} className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold text-dark-700 hover:bg-dark-50">
+            <span>{s.label} ({s.count})</span>
+            <svg className={`w-3.5 h-3.5 text-dark-300 transition-transform ${openSection === s.key ? "rotate-180" : ""}`} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/></svg>
+          </button>
+          {openSection === s.key && (
+            <div className="border-t border-dark-100 px-3 py-2 bg-white space-y-2">
+              {s.key === "summary" && (isEditing
+                ? <textarea value={data.professional_summary || ""} onChange={e => setEditCv({...editCv, professional_summary: e.target.value})} className={INP + " h-24 resize-none"} />
+                : <p className="text-xs text-dark-600 whitespace-pre-line">{data.professional_summary}</p>
+              )}
+              {s.key === "qualifications" && (isEditing
+                ? <textarea value={data.key_qualifications || ""} onChange={e => setEditCv({...editCv, key_qualifications: e.target.value})} className={INP + " h-20 resize-none"} />
+                : <p className="text-xs text-dark-600 whitespace-pre-line">{data.key_qualifications}</p>
+              )}
+              {s.key === "employment" && (data.employment || []).map((emp: any, i: number) => (
+                <div key={i} className="bg-dark-50/50 rounded-lg p-2.5 space-y-1.5">
+                  {isEditing ? (<>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <input value={emp.position||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],position:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP} placeholder="Position" />
+                      <input value={emp.employer||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],employer:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP} placeholder="Employer" />
+                      <input value={emp.from_date||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],from_date:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP} placeholder="From (YYYY-MM)" />
+                      <input value={emp.to_date||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],to_date:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP} placeholder="To" />
+                      <input value={emp.country||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],country:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP} placeholder="Country" />
+                    </div>
+                    <textarea value={emp.description_of_duties||""} onChange={e => {const a=[...editCv.employment]; a[i]={...a[i],description_of_duties:e.target.value}; setEditCv({...editCv,employment:a});}} className={INP + " h-20 resize-y"} placeholder="Description of duties" />
+                  </>) : (<>
+                    <p className="text-xs text-dark-800 font-semibold">{emp.position}</p>
+                    <p className="text-[11px] text-dark-500">{emp.employer}{emp.country&&` · ${emp.country}`}{(emp.from_date||emp.to_date)&&` · ${[emp.from_date,emp.to_date].filter(Boolean).join(" – ")}`}</p>
+                    {emp.description_of_duties && <p className="text-[11px] text-dark-500 whitespace-pre-line mt-1">{emp.description_of_duties}</p>}
+                  </>)}
+                </div>
+              ))}
+              {s.key === "education" && (data.education || []).map((edu: any, i: number) => (
+                <div key={i} className="bg-dark-50/50 rounded-lg p-2.5">
+                  {isEditing ? (
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <input value={edu.degree||""} onChange={e => {const a=[...editCv.education]; a[i]={...a[i],degree:e.target.value}; setEditCv({...editCv,education:a});}} className={INP} placeholder="Degree" />
+                      <input value={edu.field_of_study||""} onChange={e => {const a=[...editCv.education]; a[i]={...a[i],field_of_study:e.target.value}; setEditCv({...editCv,education:a});}} className={INP} placeholder="Field" />
+                      <input value={edu.institution||""} onChange={e => {const a=[...editCv.education]; a[i]={...a[i],institution:e.target.value}; setEditCv({...editCv,education:a});}} className={INP} placeholder="Institution" />
+                      <input value={edu.year_graduated||""} onChange={e => {const a=[...editCv.education]; a[i]={...a[i],year_graduated:e.target.value}; setEditCv({...editCv,education:a});}} className={INP} placeholder="Year" />
+                      <input value={edu.country||""} onChange={e => {const a=[...editCv.education]; a[i]={...a[i],country:e.target.value}; setEditCv({...editCv,education:a});}} className={INP} placeholder="Country" />
+                    </div>
+                  ) : (<>
+                    <p className="text-xs text-dark-800 font-semibold">{edu.degree}{edu.field_of_study&&` in ${edu.field_of_study}`}</p>
+                    <p className="text-[11px] text-dark-500">{edu.institution}{edu.country&&` · ${edu.country}`}{edu.year_graduated&&` · ${edu.year_graduated}`}</p>
+                  </>)}
+                </div>
+              ))}
+              {s.key === "languages" && (data.languages || []).map((lang: any, i: number) => (
+                <div key={i} className="text-xs">
+                  {isEditing ? (
+                    <div className="grid grid-cols-4 gap-1.5">
+                      <input value={lang.language||""} onChange={e => {const a=[...editCv.languages]; a[i]={...a[i],language:e.target.value}; setEditCv({...editCv,languages:a});}} className={INP} placeholder="Language" />
+                      <select value={lang.speaking||""} onChange={e => {const a=[...editCv.languages]; a[i]={...a[i],speaking:e.target.value}; setEditCv({...editCv,languages:a});}} className={INP+" bg-white"}><option value="">Speaking</option><option>Excellent</option><option>Good</option><option>Fair</option></select>
+                      <select value={lang.reading||""} onChange={e => {const a=[...editCv.languages]; a[i]={...a[i],reading:e.target.value}; setEditCv({...editCv,languages:a});}} className={INP+" bg-white"}><option value="">Reading</option><option>Excellent</option><option>Good</option><option>Fair</option></select>
+                      <select value={lang.writing||""} onChange={e => {const a=[...editCv.languages]; a[i]={...a[i],writing:e.target.value}; setEditCv({...editCv,languages:a});}} className={INP+" bg-white"}><option value="">Writing</option><option>Excellent</option><option>Good</option><option>Fair</option></select>
+                    </div>
+                  ) : (
+                    <span className="text-dark-600">{lang.language}: {[lang.speaking&&`Speaking ${lang.speaking}`,lang.reading&&`Reading ${lang.reading}`,lang.writing&&`Writing ${lang.writing}`].filter(Boolean).join(", ")}</span>
+                  )}
+                </div>
+              ))}
+              {s.key === "certifications" && (isEditing
+                ? <textarea value={(data.certifications||[]).join("\n")} onChange={e => setEditCv({...editCv, certifications: e.target.value.split("\n").filter(Boolean)})} className={INP + " h-16 resize-none"} placeholder="One per line" />
+                : <div className="flex flex-wrap gap-1">{(data.certifications||[]).filter(Boolean).map((c:string,i:number) => <span key={i} className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">{c}</span>)}</div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
