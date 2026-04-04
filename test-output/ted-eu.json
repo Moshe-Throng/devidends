@@ -1,1 +1,160 @@
-[]
+[
+  {
+    "title": "Evaluation of Management of Danish Development Cooperation 20 years after decentralisation",
+    "organization": "European Union",
+    "description": "Evaluation of Management of Danish Development Cooperation 20 years after decentralisation\nType: Contract notice",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ted.europa.eu/en/notice/-/detail/710062-2023",
+    "source_domain": "ted.europa.eu",
+    "content_type": "tender",
+    "scraped_at": "2026-04-04T19:39:11.557Z",
+    "raw_fields": {
+      "donor_ref": "710062-2023",
+      "pipeline_stage": "published",
+      "signal_type": "tender_published",
+      "signal_confidence": "high",
+      "budget_min": null,
+      "budget_max": null,
+      "notice_type": "Contract notice",
+      "procedure_type": null,
+      "buyer_country": "DNK",
+      "region_code": [
+        "ETH",
+        "NER",
+        "UGA",
+        "VNM",
+        "USA"
+      ],
+      "contract_nature": null,
+      "original_language": null
+    },
+    "_sourceId": "ted-eu"
+  },
+  {
+    "title": "81298345 - Event management service for GIZ-African Union partner events in various African countries",
+    "organization": "European Union",
+    "description": "81298345 - Event management service for GIZ-African Union partner events in various African countries\nType: Contract notice",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ted.europa.eu/en/notice/-/detail/774066-2023",
+    "source_domain": "ted.europa.eu",
+    "content_type": "tender",
+    "scraped_at": "2026-04-04T19:39:11.557Z",
+    "raw_fields": {
+      "donor_ref": "774066-2023",
+      "pipeline_stage": "published",
+      "signal_type": "tender_published",
+      "signal_confidence": "high",
+      "budget_min": null,
+      "budget_max": null,
+      "notice_type": "Contract notice",
+      "procedure_type": null,
+      "buyer_country": "DEU",
+      "region_code": [
+        "ETH"
+      ],
+      "contract_nature": null,
+      "original_language": null
+    },
+    "_sourceId": "ted-eu"
+  },
+  {
+    "title": "Evaluation of Management of Danish Development Cooperation 20 years after decentralisation",
+    "organization": "European Union",
+    "description": "Evaluation of Management of Danish Development Cooperation 20 years after decentralisation\nType: Contract notice",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ted.europa.eu/en/notice/-/detail/4616-2024",
+    "source_domain": "ted.europa.eu",
+    "content_type": "tender",
+    "scraped_at": "2026-04-04T19:39:11.557Z",
+    "raw_fields": {
+      "donor_ref": "4616-2024",
+      "pipeline_stage": "published",
+      "signal_type": "tender_published",
+      "signal_confidence": "high",
+      "budget_min": null,
+      "budget_max": null,
+      "notice_type": "Contract notice",
+      "procedure_type": null,
+      "buyer_country": "DNK",
+      "region_code": [
+        "ETH",
+        "NER",
+        "UGA",
+        "VNM",
+        "USA"
+      ],
+      "contract_nature": null,
+      "original_language": null
+    },
+    "_sourceId": "ted-eu"
+  },
+  {
+    "title": "81305021-Technical Support to NELGA for the development of a online course on \"Responsible Land Administration\" in Africa",
+    "organization": "European Union",
+    "description": "81305021-Technical Support to NELGA for the development of a online course on \"Responsible Land Administration\" in Africa\nType: Contract notice",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ted.europa.eu/en/notice/-/detail/180100-2024",
+    "source_domain": "ted.europa.eu",
+    "content_type": "tender",
+    "scraped_at": "2026-04-04T19:39:11.557Z",
+    "raw_fields": {
+      "donor_ref": "180100-2024",
+      "pipeline_stage": "published",
+      "signal_type": "tender_published",
+      "signal_confidence": "high",
+      "budget_min": null,
+      "budget_max": null,
+      "notice_type": "Contract notice",
+      "procedure_type": null,
+      "buyer_country": "DEU",
+      "region_code": [
+        "ETH"
+      ],
+      "contract_nature": null,
+      "original_language": null
+    },
+    "_sourceId": "ted-eu"
+  },
+  {
+    "title": "Re-Invitation for Consultancy service",
+    "organization": "European Union",
+    "description": "Re-Invitation for Consultancy service\nType: Contract notice",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ted.europa.eu/en/notice/-/detail/199446-2024",
+    "source_domain": "ted.europa.eu",
+    "content_type": "tender",
+    "scraped_at": "2026-04-04T19:39:11.557Z",
+    "raw_fields": {
+      "donor_ref": "199446-2024",
+      "pipeline_stage": "published",
+      "signal_type": "tender_published",
+      "signal_confidence": "high",
+      "budget_min": null,
+      "budget_max": null,
+      "notice_type": "Contract notice",
+      "procedure_type": null,
+      "buyer_country": "ETH,ETH",
+      "region_code": [
+        "ETH"
+      ],
+      "contract_nature": null,
+      "original_language": null
+    },
+    "_sourceId": "ted-eu"
+  }
+]

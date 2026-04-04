@@ -173,8 +173,7 @@ export class TedAdapter implements CrawlAdapter {
     }
 
     // Post-fetch filter: reject notices where ALL dates are before 2025
-    const cutoffYear = new Date().getFullYear() - 1; // e.g. 2025
-    const cutoffDate = `${cutoffYear}-01-01`;
+    const cutoffDate = "2025-01-01"; // Only keep notices from 2025 onwards
     const filtered = Array.from(seen.values()).filter((opp) => {
       const dates = [opp.published, opp.deadline].filter(Boolean) as string[];
       if (dates.length === 0) return true; // keep if no dates (can't tell if stale)
@@ -202,19 +201,15 @@ export class TedAdapter implements CrawlAdapter {
       "south africa": "ZAF",
     };
 
-    // Build date cutoff: only notices from the last N months
-    const cutoff = new Date();
-    cutoff.setMonth(cutoff.getMonth() - 6);
-    const cutoffStr = cutoff.toISOString().split("T")[0]; // YYYY-MM-DD
-
     const lower = keyword.toLowerCase();
     const code = COUNTRY_CODES[lower];
     const countryClause = code
       ? `BT-5141-Lot = ${code}`
       : `BT-5141-Lot = ${keyword}`;
 
-    // Add date filter to reject stale 2023/2024 notices
-    return `${countryClause} AND BT-05(a)-Procedure >= ${cutoffStr}`;
+    // No date filter in the query — the post-fetch filter handles staleness
+    // BT-05(a)-Procedure date filter syntax may not work reliably
+    return countryClause;
   }
 
   /**

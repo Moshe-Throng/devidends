@@ -75,9 +75,11 @@ export async function GET(req: NextRequest) {
         const dl = new Date(i.deadline);
         return dl >= threeMonthsAgo; // Keep recent or future deadlines
       }
-      // No deadline: only keep if it has budget data (concrete signal)
-      // or was published recently (last 3 months)
+      // No deadline: keep IATI planned items (they're forward-looking intelligence)
+      if (i.raw_fields?.signal_type === "iati_planned") return true;
+      // Keep if it has budget data (concrete signal)
       if (i.raw_fields?.budget_min || i.raw_fields?.budget_max) return true;
+      // Keep if published recently
       if (i.published) {
         const pub = new Date(i.published);
         return pub >= threeMonthsAgo;

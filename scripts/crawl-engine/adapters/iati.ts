@@ -329,6 +329,12 @@ export class IATIAdapter implements CrawlAdapter {
       "capacity", "governance", "operations", "program",
     ]);
 
+    // Organizations whose activities are ongoing charitable operations, not procurement
+    const CHARITY_ORGS = new Set([
+      "ethiopiaid", "hamlin fistula", "wateraid", "oxfam", "save the children",
+      "world vision", "plan international", "sos children",
+    ]);
+
     const BUDGET_CUTOFF_YEAR = 2024;
     const WINDING_DOWN_CUTOFF = "2025-01-01";
 
@@ -358,6 +364,23 @@ export class IATIAdapter implements CrawlAdapter {
       // Reject "IATI Activity XY-1..." fallback titles
       if (title.startsWith("IATI Activity ")) {
         log.info(`SKIP (no real title): "${title}"`);
+        return false;
+      }
+
+      // Reject charity/NGO ongoing operations
+      const orgLower = (opp.organization || "").toLowerCase();
+      for (const charity of CHARITY_ORGS) {
+        if (orgLower.includes(charity)) {
+          log.info(`SKIP (charity org: ${charity}): "${title}"`);
+          return false;
+        }
+      }
+
+      // Reject items with no budget AND no deadline — too vague to be actionable
+      const hasBudget = opp.raw_fields?.budget_min || opp.raw_fields?.budget_max;
+      const hasDeadline = opp.deadline;
+      if (!hasBudget && !hasDeadline && opp.raw_fields?.signal_type !== "iati_planned") {
+        log.info(`SKIP (no budget or deadline): "${title}"`);
         return false;
       }
 

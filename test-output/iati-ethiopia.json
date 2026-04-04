@@ -10,7 +10,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-18-ETH-2750BXDILD",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.254Z",
+    "scraped_at": "2026-04-04T19:39:10.962Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -36,7 +36,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=US-GOV-18-ETH-2750BXDILD-PGM%20DEVEL",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -62,7 +62,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-11285",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -88,7 +88,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-11839",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -114,7 +114,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-11907",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -140,7 +140,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-11908",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -166,7 +166,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10984",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -182,58 +182,6 @@
     "_sourceId": "iati-ethiopia"
   },
   {
-    "title": "Cheshire Services - Disability welfare",
-    "organization": "Ethiopiaid",
-    "description": "Providing rehabilitation services to children and young people living with disabilities (CWDs) in Ethiopia. Including: outreach services, short term residency at Menagesha rehabilitation centre and provision of mobility aids (wheelchair & prosthetic limbs manufactured on Menagesha site). Also working to raise awareness on inclusive education, improve accessibility at schools, train families how to provide effective rehabilitation/physiotherapy at home and beginning livelihood training for families of CWDs to become self-sufficient.",
-    "deadline": null,
-    "published": "1998-01-01T00:00:00Z",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://d-portal.org/ctrack.html#view=act&aid=GB-CHC-802353-Cheshire",
-    "source_domain": "iatistandard.org",
-    "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
-    "raw_fields": {
-      "budget_min": null,
-      "budget_max": null,
-      "pipeline_stage": "pipeline",
-      "signal_type": "iati_planned",
-      "signal_confidence": "medium",
-      "donor_ref": "GB-CHC-802353-Cheshire",
-      "procurement_method": null,
-      "sector": "Health",
-      "participating_orgs": "Individual donors to Ethiopiaid",
-      "activity_status_code": 2
-    },
-    "_sourceId": "iati-ethiopia"
-  },
-  {
-    "title": "Hamlin Fistula Ethiopia - Women's health",
-    "organization": "Ethiopiaid",
-    "description": "Hamlin Fistula aims to support women living with birth injury by providing surgery, rehabilitation services and equipping them with skills to go back into their communities healthy, happy and empowered for a productive future.",
-    "deadline": null,
-    "published": "1994-01-01T00:00:00Z",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://d-portal.org/ctrack.html#view=act&aid=GB-CHC-802353-Hamlin%20Fistula",
-    "source_domain": "iatistandard.org",
-    "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.256Z",
-    "raw_fields": {
-      "budget_min": null,
-      "budget_max": null,
-      "pipeline_stage": "pipeline",
-      "signal_type": "iati_planned",
-      "signal_confidence": "medium",
-      "donor_ref": "GB-CHC-802353-Hamlin Fistula",
-      "procurement_method": null,
-      "sector": "Health",
-      "participating_orgs": "Hamlin Fistula",
-      "activity_status_code": 2
-    },
-    "_sourceId": "iati-ethiopia"
-  },
-  {
     "title": "Enabling the Federal Democratic Republic of Ethiopia to prepare its First Biennial Transparency Report (BTR1) and a combined Second Biennial Transparency Report (BTR2) / Fourth National Communication (NC4) to the UNFCCC",
     "organization": "Global Environment Facility",
     "description": "The Federal Democratic Republic of Ethiopia has so far submitted three National Communications and prepared a draft of its first BUR (BUR1). The present project will extensively draw from and build upon the past and current work rather than duplicating what has been and is being undertaken. Thus, the main objective of this proposal is to support Ethiopia in preparing and submitting the first Biennial Transparency Report (BTR1) and the second BTR combined with the fourth National Communication (BTR2/NC4) in compliance with the Convention and Paris Agreementâ€™s reporting obligations. ",
@@ -244,7 +192,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-11483",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.257Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -270,7 +218,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10201",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.257Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -296,7 +244,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-10413",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.257Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -322,7 +270,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-9070",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.257Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,
@@ -348,7 +296,7 @@
     "source_url": "https://d-portal.org/ctrack.html#view=act&aid=XI-BRIDGE-6385676864-9071",
     "source_domain": "iatistandard.org",
     "content_type": "tender",
-    "scraped_at": "2026-04-04T19:18:04.257Z",
+    "scraped_at": "2026-04-04T19:39:10.964Z",
     "raw_fields": {
       "budget_min": null,
       "budget_max": null,

@@ -1,4 +1,4 @@
-import { createHash } from "crypto";
+// No Node.js crypto — edge-compatible hash
 import type { SampleOpportunity } from "./types/cv-score";
 
 /* ─── Raw opportunity shape (before quality processing) ── */
@@ -131,7 +131,12 @@ function isDuplicate(a: string, b: string): boolean {
 
 function generateId(title: string, org: string, source: string): string {
   const seed = `${title}::${org}::${source}`;
-  return createHash("sha256").update(seed).digest("hex").slice(0, 12);
+  let h1 = 0, h2 = 0;
+  for (let i = 0; i < seed.length; i++) {
+    h1 = ((h1 << 5) - h1 + seed.charCodeAt(i)) | 0;
+    h2 = ((h2 << 7) + h2 + seed.charCodeAt(i)) | 0;
+  }
+  return ((h1 >>> 0).toString(16) + (h2 >>> 0).toString(16)).slice(0, 12);
 }
 
 /* ─── Country Check ───────────────────────────────────────── */

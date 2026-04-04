@@ -1,42 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-import type { SampleOpportunity } from "@/lib/types/cv-score";
 import {
   processOpportunities,
   type RawOpportunity,
 } from "@/lib/opportunity-quality";
+import type { SampleOpportunity } from "@/lib/types/cv-score";
 
-function getSupabase() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-}
+export const runtime = "edge";
 
-// In-memory cache — survives across requests on warm Vercel functions
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+// In-memory cache
 let _cache: { data: SampleOpportunity[]; ts: number } | null = null;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL = 5 * 60 * 1000;
 
 async function loadFromSupabase(): Promise<SampleOpportunity[]> {
-  // Return cached data if fresh
   if (_cache && Date.now() - _cache.ts < CACHE_TTL) return _cache.data;
 
-  const sb = getSupabase();
-  const { data, error } = await sb
-    .from("opportunities")
-    .select("title, description, deadline, organization, country, source_url, source_domain, type, experience_level, sectors, is_active")
-    .eq("is_active", true)
-    .order("scraped_at", { ascending: false })
-    .limit(1000);
+  // Direct REST call — no SDK, edge-compatible
+  const url = `${SUPABASE_URL}/rest/v1/opportunities?is_active=eq.true&order=scraped_at.desc&limit=1000&select=title,description,deadline,organization,country,source_url,source_domain,type,experience_level,sectors,is_active`;
+  const res = await fetch(url, {
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+  });
 
-  if (error) {
-    console.error("[opportunities/sample] Supabase error:", error.message);
+  if (!res.ok) {
+    console.error("[opportunities/sample] Supabase error:", res.status);
     return _cache?.data || [];
   }
 
+  const data = await res.json();
   if (!data || data.length === 0) return [];
 
-  const rawItems: RawOpportunity[] = data.map((row) => ({
+  const rawItems: RawOpportunity[] = data.map((row: any) => ({
     title: row.title || "",
     organization: row.organization || "Unknown",
     description: row.description || "",
