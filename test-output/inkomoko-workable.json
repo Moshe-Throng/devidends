@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -31,11 +31,31 @@
     "source_url": "https://apply.workable.com/inkomoko/j/C1CD978A33/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program",
         "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Training Support Associate-Adama/Bishoftu",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-04-03T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Adama",
+    "source_url": "https://apply.workable.com/inkomoko/j/21C940DD4E/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
+    "raw_fields": {
+      "department": [
+        "Program"
       ],
       "work_type": ""
     },
@@ -52,7 +72,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -73,7 +93,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -94,7 +114,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -114,7 +134,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -135,7 +155,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -155,7 +175,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/57A86A584F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-03T06:15:13.877Z",
+    "scraped_at": "2026-04-04T05:00:16.929Z",
     "raw_fields": {
       "department": [
         "Program"

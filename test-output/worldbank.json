@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-03T06:16:30.703Z",
+    "scraped_at": "2026-04-04T05:01:41.770Z",
     "count": 6
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435583",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:03.991Z",
+      "scraped_at": "2026-04-04T05:00:07.296Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Consultant Qualification  Selection",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434853",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:03.991Z",
+      "scraped_at": "2026-04-04T05:00:07.297Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "Quality And Cost-Based Selection",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:04.240Z",
+      "scraped_at": "2026-04-04T05:00:07.825Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434219",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:04.240Z",
+      "scraped_at": "2026-04-04T05:00:07.825Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:04.240Z",
+      "scraped_at": "2026-04-04T05:00:07.825Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-03T06:15:04.240Z",
+      "scraped_at": "2026-04-04T05:00:07.825Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
