@@ -13,9 +13,15 @@ function getSupabase() {
   );
 }
 
-async function loadFromSupabase(): Promise<SampleOpportunity[]> {
-  const sb = getSupabase();
+// In-memory cache — survives across requests on warm Vercel functions
+let _cache: { data: SampleOpportunity[]; ts: number } | null = null;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
+async function loadFromSupabase(): Promise<SampleOpportunity[]> {
+  // Return cached data if fresh
+  if (_cache && Date.now() - _cache.ts < CACHE_TTL) return _cache.data;
+
+  const sb = getSupabase();
   const { data, error } = await sb
     .from("opportunities")
     .select("title, description, deadline, organization, country, source_url, source_domain, type, experience_level, sectors, is_active")
@@ -25,7 +31,7 @@ async function loadFromSupabase(): Promise<SampleOpportunity[]> {
 
   if (error) {
     console.error("[opportunities/sample] Supabase error:", error.message);
-    return [];
+    return _cache?.data || [];
   }
 
   if (!data || data.length === 0) return [];
@@ -41,7 +47,9 @@ async function loadFromSupabase(): Promise<SampleOpportunity[]> {
     type: row.type || "job",
   }));
 
-  return processOpportunities(rawItems);
+  const result = processOpportunities(rawItems);
+  _cache = { data: result, ts: Date.now() };
+  return result;
 }
 
 export async function GET(req: NextRequest) {
@@ -51,22 +59,20 @@ export async function GET(req: NextRequest) {
     const hideExpired = searchParams.get("hideExpired") !== "false";
     const minQuality = parseInt(searchParams.get("minQuality") || "0", 10);
 
-    const allOpportunities = await loadFromSupabase();
-
-    // Single opportunity lookup (with description)
+    // Single opportunity lookup — loads all but only returns one (with description)
     if (id) {
+      const allOpportunities = await loadFromSupabase();
       const opp = allOpportunities.find((o) => o.id === id);
       if (!opp) {
-        return NextResponse.json(
-          { success: false, error: "Opportunity not found" },
-          { status: 404 }
-        );
+        return NextResponse.json({ success: false, error: "Opportunity not found" }, { status: 404 });
       }
       return NextResponse.json(
         { success: true, opportunity: opp },
         { headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600" } }
       );
     }
+
+    const allOpportunities = await loadFromSupabase();
 
     // Apply quality + expiry filters for feed
     let opportunities = allOpportunities;
