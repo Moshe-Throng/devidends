@@ -92,20 +92,32 @@ async function main() {
   }
 
   // Map to Supabase schema
-  const rows = opportunities.map((opp: any) => ({
-    title: (opp.title || "").slice(0, 500),
-    description: (opp.description || "").slice(0, 10000),
-    deadline: parseDeadline(opp.deadline),
-    organization: (opp.organization || "Unknown").slice(0, 200),
-    country: (opp.country || "Ethiopia").slice(0, 100),
-    source_url: (opp.source_url || opp.url || "").slice(0, 1000),
-    source_domain: (opp.source_domain || "").slice(0, 200),
-    type: opp.classified_type || opp.type || "job",
-    experience_level: opp.seniority || null,
-    sectors: opp.sectors || [],
-    is_active: true,
-    scraped_at: opp.scraped_at || new Date().toISOString(),
-  })).filter((r: any) => r.source_url && r.title);
+  const rows = opportunities.map((opp: any) => {
+    const rf = opp.raw_fields || {};
+    return {
+      title: (opp.title || "").slice(0, 500),
+      description: (opp.description || "").slice(0, 10000),
+      deadline: parseDeadline(opp.deadline),
+      organization: (opp.organization || "Unknown").slice(0, 200),
+      country: (opp.country || "Ethiopia").slice(0, 100),
+      source_url: (opp.source_url || opp.url || "").slice(0, 1000),
+      source_domain: (opp.source_domain || "").slice(0, 200),
+      type: opp.classified_type || opp.content_type || opp.type || "job",
+      experience_level: opp.seniority || null,
+      sectors: opp.sectors || [],
+      is_active: true,
+      scraped_at: opp.scraped_at || new Date().toISOString(),
+      // Devisor intelligence fields
+      budget_min: rf.budget_min ?? null,
+      budget_max: rf.budget_max ?? null,
+      procurement_method: rf.procurement_method ?? null,
+      pipeline_stage: rf.pipeline_stage ?? null,
+      donor_ref: rf.donor_ref ?? null,
+      framework: rf.framework ?? null,
+      signal_type: rf.signal_type ?? null,
+      signal_confidence: rf.signal_confidence ?? null,
+    };
+  }).filter((r: any) => r.source_url && r.title);
 
   // Format descriptions with Claude Haiku (only unformatted ones)
   console.log(`[publish] Formatting descriptions with Claude Haiku...`);

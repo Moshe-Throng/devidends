@@ -9,6 +9,7 @@ import { useAuth } from "./AuthProvider";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Opportunities", href: "/opportunities" },
+  { label: "Devisor", href: "/devisor" },
   { label: "News", href: "/news" },
   { label: "Build CV", href: "/cv-builder" },
   { label: "Score CV", href: "/score" },

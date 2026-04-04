@@ -213,7 +213,9 @@ export async function updateTelegramProfile(
   const allowed = [
     "headline", "sectors", "donors", "countries", "skills",
     "qualifications", "linkedin_url", "email", "years_of_experience",
-    "phone", "cv_structured_data",
+    "phone", "cv_structured_data", "cv_score", "cv_score_data", "cv_score_hash",
+    "nationality", "city", "languages", "certifications", "education_level",
+    "photo_file_id",
   ];
   const safeUpdates: Record<string, unknown> = {};
   for (const key of allowed) {
@@ -232,37 +234,75 @@ export async function updateTelegramProfile(
       .single();
 
     if (webProfile) {
-      // Merge: link TG identity to the existing web profile
+      // Merge: keep the profile with more data (CV data wins)
       const { data: tgProfile } = await supabase
         .from("profiles")
-        .select("telegram_username")
+        .select("*")
         .eq("telegram_id", telegramId)
         .single();
 
-      await supabase
-        .from("profiles")
-        .update({
-          telegram_id: telegramId,
-          telegram_username: tgProfile?.telegram_username || null,
-          ...safeUpdates,
-        })
-        .eq("id", webProfile.id);
+      // Decide which profile to keep: the one with cv_structured_data
+      const tgHasCv = !!tgProfile?.cv_structured_data;
+      const webHasCv = !!webProfile.cv_structured_data;
+      const keepProfile = tgHasCv ? tgProfile : webProfile;
+      const deleteProfile = tgHasCv ? webProfile : tgProfile;
 
-      // Delete the old TG-only profile to avoid duplicates
+      // Merge: copy any missing fields from the deleted profile to the keeper
+      const mergeFields: Record<string, unknown> = {
+        telegram_id: telegramId,
+        telegram_username: tgProfile?.telegram_username || null,
+        email: safeUpdates.email as string,
+        user_id: webProfile.user_id || tgProfile?.user_id || null,
+        ...safeUpdates,
+      };
+
+      // Copy non-null fields from deleteProfile that are null on keepProfile
+      for (const key of ["cv_structured_data", "cv_text", "cv_score", "headline", "sectors", "donors", "countries", "skills", "qualifications", "nationality", "languages", "phone"]) {
+        if (!keepProfile[key] && deleteProfile?.[key]) {
+          mergeFields[key] = deleteProfile[key];
+        }
+      }
+
       await supabase
         .from("profiles")
-        .delete()
-        .eq("telegram_id", telegramId)
-        .neq("id", webProfile.id);
+        .update(mergeFields)
+        .eq("id", keepProfile.id);
+
+      // Delete the duplicate
+      if (deleteProfile && deleteProfile.id !== keepProfile.id) {
+        await supabase
+          .from("profiles")
+          .delete()
+          .eq("id", deleteProfile.id);
+      }
 
       const { data: merged } = await supabase
         .from("profiles")
         .select("*")
-        .eq("id", webProfile.id)
+        .eq("id", keepProfile.id)
         .single();
 
       return merged;
     }
+  }
+
+  // When cv_structured_data is saved, extract profile-level fields + check ownership
+  if (safeUpdates.cv_structured_data && typeof safeUpdates.cv_structured_data === "object") {
+    const cv = safeUpdates.cv_structured_data as any;
+    const p = cv.personal || {};
+    if (p.nationality && !safeUpdates.nationality) safeUpdates.nationality = p.nationality;
+    if (p.phone && !safeUpdates.phone) safeUpdates.phone = p.phone;
+    if (p.email && !safeUpdates.email) safeUpdates.email = p.email;
+    if ((p.address || p.country_of_residence)) safeUpdates.city = p.address || p.country_of_residence;
+    if (cv.languages?.length > 0) safeUpdates.languages = cv.languages.map((l: any) => l.language).filter(Boolean);
+    if (cv.certifications?.filter(Boolean).length > 0) safeUpdates.certifications = cv.certifications.filter(Boolean);
+    // Derive education level
+    const degrees = (cv.education || []).map((e: any) => e.degree || "");
+    const eduLevel = degrees.some((d: string) => /PhD|Doctorate/i.test(d)) ? "PhD"
+      : degrees.some((d: string) => /Master|MSc|MA|MBA|MPH|MPA/i.test(d)) ? "Masters"
+      : degrees.some((d: string) => /Bachelor|BSc|BA|BEng|LLB/i.test(d)) ? "Bachelors"
+      : degrees.some((d: string) => /Diploma/i.test(d)) ? "Diploma" : null;
+    if (eduLevel) safeUpdates.education_level = eduLevel;
   }
 
   // Recalculate profile completeness

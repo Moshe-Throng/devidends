@@ -39,6 +39,59 @@ jobs:
         continue-on-error: true
         run: npx tsx scripts/crawl-news.ts
 
+      # ── Devisor: Python pipeline/tender scrapers ──────────────
+      - name: Setup Python (Devisor scrapers)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install playwright httpx && python -m playwright install chromium --with-deps
+
+      - name: Run USAID Forecast scraper
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python ../tools/usaid_forecast_scraper.py --limit 50
+        working-directory: .
+
+      - name: Run Donor Jobs scraper
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python ../tools/donor_jobs_scraper.py --limit 30
+        working-directory: .
+
+      - name: Run TradeMark Africa scraper
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python ../tools/trademark_africa_scraper.py --limit 50
+        working-directory: .
+
+      - name: Run World Bank STEP scraper
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python ../tools/worldbank_step_scraper.py --limit 50
+        working-directory: .
+
+      - name: Run UNGM scraper (enhanced)
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python ../tools/ungm_ethiopia_scraper.py --days 30 --limit 50
+        working-directory: .
+
+      # ── Devisor: Merge Python + TS output ──────────────────────
+      - name: Merge Devisor sources
+        continue-on-error: true
+        run: npx tsx scripts/merge-devisor-sources.ts
+
+      # ── Publish to Supabase ────────────────────────────────────
+      - name: Publish to Supabase
+        continue-on-error: true
+        run: npx tsx scripts/publish-to-supabase.ts
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
       - name: Send email alerts
         continue-on-error: true
         run: npx tsx scripts/send-alerts-email.ts

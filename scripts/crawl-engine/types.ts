@@ -2,8 +2,8 @@
  * Core types for the Devidends Crawl Engine
  */
 
-/** Content type: jobs, tenders/procurement, or news */
-export type ContentType = "job" | "tender" | "news";
+/** Content type: jobs, tenders/procurement, news, or pipeline signals */
+export type ContentType = "job" | "tender" | "news" | "pipeline";
 
 /** Every adapter produces an array of these */
 export interface RawOpportunity {
@@ -21,6 +21,18 @@ export interface RawOpportunity {
 
   // Adapter-specific extras (career_categories, themes, etc.)
   raw_fields?: Record<string, unknown>;
+}
+
+/** Devisor-specific fields stored in raw_fields by intelligence adapters */
+export interface DevisorFields {
+  budget_min?: number;
+  budget_max?: number;
+  procurement_method?: string;
+  pipeline_stage?: "forecast" | "pipeline" | "published" | "awarded";
+  donor_ref?: string;
+  framework?: string;
+  signal_type?: "iati_planned" | "iati_winding_down" | "donor_hiring" | "usaid_forecast" | "tender_published" | "tender_reoi";
+  signal_confidence?: "high" | "medium" | "low";
 }
 
 /** Normalized opportunity (after normalize + dedup) */

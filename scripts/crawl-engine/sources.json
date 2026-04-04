@@ -722,5 +722,44 @@
       "defaultCountry": "Ethiopia",
       "fetchDetails": false
     }
+  },
+
+  {
+    "id": "iati-ethiopia",
+    "name": "IATI Datastore (Ethiopia Pipeline)",
+    "adapter": "iati",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 15,
+    "config": {
+      "countryCode": "ET",
+      "rows": 200
+    }
+  },
+  {
+    "id": "samgov",
+    "name": "SAM.gov (USAID Tenders)",
+    "adapter": "samgov",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 10,
+    "config": {
+      "keywords": ["Ethiopia", "East Africa"],
+      "limit": 100,
+      "daysBack": 60
+    }
+  },
+  {
+    "id": "ted-eu",
+    "name": "TED (EU Tenders)",
+    "adapter": "ted",
+    "content_type": "tender",
+    "enabled": true,
+    "priority": 10,
+    "config": {
+      "keywords": ["Ethiopia"],
+      "pageSize": 50,
+      "daysBack": 60
+    }
   }
 ]

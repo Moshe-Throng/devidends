@@ -327,6 +327,19 @@ export default function TgCvBuilder() {
         throw new Error(json.error || "Extraction failed");
       }
 
+      // Block if CV name doesn't match Telegram user name
+      const cvName = (json.data?.personal?.full_name || "").toLowerCase().trim();
+      const tgName = (tgUser?.first_name || "").toLowerCase().trim();
+      const profileName = (profile?.name || "").toLowerCase().trim();
+      if (cvName && tgName) {
+        const cvFirst = cvName.split(/\s+/)[0];
+        const tgFirst = tgName.split(/\s+/)[0];
+        const profFirst = profileName.split(/\s+/)[0];
+        if (cvFirst !== tgFirst && cvFirst !== profFirst && !cvName.includes(tgFirst) && !cvName.includes(profFirst)) {
+          throw new Error(`This CV belongs to "${json.data.personal.full_name}" but your account is "${tgUser?.first_name}". You can only upload your own CV. Invite them via your referral link instead.`);
+        }
+      }
+
       setCvData(json.data);
       setOpenSections(new Set(["personal", "summary", "education", "employment"]));
       setPhase("editing");

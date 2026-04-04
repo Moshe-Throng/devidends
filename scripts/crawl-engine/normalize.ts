@@ -113,6 +113,30 @@ const SECTOR_KEYWORDS: [string, string][] = [
   ["economic", "Economic Development"],
   ["investment", "Economic Development"],
   ["trade", "Economic Development"],
+  ["private sector", "Economic Development"],
+  ["market systems", "Economic Development"],
+  ["business environment", "Economic Development"],
+  ["enterprise", "Economic Development"],
+  ["value chain", "Economic Development"],
+  ["sme", "Economic Development"],
+  // Governance (critical for bid intelligence)
+  ["governance", "Governance"],
+  ["public sector", "Governance"],
+  ["institutional", "Governance"],
+  ["decentrali", "Governance"],
+  ["public financial management", "Governance"],
+  ["pfm", "Governance"],
+  ["anti-corruption", "Governance"],
+  ["rule of law", "Governance"],
+  ["justice", "Governance"],
+  ["civil society", "Governance"],
+  ["accountability", "Governance"],
+  // Infrastructure
+  ["infrastructure", "Infrastructure"],
+  ["transport", "Infrastructure"],
+  ["road", "Infrastructure"],
+  ["construction", "Infrastructure"],
+  ["urban", "Infrastructure"],
   // Program Management (broad catch — low priority)
   ["program", "Program/Project Management"],
   ["project", "Program/Project Management"],
@@ -216,6 +240,45 @@ export function normalizeSeniority(title: string, experience: string): string {
 
 // ── Main normalizer ───────────────────────────────────────────────────────────
 
+// ── Procurement method canonicalization ───────────────────────────────────────
+
+const PROCUREMENT_METHODS: Record<string, string> = {
+  qcbs: "QCBS",
+  "quality and cost": "QCBS",
+  qbs: "QBS",
+  "quality based": "QBS",
+  lcs: "LCS",
+  "least cost": "LCS",
+  ic: "IC",
+  "individual consultant": "IC",
+  "individual contractor": "IC",
+  cqs: "CQS",
+  "consultant qualification": "CQS",
+  fbs: "FBS",
+  "fixed budget": "FBS",
+  rfp: "RFP",
+  "request for proposal": "RFP",
+  rfq: "RFQ",
+  "request for quotation": "RFQ",
+  itb: "ITB",
+  "invitation to bid": "ITB",
+  reoi: "REOI",
+  "expression of interest": "REOI",
+  "direct contracting": "Direct",
+  shopping: "Shopping",
+  "open procedure": "Open",
+  "restricted procedure": "Restricted",
+};
+
+export function canonicalizeProcurementMethod(method: string | null | undefined): string | null {
+  if (!method) return null;
+  const lower = method.toLowerCase().trim();
+  for (const [pattern, canonical] of Object.entries(PROCUREMENT_METHODS)) {
+    if (lower.includes(pattern)) return canonical;
+  }
+  return method; // return as-is if no match
+}
+
 export function normalizeOpportunity(
   opp: RawOpportunity
 ): NormalizedOpportunity {
@@ -224,11 +287,22 @@ export function normalizeOpportunity(
     (opp.raw_fields?.work_type as string) || opp.content_type || "";
   const experience = (opp.raw_fields?.experience as string) || "";
 
+  // Pipeline/tender items default to Consultancy work type
+  const isPipelineOrTender = opp.content_type === "pipeline" || opp.content_type === "tender";
+  const effectiveWorkType = isPipelineOrTender ? "Consultancy" : workType;
+
+  // Canonicalize procurement method if present
+  if (opp.raw_fields?.procurement_method) {
+    opp.raw_fields.procurement_method = canonicalizeProcurementMethod(
+      opp.raw_fields.procurement_method as string
+    );
+  }
+
   return {
     ...opp,
     sector_norm: normalizeSector(categories, opp.title, opp.description),
-    work_type_norm: normalizeWorkType(workType),
-    seniority: normalizeSeniority(opp.title, experience),
+    work_type_norm: normalizeWorkType(effectiveWorkType),
+    seniority: isPipelineOrTender ? "Senior" : normalizeSeniority(opp.title, experience),
   };
 }
 

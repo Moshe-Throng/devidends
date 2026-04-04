@@ -20,6 +20,9 @@ import { JobviteAdapter } from "./jobvite";
 import { IcimsAdapter } from "./icims";
 import { WorkableAdapter } from "./workable";
 import { TaleoAdapter } from "./taleo";
+import { IATIAdapter } from "./iati";
+import { SamGovAdapter } from "./samgov";
+import { TedAdapter } from "./ted";
 
 /**
  * Get the adapter registry — maps adapter name to implementation.
@@ -42,6 +45,11 @@ export function getAdapterRegistry(): Map<string, CrawlAdapter> {
   registry.set("icims", new IcimsAdapter());
   registry.set("workable", new WorkableAdapter());
   registry.set("taleo", new TaleoAdapter());
+
+  // Devisor — pipeline intelligence adapters
+  registry.set("iati", new IATIAdapter());
+  registry.set("samgov", new SamGovAdapter());
+  registry.set("ted", new TedAdapter());
 
   return registry;
 }

@@ -15,6 +15,7 @@ interface DedupStats {
   totalOut: number;
   urlDupes: number;
   titleDupes: number;
+  donorRefDupes: number;
 }
 
 /**
@@ -47,8 +48,10 @@ export function deduplicate(
 ): { deduped: RawOpportunity[]; stats: DedupStats } {
   const byUrl = new Map<string, RawOpportunity & { _sourceId?: string }>();
   const byTitle = new Map<string, RawOpportunity & { _sourceId?: string }>();
+  const byDonorRef = new Map<string, RawOpportunity & { _sourceId?: string }>();
   let urlDupes = 0;
   let titleDupes = 0;
+  let donorRefDupes = 0;
 
   const getPriority = (opp: RawOpportunity & { _sourceId?: string }) =>
     sourcePriorities.get(opp._sourceId || "") ?? 99;
@@ -82,8 +85,23 @@ export function deduplicate(
       continue;
     }
 
+    // Level 3: Donor reference dedup (for pipeline/tender signals from overlapping sources)
+    const donorRef = opp.raw_fields?.donor_ref as string | undefined;
+    if (donorRef && byDonorRef.has(donorRef)) {
+      const existing = byDonorRef.get(donorRef)!;
+      if (getPriority(opp) < getPriority(existing)) {
+        byUrl.delete(existing.source_url);
+        byUrl.set(url, opp);
+        byTitle.set(titleKey(existing), opp);
+        byDonorRef.set(donorRef, opp);
+      }
+      donorRefDupes++;
+      continue;
+    }
+
     byUrl.set(url, opp);
     byTitle.set(tKey, opp);
+    if (donorRef) byDonorRef.set(donorRef, opp);
   }
 
   // Collect unique results from URL map (canonical)
@@ -102,6 +120,7 @@ export function deduplicate(
       totalOut: deduped.length,
       urlDupes,
       titleDupes,
+      donorRefDupes,
     },
   };
 }

@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
 
     const allOpportunities = await loadFromSupabase();
 
-    // Single opportunity lookup (no filtering — show any by ID)
+    // Single opportunity lookup (with description)
     if (id) {
       const opp = allOpportunities.find((o) => o.id === id);
       if (!opp) {
@@ -90,11 +90,15 @@ export async function GET(req: NextRequest) {
       return true;
     });
 
+    // Strip descriptions from feed response (saves ~150KB)
+    // Descriptions are only needed on detail pages (?id=X)
+    const lightweight = opportunities.map(({ description, ...rest }) => rest);
+
     return NextResponse.json(
       {
-        count: opportunities.length,
+        count: lightweight.length,
         total: allOpportunities.length,
-        opportunities,
+        opportunities: lightweight,
       },
       {
         headers: {
