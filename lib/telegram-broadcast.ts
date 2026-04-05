@@ -33,16 +33,18 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Clean single-line opportunity: title (org, deadline) */
-function oppLine(opp: SampleOpportunity): string {
-  const title = escHtml(truncate(opp.title, 55));
+/** Single opportunity line — clean, scannable */
+function oppLine(opp: SampleOpportunity, num: number): string {
+  const title = escHtml(truncate(opp.title, 52));
   const org = escHtml(truncate(opp.organization, 25));
   const deadline = opp.deadline
     ? new Date(opp.deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short" })
     : "";
   const url = opp.source_url || `${SITE_URL}/opportunities`;
+  const type = (opp.classified_type || opp.type || "job").toLowerCase();
+  const badge = type === "consultancy" ? "📋" : type === "internship" ? "🎓" : "▪️";
   const meta = [org, deadline].filter(Boolean).join(" · ");
-  return `  <a href="${url}">${title}</a>\n  <i>${meta}</i>`;
+  return `${badge} <a href="${url}"><b>${title}</b></a>\n     <i>${meta}</i>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -87,39 +89,62 @@ export async function broadcastToGroup(
     return { sent: false, count: 0 };
   }
 
-  const date = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const now = new Date();
+  const date = now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const greeting = now.getUTCHours() < 12 ? "Good morning" : "Good afternoon";
 
   const lines: string[] = [
-    `<b>Devidends</b>  ·  ${escHtml(date)}`,
+    `✦ <b>DEVIDENDS DAILY</b>`,
+    `<i>${greeting} — ${escHtml(date)}</i>`,
     ``,
   ];
 
-  // Jobs
+  // Jobs — grouped by type
   if (jobs.length > 0) {
-    lines.push(`<b>${jobs.length} new opportunities</b>`);
-    lines.push(`─────────────────────`);
-    for (const opp of jobs.slice(0, 10)) {
-      lines.push(oppLine(opp));
+    // Separate consultancies from jobs
+    const consultancies = jobs.filter(j => (j.classified_type || j.type || "").toLowerCase() === "consultancy");
+    const regularJobs = jobs.filter(j => (j.classified_type || j.type || "").toLowerCase() !== "consultancy");
+
+    if (regularJobs.length > 0) {
+      lines.push(`<b>💼 ${regularJobs.length} New Position${regularJobs.length > 1 ? "s" : ""}</b>`);
       lines.push(``);
+      for (const opp of regularJobs.slice(0, 6)) {
+        lines.push(oppLine(opp, 0));
+        lines.push(``);
+      }
+      if (regularJobs.length > 6) {
+        lines.push(`     <i>+ ${regularJobs.length - 6} more positions</i>`);
+        lines.push(``);
+      }
     }
-    if (jobs.length > 10) {
-      lines.push(`  <i>… and ${jobs.length - 10} more</i>`);
+
+    if (consultancies.length > 0) {
+      lines.push(`<b>📋 ${consultancies.length} Consultanc${consultancies.length > 1 ? "ies" : "y"}</b>`);
       lines.push(``);
+      for (const opp of consultancies.slice(0, 4)) {
+        lines.push(oppLine(opp, 0));
+        lines.push(``);
+      }
+      if (consultancies.length > 4) {
+        lines.push(`     <i>+ ${consultancies.length - 4} more</i>`);
+        lines.push(``);
+      }
     }
   }
 
-  // News
+  // News — compact
   if (news.length > 0) {
-    lines.push(`<b>In the news</b>`);
-    lines.push(`─────────────────────`);
-    for (const a of news.slice(0, 4)) {
-      lines.push(`  <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
-      lines.push(`  <i>${escHtml(a.source_name || a.category)}</i>`);
-      lines.push(``);
+    lines.push(`<b>📰 Dev Intel</b>`);
+    lines.push(``);
+    for (const a of news.slice(0, 3)) {
+      lines.push(`  → <a href="${a.url}">${escHtml(truncate(a.title, 65))}</a>`);
     }
+    lines.push(``);
   }
 
-  lines.push(`<a href="${SITE_URL}/tg-app">Open app</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>  ·  <a href="${SITE_URL}/score">Score CV</a>`);
+  // Footer with inline keyboard-style links
+  lines.push(`━━━━━━━━━━━━━━━━━━━━`);
+  lines.push(`<a href="${SITE_URL}/tg-app">🔍 Browse All</a>  ·  <a href="${SITE_URL}/score">📊 Score CV</a>  ·  <a href="${SITE_URL}/tg-app/alerts">⚙️ Alerts</a>`);
 
   try {
     const opts: Record<string, unknown> = {
@@ -270,38 +295,38 @@ export async function notifySubscribersDaily(
         continue;
       }
 
-      // Build clean digest message
+      // Build personalized digest
       const lines: string[] = [
-        `<b>Devidends</b>  ·  ${escHtml(date)}`,
+        `✦ <b>Your Daily Brief</b>`,
+        `<i>${escHtml(date)}</i>`,
         ``,
       ];
 
-      // Jobs (max 5)
+      // Jobs (max 6)
       if (matchedJobs.length > 0) {
-        lines.push(`<b>${matchedJobs.length} opportunities for you</b>`);
-        lines.push(`─────────────────────`);
-        for (const opp of matchedJobs.slice(0, 5)) {
-          lines.push(oppLine(opp));
+        lines.push(`<b>${matchedJobs.length} opportunit${matchedJobs.length > 1 ? "ies" : "y"} matched to you</b>`);
+        lines.push(``);
+        for (const opp of matchedJobs.slice(0, 6)) {
+          lines.push(oppLine(opp, 0));
           lines.push(``);
         }
-        if (matchedJobs.length > 5) {
-          lines.push(`  <i>… and ${matchedJobs.length - 5} more</i>`);
+        if (matchedJobs.length > 6) {
+          lines.push(`     <i>+ ${matchedJobs.length - 6} more → <a href="${SITE_URL}/tg-app/opportunities">see all</a></i>`);
           lines.push(``);
         }
       }
 
-      // News (max 3)
+      // News (max 2, compact)
       if (matchedNews.length > 0) {
-        lines.push(`<b>In the news</b>`);
-        lines.push(`─────────────────────`);
-        for (const a of matchedNews.slice(0, 3)) {
-          lines.push(`  <a href="${a.url}">${escHtml(truncate(a.title, 70))}</a>`);
-          lines.push(`  <i>${escHtml(a.source_name || a.category)}</i>`);
-          lines.push(``);
+        lines.push(`<b>📰 Intel</b>`);
+        for (const a of matchedNews.slice(0, 2)) {
+          lines.push(`  → <a href="${a.url}">${escHtml(truncate(a.title, 60))}</a>`);
         }
+        lines.push(``);
       }
 
-      lines.push(`<a href="${SITE_URL}/tg-app">Open app</a>  ·  <a href="${SITE_URL}/tg-app/alerts">Edit alerts</a>`);
+      lines.push(`━━━━━━━━━━━━━━━━━━━━`);
+      lines.push(`<a href="${SITE_URL}/tg-app">🔍 Browse</a>  ·  <a href="${SITE_URL}/score">📊 Score CV</a>  ·  <a href="${SITE_URL}/tg-app/alerts">⚙️ Alerts</a>`);
 
       await bot.sendMessage(Number(sub.telegram_id), lines.join("\n"), {
         parse_mode: "HTML",
