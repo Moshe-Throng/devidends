@@ -372,7 +372,7 @@ export class PuppeteerSpaAdapter implements CrawlAdapter {
       log.warn(`Strategy 1 failed: ${err.message}`);
     }
 
-    // Strategy 2: Parse jobs.au.int/sitemap.xml
+    // Strategy 2: Parse jobs.au.int/sitemap.xml + fetch individual pages for titles & descriptions
     log.info("Strategy 2: Fetching jobs.au.int/sitemap.xml...");
     try {
       const sitemapRes = await fetch("https://jobs.au.int/sitemap.xml");
@@ -386,22 +386,54 @@ export class PuppeteerSpaAdapter implements CrawlAdapter {
         });
         log.info(`  Sitemap: ${urls.length} job URLs`);
 
-        // Extract title/location from URL slugs
         const existingUrls = new Set(jobs.map((j) => j.source_url));
+        let fetched = 0;
         for (const url of urls) {
           if (existingUrls.has(url)) continue;
-          // URL pattern: /job/[Location]-[Title]/[ID]/
-          const slugMatch = url.match(/\/job\/([^/]+)\/\d+/);
-          if (!slugMatch) continue;
-          const slug = slugMatch[1].replace(/-/g, " ");
-          const title = slug.replace(/^(Addis Ababa|Cairo|Accra|Nairobi|Lusaka|Johannesburg)\s+/i, "").trim();
+
+          // Fetch the actual job page for real title + description
+          let title = "";
+          let description = "";
+          let deadline: string | null = null;
+          try {
+            const pageRes = await fetch(url, {
+              headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" },
+            });
+            if (pageRes.ok) {
+              const pageHtml = await pageRes.text();
+              const $page = cheerio.load(pageHtml);
+              // Title from the page
+              title = $page("h1.job-title, h1.au-body, .data-display-header-title h1, h2.title").first().text().trim()
+                || $page("title").text().replace(/ \|.*$/, "").replace(/ - jobs\.au\.int.*$/i, "").trim();
+              // Description from the job content
+              description = $page(".jd-description, .job-description, .data-display-field, [class*='description']").text().trim().slice(0, 5000);
+              // Deadline
+              const deadlineText = $page(".closing-date, .job-deadline, [class*='deadline'], [class*='closing']").text().trim();
+              if (deadlineText) {
+                const dateMatch = deadlineText.match(/\d{1,2}[\s/-]\w+[\s/-]\d{4}|\d{4}-\d{2}-\d{2}/);
+                if (dateMatch) deadline = dateMatch[0];
+              }
+              fetched++;
+            }
+          } catch {
+            // Fall back to URL slug
+          }
+
+          // Fallback: extract from URL slug if page fetch failed
+          if (!title) {
+            const slugMatch = url.match(/\/job\/([^/]+)\/\d+/);
+            if (!slugMatch) continue;
+            title = decodeURIComponent(slugMatch[1]).replace(/-/g, " ")
+              .replace(/^(Addis Ababa|Cairo|Accra|Nairobi|Lusaka|Johannesburg)\s+/i, "").trim();
+          }
+
           if (!title || title.length < 5) continue;
 
           jobs.push({
-            title,
+            title: decodeURIComponent(title),
             organization: "African Union",
-            description: "",
-            deadline: null,
+            description,
+            deadline,
             published: null,
             country: "Ethiopia",
             city: "Addis Ababa",
@@ -410,8 +442,11 @@ export class PuppeteerSpaAdapter implements CrawlAdapter {
             content_type: source.content_type,
             scraped_at: new Date().toISOString(),
           });
+
+          // Rate limit: don't hammer AU server
+          if (fetched % 5 === 0) await sleep(2000);
         }
-        log.info(`After sitemap: ${jobs.length} total jobs`);
+        log.info(`After sitemap: ${jobs.length} total jobs (${fetched} pages fetched)`);
       }
     } catch (err: any) {
       log.warn(`Strategy 2 failed: ${err.message}`);
