@@ -183,7 +183,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to create profile: " + insertErr.message }, { status: 500 });
     }
 
-    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
+    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
     const tgLink = `https://t.me/Devidends_Bot?start=claim_${claimToken}`;
     const webLink = `${SITE}/claim?token=${claimToken}`;
 
@@ -212,7 +212,7 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   try {
     const sb = getAdmin();
-    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
+    const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
     const showAll = new URL(req.url).searchParams.get("all") === "true";
 
     let query = sb

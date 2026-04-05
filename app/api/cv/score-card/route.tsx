@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
   const scoreColor = score >= 75 ? "#10b981" : score >= 55 ? "#f59e0b" : "#ef4444";
   const scoreLabel = score >= 75 ? "Strong Profile" : score >= 55 ? "Good Foundation" : "Needs Work";
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends-eta-delta.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
   const scoreUrl = ref ? `${siteUrl}/score?ref=${ref}` : `${siteUrl}/score`;
 
   return new ImageResponse(

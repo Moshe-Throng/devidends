@@ -66,8 +66,8 @@ export async function GET(req: NextRequest) {
     referral_count: count,
     rewards,
     unlocked_templates: unlockedTemplates,
-    share_url: `https://devidends-eta-delta.vercel.app/score?ref=${refCode}`,
-    share_text: `I scored my CV on Devidends — the AI-powered platform for development professionals. Score yours free: https://devidends-eta-delta.vercel.app/score?ref=${refCode}`,
+    share_url: `https://devidends.net/score?ref=${refCode}`,
+    share_text: `I scored my CV on Devidends — the AI-powered platform for development professionals. Score yours free: https://devidends.net/score?ref=${refCode}`,
   });
 }
 
