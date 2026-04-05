@@ -14,11 +14,20 @@ const NAV_LINKS = [
   { label: "Score CV", href: "/score" },
 ];
 
+const ADMIN_NAV = { label: "Ingest", href: "/admin/ingest" };
+
 export function SiteHeader({ activeHref }: { activeHref?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const { user, loading, signOut } = useAuth();
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Check admin access
+  useEffect(() => {
+    if (!user) { setIsAdmin(false); return; }
+    fetch("/api/admin/stats").then(r => { setIsAdmin(r.ok); }).catch(() => {});
+  }, [user]);
 
   // Close user menu on outside click
   useEffect(() => {
@@ -59,6 +68,18 @@ export function SiteHeader({ activeHref }: { activeHref?: string }) {
               )}
             </Link>
           ))}
+          {isAdmin && (
+            <Link
+              href={ADMIN_NAV.href}
+              className={`relative px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                activeHref === ADMIN_NAV.href
+                  ? "text-cyan-600"
+                  : "text-amber-600 hover:text-amber-700 hover:bg-amber-50"
+              }`}
+            >
+              {ADMIN_NAV.label}
+            </Link>
+          )}
         </div>
 
         <div className="flex items-center gap-3">
@@ -179,6 +200,15 @@ export function SiteHeader({ activeHref }: { activeHref?: string }) {
               {link.label}
             </Link>
           ))}
+          {isAdmin && (
+            <Link
+              href={ADMIN_NAV.href}
+              onClick={() => setMobileOpen(false)}
+              className="block px-4 py-2.5 text-sm font-medium rounded-lg text-amber-600 hover:bg-amber-50"
+            >
+              {ADMIN_NAV.label}
+            </Link>
+          )}
 
           {user && (
             <>
