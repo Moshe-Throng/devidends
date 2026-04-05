@@ -16,15 +16,38 @@ import { useTelegram } from "@/components/TelegramProvider";
 import type { CvScoreResult } from "@/lib/types/cv-score";
 
 export default function TgAppScore() {
-  const { profile, refreshProfile } = useTelegram();
+  const { profile, refreshProfile, loading } = useTelegram();
   const fileRef = useRef<HTMLInputElement>(null);
-
   const [file, setFile] = useState<File | null>(null);
-  const [phase, setPhase] = useState<"upload" | "scoring" | "results">(
-    "upload"
-  );
+  const [phase, setPhase] = useState<"upload" | "scoring" | "results">("upload");
   const [result, setResult] = useState<CvScoreResult | null>(null);
   const [error, setError] = useState("");
+
+  // Gate: no saved CV → redirect to Build CV
+  if (!loading && !profile?.cv_structured_data) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <div className="bg-white border-b border-dark-100 px-4 pt-3 pb-3 sticky top-0 z-30">
+          <div className="flex items-center gap-3">
+            <Link href="/tg-app" className="text-dark-400"><ArrowLeft className="w-5 h-5" /></Link>
+            <h1 className="text-lg font-extrabold text-dark-900">Score CV</h1>
+          </div>
+        </div>
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="text-center space-y-4">
+            <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center mx-auto">
+              <FileText className="w-7 h-7 text-cyan-500" />
+            </div>
+            <h2 className="text-lg font-bold text-dark-900">Upload your CV first</h2>
+            <p className="text-xs text-dark-400">Build and save your CV to unlock scoring.</p>
+            <Link href="/tg-app/cv-builder" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm">
+              Build My CV
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   async function handleScore() {
     if (!file) return;

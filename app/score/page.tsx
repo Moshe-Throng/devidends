@@ -169,6 +169,10 @@ export default function CvScorerPageWrapper() {
 }
 
 function CvScorerPage() {
+  /* ─── CV gate: require saved CV ────────────────────────── */
+  const [cvCheckDone, setCvCheckDone] = useState(false);
+  const [hasSavedCv, setHasSavedCv] = useState(true); // optimistic until checked
+
   /* ─── Phase ─────────────────────────────────────────────── */
   const [phase, setPhase] = useState<Phase>("upload");
 
@@ -216,6 +220,23 @@ function CvScorerPage() {
   const [autoSaving, setAutoSaving] = useState(false);
   const [profileSaved, setProfileSaved] = useState(false);
   const [profileError, setProfileError] = useState<string | null>(null);
+
+  // Check if user has a saved CV
+  useEffect(() => {
+    if (authLoading) return;
+    if (!user) { setCvCheckDone(true); setHasSavedCv(false); return; }
+    const sb = createSupabaseBrowser();
+    if (!sb) { setCvCheckDone(true); return; }
+    Promise.resolve(
+      sb.from("profiles")
+        .select("cv_structured_data, cv_text")
+        .eq("user_id", user.id)
+        .single()
+    ).then(({ data }: any) => {
+      setHasSavedCv(!!(data?.cv_structured_data || data?.cv_text));
+      setCvCheckDone(true);
+    }).catch(() => { setCvCheckDone(true); setHasSavedCv(false); });
+  }, [user, authLoading]);
 
   /* ─── URL params (deep link from opportunity detail) ─────── */
   const searchParams = useSearchParams();
@@ -489,7 +510,7 @@ function CvScorerPage() {
           JSON.stringify({
             title: selectedOpp.title,
             organization: selectedOpp.organization,
-            description: selectedOpp.description,
+            description: selectedOpp.description || "",
             deadline: selectedOpp.deadline,
             source_url: selectedOpp.source_url,
           })
@@ -622,10 +643,11 @@ function CvScorerPage() {
     : !!(customUrl.trim() || customTor.trim());
 
   const filteredOpps = opportunities.filter((o) => {
+    if (!o || !o.title) return false;
     const q = oppSearch.toLowerCase();
     return (
-      o.title.toLowerCase().includes(q) ||
-      o.organization.toLowerCase().includes(q)
+      (o.title || "").toLowerCase().includes(q) ||
+      (o.organization || "").toLowerCase().includes(q)
     );
   });
 
@@ -639,6 +661,38 @@ function CvScorerPage() {
   }, {});
 
   /* ─── Render ────────────────────────────────────────────── */
+
+  // Gate: no saved CV → redirect to Build CV
+  if (cvCheckDone && !hasSavedCv) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col">
+        <SiteHeader activeHref="/score" />
+        <div className="flex-1 flex items-center justify-center px-6">
+          <div className="max-w-md text-center space-y-5">
+            <div className="w-16 h-16 rounded-2xl bg-cyan-50 flex items-center justify-center mx-auto">
+              <FileText className="w-8 h-8 text-cyan-500" />
+            </div>
+            <h1 className="text-2xl font-extrabold text-dark-900">Upload your CV first</h1>
+            <p className="text-sm text-dark-400">
+              To score your CV, you need to upload and save it first. This takes less than a minute.
+            </p>
+            <Link
+              href="/cv-builder"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+            >
+              Build My CV <ArrowRight className="w-4 h-4" />
+            </Link>
+            {!user && (
+              <p className="text-xs text-dark-300">
+                Or <Link href="/login" className="text-cyan-600 font-semibold">sign in</Link> if you already have an account
+              </p>
+            )}
+          </div>
+        </div>
+        <SiteFooter />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
