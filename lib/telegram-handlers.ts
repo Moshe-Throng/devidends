@@ -52,6 +52,10 @@ function esc(text: string): string {
   return text.replace(/([_*\[\]()~`>#+\-=|{}.!])/g, "\\$1");
 }
 
+function escHtml(text: string): string {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 /** Truncate a string and add ellipsis. */
 function truncate(text: string, max: number): string {
   if (!text || text.length <= max) return text || "";
@@ -183,6 +187,180 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
 
 function escapeMarkdown(text: string): string {
   return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, "\\$&");
+}
+
+// ---------------------------------------------------------------------------
+// Group CV ingest — drop CVs in a Telegram group topic
+// ---------------------------------------------------------------------------
+
+async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
+  const chatId = msg.chat.id;
+  const threadId = msg.message_thread_id;
+  const doc = msg.document;
+  if (!doc) return;
+
+  const fileName = doc.file_name || "unknown";
+  const ext = fileName.toLowerCase().split(".").pop();
+  const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
+
+  // Only process PDF/DOCX
+  if (ext !== "pdf" && ext !== "docx" && ext !== "doc") return;
+
+  const replyOpts: Record<string, unknown> = { parse_mode: "HTML" };
+  if (threadId) replyOpts.message_thread_id = threadId;
+
+  try {
+    await bot.sendMessage(chatId, `<i>Processing ${escHtml(fileName)}...</i>`, replyOpts);
+
+    // Download file
+    const fileLink = await bot.getFileLink(doc.file_id);
+    const response = await fetch(fileLink);
+    if (!response.ok) throw new Error("Failed to download file");
+    const buffer = Buffer.from(await response.arrayBuffer());
+
+    // Extract text
+    const { extractText } = await import("@/lib/file-parser");
+    const cvText = await extractText(buffer, fileName);
+
+    if (!cvText || cvText.trim().length < 50) {
+      await bot.sendMessage(chatId, `<b>Failed:</b> Could not extract text from <b>${escHtml(fileName)}</b>. File may be scanned/image-based.`, replyOpts);
+      return;
+    }
+
+    // Extract profile + structured CV
+    const { extractProfileFromCV } = await import("@/lib/extract-profile");
+    const { extractCvData } = await import("@/lib/cv-extractor");
+
+    const profile = await extractProfileFromCV(cvText);
+    let cvStructured: any = null;
+    try {
+      const { data } = await extractCvData(cvText);
+      cvStructured = data;
+    } catch {}
+
+    // Score
+    let cvScore: number | null = null;
+    try {
+      const { scoreCv } = await import("@/lib/cv-scorer");
+      const scoreResult = await scoreCv(cvText);
+      cvScore = scoreResult.overall_score;
+    } catch {}
+
+    // Extract fields from structured data
+    const personal = cvStructured?.personal || {};
+    const languages = cvStructured?.languages?.map((l: any) => l.language).filter(Boolean) || [];
+    const degrees = (cvStructured?.education || []).map((e: any) => e.degree || "");
+    const eduLevel = degrees.some((d: string) => /PhD|Doctorate/i.test(d)) ? "PhD"
+      : degrees.some((d: string) => /Master|MSc|MA|MBA|MPH|MPA/i.test(d)) ? "Masters"
+      : degrees.some((d: string) => /Bachelor|BSc|BA|BEng|LLB/i.test(d)) ? "Bachelors" : null;
+    const empCount = (cvStructured?.employment || []).length;
+
+    // Generate claim token
+    const { randomUUID } = await import("crypto");
+    const claimToken = randomUUID().replace(/-/g, "").slice(0, 8);
+
+    // Auto-generate tags
+    const tags: string[] = ["telegram_ingest"];
+    if ((profile.years_of_experience || 0) >= 15) tags.push("expert");
+    else if ((profile.years_of_experience || 0) >= 10) tags.push("senior");
+    if (cvScore && cvScore >= 70) tags.push("strong_cv");
+    if (languages.length >= 3) tags.push("multilingual");
+
+    // Save to Supabase (dedup by name — update if exists)
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+
+    const expertName = (personal.full_name || profile.name || "").trim();
+    let isUpdate = false;
+    let profileId: string | null = null;
+
+    // Check for existing profile with same name
+    const { data: existing } = await sb
+      .from("profiles")
+      .select("id, name, claim_token")
+      .ilike("name", expertName.toLowerCase())
+      .limit(1)
+      .single();
+
+    const profileData = {
+      name: expertName,
+      headline: profile.headline,
+      email: personal.email || null,
+      phone: personal.phone || null,
+      nationality: personal.nationality || null,
+      city: personal.address || personal.country_of_residence || null,
+      sectors: profile.sectors,
+      donors: profile.donors,
+      countries: profile.countries,
+      skills: profile.skills,
+      qualifications: profile.qualifications,
+      years_of_experience: profile.years_of_experience,
+      profile_type: profile.profile_type,
+      cv_text: cvText.slice(0, 50000),
+      cv_structured_data: cvStructured,
+      cv_score: cvScore,
+      languages: languages,
+      education_level: eduLevel,
+      tags: tags,
+      admin_notes: `Ingested from Telegram group by ${senderName}`,
+      source: "telegram_ingest" as const,
+    };
+
+    if (existing) {
+      // Update existing profile
+      isUpdate = true;
+      profileId = existing.id;
+      const { error: updateErr } = await sb.from("profiles").update(profileData).eq("id", existing.id);
+      if (updateErr) throw new Error(updateErr.message);
+      // Keep existing claim_token
+    } else {
+      // Create new profile
+      const { data: created, error: insertErr } = await sb
+        .from("profiles")
+        .insert({ ...profileData, claim_token: claimToken })
+        .select("id")
+        .single();
+      if (insertErr) throw new Error(insertErr.message);
+      profileId = created?.id || null;
+    }
+
+    // Build summary message
+    const name = escHtml(personal.full_name || profile.name);
+    const scoreStr = cvScore != null ? `${cvScore}/100` : "N/A";
+    const sectorsStr = (profile.sectors || []).slice(0, 3).join(", ") || "None detected";
+    const yrs = profile.years_of_experience ? `${profile.years_of_experience} years` : "N/A";
+    const effectiveToken = existing?.claim_token || claimToken;
+    const claimLink = `https://t.me/Devidends_Bot?start=claim_${effectiveToken}`;
+
+    const summary = [
+      isUpdate ? `<b>CV Updated</b>` : `<b>CV Ingested</b>`,
+      ``,
+      `<b>${name}</b>`,
+      profile.headline ? `<i>${escHtml(profile.headline)}</i>` : null,
+      ``,
+      `Score: <b>${scoreStr}</b>`,
+      `Experience: ${yrs} | ${profile.profile_type || "N/A"}`,
+      `Education: ${eduLevel || "N/A"}`,
+      `Sectors: ${escHtml(sectorsStr)}`,
+      `Employment: ${empCount} roles`,
+      `Languages: ${languages.join(", ") || "N/A"}`,
+      ``,
+      `Claim: <code>${claimLink}</code>`,
+    ].filter(Boolean).join("\n");
+
+    await bot.sendMessage(chatId, summary, replyOpts);
+
+    // Track event
+    const { trackEvent } = await import("@/lib/logger");
+    trackEvent({ event: "cv_ingested", profile_id: profileId || undefined, metadata: { source: "telegram_group", name: profile.name, score: cvScore, sender: senderName } });
+
+  } catch (err: any) {
+    console.error("[telegram-ingest]", err.message);
+    await bot.sendMessage(chatId, `<b>Ingest failed:</b> ${escHtml(err.message || "Unknown error")}`, replyOpts).catch(() => {});
+
+    const { logException } = await import("@/lib/logger");
+    logException("telegram-ingest", err, { fileName, sender: senderName });
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -730,6 +908,14 @@ export async function handleUpdate(
 
     // Handle document uploads
     if (msg.document) {
+      // Check if this is a CV drop in the ingest topic
+      const ingestGroupId = process.env.TELEGRAM_INGEST_GROUP_ID;
+      const ingestTopicId = process.env.TELEGRAM_INGEST_TOPIC_ID;
+      if (ingestGroupId && String(msg.chat.id) === ingestGroupId &&
+          (!ingestTopicId || String(msg.message_thread_id || "") === ingestTopicId)) {
+        await handleGroupCvIngest(bot, msg);
+        return;
+      }
       await handleDocument(bot, msg);
       return;
     }

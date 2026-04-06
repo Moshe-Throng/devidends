@@ -142,62 +142,84 @@ export async function POST(req: NextRequest) {
       : degrees.some((d: string) => /Bachelor|BSc|BA|BEng|LLB/i.test(d)) ? "Bachelors"
       : degrees.some((d: string) => /Diploma/i.test(d)) ? "Diploma" : null;
 
-    // Create profile in Supabase
-    const { data: created, error: insertErr } = await sb
-      .from("profiles")
-      .insert({
-        name: p.full_name || profile.name,
-        headline: profile.headline,
-        email: cvEmail,
-        phone: cvPhone,
-        nationality: cvNationality,
-        city: cvCity,
-        sectors: profile.sectors,
-        donors: profile.donors,
-        countries: profile.countries,
-        skills: profile.skills,
-        qualifications: profile.qualifications,
-        years_of_experience: profile.years_of_experience,
-        profile_type: profile.profile_type,
-        cv_text: cvText.slice(0, 50000),
-        cv_structured_data: cvStructured,
-        cv_score: cvScore,
-        claim_token: claimToken,
-        source: "admin_ingest",
-        // Admin-provided fields (override CV-extracted if set)
-        recommended_by: recommendedBy,
-        is_recommender: isRecommender,
-        gender: gender || null,
-        // CV-extracted fields
-        languages: cvLanguages,
-        certifications: cvCertifications,
-        education_level: eduLevel,
-        tags: tags.length > 0 ? tags : autoGenerateTags(profile, cvStructured, cvScore),
-        admin_notes: adminNotes,
-      })
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, certifications, created_at")
-      .single();
+    // Upsert: update if profile with same name exists, otherwise create
+    const profileData: any = {
+      name: p.full_name || profile.name,
+      headline: profile.headline,
+      email: cvEmail,
+      phone: cvPhone,
+      nationality: cvNationality,
+      city: cvCity,
+      sectors: profile.sectors,
+      donors: profile.donors,
+      countries: profile.countries,
+      skills: profile.skills,
+      qualifications: profile.qualifications,
+      years_of_experience: profile.years_of_experience,
+      profile_type: profile.profile_type,
+      cv_text: cvText.slice(0, 50000),
+      cv_structured_data: cvStructured,
+      cv_score: cvScore,
+      source: "admin_ingest",
+      recommended_by: recommendedBy,
+      is_recommender: isRecommender,
+      gender: gender || null,
+      languages: cvLanguages,
+      certifications: cvCertifications,
+      education_level: eduLevel,
+      tags: tags.length > 0 ? tags : autoGenerateTags(profile, cvStructured, cvScore),
+      admin_notes: adminNotes,
+    };
 
-    if (insertErr) {
-      console.error("[admin/ingest] Insert error:", insertErr.message);
-      return NextResponse.json({ error: "Failed to create profile: " + insertErr.message }, { status: 500 });
+    let isUpdate = false;
+    let created: any;
+
+    if (dupes && dupes.length > 0) {
+      // Update existing
+      isUpdate = true;
+      const { data: updated, error: updateErr } = await sb
+        .from("profiles")
+        .update(profileData)
+        .eq("id", dupes[0].id)
+        .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, certifications, created_at")
+        .single();
+      if (updateErr) {
+        console.error("[admin/ingest] Update error:", updateErr.message);
+        return NextResponse.json({ error: "Failed to update profile: " + updateErr.message }, { status: 500 });
+      }
+      created = updated;
+    } else {
+      // Create new
+      profileData.claim_token = claimToken;
+      const { data: inserted, error: insertErr } = await sb
+        .from("profiles")
+        .insert(profileData)
+        .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, claim_token, profile_type, cv_structured_data, gender, nationality, languages, education_level, recommended_by, is_recommender, tags, admin_notes, email, phone, city, certifications, created_at")
+        .single();
+      if (insertErr) {
+        console.error("[admin/ingest] Insert error:", insertErr.message);
+        return NextResponse.json({ error: "Failed to create profile: " + insertErr.message }, { status: 500 });
+      }
+      created = inserted;
     }
 
     const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
-    const tgLink = `https://t.me/Devidends_Bot?start=claim_${claimToken}`;
-    const webLink = `${SITE}/claim?token=${claimToken}`;
+    const effectiveToken = created.claim_token || claimToken;
+    const tgLink = `https://t.me/Devidends_Bot?start=claim_${effectiveToken}`;
+    const webLink = `${SITE}/claim?token=${effectiveToken}`;
 
-    trackEvent({ event: "cv_ingested", profile_id: created.id, metadata: { name: profile.name, score: cvScore, source: "admin_ingest" } });
+    trackEvent({ event: isUpdate ? "cv_updated" : "cv_ingested", profile_id: created.id, metadata: { name: profile.name, score: cvScore, source: "admin_ingest" } });
 
     return NextResponse.json({
       success: true,
+      is_update: isUpdate,
       profile: {
         ...created,
         claim_link_tg: tgLink,
         claim_link_web: webLink,
         is_claimed: false,
       },
-      dup_warning: dupWarning,
+      dup_warning: isUpdate ? `Updated existing profile "${created.name}"` : dupWarning,
     });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : "Unknown error";
