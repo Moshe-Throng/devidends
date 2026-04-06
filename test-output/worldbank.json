@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-05T06:18:22.625Z",
-    "count": 4
+    "scraped_at": "2026-04-06T05:01:59.237Z",
+    "count": 6
   },
   "opportunities": [
+    {
+      "title": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT",
+      "organization": "World Bank",
+      "description": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT\n\nProject: Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: DJ-IGAD-540099-CS-CQS\n\nContact: Djibouti P.O Box 2653, Ave Georges Clemenceau \nwww.igad.int",
+      "deadline": "2026-04-13",
+      "published": null,
+      "country": "Eastern and Southern Africa",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435583",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-04-06T05:00:06.918Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t",
+        "project_id": "P180799",
+        "bid_reference": "DJ-IGAD-540099-CS-CQS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support",
+      "organization": "World Bank",
+      "description": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-529318-CS-QCBS\n\nContact: Addis Ababa",
+      "deadline": "2026-04-14",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434853",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-04-06T05:00:06.918Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-MOUDI-529318-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-05T06:16:43.726Z",
+      "scraped_at": "2026-04-06T05:00:07.305Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434219",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-05T06:16:43.726Z",
+      "scraped_at": "2026-04-06T05:00:07.305Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434221",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-05T06:16:43.726Z",
+      "scraped_at": "2026-04-06T05:00:07.306Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-05T06:16:43.726Z",
+      "scraped_at": "2026-04-06T05:00:07.306Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
