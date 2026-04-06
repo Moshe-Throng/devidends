@@ -886,8 +886,7 @@ function CvScorerPage() {
                                 {selectedOpp.title}
                               </p>
                               <p className="text-xs text-dark-400 truncate">
-                                {selectedOpp.organization} &middot;{" "}
-                                {selectedOpp.source_domain}
+                                {selectedOpp.organization}
                               </p>
                             </>
                           ) : (
@@ -931,42 +930,32 @@ function CvScorerPage() {
                             </div>
                           </div>
                           <div className="overflow-y-auto max-h-56">
-                            {Object.keys(groupedOpps).length === 0 ? (
+                            {filteredOpps.length === 0 ? (
                               <div className="p-6 text-center text-sm text-dark-400">
                                 {oppSearch
                                   ? "No matches found"
                                   : "No opportunities loaded"}
                               </div>
                             ) : (
-                              Object.entries(groupedOpps).map(([domain, opps]) => (
-                                <div key={domain}>
-                                  <div className="px-4 py-1.5 bg-dark-50 text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] sticky top-0">
-                                    {domain}
-                                    <span className="ml-2 text-dark-300 font-medium">
-                                      ({opps.length})
-                                    </span>
-                                  </div>
-                                  {opps.map((o, i) => (
-                                    <button
-                                      key={`${domain}-${i}`}
-                                      onClick={() => {
-                                        setSelectedOpp(o);
-                                        setOppOpen(false);
-                                        setOppSearch("");
-                                      }}
-                                      className="w-full text-left px-4 py-3 hover:bg-cyan-50/50 transition-colors border-b border-dark-50 last:border-0"
-                                    >
-                                      <p className="text-sm font-semibold text-dark-900 truncate">
-                                        {o.title}
-                                      </p>
-                                      <p className="text-xs text-dark-400 mt-0.5 truncate">
-                                        {o.organization}
-                                        {o.deadline &&
-                                          ` \u00B7 Due ${fmtDeadline(o.deadline)}`}
-                                      </p>
-                                    </button>
-                                  ))}
-                                </div>
+                              filteredOpps.map((o, i) => (
+                                <button
+                                  key={i}
+                                  onClick={() => {
+                                    setSelectedOpp(o);
+                                    setOppOpen(false);
+                                    setOppSearch("");
+                                  }}
+                                  className="w-full text-left px-4 py-3 hover:bg-cyan-50/50 transition-colors border-b border-dark-50 last:border-0"
+                                >
+                                  <p className="text-sm font-semibold text-dark-900 truncate">
+                                    {o.title}
+                                  </p>
+                                  <p className="text-xs text-dark-400 mt-0.5 truncate">
+                                    {o.organization}
+                                    {o.deadline &&
+                                      ` \u00B7 Due ${fmtDeadline(o.deadline)}`}
+                                  </p>
+                                </button>
                               ))
                             )}
                           </div>
