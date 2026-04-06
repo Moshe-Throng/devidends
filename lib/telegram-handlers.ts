@@ -203,6 +203,17 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
+  // Parse "Recommended by" from file caption or reply
+  const caption = (msg.caption || "").trim();
+  let recommendedBy: string | null = null;
+  const recMatch = caption.match(/(?:recommended|referred|rec|ref)(?:\s+by)?[:\s]+(.+)/i);
+  if (recMatch) {
+    recommendedBy = recMatch[1].trim();
+  } else if (caption && !caption.includes("/") && caption.length < 100) {
+    // If caption is just a name (no command), treat it as recommender
+    recommendedBy = caption;
+  }
+
   // Only process PDF/DOCX
   if (ext !== "pdf" && ext !== "docx" && ext !== "doc") return;
 
@@ -302,7 +313,8 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       languages: languages,
       education_level: eduLevel,
       tags: tags,
-      admin_notes: `Ingested from Telegram group by ${senderName}`,
+      recommended_by: recommendedBy,
+      admin_notes: `Ingested from Telegram group by ${senderName}${recommendedBy ? ` (rec: ${recommendedBy})` : ""}`,
       source: "telegram_ingest" as const,
     };
 
@@ -344,6 +356,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       `Sectors: ${escHtml(sectorsStr)}`,
       `Employment: ${empCount} roles`,
       `Languages: ${languages.join(", ") || "N/A"}`,
+      recommendedBy ? `Recommended by: <b>${escHtml(recommendedBy)}</b>` : null,
       ``,
       `Claim: <code>${claimLink}</code>`,
     ].filter(Boolean).join("\n");
