@@ -1006,7 +1006,7 @@ export default function PocCvScorerPage() {
                   ))}
                 </div>
                 <p className="text-sm text-dark-600 leading-relaxed">
-                  {result.donor_specific_tips[donorTab] ||
+                  {(result.donor_specific_tips || {})[donorTab] ||
                     "No tips available for this donor."}
                 </p>
               </div>
