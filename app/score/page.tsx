@@ -540,7 +540,7 @@ function CvScorerPage() {
       const scoreData = json.data as ScoreData;
       setResult(scoreData);
       setEditText(scoreData.cv_text);
-      setDonorTab(Object.keys(scoreData.donor_specific_tips)[0] || "GIZ");
+      setDonorTab(Object.keys(scoreData.donor_specific_tips || {})[0] || "GIZ");
       setPhase("results");
 
       // Cache result
@@ -573,7 +573,7 @@ function CvScorerPage() {
         setDismissed(new Set());
         setExpandedDim(null);
         setDonorTab(
-          Object.keys(cached.data.donor_specific_tips)[0] || "GIZ"
+          Object.keys(cached.data.donor_specific_tips || {})[0] || "GIZ"
         );
         setRescoring(false);
         return;
@@ -610,7 +610,7 @@ function CvScorerPage() {
       setEditText(scoreData.cv_text);
       setDismissed(new Set());
       setExpandedDim(null);
-      setDonorTab(Object.keys(scoreData.donor_specific_tips)[0] || "GIZ");
+      setDonorTab(Object.keys(scoreData.donor_specific_tips || {})[0] || "GIZ");
 
       // Cache
       setCachedScore(cacheHash, scoreData);
@@ -1579,7 +1579,7 @@ function CvScorerPage() {
                   Donor-Specific Tips
                 </p>
                 <div className="relative flex flex-wrap gap-1.5 mb-5 p-1 bg-dark-50 rounded-xl">
-                  {Object.keys(result.donor_specific_tips).map((donor) => (
+                  {Object.keys(result.donor_specific_tips || {}).map((donor) => (
                     <button
                       key={donor}
                       onClick={() => setDonorTab(donor)}
@@ -1597,7 +1597,7 @@ function CvScorerPage() {
                   ))}
                 </div>
                 <p key={donorTab} className="text-sm text-dark-600 leading-relaxed animate-fadeInUp">
-                  {result.donor_specific_tips[donorTab] ||
+                  {(result.donor_specific_tips || {} as any)[donorTab] ||
                     "No tips available for this donor."}
                 </p>
               </div>

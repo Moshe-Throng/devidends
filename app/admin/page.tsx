@@ -706,13 +706,13 @@ export default function AdminPage() {
                   </div>
 
                   {/* Cost by feature */}
-                  {Object.keys(stats.ai_usage.by_feature).length > 0 && (
+                  {Object.keys(stats.ai_usage?.by_feature || {}).length > 0 && (
                     <div>
                       <p className="text-[10px] font-bold text-dark-400 uppercase tracking-wider mb-3">
                         Cost by Feature
                       </p>
                       <div className="space-y-2">
-                        {Object.entries(stats.ai_usage.by_feature).map(
+                        {Object.entries(stats.ai_usage?.by_feature || {}).map(
                           ([feature, data]) => {
                             const pct =
                               stats.ai_usage!.total_cost_usd > 0
@@ -793,7 +793,7 @@ export default function AdminPage() {
                         Model Cost Comparison (per 1M tokens)
                       </p>
                       <div className="grid sm:grid-cols-2 gap-2">
-                        {Object.entries(stats.model_pricing).map(
+                        {Object.entries(stats.model_pricing || {}).map(
                           ([model, pricing]) => {
                             const isActive = model === "claude-sonnet-4-20250514";
                             const shortName: Record<string, string> = {

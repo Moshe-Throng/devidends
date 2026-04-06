@@ -339,7 +339,7 @@ export default function PocCvScorerPage() {
 
       setResult(json.data);
       setEditText(json.data.cv_text);
-      setDonorTab(Object.keys(json.data.donor_specific_tips)[0] || "GIZ");
+      setDonorTab(Object.keys(json.data.donor_specific_tips || {})[0] || "GIZ");
       setPhase("results");
     } catch (err: unknown) {
       setError(
@@ -380,7 +380,7 @@ export default function PocCvScorerPage() {
       setEditText(json.data.cv_text);
       setDismissed(new Set());
       setExpandedDim(null);
-      setDonorTab(Object.keys(json.data.donor_specific_tips)[0] || "GIZ");
+      setDonorTab(Object.keys(json.data.donor_specific_tips || {})[0] || "GIZ");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Re-scoring failed.");
     } finally {
@@ -991,7 +991,7 @@ export default function PocCvScorerPage() {
                   Donor-Specific Tips
                 </p>
                 <div className="flex gap-1.5 mb-5">
-                  {Object.keys(result.donor_specific_tips).map((donor) => (
+                  {Object.keys(result.donor_specific_tips || {}).map((donor) => (
                     <button
                       key={donor}
                       onClick={() => setDonorTab(donor)}
