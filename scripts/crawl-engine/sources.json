@@ -10,7 +10,9 @@
       "url": "https://api.reliefweb.int/v1/jobs",
       "appname": "DevidendslWobR5bzg4nrbI2JUvPj",
       "limit": 50,
-      "countryFilter": ["Ethiopia"]
+      "countryFilter": [
+        "Ethiopia"
+      ]
     }
   },
   {
@@ -18,7 +20,7 @@
     "name": "World Bank Procurement",
     "adapter": "worldbank",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 30,
     "config": {
       "noticeTypes": [
@@ -91,7 +93,7 @@
     "name": "African Union Tenders",
     "adapter": "puppeteer-spa",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "url": "https://au.int/en/bids",
@@ -523,7 +525,7 @@
     "name": "UNDP Procurement",
     "adapter": "cheerio-html",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "url": "https://procurement-notices.undp.org/search.cfm",
@@ -723,13 +725,12 @@
       "fetchDetails": false
     }
   },
-
   {
     "id": "iati-ethiopia",
     "name": "IATI Datastore (Ethiopia Pipeline)",
     "adapter": "iati",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 15,
     "config": {
       "countryCode": "ET",
@@ -741,10 +742,13 @@
     "name": "SAM.gov (USAID Tenders)",
     "adapter": "samgov",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 10,
     "config": {
-      "keywords": ["Ethiopia", "East Africa"],
+      "keywords": [
+        "Ethiopia",
+        "East Africa"
+      ],
       "limit": 100,
       "daysBack": 60
     }
@@ -754,10 +758,12 @@
     "name": "TED (EU Tenders)",
     "adapter": "ted",
     "content_type": "tender",
-    "enabled": true,
+    "enabled": false,
     "priority": 10,
     "config": {
-      "keywords": ["Ethiopia"],
+      "keywords": [
+        "Ethiopia"
+      ],
       "pageSize": 50,
       "daysBack": 60
     }
