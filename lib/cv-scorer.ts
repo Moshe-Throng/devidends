@@ -5,7 +5,7 @@ import type { CvScoreResult, OpportunityInput } from "./types/cv-score";
 import { calculateCost, logUsage } from "./usage-tracker";
 import { logException } from "./logger";
 
-const MAX_CV_LENGTH = 25_000;
+const MAX_CV_LENGTH = 60_000;
 
 /* ─── Response cache (same CV+opportunity → same score) ── */
 

@@ -3,7 +3,7 @@ import { createHash } from "crypto";
 import type { StructuredCvData } from "./types/cv-data";
 import { calculateCost, logUsage } from "./usage-tracker";
 
-const MAX_CV_LENGTH = 25_000;
+const MAX_CV_LENGTH = 60_000;
 
 const SYSTEM_PROMPT = `You are a CV data extractor for international development consulting. Your job is to parse raw CV text and return structured JSON matching the World Bank / UN standard CV format.
 
@@ -138,7 +138,7 @@ export async function extractCvData(
   const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
-    max_tokens: 6000,
+    max_tokens: 8000,
     system: [
       {
         type: "text" as const,

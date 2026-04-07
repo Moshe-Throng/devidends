@@ -123,7 +123,7 @@ export async function extractProfileFromCV(
     messages: [
       {
         role: "user",
-        content: `Extract profile data from this CV:\n\n${cvText.slice(0, 15000)}`,
+        content: `Extract profile data from this CV:\n\n${cvText.slice(0, 60000)}`,
       },
     ],
   });
