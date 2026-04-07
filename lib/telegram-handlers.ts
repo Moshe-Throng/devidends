@@ -241,24 +241,34 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       return;
     }
 
-    // Extract profile + structured CV
-    const { extractProfileFromCV } = await import("@/lib/extract-profile");
+    // Single Claude call: extract structured CV (contains everything)
     const { extractCvData } = await import("@/lib/cv-extractor");
+    const { data: cvStructured } = await extractCvData(cvText);
 
-    const profile = await extractProfileFromCV(cvText);
-    let cvStructured: any = null;
-    try {
-      const { data } = await extractCvData(cvText);
-      cvStructured = data;
-    } catch {}
+    // Derive profile fields from structured data (no extra API call)
+    const profile = {
+      name: cvStructured?.personal?.full_name || "Unknown",
+      headline: null as string | null,
+      sectors: [] as string[],
+      donors: [] as string[],
+      countries: cvStructured?.countries_of_experience || [],
+      skills: [] as string[],
+      qualifications: cvStructured?.education?.[0] ? `${cvStructured.education[0].degree} in ${cvStructured.education[0].field_of_study}, ${cvStructured.education[0].institution}` : null,
+      years_of_experience: null as number | null,
+      profile_type: null as string | null,
+    };
 
-    // Score
+    // Calculate years from earliest employment
+    const empDates = (cvStructured?.employment || []).map((e: any) => e.from_date).filter(Boolean).sort();
+    if (empDates.length > 0) {
+      const earliest = new Date(empDates[0]).getFullYear();
+      if (earliest > 1970) profile.years_of_experience = new Date().getFullYear() - earliest;
+    }
+    const yrs = profile.years_of_experience || 0;
+    profile.profile_type = yrs >= 15 ? "Expert" : yrs >= 10 ? "Senior" : yrs >= 5 ? "Mid-level" : yrs >= 2 ? "Junior" : "Entry";
+
+    // Quick score (fast, no extra API call — just skip for now, score later via admin panel)
     let cvScore: number | null = null;
-    try {
-      const { scoreCv } = await import("@/lib/cv-scorer");
-      const scoreResult = await scoreCv(cvText);
-      cvScore = scoreResult.overall_score;
-    } catch {}
 
     // Extract fields from structured data
     const personal = cvStructured?.personal || {};
@@ -343,7 +353,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     const name = escHtml(personal.full_name || profile.name);
     const scoreStr = cvScore != null ? `${cvScore}/100` : "N/A";
     const sectorsStr = (profile.sectors || []).slice(0, 3).join(", ") || "None detected";
-    const yrs = profile.years_of_experience ? `${profile.years_of_experience} years` : "N/A";
+    const yrsStr = profile.years_of_experience ? `${profile.years_of_experience} years` : "N/A";
     const effectiveToken = existing?.claim_token || claimToken;
     const claimLink = `https://t.me/Devidends_Bot?start=claim_${effectiveToken}`;
 
@@ -354,7 +364,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       profile.headline ? `<i>${escHtml(profile.headline)}</i>` : null,
       ``,
       `Score: <b>${scoreStr}</b>`,
-      `Experience: ${yrs} | ${profile.profile_type || "N/A"}`,
+      `Experience: ${yrsStr} | ${profile.profile_type || "N/A"}`,
       `Education: ${eduLevel || "N/A"}`,
       `Sectors: ${escHtml(sectorsStr)}`,
       `Employment: ${empCount} roles`,
