@@ -138,7 +138,7 @@ export async function extractCvData(
   const modelId = "claude-haiku-4-5-20251001";
   const message = await anthropic.messages.create({
     model: modelId,
-    max_tokens: 16000,
+    max_tokens: 10000,
     system: [
       {
         type: "text" as const,

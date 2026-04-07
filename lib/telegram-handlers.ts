@@ -241,9 +241,11 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       return;
     }
 
-    // Single Claude call: extract structured CV (contains everything)
+    // Single Claude call: extract structured CV
+    // For very long CVs (>30K), trim to fit within the 60s function timeout
     const { extractCvData } = await import("@/lib/cv-extractor");
-    const { data: cvStructured } = await extractCvData(cvText);
+    const trimmedText = cvText.length > 30000 ? cvText.slice(0, 30000) + "\n\n[... CV continues with additional consultancy assignments ...]" : cvText;
+    const { data: cvStructured } = await extractCvData(trimmedText);
 
     // Derive profile fields from structured data (no extra API call)
     const profile = {
