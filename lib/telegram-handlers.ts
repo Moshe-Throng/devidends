@@ -203,19 +203,22 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
-  // Parse "Recommended by" from file caption or reply
+  // Parse "Recommended by" — 3 sources:
+  // 1. Caption text (explicit: "Recommended by Mussie" or just a name)
+  // 2. Sender is a known recommender in the DB → auto-attach
   const caption = (msg.caption || "").trim();
   let recommendedBy: string | null = null;
   const recMatch = caption.match(/(?:recommended|referred|rec|ref)(?:\s+by)?[:\s]+(.+)/i);
   if (recMatch) {
     recommendedBy = recMatch[1].trim();
   } else if (caption && !caption.includes("/") && caption.length < 100) {
-    // If caption is just a name (no command), treat it as recommender
     recommendedBy = caption;
   }
 
   // Only process PDF/DOCX
   if (ext !== "pdf" && ext !== "docx" && ext !== "doc") return;
+
+  // "Recommended by" only from caption. Sender is tracked as "Added by" separately.
 
   const replyOpts: Record<string, unknown> = { parse_mode: "HTML" };
   if (threadId) replyOpts.message_thread_id = threadId;
@@ -313,8 +316,8 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       languages: languages,
       education_level: eduLevel,
       tags: tags,
-      recommended_by: recommendedBy,
-      admin_notes: `Ingested from Telegram group by ${senderName}${recommendedBy ? ` (rec: ${recommendedBy})` : ""}`,
+      recommended_by: recommendedBy || null,
+      admin_notes: `Added by ${senderName}${recommendedBy ? ` | Recommended by ${recommendedBy}` : ""}`,
       source: "telegram_ingest" as const,
     };
 
@@ -357,6 +360,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       `Employment: ${empCount} roles`,
       `Languages: ${languages.join(", ") || "N/A"}`,
       recommendedBy ? `Recommended by: <b>${escHtml(recommendedBy)}</b>` : null,
+      `Added by: ${escHtml(senderName)}`,
       ``,
       `Claim: <code>${claimLink}</code>`,
     ].filter(Boolean).join("\n");
