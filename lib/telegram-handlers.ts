@@ -43,6 +43,9 @@ const SECTORS = [
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
 
+// Pending follow-up questions for CV ingest (chatId:messageId → profileId + missing fields)
+const pendingIngestFollowups = new Map<string, { profileId: string; missing: string[] }>();
+
 // ---------------------------------------------------------------------------
 // Markdown helpers
 // ---------------------------------------------------------------------------
@@ -379,6 +382,36 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
 
     await bot.sendMessage(chatId, summary, replyOpts);
 
+    // Ask follow-up questions for missing fields
+    const missing: string[] = [];
+    if (!personal.email) missing.push("Email");
+    if (!personal.phone) missing.push("Phone");
+    if (!recommendedBy) missing.push("Recommended by");
+    missing.push("Gender"); // Always ask — can't reliably detect from CV
+
+    if (missing.length > 0 && profileId) {
+      const followUp = [
+        `<b>Missing info for ${escHtml(personal.full_name || profile.name)}:</b>`,
+        ``,
+        `Please reply to this message with the following (one per line):`,
+        ...missing.map((f, i) => `${i + 1}. ${f}: ...`),
+        ``,
+        `<i>Example:</i>`,
+        ...missing.map((f) => {
+          if (f === "Email") return `<code>Email: name@example.com</code>`;
+          if (f === "Phone") return `<code>Phone: +251911234567</code>`;
+          if (f === "Recommended by") return `<code>Recommended by: Mussie Tsegaye</code>`;
+          if (f === "Gender") return `<code>Gender: Male</code> or <code>Female</code>`;
+          return "";
+        }),
+      ].filter(Boolean).join("\n");
+
+      const followUpMsg = await bot.sendMessage(chatId, followUp, { ...replyOpts, reply_to_message_id: undefined });
+
+      // Store profile ID in a pending map so we can update when they reply
+      pendingIngestFollowups.set(`${chatId}:${followUpMsg.message_id}`, { profileId, missing });
+    }
+
     // Track event
     const { trackEvent } = await import("@/lib/logger");
     trackEvent({ event: "cv_ingested", profile_id: profileId || undefined, metadata: { source: "telegram_group", name: profile.name, score: cvScore, sender: senderName } });
@@ -389,6 +422,72 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
 
     const { logException } = await import("@/lib/logger");
     logException("telegram-ingest", err, { fileName, sender: senderName });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Handle follow-up replies to ingest questions
+// ---------------------------------------------------------------------------
+
+async function handleIngestFollowupReply(
+  bot: TelegramBot,
+  msg: Message,
+  pending: { profileId: string; missing: string[] }
+) {
+  const chatId = msg.chat.id;
+  const threadId = msg.message_thread_id;
+  const replyOpts: Record<string, unknown> = { parse_mode: "HTML" };
+  if (threadId) replyOpts.message_thread_id = threadId;
+
+  try {
+    const text = (msg.text || "").trim();
+    const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+
+    const update: Record<string, unknown> = {};
+    const filled: string[] = [];
+
+    for (const line of lines) {
+      const emailMatch = line.match(/^(?:email|e-?mail)[:\s]+(.+)/i);
+      if (emailMatch) { update.email = emailMatch[1].trim(); filled.push("Email"); continue; }
+
+      const phoneMatch = line.match(/^(?:phone|tel|mobile|cell)[:\s]+(.+)/i);
+      if (phoneMatch) { update.phone = phoneMatch[1].trim(); filled.push("Phone"); continue; }
+
+      const recMatch = line.match(/^(?:recommended|rec|ref|referred)(?:\s+by)?[:\s]+(.+)/i);
+      if (recMatch) { update.recommended_by = recMatch[1].trim(); filled.push("Recommended by"); continue; }
+
+      const genderMatch = line.match(/^(?:gender|sex)[:\s]+(.+)/i);
+      if (genderMatch) {
+        const g = genderMatch[1].trim().toLowerCase();
+        update.gender = g.startsWith("m") ? "male" : g.startsWith("f") ? "female" : g;
+        filled.push("Gender");
+        continue;
+      }
+
+      // Try to match single values like "Male" or "+251..."
+      if (/^(?:male|female)$/i.test(line)) { update.gender = line.toLowerCase(); filled.push("Gender"); continue; }
+      if (/^\+?\d[\d\s-]{7,}$/.test(line)) { update.phone = line; filled.push("Phone"); continue; }
+      if (line.includes("@") && line.includes(".")) { update.email = line; filled.push("Email"); continue; }
+    }
+
+    if (Object.keys(update).length > 0) {
+      const { createClient } = await import("@supabase/supabase-js");
+      const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+      await sb.from("profiles").update(update).eq("id", pending.profileId);
+
+      await bot.sendMessage(chatId, `<b>Updated:</b> ${filled.join(", ")}`, replyOpts);
+
+      // Remove from pending if all fields filled
+      const remaining = pending.missing.filter(m => !filled.includes(m));
+      if (remaining.length === 0) {
+        const replyKey = `${chatId}:${msg.reply_to_message?.message_id}`;
+        pendingIngestFollowups.delete(replyKey);
+      }
+    } else {
+      await bot.sendMessage(chatId, `<i>Could not parse. Please use format:</i>\n<code>Email: name@example.com\nPhone: +251...\nGender: Male\nRecommended by: Name</code>`, replyOpts);
+    }
+  } catch (err: any) {
+    console.error("[ingest-followup]", err.message);
   }
 }
 
@@ -947,6 +1046,16 @@ export async function handleUpdate(
       }
       await handleDocument(bot, msg);
       return;
+    }
+
+    // Handle replies to ingest follow-up questions
+    if (msg.reply_to_message && msg.text) {
+      const replyKey = `${msg.chat.id}:${msg.reply_to_message.message_id}`;
+      const pending = pendingIngestFollowups.get(replyKey);
+      if (pending) {
+        await handleIngestFollowupReply(bot, msg, pending);
+        return;
+      }
     }
 
     // Handle text commands
