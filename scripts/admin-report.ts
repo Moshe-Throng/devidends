@@ -79,25 +79,64 @@ async function main() {
     .map(([k, v]) => `  · ${k}: ${v}`)
     .join("\n") || "  None";
 
+  // --- Profile breakdown ---
+  const { data: allProfiles } = await sb.from("profiles").select("profile_type, source, cv_score, claimed_at, cv_structured_data");
+  const byType: Record<string, number> = {};
+  const bySource: Record<string, number> = {};
+  let withCv = 0, withScore = 0, totalClaimed = 0;
+  const scores: number[] = [];
+  for (const p of (allProfiles || [])) {
+    byType[p.profile_type || "Unknown"] = (byType[p.profile_type || "Unknown"] || 0) + 1;
+    bySource[p.source || "unknown"] = (bySource[p.source || "unknown"] || 0) + 1;
+    if (p.cv_structured_data) withCv++;
+    if (p.cv_score != null) { withScore++; scores.push(p.cv_score); }
+    if (p.claimed_at) totalClaimed++;
+  }
+  const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0;
+  const topScore = scores.length > 0 ? Math.max(...scores) : 0;
+
+  // --- Opportunity sources ---
+  const { data: oppsByDomain } = await sb.from("opportunities").select("source_domain").eq("is_active", true);
+  const domainCounts: Record<string, number> = {};
+  for (const o of (oppsByDomain || [])) domainCounts[o.source_domain] = (domainCounts[o.source_domain] || 0) + 1;
+  const topSources = Object.entries(domainCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+  // --- Build report ---
+  const typeSummary = Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(" · ");
+  const sourceSummary = Object.entries(bySource).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(" · ");
+
   const report = [
     `<b>📊 Devidends ${period} Report</b>`,
     `<i>${now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })} · ${now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })} UTC</i>`,
     ``,
-    `<b>Database</b>`,
-    `  Profiles: ${totalProfiles}`,
-    `  Active opportunities: ${activeOpps}`,
-    `  Subscribers: ${totalSubs}`,
+    `<b>━━━ Database ━━━</b>`,
+    `👤 Profiles: <b>${totalProfiles}</b> (${withCv} with CV, ${totalClaimed} claimed)`,
+    `💼 Opportunities: <b>${activeOpps}</b> active`,
+    `🔔 Subscribers: <b>${totalSubs}</b>`,
     ``,
-    `<b>Last 12 hours</b>`,
-    `  New profiles: ${(newProfiles || []).length}`,
-    `  Claims: ${(claims || []).length}`,
-    `  Errors: ${(errors || []).length}`,
-    `  Events: ${(events || []).length}`,
+    `<b>━━━ Profile Breakdown ━━━</b>`,
+    `By type: ${typeSummary}`,
+    `By source: ${sourceSummary}`,
+    `Avg score: <b>${avgScore}/100</b> (best: ${topScore})`,
     ``,
-    ...(newProfiles && newProfiles.length > 0 ? [`<b>New Profiles</b>`, newProfilesList, ``] : []),
+    `<b>━━━ Top Sources ━━━</b>`,
+    ...topSources.map(([d, c]) => `  ${d}: ${c}`),
+    ``,
+    `<b>━━━ Last 12h Activity ━━━</b>`,
+    `  New profiles: <b>${(newProfiles || []).length}</b>`,
+    `  Claims: <b>${(claims || []).length}</b>`,
+    `  Errors: <b>${(errors || []).length}</b>`,
+    `  Events: <b>${(events || []).length}</b>`,
+    ``,
+    ...(newProfiles && newProfiles.length > 0 ? [
+      `<b>New Profiles</b>`,
+      newProfilesList,
+      ``,
+    ] : []),
     ...(claims && claims.length > 0 ? [`<b>Claims</b>`, claimsList, ``] : []),
     ...(Object.keys(eventCounts).length > 0 ? [`<b>Events</b>`, eventSummary, ``] : []),
     ...(errors && errors.length > 0 ? [`<b>⚠️ Errors</b>`, errorsList, ``] : []),
+    `<i>Next report in 12 hours</i>`,
   ].join("\n");
 
   // --- Send to admin via Telegram ---
