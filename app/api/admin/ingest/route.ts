@@ -337,6 +337,9 @@ export async function DELETE(req: NextRequest) {
     if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
 
     const sb = getAdmin();
+    // Delete related records first (foreign key constraints)
+    await (sb.from("events") as any).delete().eq("profile_id", id);
+    await (sb.from("cv_scores") as any).delete().eq("profile_id", id);
     const { error } = await sb.from("profiles").delete().eq("id", id);
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
