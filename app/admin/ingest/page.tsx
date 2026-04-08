@@ -567,12 +567,15 @@ function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave:
         admin_notes: adminNotes || null,
       };
       const res = await fetch("/api/admin/ingest", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(update) });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         onSave(update);
         setSaved(true);
         setTimeout(() => { setSaved(false); setEditing(false); }, 1500);
+      } else {
+        alert("Update failed: " + (data.error || "Unknown error"));
       }
-    } catch {} finally { setSaving(false); }
+    } catch (err: any) { alert("Update failed: " + err.message); } finally { setSaving(false); }
   }
 
   const INPUT = "w-full px-2.5 py-1.5 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none";
@@ -856,8 +859,10 @@ function CvDataView({ profileId, cv, onUpdate }: { profileId: string; cv: any; o
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: profileId, cv_structured_data: editCv }),
       });
-      if (res.ok) { onUpdate(editCv); setEditCv(null); }
-    } catch {} finally { setSaving(false); }
+      const data = await res.json();
+      if (data.success) { onUpdate(editCv); setEditCv(null); }
+      else alert("Update failed: " + (data.error || "Unknown"));
+    } catch (err: any) { alert("Update failed: " + err.message); } finally { setSaving(false); }
   }
 
   const data = editCv || cv;
