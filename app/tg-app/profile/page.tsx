@@ -386,6 +386,31 @@ export default function TgAppProfile() {
         </div>
       </div>
 
+      {/* Spacer */}
+      <div className="h-16" />
+
+      {/* Delete — intentionally subtle */}
+      <div className="px-4 pb-8">
+        <button
+          onClick={async () => {
+            if (!confirm("This will permanently delete your profile, CV data, and all associated information. This cannot be undone.")) return;
+            if (!confirm("Are you absolutely sure?")) return;
+            try {
+              const initData = sessionStorage.getItem("tg_init_data");
+              await fetch("/api/profile/delete", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ initData }),
+              });
+              window.location.href = "/tg-app";
+            } catch {}
+          }}
+          className="text-[10px] text-dark-200 hover:text-red-400 transition-colors"
+        >
+          Delete my data
+        </button>
+      </div>
+
     </div>
   );
 }
