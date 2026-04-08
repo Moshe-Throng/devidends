@@ -89,6 +89,29 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Could not extract enough text from file" }, { status: 400 });
     }
 
+    // Save file to Telegram storage (send to bot's saved messages, keep file_id)
+    let cvFileId: string | null = null;
+    try {
+      const botToken = process.env.TELEGRAM_BOT_TOKEN;
+      const adminTgId = "297659579"; // Admin's Telegram ID for file storage
+      if (botToken) {
+        const formData = new FormData();
+        formData.append("chat_id", adminTgId);
+        formData.append("document", new Blob([buffer]), file.name);
+        formData.append("caption", `CV: ${file.name}`);
+        const tgRes = await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+          method: "POST",
+          body: formData,
+        });
+        const tgData = await tgRes.json();
+        if (tgData.ok) {
+          cvFileId = tgData.result.document.file_id;
+        }
+      }
+    } catch {
+      // Non-critical — continue without file storage
+    }
+
     // Extract profile summary fields (name, sectors, donors, etc.)
     const profile = await extractProfileFromCV(cvText);
 
@@ -158,6 +181,7 @@ export async function POST(req: NextRequest) {
       years_of_experience: profile.years_of_experience,
       profile_type: profile.profile_type,
       cv_text: cvText.slice(0, 50000),
+      cv_url: cvFileId ? `tg://${cvFileId}` : null,
       cv_structured_data: cvStructured,
       cv_score: cvScore,
       source: "admin_ingest",

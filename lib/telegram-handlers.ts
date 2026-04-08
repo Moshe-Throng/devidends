@@ -326,6 +326,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       years_of_experience: profile.years_of_experience,
       profile_type: profile.profile_type,
       cv_text: cvText.slice(0, 50000),
+      cv_url: doc.file_id ? `tg://${doc.file_id}` : null,
       cv_structured_data: cvStructured,
       cv_score: cvScore,
       languages: languages,

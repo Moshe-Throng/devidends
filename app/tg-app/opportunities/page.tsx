@@ -91,22 +91,7 @@ export default function TgAppOpportunities() {
     return result;
   }, [opportunities, activeSector, search]);
 
-  // Auto-select user's first sector if profile has sectors
-  useEffect(() => {
-    if (
-      profile?.sectors &&
-      profile.sectors.length > 0 &&
-      activeSector === "All"
-    ) {
-      const firstSector = profile.sectors[0];
-      const matching = SECTOR_CHIPS.find(
-        (s) => s.toLowerCase() === firstSector.toLowerCase().split(" ")[0]
-      );
-      if (matching) {
-        setActiveSector(matching);
-      }
-    }
-  }, [profile, activeSector]);
+  // Show all opportunities by default — user can filter manually
 
   return (
     <div className="pb-6">

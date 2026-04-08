@@ -174,10 +174,29 @@ export async function extractCvData(
 
   let parsed: Record<string, unknown>;
   try {
-    parsed = JSON.parse(cleaned);
+    // Sanitize: fix invalid unicode escapes (\uXXXX where XXXX isn't hex)
+    const sanitized = cleaned
+      .replace(/\\u(?![0-9a-fA-F]{4})/g, "\\\\u")  // escape invalid \u sequences
+      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ""); // strip control chars
+    parsed = JSON.parse(sanitized);
   } catch (parseErr) {
-    console.error("[cv-extractor] JSON parse failed. Raw response:", raw.slice(0, 500));
-    throw new Error("CV extraction produced an invalid response. Please try again or use a different file format.");
+    // Second attempt: extract JSON object between first { and last }
+    try {
+      const first = cleaned.indexOf("{");
+      const last = cleaned.lastIndexOf("}");
+      if (first >= 0 && last > first) {
+        const extracted = cleaned.slice(first, last + 1)
+          .replace(/\\u(?![0-9a-fA-F]{4})/g, "\\\\u")
+          .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, "")
+          .replace(/,\s*}/g, "}").replace(/,\s*]/g, "]");
+        parsed = JSON.parse(extracted);
+      } else {
+        throw parseErr;
+      }
+    } catch {
+      console.error("[cv-extractor] JSON parse failed. Raw:", raw.slice(0, 500));
+      throw new Error("CV extraction produced invalid data. Please try again.");
+    }
   }
 
   const confidence =

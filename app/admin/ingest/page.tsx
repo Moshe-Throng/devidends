@@ -159,10 +159,13 @@ export default function AdminIngestPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         setProfiles((prev) => prev.filter((p) => p.id !== id));
+      } else {
+        setError(`Delete failed: ${data.error || "Unknown"}`);
       }
-    } catch {}
+    } catch (err: any) { setError(`Delete failed: ${err.message}`); }
   }
 
   // Search + filter
@@ -452,21 +455,26 @@ export default function AdminIngestPage() {
                         <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-600 hover:bg-cyan-50 transition-colors cursor-pointer">
                           <Upload className="w-3 h-3" />
                           Re-upload CV
-                          <input type="file" accept=".pdf,.docx,.doc" className="hidden" onChange={async (e) => {
-                            const file = e.target.files?.[0];
+                          <input type="file" accept=".pdf,.docx,.doc" className="hidden" onChange={async (ev) => {
+                            ev.stopPropagation();
+                            const file = ev.target.files?.[0];
                             if (!file) return;
                             const form = new FormData();
                             form.append("cv", file);
+                            // Add metadata from current profile
+                            if (p.recommended_by) form.append("recommended_by", p.recommended_by);
+                            if (p.gender) form.append("gender", p.gender);
                             try {
                               const res = await fetch("/api/admin/ingest", { method: "POST", body: form });
                               const data = await res.json();
                               if (data.success) {
-                                // Delete old, add new
                                 await fetch("/api/admin/ingest", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: p.id }) });
                                 setProfiles(prev => [data.profile, ...prev.filter(x => x.id !== p.id)]);
+                              } else {
+                                setError(`Re-upload failed: ${data.error || "Unknown error"}`);
                               }
-                            } catch {}
-                            e.target.value = "";
+                            } catch (err: any) { setError(`Re-upload failed: ${err.message}`); }
+                            ev.target.value = "";
                           }} />
                         </label>
                         <button
