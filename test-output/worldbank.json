@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-08T06:59:09.139Z",
+    "scraped_at": "2026-04-09T06:33:37.946Z",
     "total_fetched": 47,
     "unique_count": 47,
     "active_count": 7,
@@ -26,7 +26,7 @@
       "project_id": "P180799",
       "bid_reference": "DJ-IGAD-540099-CS-CQS",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:04.992Z"
+      "scraped_at": "2026-04-09T06:33:36.921Z"
     },
     {
       "title": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support",
@@ -43,7 +43,7 @@
       "project_id": "P169943",
       "bid_reference": "ET-MOUDI-529318-CS-QCBS",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:04.993Z"
+      "scraped_at": "2026-04-09T06:33:36.921Z"
     },
     {
       "title": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.",
@@ -60,7 +60,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-536753-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:05.754Z"
+      "scraped_at": "2026-04-09T06:33:37.330Z"
     },
     {
       "title": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.",
@@ -77,7 +77,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-535305-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:05.754Z"
+      "scraped_at": "2026-04-09T06:33:37.330Z"
     },
     {
       "title": "Individual Consultant for Digital Media Specialist",
@@ -94,7 +94,7 @@
       "project_id": "P176303",
       "bid_reference": "ET-MUI-535754-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:04.973Z"
+      "scraped_at": "2026-04-09T06:33:36.898Z"
     },
     {
       "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
@@ -111,7 +111,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:05.754Z"
+      "scraped_at": "2026-04-09T06:33:37.330Z"
     },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
@@ -128,7 +128,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EDRMC-538775-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-08T06:59:05.754Z"
+      "scraped_at": "2026-04-09T06:33:37.330Z"
     }
   ],
   "projects": [
@@ -153,16 +153,6 @@
       "implementing_agency": "Ministry of Finance"
     },
     {
-      "id": "P176303",
-      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
-      "status": "Active",
-      "sector": "",
-      "total_commitment": "300",
-      "approval_date": "2024-03-29T00:00:00Z",
-      "closing_date": "3/31/2029 12:00:00 AM",
-      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
-    },
-    {
       "id": "P181545",
       "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
       "status": "Active",
@@ -171,6 +161,16 @@
       "approval_date": "2024-03-29T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
+    },
+    {
+      "id": "P176303",
+      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
+      "status": "Active",
+      "sector": "",
+      "total_commitment": "300",
+      "approval_date": "2024-03-29T00:00:00Z",
+      "closing_date": "3/31/2029 12:00:00 AM",
+      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
     },
     {
       "id": "P181626",
@@ -213,16 +213,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P179040",
-      "name": "Ethiopia Digital ID for Inclusion and Services Project",
-      "status": "Active",
-      "sector": "ICT Services",
-      "total_commitment": "350",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "1/7/2029 12:00:00 AM",
-      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
-    },
-    {
       "id": "P176255",
       "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
       "status": "Active",
@@ -231,6 +221,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Ethiopian Maritime Affairs Authority"
+    },
+    {
+      "id": "P179040",
+      "name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "status": "Active",
+      "sector": "ICT Services",
+      "total_commitment": "350",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "1/7/2029 12:00:00 AM",
+      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
     }
   ]
 }
