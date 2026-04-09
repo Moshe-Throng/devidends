@@ -1,25 +1,21 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
-  Upload,
   FileText,
   Loader2,
   CheckCircle,
   AlertCircle,
   TrendingUp,
-  X,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import type { CvScoreResult } from "@/lib/types/cv-score";
 
 export default function TgAppScore() {
   const { profile, refreshProfile, loading } = useTelegram();
-  const fileRef = useRef<HTMLInputElement>(null);
-  const [file, setFile] = useState<File | null>(null);
-  const [phase, setPhase] = useState<"upload" | "scoring" | "results">("upload");
+  const [phase, setPhase] = useState<"ready" | "scoring" | "results">("ready");
   const [result, setResult] = useState<CvScoreResult | null>(null);
   const [error, setError] = useState("");
 
@@ -50,19 +46,20 @@ export default function TgAppScore() {
   }
 
   async function handleScore() {
-    if (!file) return;
+    if (!profile?.cv_text) {
+      setError("No CV text found. Please update your CV in the Build CV section first.");
+      return;
+    }
 
     setPhase("scoring");
     setError("");
 
     try {
-      // Send file directly to score API (handles extraction + scoring in one call)
-      const fd = new FormData();
-      fd.append("file", file);
-
+      // Score saved CV text directly (no file upload needed)
       const res = await fetch("/api/cv/score", {
         method: "POST",
-        body: fd,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cv_text: profile.cv_text }),
       });
 
       const json = await res.json();
@@ -78,27 +75,8 @@ export default function TgAppScore() {
       refreshProfile();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
-      setPhase("upload");
+      setPhase("ready");
     }
-  }
-
-  function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0];
-    if (!f) return;
-
-    const ext = f.name.toLowerCase().split(".").pop();
-    if (!["pdf", "docx", "doc", "txt", "rtf"].includes(ext || "")) {
-      setError("Please upload a PDF, DOCX, DOC, or TXT file");
-      return;
-    }
-
-    if (f.size > 10 * 1024 * 1024) {
-      setError("File must be under 10MB");
-      return;
-    }
-
-    setFile(f);
-    setError("");
   }
 
   function dim(name: string): number {
@@ -121,8 +99,8 @@ export default function TgAppScore() {
         </div>
       </div>
 
-      {/* ── Upload Phase ── */}
-      {phase === "upload" && (
+      {/* ── Ready Phase ── */}
+      {phase === "ready" && (
         <div className="px-4 mt-6">
           <div className="text-center mb-6">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mx-auto mb-3">
@@ -132,57 +110,23 @@ export default function TgAppScore() {
               Score Your CV
             </h2>
             <p className="text-sm text-dark-400 mt-1 max-w-xs mx-auto">
-              Upload your CV and get an AI-powered analysis scored
-              against GIZ, World Bank, EU, and UN donor CV standards
+              AI-powered analysis scored against GIZ, World Bank, EU, and UN donor CV standards
             </p>
             <p className="text-[11px] text-dark-300 mt-2 max-w-xs mx-auto">
-              Evaluates structure, donor readiness, experience relevance,
-              keywords, and formatting — not matched against a specific job
+              Evaluates structure, donor readiness, experience relevance, keywords, and formatting
             </p>
           </div>
 
-          {/* File picker */}
-          <input
-            ref={fileRef}
-            type="file"
-            accept=".pdf,.docx,.doc,.txt,.rtf"
-            onChange={handleFileSelect}
-            className="hidden"
-          />
-
-          {!file ? (
-            <button
-              onClick={() => fileRef.current?.click()}
-              className="w-full border-2 border-dashed border-dark-200 rounded-xl py-8 flex flex-col items-center gap-2 hover:border-cyan-400 hover:bg-cyan-50/30 transition-colors"
-            >
-              <Upload className="w-8 h-8 text-dark-300" />
-              <p className="text-sm font-semibold text-dark-600">
-                Tap to upload your CV
+          {/* Saved CV info */}
+          <div className="bg-cyan-50 border border-cyan-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-4">
+            <CheckCircle className="w-5 h-5 text-cyan-600 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-dark-900">
+                {profile?.name || "Your"} CV
               </p>
-              <p className="text-xs text-dark-400">PDF, DOCX, DOC, or TXT — up to 10MB</p>
-            </button>
-          ) : (
-            <div className="bg-cyan-50 border border-cyan-200 rounded-xl px-4 py-3 flex items-center gap-3">
-              <FileText className="w-5 h-5 text-cyan-600 shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-dark-900 truncate">
-                  {file.name}
-                </p>
-                <p className="text-xs text-dark-400">
-                  {(file.size / 1024).toFixed(0)} KB
-                </p>
-              </div>
-              <button
-                onClick={() => {
-                  setFile(null);
-                  if (fileRef.current) fileRef.current.value = "";
-                }}
-                className="text-dark-400 hover:text-dark-600"
-              >
-                <X className="w-4 h-4" />
-              </button>
+              <p className="text-xs text-dark-400">Saved in your profile</p>
             </div>
-          )}
+          </div>
 
           {error && (
             <div className="mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2 flex items-center gap-2">
@@ -191,14 +135,16 @@ export default function TgAppScore() {
             </div>
           )}
 
-          {file && (
-            <button
-              onClick={handleScore}
-              className="w-full mt-4 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
-            >
-              Score My CV
-            </button>
-          )}
+          <button
+            onClick={handleScore}
+            className="w-full mt-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+          >
+            Score My CV
+          </button>
+
+          <p className="text-center text-[11px] text-dark-300 mt-2">
+            Need to update your CV? <Link href="/tg-app/cv-builder" className="text-cyan-500 font-medium">Edit in CV Builder</Link>
+          </p>
 
           {/* Previous score */}
           {profile?.cv_score != null && (
@@ -338,14 +284,12 @@ export default function TgAppScore() {
           {/* Score again */}
           <button
             onClick={() => {
-              setPhase("upload");
-              setFile(null);
+              setPhase("ready");
               setResult(null);
-              if (fileRef.current) fileRef.current.value = "";
             }}
             className="w-full mt-5 py-3 rounded-xl border-2 border-cyan-500 text-cyan-600 font-bold text-sm hover:bg-cyan-50 transition-colors"
           >
-            Score Another CV
+            Score Again
           </button>
         </div>
       )}

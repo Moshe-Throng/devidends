@@ -48,24 +48,31 @@ export async function GET(req: NextRequest) {
 
   const count = profile.referral_count || 0;
 
-  // Referral perks — cosmetic only, no feature gating
-  // Seniors don't want friction; value should drive sharing, not locks
   const rewards = {
-    badge_contributor: count >= 3,    // "Contributor" badge on profile
-    badge_ambassador: count >= 10,    // "Ambassador" badge
-    priority_recruiter: count >= 5,   // Priority in future recruiter search
-    analytics_access: count >= 10,    // See who viewed your profile (future)
+    badge_contributor: count >= 3,
+    badge_ambassador: count >= 10,
+    priority_recruiter: count >= 5,
+    analytics_access: count >= 10,
+    cv_compare: count >= 1,           // "Compare CV to Job" unlocked at 1 referral
   };
 
-  // All templates are free for everyone
-  const allTemplates = ["europass", "generic-professional", "au-standard", "wb-standard", "un-php", "modern-executive"];
-  const unlockedTemplates = allTemplates;
+  // Free templates: europass + generic-professional
+  // Gated templates: au-standard, wb-standard, un-php, modern-executive (3 referrals)
+  const freeTemplates = ["europass", "generic-professional"];
+  const gatedTemplates = ["au-standard", "wb-standard", "un-php", "modern-executive"];
+  const GATE_THRESHOLD = 3;
+
+  const unlockedTemplates = count >= GATE_THRESHOLD
+    ? [...freeTemplates, ...gatedTemplates]
+    : freeTemplates;
 
   return NextResponse.json({
     referral_code: refCode,
     referral_count: count,
+    referrals_needed_for_templates: Math.max(0, GATE_THRESHOLD - count),
     rewards,
     unlocked_templates: unlockedTemplates,
+    all_templates: [...freeTemplates, ...gatedTemplates],
     share_url: `https://devidends.net/score?ref=${refCode}`,
     share_text: `I scored my CV on Devidends — the AI-powered platform for development professionals. Score yours free: https://devidends.net/score?ref=${refCode}`,
   });

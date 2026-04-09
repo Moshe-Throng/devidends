@@ -169,6 +169,13 @@ export function TelegramProvider({ children }: { children: ReactNode }) {
         if (data.profile) {
           setProfile(data.profile);
 
+          // Track mini app opened
+          fetch("/api/events", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ event: "mini_app_opened", telegram_id: String(data.user?.id), metadata: { path: window.location.pathname } }),
+          }).catch(() => {});
+
           // Process start_param (referral or claim)
           try {
             const refFromUrl = new URLSearchParams(window.location.search).get("ref");

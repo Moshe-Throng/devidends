@@ -498,6 +498,11 @@ async function handleIngestFollowupReply(
 
 async function handleStart(bot: TelegramBot, msg: Message) {
   const chatId = msg.chat.id;
+
+  // Track bot_started event
+  const { trackEvent } = await import("@/lib/logger");
+  trackEvent({ event: "bot_started", telegram_id: String(chatId), metadata: { username: msg.from?.username, first_name: msg.from?.first_name } });
+
   const text = [
     "*Welcome to Devidends\\!*",
     "",
@@ -1018,6 +1023,34 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
 }
 
 // ---------------------------------------------------------------------------
+// AI Companion — free-text handler
+// ---------------------------------------------------------------------------
+
+async function handleCompanionMessage(bot: TelegramBot, msg: Message) {
+  const chatId = msg.chat.id;
+  const text = (msg.text || "").trim();
+  if (!text) return;
+
+  try {
+    // Send typing indicator
+    await bot.sendChatAction(chatId, "typing");
+
+    const { handleFreeText } = await import("@/lib/companion");
+    const reply = await handleFreeText(String(chatId), text);
+
+    const sendOpts: Record<string, unknown> = {};
+    if (reply.buttons && reply.buttons.length > 0) {
+      sendOpts.reply_markup = { inline_keyboard: reply.buttons };
+    }
+
+    await bot.sendMessage(chatId, reply.text, sendOpts);
+  } catch (err) {
+    console.error("[telegram] companion error:", err);
+    // Don't send error to user for companion failures — just silently fail
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main update dispatcher
 // ---------------------------------------------------------------------------
 
@@ -1066,6 +1099,15 @@ export async function handleUpdate(
       const payload = text.replace(/^\/start\s*/, "").trim();
       if (payload.startsWith("claim_")) {
         await handleClaimStart(bot, msg, payload.slice(6));
+      } else if (payload === "report") {
+        // User tapped "Contact our team" from companion
+        chatState.set(msg.chat.id, "awaiting_report");
+        try {
+          await bot.sendMessage(
+            msg.chat.id,
+            "Please describe the issue you're experiencing and our team will look into it. Type your message below:",
+          );
+        } catch {}
       } else {
         await handleStart(bot, msg);
       }
@@ -1090,8 +1132,33 @@ export async function handleUpdate(
       } catch (err) {
         console.error("[telegram] unknown-command error:", err);
       }
+    } else if (text.trim() && msg.chat.type === "private") {
+      // Check if user is submitting a report
+      if (chatState.get(msg.chat.id) === "awaiting_report") {
+        chatState.delete(msg.chat.id);
+        const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ");
+        const username = msg.from?.username ? `@${msg.from.username}` : "";
+        // Forward to admin
+        const ADMIN_TG = "297659579";
+        const reportText = `🚩 User Report\nFrom: ${senderName} ${username} (${msg.chat.id})\n\n${text}`;
+        try {
+          const token = process.env.TELEGRAM_BOT_TOKEN;
+          if (token) {
+            await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ chat_id: ADMIN_TG, text: reportText }),
+            });
+          }
+          await bot.sendMessage(msg.chat.id, "Thanks for letting us know. Our team has been notified and will look into it.");
+        } catch {
+          await bot.sendMessage(msg.chat.id, "Thanks — your feedback has been noted.");
+        }
+        return;
+      }
+      // Free-text in private chat → AI companion
+      await handleCompanionMessage(bot, msg);
     }
-    // Non-command text messages are ignored
   } catch (err) {
     console.error("[telegram] handleUpdate error:", err);
   }

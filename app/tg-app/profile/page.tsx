@@ -328,23 +328,25 @@ export default function TgAppProfile() {
           display={profile.sectors}
         />
 
-        {/* Countries */}
-        <ChipSection
-          icon={MapPin}
-          title="Countries"
-          color="neutral"
-          editing={editing}
-          options={[...COUNTRIES]}
-          selected={selectedCountries}
-          onToggle={(s) => {
-            setSelectedCountries((prev) => {
-              const next = new Set(prev);
-              next.has(s) ? next.delete(s) : next.add(s);
-              return next;
-            });
-          }}
-          display={profile.countries}
-        />
+        {/* Countries — read-only from CV, not editable here */}
+        {profile.countries && profile.countries.length > 0 && (
+          <div className="bg-white border border-dark-100 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2.5">
+              <div className="w-6 h-6 rounded-md bg-dark-50 flex items-center justify-center">
+                <MapPin className="w-3.5 h-3.5 text-dark-500" />
+              </div>
+              <h3 className="text-xs font-bold text-dark-600 uppercase tracking-wider">Countries</h3>
+              <span className="text-[10px] text-dark-300 ml-auto">from CV</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {profile.countries.map((c: string) => (
+                <span key={c} className="px-2.5 py-1 rounded-full text-xs font-semibold bg-dark-50 text-dark-700 border border-dark-200">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Years of experience */}
         <div className="bg-white border border-dark-100 rounded-xl px-4 py-3">
@@ -358,32 +360,6 @@ export default function TgAppProfile() {
           />
         </div>
 
-        {/* LinkedIn */}
-        <div className="bg-white border border-dark-100 rounded-xl p-4">
-          <div className="flex items-center gap-2 mb-2.5">
-            <Linkedin className="w-4 h-4 text-[#0A66C2]" />
-            <h3 className="text-xs font-bold text-dark-600 uppercase tracking-wider">LinkedIn</h3>
-          </div>
-          {editing ? (
-            <input
-              value={linkedinUrl}
-              onChange={(e) => setLinkedinUrl(e.target.value)}
-              placeholder="https://linkedin.com/in/yourname"
-              className="w-full bg-dark-50 border border-dark-200 rounded-lg px-3 py-2 text-sm text-dark-800 placeholder-dark-400 focus:outline-none focus:border-cyan-400"
-            />
-          ) : profile.linkedin_url ? (
-            <a
-              href={profile.linkedin_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-cyan-600"
-            >
-              View Profile <ChevronRight className="w-4 h-4" />
-            </a>
-          ) : (
-            <p className="text-xs text-dark-400 italic">Add your LinkedIn URL</p>
-          )}
-        </div>
       </div>
 
       {/* Spacer */}
@@ -450,18 +426,18 @@ function ChipSection({
         {editing && <span className="text-[10px] text-dark-400 ml-auto">{selected.size} selected</span>}
       </div>
       {editing ? (
-        <div className="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto">
+        <div className="flex flex-wrap gap-1.5">
           {options.map((opt) => {
             const isActive = selected.has(opt);
             return (
               <button
                 key={opt}
                 onClick={() => onToggle(opt)}
-                className={`px-2.5 py-1 rounded-full text-[11px] font-semibold border transition-colors ${
-                  isActive ? activeBg : "bg-white text-dark-500 border-dark-100 hover:border-dark-200"
+                className={`px-2.5 py-1.5 rounded-full text-[11px] font-semibold border transition-all ${
+                  isActive ? `${activeBg} ring-1 ring-offset-1 ${color === "cyan" ? "ring-cyan-400" : color === "teal" ? "ring-teal-400" : "ring-dark-300"}` : "bg-white text-dark-500 border-dark-100 hover:border-dark-200"
                 }`}
               >
-                {opt}
+                {isActive && "✓ "}{opt}
               </button>
             );
           })}

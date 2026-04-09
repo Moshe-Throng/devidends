@@ -28,6 +28,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Bot not configured" }, { status: 500 });
     }
 
+    // Referral gating: au-standard, wb-standard, un-php, modern-executive require 3 referrals
+    const gatedTemplates: CvTemplate[] = ["au-standard", "wb-standard", "un-php", "modern-executive"];
+    if (gatedTemplates.includes(template)) {
+      const { createClient } = await import("@supabase/supabase-js");
+      const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+      const { data: profile } = await sb
+        .from("profiles")
+        .select("referral_count")
+        .eq("telegram_id", String(telegramUserId))
+        .maybeSingle();
+      if (!profile || (profile.referral_count || 0) < 3) {
+        return NextResponse.json({ error: "This template requires 3 referrals to unlock. Share Devidends with colleagues to access it." }, { status: 403 });
+      }
+    }
+
     // Fetch photo for Executive template if available
     let photoBuffer: Buffer | undefined;
     if (template === "modern-executive" && body.photo_file_id) {

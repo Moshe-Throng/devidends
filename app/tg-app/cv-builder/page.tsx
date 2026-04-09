@@ -28,6 +28,8 @@ import {
   Sparkles,
   BarChart3,
   TrendingUp,
+  Lock,
+  Share2,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
 import type {
@@ -78,13 +80,16 @@ const EXTRACT_STEPS = [
   "Finalizing...",
 ];
 
+const FREE_TEMPLATES = new Set<CvTemplate>(["europass", "generic-professional"]);
+const REFERRAL_GATE = 3; // referrals needed for gated templates
+
 const TEMPLATES: { id: CvTemplate; label: string; desc: string }[] = [
   { id: "europass", label: "Europass", desc: "EU / EuropeAid standard" },
+  { id: "generic-professional", label: "Professional", desc: "General / Corporate" },
   { id: "au-standard", label: "African Union", desc: "AU / AfDB / AUDA-NEPAD" },
   { id: "wb-standard", label: "World Bank", desc: "WB / IFC consulting" },
   { id: "un-php", label: "UN PHP", desc: "UN Personal History Profile" },
-  { id: "generic-professional", label: "Professional", desc: "General / Corporate" },
-  { id: "modern-executive", label: "Modern Executive ✦", desc: "Premium two-column with photo" },
+  { id: "modern-executive", label: "Modern Executive", desc: "Premium two-column with photo" },
 ];
 
 const SECTIONS = [
@@ -129,7 +134,10 @@ export default function TgCvBuilder() {
   const [openSections, setOpenSections] = useState<Set<string>>(
     new Set(["personal", "summary"])
   );
-  const [selectedTemplate, setSelectedTemplate] = useState<CvTemplate>("wb-standard");
+  const [selectedTemplate, setSelectedTemplate] = useState<CvTemplate>("europass");
+  const [referralCount, setReferralCount] = useState(0);
+  const [referralCode, setReferralCode] = useState("");
+  const [photoError, setPhotoError] = useState(false);
   // mode="telegram" → sent to user's Telegram chat (most reliable)
   // mode="url"      → signed URL from Supabase Storage (fallback)
   // mode="base64"   → browser blob download (web fallback)
@@ -156,6 +164,20 @@ export default function TgCvBuilder() {
 
   const fileRef = useRef<HTMLInputElement>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  /* ─── Fetch referral data ──────────────────────── */
+  useEffect(() => {
+    if (!tgUser?.id) return;
+    fetch(`/api/referral?telegram_id=${tgUser.id}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data) {
+          setReferralCount(data.referral_count || 0);
+          setReferralCode(data.referral_code || "");
+        }
+      })
+      .catch(() => {});
+  }, [tgUser?.id]);
 
   /* ─── Auto-load from profile on mount ──────────── */
   useEffect(() => {
@@ -358,9 +380,9 @@ export default function TgCvBuilder() {
   async function handleGenerate() {
     if (isProcessing) return;
 
-    // Modern Executive requires a photo — redirect to profile if missing
+    // Modern Executive requires a photo
     if (selectedTemplate === "modern-executive" && !(profile as any)?.photo_file_id) {
-      setError("The Modern Executive template requires a profile photo. Please upload one in your Profile first.");
+      setPhotoError(true);
       return;
     }
 
@@ -393,7 +415,7 @@ export default function TgCvBuilder() {
         const res = await fetch("/api/cv/generate-docx", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ cv_data: cvData, template: selectedTemplate, photo_file_id: (profile as any)?.photo_file_id || undefined }),
+          body: JSON.stringify({ cv_data: cvData, template: selectedTemplate, photo_file_id: (profile as any)?.photo_file_id || undefined, telegram_id: tgUser?.id ? String(tgUser.id) : undefined }),
         });
         const json = await res.json();
         if (json.error || !json.success) throw new Error(json.error || "Generation failed");
@@ -719,11 +741,6 @@ export default function TgCvBuilder() {
               <X className="w-3.5 h-3.5" />
             </button>
           </div>
-          {error.includes("profile photo") && (
-            <Link href="/tg-app/profile" className="mt-2 block text-center text-xs font-bold text-cyan-600 bg-cyan-50 rounded-lg py-2">
-              Go to Profile to Upload Photo
-            </Link>
-          )}
         </div>
       )}
 
@@ -1530,34 +1547,65 @@ export default function TgCvBuilder() {
           <div>
             <h3 className="text-sm font-bold text-dark-900 mb-2">Export as</h3>
             <div className="space-y-2">
-              {TEMPLATES.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setSelectedTemplate(t.id)}
-                  className={`w-full text-left p-3.5 rounded-xl border-2 transition-colors ${
-                    selectedTemplate === t.id
-                      ? "border-cyan-500 bg-cyan-50/50"
-                      : "border-dark-100 bg-white"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                      selectedTemplate === t.id
-                        ? "border-cyan-500 bg-cyan-500"
-                        : "border-dark-200"
-                    }`}>
-                      {selectedTemplate === t.id && (
-                        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              {TEMPLATES.map((t) => {
+                const isLocked = !FREE_TEMPLATES.has(t.id) && referralCount < REFERRAL_GATE;
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => { if (!isLocked) { setSelectedTemplate(t.id); setPhotoError(false); } }}
+                    className={`w-full text-left p-3.5 rounded-xl border-2 transition-colors ${
+                      isLocked
+                        ? "border-dark-100 bg-dark-50 opacity-70"
+                        : selectedTemplate === t.id
+                          ? "border-cyan-500 bg-cyan-50/50"
+                          : "border-dark-100 bg-white"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {isLocked ? (
+                        <Lock className="w-4 h-4 text-dark-300 shrink-0" />
+                      ) : (
+                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
+                          selectedTemplate === t.id
+                            ? "border-cyan-500 bg-cyan-500"
+                            : "border-dark-200"
+                        }`}>
+                          {selectedTemplate === t.id && (
+                            <div className="w-1.5 h-1.5 rounded-full bg-white" />
+                          )}
+                        </div>
                       )}
+                      <div className="flex-1">
+                        <p className="text-sm font-bold text-dark-900">{t.label}</p>
+                        <p className="text-[11px] text-dark-400">
+                          {isLocked ? `Refer ${REFERRAL_GATE - referralCount} more to unlock` : t.desc}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-dark-900">{t.label}</p>
-                      <p className="text-[11px] text-dark-400">{t.desc}</p>
-                    </div>
-                  </div>
-                </button>
-              ))}
+                    {photoError && t.id === "modern-executive" && selectedTemplate === "modern-executive" && (
+                      <div className="mt-2 flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+                        <AlertCircle className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                        <p className="text-[11px] text-amber-700 flex-1">No profile photo uploaded.</p>
+                        <Link href="/tg-app/profile" className="text-[11px] font-bold text-cyan-600">Add photo</Link>
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
             </div>
+            {referralCount < REFERRAL_GATE && (
+              <button
+                onClick={() => {
+                  const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(`https://devidends.net/score?ref=${referralCode}`)}&text=${encodeURIComponent("Score your CV for international development consulting — free AI feedback.")}`;
+                  window.open(shareUrl, "_blank");
+                  fetch("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ event: "referral_shared", telegram_id: tgUser?.id ? String(tgUser.id) : undefined, metadata: { source: "cv_builder_gate" } }) }).catch(() => {});
+                }}
+                className="w-full mt-2 py-2 rounded-lg bg-dark-50 text-dark-500 text-xs font-medium flex items-center justify-center gap-1.5"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                Share to unlock {REFERRAL_GATE} templates ({referralCount}/{REFERRAL_GATE})
+              </button>
+            )}
           </div>
 
           <button

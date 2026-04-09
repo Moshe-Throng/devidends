@@ -334,6 +334,10 @@ export async function notifySubscribersDaily(
       });
 
       notified++;
+
+      // Track digest sent event
+      const { trackEvent } = await import("@/lib/logger");
+      trackEvent({ event: "digest_sent", telegram_id: String(sub.telegram_id), metadata: { jobs_count: matchedJobs.length } });
     } catch (err) {
       console.error(`[telegram-broadcast] Failed ${sub.telegram_id}:`, err);
       failed++;

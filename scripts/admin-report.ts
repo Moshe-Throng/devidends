@@ -101,6 +101,30 @@ async function main() {
   for (const o of (oppsByDomain || [])) domainCounts[o.source_domain] = (domainCounts[o.source_domain] || 0) + 1;
   const topSources = Object.entries(domainCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
+  // --- Crawler health: description coverage ---
+  const { data: allOpps } = await sb.from("opportunities").select("source_domain, description").eq("is_active", true);
+  const crawlerHealth: { source: string; total: number; withDesc: number; empty: number }[] = [];
+  const healthMap: Record<string, { total: number; withDesc: number }> = {};
+  let totalEmpty = 0;
+  for (const o of (allOpps || [])) {
+    const src = o.source_domain || "unknown";
+    if (!healthMap[src]) healthMap[src] = { total: 0, withDesc: 0 };
+    healthMap[src].total++;
+    const desc = (o.description || "").trim();
+    if (desc.length >= 100) {
+      healthMap[src].withDesc++;
+    } else {
+      totalEmpty++;
+    }
+  }
+  for (const [src, h] of Object.entries(healthMap)) {
+    crawlerHealth.push({ source: src, total: h.total, withDesc: h.withDesc, empty: h.total - h.withDesc });
+  }
+  crawlerHealth.sort((a, b) => b.empty - a.empty);
+  const healthPct = (allOpps || []).length > 0
+    ? Math.round(((allOpps!.length - totalEmpty) / allOpps!.length) * 100)
+    : 0;
+
   // --- Build report ---
   const typeSummary = Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(" · ");
   const sourceSummary = Object.entries(bySource).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}: ${v}`).join(" · ");
@@ -121,6 +145,15 @@ async function main() {
     ``,
     `<b>━━━ Top Sources ━━━</b>`,
     ...topSources.map(([d, c]) => `  ${d}: ${c}`),
+    ``,
+    `<b>━━━ Crawler Health ━━━</b>`,
+    `Description coverage: <b>${healthPct}%</b> (${(allOpps || []).length - totalEmpty}/${(allOpps || []).length})`,
+    ...(totalEmpty > 0 ? [
+      `Missing descriptions:`,
+      ...crawlerHealth.filter(h => h.empty > 0).slice(0, 6).map(h =>
+        `  ${h.source}: ${h.empty}/${h.total} empty`
+      ),
+    ] : [`  All sources healthy ✓`]),
     ``,
     `<b>━━━ Last 12h Activity ━━━</b>`,
     `  New profiles: <b>${(newProfiles || []).length}</b>`,

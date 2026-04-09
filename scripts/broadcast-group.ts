@@ -42,13 +42,24 @@ async function main() {
   const opportunities = Array.isArray(raw) ? raw : [];
   console.log(`Loaded ${opportunities.length} opportunities`);
 
-  // Filter to today's newly scraped items (within last 24h)
-  const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
+  // Find truly NEW jobs by comparing against yesterday's snapshot
+  const snapshotPath = path.join(__dirname, "..", "test-output", "_last_broadcast_urls.json");
+  let lastUrls = new Set<string>();
+  try {
+    if (fs.existsSync(snapshotPath)) {
+      lastUrls = new Set(JSON.parse(fs.readFileSync(snapshotPath, "utf-8")));
+    }
+  } catch {}
+
+  const allUrls = opportunities.map((o: any) => o.source_url || o.url).filter(Boolean);
   const recent = opportunities.filter((o: any) => {
-    if (!o.scraped_at) return true; // include if no timestamp
-    return new Date(o.scraped_at).getTime() > dayAgo;
+    const url = o.source_url || o.url;
+    return url && !lastUrls.has(url);
   });
-  console.log(`${recent.length} opportunities scraped in last 24h`);
+
+  // Save today's URLs for tomorrow's comparison
+  fs.writeFileSync(snapshotPath, JSON.stringify(allUrls));
+  console.log(`${recent.length} new opportunities (not in yesterday's digest, out of ${opportunities.length} total)`);
 
   // Load news articles
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");
@@ -62,8 +73,21 @@ async function main() {
     }
   }
 
+  // Also dedup news against yesterday
+  const newsSnapshotPath = path.join(__dirname, "..", "test-output", "_last_broadcast_news.json");
+  let lastNewsUrls = new Set<string>();
+  try {
+    if (fs.existsSync(newsSnapshotPath)) {
+      lastNewsUrls = new Set(JSON.parse(fs.readFileSync(newsSnapshotPath, "utf-8")));
+    }
+  } catch {}
+  const newNews = newsArticles.filter((a) => !lastNewsUrls.has(a.url));
+  fs.writeFileSync(newsSnapshotPath, JSON.stringify(newsArticles.map((a) => a.url)));
+  console.log(`${newNews.length} new news articles (not in yesterday's digest)`);
+  newsArticles = newNews;
+
   if (recent.length === 0 && newsArticles.length === 0) {
-    console.log("No opportunities or news to broadcast.");
+    console.log("No new opportunities or news to broadcast. Skipping.");
     return;
   }
 

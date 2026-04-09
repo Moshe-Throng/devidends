@@ -42,6 +42,24 @@ export async function POST(req: NextRequest) {
       return errorJson(`Invalid template. Choose from: ${validTemplates.join(", ")}`);
     }
 
+    // Referral gating: au-standard, wb-standard, un-php, modern-executive require 3 referrals
+    const gatedTemplates: CvTemplate[] = ["au-standard", "wb-standard", "un-php", "modern-executive"];
+    if (gatedTemplates.includes(template)) {
+      const telegramId = body.telegram_id as string | undefined;
+      if (telegramId) {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+        const { data: profile } = await sb
+          .from("profiles")
+          .select("referral_count")
+          .eq("telegram_id", telegramId)
+          .maybeSingle();
+        if (!profile || (profile.referral_count || 0) < 3) {
+          return errorJson("This template requires 3 referrals to unlock. Share Devidends with colleagues to access it.", 403);
+        }
+      }
+    }
+
     // For Modern Executive: fetch profile photo from Telegram if available
     let photoBuffer: Buffer | undefined;
     if (template === "modern-executive" && body.photo_file_id) {

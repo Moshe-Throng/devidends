@@ -292,7 +292,36 @@ export async function updateTelegramProfile(
     const p = cv.personal || {};
     if (p.nationality && !safeUpdates.nationality) safeUpdates.nationality = p.nationality;
     if (p.phone && !safeUpdates.phone) safeUpdates.phone = p.phone;
-    if (p.email && !safeUpdates.email) safeUpdates.email = p.email;
+    if (p.email && !safeUpdates.email) {
+      safeUpdates.email = p.email;
+      // Trigger email dedup for CV-extracted email too
+      const { data: emailDupe } = await supabase
+        .from("profiles")
+        .select("id, name")
+        .eq("email", p.email)
+        .neq("telegram_id", telegramId)
+        .maybeSingle();
+      if (emailDupe) {
+        // Merge: absorb the dupe's data into this profile, delete the dupe
+        const { data: dupeProfile } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", emailDupe.id)
+          .single();
+        if (dupeProfile) {
+          for (const key of ["cv_structured_data", "cv_text", "cv_score", "headline", "sectors", "donors", "countries", "skills", "qualifications", "nationality", "languages", "phone", "referral_code", "referral_count"] as const) {
+            if (!safeUpdates[key] && (dupeProfile as any)[key]) {
+              safeUpdates[key] = (dupeProfile as any)[key];
+            }
+          }
+          // Delete the duplicate
+          await supabase.from("events").delete().eq("profile_id", emailDupe.id);
+          await supabase.from("cv_scores").delete().eq("profile_id", emailDupe.id);
+          await supabase.from("profiles").delete().eq("id", emailDupe.id);
+          console.log(`[auth] Merged duplicate profile ${emailDupe.name} (${p.email}) into telegram_id=${telegramId}`);
+        }
+      }
+    }
     if ((p.address || p.country_of_residence)) safeUpdates.city = p.address || p.country_of_residence;
     if (cv.languages?.length > 0) safeUpdates.languages = cv.languages.map((l: any) => l.language).filter(Boolean);
     if (cv.certifications?.filter(Boolean).length > 0) safeUpdates.certifications = cv.certifications.filter(Boolean);

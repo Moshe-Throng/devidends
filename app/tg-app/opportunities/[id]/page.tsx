@@ -171,6 +171,12 @@ export default function TgOpportunityDetail() {
       .then((data) => {
         if (data.success && data.opportunity) {
           setOpp(data.opportunity);
+          // Track opportunity viewed
+          fetch("/api/events", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ event: "opportunity_viewed", metadata: { opportunity_id: id, title: data.opportunity.title?.slice(0, 100) } }),
+          }).catch(() => {});
         } else {
           setError("Opportunity not found");
         }

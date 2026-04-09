@@ -1817,6 +1817,7 @@ export default function CvBuilderPage() {
                 },
               ]).map((tmpl) => {
                 const isSelected = selectedTemplate === tmpl.id;
+                const isGated = !["europass", "generic-professional"].includes(tmpl.id);
                 const colorMap: Record<string, { border: string; bg: string; shadow: string; radio: string; badge: string }> = {
                   cyan: { border: "border-cyan-500", bg: "bg-cyan-50/30", shadow: "shadow-cyan-500/10", radio: "border-cyan-500", badge: "bg-cyan-100 text-cyan-700" },
                   blue: { border: "border-blue-500", bg: "bg-blue-50/30", shadow: "shadow-blue-500/10", radio: "border-blue-500", badge: "" },
@@ -1836,9 +1837,9 @@ export default function CvBuilderPage() {
                         : "border-dark-100 hover:border-dark-200"
                     }`}
                   >
-                    {tmpl.badge && (
-                      <span className={`absolute -top-2.5 right-3 inline-flex items-center px-2 py-0.5 text-[10px] font-bold rounded-full uppercase tracking-wider ${colors.badge}`}>
-                        {tmpl.badge}
+                    {(tmpl.badge || isGated) && (
+                      <span className={`absolute -top-2.5 right-3 inline-flex items-center px-2 py-0.5 text-[10px] font-bold rounded-full uppercase tracking-wider ${isGated ? "bg-dark-100 text-dark-500" : colors.badge}`}>
+                        {isGated ? "3 referrals" : tmpl.badge}
                       </span>
                     )}
                     <div className="flex items-start gap-3">
