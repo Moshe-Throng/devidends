@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -30,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -51,7 +51,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/C1CD978A33/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -62,20 +62,20 @@
     "_sourceId": "inkomoko-workable"
   },
   {
-    "title": "Training Support Associate-Adama/Bishoftu",
+    "title": "Head of Data and AI",
     "organization": "Inkomoko",
     "description": "",
     "deadline": null,
-    "published": "2026-04-03T00:00:00.000Z",
+    "published": "2026-04-10T00:00:00.000Z",
     "country": "Ethiopia",
-    "city": "Adama",
-    "source_url": "https://apply.workable.com/inkomoko/j/21C940DD4E/",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/B86E047C7E/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
-        "Program"
+        "Digital Transformation"
       ],
       "work_type": ""
     },
@@ -92,7 +92,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -113,7 +113,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -134,7 +134,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -154,7 +154,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -175,7 +175,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/79B0EBC45C/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -185,17 +185,17 @@
     "_sourceId": "inkomoko-workable"
   },
   {
-    "title": "Business Development Advisor-Adama/Bishoftu",
+    "title": "Business Associate-Market Linkages-Gambela",
     "organization": "Inkomoko",
     "description": "",
     "deadline": null,
-    "published": "2026-04-02T00:00:00.000Z",
+    "published": "2026-04-07T00:00:00.000Z",
     "country": "Ethiopia",
-    "city": "Adama",
-    "source_url": "https://apply.workable.com/inkomoko/j/57A86A584F/",
+    "city": "Gambela",
+    "source_url": "https://apply.workable.com/inkomoko/j/D99580CDFC/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-10T06:55:56.046Z",
+    "scraped_at": "2026-04-11T05:00:15.454Z",
     "raw_fields": {
       "department": [
         "Program"
