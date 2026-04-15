@@ -1,50 +1,16 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-09T06:33:37.946Z",
-    "total_fetched": 47,
-    "unique_count": 47,
-    "active_count": 7,
+    "scraped_at": "2026-04-15T07:40:06.849Z",
+    "total_fetched": 46,
+    "unique_count": 46,
+    "active_count": 8,
     "active_projects": 50,
     "sources": {
       "reoi": 33,
-      "ifb": 14
+      "ifb": 13
     }
   },
   "opportunities": [
-    {
-      "title": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT",
-      "description": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT\n\nProject: Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: DJ-IGAD-540099-CS-CQS\n\nContact: Djibouti P.O Box 2653, Ave Georges Clemenceau \nwww.igad.int",
-      "deadline": "2026-04-13",
-      "organization": "World Bank",
-      "country": "Eastern and Southern Africa",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435583",
-      "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Consultant Qualification  Selection",
-      "project_name": "Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t",
-      "project_id": "P180799",
-      "bid_reference": "DJ-IGAD-540099-CS-CQS",
-      "sector": null,
-      "scraped_at": "2026-04-09T06:33:36.921Z"
-    },
-    {
-      "title": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support",
-      "description": "UPSNJP Management Information System (MIS) Development completion, Rollout and Support\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-529318-CS-QCBS\n\nContact: Addis Ababa",
-      "deadline": "2026-04-14",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434853",
-      "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Quality And Cost-Based Selection",
-      "project_name": "Urban Productive Safety Net and Jobs Project",
-      "project_id": "P169943",
-      "bid_reference": "ET-MOUDI-529318-CS-QCBS",
-      "sector": null,
-      "scraped_at": "2026-04-09T06:33:36.921Z"
-    },
     {
       "title": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.",
       "description": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-BEN-GUM-RPCU-536753-CW-RFB\n\nContact: Asossa,\nEthiopia",
@@ -60,7 +26,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-536753-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-09T06:33:37.330Z"
+      "scraped_at": "2026-04-15T07:40:05.794Z"
     },
     {
       "title": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.",
@@ -77,7 +43,24 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-535305-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-09T06:33:37.330Z"
+      "scraped_at": "2026-04-15T07:40:05.794Z"
+    },
+    {
+      "title": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT",
+      "description": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT\n\nProject: Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: DJ-IGAD-540099-CS-CQS\n\nContact: Djibouti P.O Box 2653, Ave Georges Clemenceau \nwww.igad.int",
+      "deadline": "2026-04-20",
+      "organization": "World Bank",
+      "country": "Eastern and Southern Africa",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435583",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Consultant Qualification  Selection",
+      "project_name": "Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t",
+      "project_id": "P180799",
+      "bid_reference": "DJ-IGAD-540099-CS-CQS",
+      "sector": null,
+      "scraped_at": "2026-04-15T07:40:04.999Z"
     },
     {
       "title": "Individual Consultant for Digital Media Specialist",
@@ -94,7 +77,24 @@
       "project_id": "P176303",
       "bid_reference": "ET-MUI-535754-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-09T06:33:36.898Z"
+      "scraped_at": "2026-04-15T07:40:04.999Z"
+    },
+    {
+      "title": "Procurement for the Construction of Kuachthiang Main Road to Dual Puar Kebele Unpaved(gravel)access road of 8.28KM Project in Jikow Woreda, Gambella Regional State",
+      "description": "Procurement for the Construction of Kuachthiang Main Road to Dual Puar Kebele Unpaved(gravel)access road of 8.28KM Project in Jikow Woreda, Gambella Regional State\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-537548-CW-RFB\n\nContact: Gembella,\nEthiopia",
+      "deadline": "2026-04-20",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434191",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-537548-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-15T07:40:05.794Z"
     },
     {
       "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
@@ -111,7 +111,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-09T06:33:37.330Z"
+      "scraped_at": "2026-04-15T07:40:05.794Z"
     },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
@@ -128,7 +128,24 @@
       "project_id": "P176327",
       "bid_reference": "ET-EDRMC-538775-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-09T06:33:37.330Z"
+      "scraped_at": "2026-04-15T07:40:05.794Z"
+    },
+    {
+      "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
+      "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
+      "deadline": "2026-04-30",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+      "project_id": "P174385",
+      "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
+      "sector": null,
+      "scraped_at": "2026-04-15T07:40:04.987Z"
     }
   ],
   "projects": [
@@ -213,16 +230,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P176255",
-      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
-      "status": "Active",
-      "sector": "Public Administration - Industry, Trade and Services",
-      "total_commitment": "90",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "",
-      "implementing_agency": "Ethiopian Maritime Affairs Authority"
-    },
-    {
       "id": "P179040",
       "name": "Ethiopia Digital ID for Inclusion and Services Project",
       "status": "Active",
@@ -231,6 +238,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "1/7/2029 12:00:00 AM",
       "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
+    },
+    {
+      "id": "P176255",
+      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
+      "status": "Active",
+      "sector": "Public Administration - Industry, Trade and Services",
+      "total_commitment": "90",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "",
+      "implementing_agency": "Ethiopian Maritime Affairs Authority"
     }
   ]
 }
