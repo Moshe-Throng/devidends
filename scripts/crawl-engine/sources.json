@@ -7,7 +7,7 @@
     "enabled": true,
     "priority": 40,
     "config": {
-      "url": "https://api.reliefweb.int/v1/jobs",
+      "url": "https://api.reliefweb.int/v2/jobs",
       "appname": "DevidendslWobR5bzg4nrbI2JUvPj",
       "limit": 50,
       "countryFilter": [
@@ -57,14 +57,14 @@
     "enabled": true,
     "priority": 25,
     "config": {
-      "url": "https://www.drc.ngo/jobs/",
+      "url": "https://drc.ngo/en/jobs/",
       "orgName": "Danish Refugee Council (DRC)",
       "sourceDomain": "drc.ngo",
-      "jobSelector": ".job-item",
-      "titleSelector": ".job-title",
+      "jobSelector": ".jobList__item",
+      "titleSelector": ".jobList__item__title",
       "linkSelector": "a[href]",
-      "deadlineSelector": ".timestamp.deadline",
-      "publishedSelector": ".timestamp.published",
+      "deadlineSelector": ".jobList__item__deadline",
+      "publishedSelector": ".jobList__item__published",
       "countryFromTitle": true,
       "defaultCountry": "Unknown",
       "fetchDetails": false
@@ -196,7 +196,7 @@
       "sourceDomain": "kifiya.com",
       "defaultCountry": "Ethiopia",
       "mode": "generic",
-      "jobSelector": ".sjb-listing .list-data, .sjb-page a[href*='kifiya.com/'], .sjb-archive a",
+      "jobSelector": "div.job-listing h3 a, div.job-listing a[href*='kifiya.com/'], a[href*='/jobs/']",
       "scrollCount": 2,
       "scrollDelay": 2000
     }
@@ -292,7 +292,7 @@
     "name": "International Rescue Committee",
     "adapter": "jobvite",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 30,
     "config": {
       "companySlug": "internationalrescuecommittee",
@@ -305,7 +305,7 @@
     "name": "Pathfinder International",
     "adapter": "jobvite",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 25,
     "config": {
       "companySlug": "pathfinder",
@@ -396,7 +396,7 @@
     "name": "IDinsight",
     "adapter": "greenhouse",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "boardToken": "idinsight",
@@ -409,7 +409,7 @@
     "name": "Living Goods",
     "adapter": "greenhouse",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "boardToken": "livinggoods",
@@ -604,7 +604,7 @@
     "name": "Plan International",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 25,
     "config": {
       "url": "https://unjobs.org/organizations/plan-international?duty_station=ethiopia",
@@ -622,7 +622,7 @@
     "name": "International Organization for Migration",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 25,
     "config": {
       "url": "https://unjobs.org/organizations/iom?duty_station=ethiopia",
@@ -640,7 +640,7 @@
     "name": "World Health Organization",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 25,
     "config": {
       "url": "https://unjobs.org/organizations/who?duty_station=ethiopia",
@@ -658,7 +658,7 @@
     "name": "Food and Agriculture Organization",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "url": "https://unjobs.org/organizations/fao?duty_station=ethiopia",
@@ -676,7 +676,7 @@
     "name": "Save the Children",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 25,
     "config": {
       "url": "https://unjobs.org/organizations/save-the-children?duty_station=ethiopia",
@@ -694,7 +694,7 @@
     "name": "Oxfam",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "url": "https://unjobs.org/organizations/oxfam?duty_station=ethiopia",
@@ -712,7 +712,7 @@
     "name": "World Vision",
     "adapter": "cheerio-html",
     "content_type": "job",
-    "enabled": true,
+    "enabled": false,
     "priority": 20,
     "config": {
       "url": "https://unjobs.org/organizations/world-vision?duty_station=ethiopia",

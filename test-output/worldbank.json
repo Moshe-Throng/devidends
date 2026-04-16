@@ -1,16 +1,33 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-15T07:40:06.849Z",
-    "total_fetched": 46,
-    "unique_count": 46,
-    "active_count": 8,
+    "scraped_at": "2026-04-16T06:22:10.145Z",
+    "total_fetched": 47,
+    "unique_count": 47,
+    "active_count": 10,
     "active_projects": 50,
     "sources": {
       "reoi": 33,
-      "ifb": 13
+      "ifb": 14
     }
   },
   "opportunities": [
+    {
+      "title": "Requirement of Environmental and Social Development Specialist",
+      "description": "Requirement of Environmental and Social Development Specialist\n\nProject: Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOWSA-546630-CS-INDV\n\nContact: Addis Ababa",
+      "deadline": "2026-04-17",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438413",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
+      "project_id": "P177233",
+      "bid_reference": "ET-MOWSA-546630-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-04-16T06:22:08.114Z"
+    },
     {
       "title": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.",
       "description": "Construction of 38 meter span length Fapro river medium bridge for sedal woreda of kamash Zone, Benishangul gumuz region.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-BEN-GUM-RPCU-536753-CW-RFB\n\nContact: Asossa,\nEthiopia",
@@ -26,7 +43,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-536753-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:05.794Z"
+      "scraped_at": "2026-04-16T06:22:09.294Z"
     },
     {
       "title": "Procurement of milk processing machine having capacity of 2000L raw milk chilling for milk processing plant managed by regional agricultural bureau.",
@@ -43,7 +60,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-BEN-GUM-RPCU-535305-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:05.794Z"
+      "scraped_at": "2026-04-16T06:22:09.294Z"
     },
     {
       "title": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT",
@@ -60,7 +77,7 @@
       "project_id": "P180799",
       "bid_reference": "DJ-IGAD-540099-CS-CQS",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:04.999Z"
+      "scraped_at": "2026-04-16T06:22:08.116Z"
     },
     {
       "title": "Individual Consultant for Digital Media Specialist",
@@ -77,7 +94,7 @@
       "project_id": "P176303",
       "bid_reference": "ET-MUI-535754-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:04.999Z"
+      "scraped_at": "2026-04-16T06:22:08.116Z"
     },
     {
       "title": "Procurement for the Construction of Kuachthiang Main Road to Dual Puar Kebele Unpaved(gravel)access road of 8.28KM Project in Jikow Woreda, Gambella Regional State",
@@ -94,7 +111,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-537548-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:05.794Z"
+      "scraped_at": "2026-04-16T06:22:09.294Z"
     },
     {
       "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
@@ -111,7 +128,7 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:05.794Z"
+      "scraped_at": "2026-04-16T06:22:09.294Z"
     },
     {
       "title": "Procurement of Fire Suppression and Rescue Equipment",
@@ -128,7 +145,7 @@
       "project_id": "P176327",
       "bid_reference": "ET-EDRMC-538775-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:05.794Z"
+      "scraped_at": "2026-04-16T06:22:09.294Z"
     },
     {
       "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
@@ -145,7 +162,24 @@
       "project_id": "P174385",
       "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
       "sector": null,
-      "scraped_at": "2026-04-15T07:40:04.987Z"
+      "scraped_at": "2026-04-16T06:22:08.116Z"
+    },
+    {
+      "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
+      "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
+      "deadline": "2026-05-08",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-16T06:22:09.293Z"
     }
   ],
   "projects": [
@@ -170,16 +204,6 @@
       "implementing_agency": "Ministry of Finance"
     },
     {
-      "id": "P181545",
-      "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
-      "status": "Active",
-      "sector": "",
-      "total_commitment": "275",
-      "approval_date": "2024-03-29T00:00:00Z",
-      "closing_date": "",
-      "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
-    },
-    {
       "id": "P176303",
       "name": "Ethiopia Rural Connectivity to Support Food Security Program",
       "status": "Active",
@@ -188,6 +212,16 @@
       "approval_date": "2024-03-29T00:00:00Z",
       "closing_date": "3/31/2029 12:00:00 AM",
       "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
+    },
+    {
+      "id": "P181545",
+      "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
+      "status": "Active",
+      "sector": "",
+      "total_commitment": "275",
+      "approval_date": "2024-03-29T00:00:00Z",
+      "closing_date": "",
+      "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
     },
     {
       "id": "P181626",

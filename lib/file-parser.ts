@@ -5,6 +5,31 @@ export async function extractTextFromPdf(buffer: Buffer): Promise<string> {
   return data.text;
 }
 
+/**
+ * Extract PDF text + page count. Used to detect scanned/image-only PDFs.
+ */
+export async function extractPdfWithMeta(
+  buffer: Buffer
+): Promise<{ text: string; numpages: number }> {
+  const pdfParse = require("pdf-parse") as (buf: Buffer) => Promise<{ text: string; numpages: number }>;
+  const data = await pdfParse(buffer);
+  return { text: data.text || "", numpages: data.numpages || 1 };
+}
+
+/**
+ * Heuristic: is this extracted text likely from a scanned/image-only PDF?
+ * Scanned PDFs either return empty text or a tiny amount of garbage per page.
+ */
+export function isLikelyScanned(text: string, numpages: number): boolean {
+  const trimmed = (text || "").trim();
+  if (trimmed.length < 100) return true;
+  const perPage = trimmed.length / Math.max(1, numpages);
+  if (perPage < 150) return true; // real CVs average 1500+ chars/page
+  const alpha = (trimmed.match(/[a-zA-Z]/g) || []).length;
+  if (alpha / trimmed.length < 0.5) return true; // mostly symbols/whitespace = OCR noise
+  return false;
+}
+
 export async function extractTextFromDocx(buffer: Buffer): Promise<string> {
   // Use require() for reliable CJS loading on Vercel serverless (matches pdf-parse pattern)
   const mammoth = require("mammoth") as typeof import("mammoth");

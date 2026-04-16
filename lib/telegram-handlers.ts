@@ -235,12 +235,31 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     if (!response.ok) throw new Error("Failed to download file");
     const buffer = Buffer.from(await response.arrayBuffer());
 
-    // Extract text
-    const { extractText } = await import("@/lib/file-parser");
-    const cvText = await extractText(buffer, fileName);
+    // Extract text — with scanned-PDF detection for PDFs
+    let cvText = "";
+    if (ext === "pdf") {
+      const { extractPdfWithMeta, isLikelyScanned } = await import("@/lib/file-parser");
+      const { text, numpages } = await extractPdfWithMeta(buffer);
+      if (isLikelyScanned(text, numpages)) {
+        await bot.sendMessage(
+          chatId,
+          `<b>Rejected:</b> <b>${escHtml(fileName)}</b> appears to be a scanned/image-based PDF (${numpages} pages, ${text.trim().length} chars extracted). We don't process scanned CVs — please ask the candidate to send a text-based PDF or DOCX.`,
+          replyOpts
+        );
+        return;
+      }
+      cvText = text;
+    } else {
+      const { extractText } = await import("@/lib/file-parser");
+      cvText = await extractText(buffer, fileName);
+    }
 
-    if (!cvText || cvText.trim().length < 50) {
-      await bot.sendMessage(chatId, `<b>Failed:</b> Could not extract text from <b>${escHtml(fileName)}</b>. File may be scanned/image-based.`, replyOpts);
+    if (!cvText || cvText.trim().length < 200) {
+      await bot.sendMessage(
+        chatId,
+        `<b>Rejected:</b> Could not extract enough text from <b>${escHtml(fileName)}</b>. File may be scanned, encrypted, or corrupted.`,
+        replyOpts
+      );
       return;
     }
 
@@ -249,6 +268,23 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     const { extractCvData } = await import("@/lib/cv-extractor");
     const trimmedText = cvText.length > 30000 ? cvText.slice(0, 30000) + "\n\n[... CV continues with additional consultancy assignments ...]" : cvText;
     const { data: cvStructured } = await extractCvData(trimmedText);
+
+    // Reject empty/garbage extractions — means AI couldn't parse the text
+    const extractedName = cvStructured?.personal?.full_name?.trim() || "";
+    const empCountCheck = (cvStructured?.employment || []).length;
+    const eduCountCheck = (cvStructured?.education || []).length;
+    const isEmpty =
+      !extractedName ||
+      extractedName.toLowerCase() === "unknown" ||
+      (empCountCheck === 0 && eduCountCheck === 0);
+    if (isEmpty) {
+      await bot.sendMessage(
+        chatId,
+        `<b>Rejected:</b> Could not extract structured data from <b>${escHtml(fileName)}</b>. The CV may be in an unusual format or the text is garbled. No profile was created.`,
+        replyOpts
+      );
+      return;
+    }
 
     // Derive profile fields from structured data (no extra API call)
     const profile = {
@@ -303,13 +339,50 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     let isUpdate = false;
     let profileId: string | null = null;
 
-    // Check for existing profile with same name
-    const { data: existing } = await sb
-      .from("profiles")
-      .select("id, name, claim_token")
-      .ilike("name", expertName.toLowerCase())
-      .limit(1)
-      .single();
+    // Dedup strategy (in priority order):
+    //   1. Same telegram file_id → same CV re-uploaded → update
+    //   2. Same email (if present) → same person → update
+    //   3. Exact name match (case-insensitive, trimmed) AND name is not "Unknown"/empty → update
+    //   Never dedup on fallback/generic names — always insert a new row instead.
+    let existing: { id: string; name: string; claim_token: string | null } | null = null;
+
+    // 1. By telegram file_id (most reliable — same file)
+    const cvUrl = `tg://${doc.file_id}`;
+    {
+      const { data } = await sb
+        .from("profiles")
+        .select("id, name, claim_token")
+        .eq("cv_url", cvUrl)
+        .limit(1)
+        .maybeSingle();
+      if (data) existing = data;
+    }
+
+    // 2. By email (if extracted and no file-id match)
+    if (!existing && personal.email) {
+      const { data } = await sb
+        .from("profiles")
+        .select("id, name, claim_token")
+        .eq("email", personal.email)
+        .limit(1)
+        .maybeSingle();
+      if (data) existing = data;
+    }
+
+    // 3. By exact name (only if name is clearly a real name — not "Unknown", not 1 word of 2 chars)
+    const nameLooksReal =
+      expertName.length >= 4 &&
+      expertName.split(/\s+/).length >= 2 &&
+      !/^unknown$/i.test(expertName);
+    if (!existing && nameLooksReal) {
+      const { data } = await sb
+        .from("profiles")
+        .select("id, name, claim_token")
+        .ilike("name", expertName)
+        .limit(1)
+        .maybeSingle();
+      if (data) existing = data;
+    }
 
     const profileData = {
       name: expertName,

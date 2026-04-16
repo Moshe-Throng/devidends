@@ -1,14 +1,15 @@
 [
   {
     "title": "NORCAP",
-    "description": "Skip to main content. Search Jobs - NRC NORCAP Careers Careers FIND JOBS Job title, skill, keyword NEAR LOCATION City, state, country Job search results 3 3 OPEN JOBS LOCATIONS WORK LOCATIONS JOB FUNCTIONS CATEGORIES POSTING DATES Relevance Click this button to view jobs plotted on the map. Use list view if you're using a keyboard or other assistive tool. Education Officer Ministry of Education and Research Chisinau Moldova POSTING DATE04/14/2026 BE THE FIRST TO APPLY Internships - Head Office Oslo, Norway POSTING DATE03/24/2026 TRENDING Head of PCM & Grant Management - Internal Applicants Only Oslo, Norway POSTING DATE03/26/2026 Our Talent Community JOIN OUR TALENT COMMUNITY We use",
+    "organization": "Norwegian Refugee Council (NRC)",
+    "description": "",
     "deadline": null,
-    "organization": "NRC (Norwegian Refugee Council)",
+    "published": null,
     "country": "Ethiopia",
+    "city": null,
     "source_url": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/requisitions?keyword=NORCAP",
-    "source_domain": "ekum.fa.em2.oraclecloud.com",
-    "type": "job",
-    "scraped_at": "2026-04-15T07:46:37.278Z",
-    "location": "City, state, country"
+    "source_domain": "oraclecloud.com",
+    "content_type": "job",
+    "scraped_at": "2026-04-16T06:21:34.241Z"
   }
 ]

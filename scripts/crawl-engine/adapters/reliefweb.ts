@@ -20,7 +20,7 @@ export class ReliefWebAdapter implements CrawlAdapter {
       countryFilter?: string[];
     };
 
-    const apiUrl = cfg.url || "https://api.reliefweb.int/v1/jobs";
+    const apiUrl = cfg.url || "https://api.reliefweb.int/v2/jobs";
     const appname = cfg.appname || "DevidendslWobR5bzg4nrbI2JUvPj";
     const limit = cfg.limit || 50;
     const countries = cfg.countryFilter || ["Ethiopia"];
@@ -47,7 +47,11 @@ export class ReliefWebAdapter implements CrawlAdapter {
       `${apiUrl}?appname=${encodeURIComponent(appname)}`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "*/*",
+          "User-Agent": "curl/8.0.0",
+        },
         body: JSON.stringify(body),
       }
     );

@@ -28,7 +28,6 @@ if (fs.existsSync(envPath)) {
     if (!process.env[key]) process.env[key] = val;
   }
 }
-import path from "path";
 import type {
   SourceConfig,
   SourceResult,
@@ -394,6 +393,94 @@ async function runEngine() {
   );
   console.log("=".repeat(60));
   console.log(`\n  Output: ${outDir}`);
+
+  // ── Health check: fail loud if crawl is unhealthy ─────────────────────────
+  // A crawl is unhealthy if:
+  //   (a) >30% of sources errored (hard failure), OR
+  //   (b) total deduped items dropped >40% from yesterday, OR
+  //   (c) fewer than 100 items total (should always have >200 on a healthy day)
+  const errorCount = results.filter((r: any) => r.status === "error").length;
+  const errorPct = results.length > 0 ? errorCount / results.length : 0;
+
+  const prevTotalsPath = path.join(outDir, "_last_total.json");
+  let prevTotal = 0;
+  try {
+    if (fs.existsSync(prevTotalsPath)) {
+      prevTotal = JSON.parse(fs.readFileSync(prevTotalsPath, "utf-8")).total || 0;
+    }
+  } catch {}
+  const dropPct = prevTotal > 0 ? (prevTotal - deduped.length) / prevTotal : 0;
+  fs.writeFileSync(prevTotalsPath, JSON.stringify({ total: deduped.length, at: new Date().toISOString() }));
+
+  const problems: string[] = [];
+  if (errorPct > 0.3) problems.push(`${errorCount}/${results.length} sources errored (${Math.round(errorPct * 100)}%)`);
+  if (dropPct > 0.4) problems.push(`item count dropped ${Math.round(dropPct * 100)}% (${prevTotal} → ${deduped.length})`);
+  if (deduped.length < 100) problems.push(`only ${deduped.length} items — expected 200+`);
+
+  const erroredSources = results.filter((r: any) => r.status === "error").map((r: any) => `${r.sourceName}: ${String(r.error || "").slice(0, 80)}`);
+
+  if (problems.length > 0) {
+    console.log();
+    console.log("⚠️  HEALTH CHECK FAILED:");
+    for (const p of problems) console.log(`    ${p}`);
+
+    // Send Telegram admin alert
+    await sendCrawlAlert({
+      problems,
+      erroredSources,
+      totalItems: deduped.length,
+      prevTotal,
+      workingCount: summary.working,
+      totalSources: results.length,
+    });
+
+    process.exit(2); // Distinct exit code: partial data, do NOT broadcast
+  }
+}
+
+async function sendCrawlAlert(opts: {
+  problems: string[];
+  erroredSources: string[];
+  totalItems: number;
+  prevTotal: number;
+  workingCount: number;
+  totalSources: number;
+}) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const adminIds = (process.env.ADMIN_TELEGRAM_IDS || "297659579").split(",").map(s => s.trim());
+  if (!botToken) {
+    console.warn("[alert] TELEGRAM_BOT_TOKEN not set — cannot send admin alert");
+    return;
+  }
+
+  const text = [
+    `<b>🚨 Crawl Engine Unhealthy</b>`,
+    ``,
+    `<b>Problems:</b>`,
+    ...opts.problems.map(p => `  • ${p}`),
+    ``,
+    `<b>Stats:</b> ${opts.workingCount}/${opts.totalSources} sources working, ${opts.totalItems} items (yesterday: ${opts.prevTotal})`,
+    ``,
+    ...(opts.erroredSources.length > 0 ? [
+      `<b>Errored sources:</b>`,
+      ...opts.erroredSources.slice(0, 10).map(s => `  • ${s}`),
+      ``,
+    ] : []),
+    `<i>Broadcast ABORTED. Fix the crawler before re-running.</i>`,
+  ].join("\n");
+
+  for (const tgId of adminIds) {
+    try {
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: tgId, text, parse_mode: "HTML", disable_web_page_preview: true }),
+      });
+      console.log(`[alert] Sent to admin ${tgId}`);
+    } catch (err: any) {
+      console.error(`[alert] Failed to send to ${tgId}:`, err.message);
+    }
+  }
 }
 
 // ── Run ─────────────────────────────────────────────────────────────────────
@@ -404,5 +491,13 @@ runEngine()
   })
   .catch((err) => {
     console.error("Engine fatal error:", err);
-    process.exit(1);
+    // Try to alert admin on fatal crash
+    sendCrawlAlert({
+      problems: [`Fatal crash: ${String(err).slice(0, 200)}`],
+      erroredSources: [],
+      totalItems: 0,
+      prevTotal: 0,
+      workingCount: 0,
+      totalSources: 0,
+    }).finally(() => process.exit(1));
   });
