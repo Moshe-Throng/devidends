@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-[]
-=======
 [
   {
     "title": "Login",
@@ -13,7 +10,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal_cand.login?p_web_site_id=5514",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.518Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -32,7 +29,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal_cand.prefs?p_web_site_id=5514&p_web_page_id=&p_candidate_id=0&p_response_data_id=0&p_ccp_path=NEWPROFILE",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.518Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -51,7 +48,7 @@
     "source_url": "https://careers.gggi.org/wd/plsql/wd_portal.search_start?p_web_site_id=5514&p_template_id=&p_search_agent=Y",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -70,7 +67,7 @@
     "source_url": "https://careers.gggi.org/vacancies.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -89,7 +86,7 @@
     "source_url": "https://careers.gggi.org/speculative.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -108,7 +105,7 @@
     "source_url": "https://gggi.org/site/assets/uploads/2020/09/Staff-Rules_September-9_2020.pdf",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -127,7 +124,7 @@
     "source_url": "https://careers.gggi.org/login.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.053Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -146,7 +143,7 @@
     "source_url": "https://careers.gggi.org/register.html",
     "source_domain": "gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:20:05.054Z",
+    "scraped_at": "2026-04-16T06:59:46.521Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -155,4 +152,3 @@
     "_sourceId": "gggi"
   }
 ]
->>>>>>> 34a6604 (Fix crawler health + add Co-Creators onboarding)

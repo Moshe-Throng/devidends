@@ -10,11 +10,7 @@
     "source_url": "https://apply.workable.com/hi-jobs/j/54C50A0C1F/",
     "source_domain": "workable.com",
     "content_type": "job",
-<<<<<<< HEAD
-    "scraped_at": "2026-04-16T05:00:14.218Z",
-=======
-    "scraped_at": "2026-04-16T06:20:00.896Z",
->>>>>>> 34a6604 (Fix crawler health + add Co-Creators onboarding)
+    "scraped_at": "2026-04-16T06:59:44.794Z",
     "raw_fields": {
       "department": [
         "Health & Prevention"
