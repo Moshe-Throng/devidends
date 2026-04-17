@@ -6,6 +6,7 @@ import { scoreCv } from "@/lib/cv-scorer";
 import { createClient } from "@supabase/supabase-js";
 import { randomUUID } from "crypto";
 import { logException, trackEvent } from "@/lib/logger";
+import { forwardCvToAdmin } from "@/lib/cv-admin-cc";
 
 export const maxDuration = 60;
 
@@ -81,11 +82,37 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "File too large (max 15MB)" }, { status: 400 });
     }
 
+    // Identify admin uploader for traceability
+    let adminUploaderEmail: string | null = null;
+    let adminUploaderName: string | null = null;
+    try {
+      const { createServerClient } = await import("@supabase/ssr");
+      const { cookies } = await import("next/headers");
+      const cookieStore = await cookies();
+      const sb = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        { cookies: { getAll() { return cookieStore.getAll(); }, setAll() {} } }
+      );
+      const { data: { user } } = await sb.auth.getUser();
+      if (user) {
+        adminUploaderEmail = user.email || null;
+        adminUploaderName = user.user_metadata?.full_name || user.user_metadata?.name || null;
+      }
+    } catch {}
+
     // Extract text
     const buffer = Buffer.from(await file.arrayBuffer());
     const cvText = await extractText(buffer, file.name, file.type);
 
     if (cvText.trim().length < 50) {
+      forwardCvToAdmin({
+        buffer, filename: file.name,
+        senderName: `ADMIN: ${adminUploaderName || "unknown"}`,
+        senderEmail: adminUploaderEmail,
+        source: "admin_ingest", status: "rejected",
+        resultSummary: `Rejected: text too short (${cvText?.trim().length || 0} chars).`,
+      }).catch(() => {});
       return NextResponse.json({ error: "Could not extract enough text from file" }, { status: 400 });
     }
 
@@ -233,6 +260,16 @@ export async function POST(req: NextRequest) {
     const webLink = `${SITE}/claim?token=${effectiveToken}`;
 
     trackEvent({ event: isUpdate ? "cv_updated" : "cv_ingested", profile_id: created.id, metadata: { name: profile.name, score: cvScore, source: "admin_ingest" } });
+
+    // Fire-and-forget admin CC with full traceability
+    forwardCvToAdmin({
+      buffer, filename: file.name,
+      senderName: `ADMIN: ${adminUploaderName || "unknown"}`,
+      senderEmail: adminUploaderEmail,
+      source: "admin_ingest",
+      status: "success",
+      resultSummary: `${isUpdate ? "Updated" : "Created"} profile: ${created.name} · Score: ${cvScore ?? "n/a"}${recommendedBy ? ` · Recommended by ${recommendedBy}` : ""}${dupWarning ? ` · ${dupWarning}` : ""}`,
+    }).catch(() => {});
 
     return NextResponse.json({
       success: true,

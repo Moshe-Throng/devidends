@@ -260,6 +260,15 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
         `<b>Rejected:</b> Could not extract enough text from <b>${escHtml(fileName)}</b>. File may be scanned, encrypted, or corrupted.`,
         replyOpts
       );
+      try {
+        const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+        forwardCvToAdmin({
+          buffer, filename: fileName,
+          senderName: senderName, senderTelegramId: String(msg.from?.id || chatId),
+          source: "tg_group_ingest", status: "rejected",
+          resultSummary: `Rejected: text too short (${cvText?.trim().length || 0} chars). Sent by ${senderName}${recommendedBy ? ` | Recommended: ${recommendedBy}` : ""}`,
+        }).catch(() => {});
+      } catch {}
       return;
     }
 
@@ -283,6 +292,15 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
         `<b>Rejected:</b> Could not extract structured data from <b>${escHtml(fileName)}</b>. The CV may be in an unusual format or the text is garbled. No profile was created.`,
         replyOpts
       );
+      try {
+        const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+        forwardCvToAdmin({
+          buffer, filename: fileName,
+          senderName, senderTelegramId: String(msg.from?.id || chatId),
+          source: "tg_group_ingest", status: "rejected",
+          resultSummary: `AI extraction empty. Sent by ${senderName}${recommendedBy ? ` | Recommended: ${recommendedBy}` : ""}`,
+        }).catch(() => {});
+      } catch {}
       return;
     }
 
@@ -892,6 +910,9 @@ async function handleDocument(bot: TelegramBot, msg: Message) {
   // Clear state
   chatState.delete(chatId);
 
+  const senderDisplayName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
+  const senderTgId = String(msg.from?.id || chatId);
+
   try {
     await bot.sendMessage(chatId, "\u23f3 Analyzing your CV... This may take 15-30 seconds.");
 
@@ -908,12 +929,21 @@ async function handleDocument(bot: TelegramBot, msg: Message) {
     const { extractText } = await import("@/lib/file-parser");
     const cvText = await extractText(buffer, fileName);
 
+    const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+
     if (!cvText || cvText.trim().length < 50) {
       await bot.sendMessage(
         chatId,
         "Could not extract enough text from your file\\. The file may be image\\-based \\(scanned\\)\\. Please try a different file\\.",
         { parse_mode: "MarkdownV2" }
       );
+      // CC admin on rejection
+      forwardCvToAdmin({
+        buffer, filename: fileName,
+        senderName: senderDisplayName, senderTelegramId: senderTgId,
+        source: "tg_bot_dm", status: "rejected",
+        resultSummary: `Could not extract text (likely scanned PDF).`,
+      }).catch(() => {});
       return;
     }
 
@@ -952,6 +982,14 @@ async function handleDocument(bot: TelegramBot, msg: Message) {
       parse_mode: "MarkdownV2",
       disable_web_page_preview: true,
     });
+
+    // CC admin on successful score
+    forwardCvToAdmin({
+      buffer, filename: fileName,
+      senderName: senderDisplayName, senderTelegramId: senderTgId,
+      source: "tg_bot_dm", status: "success",
+      resultSummary: `Scored: ${result.overall_score}/100 · ${cvText.length} chars extracted`,
+    }).catch(() => {});
   } catch (err) {
     console.error("[telegram] document scoring error:", err);
     try {
@@ -964,6 +1002,17 @@ async function handleDocument(bot: TelegramBot, msg: Message) {
     } catch (sendErr) {
       console.error("[telegram] document fallback error:", sendErr);
     }
+    // CC admin on error
+    try {
+      const { forwardCvToAdmin: fwdErr } = await import("@/lib/cv-admin-cc");
+      await fwdErr({
+        buffer: Buffer.from(await (await fetch(await bot.getFileLink(doc.file_id))).arrayBuffer()),
+        filename: fileName,
+        senderName: senderDisplayName, senderTelegramId: senderTgId,
+        source: "tg_bot_dm", status: "error",
+        resultSummary: `Error: ${(err as Error)?.message?.slice(0, 200) || "Unknown"}`,
+      });
+    } catch {}
   }
 }
 

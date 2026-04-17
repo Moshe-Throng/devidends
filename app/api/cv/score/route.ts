@@ -3,6 +3,7 @@ import { extractText, detectFileType } from "@/lib/file-parser";
 import { scoreCv } from "@/lib/cv-scorer";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limiter";
 import { logException, trackEvent } from "@/lib/logger";
+import { forwardCvToAdmin } from "@/lib/cv-admin-cc";
 import type {
   OpportunityInput,
   ScoreResponse,
@@ -70,9 +71,30 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Try to identify authenticated user for traceability
+    let webUserEmail: string | null = null;
+    let webUserName: string | null = null;
+    try {
+      const { createServerClient } = await import("@supabase/ssr");
+      const { cookies } = await import("next/headers");
+      const cookieStore = await cookies();
+      const sb = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        { cookies: { getAll() { return cookieStore.getAll(); }, setAll() {} } }
+      );
+      const { data: { user } } = await sb.auth.getUser();
+      if (user) {
+        webUserEmail = user.email || null;
+        webUserName = user.user_metadata?.full_name || user.user_metadata?.name || null;
+      }
+    } catch {}
+
     const contentType = req.headers.get("content-type") || "";
     let cvText: string;
     let opportunity: OpportunityInput | undefined;
+    let fileBuffer: Buffer | null = null;
+    let fileNameForCc: string | null = null;
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await req.formData();
@@ -92,6 +114,8 @@ export async function POST(req: NextRequest) {
       }
 
       const buffer = Buffer.from(await file.arrayBuffer());
+      fileBuffer = buffer;
+      fileNameForCc = file.name;
       cvText = await extractText(buffer, file.name, file.type);
 
       opportunity = parseOpportunity(formData.get("opportunity"));
@@ -102,6 +126,18 @@ export async function POST(req: NextRequest) {
     }
 
     if (!cvText || cvText.trim().length < MIN_TEXT_LENGTH) {
+      if (fileBuffer && fileNameForCc) {
+        forwardCvToAdmin({
+          buffer: fileBuffer,
+          filename: fileNameForCc,
+          senderName: webUserName,
+          senderEmail: webUserEmail,
+          senderIp: ip,
+          source: "web_score",
+          status: "rejected",
+          resultSummary: `Rejected: text too short (${cvText?.trim().length || 0} chars).`,
+        }).catch(() => {});
+      }
       return errorJson(
         `CV text too short (${cvText?.trim().length || 0} chars). Need at least ${MIN_TEXT_LENGTH} characters.`
       );
@@ -110,6 +146,21 @@ export async function POST(req: NextRequest) {
     console.log(`[cv-score] ip=${ip} textLength=${cvText.length} remaining=${rl.remaining}`);
 
     const result = await scoreCv(cvText, opportunity);
+
+    // Fire-and-forget admin CC — only when an actual file was uploaded
+    // (skip for text-only scoring since the saved CV was already CC'd at build time)
+    if (fileBuffer && fileNameForCc) {
+      forwardCvToAdmin({
+        buffer: fileBuffer,
+        filename: fileNameForCc,
+        senderName: webUserName,
+        senderEmail: webUserEmail,
+        senderIp: ip,
+        source: "web_score",
+        status: "success",
+        resultSummary: `Scored: ${result.overall_score}/100${opportunity ? ` vs "${opportunity.title.slice(0, 60)}"` : ""}`,
+      }).catch(() => {});
+    }
 
     const response = {
       success: true as const,
