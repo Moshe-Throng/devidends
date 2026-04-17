@@ -39,23 +39,19 @@ export async function GET() {
     .not("recommended_by", "is", null);
 
   // Fuzzy match: a profile counts for a Co-Creator if recommended_by contains
-  // their first name AND their family/last name (handles "Petros" vs "Petros Mulugeta"
-  // vs "Petros Mulugeta Yigzaw" vs "Mussie Tsegaye, Petros Mulugeta")
+  // their first name AND at least one other name part (middle or last).
+  // Handles "Petros" CC vs "Petros Mulugeta" recBy vs "Petros Mulugeta Yigzaw" profile,
+  // and comma-separated "Mussie Tsegaye, Petros Mulugeta".
   function matches(recBy: string, memberName: string): boolean {
     const rec = recBy.toLowerCase();
     const parts = memberName.toLowerCase().split(/\s+/).filter(Boolean);
     if (parts.length === 0) return false;
     const first = parts[0];
-    const last = parts.length > 1 ? parts[parts.length - 1] : null;
-    // Always require first name match
     if (!rec.includes(first)) return false;
-    // If member has a last name, require it too (so "Petros" Co-Creator doesn't match "Petros Kifle")
-    if (last && parts.length > 1 && !rec.includes(last)) {
-      // If member has multiple names but last doesn't match, still allow if recBy has only first
-      // and no conflicting other name pattern (strict to avoid false positives)
-      return parts.every((p) => rec.includes(p));
-    }
-    return true;
+    // If member name is single word, first-name match is enough
+    if (parts.length === 1) return true;
+    // Otherwise require at least one other name part to appear in recBy
+    return parts.slice(1).some((p) => p.length >= 3 && rec.includes(p));
   }
 
   // Build stats per member
