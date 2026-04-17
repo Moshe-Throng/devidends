@@ -158,42 +158,44 @@ export default function InvitePage() {
 
         {/* Personal letter */}
         <div className="bg-white rounded-lg border border-[#e5e9ed] p-8 md:p-10 mb-8">
-          <div className="text-[#666] text-xs tracking-wider uppercase mb-6">A personal note</div>
+          <div className="text-[#666] text-xs tracking-wider uppercase mb-6">From the Devidends team</div>
           <div className="text-[#212121] text-lg leading-relaxed space-y-4">
             <p><span className="font-semibold">{firstName},</span></p>
-            <p>I wanted to write this to you personally.</p>
             <p>
-              Over the past few months I've been building Devidends — a platform to help the
-              development professionals we both know find the right opportunities and get the
-              recognition they deserve. 113 profiles are in it already. It's growing, slowly
-              and carefully.
-            </p>
-            <p className="text-[#27ABD2] font-semibold">I'd like you to help me shape what this becomes.</p>
-            <p>
-              I'm starting something called the <strong>Devidends Co-Creators</strong> — just seven
-              of us to begin with. People whose judgment I trust, whose networks are deep, and whose
-              fingerprints I want on the platform as it grows.
+              You already know what Devidends is about — you've been part of it. The recommendations
+              you've shared, the advice you've given, the introductions you've made over the past
+              year — that's what got us here. 113 profiles, 400+ live opportunities daily, and a
+              platform that actually works now.
             </p>
             <p>
-              <span className="font-semibold text-[#212121]">What I'm asking:</span> when you think of
-              someone who'd be a good fit for a role, send their CV our way. Your pace. Your sectors.
-              No quotas.
+              So this isn't a pitch. It's more of a "let's make this official."
+            </p>
+            <p className="text-[#27ABD2] font-semibold">We're calling it the Devidends Co-Creators.</p>
+            <p>
+              A small group of people who've already been shaping this thing behind the scenes.
+              We're starting with just eight of you — the ones whose judgment the team trusts most
+              and whose fingerprints are already on the platform.
             </p>
             <p>
-              <span className="font-semibold text-[#212121]">What I'm offering:</span> early access to
-              every tender and ToR we surface — before anyone else. The ability to ask this network for
-              recommendations when you need a team. Your own verified profile with CV scoring and
-              donor-ready templates. A small private group where we share market intel and help each
-              other. And when the platform earns — a cut of what comes from your referrals.
+              <span className="font-semibold text-[#212121]">What stays the same:</span> you keep doing
+              what you do — recommend good people when you come across them, share opportunities
+              when you spot them, tell us when something's off. Your pace, your sectors, no pressure.
             </p>
             <p>
-              This isn't a signup form. It's an invitation to be part of building something that
-              could matter for our sector.
+              <span className="font-semibold text-[#212121]">What changes:</span> you now get the tools
+              to match. Early access to tenders and ToRs before they go public. The ability to request
+              candidates from the network when you're building a team. Your own verified profile
+              with CV scoring and donor-ready templates. A private Co-Creators group for market intel.
+              And when revenue comes in — a share of what your referrals generate.
+            </p>
+            <p>
+              We built this together. This just gives it a name and a structure.
             </p>
             <p className="text-[#666] italic text-base">
-              If it's not for you, just ignore this — no hard feelings.
+              No obligation — if it doesn't feel right, just ignore this. But we'd love to
+              have you in.
             </p>
-            <p className="text-[#212121]">— Mussie</p>
+            <p className="text-[#212121]">— The Devidends Team</p>
           </div>
         </div>
 

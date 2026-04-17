@@ -45,9 +45,42 @@ export default function TgAppScore() {
     );
   }
 
+  /** Build plain-text CV from structured data (fallback when cv_text is missing). */
+  function buildCvTextFromStructured(cv: any): string {
+    const lines: string[] = [];
+    const p = cv.personal || {};
+    if (p.full_name) lines.push(p.full_name);
+    if (p.email || p.phone) lines.push([p.email, p.phone].filter(Boolean).join(" | "));
+    if (p.nationality) lines.push(`Nationality: ${p.nationality}`);
+    lines.push("");
+    if (cv.education?.length) {
+      lines.push("EDUCATION");
+      for (const e of cv.education) lines.push(`${e.degree || ""} ${e.field_of_study || ""} — ${e.institution || ""} (${e.year || e.graduation_year || ""})`);
+      lines.push("");
+    }
+    if (cv.employment?.length) {
+      lines.push("PROFESSIONAL EXPERIENCE");
+      for (const e of cv.employment) {
+        lines.push(`${e.title || e.position || ""} — ${e.organization || e.employer || ""} (${e.from_date || ""} to ${e.to_date || "Present"})`);
+        if (e.description) lines.push(e.description);
+        lines.push("");
+      }
+    }
+    if (cv.skills?.length) lines.push("SKILLS", cv.skills.join(", "), "");
+    if (cv.languages?.length) lines.push("LANGUAGES", cv.languages.map((l: any) => `${l.language} (${l.level || ""})`).join(", "), "");
+    if (cv.certifications?.length) lines.push("CERTIFICATIONS", cv.certifications.join(", "), "");
+    if (cv.countries_of_experience?.length) lines.push("COUNTRIES", cv.countries_of_experience.join(", "));
+    return lines.join("\n").trim();
+  }
+
   async function handleScore() {
-    if (!profile?.cv_text) {
-      setError("No CV text found. Please update your CV in the Build CV section first.");
+    // Use cv_text if available, otherwise generate from structured data
+    let cvText = profile?.cv_text;
+    if (!cvText && profile?.cv_structured_data) {
+      cvText = buildCvTextFromStructured(profile.cv_structured_data);
+    }
+    if (!cvText) {
+      setError("No CV data found. Please build your CV first.");
       return;
     }
 
@@ -59,7 +92,7 @@ export default function TgAppScore() {
       const res = await fetch("/api/cv/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cv_text: profile.cv_text }),
+        body: JSON.stringify({ cv_text: cvText }),
       });
 
       const json = await res.json();

@@ -181,31 +181,25 @@ export default function TgAppHome() {
             </div>
           </Link>
 
-          {profile?.cv_structured_data ? (
-            /* Has CV — single "My CV" card */
-            <Link href="/tg-app/cv-builder">
-              <div className="bg-white border border-teal-200 rounded-xl p-4 hover:border-teal-400 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
-                  <FileText className="w-5 h-5 text-teal-600" />
-                </div>
-                <p className="text-sm font-bold text-dark-900">My CV</p>
-                <p className="text-[11px] text-teal-600 mt-0.5 font-medium">View &amp; edit</p>
+          <Link href="/tg-app/cv-builder">
+            <div className={`bg-white border rounded-xl p-4 transition-colors ${profile?.cv_structured_data ? "border-teal-200 hover:border-teal-400" : "border-dark-100 hover:border-teal-300"}`}>
+              <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
+                <FileText className="w-5 h-5 text-teal-600" />
               </div>
-            </Link>
-          ) : (
-            /* No CV — Build + Score side by side */
-            <>
-              <Link href="/tg-app/cv-builder">
-                <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
-                    <FileText className="w-5 h-5 text-teal-600" />
-                  </div>
-                  <p className="text-sm font-bold text-dark-900">Build CV</p>
-                  <p className="text-[11px] text-dark-400 mt-0.5">Donor-ready format</p>
-                </div>
-              </Link>
-            </>
-          )}
+              <p className="text-sm font-bold text-dark-900">{profile?.cv_structured_data ? "My CV" : "Build CV"}</p>
+              <p className="text-[11px] text-dark-400 mt-0.5">{profile?.cv_structured_data ? "View & edit" : "Donor-ready format"}</p>
+            </div>
+          </Link>
+
+          <Link href="/tg-app/score">
+            <div className={`bg-white border rounded-xl p-4 transition-colors ${(profile as any)?.cv_score ? "border-indigo-200 hover:border-indigo-400" : "border-dark-100 hover:border-indigo-300"}`}>
+              <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-2.5">
+                <BarChart3 className="w-5 h-5 text-indigo-500" />
+              </div>
+              <p className="text-sm font-bold text-dark-900">{(profile as any)?.cv_score ? "My Score" : "Score CV"}</p>
+              <p className="text-[11px] text-dark-400 mt-0.5">{(profile as any)?.cv_score ? `${(profile as any).cv_score}/100` : "ATS & donor match"}</p>
+            </div>
+          </Link>
 
           <Link href="/tg-app/profile">
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-cyan-300 transition-colors">
@@ -216,18 +210,6 @@ export default function TgAppHome() {
               <p className="text-[11px] text-dark-400 mt-0.5">View & edit</p>
             </div>
           </Link>
-
-          {!profile?.cv_structured_data && (
-            <Link href="/tg-app/score">
-              <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-indigo-300 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-2.5">
-                  <BarChart3 className="w-5 h-5 text-indigo-500" />
-                </div>
-                <p className="text-sm font-bold text-dark-900">Score CV</p>
-                <p className="text-[11px] text-dark-400 mt-0.5">ATS & donor match</p>
-              </div>
-            </Link>
-          )}
 
           <Link href="/tg-app/news" className={!profile?.cv_structured_data ? "" : "col-span-1"}>
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-teal-300 transition-colors">

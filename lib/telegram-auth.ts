@@ -213,7 +213,7 @@ export async function updateTelegramProfile(
   const allowed = [
     "headline", "sectors", "donors", "countries", "skills",
     "qualifications", "linkedin_url", "email", "years_of_experience",
-    "phone", "cv_structured_data", "cv_score", "cv_score_data", "cv_score_hash",
+    "phone", "cv_structured_data", "cv_text", "cv_score", "cv_score_data", "cv_score_hash",
     "nationality", "city", "languages", "certifications", "education_level",
     "photo_file_id",
   ];
