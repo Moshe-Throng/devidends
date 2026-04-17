@@ -1,27 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 
 const SECTORS = [
-  "Humanitarian Aid & Emergency", "Global Health", "WASH", "Food Security & Nutrition",
-  "Agriculture & Rural Development", "Education & Training", "Environment & Climate Change",
-  "Economic Development & Trade", "Gender & Social Inclusion", "Project Management & M&E",
-  "Research & Data Analytics", "Procurement & Grants", "Governance & Public Sector",
-  "Private Sector Development", "ICT & Digital", "Finance & Banking",
+  "Humanitarian Aid", "Global Health", "WASH", "Food Security",
+  "Agriculture", "Education", "Climate & Environment",
+  "Economic Development", "Gender & Inclusion", "M&E",
+  "Research & Analytics", "Procurement & Grants", "Governance",
+  "Private Sector", "ICT & Digital", "Finance",
 ];
-const REGIONS = ["Ethiopia", "East Africa", "Horn of Africa", "Pan-African", "Global"];
+
 const INTERESTS = [
-  { id: "priority_alerts", label: "Priority alerts on jobs & tenders (24h early)" },
-  { id: "tor_preview", label: "Pre-announcements of ToRs before they're public" },
-  { id: "shortlists", label: "Request shortlists for bids I'm leading" },
+  { id: "priority_alerts", label: "Early access to jobs & tenders (before public)" },
+  { id: "tor_preview", label: "ToR pre-announcements" },
+  { id: "shortlists", label: "Request candidates for bids I'm leading" },
   { id: "recommend", label: "Recommend consultants to the network" },
-  { id: "gigs_inbound", label: "Get short-term gigs / consulting opportunities" },
-  { id: "gigs_outbound", label: "Post my own consulting availability" },
-  { id: "share_tors", label: "Share or announce ToRs I'm running" },
-  { id: "cv_tools", label: "CV scoring + donor-ready templates" },
+  { id: "gigs_inbound", label: "Get consulting gigs & short-term roles" },
+  { id: "cv_tools", label: "Free CV scoring, editing & donor-ready templates" },
   { id: "network_access", label: "Connect with other Co-Creators in my sector" },
-  { id: "leaderboard", label: "Be featured on the Co-Creators leaderboard" },
+  { id: "share_tors", label: "Post ToRs & gigs for my own projects" },
 ];
 
 export default function InvitePage() {
@@ -34,25 +32,23 @@ export default function InvitePage() {
   const [profile, setProfile] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [step, setStep] = useState<"letter" | "details" | "interests" | "claim">("letter");
+  const [showConfetti, setShowConfetti] = useState(false);
+  const topRef = useRef<HTMLDivElement>(null);
 
-  const [form, setForm] = useState<any>({
+  const [form, setForm] = useState({
     email: "",
     whatsapp_number: "",
-    linkedin_url: "",
-    role_title: "",
-    years_in_sector: "",
-    preferred_channel: "whatsapp",
-    ask_frequency: "weekly",
+    preferred_channel: "whatsapp" as string,
+    ask_frequency: "weekly" as string,
     preferred_sectors: [] as string[],
-    regions: [] as string[],
     interests: [] as string[],
-    network_size: "",
-    sharing_channels: [] as string[],
-    suggested_invites: "",
-    notes: "",
+    subscribe_jobs: true,
+    subscribe_news: false,
     cv_claim_requested: false,
-    consent_privacy: false,
-    consent_commitment: false,
+    consent: false,
+    notes: "",
+    suggested_invites: "",
   });
 
   useEffect(() => {
@@ -64,11 +60,12 @@ export default function InvitePage() {
         } else {
           setInvite(d.invite);
           setProfile(d.profile);
-          setForm((f: any) => ({
+          // Prefill from invite + matched profile
+          setForm((f) => ({
             ...f,
-            email: d.invite.email || "",
-            whatsapp_number: d.invite.whatsapp_number || "",
-            role_title: d.invite.role_title || "",
+            email: d.invite.email || d.profile?.email || "",
+            whatsapp_number: d.invite.whatsapp_number || d.profile?.phone || "",
+            preferred_sectors: d.profile?.sectors || [],
           }));
         }
         setLoading(false);
@@ -79,28 +76,25 @@ export default function InvitePage() {
       });
   }, [token]);
 
-  function toggle(field: string, value: string) {
-    setForm((f: any) => {
-      const arr = f[field] as string[];
-      return {
-        ...f,
-        [field]: arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value],
-      };
+  function toggle(field: "preferred_sectors" | "interests", value: string) {
+    setForm((f) => {
+      const arr = f[field];
+      return { ...f, [field]: arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value] };
     });
   }
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!form.consent_privacy || !form.consent_commitment) {
-      alert("Please confirm both check-ins at the bottom.");
-      return;
-    }
+  function goStep(s: typeof step) {
+    setStep(s);
+    topRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  async function handleSubmit() {
     setSubmitting(true);
     try {
       const res = await fetch("/api/co-creators/invite", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token, ...form }),
+        body: JSON.stringify({ token, ...form, consent_privacy: true, consent_commitment: true }),
       });
       const d = await res.json();
       if (d.error) {
@@ -108,304 +102,351 @@ export default function InvitePage() {
         setSubmitting(false);
         return;
       }
-      router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${d.cvClaimRequested && d.profileId ? `&claim=${d.profileId}` : ""}`);
+      setShowConfetti(true);
+      setTimeout(() => {
+        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${d.cvClaimRequested && d.profileId ? `&claim=${d.profileId}` : ""}`);
+      }, 2000);
     } catch (err: any) {
       alert(err.message);
       setSubmitting(false);
     }
   }
 
+  // ── Loading / Error / Already Joined ──────────────────────────────────────
+
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#f7f9fb] flex items-center justify-center p-6">
-        <div className="text-[#666] font-[Montserrat] text-sm">Loading your invitation…</div>
-      </main>
+      <Shell>
+        <div className="text-[#888] text-sm text-center py-20">Loading your invitation...</div>
+      </Shell>
     );
   }
-
   if (error || !invite) {
     return (
-      <main className="min-h-screen bg-[#f7f9fb] flex items-center justify-center p-6">
-        <div className="max-w-md text-center">
-          <div className="text-[#212121] font-[Montserrat] text-lg font-semibold mb-2">Invitation not found</div>
-          <div className="text-[#666] text-sm">{error || "This link may have expired."}</div>
+      <Shell>
+        <div className="text-center py-20">
+          <div className="text-[#212121] text-lg font-semibold mb-2">Invitation not found</div>
+          <div className="text-[#888] text-sm">{error || "This link may have expired."}</div>
         </div>
-      </main>
+      </Shell>
     );
   }
-
   if (invite.status === "joined") {
     return (
-      <main className="min-h-screen bg-[#f7f9fb] flex items-center justify-center p-6">
-        <div className="max-w-md text-center">
-          <div className="text-[#27ABD2] font-[Montserrat] text-lg font-semibold mb-2">Already accepted ✓</div>
-          <div className="text-[#666] text-sm">You've already joined the Co-Creators. Welcome back, {invite.name.split(" ")[0]}.</div>
+      <Shell>
+        <div className="text-center py-20">
+          <div className="text-4xl mb-3">&#x1F389;</div>
+          <div className="text-[#27ABD2] text-lg font-bold mb-1">You're already in!</div>
+          <div className="text-[#888] text-sm">Welcome back, {invite.name.split(" ")[0]}.</div>
         </div>
-      </main>
+      </Shell>
     );
   }
 
   const firstName = invite.name.split(" ")[0];
+  const isReferred = !!invite.invited_by && invite.invited_by !== "mussie";
+
+  // ── Confetti overlay ──────────────────────────────────────────────────────
+
+  if (showConfetti) {
+    return (
+      <Shell>
+        <div className="text-center py-16 space-y-4">
+          <div className="text-6xl animate-bounce">&#x1F389;</div>
+          <div className="text-2xl font-bold text-[#212121]">Welcome aboard, {firstName}!</div>
+          <div className="text-sm text-[#888]">Taking you to your Co-Creator home...</div>
+          <div className="flex justify-center gap-1 mt-4">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="w-2 h-2 rounded-full bg-[#27ABD2] animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
+            ))}
+          </div>
+        </div>
+      </Shell>
+    );
+  }
+
+  // ── Main ──────────────────────────────────────────────────────────────────
 
   return (
+    <Shell>
+      <div ref={topRef} />
+
+      {/* Progress dots */}
+      <div className="flex justify-center gap-2 mb-6">
+        {["letter", "details", "interests", ...(profile && !profile.claimed_at ? ["claim"] : [])].map((s, i) => (
+          <div key={s} className={`h-1.5 rounded-full transition-all duration-300 ${step === s ? "w-8 bg-[#27ABD2]" : "w-1.5 bg-[#d5dade]"}`} />
+        ))}
+      </div>
+
+      {/* ── STEP 1: LETTER ───────────────────────────────────────── */}
+      {step === "letter" && (
+        <div className="space-y-6 animate-in fade-in">
+          {/* Celebratory banner */}
+          <div className="bg-gradient-to-br from-[#27ABD2] to-[#24CFD6] rounded-2xl p-6 text-white text-center">
+            <div className="text-3xl mb-2">&#x1F31F;</div>
+            <h1 className="text-xl font-bold mb-1">{firstName}, you're invited</h1>
+            <p className="text-sm text-white/80">Devidends Co-Creators</p>
+          </div>
+
+          {/* Letter */}
+          <div className="bg-white rounded-xl border border-[#e5e9ed] p-6 text-[15px] text-[#333] leading-relaxed space-y-4">
+            {isReferred ? (
+              <>
+                <p>
+                  We're glad to have you here. <strong>{invite.invited_by}</strong> recommended you
+                  to join our Co-Creators network — a trusted circle of development professionals
+                  who shape how Devidends works.
+                </p>
+                <p>
+                  Devidends connects 1,000+ consultants with 400+ live opportunities daily across
+                  Ethiopia and East Africa. Co-Creators are the people behind the quality —
+                  recommending strong candidates, sharing opportunities, and keeping the network sharp.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  You already know what Devidends is about — you've been part of it.
+                  The recommendations you've shared, the advice, the introductions over the
+                  past year — that's what got us here.
+                </p>
+                <p>
+                  1,000+ professionals in the database. 400+ opportunities surfaced daily.
+                  A platform that actually works now. And your fingerprints are on it.
+                </p>
+                <p>
+                  So this isn't a pitch. It's a <em>"let's make this official."</em>
+                </p>
+              </>
+            )}
+
+            <p className="font-semibold text-[#27ABD2]">
+              The Devidends Co-Creators — our trusted circle.
+            </p>
+
+            <div>
+              <p className="font-semibold text-[#212121] mb-2">What stays the same:</p>
+              <p>You keep doing what you do — recommend good people, share opportunities when you spot them, tell us when something's off. Your pace. No pressure.</p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-[#212121] mb-2">What you get now:</p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#27ABD2] mt-0.5 font-bold">+</span>
+                  Early access to tenders and ToRs — before they go public
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#27ABD2] mt-0.5 font-bold">+</span>
+                  Request candidates from the network when building a team
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#27ABD2] mt-0.5 font-bold">+</span>
+                  Free access to all upcoming tools — automatic CV editing, upgrading, tailoring to specific roles, and more
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#27ABD2] mt-0.5 font-bold">+</span>
+                  Your own verified profile with CV scoring and donor-ready templates
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#27ABD2] mt-0.5 font-bold">+</span>
+                  Private Co-Creators group for market intel and sector updates
+                </li>
+              </ul>
+            </div>
+
+            <p className="text-[#888] italic text-sm">
+              No obligation — you can step back anytime.
+            </p>
+            <p className="text-[#212121] font-medium">— The Devidends Team</p>
+          </div>
+
+          <button onClick={() => goStep("details")} className="w-full py-4 rounded-xl bg-gradient-to-r from-[#27ABD2] to-[#24CFD6] text-white font-bold text-base shadow-lg shadow-[#27ABD2]/20 active:scale-[0.98] transition-transform">
+            Accept my place &#x2192;
+          </button>
+        </div>
+      )}
+
+      {/* ── STEP 2: QUICK DETAILS ────────────────────────────────── */}
+      {step === "details" && (
+        <div className="space-y-5 animate-in fade-in">
+          <div>
+            <h2 className="text-lg font-bold text-[#212121]">Quick details</h2>
+            <p className="text-sm text-[#888] mt-0.5">Confirm your info — takes 30 seconds.</p>
+          </div>
+
+          <Field label="Email">
+            <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inp} placeholder="you@email.com" />
+          </Field>
+
+          <Field label="WhatsApp">
+            <input type="tel" value={form.whatsapp_number} onChange={(e) => setForm({ ...form, whatsapp_number: e.target.value })} className={inp} placeholder="+251 ..." />
+          </Field>
+
+          <Field label="How should we reach you?">
+            <div className="flex gap-2">
+              {["whatsapp", "email", "telegram"].map((ch) => (
+                <button key={ch} type="button" onClick={() => setForm({ ...form, preferred_channel: ch })} className={`flex-1 ${chip(form.preferred_channel === ch)}`}>
+                  {ch === "whatsapp" ? "WhatsApp" : ch === "email" ? "Email" : "Telegram"}
+                </button>
+              ))}
+            </div>
+          </Field>
+
+          <Field label="How often?">
+            <select value={form.ask_frequency} onChange={(e) => setForm({ ...form, ask_frequency: e.target.value })} className={inp}>
+              <option value="weekly">Weekly</option>
+              <option value="biweekly">Every 2 weeks</option>
+              <option value="monthly">Monthly</option>
+              <option value="on_demand">Only for specific asks</option>
+            </select>
+          </Field>
+
+          {/* Subscribe toggle */}
+          <div className="bg-[#f7f9fb] rounded-xl p-4 space-y-3">
+            <p className="text-sm font-semibold text-[#212121]">Subscribe to updates?</p>
+            <label className="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" checked={form.subscribe_jobs} onChange={(e) => setForm({ ...form, subscribe_jobs: e.target.checked })} className="w-4 h-4 accent-[#27ABD2] rounded" />
+              <span className="text-sm text-[#333]">Daily job & opportunity digest</span>
+            </label>
+            <label className="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" checked={form.subscribe_news} onChange={(e) => setForm({ ...form, subscribe_news: e.target.checked })} className="w-4 h-4 accent-[#27ABD2] rounded" />
+              <span className="text-sm text-[#333]">Development sector news</span>
+            </label>
+          </div>
+
+          <div className="flex gap-3">
+            <button onClick={() => goStep("letter")} className="flex-1 py-3 rounded-xl border border-[#d5dade] text-[#666] font-medium text-sm">Back</button>
+            <button onClick={() => goStep("interests")} className="flex-[2] py-3 rounded-xl bg-[#27ABD2] text-white font-bold text-sm active:scale-[0.98] transition-transform">
+              Next &#x2192;
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── STEP 3: INTERESTS + SECTORS ──────────────────────────── */}
+      {step === "interests" && (
+        <div className="space-y-5 animate-in fade-in">
+          <div>
+            <h2 className="text-lg font-bold text-[#212121]">What's useful for you?</h2>
+            <p className="text-sm text-[#888] mt-0.5">Shapes what we build first. Pick any.</p>
+          </div>
+
+          <div className="space-y-2">
+            {INTERESTS.map((it) => (
+              <label key={it.id} className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${form.interests.includes(it.id) ? "border-[#27ABD2] bg-[#27ABD2]/5" : "border-[#e5e9ed]"}`}>
+                <input type="checkbox" checked={form.interests.includes(it.id)} onChange={() => toggle("interests", it.id)} className="w-4 h-4 accent-[#27ABD2] rounded" />
+                <span className="text-sm text-[#333]">{it.label}</span>
+              </label>
+            ))}
+          </div>
+
+          <Field label="Your sectors" hint="Pick the ones you know best.">
+            <div className="flex gap-2 flex-wrap">
+              {SECTORS.map((s) => (
+                <button key={s} type="button" onClick={() => toggle("preferred_sectors", s)} className={chip(form.preferred_sectors.includes(s))}>
+                  {s}
+                </button>
+              ))}
+            </div>
+          </Field>
+
+          <Field label="Know anyone else who'd be a good Co-Creator? (optional)">
+            <input type="text" value={form.suggested_invites} onChange={(e) => setForm({ ...form, suggested_invites: e.target.value })} className={inp} placeholder="Names or numbers" />
+          </Field>
+
+          <div className="flex gap-3">
+            <button onClick={() => goStep("details")} className="flex-1 py-3 rounded-xl border border-[#d5dade] text-[#666] font-medium text-sm">Back</button>
+            <button
+              onClick={() => {
+                if (profile && !profile.claimed_at) {
+                  goStep("claim");
+                } else {
+                  handleSubmit();
+                }
+              }}
+              disabled={submitting}
+              className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-[#27ABD2] to-[#24CFD6] text-white font-bold text-sm shadow-lg shadow-[#27ABD2]/20 active:scale-[0.98] transition-transform disabled:opacity-50"
+            >
+              {profile && !profile.claimed_at ? "Next \u2192" : submitting ? "Joining..." : "Join the Co-Creators \u2728"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── STEP 4: CLAIM (only if profile exists + unclaimed) ──── */}
+      {step === "claim" && profile && (
+        <div className="space-y-5 animate-in fade-in">
+          <div>
+            <h2 className="text-lg font-bold text-[#212121]">One more thing</h2>
+            <p className="text-sm text-[#888] mt-0.5">We already have your profile in our database.</p>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#f7f9fb] to-white rounded-xl border border-[#e5e9ed] p-5">
+            <div className="text-base font-bold text-[#212121] mb-1">{profile.name}</div>
+            {profile.headline && <div className="text-sm text-[#666] mb-2">{profile.headline}</div>}
+            {profile.cv_score && (
+              <div className="inline-flex items-center gap-1.5 bg-[#27ABD2]/10 text-[#27ABD2] text-xs font-bold px-2.5 py-1 rounded-full">
+                CV Score: {profile.cv_score}/100
+              </div>
+            )}
+          </div>
+
+          <label className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-colors ${form.cv_claim_requested ? "border-[#27ABD2] bg-[#27ABD2]/5" : "border-[#e5e9ed]"}`}>
+            <input type="checkbox" checked={form.cv_claim_requested} onChange={(e) => setForm({ ...form, cv_claim_requested: e.target.checked })} className="w-5 h-5 accent-[#27ABD2] rounded" />
+            <div>
+              <div className="text-sm font-semibold text-[#212121]">Claim this profile</div>
+              <div className="text-xs text-[#888]">Update it, score your CV, access all Co-Creator tools</div>
+            </div>
+          </label>
+
+          {/* Privacy — minimal */}
+          <p className="text-xs text-[#999] leading-relaxed">
+            Your details stay between us. We don't share or publish them. Reply STOP anytime. <a className="text-[#27ABD2]" href="/privacy" target="_blank" rel="noreferrer">Privacy policy</a>
+          </p>
+
+          <div className="flex gap-3">
+            <button onClick={() => goStep("interests")} className="flex-1 py-3 rounded-xl border border-[#d5dade] text-[#666] font-medium text-sm">Back</button>
+            <button onClick={handleSubmit} disabled={submitting} className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-[#27ABD2] to-[#24CFD6] text-white font-bold text-sm shadow-lg shadow-[#27ABD2]/20 active:scale-[0.98] transition-transform disabled:opacity-50">
+              {submitting ? "Joining..." : "Join the Co-Creators \u2728"}
+            </button>
+          </div>
+        </div>
+      )}
+    </Shell>
+  );
+}
+
+// ── Shared components ─────────────────────────────────────────────────────────
+
+function Shell({ children }: { children: React.ReactNode }) {
+  return (
     <main className="min-h-screen bg-[#f7f9fb] font-[Montserrat]">
-      <div className="max-w-2xl mx-auto px-5 py-10 md:py-16">
-        {/* Header logo */}
-        <div className="mb-10 text-xl font-bold tracking-tight">
+      <div className="max-w-lg mx-auto px-5 py-8">
+        <div className="mb-6 text-lg font-bold tracking-tight">
           <span className="text-[#27ABD2]">Dev</span>
           <span className="text-[#212121]">idends</span>
         </div>
-
-        {/* Personal letter */}
-        <div className="bg-white rounded-lg border border-[#e5e9ed] p-8 md:p-10 mb-8">
-          <div className="text-[#666] text-xs tracking-wider uppercase mb-6">From the Devidends team</div>
-          <div className="text-[#212121] text-lg leading-relaxed space-y-4">
-            <p><span className="font-semibold">{firstName},</span></p>
-            <p>
-              You already know what Devidends is about — you've been part of it. The recommendations
-              you've shared, the advice you've given, the introductions you've made over the past
-              year — that's what got us here. 113 profiles, 400+ live opportunities daily, and a
-              platform that actually works now.
-            </p>
-            <p>
-              So this isn't a pitch. It's more of a "let's make this official."
-            </p>
-            <p className="text-[#27ABD2] font-semibold">We're calling it the Devidends Co-Creators.</p>
-            <p>
-              A small group of people who've already been shaping this thing behind the scenes.
-              We're starting with just eight of you — the ones whose judgment the team trusts most
-              and whose fingerprints are already on the platform.
-            </p>
-            <p>
-              <span className="font-semibold text-[#212121]">What stays the same:</span> you keep doing
-              what you do — recommend good people when you come across them, share opportunities
-              when you spot them, tell us when something's off. Your pace, your sectors, no pressure.
-            </p>
-            <p>
-              <span className="font-semibold text-[#212121]">What changes:</span> you now get the tools
-              to match. Early access to tenders and ToRs before they go public. The ability to request
-              candidates from the network when you're building a team. Your own verified profile
-              with CV scoring and donor-ready templates. A private Co-Creators group for market intel.
-              And when revenue comes in — a share of what your referrals generate.
-            </p>
-            <p>
-              We built this together. This just gives it a name and a structure.
-            </p>
-            <p className="text-[#666] italic text-base">
-              No obligation — if it doesn't feel right, just ignore this. But we'd love to
-              have you in.
-            </p>
-            <p className="text-[#212121]">— The Devidends Team</p>
-          </div>
-        </div>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-white rounded-lg border border-[#e5e9ed] p-8 md:p-10 space-y-8">
-          <div>
-            <h2 className="text-xl font-bold text-[#212121] mb-1">Accept my place as a Co-Creator</h2>
-            <p className="text-sm text-[#666]">Takes about four minutes.</p>
-          </div>
-
-          {/* IDENTITY */}
-          <section className="space-y-4">
-            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold">A few details</div>
-
-            <Field label="Email" required>
-              <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inp} placeholder="you@email.com" />
-            </Field>
-
-            <Field label="WhatsApp number" hint="How most of us actually talk. We'll never cold-message, only reply to you.">
-              <input type="tel" value={form.whatsapp_number} onChange={(e) => setForm({ ...form, whatsapp_number: e.target.value })} className={inp} placeholder="+251 ..." />
-            </Field>
-
-            <Field label="LinkedIn (optional)">
-              <input type="url" value={form.linkedin_url} onChange={(e) => setForm({ ...form, linkedin_url: e.target.value })} className={inp} placeholder="linkedin.com/in/..." />
-            </Field>
-
-            <div className="grid grid-cols-2 gap-4">
-              <Field label="Current role / title">
-                <input type="text" value={form.role_title} onChange={(e) => setForm({ ...form, role_title: e.target.value })} className={inp} placeholder="Senior M&E Advisor" />
-              </Field>
-              <Field label="Years in the sector">
-                <input type="number" min="0" max="60" value={form.years_in_sector} onChange={(e) => setForm({ ...form, years_in_sector: e.target.value })} className={inp} placeholder="15" />
-              </Field>
-            </div>
-          </section>
-
-          {/* HOW TO REACH */}
-          <section className="space-y-4">
-            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold">How to reach you</div>
-
-            <Field label="Preferred channel">
-              <div className="flex gap-2 flex-wrap">
-                {["whatsapp", "email", "telegram"].map((ch) => (
-                  <button key={ch} type="button" onClick={() => setForm({ ...form, preferred_channel: ch })} className={chipBtn(form.preferred_channel === ch)}>
-                    {ch === "whatsapp" ? "WhatsApp" : ch === "email" ? "Email" : "Telegram"}
-                  </button>
-                ))}
-              </div>
-            </Field>
-
-            <Field label="How often should we message?">
-              <div className="flex gap-2 flex-wrap">
-                {[
-                  { v: "weekly", l: "Weekly" },
-                  { v: "biweekly", l: "Every 2 weeks" },
-                  { v: "monthly", l: "Monthly" },
-                  { v: "on_demand", l: "Only for specific sectors" },
-                ].map((o) => (
-                  <button key={o.v} type="button" onClick={() => setForm({ ...form, ask_frequency: o.v })} className={chipBtn(form.ask_frequency === o.v)}>
-                    {o.l}
-                  </button>
-                ))}
-              </div>
-            </Field>
-          </section>
-
-          {/* SECTORS */}
-          <section className="space-y-4">
-            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold">Your domain</div>
-
-            <Field label="Sectors you're closest to" hint="Pick any number.">
-              <div className="flex gap-2 flex-wrap">
-                {SECTORS.map((s) => (
-                  <button key={s} type="button" onClick={() => toggle("preferred_sectors", s)} className={chipBtn(form.preferred_sectors.includes(s))}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </Field>
-
-            <Field label="Regions you cover">
-              <div className="flex gap-2 flex-wrap">
-                {REGIONS.map((r) => (
-                  <button key={r} type="button" onClick={() => toggle("regions", r)} className={chipBtn(form.regions.includes(r))}>
-                    {r}
-                  </button>
-                ))}
-              </div>
-            </Field>
-          </section>
-
-          {/* INTERESTS (bidirectional) */}
-          <section className="space-y-4">
-            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold">What you'd like to use the Co-Creators for</div>
-            <p className="text-sm text-[#666] -mt-2">Pick any that apply. This shapes what we build for you first.</p>
-
-            <div className="space-y-2">
-              {INTERESTS.map((it) => (
-                <label key={it.id} className={checkRow(form.interests.includes(it.id))}>
-                  <input type="checkbox" checked={form.interests.includes(it.id)} onChange={() => toggle("interests", it.id)} className="mt-1 accent-[#27ABD2]" />
-                  <span className="text-sm text-[#212121]">{it.label}</span>
-                </label>
-              ))}
-            </div>
-          </section>
-
-          {/* NETWORK CONTEXT */}
-          <section className="space-y-4">
-            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold">Your network</div>
-
-            <Field label="About how many dev professionals are in your close network?">
-              <div className="flex gap-2 flex-wrap">
-                {["<50", "50–200", "200–500", "500+"].map((n) => (
-                  <button key={n} type="button" onClick={() => setForm({ ...form, network_size: n })} className={chipBtn(form.network_size === n)}>
-                    {n}
-                  </button>
-                ))}
-              </div>
-            </Field>
-
-            <Field label="How do you share opportunities today?">
-              <div className="flex gap-2 flex-wrap">
-                {["WhatsApp groups", "Direct DMs", "Email", "LinkedIn", "In-person", "Telegram"].map((c) => (
-                  <button key={c} type="button" onClick={() => toggle("sharing_channels", c)} className={chipBtn(form.sharing_channels.includes(c))}>
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </Field>
-
-            <Field label="Anyone you'd like us to invite next? (optional)">
-              <textarea value={form.suggested_invites} onChange={(e) => setForm({ ...form, suggested_invites: e.target.value })} className={`${inp} min-h-[80px]`} placeholder="Names, emails, or WhatsApp numbers — whatever's easiest" />
-            </Field>
-          </section>
-
-          {/* CLAIM CV */}
-          {profile && !profile.claimed_at && (
-            <section className="bg-[#f7f9fb] rounded-lg p-5 border border-[#e5e9ed]">
-              <div className="text-[#212121] font-semibold text-sm mb-2">Claim your profile</div>
-              <p className="text-sm text-[#666] mb-3">
-                We already have you in our consultant database as <span className="text-[#212121] font-medium">{profile.name}{profile.headline ? `, ${profile.headline}` : ""}</span>.
-                Claim it to update, see your CV score, and access Co-Creator tools.
-              </p>
-              <label className={checkRow(form.cv_claim_requested)}>
-                <input type="checkbox" checked={form.cv_claim_requested} onChange={(e) => setForm({ ...form, cv_claim_requested: e.target.checked })} className="mt-1 accent-[#27ABD2]" />
-                <span className="text-sm text-[#212121]">Yes, I'd like to claim my profile</span>
-              </label>
-            </section>
-          )}
-
-          {/* Notes */}
-          <Field label="Anything we should know? (optional)">
-            <textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} className={`${inp} min-h-[80px]`} />
-          </Field>
-
-          {/* Privacy */}
-          <div className="bg-[#f7f9fb] rounded-lg p-5 border border-[#e5e9ed] text-sm text-[#666] leading-relaxed">
-            <div className="text-[#212121] font-semibold mb-2">On privacy</div>
-            Your contact details stay between us. We don't share, sell, or publish them. CVs you send are added only with the person's consent.
-            Reply STOP anytime — everything pauses. Full details at <a className="text-[#27ABD2] underline" href="/privacy" target="_blank" rel="noreferrer">devidends.net/privacy</a>.
-          </div>
-
-          {/* Consent */}
-          <div className="space-y-3">
-            <label className={checkRow(form.consent_privacy)}>
-              <input type="checkbox" checked={form.consent_privacy} onChange={(e) => setForm({ ...form, consent_privacy: e.target.checked })} className="mt-1 accent-[#27ABD2]" />
-              <span className="text-sm text-[#212121]">I've read the privacy note and I'm okay with it.</span>
-            </label>
-            <label className={checkRow(form.consent_commitment)}>
-              <input type="checkbox" checked={form.consent_commitment} onChange={(e) => setForm({ ...form, consent_commitment: e.target.checked })} className="mt-1 accent-[#27ABD2]" />
-              <span className="text-sm text-[#212121]">I understand the Co-Creators is mutual — I'll recommend when I can, and I'll use the tools and network the way they're intended. I can step back anytime.</span>
-            </label>
-          </div>
-
-          <div className="pt-2">
-            <button type="submit" disabled={submitting} className="w-full bg-[#27ABD2] hover:bg-[#1e98bd] disabled:opacity-50 text-white font-semibold py-3 px-6 rounded-md transition-colors">
-              {submitting ? "Saving…" : "Accept my place as a Co-Creator →"}
-            </button>
-          </div>
-        </form>
-
-        <div className="text-center text-xs text-[#999] mt-8">Devidends · Ethiopia + Horn of Africa</div>
+        {children}
+        <div className="text-center text-[10px] text-[#bbb] mt-8">Devidends · Ethiopia + Horn of Africa</div>
       </div>
     </main>
   );
 }
 
-const inp = "w-full border border-[#d5dade] rounded-md px-3 py-2 text-sm text-[#212121] focus:outline-none focus:border-[#27ABD2] focus:ring-1 focus:ring-[#27ABD2]/30 transition-colors";
+const inp = "w-full border border-[#d5dade] rounded-xl px-4 py-3 text-sm text-[#212121] focus:outline-none focus:border-[#27ABD2] focus:ring-2 focus:ring-[#27ABD2]/20 transition-all bg-white";
 
-function chipBtn(active: boolean) {
-  return `px-3 py-1.5 rounded-full text-sm border transition-colors ${
-    active
-      ? "bg-[#27ABD2] border-[#27ABD2] text-white"
-      : "bg-white border-[#d5dade] text-[#212121] hover:border-[#27ABD2]"
+function chip(active: boolean) {
+  return `px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+    active ? "bg-[#27ABD2] border-[#27ABD2] text-white" : "bg-white border-[#d5dade] text-[#555] active:scale-95"
   }`;
 }
 
-function checkRow(active: boolean) {
-  return `flex items-start gap-3 p-3 rounded-md border transition-colors cursor-pointer ${
-    active ? "border-[#27ABD2] bg-[#27ABD2]/5" : "border-[#e5e9ed] hover:border-[#27ABD2]/50"
-  }`;
-}
-
-function Field({ label, hint, required, children }: { label: string; hint?: string; required?: boolean; children: React.ReactNode }) {
+function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-[#212121] mb-1.5">
-        {label}{required && <span className="text-[#27ABD2]"> *</span>}
-      </label>
-      {hint && <div className="text-xs text-[#888] mb-2">{hint}</div>}
+      <label className="block text-sm font-semibold text-[#212121] mb-1.5">{label}</label>
+      {hint && <div className="text-xs text-[#999] mb-2">{hint}</div>}
       {children}
     </div>
   );

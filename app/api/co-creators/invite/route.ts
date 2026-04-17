@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
   if (data.profile_id) {
     const { data: p } = await sb
       .from("profiles")
-      .select("id, name, headline, sectors, cv_score, claimed_at, profile_type")
+      .select("id, name, headline, sectors, cv_score, claimed_at, profile_type, email, phone")
       .eq("id", data.profile_id)
       .maybeSingle();
     profile = p;

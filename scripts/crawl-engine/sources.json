@@ -19,8 +19,8 @@
     "id": "worldbank",
     "name": "World Bank Procurement",
     "adapter": "worldbank",
-    "content_type": "tender",
-    "enabled": false,
+    "content_type": "consulting",
+    "enabled": true,
     "priority": 30,
     "config": {
       "noticeTypes": [
