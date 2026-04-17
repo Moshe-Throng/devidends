@@ -105,6 +105,12 @@ export default function InvitePage() {
       }
       setShowConfetti(true);
       setTimeout(() => {
+        // Frictionless sign-in: if server gave us a magic link, go straight to it.
+        // Supabase verifies the token and lands the user signed-in on /profile.
+        if (d.signInUrl) {
+          window.location.href = d.signInUrl;
+          return;
+        }
         const claimParam = d.cvClaimRequested && d.claimToken ? `&claim=${d.claimToken}` : "";
         router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${claimParam}`);
       }, 2000);

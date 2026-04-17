@@ -144,6 +144,36 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Ensure auth user exists + link profile for frictionless sign-in.
+    // The invite token is proof of identity — we can auto-create an auth account.
+    let signInUrl: string | null = null;
+    if (email) {
+      try {
+        const { data: list } = await sb.auth.admin.listUsers();
+        let authUser = list?.users?.find(u => u.email?.toLowerCase() === email.toLowerCase());
+        if (!authUser) {
+          const { data: created } = await sb.auth.admin.createUser({
+            email,
+            email_confirm: true, // skip confirmation — they already verified via invite token
+          });
+          authUser = created?.user ?? undefined;
+        }
+        if (authUser && invite.profile_id) {
+          // Link profile to auth user
+          await sb.from("profiles").update({ user_id: authUser.id }).eq("id", invite.profile_id);
+        }
+        // Generate a one-time magic link so they land signed in
+        const { data: linkData } = await sb.auth.admin.generateLink({
+          type: "magiclink",
+          email,
+          options: { redirectTo: "https://devidends.net/auth/callback?next=/profile" },
+        });
+        signInUrl = linkData?.properties?.action_link ?? null;
+      } catch (e) {
+        console.warn("[co-creators/invite] auto-signin setup failed:", e);
+      }
+    }
+
     // Log interaction
     await sb.from("co_creator_interactions").insert({
       co_creator_id: invite.id,
@@ -187,6 +217,7 @@ export async function POST(req: NextRequest) {
       profileId: invite.profile_id,
       cvClaimRequested: !!cv_claim_requested,
       claimToken,
+      signInUrl,
     });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || "Server error" }, { status: 500 });
