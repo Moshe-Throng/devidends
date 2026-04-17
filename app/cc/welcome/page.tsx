@@ -41,12 +41,12 @@ function WelcomeInner() {
 
           {claimId && (
             <div className="bg-[#27ABD2]/5 border border-[#27ABD2]/30 rounded-md p-5 mb-6">
-              <div className="text-[#212121] font-semibold text-sm mb-2">One more thing — claim your profile</div>
+              <div className="text-[#212121] font-semibold text-sm mb-2">&#x2713; Profile claimed</div>
               <p className="text-sm text-[#555] mb-3">
-                We have a profile for you already. Claim it to see your CV score, get donor-ready templates, and track who you recommend.
+                Your profile is now yours. Open it to see your CV score, download donor-ready templates, and track your recommendations.
               </p>
-              <a href={`/claim?profile=${claimId}`} className="inline-block bg-[#27ABD2] hover:bg-[#1e98bd] text-white text-sm font-semibold px-5 py-2 rounded-md transition-colors">
-                Claim my profile →
+              <a href={`/claim?token=${claimId}`} className="inline-block bg-[#27ABD2] hover:bg-[#1e98bd] text-white text-sm font-semibold px-5 py-2 rounded-md transition-colors">
+                Open my profile &#x2192;
               </a>
             </div>
           )}

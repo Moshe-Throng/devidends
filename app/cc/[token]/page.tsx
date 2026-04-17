@@ -14,7 +14,7 @@ const SECTORS = [
 const INTERESTS = [
   { id: "priority_alerts", label: "Early access to jobs & tenders (before public)" },
   { id: "tor_preview", label: "ToR pre-announcements" },
-  { id: "shortlists", label: "Request candidates for bids I&apos;m leading" },
+  { id: "shortlists", label: "Request candidates for bids I'm leading" },
   { id: "recommend", label: "Recommend consultants to the network" },
   { id: "gigs_inbound", label: "Get consulting gigs & short-term roles" },
   { id: "cv_tools", label: "Free CV scoring, editing & donor-ready templates" },
@@ -44,11 +44,12 @@ export default function InvitePage() {
     preferred_sectors: [] as string[],
     interests: [] as string[],
     subscribe_jobs: true,
-    subscribe_news: false,
+    subscribe_news: true,
     cv_claim_requested: false,
     consent: false,
     notes: "",
     suggested_invites: "",
+    recommended_experts: [] as { name: string; email: string; description: string }[],
   });
 
   useEffect(() => {
@@ -104,7 +105,8 @@ export default function InvitePage() {
       }
       setShowConfetti(true);
       setTimeout(() => {
-        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${d.cvClaimRequested && d.profileId ? `&claim=${d.profileId}` : ""}`);
+        const claimParam = d.cvClaimRequested && d.claimToken ? `&claim=${d.claimToken}` : "";
+        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${claimParam}`);
       }, 2000);
     } catch (err: any) {
       alert(err.message);
@@ -351,9 +353,65 @@ export default function InvitePage() {
             </div>
           </Field>
 
-          <Field label="Know anyone else who&apos;d be a good Co-Creator? (optional)">
-            <input type="text" value={form.suggested_invites} onChange={(e) => setForm({ ...form, suggested_invites: e.target.value })} className={inp} placeholder="Names or numbers" />
-          </Field>
+          <div>
+            <label className="block text-sm font-semibold text-[#212121] mb-1.5">
+              Recommend experts for the network (optional)
+            </label>
+            <div className="text-xs text-[#999] mb-3">
+              Well-connected consultants and professionals who&apos;d strengthen the network. We&apos;ll reach out on your behalf.
+            </div>
+            <div className="space-y-3">
+              {form.recommended_experts.map((r, i) => (
+                <div key={i} className="bg-[#f7f9fb] rounded-xl p-3 border border-[#e5e9ed] space-y-2 relative">
+                  <button
+                    type="button"
+                    onClick={() => setForm({ ...form, recommended_experts: form.recommended_experts.filter((_, j) => j !== i) })}
+                    className="absolute top-2 right-2 text-[#999] hover:text-red-500 text-xs"
+                    aria-label="Remove"
+                  >&#x2715;</button>
+                  <input
+                    type="text"
+                    value={r.name}
+                    onChange={(e) => {
+                      const next = [...form.recommended_experts];
+                      next[i] = { ...next[i], name: e.target.value };
+                      setForm({ ...form, recommended_experts: next });
+                    }}
+                    className={inp}
+                    placeholder="Full name"
+                  />
+                  <input
+                    type="email"
+                    value={r.email}
+                    onChange={(e) => {
+                      const next = [...form.recommended_experts];
+                      next[i] = { ...next[i], email: e.target.value };
+                      setForm({ ...form, recommended_experts: next });
+                    }}
+                    className={inp}
+                    placeholder="Email or phone"
+                  />
+                  <textarea
+                    value={r.description}
+                    onChange={(e) => {
+                      const next = [...form.recommended_experts];
+                      next[i] = { ...next[i], description: e.target.value };
+                      setForm({ ...form, recommended_experts: next });
+                    }}
+                    className={`${inp} min-h-[60px]`}
+                    placeholder="Why they'd be great (optional) — sector, expertise, why you trust them"
+                  />
+                </div>
+              ))}
+              <button
+                type="button"
+                onClick={() => setForm({ ...form, recommended_experts: [...form.recommended_experts, { name: "", email: "", description: "" }] })}
+                className="w-full py-2.5 rounded-xl border border-dashed border-[#27ABD2] text-[#27ABD2] text-sm font-medium hover:bg-[#27ABD2]/5 transition-colors"
+              >
+                + Add {form.recommended_experts.length > 0 ? "another" : "someone"}
+              </button>
+            </div>
+          </div>
 
           <div className="flex gap-3">
             <button onClick={() => goStep("details")} className="flex-1 py-3 rounded-xl border border-[#d5dade] text-[#666] font-medium text-sm">Back</button>

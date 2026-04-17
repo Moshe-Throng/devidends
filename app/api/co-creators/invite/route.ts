@@ -115,6 +115,35 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: updErr.message }, { status: 500 });
     }
 
+    // If they asked to claim their profile, auto-claim it.
+    // The invite token itself is proof of identity — no extra claim step needed.
+    let claimToken: string | null = null;
+    if (cv_claim_requested && invite.profile_id) {
+      const { data: profileRow } = await sb
+        .from("profiles")
+        .select("claim_token, claimed_at, email")
+        .eq("id", invite.profile_id)
+        .maybeSingle();
+
+      if (profileRow && !profileRow.claimed_at) {
+        // Ensure a claim token exists (for future passwordless re-access)
+        claimToken = profileRow.claim_token;
+        if (!claimToken) {
+          claimToken = Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 10);
+        }
+        await sb
+          .from("profiles")
+          .update({
+            claim_token: claimToken,
+            claimed_at: new Date().toISOString(),
+            email: email || profileRow.email,
+          })
+          .eq("id", invite.profile_id);
+      } else if (profileRow?.claim_token) {
+        claimToken = profileRow.claim_token;
+      }
+    }
+
     // Log interaction
     await sb.from("co_creator_interactions").insert({
       co_creator_id: invite.id,
@@ -157,6 +186,7 @@ export async function POST(req: NextRequest) {
       name: invite.name,
       profileId: invite.profile_id,
       cvClaimRequested: !!cv_claim_requested,
+      claimToken,
     });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || "Server error" }, { status: 500 });
