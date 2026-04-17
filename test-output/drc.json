@@ -1,5 +1,401 @@
 [
   {
+    "title": "Protection Assistant (Legal) X2 - Sinjar",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "17 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175772",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.389Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Legal Counseling",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Protection Assistant (General Protection) X2 - Sinjar",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "17 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175771",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.390Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Partnerships and Localization Coordinator",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "17 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175769",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.390Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Donor & Partner Relations",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Oficial de Protección para atención psicosocial individual (PSS Individual)",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175768",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.391Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Oficial de Protección para atención psicosocial grupal (PSS Grupal)",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175763",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.391Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Asistente de Recuperación Económica",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "23 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175767",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.391Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Líder de Equipo de Cadena de Abastecimiento y Compras- BBC",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "29 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175766",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.391Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Supply Chain",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Asistente de Finanzas",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "22 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175765",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.391Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Finance",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Gerente de Programa",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175762",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.392Z",
+    "raw_fields": {
+      "region": "Americas",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Base Manager",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "27 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175760",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.392Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Other",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Advocacy Coordinator",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "03 May 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175758",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.392Z",
+    "raw_fields": {
+      "region": "Europe",
+      "category": "Legal Counseling",
+      "contract_type": "Expatriate or national"
+    }
+  },
+  {
+    "title": "Team Leader Monitoring de Protection",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175757",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.393Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "National Technical Field Manager",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "25 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175756",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.393Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Mine Action",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Protection Assistant – Pediatric counsellor",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175752",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.393Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Child Protection - Paediatric Counsellor Intern",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175751",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.393Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Casual Worker- Administration Support",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "23 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175750",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.393Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Administration",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "MEAL Assistant CPIMS+",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "30 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175749",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Protection Officer - Case Management",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175748",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Protection Officer (Legal Aid)",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175747",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Protection Assistant (PSS)",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175746",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Supply Chain Assistant",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "05 May 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175745",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Supply Chain",
+      "contract_type": "National"
+    }
+  },
+  {
+    "title": "Risk, Compliance and Liaison Specialist",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "26 Apr 2026",
+    "published": "16 Apr 2026",
+    "country": "Unknown",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=175483",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
+    "raw_fields": {
+      "region": "Middle East",
+      "category": "Other",
+      "contract_type": "National"
+    }
+  },
+  {
     "title": "Conductor",
     "organization": "Danish Refugee Council (DRC)",
     "description": "",
@@ -10,7 +406,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175744",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.953Z",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Supply Chain",
@@ -28,7 +424,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175743",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.953Z",
+    "scraped_at": "2026-04-17T07:00:16.394Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Other",
@@ -46,7 +442,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175741",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.954Z",
+    "scraped_at": "2026-04-17T07:00:16.395Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -64,7 +460,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175731",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.954Z",
+    "scraped_at": "2026-04-17T07:00:16.395Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -82,7 +478,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175739",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.395Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -100,7 +496,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175740",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.395Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -118,7 +514,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175738",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.396Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -136,7 +532,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175721",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.396Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -154,7 +550,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175737",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.396Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Senior Management",
@@ -172,7 +568,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175726",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.955Z",
+    "scraped_at": "2026-04-17T07:00:16.396Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -190,7 +586,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175722",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.396Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -208,7 +604,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175736",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.397Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Volunteers, Internships & Student Positions",
@@ -226,7 +622,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175735",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.397Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Senior Management",
@@ -244,7 +640,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175733",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.397Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Program/Project Management",
@@ -262,7 +658,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175732",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.397Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Supply Chain",
@@ -280,7 +676,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175730",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.397Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Administration",
@@ -298,7 +694,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175727",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Translation",
@@ -316,7 +712,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175725",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.956Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Communication",
@@ -334,7 +730,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175379",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -352,7 +748,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175693",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -370,7 +766,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175718",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Europe",
       "category": "IT",
@@ -388,7 +784,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175719",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Finance",
@@ -406,7 +802,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175717",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Program/Project Management",
@@ -424,7 +820,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175716",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.398Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Program/Project Management",
@@ -442,7 +838,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175715",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.399Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Mine Action",
@@ -460,7 +856,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175714",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.399Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Supply Chain",
@@ -478,7 +874,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175713",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.399Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Donor & Partner Relations",
@@ -496,7 +892,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175712",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.399Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -514,7 +910,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175711",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.957Z",
+    "scraped_at": "2026-04-17T07:00:16.400Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -532,7 +928,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175710",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.400Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -550,7 +946,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175709",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.400Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Donor & Partner Relations",
@@ -568,7 +964,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175708",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.400Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -586,7 +982,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175707",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.400Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -604,7 +1000,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175706",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Other",
@@ -622,7 +1018,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175696",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -640,7 +1036,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175705",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Supply Chain",
@@ -658,7 +1054,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175701",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Human Resources",
@@ -676,7 +1072,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175704",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -694,7 +1090,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175703",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.958Z",
+    "scraped_at": "2026-04-17T07:00:16.401Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -712,7 +1108,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175702",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.959Z",
+    "scraped_at": "2026-04-17T07:00:16.402Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -730,7 +1126,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175694",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.959Z",
+    "scraped_at": "2026-04-17T07:00:16.404Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Senior Management",
@@ -748,7 +1144,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175700",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.959Z",
+    "scraped_at": "2026-04-17T07:00:16.404Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Senior Management",
@@ -766,7 +1162,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175697",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.959Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -777,14 +1173,14 @@
     "title": "Protection Team Leader",
     "organization": "Danish Refugee Council (DRC)",
     "description": "",
-    "deadline": "17 Apr 2026",
+    "deadline": "21 Apr 2026",
     "published": "10 Apr 2026",
     "country": "Unknown",
     "city": null,
     "source_url": "https://drc.ngo/jobs/job?id=175692",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.959Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -802,7 +1198,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175695",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.960Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Mine Action",
@@ -820,7 +1216,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175690",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.960Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Program/Project Management",
@@ -838,7 +1234,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175689",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.960Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Program/Project Management",
@@ -856,7 +1252,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175688",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -874,7 +1270,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175687",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.405Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Program/Project Management",
@@ -892,7 +1288,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175461",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Europe",
       "category": "IT",
@@ -910,7 +1306,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175683",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -928,7 +1324,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175682",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Grants Management",
@@ -946,7 +1342,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175681",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Safety & Security",
@@ -964,7 +1360,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175675",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Program/Project Management",
@@ -982,28 +1378,10 @@
     "source_url": "https://drc.ngo/jobs/job?id=175679",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.961Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Asia",
       "category": "Supply Chain",
-      "contract_type": "National"
-    }
-  },
-  {
-    "title": "Finance Coordinator",
-    "organization": "Danish Refugee Council (DRC)",
-    "description": "",
-    "deadline": "16 Apr 2026",
-    "published": "08 Apr 2026",
-    "country": "Unknown",
-    "city": null,
-    "source_url": "https://drc.ngo/jobs/job?id=175444",
-    "source_domain": "drc.ngo",
-    "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
-    "raw_fields": {
-      "region": "Americas",
-      "category": "Finance",
       "contract_type": "National"
     }
   },
@@ -1018,7 +1396,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175676",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -1036,7 +1414,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175674",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1054,7 +1432,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175188",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.406Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Program/Project Management",
@@ -1072,7 +1450,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175668",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Safety & Security",
@@ -1090,7 +1468,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175671",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Other",
@@ -1108,7 +1486,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175669",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1126,7 +1504,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175667",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Mine Action",
@@ -1144,7 +1522,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175661",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -1162,7 +1540,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175653",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Donor & Partner Relations",
@@ -1180,7 +1558,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175652",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Americas",
       "category": "Monitoring & Evaluation",
@@ -1198,7 +1576,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175651",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.962Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Finance",
@@ -1216,7 +1594,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175650",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Volunteers, Internships & Student Positions",
@@ -1234,28 +1612,10 @@
     "source_url": "https://drc.ngo/jobs/job?id=175649",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.407Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
-      "contract_type": "National"
-    }
-  },
-  {
-    "title": "Humanitarian Mine Action Assistant (Paramedic)",
-    "organization": "Danish Refugee Council (DRC)",
-    "description": "",
-    "deadline": "16 Apr 2026",
-    "published": "06 Apr 2026",
-    "country": "Unknown",
-    "city": null,
-    "source_url": "https://drc.ngo/jobs/job?id=175643",
-    "source_domain": "drc.ngo",
-    "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
-    "raw_fields": {
-      "region": "Europe",
-      "category": "Mine Action",
       "contract_type": "National"
     }
   },
@@ -1270,7 +1630,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175638",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Program/Project Management",
@@ -1288,27 +1648,9 @@
     "source_url": "https://drc.ngo/jobs/job?id=175637",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Middle East",
-      "category": "Program/Project Management",
-      "contract_type": "National"
-    }
-  },
-  {
-    "title": "Protection Monitoring and CBP Officer - Damasak",
-    "organization": "Danish Refugee Council (DRC)",
-    "description": "",
-    "deadline": "16 Apr 2026",
-    "published": "02 Apr 2026",
-    "country": "Unknown",
-    "city": null,
-    "source_url": "https://drc.ngo/jobs/job?id=175632",
-    "source_domain": "drc.ngo",
-    "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
-    "raw_fields": {
-      "region": "Africa",
       "category": "Program/Project Management",
       "contract_type": "National"
     }
@@ -1324,28 +1666,10 @@
     "source_url": "https://drc.ngo/jobs/job?id=175618",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Middle East",
       "category": "Finance",
-      "contract_type": "National"
-    }
-  },
-  {
-    "title": "Base Manager",
-    "organization": "Danish Refugee Council (DRC)",
-    "description": "",
-    "deadline": "19 Apr 2026",
-    "published": "30 Mar 2026",
-    "country": "Unknown",
-    "city": null,
-    "source_url": "https://drc.ngo/jobs/job?id=175595",
-    "source_domain": "drc.ngo",
-    "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
-    "raw_fields": {
-      "region": "Europe",
-      "category": "Other",
       "contract_type": "National"
     }
   },
@@ -1360,7 +1684,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175590",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Volunteers, Internships & Student Positions",
@@ -1378,7 +1702,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175581",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Europe",
       "category": "Volunteers, Internships & Student Positions",
@@ -1396,7 +1720,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175050",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-04-16T06:59:37.963Z",
+    "scraped_at": "2026-04-17T07:00:16.408Z",
     "raw_fields": {
       "region": "Roving/Global",
       "category": "Standby Roster",
