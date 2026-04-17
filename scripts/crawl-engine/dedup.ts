@@ -19,20 +19,40 @@ interface DedupStats {
 }
 
 /**
- * Build a dedup key from title + organization.
- * Matches the Python aggregate_jobs.py logic.
+ * Normalize organization names to catch abbreviation variants.
+ * "PIN" → "people in need", "IRC" → "international rescue committee", etc.
+ */
+const ORG_ALIASES: Record<string, string> = {
+  "pin": "people in need",
+  "irc": "international rescue committee",
+  "si": "solidarites international",
+  "hi": "humanity & inclusion",
+  "handicap international - humanity & inclusion": "humanity & inclusion",
+  "handicap international": "humanity & inclusion",
+  "drc": "danish refugee council",
+  "danish refugee council (drc)": "danish refugee council",
+  "nrc": "norwegian refugee council",
+  "wfp": "world food programme",
+  "fao": "food and agriculture organization",
+  "who": "world health organization",
+  "undp": "united nations development programme",
+};
+
+function normalizeOrg(org: string): string {
+  const lower = org.toLowerCase().replace(/\s+/g, " ").trim();
+  return ORG_ALIASES[lower] || lower;
+}
+
+/**
+ * Build a dedup key from title + normalized organization.
+ * Uses full title (not truncated) for better accuracy on generic titles.
  */
 function titleKey(opp: RawOpportunity): string {
   const title = (opp.title || "")
     .toLowerCase()
     .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 60);
-  const org = (opp.organization || "")
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 20);
+    .trim();
+  const org = normalizeOrg(opp.organization || "");
   return `${title}|${org}`;
 }
 

@@ -119,6 +119,39 @@ async function main() {
     };
   }).filter((r: any) => r.source_url && r.title);
 
+  // Pre-publish dedup: same title + same normalized org → keep the one with more description
+  const ORG_ALIASES: Record<string, string> = {
+    "pin": "people in need", "irc": "international rescue committee",
+    "si": "solidarites international", "hi": "humanity & inclusion",
+    "handicap international - humanity & inclusion": "humanity & inclusion",
+    "drc": "danish refugee council", "danish refugee council (drc)": "danish refugee council",
+    "nrc": "norwegian refugee council",
+  };
+  function normOrg(o: string) { const l = o.toLowerCase().trim(); return ORG_ALIASES[l] || l; }
+  const titleMap = new Map<string, number>();
+  const keepFlags = new Array(rows.length).fill(true);
+  for (let i = 0; i < rows.length; i++) {
+    const key = `${(rows[i].title || "").toLowerCase().trim()}|${normOrg(rows[i].organization || "")}`;
+    if (titleMap.has(key)) {
+      const prevIdx = titleMap.get(key)!;
+      const prevLen = (rows[prevIdx].description || "").length;
+      const curLen = (rows[i].description || "").length;
+      if (curLen > prevLen) {
+        keepFlags[prevIdx] = false;
+        titleMap.set(key, i);
+      } else {
+        keepFlags[i] = false;
+      }
+    } else {
+      titleMap.set(key, i);
+    }
+  }
+  const beforeDedup = rows.length;
+  rows = rows.filter((_: any, i: number) => keepFlags[i]);
+  if (beforeDedup !== rows.length) {
+    console.log(`[publish] Title-dedup: removed ${beforeDedup - rows.length} cross-source duplicates`);
+  }
+
   // Format descriptions with Claude Haiku (only unformatted ones)
   console.log(`[publish] Formatting descriptions with Claude Haiku...`);
   let formatCount = 0;
