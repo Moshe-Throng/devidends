@@ -14,7 +14,7 @@ const SECTORS = [
 const INTERESTS = [
   { id: "priority_alerts", label: "Early access to jobs & tenders (before public)" },
   { id: "tor_preview", label: "ToR pre-announcements" },
-  { id: "shortlists", label: "Request candidates for bids I'm leading" },
+  { id: "shortlists", label: "Request candidates for bids I&apos;m leading" },
   { id: "recommend", label: "Recommend consultants to the network" },
   { id: "gigs_inbound", label: "Get consulting gigs & short-term roles" },
   { id: "cv_tools", label: "Free CV scoring, editing & donor-ready templates" },
@@ -136,7 +136,7 @@ export default function InvitePage() {
       <Shell>
         <div className="text-center py-20">
           <div className="text-4xl mb-3">&#x1F389;</div>
-          <div className="text-[#27ABD2] text-lg font-bold mb-1">You're already in!</div>
+          <div className="text-[#27ABD2] text-lg font-bold mb-1">You&apos;re already in!</div>
           <div className="text-[#888] text-sm">Welcome back, {invite.name.split(" ")[0]}.</div>
         </div>
       </Shell>
@@ -184,7 +184,7 @@ export default function InvitePage() {
           {/* Celebratory banner */}
           <div className="bg-gradient-to-br from-[#27ABD2] to-[#24CFD6] rounded-2xl p-6 text-white text-center">
             <div className="text-3xl mb-2">&#x1F31F;</div>
-            <h1 className="text-xl font-bold mb-1">{firstName}, you're invited</h1>
+            <h1 className="text-xl font-bold mb-1">{firstName}, you&apos;re invited</h1>
             <p className="text-sm text-white/80">Devidends Co-Creators</p>
           </div>
 
@@ -193,7 +193,7 @@ export default function InvitePage() {
             {isReferred ? (
               <>
                 <p>
-                  We're glad to have you here. <strong>{invite.invited_by}</strong> recommended you
+                  We&apos;re glad to have you here. <strong>{invite.invited_by}</strong> recommended you
                   to join our Co-Creators network — a trusted circle of development professionals
                   who shape how Devidends works.
                 </p>
@@ -206,16 +206,16 @@ export default function InvitePage() {
             ) : (
               <>
                 <p>
-                  You already know what Devidends is about — you've been part of it.
-                  The recommendations you've shared, the advice, the introductions over the
-                  past year — that's what got us here.
+                  You already know what Devidends is about — you&apos;ve been part of it.
+                  The recommendations you&apos;ve shared, the advice, the introductions over the
+                  past year — that&apos;s what got us here.
                 </p>
                 <p>
                   1,000+ professionals in the database. 400+ opportunities surfaced daily.
                   A platform that actually works now. And your fingerprints are on it.
                 </p>
                 <p>
-                  So this isn't a pitch. It's a <em>"let's make this official."</em>
+                  So this isn&apos;t a pitch. It&apos;s a <em>&quot;let&apos;s make this official.&quot;</em>
                 </p>
               </>
             )}
@@ -226,7 +226,7 @@ export default function InvitePage() {
 
             <div>
               <p className="font-semibold text-[#212121] mb-2">What stays the same:</p>
-              <p>You keep doing what you do — recommend good people, share opportunities when you spot them, tell us when something's off. Your pace. No pressure.</p>
+              <p>You keep doing what you do — recommend good people, share opportunities when you spot them, tell us when something&apos;s off. Your pace. No pressure.</p>
             </div>
 
             <div>
@@ -328,7 +328,7 @@ export default function InvitePage() {
       {step === "interests" && (
         <div className="space-y-5 animate-in fade-in">
           <div>
-            <h2 className="text-lg font-bold text-[#212121]">What's useful for you?</h2>
+            <h2 className="text-lg font-bold text-[#212121]">What&apos;s useful for you?</h2>
             <p className="text-sm text-[#888] mt-0.5">Shapes what we build first. Pick any.</p>
           </div>
 
@@ -351,7 +351,7 @@ export default function InvitePage() {
             </div>
           </Field>
 
-          <Field label="Know anyone else who'd be a good Co-Creator? (optional)">
+          <Field label="Know anyone else who&apos;d be a good Co-Creator? (optional)">
             <input type="text" value={form.suggested_invites} onChange={(e) => setForm({ ...form, suggested_invites: e.target.value })} className={inp} placeholder="Names or numbers" />
           </Field>
 
@@ -402,7 +402,7 @@ export default function InvitePage() {
 
           {/* Privacy — minimal */}
           <p className="text-xs text-[#999] leading-relaxed">
-            Your details stay between us. We don't share or publish them. Reply STOP anytime. <a className="text-[#27ABD2]" href="/privacy" target="_blank" rel="noreferrer">Privacy policy</a>
+            Your details stay between us. We don&apos;t share or publish them. Reply STOP anytime. <a className="text-[#27ABD2]" href="/privacy" target="_blank" rel="noreferrer">Privacy policy</a>
           </p>
 
           <div className="flex gap-3">

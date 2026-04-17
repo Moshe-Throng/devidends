@@ -18,24 +18,24 @@ function WelcomeInner() {
         </div>
 
         <div className="bg-white rounded-lg border border-[#e5e9ed] p-8 md:p-10">
-          <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold mb-4">✓ You're in</div>
+          <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold mb-4">&#x2713; You&apos;re in</div>
           <h1 className="text-2xl md:text-3xl font-bold text-[#212121] mb-6">
             Welcome, {firstName}.
           </h1>
 
           <p className="text-[#444] text-base leading-relaxed mb-6">
-            You're now a Devidends Co-Creator. A few things will happen in the next few days:
+            You&apos;re now a Devidends Co-Creator. A few things will happen in the next few days:
           </p>
 
           <ul className="space-y-4 mb-8">
-            <Step n="1" title="You'll get your first brief within 48 hours">
-              A short message on your preferred channel with the sectors we're actively sourcing for this week. Reply when someone comes to mind.
+            <Step n="1" title="Your first brief arrives within 48 hours">
+              A short message on your preferred channel with the sectors we&apos;re actively sourcing for this week. Reply when someone comes to mind.
             </Step>
             <Step n="2" title="Your profile is being set up">
-              We'll verify your Co-Creator record and add your sectors and regions. You can update any detail anytime — just reply to the first message.
+              We&apos;ll verify your Co-Creator record and add your sectors and regions. You can update any detail anytime — just reply to the first message.
             </Step>
             <Step n="3" title="You can forward CVs anytime">
-              When someone asks you about a role, forward their CV to the Devidends line. We'll process, score, and tag them as recommended by you.
+              When someone asks you about a role, forward their CV to the Devidends line. We&apos;ll process, score, and tag them as recommended by you.
             </Step>
           </ul>
 

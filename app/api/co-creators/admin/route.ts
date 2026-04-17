@@ -7,7 +7,7 @@ import { getAdmin, generateInviteToken, findProfileByName } from "@/lib/co-creat
  *   Catalyst (Silver): 5-14 recommendations OR 1+ placement
  *   Contributor (Bronze): 0-4 recommendations
  */
-export function computeTier(stats: { cvsSent: number; placements: number; vouchesGiven: number }) {
+function computeTier(stats: { cvsSent: number; placements: number; vouchesGiven: number }) {
   if (stats.cvsSent >= 15 || stats.placements >= 3) return "architect";
   if (stats.cvsSent >= 5 || stats.placements >= 1) return "catalyst";
   return "contributor";
