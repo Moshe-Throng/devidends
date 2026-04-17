@@ -167,6 +167,7 @@ export default function ProfilePage() {
   const [matchedOpps, setMatchedOpps] = useState<SampleOpportunity[]>([]);
   const [loading, setLoading] = useState(true);
   const [oppsLoading, setOppsLoading] = useState(true);
+  const [isCoCreator, setIsCoCreator] = useState(false);
 
   // Auth guard
   useEffect(() => {
@@ -181,6 +182,14 @@ export default function ProfilePage() {
       .then((p) => {
         setProfile(p);
         if (p) {
+          // Check Co-Creator status (subtle private badge)
+          supabase
+            .from("co_creators")
+            .select("status")
+            .eq("profile_id", p.id)
+            .eq("status", "joined")
+            .maybeSingle()
+            .then(({ data }: any) => setIsCoCreator(!!data));
           // Score history removed from profile page
           getMatchedOpportunities(p, 8).then((opps) => {
             setMatchedOpps(opps);
@@ -317,9 +326,20 @@ export default function ProfilePage() {
 
               {/* Name & headline */}
               <div className="min-w-0 animate-staggerFadeUp">
-                <h1 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight truncate">
-                  {profile.name}
-                </h1>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h1 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight truncate">
+                    {profile.name}
+                  </h1>
+                  {isCoCreator && (
+                    <span
+                      title="Devidends Co-Creator"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/10 border border-white/20 text-[10px] font-semibold text-white/80 tracking-wide uppercase"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-300" />
+                      Co-Creator
+                    </span>
+                  )}
+                </div>
                 {profile.headline ? (
                   <p className="text-dark-300 mt-1 text-sm lg:text-base leading-relaxed line-clamp-2">
                     {profile.headline}
