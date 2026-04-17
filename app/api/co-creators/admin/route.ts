@@ -32,17 +32,37 @@ export async function GET() {
     .order("created_at", { ascending: false });
 
   // Get profiles recommended by each co-creator (by name match on recommended_by)
-  const memberNames = members.map((m: any) => m.name);
+  // Pull ALL profiles with any recommended_by set (so we can fuzzy-match variants)
   const { data: recommendedProfiles } = await sb
     .from("profiles")
-    .select("id, recommended_by, cv_score, claimed_at, created_at")
-    .in("recommended_by", memberNames);
+    .select("id, name, recommended_by, cv_score, claimed_at, created_at")
+    .not("recommended_by", "is", null);
+
+  // Fuzzy match: a profile counts for a Co-Creator if recommended_by contains
+  // their first name AND their family/last name (handles "Petros" vs "Petros Mulugeta"
+  // vs "Petros Mulugeta Yigzaw" vs "Mussie Tsegaye, Petros Mulugeta")
+  function matches(recBy: string, memberName: string): boolean {
+    const rec = recBy.toLowerCase();
+    const parts = memberName.toLowerCase().split(/\s+/).filter(Boolean);
+    if (parts.length === 0) return false;
+    const first = parts[0];
+    const last = parts.length > 1 ? parts[parts.length - 1] : null;
+    // Always require first name match
+    if (!rec.includes(first)) return false;
+    // If member has a last name, require it too (so "Petros" Co-Creator doesn't match "Petros Kifle")
+    if (last && parts.length > 1 && !rec.includes(last)) {
+      // If member has multiple names but last doesn't match, still allow if recBy has only first
+      // and no conflicting other name pattern (strict to avoid false positives)
+      return parts.every((p) => rec.includes(p));
+    }
+    return true;
+  }
 
   // Build stats per member
   const enriched = members.map((m: any) => {
     const myInteractions = (interactions || []).filter((i: any) => i.co_creator_id === m.id);
     const myRecommended = (recommendedProfiles || []).filter(
-      (p: any) => p.recommended_by?.toLowerCase() === m.name.toLowerCase()
+      (p: any) => p.recommended_by && matches(p.recommended_by, m.name)
     );
 
     const cvsSent = myRecommended.length;
