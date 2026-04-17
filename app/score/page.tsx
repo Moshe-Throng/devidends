@@ -495,39 +495,46 @@ function CvScorerPage() {
   };
 
   const handleScore = async () => {
-    if (!file || isProcessing) return;
+    if ((!file && !editText.trim()) || isProcessing) return;
     setIsProcessing(true);
     setPhase("scoring");
     setScoringStep(0);
     setError(null);
 
     try {
-      const fd = new FormData();
-      fd.append("file", file);
-      if (oppMode === "browse" && selectedOpp) {
-        fd.append(
-          "opportunity",
-          JSON.stringify({
-            title: selectedOpp.title,
-            organization: selectedOpp.organization,
-            description: selectedOpp.description || "",
-            deadline: selectedOpp.deadline,
-            source_url: selectedOpp.source_url,
-          })
-        );
-      } else if (oppMode === "custom" && (customUrl.trim() || customTor.trim())) {
-        fd.append(
-          "opportunity",
-          JSON.stringify({
-            title: customUrl.trim() ? "Custom opportunity" : "Pasted ToR",
-            organization: "",
-            description: customTor.trim() || "",
-            source_url: customUrl.trim() || "",
-          })
-        );
-      }
+      const opportunity =
+        oppMode === "browse" && selectedOpp
+          ? {
+              title: selectedOpp.title,
+              organization: selectedOpp.organization,
+              description: selectedOpp.description || "",
+              deadline: selectedOpp.deadline,
+              source_url: selectedOpp.source_url,
+            }
+          : oppMode === "custom" && (customUrl.trim() || customTor.trim())
+          ? {
+              title: customUrl.trim() ? "Custom opportunity" : "Pasted ToR",
+              organization: "",
+              description: customTor.trim() || "",
+              source_url: customUrl.trim() || "",
+            }
+          : null;
 
-      const res = await fetch("/api/cv/score", { method: "POST", body: fd });
+      let res: Response;
+      if (file) {
+        // File upload path
+        const fd = new FormData();
+        fd.append("file", file);
+        if (opportunity) fd.append("opportunity", JSON.stringify(opportunity));
+        res = await fetch("/api/cv/score", { method: "POST", body: fd });
+      } else {
+        // Saved CV (text) path — no re-upload needed
+        res = await fetch("/api/cv/score", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cv_text: editText, opportunity }),
+        });
+      }
       const json = await res.json();
 
       // Track remaining scores
@@ -759,11 +766,22 @@ function CvScorerPage() {
               </div>
             )}
 
+            {/* Saved CV banner */}
+            {user && editText.trim() && !file && (
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-cyan-50 border border-cyan-200">
+                <CheckCircle className="w-5 h-5 text-cyan-600 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="text-sm font-bold text-dark-900">Using your saved CV</p>
+                  <p className="text-xs text-dark-500">{editText.length.toLocaleString()} characters loaded from your profile. Upload a different file to replace it.</p>
+                </div>
+              </div>
+            )}
+
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Drop zone */}
               <div>
                 <p className="text-xs font-bold text-dark-500 uppercase tracking-[0.15em] mb-3">
-                  Upload CV
+                  {user && editText.trim() && !file ? "Replace CV (optional)" : "Upload CV"}
                 </p>
                 <div
                   className={`relative rounded-2xl border-2 border-dashed p-10 text-center transition-all duration-300 cursor-pointer group ${
@@ -1097,9 +1115,9 @@ function CvScorerPage() {
             <div className="flex justify-center pt-2">
               <button
                 onClick={handleScore}
-                disabled={!file || isProcessing || scoresRemaining === 0 || !user || !hasOpportunity}
+                disabled={(!file && !editText.trim()) || isProcessing || scoresRemaining === 0 || !user || !hasOpportunity}
                 className={`inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 ${
-                  file && !isProcessing && scoresRemaining !== 0 && user && hasOpportunity
+                  (file || editText.trim()) && !isProcessing && scoresRemaining !== 0 && user && hasOpportunity
                     ? "bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 animate-pulseGlow"
                     : "bg-dark-100 text-dark-400 cursor-not-allowed"
                 }`}
