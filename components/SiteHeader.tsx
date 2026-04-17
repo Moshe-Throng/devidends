@@ -6,12 +6,10 @@ import { ArrowRight, Menu, X, User, LogOut, Bookmark, FileText, Settings } from 
 import { DevidendsLogo } from "./DevidendsLogo";
 import { useAuth } from "./AuthProvider";
 
-const NAV_LINKS = [
+const STATIC_NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Opportunities", href: "/opportunities" },
   { label: "News", href: "/news" },
-  { label: "Build CV", href: "/cv-builder" },
-  { label: "Score CV", href: "/score" },
 ];
 
 const ADMIN_NAV = { label: "Ingest", href: "/admin/ingest" };
@@ -20,14 +18,33 @@ export function SiteHeader({ activeHref }: { activeHref?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [hasCv, setHasCv] = useState(false);
+  const [cvScore, setCvScore] = useState<number | null>(null);
   const { user, loading, signOut } = useAuth();
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Check admin access
+  // Check admin access + load profile CV state
   useEffect(() => {
-    if (!user) { setIsAdmin(false); return; }
+    if (!user) { setIsAdmin(false); setHasCv(false); setCvScore(null); return; }
     fetch("/api/admin/stats").then(r => { setIsAdmin(r.ok); }).catch(() => {});
+    fetch("/api/profile/me").then(r => r.ok ? r.json() : null).then(d => {
+      if (d?.profile) {
+        setHasCv(!!d.profile.cv_structured_data || !!d.profile.cv_text);
+        setCvScore(d.profile.cv_score || null);
+      }
+    }).catch(() => {});
   }, [user]);
+
+  // Dynamic nav: adapt CV labels to user's state
+  const NAV_LINKS = [
+    ...STATIC_NAV_LINKS,
+    user && hasCv
+      ? { label: "My CV", href: "/cv-builder" }
+      : { label: "Build CV", href: "/cv-builder" },
+    user && cvScore != null
+      ? { label: `Score: ${cvScore}`, href: "/score" }
+      : { label: "Score CV", href: "/score" },
+  ];
 
   // Close user menu on outside click
   useEffect(() => {
