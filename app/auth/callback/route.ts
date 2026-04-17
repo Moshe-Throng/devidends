@@ -4,6 +4,9 @@ import { createServerClient } from "@supabase/ssr";
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
+  const token_hash = searchParams.get("token_hash");
+  const type = searchParams.get("type") as
+    | "signup" | "invite" | "magiclink" | "recovery" | "email_change" | "email" | null;
   const next = searchParams.get("next") ?? "/";
 
   // Handle OAuth errors (e.g., Google provider not configured)
@@ -15,7 +18,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(`${origin}/login?error=${msg}`);
   }
 
-  if (code) {
+  if (code || (token_hash && type)) {
     const response = NextResponse.redirect(`${origin}${next}`);
 
     const supabase = createServerClient(
@@ -35,10 +38,22 @@ export async function GET(request: NextRequest) {
       }
     );
 
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (error) {
-      console.error("[auth/callback] Code exchange failed:", error.message);
-      const msg = encodeURIComponent(error.message);
+    // Magic link / email OTP flow (token_hash) vs OAuth / PKCE flow (code)
+    let authError: { message: string } | null = null;
+    if (token_hash && type) {
+      const { error } = await supabase.auth.verifyOtp({
+        type: type as "signup" | "invite" | "magiclink" | "recovery" | "email_change" | "email",
+        token_hash,
+      });
+      authError = error;
+    } else if (code) {
+      const { error } = await supabase.auth.exchangeCodeForSession(code);
+      authError = error;
+    }
+
+    if (authError) {
+      console.error("[auth/callback] Auth exchange failed:", authError.message);
+      const msg = encodeURIComponent(authError.message);
       return NextResponse.redirect(`${origin}/login?error=${msg}`);
     }
 
