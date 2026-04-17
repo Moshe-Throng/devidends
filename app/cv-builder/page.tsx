@@ -337,6 +337,20 @@ export default function CvBuilderPage() {
     })();
   }, [user, authLoading, loadedFromDb, phase]);
 
+  // Debounced auto-save when user edits CV data (web-auth users only)
+  useEffect(() => {
+    if (!user || !loadedFromDb || phase !== "editing" || !cvData.personal.full_name.trim()) return;
+    const timer = setTimeout(async () => {
+      try {
+        const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+        const { saveCvStructuredData } = await import("@/lib/profiles");
+        await saveCvStructuredData(createSupabaseBrowser(), user.id, cvData as unknown as Record<string, unknown>);
+        setCvSavedToProfile(true);
+      } catch {}
+    }, 2000); // 2-second debounce
+    return () => clearTimeout(timer);
+  }, [cvData, user, loadedFromDb, phase]);
+
   // No auth gate — anyone can download their CV
 
   const handleBuilderAuth = async (e: React.FormEvent) => {
@@ -476,6 +490,18 @@ export default function CvBuilderPage() {
           }
         }
       } catch {}
+
+      // Auto-save to web-auth profile (signed-in web users)
+      if (user) {
+        try {
+          const { createSupabaseBrowser } = await import("@/lib/supabase-browser");
+          const { saveCvStructuredData } = await import("@/lib/profiles");
+          await saveCvStructuredData(createSupabaseBrowser(), user.id, json.data as Record<string, unknown>);
+          setCvSavedToProfile(true);
+        } catch (e) {
+          console.warn("[cv-builder] auto-save failed:", e);
+        }
+      }
     } catch (err: unknown) {
       clearInterval(iv);
       setError(

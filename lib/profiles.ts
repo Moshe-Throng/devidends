@@ -110,15 +110,49 @@ export async function updateProfile(
    STRUCTURED CV DATA (used by CV Builder)
    ═══════════════════════════════════════════════════════════════ */
 
-/** Save structured CV data to the profile */
+/** Generate plain-text CV from structured data (for scoring). */
+function buildPlainTextFromCv(cv: Record<string, unknown> | null): string {
+  if (!cv || typeof cv !== "object") return "";
+  const c = cv as any;
+  const lines: string[] = [];
+  const p = c.personal || {};
+  if (p.full_name) lines.push(p.full_name);
+  if (p.email || p.phone) lines.push([p.email, p.phone].filter(Boolean).join(" | "));
+  if (p.nationality) lines.push(`Nationality: ${p.nationality}`);
+  if (p.address) lines.push(p.address);
+  if (c.professional_summary) lines.push("", "SUMMARY", c.professional_summary);
+  if (c.education?.length) {
+    lines.push("", "EDUCATION");
+    for (const e of c.education) lines.push(`${e.degree || ""} ${e.field_of_study || ""} — ${e.institution || ""} (${e.graduation_year || e.year || ""})`);
+  }
+  if (c.employment?.length) {
+    lines.push("", "PROFESSIONAL EXPERIENCE");
+    for (const e of c.employment) {
+      lines.push(`${e.title || e.position || ""} — ${e.organization || e.employer || ""} (${e.from_date || ""} to ${e.to_date || "Present"})`);
+      if (e.description) lines.push(e.description);
+      if (e.key_achievements?.length) for (const a of e.key_achievements) lines.push(`- ${a}`);
+    }
+  }
+  if (c.skills?.length) lines.push("", "SKILLS", c.skills.join(", "));
+  if (c.languages?.length) lines.push("", "LANGUAGES", c.languages.map((l: any) => `${l.language} (${l.level || ""})`).join(", "));
+  if (c.certifications?.length) lines.push("", "CERTIFICATIONS", c.certifications.filter(Boolean).join(", "));
+  if (c.countries_of_experience?.length) lines.push("", "COUNTRIES OF EXPERIENCE", c.countries_of_experience.join(", "));
+  return lines.join("\n").trim();
+}
+
+/** Save structured CV data + generated cv_text to the profile */
 export async function saveCvStructuredData(
   supabase: AnySupabase,
   userId: string,
-  cvData: Record<string, unknown>
+  cvData: Record<string, unknown> | null
 ): Promise<void> {
+  const cvText = cvData ? buildPlainTextFromCv(cvData) : null;
   const { error } = await supabase
     .from("profiles")
-    .update({ cv_structured_data: cvData })
+    .update({
+      cv_structured_data: cvData,
+      cv_text: cvText,
+    })
     .eq("user_id", userId);
 
   if (error) throw new Error(`Failed to save CV data: ${error.message}`);
