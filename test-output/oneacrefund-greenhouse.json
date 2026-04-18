@@ -10,7 +10,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7566356",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-04-17T07:00:23.180Z",
+    "scraped_at": "2026-04-18T05:00:14.988Z",
     "raw_fields": {
       "departments": "EXC - Executive"
     },
@@ -27,7 +27,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7758033",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-04-17T07:00:23.180Z",
+    "scraped_at": "2026-04-18T05:00:14.989Z",
     "raw_fields": {
       "departments": "TRE - Trees"
     },
@@ -44,9 +44,26 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7110087",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-04-17T07:00:23.181Z",
+    "scraped_at": "2026-04-18T05:00:14.989Z",
     "raw_fields": {
       "departments": "DEV - Business Development"
+    },
+    "_sourceId": "oneacrefund-greenhouse"
+  },
+  {
+    "title": "MEL Intern",
+    "organization": "One Acre Fund",
+    "description": "<h3>About One Acre Fund</h3> <p>Founded in 2006, One Acre Fund equips 5.5 million smallholder farmers to make their farms more productive. Across nine countries that together are home to two-thirds of Africas farmers, we provide high-quality farm supplies, tree seedlings, accessible credit, modern agronomic training, and a wide range of other agricultural services. On average, this model enables any farmer to increase their income and assets on supported land by more than 35 percent, while permanently improving their resilience. This is all made possible by our team of 9,000+ full-time staff, drawn from diverse backgrounds and professions.&nbsp;To learn more, please see our&nbsp;<a href=&quot;https://oneacrefund.org/careers/why-work-here&quot; target=&quot;_blank&quot;>Why Work Here</a> blog post.</p> <h3>About the Young Professionals Program</h3> <p>One Acre Fund’s Young Professionals Program offers high-performing African graduates meaningful internships and training opportunities at a high-performing, mission-driven organization. Our internships are paid and all interns can expect to receive substantive work assignments working on high-impact projects that support One Acre Funds operations.</p> <p>When joining, interns will participate in an onboarding program and receive training on how to design and execute projects. Over the period of your internship, you will get the opportunity to work with like-minded individuals and receive learning opportunities to build strong foundations for your future career.&nbsp;</p> <h3>About the Role</h3> <p>We are seeking two interns for 4-6 month internships to support our Monitoring, Evaluation, and Learning (MEL) team. As an intern, you will contribute to impactful projects aimed at enhancing One Acre Fund’s ability to serve farmers and improve agricultural productivity and incomes. You will gain exposure to real-world data challenges and opportunities to generate actionable insights. You will work as a part of our dynamic MEL team and will directly report to the MEL Leads.</p> <h3>Responsibilities</h3> <ul> <li>Clean and analyze primary data collected from the farmers and markets.</li> <li>Visualize results and compile them into actionable reports and automated dashboards.&nbsp;</li> </ul> <h3>Career Growth and Development</h3> <p><span style=&quot;font-weight: 400;&quot;>We have a strong culture of constant learning and we deeply invest in our people. You’ll have weekly check-ins with your manager, access to mentorship and training, and regular feedback on your performance. We’ll hold career reviews every one-three months, and set aside time to discuss your aspirations and career goals. You’ll have the opportunity to shape a growing organization and gain rewarding technical experience.</span></p> <h3>Qualifications</h3> <p><span style=&quot;font-weight: 400;&quot;>Across all roles, these are the </span><a href=&quot;https://oneacrefund.org/work-with-us/application-process/qualifications/&quot;><span style=&quot;font-weight: 400;&quot;>general qualifications we look for</span></a><span style=&quot;font-weight: 400;&quot;>.</span><span style=&quot;font-weight: 400;&quot;> For this role specifically, you will have:</span></p> <ul> <li>Education in Economics, Statistics, or a related field.</li> <li>Experience cleaning and analyzing large datasets.</li> <li>Proficiency in R or Stata.</li> <li>Skills in data visualization and report writing.</li> <li>Fluency in English.</li> </ul> <h3>Preferred Start Date</h3> <p><span style=&quot;font-weight: 400;&quot;>As soon as possible</span></p> <h3>Job Location</h3> <p><span style=&quot;font-weight: 400;&quot;>Ethiopia</span></p> <h3>Benefits</h3> <p><span style=&quot;font-weight: 400;&quot;>Interns will be provided with a reasonable stipend for the duration of their contract. Rural area based fellows will be provided assistance in locating suitable housing.</span></p> <h3>Eligibility</h3> <p><span style=&quot;font-weight: 400;&quot;>This role is only open to citizens or permanent residents of Ethiopia.</span></p> <h3>Application Deadline</h3> <p><span style=&quot;font-weight: 400;&quot;>15 July 2026. We hire on a rolling basis which means that applications are reviewed and processed on a continuous basis until a hire is made.&nbsp;</span></p> <p><em>One Acre Fund never asks candidates to pay any money or pay for tests at any stage of the interview process. Official One Acre Fund emails will always arrive from an @<a href=&quot;http://oneacrefund.org/&quot;>oneacrefund.org</a>&nbsp;address. Please report any suspicious communication here (<a href=&quot;mailto:globalhotline@oneacrefund.org&quot;>globalhotline@oneacrefund.org</a>),&nbsp;<strong>but do not send applications or application materials to this email address.</strong></em></p> <p><em>Diversity, Equity, Inclusion (DEI), and anti-racism are deeply connected to our organization’s mission and purpose. One Acre Fund aspires to build a culture where all staff feel consistently valued, represented, and connected – so that our team can thrive as professionals, and achieve exceptional impact for the farmers we serve.</em></p> <p><em>We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, marital status, disability, gender, gender identity or expression. We are proud to be an equal opportunity workplace.</em></p>",
+    "deadline": null,
+    "published": "2026-04-17T10:46:22-04:00",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7822853",
+    "source_domain": "greenhouse.io",
+    "content_type": "job",
+    "scraped_at": "2026-04-18T05:00:14.989Z",
+    "raw_fields": {
+      "departments": "MNE - Monitoring, Evaluation, & Learning"
     },
     "_sourceId": "oneacrefund-greenhouse"
   }
