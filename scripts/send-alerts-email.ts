@@ -50,14 +50,38 @@ async function main() {
     ? (JSON.parse(fs.readFileSync(normalizedPath, "utf-8")) as any[])
     : [];
 
-  const dayAgo = Date.now() - 24 * 60 * 60 * 1000;
-  const recent = opportunities.filter((o) => !o.scraped_at || new Date(o.scraped_at).getTime() > dayAgo);
+  // Dedup against yesterday's email — only include jobs NOT emailed yesterday
+  const emailSnapPath = path.join(__dirname, "..", "test-output", "_last_email_urls.json");
+  let lastEmailedUrls = new Set<string>();
+  try {
+    if (fs.existsSync(emailSnapPath)) {
+      lastEmailedUrls = new Set(JSON.parse(fs.readFileSync(emailSnapPath, "utf-8")));
+    }
+  } catch {}
+  const allTodayUrls = opportunities.map((o: any) => o.source_url || o.url).filter(Boolean);
+  const recent = opportunities.filter((o: any) => {
+    const url = o.source_url || o.url;
+    return url && !lastEmailedUrls.has(url);
+  });
+  fs.writeFileSync(emailSnapPath, JSON.stringify(allTodayUrls));
+  console.log(`[email] ${recent.length} new (of ${opportunities.length} total)`);
 
   // Load news
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");
-  const newsArticles = fs.existsSync(newsPath)
+  const allNews = fs.existsSync(newsPath)
     ? (JSON.parse(fs.readFileSync(newsPath, "utf-8")) as any[])
     : [];
+  // Dedup news too
+  const newsSnapPath = path.join(__dirname, "..", "test-output", "_last_email_news.json");
+  let lastEmailedNews = new Set<string>();
+  try {
+    if (fs.existsSync(newsSnapPath)) {
+      lastEmailedNews = new Set(JSON.parse(fs.readFileSync(newsSnapPath, "utf-8")));
+    }
+  } catch {}
+  const newsArticles = allNews.filter((a: any) => !lastEmailedNews.has(a.url));
+  fs.writeFileSync(newsSnapPath, JSON.stringify(allNews.map((a: any) => a.url)));
+  console.log(`[email] ${newsArticles.length} new news articles`);
 
   // Fetch ALL subscriptions with an email (any channel)
   const { data: rawSubs, error } = await supabase

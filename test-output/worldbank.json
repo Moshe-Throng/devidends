@@ -1,155 +1,134 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-18T05:01:48.469Z",
-    "count": 7
+    "scraped_at": "2026-04-18T05:00:08.775Z",
+    "total_fetched": 49,
+    "unique_count": 49,
+    "active_count": 7,
+    "active_projects": 50,
+    "sources": {
+      "reoi": 33,
+      "ifb": 16
+    }
   },
   "opportunities": [
     {
-      "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
-      "organization": "World Bank",
-      "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
-      "deadline": "2026-04-30",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-04-18T05:00:07.322Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
-        "sector": ""
-      }
-    },
-    {
       "title": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT",
-      "organization": "World Bank",
       "description": "HIRING of THIRD-PARTY MONITORING SERVICES FOR ETHIOPIA DEVELOPMENT RESPONSE TO DISPLACEMENT IMPACTS PROJECT\n\nProject: Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: DJ-IGAD-540099-CS-CQS\n\nContact: Djibouti P.O Box 2653, Ave Georges Clemenceau \nwww.igad.int",
       "deadline": "2026-04-20",
-      "published": null,
+      "organization": "World Bank",
       "country": "Eastern and Southern Africa",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435583",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-04-18T05:00:07.322Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t",
-        "project_id": "P180799",
-        "bid_reference": "DJ-IGAD-540099-CS-CQS",
-        "sector": ""
-      }
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Consultant Qualification  Selection",
+      "project_name": "Regional Policy Dialogue and Knowledge Exchange on Development Responses to Forced Displacement in t",
+      "project_id": "P180799",
+      "bid_reference": "DJ-IGAD-540099-CS-CQS",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:07.450Z"
     },
     {
       "title": "Individual Consultant for Digital Media Specialist",
-      "organization": "World Bank",
       "description": "Individual Consultant for Digital Media Specialist\n\nProject: Ethiopia Rural Connectivity to Support Food Security Program\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MUI-535754-CS-INDV\n\nContact: In front of National Bank of Ethiopia\n\nTel :- 0115-531688/ 0115-531672/ 0115-157952\nAddis Ababa",
       "deadline": "2026-04-20",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436834",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-04-18T05:00:07.322Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Ethiopia Rural Connectivity to Support Food Security Program",
-        "project_id": "P176303",
-        "bid_reference": "ET-MUI-535754-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
-      "organization": "World Bank",
-      "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
-      "deadline": "2026-05-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-04-18T05:00:08.302Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
-        "sector": ""
-      }
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Ethiopia Rural Connectivity to Support Food Security Program",
+      "project_id": "P176303",
+      "bid_reference": "ET-MUI-535754-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:07.450Z"
     },
     {
       "title": "Procurement for the Construction of Kuachthiang Main Road to Dual Puar Kebele Unpaved(gravel)access road of 8.28KM Project in Jikow Woreda, Gambella Regional State",
-      "organization": "World Bank",
       "description": "Procurement for the Construction of Kuachthiang Main Road to Dual Puar Kebele Unpaved(gravel)access road of 8.28KM Project in Jikow Woreda, Gambella Regional State\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-537548-CW-RFB\n\nContact: Gembella,\nEthiopia",
       "deadline": "2026-04-20",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434191",
       "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-04-18T05:00:08.302Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-537548-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Fire Suppression and Rescue Equipment",
-      "organization": "World Bank",
-      "description": "Procurement of Fire Suppression and Rescue Equipment\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EDRMC-538775-GO-RFB\n\nContact: Africa Street, Behind Dembel City Center Mall, Addis Ababa, Ethiopia",
-      "deadline": "2026-04-21",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-04-18T05:00:08.302Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Flood Management Project",
-        "project_id": "P176327",
-        "bid_reference": "ET-EDRMC-538775-GO-RFB",
-        "sector": ""
-      }
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-537548-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:08.103Z"
     },
     {
       "title": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.",
-      "organization": "World Bank",
       "description": "Procurement for the Construction of Udiek Kebele to Udak kebele Unpaved (grave) access Road Project of 15.43KM length in Dimma Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-537511-CW-RFB\n\nContact: Gembella,\nEthiopia",
       "deadline": "2026-04-20",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434197",
       "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-04-18T05:00:08.302Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
-        "sector": ""
-      }
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-537511-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:08.103Z"
+    },
+    {
+      "title": "Procurement of Fire Suppression and Rescue Equipment",
+      "description": "Procurement of Fire Suppression and Rescue Equipment\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EDRMC-538775-GO-RFB\n\nContact: Africa Street, Behind Dembel City Center Mall, Addis Ababa, Ethiopia",
+      "deadline": "2026-04-21",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Ethiopia Flood Management Project",
+      "project_id": "P176327",
+      "bid_reference": "ET-EDRMC-538775-GO-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:08.103Z"
+    },
+    {
+      "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
+      "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
+      "deadline": "2026-04-30",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
+      "source_domain": "worldbank.org",
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+      "project_id": "P174385",
+      "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:07.450Z"
+    },
+    {
+      "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
+      "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
+      "deadline": "2026-05-08",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-04-18T05:00:08.103Z"
     }
   ],
   "projects": [
@@ -174,16 +153,6 @@
       "implementing_agency": "Ministry of Finance"
     },
     {
-      "id": "P176303",
-      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
-      "status": "Active",
-      "sector": "",
-      "total_commitment": "300",
-      "approval_date": "2024-03-29T00:00:00Z",
-      "closing_date": "3/31/2029 12:00:00 AM",
-      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
-    },
-    {
       "id": "P181545",
       "name": "Additional Financing for the Second Urban Water Supply and Sanitation Project",
       "status": "Active",
@@ -192,6 +161,16 @@
       "approval_date": "2024-03-29T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Addis Ababa Water and Sewerage Authority (AAWSA) Water Supply and Sanitation Infrastructural Develop, Ministry of Water and Energy"
+    },
+    {
+      "id": "P176303",
+      "name": "Ethiopia Rural Connectivity to Support Food Security Program",
+      "status": "Active",
+      "sector": "",
+      "total_commitment": "300",
+      "approval_date": "2024-03-29T00:00:00Z",
+      "closing_date": "3/31/2029 12:00:00 AM",
+      "implementing_agency": "MINISTRY OF TRANSPORT, Regional Roads Authorities, ETHIOPIAN ROADS AUTHORITY, Ministry of Urban Development and Infrastructure"
     },
     {
       "id": "P181626",

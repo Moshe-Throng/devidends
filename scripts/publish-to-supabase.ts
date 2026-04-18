@@ -92,7 +92,7 @@ async function main() {
   }
 
   // Map to Supabase schema
-  const rows = opportunities.map((opp: any) => {
+  let rows = opportunities.map((opp: any) => {
     const rf = opp.raw_fields || {};
     return {
       title: (opp.title || "").slice(0, 500),
