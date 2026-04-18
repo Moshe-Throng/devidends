@@ -7,7 +7,14 @@ function WelcomeInner() {
   const sp = useSearchParams();
   const name = sp.get("name") || "friend";
   const claimId = sp.get("claim");
+  const shareToken = sp.get("t");
   const firstName = name.split(" ")[0];
+
+  const shareUrl = shareToken ? `https://devidends.net/c/${shareToken}` : null;
+  const linkedInText = `I just joined the Devidends Co-Creators — a trusted circle of development professionals shaping how Ethiopian and Horn of Africa talent connects with the right opportunities.\n\nIf you're building bid teams or hunting consultancies in the region, it's worth a look.`;
+  const linkedInShareUrl = shareUrl
+    ? `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+    : null;
 
   return (
     <main className="min-h-screen bg-[#f7f9fb] font-[Montserrat]">
@@ -57,6 +64,62 @@ function WelcomeInner() {
 
           <div className="mt-6 text-sm text-[#212121] italic">— Mussie</div>
         </div>
+
+        {/* ── Share card section ─────────────────────────────────── */}
+        {shareUrl && (
+          <div className="mt-8 bg-gradient-to-br from-white via-[#f7f9fb] to-[#eaf6fb] rounded-lg border border-[#e5e9ed] p-6 md:p-8">
+            <div className="text-[#27ABD2] text-xs tracking-wider uppercase font-semibold mb-3">
+              Share your Co-Creator card
+            </div>
+            <h2 className="text-lg font-bold text-[#212121] mb-2">
+              Let your network know
+            </h2>
+            <p className="text-sm text-[#666] leading-relaxed mb-5">
+              Share a beautifully designed card on LinkedIn. Auto-previews with your name, sectors, and the Devidends branding.
+            </p>
+
+            {/* Preview */}
+            <div className="rounded-lg overflow-hidden border border-[#e5e9ed] mb-5 bg-white">
+              <img
+                src={`/api/og/co-creator/${shareToken}`}
+                alt="Your Co-Creator card preview"
+                className="w-full h-auto block"
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              {linkedInShareUrl && (
+                <a
+                  href={linkedInShareUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-[#0077B5] hover:bg-[#006097] text-white font-semibold py-3 px-5 rounded-md transition-colors text-sm"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  Share on LinkedIn
+                </a>
+              )}
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(`${linkedInText}\n\n${shareUrl}`);
+                  alert("Post text + link copied. Paste it on LinkedIn.");
+                }}
+                className="flex items-center justify-center gap-2 bg-white hover:border-[#27ABD2] border border-[#d5dade] text-[#212121] font-semibold py-3 px-5 rounded-md transition-colors text-sm"
+              >
+                Copy post + link
+              </button>
+              <a
+                href={`/api/og/co-creator/${shareToken}`}
+                download={`devidends-co-creator-${firstName.toLowerCase()}.png`}
+                className="flex items-center justify-center gap-2 text-[#27ABD2] hover:underline font-medium py-2 text-xs"
+              >
+                Download card image
+              </a>
+            </div>
+          </div>
+        )}
 
         <div className="text-center text-xs text-[#999] mt-8">
           You can step back anytime. Reply STOP and we stop messaging you.

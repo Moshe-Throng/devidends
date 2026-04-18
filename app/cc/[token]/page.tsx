@@ -112,7 +112,7 @@ export default function InvitePage() {
           return;
         }
         const claimParam = d.cvClaimRequested && d.claimToken ? `&claim=${d.claimToken}` : "";
-        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}${claimParam}`);
+        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}&t=${token}${claimParam}`);
       }, 2000);
     } catch (err: any) {
       alert(err.message);
