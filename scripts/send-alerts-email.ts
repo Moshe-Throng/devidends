@@ -64,14 +64,15 @@ async function main() {
     return url && !lastEmailedUrls.has(url);
   });
   fs.writeFileSync(emailSnapPath, JSON.stringify(allTodayUrls));
-  console.log(`[email] ${recent.length} new (of ${opportunities.length} total)`);
+  console.log(`[email] ${recent.length} new opportunities (out of ${opportunities.length} total)`);
 
   // Load news
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");
   const allNews = fs.existsSync(newsPath)
     ? (JSON.parse(fs.readFileSync(newsPath, "utf-8")) as any[])
     : [];
-  // Dedup news too
+
+  // Dedup news
   const newsSnapPath = path.join(__dirname, "..", "test-output", "_last_email_news.json");
   let lastEmailedNews = new Set<string>();
   try {
@@ -103,7 +104,6 @@ async function main() {
     if (!existing) {
       byEmail.set(email, { ...sub, email });
     } else {
-      // Merge filters
       if (sub.sectors_filter?.length) {
         existing.sectors_filter = [...new Set([...(existing.sectors_filter || []), ...sub.sectors_filter])];
       }
@@ -123,7 +123,6 @@ async function main() {
       const sectorFilter: string[] = sub.sectors_filter || [];
       const newsFilter: string[] = sub.news_categories_filter || [];
 
-      // Filter opportunities
       const matchedOpps = sectorFilter.length > 0
         ? recent.filter((o) => {
             const text = [o.title, o.description, o.classified_type].filter(Boolean).join(" ").toLowerCase();
@@ -131,7 +130,6 @@ async function main() {
           })
         : recent;
 
-      // Filter news
       const matchedNews = newsFilter.length > 0
         ? newsArticles.filter((a) => newsFilter.includes(a.category))
         : newsArticles;
@@ -141,7 +139,6 @@ async function main() {
         continue;
       }
 
-      // Send ONE combined daily digest email (jobs + news together)
       const html = dailyDigestEmail(matchedOpps, matchedNews, undefined, sectorFilter, newsFilter);
       const oppCount = matchedOpps.length;
       const newsCount = matchedNews.length;
@@ -157,7 +154,7 @@ async function main() {
       });
 
       sent++;
-      await new Promise((r) => setTimeout(r, 200)); // rate limit
+      await new Promise((r) => setTimeout(r, 200));
     } catch (err) {
       console.error(`[email] Failed for ${sub.email}:`, err);
       failed++;
