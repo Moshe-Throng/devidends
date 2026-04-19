@@ -395,6 +395,13 @@ async function runEngine() {
   console.log(`\n  Output: ${outDir}`);
 
   // ── Health check: fail loud if crawl is unhealthy ─────────────────────────
+  // Skip health check for partial test runs (--only / --skip / single source)
+  const isFullRun = opts.only.length === 0 && opts.skip.length === 0 && !opts.skipPuppeteer;
+  if (!isFullRun) {
+    console.log("\n  (Health check skipped: partial run)");
+    return;
+  }
+
   // A crawl is unhealthy if:
   //   (a) >30% of sources errored (hard failure), OR
   //   (b) total deduped items dropped >40% from yesterday, OR

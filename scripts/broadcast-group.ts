@@ -52,14 +52,42 @@ async function main() {
   } catch {}
 
   const allUrls = opportunities.map((o: any) => o.source_url || o.url).filter(Boolean);
+
+  // Geographic filter: Ethiopia + East Africa only (broadcast scope)
+  // Keeps the digest relevant — cross-border Africa jobs are too many to blast daily.
+  const EA_KEYWORDS = [
+    "ethiopia", "addis",
+    "kenya", "nairobi",
+    "uganda", "kampala",
+    "tanzania", "dar es salaam",
+    "rwanda", "kigali",
+    "burundi",
+    "south sudan", "juba",
+    "somalia", "mogadishu",
+    "djibouti",
+    "eritrea",
+    "horn of africa", "east africa", "eastern africa",
+    "remote", // include remote roles since Ethiopians can apply
+  ];
+  function isRelevantGeo(opp: any): boolean {
+    const text = [opp.country, opp.city, opp.title, opp.location].filter(Boolean).join(" ").toLowerCase();
+    return EA_KEYWORDS.some(kw => text.includes(kw));
+  }
+
   const recent = opportunities.filter((o: any) => {
     const url = o.source_url || o.url;
-    return url && !lastUrls.has(url);
+    if (!url || lastUrls.has(url)) return false;
+    return isRelevantGeo(o);
   });
 
-  // Save today's URLs for tomorrow's comparison
+  // Save today's URLs (ALL, not just geo-filtered — so dedup stays correct)
   fs.writeFileSync(snapshotPath, JSON.stringify(allUrls));
-  console.log(`${recent.length} new opportunities (not in yesterday's digest, out of ${opportunities.length} total)`);
+  const geoFiltered = opportunities.filter((o: any) => {
+    const url = o.source_url || o.url;
+    if (!url || lastUrls.has(url)) return false;
+    return true;
+  }).length;
+  console.log(`${recent.length} new East Africa opportunities (of ${geoFiltered} new total, ${opportunities.length} overall)`);
 
   // Load news articles
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");
