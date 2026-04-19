@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
+import { shortName } from "@/lib/name-utils";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -26,13 +27,15 @@ export async function generateMetadata({
     .eq("invite_token", token)
     .maybeSingle();
 
+  const displayName = shortName(cc?.name);
   const title = cc
-    ? `${cc.name} · Devidends Co-Creator`
+    ? `${displayName} · Devidends Co-Creator`
     : "Devidends Co-Creator";
   const description = cc?.role_title
-    ? `${cc.name} · ${cc.role_title} · Founding member of the Devidends network.`
+    ? `${displayName} · ${cc.role_title} · Founding member of the Devidends network.`
     : `Founding member of Devidends — Horn of Africa's development talent network.`;
-  const ogUrl = `/api/og/co-creator/${token}`;
+  const ogUrl = `https://devidends.net/api/og/co-creator/${token}`;
+  const pageUrl = `https://devidends.net/c/${token}`;
 
   return {
     title,
@@ -40,9 +43,9 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://devidends.net/c/${token}`,
+      url: pageUrl,
       siteName: "Devidends",
-      images: [{ url: ogUrl, width: 1200, height: 630 }],
+      images: [{ url: ogUrl, width: 1200, height: 630, alt: title }],
       type: "profile",
     },
     twitter: {
@@ -95,7 +98,7 @@ export default async function CoCreatorSharePage({
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white via-[#f7f9fb] to-[#eaf6fb] font-[Montserrat]">
-      <div className="max-w-3xl mx-auto px-6 py-16">
+      <div className="max-w-2xl mx-auto px-5 py-10 md:py-16">
         {/* Logo */}
         <Link href="/" className="inline-block mb-10 text-2xl font-bold tracking-tight">
           <span className="text-[#27ABD2]">Dev</span>
@@ -114,7 +117,7 @@ export default async function CoCreatorSharePage({
 
           {/* Name */}
           <h1 className="text-4xl md:text-5xl font-bold text-[#212121] tracking-tight mb-3 leading-tight">
-            {cc.name}
+            {shortName(cc.name)}
           </h1>
 
           {/* Headline */}
@@ -138,7 +141,7 @@ export default async function CoCreatorSharePage({
 
           <div className="border-t border-[#e5e9ed] pt-8">
             <p className="text-[15px] text-[#444] leading-relaxed mb-6">
-              <span className="font-semibold text-[#212121]">{cc.name.split(" ")[0]}</span>{" "}
+              <span className="font-semibold text-[#212121]">{shortName(cc.name).split(" ")[0]}</span>{" "}
               is a founding member of the <strong>Devidends Co-Creators</strong> — a trusted
               circle of development professionals shaping how Ethiopian and Horn of Africa
               talent connects with the right opportunities.

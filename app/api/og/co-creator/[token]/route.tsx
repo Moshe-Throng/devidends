@@ -59,8 +59,23 @@ export async function GET(
     if ((!sectors || sectors.length === 0) && p?.sectors) sectors = p.sectors;
   }
 
-  const role = cc.role_title || headline || "Development Professional";
+  // Short name: drop 3rd+ words (grandfather names)
+  const shortedName = (() => {
+    const parts = cc.name.trim().split(/\s+/).filter(Boolean);
+    if (parts.length <= 2) return cc.name.trim();
+    return parts.slice(0, 2).join(" ");
+  })();
+
+  const roleRaw = cc.role_title || headline || "Development Professional";
+  // Truncate gracefully if very long (preserves words)
+  const role = roleRaw.length > 90
+    ? roleRaw.slice(0, 87).replace(/\s\S*$/, "") + "…"
+    : roleRaw;
   const topSectors = (sectors || []).slice(0, 3).join(" · ");
+
+  // Dynamic font sizes to avoid overflow
+  const nameFontSize = shortedName.length > 22 ? 72 : shortedName.length > 16 ? 84 : 96;
+  const roleFontSize = role.length > 70 ? 22 : role.length > 50 ? 26 : 30;
 
   return new ImageResponse(
     (
@@ -163,27 +178,30 @@ export async function GET(
           </div>
           <div
             style={{
-              fontSize: cc.name.length > 26 ? 68 : 84,
+              fontSize: nameFontSize,
               fontWeight: 800,
               color: "#212121",
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
               display: "flex",
+              maxWidth: 1000,
             }}
           >
-            {cc.name}
+            {shortedName}
           </div>
           {role && (
             <div
               style={{
-                fontSize: 28,
+                fontSize: roleFontSize,
                 color: "#555",
                 fontWeight: 400,
                 marginTop: 4,
                 display: "flex",
+                maxWidth: 1000,
+                lineHeight: 1.3,
               }}
             >
-              {role.length > 70 ? role.slice(0, 67) + "..." : role}
+              {role}
             </div>
           )}
           {topSectors && (

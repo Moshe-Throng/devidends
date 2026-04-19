@@ -5,10 +5,13 @@ import { Suspense } from "react";
 
 function WelcomeInner() {
   const sp = useSearchParams();
-  const name = sp.get("name") || "friend";
+  const fullName = sp.get("name") || "friend";
   const claimId = sp.get("claim");
   const shareToken = sp.get("t");
-  const firstName = name.split(" ")[0];
+  // Drop 3rd+ names (grandfather)
+  const nameParts = fullName.trim().split(/\s+/).filter(Boolean);
+  const name = nameParts.length > 2 ? nameParts.slice(0, 2).join(" ") : fullName;
+  const firstName = nameParts[0] || "friend";
 
   const shareUrl = shareToken ? `https://devidends.net/c/${shareToken}` : null;
   const linkedInText = `I just joined the Devidends Co-Creators — a trusted circle of development professionals shaping how Ethiopian and Horn of Africa talent connects with the right opportunities.\n\nIf you're building bid teams or hunting consultancies in the region, it's worth a look.`;
