@@ -60,25 +60,33 @@ async function main() {
   } catch {}
   const allTodayUrls = opportunities.map((o: any) => o.source_url || o.url).filter(Boolean);
 
-  // East Africa / Horn of Africa geographic filter
-  const EA_KEYWORDS = [
-    "ethiopia", "addis", "kenya", "nairobi", "uganda", "kampala",
-    "tanzania", "dar es salaam", "rwanda", "kigali", "burundi",
-    "south sudan", "juba", "somalia", "mogadishu", "djibouti",
-    "eritrea", "horn of africa", "east africa", "eastern africa",
-    "remote",
-  ];
-  function isEA(opp: any): boolean {
-    const text = [opp.country, opp.city, opp.title, opp.location].filter(Boolean).join(" ").toLowerCase();
-    return EA_KEYWORDS.some(kw => text.includes(kw));
+  // Relevance filter — same logic as broadcast-group.ts
+  function isRelevantForEthiopians(opp: any): boolean {
+    const country = (opp.country || "").toLowerCase();
+    const title = (opp.title || "").toLowerCase();
+    const city = (opp.city || "").toLowerCase();
+    const desc = (opp.description || "").toLowerCase();
+    const allText = [country, title, city, desc].join(" ");
+    if (/\b(oficial|asistente|gerente|equipo|l[íi]der|atenci[óo]n|protecci[óo]n)\b/i.test(title)) return false;
+    if (/\b(projektleder|medarbejder|partnerskab)\b/i.test(title)) return false;
+    if (/\b(responsable|coordinateur|assistant[e]?\s+(de|du|\u00e0))\b/i.test(title) && !title.includes("english")) return false;
+    if (country.includes("ethiopia") || title.includes("ethiopia") || city.includes("addis") || city.includes("ethiopia")) return true;
+    if (/\b(horn of africa|east africa|eastern africa|greater horn|ethiopia\/somalia)\b/i.test(allText)) return true;
+    if (/\b(international consultant|international expert|international staff|international specialist|international advisor|international officer)\b/i.test(title)) return true;
+    if (/\b(global|regional|remote|work from anywhere|home-?based)\b/i.test(title)) return true;
+    if (/\b(headquarter|roving|multi-country|pan-african|continent[a-z]*)\b/i.test(title)) return true;
+    if (/\b(hq|headquarters?)\b/i.test(country) || /\b(new york|geneva|vienna|rome,\s*italy|paris,\s*france|washington|nairobi.*regional)\b/i.test(country)) {
+      if (!/\b(national|country)\s+(coordinator|manager|director|lead)\b/i.test(title)) return true;
+    }
+    return false;
   }
 
   const recent = opportunities.filter((o: any) => {
     const url = o.source_url || o.url;
-    return url && !lastEmailedUrls.has(url) && isEA(o);
+    return url && !lastEmailedUrls.has(url) && isRelevantForEthiopians(o);
   });
   fs.writeFileSync(emailSnapPath, JSON.stringify(allTodayUrls));
-  console.log(`[email] ${recent.length} new East Africa opportunities (of ${opportunities.length} total)`);
+  console.log(`[email] ${recent.length} relevant opportunities (of ${opportunities.length} total)`);
 
   // Load news
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");

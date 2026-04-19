@@ -53,41 +53,57 @@ async function main() {
 
   const allUrls = opportunities.map((o: any) => o.source_url || o.url).filter(Boolean);
 
-  // Geographic filter: Ethiopia + East Africa only (broadcast scope)
-  // Keeps the digest relevant — cross-border Africa jobs are too many to blast daily.
-  const EA_KEYWORDS = [
-    "ethiopia", "addis",
-    "kenya", "nairobi",
-    "uganda", "kampala",
-    "tanzania", "dar es salaam",
-    "rwanda", "kigali",
-    "burundi",
-    "south sudan", "juba",
-    "somalia", "mogadishu",
-    "djibouti",
-    "eritrea",
-    "horn of africa", "east africa", "eastern africa",
-    "remote", // include remote roles since Ethiopians can apply
-  ];
-  function isRelevantGeo(opp: any): boolean {
-    const text = [opp.country, opp.city, opp.title, opp.location].filter(Boolean).join(" ").toLowerCase();
-    return EA_KEYWORDS.some(kw => text.includes(kw));
+  // Relevance filter: jobs Ethiopians can actually apply to.
+  // Rule: Ethiopia-based roles PLUS jobs that are clearly international/regional/remote
+  // (open to nationals of any country, including Ethiopia).
+  // Exclude: country-specific roles in non-Ethiopia locations, non-English postings.
+  function isRelevantForEthiopians(opp: any): boolean {
+    const country = (opp.country || "").toLowerCase();
+    const title = (opp.title || "").toLowerCase();
+    const city = (opp.city || "").toLowerCase();
+    const desc = (opp.description || "").toLowerCase();
+    const allText = [country, title, city, desc].join(" ");
+
+    // Exclude non-English postings (Spanish/French/Danish/Arabic) — clearly regional
+    if (/\b(oficial|asistente|gerente|equipo|l[íi]der|atenci[óo]n|protecci[óo]n)\b/i.test(title)) return false;
+    if (/\b(projektleder|medarbejder|partnerskab)\b/i.test(title)) return false;
+    if (/\b(responsable|coordinateur|assistant[e]?\s+(de|du|\u00e0))\b/i.test(title) && !title.includes("english")) return false;
+
+    // Ethiopia-based — always include
+    if (country.includes("ethiopia") || title.includes("ethiopia") || city.includes("addis") || city.includes("ethiopia")) return true;
+
+    // Explicit Africa regional / Horn of Africa tags
+    if (/\b(horn of africa|east africa|eastern africa|greater horn|ethiopia\/somalia)\b/i.test(allText)) return true;
+
+    // International / global / regional / remote roles — open to anyone
+    if (/\b(international consultant|international expert|international staff|international specialist|international advisor|international officer)\b/i.test(title)) return true;
+    if (/\b(global|regional|remote|work from anywhere|home-?based)\b/i.test(title)) return true;
+    if (/\b(headquarter|roving|multi-country|pan-african|continent[a-z]*)\b/i.test(title)) return true;
+
+    // HQ-based positions at major donor agencies (open globally)
+    if (/\b(hq|headquarters?)\b/i.test(country) || /\b(new york|geneva|vienna|rome,\s*italy|paris,\s*france|washington|nairobi.*regional)\b/i.test(country)) {
+      // Only include HQ roles that aren't country-coordinator type
+      if (!/\b(national|country)\s+(coordinator|manager|director|lead)\b/i.test(title)) return true;
+    }
+
+    // Exclude: clearly country-specific role in another country
+    // (Default exclude for everything else — country-specific jobs in non-Ethiopia locations)
+    return false;
   }
 
   const recent = opportunities.filter((o: any) => {
     const url = o.source_url || o.url;
     if (!url || lastUrls.has(url)) return false;
-    return isRelevantGeo(o);
+    return isRelevantForEthiopians(o);
   });
 
-  // Save today's URLs (ALL, not just geo-filtered — so dedup stays correct)
+  // Save today's URLs (ALL, not just filtered — so dedup stays correct)
   fs.writeFileSync(snapshotPath, JSON.stringify(allUrls));
-  const geoFiltered = opportunities.filter((o: any) => {
+  const newTotal = opportunities.filter((o: any) => {
     const url = o.source_url || o.url;
-    if (!url || lastUrls.has(url)) return false;
-    return true;
+    return url && !lastUrls.has(url);
   }).length;
-  console.log(`${recent.length} new East Africa opportunities (of ${geoFiltered} new total, ${opportunities.length} overall)`);
+  console.log(`${recent.length} relevant opportunities (of ${newTotal} new, ${opportunities.length} overall)`);
 
   // Load news articles
   const newsPath = path.join(__dirname, "..", "test-output", "news.json");
