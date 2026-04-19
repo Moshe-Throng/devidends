@@ -1267,7 +1267,7 @@ function CvScorerPage() {
                 Scoring Breakdown
               </p>
               <div className="space-y-3">
-                {result.dimensions.map((dim, i) => {
+                {(result.dimensions || []).map((dim, i) => {
                   const meta = DIMENSION_META[i];
                   const Icon = meta?.icon || BarChart3;
                   const colors = scoreColor(dim.score);
@@ -1325,7 +1325,7 @@ function CvScorerPage() {
                 Top 3 Improvements
               </p>
               <ol className="space-y-4">
-                {result.top_3_improvements.map((imp, i) => (
+                {(result.top_3_improvements || []).map((imp, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center text-sm font-bold text-white shadow-md shadow-cyan-500/20">
                       {i + 1}
@@ -1470,7 +1470,7 @@ function CvScorerPage() {
                     Detailed Gap Analysis
                   </p>
               <div className="space-y-3">
-                {result.dimensions.map((dim, i) => {
+                {(result.dimensions || []).map((dim, i) => {
                   const meta = DIMENSION_META[i];
                   const Icon = meta?.icon || BarChart3;
                   const colors = scoreColor(dim.score);
@@ -1523,13 +1523,13 @@ function CvScorerPage() {
                       {isOpen && (
                         <div className="px-5 pb-5 border-t border-dark-50 animate-fadeInUp">
                           <div className="grid md:grid-cols-2 gap-5 mt-4">
-                            {dim.gaps.length > 0 && (
+                            {(dim.gaps?.length ?? 0) > 0 && (
                               <div>
                                 <p className="text-[10px] font-bold text-red-500 uppercase tracking-[0.15em] mb-2.5">
                                   Gaps Identified
                                 </p>
                                 <ul className="space-y-2">
-                                  {dim.gaps.map((g, j) => (
+                                  {(dim.gaps || []).map((g, j) => (
                                     <li
                                       key={j}
                                       className="flex items-start gap-2.5 text-sm text-dark-600 leading-relaxed"
@@ -1541,13 +1541,13 @@ function CvScorerPage() {
                                 </ul>
                               </div>
                             )}
-                            {dim.suggestions.length > 0 && (
+                            {(dim.suggestions?.length ?? 0) > 0 && (
                               <div>
                                 <p className="text-[10px] font-bold text-cyan-600 uppercase tracking-[0.15em] mb-2.5">
                                   Suggestions
                                 </p>
                                 <ul className="space-y-2">
-                                  {dim.suggestions.map((s, j) => (
+                                  {(dim.suggestions || []).map((s, j) => (
                                     <li
                                       key={j}
                                       className="flex items-start gap-2.5 text-sm text-dark-600 leading-relaxed"
@@ -1577,7 +1577,7 @@ function CvScorerPage() {
                   Top 3 Improvements
                 </p>
                 <ol className="space-y-4">
-                  {result.top_3_improvements.map((imp, i) => (
+                  {(result.top_3_improvements || []).map((imp, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center text-sm font-bold text-white shadow-md shadow-cyan-500/20">
                         {i + 1}
@@ -1664,8 +1664,8 @@ function CvScorerPage() {
                         AI Suggestions
                       </p>
                       <div className="h-80 overflow-y-auto rounded-xl border border-dark-100 p-4 space-y-5">
-                        {result.dimensions.map((dim) => {
-                          const active = dim.suggestions.filter(
+                        {(result.dimensions || []).map((dim) => {
+                          const active = (dim.suggestions || []).filter(
                             (s) => !dismissed.has(`${dim.name}::${s}`)
                           );
                           if (active.length === 0) return null;
