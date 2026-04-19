@@ -23,6 +23,7 @@ import { TaleoAdapter } from "./taleo";
 import { IATIAdapter } from "./iati";
 import { SamGovAdapter } from "./samgov";
 import { TedAdapter } from "./ted";
+import { GggiAdapter } from "./gggi";
 
 /**
  * Get the adapter registry — maps adapter name to implementation.
@@ -50,6 +51,9 @@ export function getAdapterRegistry(): Map<string, CrawlAdapter> {
   registry.set("iati", new IATIAdapter());
   registry.set("samgov", new SamGovAdapter());
   registry.set("ted", new TedAdapter());
+
+  // Custom JSON feed adapters
+  registry.set("gggi-api", new GggiAdapter());
 
   return registry;
 }

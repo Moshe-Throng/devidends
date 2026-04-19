@@ -448,19 +448,13 @@
   {
     "id": "gggi",
     "name": "Global Green Growth Institute",
-    "adapter": "cheerio-html",
+    "adapter": "gggi-api",
     "content_type": "job",
     "enabled": true,
     "priority": 25,
     "config": {
-      "url": "https://careers.gggi.org/vacancies.html",
-      "orgName": "Global Green Growth Institute (GGGI)",
-      "sourceDomain": "gggi.org",
-      "jobSelector": ".vacancy, .job-listing, a[href*='vacancy'], tr, li",
-      "titleSelector": "a",
-      "linkSelector": "a[href]",
-      "defaultCountry": "Ethiopia",
-      "fetchDetails": false
+      "webSiteId": 5514,
+      "orgName": "Global Green Growth Institute (GGGI)"
     }
   },
   {
