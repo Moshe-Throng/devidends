@@ -197,7 +197,7 @@ export async function POST(req: NextRequest) {
         `Interests: ${(interests || []).length} selected`,
         email ? `Email: ${email}` : null,
         whatsapp_number ? `WhatsApp: ${whatsapp_number}` : null,
-        cv_claim_requested ? `<i>Requested to claim their profile</i>` : null,
+        cv_claim_requested ? `<i>&#x2713; Profile claimed</i>` : null,
       ].filter(Boolean).join("\n");
 
       for (const id of adminIds) {
