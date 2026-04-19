@@ -51,6 +51,9 @@ type MemberData = {
   joined_at: string | null;
   invited_at: string;
   profile_id: string | null;
+  profileClaimed: boolean;
+  profileSignedIn: boolean;
+  profileCvScore: number | null;
   tier: TierKey;
   score: number;
   stats: {
@@ -327,6 +330,12 @@ function MemberRow({ m, rank, origin, expanded, onToggle, relativeTime }: {
             {m.status === "invited" && (
               <span className="text-[10px] text-[#555] bg-[#1e2130] px-1.5 py-0.5 rounded">pending</span>
             )}
+            {m.profileClaimed && (
+              <span className="text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.5 rounded">&#x2713; claimed</span>
+            )}
+            {m.profileSignedIn && (
+              <span className="text-[10px] font-semibold text-[#27ABD2] bg-[#27ABD2]/10 border border-[#27ABD2]/30 px-1.5 py-0.5 rounded" title="Has signed in to the web app">active</span>
+            )}
           </div>
           <div className="text-xs text-[#555] mt-0.5">
             {m.preferred_channel || "—"} · {m.ask_frequency || "—"}
@@ -362,6 +371,15 @@ function MemberRow({ m, rank, origin, expanded, onToggle, relativeTime }: {
             <Detail label="WhatsApp" value={m.whatsapp_number} />
             <Detail label="Joined" value={m.joined_at ? new Date(m.joined_at).toLocaleDateString("en-GB") : "Not yet"} />
             <Detail label="Member #" value={m.member_number ? `#${m.member_number}` : "—"} />
+            <Detail
+              label="Profile"
+              value={
+                m.profile_id
+                  ? `${m.profileClaimed ? "✓ claimed" : "not claimed"}${m.profileCvScore != null ? ` · CV ${m.profileCvScore}/100` : ""}`
+                  : "—"
+              }
+            />
+            <Detail label="Web sign-in" value={m.profileSignedIn ? "Yes" : "No"} />
           </div>
 
           {/* Interests */}

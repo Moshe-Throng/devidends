@@ -25,6 +25,19 @@ export async function GET() {
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   if (!members?.length) return NextResponse.json({ members: [], stats: {} });
 
+  // Get linked profile claim status for each co_creator
+  const profileIds = members.map((m: any) => m.profile_id).filter(Boolean);
+  const profileStatus: Record<string, { claimed_at: string | null; has_user: boolean; cv_score: number | null }> = {};
+  if (profileIds.length) {
+    const { data: profs } = await sb
+      .from("profiles")
+      .select("id, claimed_at, user_id, cv_score")
+      .in("id", profileIds);
+    for (const p of profs || []) {
+      profileStatus[p.id] = { claimed_at: p.claimed_at, has_user: !!p.user_id, cv_score: p.cv_score };
+    }
+  }
+
   // Get all interactions grouped by co_creator_id
   const { data: interactions } = await sb
     .from("co_creator_interactions")
@@ -75,11 +88,19 @@ export async function GET() {
     // Contribution score (for leaderboard ranking)
     const score = cvsSent * 10 + placements * 50 + vouchesGiven * 5 + torsShared * 8;
 
+    // Profile claim status — derived from linked profile, not the request flag
+    const profStatus = m.profile_id ? profileStatus[m.profile_id] : null;
+    const profileClaimed = !!profStatus?.claimed_at;
+    const profileSignedIn = !!profStatus?.has_user;
+
     return {
       ...m,
       stats,
       tier,
       score,
+      profileClaimed,
+      profileSignedIn,
+      profileCvScore: profStatus?.cv_score ?? null,
       recentInteractions: myInteractions.slice(0, 5),
     };
   });
