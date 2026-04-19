@@ -22,7 +22,8 @@ interface CheerioConfig {
   deadlineSelector?: string;
   publishedSelector?: string;
   // Country extraction
-  countryFromTitle?: boolean; // Extract country from title text
+  countrySelector?: string; // CSS selector for country text within the job element
+  countryFromTitle?: boolean; // Fallback: extract country from title text
   defaultCountry?: string;
   // Detail page config
   fetchDetails?: boolean;
@@ -131,10 +132,18 @@ export class CheerioHtmlAdapter implements CrawlAdapter {
         ? $el.find(cfg.publishedSelector).text().trim() || $el.attr("data-published") || null
         : $el.attr("data-published") || null;
 
-      // Determine country
-      const country = cfg.countryFromTitle
-        ? detectCountry(title, cfg.defaultCountry || "Unknown")
-        : cfg.defaultCountry || "Ethiopia";
+      // Determine country — in this order:
+      //  1. Explicit CSS selector (most reliable when available, e.g. DRC)
+      //  2. Detect from title (e.g. "M&E Officer, Kenya")
+      //  3. Default from config
+      let country: string = cfg.defaultCountry || "Unknown";
+      if (cfg.countrySelector) {
+        const rawCountry = $el.find(cfg.countrySelector).text().trim();
+        if (rawCountry) country = rawCountry;
+        else if (cfg.countryFromTitle) country = detectCountry(title, country);
+      } else if (cfg.countryFromTitle) {
+        country = detectCountry(title, country);
+      }
 
       jobs.push({
         title: title.replace(/\s+/g, " ").slice(0, 300),

@@ -65,6 +65,7 @@
       "linkSelector": "a[href]",
       "deadlineSelector": ".jobList__item__deadline",
       "publishedSelector": ".jobList__item__published",
+      "countrySelector": ".jobList__item__country",
       "countryFromTitle": true,
       "defaultCountry": "Unknown",
       "fetchDetails": false
