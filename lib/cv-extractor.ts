@@ -168,11 +168,12 @@ export async function extractCvData(
   }
 
   const anthropic = new Anthropic();
-  const modelId = "claude-haiku-4-5-20251001";
+  const HAIKU = "claude-haiku-4-5-20251001";
+  const SONNET = "claude-sonnet-4-5-20250929";
 
-  async function callExtractor(tokenBudget: number, cvText: string) {
+  async function callExtractor(model: string, tokenBudget: number, cvText: string) {
     return anthropic.messages.create({
-      model: modelId,
+      model,
       max_tokens: tokenBudget,
       system: [
         { type: "text" as const, text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" as const } },
@@ -214,37 +215,42 @@ export async function extractCvData(
     }
   }
 
-  // First pass: 16K tokens
-  let message = await callExtractor(16000, truncated);
-  let parsed = await tryParse(message);
-
-  // Track usage
-  const logTokens = (m: Anthropic.Messages.Message) => {
+  const logTokens = (m: Anthropic.Messages.Message, model: string) => {
     const usage = m.usage as unknown as Record<string, number>;
     const input_tokens = usage.input_tokens || 0;
     const output_tokens = usage.output_tokens || 0;
     const cacheRead = usage.cache_read_input_tokens || 0;
     logUsage({
-      model: modelId,
-      feature: "cv_extract",
-      input_tokens,
-      output_tokens,
-      cost_usd: calculateCost(modelId, input_tokens, output_tokens),
+      model, feature: "cv_extract", input_tokens, output_tokens,
+      cost_usd: calculateCost(model, input_tokens, output_tokens),
       cached: cacheRead > 0,
     });
   };
-  logTokens(message);
 
-  // Retry with trimmed CV if first pass failed or missed key fields
+  // Pass 1: Haiku with 20K tokens
+  let message = await callExtractor(HAIKU, 20000, truncated);
+  logTokens(message, HAIKU);
+  let parsed = await tryParse(message);
+
+  // Pass 2: Haiku with trimmed CV (if pass 1 failed)
   if (!parsed) {
-    console.warn("[cv-extractor] First pass parse failed — retrying with trimmed CV");
+    console.warn("[cv-extractor] Pass 1 (Haiku) parse failed — retrying with trimmed CV");
     const trimmed = truncated.slice(0, 30_000);
-    message = await callExtractor(16000, trimmed);
+    message = await callExtractor(HAIKU, 20000, trimmed);
+    logTokens(message, HAIKU);
     parsed = await tryParse(message);
-    logTokens(message);
-    if (!parsed) {
-      throw new Error("CV extraction produced invalid data after retry.");
-    }
+  }
+
+  // Pass 3: Sonnet fallback (if still failing — Sonnet is better at structured output)
+  if (!parsed) {
+    console.warn("[cv-extractor] Pass 2 failed — escalating to Sonnet");
+    message = await callExtractor(SONNET, 20000, truncated);
+    logTokens(message, SONNET);
+    parsed = await tryParse(message);
+  }
+
+  if (!parsed) {
+    throw new Error("CV extraction produced invalid data after Haiku+Sonnet retries.");
   }
 
   const confidence =
