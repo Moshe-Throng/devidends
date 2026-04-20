@@ -7,9 +7,13 @@ const MAX_CV_LENGTH = 60_000;
 
 const SYSTEM_PROMPT = `You are a CV data extractor for international development consulting. Your job is to parse raw CV text and return structured JSON matching the World Bank / UN standard CV format.
 
-CRITICAL: Never summarize, truncate, or paraphrase ANY text from the CV. Your job is structured EXTRACTION, not rewriting. If text is long, keep it long. Every detail the user wrote matters.
+CRITICAL RULES:
+1. Never summarize, truncate, or paraphrase ANY text from the CV. Your job is structured EXTRACTION, not rewriting.
+2. EVERY employment entry MUST have description_of_duties populated from the CV. If the CV text describes what the person did in a role, copy it. Do NOT leave description_of_duties empty when the CV has role details.
+3. key_qualifications MUST capture ALL skills, technical competencies, tools, methodologies, and areas of expertise listed or implied in the CV.
+4. If a field is long, keep it long. Truncation = lost data = failure.
 
-Return ONLY valid JSON — no markdown fences, no explanation. The schema:
+OUTPUT: Return ONLY raw valid JSON. NO markdown code fences. NO leading/trailing explanation. Start with { and end with }. The schema:
 
 {
   "personal": {
@@ -40,7 +44,7 @@ Return ONLY valid JSON — no markdown fences, no explanation. The schema:
       "employer": "string",
       "position": "string",
       "country": "string",
-      "description_of_duties": "string — copy ALL duty/responsibility text VERBATIM from the CV. Do NOT summarize, shorten, or paraphrase. Preserve every bullet point, sentence, and detail exactly as written. If the CV lists 10 bullet points, include all 10. Join bullet points with newlines."
+      "description_of_duties": "string — REQUIRED if the CV has ANY detail about what the person did. Copy ALL duty/responsibility text VERBATIM from the CV. Do NOT summarize, shorten, or paraphrase. Preserve every bullet point, sentence, and detail exactly as written. If the CV lists 10 bullet points, include all 10. Join bullet points with newlines. If the CV only has position + dates with no details, set this to empty string (ONLY then)."
     }
   ],
   "languages": [
@@ -52,7 +56,7 @@ Return ONLY valid JSON — no markdown fences, no explanation. The schema:
       "speaking": "Excellent|Good|Fair|None"
     }
   ],
-  "key_qualifications": "string — preserve ALL qualifications, skills, competency text, and technical expertise exactly as written in the CV. Do not summarize or condense.",
+  "key_qualifications": "string — REQUIRED. Capture ALL skills, qualifications, competencies, technical expertise, methodologies, tools, frameworks, and areas of specialization from the CV. Include explicit 'skills' sections verbatim AND infer from employment descriptions (e.g. if a role mentions 'managed WASH programs', include 'WASH program management' here). Minimum expected: 200 characters for a CV with 5+ years experience.",
   "certifications": ["string — each certification, accreditation, or professional license listed in the CV. E.g. PRINCE2 Practitioner, PMP, CPA, etc."],
   "countries_of_experience": ["string"],
   "professional_associations": ["string"],
@@ -72,15 +76,46 @@ Rules:
 
 function stripFences(text: string): string {
   let cleaned = text.trim();
-  // Remove markdown code fences
-  cleaned = cleaned.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "");
-  // If still not starting with {, try to find the JSON object
+  // Remove markdown code fences (any position, any variant)
+  cleaned = cleaned.replace(/```(?:json|JSON)?\s*\n?/g, "").replace(/```\s*/g, "");
+  // Trim to JSON object boundaries
   const firstBrace = cleaned.indexOf("{");
   const lastBrace = cleaned.lastIndexOf("}");
   if (firstBrace >= 0 && lastBrace > firstBrace) {
     cleaned = cleaned.slice(firstBrace, lastBrace + 1);
   }
   return cleaned.trim();
+}
+
+/**
+ * Best-effort recovery of truncated JSON.
+ * If Claude ran out of tokens mid-string, close unclosed strings, arrays, objects.
+ */
+function repairTruncatedJson(raw: string): string {
+  let s = raw.trim();
+  // Remove trailing commas before close brackets
+  s = s.replace(/,(\s*[\]}])/g, "$1");
+  // If ends mid-string (odd number of unescaped quotes in last line), close it
+  const lines = s.split("\n");
+  const lastLine = lines[lines.length - 1];
+  const quoteCount = (lastLine.match(/(?<!\\)"/g) || []).length;
+  if (quoteCount % 2 === 1) s += '"';
+  // Balance brackets
+  let opens = 0, closes = 0, aOpens = 0, aCloses = 0;
+  let inStr = false, escaped = false;
+  for (const ch of s) {
+    if (escaped) { escaped = false; continue; }
+    if (ch === "\\") { escaped = true; continue; }
+    if (ch === '"') { inStr = !inStr; continue; }
+    if (inStr) continue;
+    if (ch === "{") opens++;
+    else if (ch === "}") closes++;
+    else if (ch === "[") aOpens++;
+    else if (ch === "]") aCloses++;
+  }
+  s += "]".repeat(Math.max(0, aOpens - aCloses));
+  s += "}".repeat(Math.max(0, opens - closes));
+  return s;
 }
 
 /* ─── Response cache (same file → same extraction) ─────── */
@@ -133,74 +168,98 @@ export async function extractCvData(
   }
 
   const anthropic = new Anthropic();
-
-  // Haiku 4.5 for extraction (structured data parsing) — 73% cheaper than Sonnet
   const modelId = "claude-haiku-4-5-20251001";
-  const message = await anthropic.messages.create({
-    model: modelId,
-    max_tokens: 10000,
-    system: [
-      {
-        type: "text" as const,
-        text: SYSTEM_PROMPT,
-        cache_control: { type: "ephemeral" as const },
-      },
-    ],
-    messages: [
-      {
-        role: "user",
-        content: `Extract structured CV data from the following text:\n\n${truncated}`,
-      },
-    ],
-  });
 
-  // Track usage including prompt cache hits
-  const usage = message.usage as unknown as Record<string, number>;
-  const input_tokens = usage.input_tokens || 0;
-  const output_tokens = usage.output_tokens || 0;
-  const cacheRead = usage.cache_read_input_tokens || 0;
-  logUsage({
-    model: modelId,
-    feature: "cv_extract",
-    input_tokens,
-    output_tokens,
-    cost_usd: calculateCost(modelId, input_tokens, output_tokens),
-    cached: cacheRead > 0,
-  });
+  async function callExtractor(tokenBudget: number, cvText: string) {
+    return anthropic.messages.create({
+      model: modelId,
+      max_tokens: tokenBudget,
+      system: [
+        { type: "text" as const, text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" as const } },
+      ],
+      messages: [
+        { role: "user", content: `Extract structured CV data from the following text:\n\n${cvText}` },
+      ],
+    });
+  }
 
-  const raw =
-    message.content[0].type === "text" ? message.content[0].text : "";
-  const cleaned = stripFences(raw);
+  function sanitize(s: string): string {
+    return s
+      .replace(/\\u(?![0-9a-fA-F]{4})/g, "\\\\u")
+      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, "")
+      .replace(/,(\s*[\]}])/g, "$1");
+  }
 
-  let parsed: Record<string, unknown>;
-  try {
-    // Sanitize: fix invalid unicode escapes (\uXXXX where XXXX isn't hex)
-    const sanitized = cleaned
-      .replace(/\\u(?![0-9a-fA-F]{4})/g, "\\\\u")  // escape invalid \u sequences
-      .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, ""); // strip control chars
-    parsed = JSON.parse(sanitized);
-  } catch (parseErr) {
-    // Second attempt: extract JSON object between first { and last }
+  async function tryParse(message: Anthropic.Messages.Message): Promise<Record<string, unknown> | null> {
+    const raw = message.content[0]?.type === "text" ? message.content[0].text : "";
+    const cleaned = stripFences(raw);
+    // Attempt 1: direct parse after sanitize
+    try {
+      return JSON.parse(sanitize(cleaned));
+    } catch {}
+    // Attempt 2: trim to braces + sanitize
     try {
       const first = cleaned.indexOf("{");
       const last = cleaned.lastIndexOf("}");
       if (first >= 0 && last > first) {
-        const extracted = cleaned.slice(first, last + 1)
-          .replace(/\\u(?![0-9a-fA-F]{4})/g, "\\\\u")
-          .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, "")
-          .replace(/,\s*}/g, "}").replace(/,\s*]/g, "]");
-        parsed = JSON.parse(extracted);
-      } else {
-        throw parseErr;
+        return JSON.parse(sanitize(cleaned.slice(first, last + 1)));
       }
+    } catch {}
+    // Attempt 3: repair truncated/unclosed JSON
+    try {
+      return JSON.parse(sanitize(repairTruncatedJson(cleaned)));
     } catch {
-      console.error("[cv-extractor] JSON parse failed. Raw:", raw.slice(0, 500));
-      throw new Error("CV extraction produced invalid data. Please try again.");
+      console.warn("[cv-extractor] parse failed after 3 attempts. Raw start:", raw.slice(0, 300));
+      return null;
+    }
+  }
+
+  // First pass: 16K tokens
+  let message = await callExtractor(16000, truncated);
+  let parsed = await tryParse(message);
+
+  // Track usage
+  const logTokens = (m: Anthropic.Messages.Message) => {
+    const usage = m.usage as unknown as Record<string, number>;
+    const input_tokens = usage.input_tokens || 0;
+    const output_tokens = usage.output_tokens || 0;
+    const cacheRead = usage.cache_read_input_tokens || 0;
+    logUsage({
+      model: modelId,
+      feature: "cv_extract",
+      input_tokens,
+      output_tokens,
+      cost_usd: calculateCost(modelId, input_tokens, output_tokens),
+      cached: cacheRead > 0,
+    });
+  };
+  logTokens(message);
+
+  // Retry with trimmed CV if first pass failed or missed key fields
+  if (!parsed) {
+    console.warn("[cv-extractor] First pass parse failed — retrying with trimmed CV");
+    const trimmed = truncated.slice(0, 30_000);
+    message = await callExtractor(16000, trimmed);
+    parsed = await tryParse(message);
+    logTokens(message);
+    if (!parsed) {
+      throw new Error("CV extraction produced invalid data after retry.");
     }
   }
 
   const confidence =
     typeof parsed.confidence === "number" ? parsed.confidence : 0.5;
+
+  // Regex fallbacks for contact info when AI missed them
+  const emailFallback = () => {
+    const match = rawText.match(/[\w.+-]+@[\w.-]+\.[a-zA-Z]{2,}/);
+    return match ? match[0] : "";
+  };
+  const phoneFallback = () => {
+    // Matches international + local formats, various separators
+    const match = rawText.match(/(?:\+?\d{1,4}[\s.-]?)?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,4}(?:[\s.-]?\d{2,4})?/);
+    return match ? match[0].trim() : "";
+  };
 
   // Validate required structure
   const personal = (parsed.personal as Record<string, string>) || {};
@@ -209,8 +268,8 @@ export async function extractCvData(
       full_name: personal.full_name || "",
       nationality: personal.nationality || "",
       date_of_birth: personal.date_of_birth || "",
-      email: personal.email || "",
-      phone: personal.phone || "",
+      email: personal.email || emailFallback(),
+      phone: personal.phone || phoneFallback(),
       address: personal.address || "",
       country_of_residence: personal.country_of_residence || "",
     },

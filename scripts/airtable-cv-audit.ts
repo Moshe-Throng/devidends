@@ -182,14 +182,21 @@ async function auditRow(row: AirtableRow, supabaseProfiles: Map<string, string>)
     const emp = cv.employment || [];
     base.employmentCount = emp.length;
     base.employmentWithDates = emp.filter((e: any) => e.from_date || e.start_date).length;
-    base.employmentWithDesc = emp.filter((e: any) => (e.description || "").length > 30 || (e.key_achievements || []).length > 0).length;
+    // Check description_of_duties (schema field) OR description OR key_achievements
+    base.employmentWithDesc = emp.filter((e: any) => {
+      const desc = e.description_of_duties || e.description || "";
+      return desc.length > 50 || (e.key_achievements || []).length > 0;
+    }).length;
 
     base.educationCount = (cv.education || []).length;
     base.languagesCount = (cv.languages || []).length;
     base.certificationsCount = (cv.certifications || []).filter(Boolean).length;
-    base.skillsCount = (cv.skills || []).length;
+    // Skills come from key_qualifications (string) OR skills array
+    const kq = (cv.key_qualifications || "").length;
+    const skillsArr = Array.isArray(cv.skills) ? cv.skills.length : 0;
+    base.skillsCount = skillsArr > 0 ? skillsArr : (kq > 100 ? Math.floor(kq / 50) : 0);
     base.countriesCount = (cv.countries_of_experience || []).length;
-    base.hasSummary = !!cv.professional_summary;
+    base.hasSummary = (cv.professional_summary || "").length > 50;
 
     if (!base.hasName) base.redFlags.push("no name");
     if (!base.hasEmail) base.redFlags.push("no email");
