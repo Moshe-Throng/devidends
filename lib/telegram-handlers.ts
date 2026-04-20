@@ -508,6 +508,18 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     const { trackEvent } = await import("@/lib/logger");
     trackEvent({ event: "cv_ingested", profile_id: profileId || undefined, metadata: { source: "telegram_group", name: profile.name, score: cvScore, sender: senderName } });
 
+    // CC admin on success — pass extracted CV so quality auto-flags
+    try {
+      const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+      forwardCvToAdmin({
+        buffer, filename: fileName,
+        senderName, senderTelegramId: String(msg.from?.id || chatId),
+        source: "tg_group_ingest", status: "success",
+        resultSummary: `${isUpdate ? "Updated" : "Created"} profile: ${expertName} · ${empCount} roles${recommendedBy ? ` · Recommended by ${recommendedBy}` : ""}`,
+        extractedCv: cvStructured,
+      }).catch(() => {});
+    } catch {}
+
   } catch (err: any) {
     console.error("[telegram-ingest]", err.message);
     await bot.sendMessage(chatId, `<b>Ingest failed:</b> ${escHtml(err.message || "Unknown error")}`, replyOpts).catch(() => {});

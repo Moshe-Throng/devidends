@@ -269,6 +269,7 @@ export async function POST(req: NextRequest) {
       source: "admin_ingest",
       status: "success",
       resultSummary: `${isUpdate ? "Updated" : "Created"} profile: ${created.name} · Score: ${cvScore ?? "n/a"}${recommendedBy ? ` · Recommended by ${recommendedBy}` : ""}${dupWarning ? ` · ${dupWarning}` : ""}`,
+      extractedCv: cvStructured,
     }).catch(() => {});
 
     return NextResponse.json({

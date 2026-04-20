@@ -156,6 +156,7 @@ export async function POST(req: NextRequest) {
         source: ccSource,
         status: "success",
         resultSummary: `Extracted: ${empCount} roles, ${eduCount} education entries · ${Math.round(confidence * 100)}% confidence`,
+        extractedCv: { ...(data as any), _confidence: confidence },
       }).catch(() => {});
     }
 
