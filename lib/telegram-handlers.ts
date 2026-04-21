@@ -635,6 +635,28 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       }).catch(() => {});
     } catch {}
 
+    // Fire-and-forget: enrich profile with sectors/donors/skills (Haiku call ~3s).
+    // Done AFTER the user-facing response so we don't slow down the ingest.
+    // Without this, search/match by sector returns empty for tg-ingested profiles.
+    if (profileId) {
+      (async () => {
+        try {
+          const { extractProfileFromCV } = await import("@/lib/extract-profile");
+          const extracted = await extractProfileFromCV(cvText.slice(0, 30_000));
+          const enrichPatch: any = {};
+          if (extracted.sectors?.length) enrichPatch.sectors = extracted.sectors;
+          if (extracted.skills?.length) enrichPatch.skills = extracted.skills;
+          if (extracted.donors?.length) enrichPatch.donors = extracted.donors;
+          if (extracted.headline) enrichPatch.headline = extracted.headline;
+          if (Object.keys(enrichPatch).length > 0) {
+            await sb.from("profiles").update(enrichPatch).eq("id", profileId);
+          }
+        } catch (e) {
+          console.warn("[tg-ingest enrich]", (e as Error).message);
+        }
+      })();
+    }
+
   } catch (err: any) {
     console.error("[telegram-ingest]", err.message);
     await bot.sendMessage(chatId, `<b>Ingest failed:</b> ${escHtml(err.message || "Unknown error")}`, replyOpts).catch(() => {});
