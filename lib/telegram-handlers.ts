@@ -46,6 +46,45 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
 // Pending follow-up questions for CV ingest (chatId:messageId → profileId + missing fields)
 const pendingIngestFollowups = new Map<string, { profileId: string; missing: string[] }>();
 
+/**
+ * Validate that a "Recommended by" name belongs to someone already flagged as a recommender.
+ * Returns the canonical name (from the matched profile) or null if no match.
+ * The bot only accepts recommendations from existing recommenders — the network is curated.
+ */
+async function resolveRecommender(rawName: string | null | undefined): Promise<{ matched: string | null; suggestions: string[] }> {
+  if (!rawName) return { matched: null, suggestions: [] };
+  const name = rawName.trim();
+  if (!name) return { matched: null, suggestions: [] };
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    // Exact ilike match
+    const { data: exact } = await sb
+      .from("profiles")
+      .select("name")
+      .eq("is_recommender", true)
+      .ilike("name", name)
+      .limit(1)
+      .maybeSingle();
+    if (exact?.name) return { matched: exact.name, suggestions: [] };
+    // Fuzzy: first name or last name contains
+    const parts = name.split(/\s+/).filter(Boolean);
+    if (parts.length > 0) {
+      const { data: fuzzy } = await sb
+        .from("profiles")
+        .select("name")
+        .eq("is_recommender", true)
+        .or(parts.map((p) => `name.ilike.%${p}%`).join(","))
+        .limit(5);
+      if (fuzzy && fuzzy.length === 1) return { matched: fuzzy[0].name as string, suggestions: [] };
+      if (fuzzy && fuzzy.length > 1) return { matched: null, suggestions: fuzzy.map((f) => f.name as string) };
+    }
+    return { matched: null, suggestions: [] };
+  } catch {
+    return { matched: null, suggestions: [] };
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Markdown helpers
 // ---------------------------------------------------------------------------
@@ -206,14 +245,15 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
-  // Parse "Recommended by" — only from an explicit "Recommended by X" caption pattern.
-  // If the caption is anything else (a name, a filename, random text), ignore it —
-  // the bot will ask for the recommender in the follow-up message anyway.
+  // Parse "Recommended by" — only from an explicit "Recommended by X" caption pattern,
+  // then validate against our recommender network. Invalid names fall through to the
+  // follow-up prompt so the user can retry.
   const caption = (msg.caption || "").trim();
   let recommendedBy: string | null = null;
   const recMatch = caption.match(/(?:recommended|referred)(?:\s+by)?[:\s]+(.+)/i);
   if (recMatch) {
-    recommendedBy = recMatch[1].trim();
+    const { matched } = await resolveRecommender(recMatch[1].trim());
+    if (matched) recommendedBy = matched;
   }
 
   // Only process PDF/DOCX
@@ -550,6 +590,7 @@ async function handleIngestFollowupReply(
 
     const update: Record<string, unknown> = {};
     const filled: string[] = [];
+    let rejectedRecommender: { raw: string; suggestions: string[] } | null = null;
 
     for (const line of lines) {
       const emailMatch = line.match(/^(?:email|e-?mail)[:\s]+(.+)/i);
@@ -559,7 +600,17 @@ async function handleIngestFollowupReply(
       if (phoneMatch) { update.phone = phoneMatch[1].trim(); filled.push("Phone"); continue; }
 
       const recMatch = line.match(/^(?:recommended|rec|ref|referred)(?:\s+by)?[:\s]+(.+)/i);
-      if (recMatch) { update.recommended_by = recMatch[1].trim(); filled.push("Recommended by"); continue; }
+      if (recMatch) {
+        const raw = recMatch[1].trim();
+        const { matched, suggestions } = await resolveRecommender(raw);
+        if (matched) {
+          update.recommended_by = matched;
+          filled.push("Recommended by");
+        } else {
+          rejectedRecommender = { raw, suggestions };
+        }
+        continue;
+      }
 
       const genderMatch = line.match(/^(?:gender|sex)[:\s]+(.+)/i);
       if (genderMatch) {
@@ -575,12 +626,21 @@ async function handleIngestFollowupReply(
       if (line.includes("@") && line.includes(".")) { update.email = line; filled.push("Email"); continue; }
     }
 
+    // Build the recommender-rejection line (shown either alongside updates or as a standalone error)
+    let rejLine = "";
+    if (rejectedRecommender) {
+      const { raw, suggestions } = rejectedRecommender;
+      rejLine = suggestions.length > 0
+        ? `\n<b>Note:</b> "${escHtml(raw)}" isn't in our recommender network. Did you mean: ${suggestions.map((s) => `<b>${escHtml(s)}</b>`).join(", ")}?`
+        : `\n<b>Note:</b> "${escHtml(raw)}" isn't in our recommender network. Only registered recommenders can be credited — ask admin to onboard them first.`;
+    }
+
     if (Object.keys(update).length > 0) {
       const { createClient } = await import("@supabase/supabase-js");
       const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
       await sb.from("profiles").update(update).eq("id", pending.profileId);
 
-      await bot.sendMessage(chatId, `<b>Updated:</b> ${filled.join(", ")}`, replyOpts);
+      await bot.sendMessage(chatId, `<b>Updated:</b> ${filled.join(", ")}${rejLine}`, replyOpts);
 
       // Remove from pending if all fields filled
       const remaining = pending.missing.filter(m => !filled.includes(m));
@@ -588,6 +648,8 @@ async function handleIngestFollowupReply(
         const replyKey = `${chatId}:${msg.reply_to_message?.message_id}`;
         pendingIngestFollowups.delete(replyKey);
       }
+    } else if (rejectedRecommender) {
+      await bot.sendMessage(chatId, rejLine.trim(), replyOpts);
     } else {
       await bot.sendMessage(chatId, `<i>Could not parse. Please use format:</i>\n<code>Email: name@example.com\nPhone: +251...\nGender: Male\nRecommended by: Name</code>`, replyOpts);
     }
