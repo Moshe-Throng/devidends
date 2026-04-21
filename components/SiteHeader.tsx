@@ -136,14 +136,6 @@ export function SiteHeader({ activeHref }: { activeHref?: string }) {
                         Saved Opportunities
                       </Link>
                       <Link
-                        href="/cv-builder"
-                        onClick={() => setUserMenuOpen(false)}
-                        className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-dark-600 hover:bg-dark-50 transition-colors"
-                      >
-                        <FileText className="w-4 h-4" />
-                        My CVs
-                      </Link>
-                      <Link
                         href="/settings"
                         onClick={() => setUserMenuOpen(false)}
                         className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-dark-600 hover:bg-dark-50 transition-colors"
@@ -242,13 +234,6 @@ export function SiteHeader({ activeHref }: { activeHref?: string }) {
                 className="block px-4 py-2.5 text-sm font-medium rounded-lg text-dark-500 hover:text-dark-900 hover:bg-dark-50"
               >
                 Saved Opportunities
-              </Link>
-              <Link
-                href="/cv-builder"
-                onClick={() => setMobileOpen(false)}
-                className="block px-4 py-2.5 text-sm font-medium rounded-lg text-dark-500 hover:text-dark-900 hover:bg-dark-50"
-              >
-                My CVs
               </Link>
               <Link
                 href="/settings"

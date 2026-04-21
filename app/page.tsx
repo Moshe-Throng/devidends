@@ -235,18 +235,18 @@ export default function LandingPage() {
 
             {/* Headline */}
             <h1
-              className="animate-staggerFadeUp text-3xl sm:text-5xl md:text-[3.75rem] font-extrabold text-dark-900 leading-[1.08] tracking-tight"
+              className="animate-staggerFadeUp text-[1.65rem] xs:text-3xl sm:text-5xl md:text-[3.75rem] font-extrabold text-dark-900 leading-[1.1] tracking-tight break-words"
               style={{ animationDelay: "0.1s" }}
             >
               Empowering Your
               <br />
               Ventures in{" "}
               <span
-                className="bg-gradient-to-r from-cyan-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent animate-gradientShift"
+                className="bg-gradient-to-r from-cyan-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent animate-gradientShift inline-block"
                 style={{ backgroundSize: "200% 200%" }}
               >
                 International
-                <br className="hidden sm:block" />
+                <br />
                 Development
               </span>
             </h1>

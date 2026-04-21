@@ -41,13 +41,30 @@ function setCache(key: string, result: CvScoreResult) {
   scoreCache.set(key, { result, cachedAt: Date.now() });
 }
 
-const SYSTEM_PROMPT = `You are a CV scorer for international development consulting (GIZ, World Bank, EU, UNDP, AfDB). Score 0-100 across 6 dimensions. Be specific to THIS CV's content. Weak CVs score <40, strong >80. Never default to 65.
+const SYSTEM_PROMPT_GENERIC = `You are a CV scorer for international development consulting (GIZ, World Bank, EU, UNDP, AfDB). Score 0-100 across 6 dimensions. Be specific to THIS CV's content. Weak CVs score <40, strong >80. Never default to 65.
 
 Return ONLY this JSON (no markdown):
 {"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>},{"name":"Summary","score":<0-100>},{"name":"Experience","score":<0-100>},{"name":"Skills","score":<0-100>},{"name":"Education","score":<0-100>},{"name":"Donor Readiness","score":<0-100>}],"top_3_improvements":["specific improvement 1","specific improvement 2","specific improvement 3"]}`;
 
-function buildSystemPrompt(_opportunity?: OpportunityInput): string {
-  return SYSTEM_PROMPT;
+const SYSTEM_PROMPT_OPPORTUNITY = `You are scoring a candidate's CV AGAINST A SPECIFIC OPPORTUNITY (not in general). The job posting is provided in the user message.
+
+Your job: judge how well THIS candidate fits THIS role. The 6 dimensions reflect fit, not generic CV quality:
+- Structure: format/clarity that lets a hiring manager judge the candidate quickly for THIS role
+- Summary: do the opening lines match what the role wants?
+- Experience: directly relevant prior work for this role's responsibilities/sector/donor/country (heaviest weight in your judgment)
+- Skills: required and preferred skills from the posting present in the CV?
+- Education: meets the role's education bar?
+- Donor Readiness: would this candidate pass screening for THIS posting's donor + role tier?
+
+Score harshly when the candidate is mismatched (different sector, junior for senior role, wrong country experience, missing required skills). A strong generic CV that doesn't fit the role should score 40-55. A weak CV that perfectly fits should score 60-70. A strong fit scores 75+. Never default to 65.
+
+top_3_improvements MUST be specific to closing the gap to THIS role (e.g., "Add quantified results from your WASH work to match the M&E officer requirements").
+
+Return ONLY this JSON (no markdown):
+{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>},{"name":"Summary","score":<0-100>},{"name":"Experience","score":<0-100>},{"name":"Skills","score":<0-100>},{"name":"Education","score":<0-100>},{"name":"Donor Readiness","score":<0-100>}],"top_3_improvements":["fit-gap improvement 1","fit-gap improvement 2","fit-gap improvement 3"]}`;
+
+function buildSystemPrompt(opportunity?: OpportunityInput): string {
+  return opportunity ? SYSTEM_PROMPT_OPPORTUNITY : SYSTEM_PROMPT_GENERIC;
 }
 
 /**
@@ -107,9 +124,27 @@ export async function scoreCv(
   const anthropic = new Anthropic();
   const systemPrompt = buildSystemPrompt(opportunity);
 
-  let userMessage = `Here is the CV to score:\n\n${truncatedText}`;
+  let userMessage: string;
   if (opportunity) {
-    userMessage += `\n\n---\nScore this CV against the opportunity: "${opportunity.title}" at ${opportunity.organization}`;
+    // Put the opportunity FIRST so the model anchors on it before reading the CV.
+    const desc = (opportunity.description || "").slice(0, 4000); // cap to keep prompt small
+    userMessage = [
+      `OPPORTUNITY:`,
+      `Title: ${opportunity.title}`,
+      `Organization: ${opportunity.organization}`,
+      desc ? `\nDescription / Requirements:\n${desc}` : "",
+      ``,
+      `─────────────────`,
+      ``,
+      `CANDIDATE CV:`,
+      ``,
+      truncatedText,
+      ``,
+      `─────────────────`,
+      `Now score this candidate's fit for the opportunity above.`,
+    ].filter(Boolean).join("\n");
+  } else {
+    userMessage = `Here is the CV to score:\n\n${truncatedText}`;
   }
 
   const modelId = "claude-haiku-4-5-20251001";

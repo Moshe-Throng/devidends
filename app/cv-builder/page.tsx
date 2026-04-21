@@ -179,9 +179,10 @@ export default function CvBuilderPage() {
   const [error, setError] = useState<string | null>(null);
   const [extractStep, setExtractStep] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [openSections, setOpenSections] = useState<Set<string>>(
-    new Set(["personal", "summary", "education", "employment"])
-  );
+  // Start collapsed — user opens what they want to edit. The full CV is shown
+  // as section headers (with filled/empty status) so the page stays scannable
+  // and the Templates button stays in reach without paging through long content.
+  const [openSections, setOpenSections] = useState<Set<string>>(new Set());
   const [countryInput, setCountryInput] = useState("");
   const [certInput, setCertInput] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<
@@ -1054,6 +1055,22 @@ export default function CvBuilderPage() {
         {/* ─────────────── EDITING PHASE ─────────────── */}
         {phase === "editing" && (
           <div className="animate-fadeInUp space-y-8">
+            {/* Quick-jump action bar — keeps Templates within reach without scrolling */}
+            <div className="sticky top-16 z-30 -mx-4 px-4 py-2 bg-white/90 backdrop-blur-md border-b border-dark-50 flex items-center justify-between gap-3">
+              <div className="text-xs text-dark-500">
+                {Object.values(cvData.personal).filter(Boolean).length > 0
+                  ? `Editing CV for ${cvData.personal.full_name || "your profile"}`
+                  : "Build your CV"}
+              </div>
+              <button
+                onClick={() => setPhase("template")}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-400 text-white text-xs font-bold shadow-sm hover:shadow-md hover:shadow-cyan-500/20 transition-all"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Generate templates
+              </button>
+            </div>
+
             {/* Loaded-from-DB notice */}
             {loadedFromDb && confidence === 0 && cvData.personal.full_name.trim() && (
               <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-dark-50/60 border border-dark-100">

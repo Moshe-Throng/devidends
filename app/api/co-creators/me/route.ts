@@ -62,7 +62,7 @@ export async function GET() {
   // Profiles they've recommended (fuzzy match on recommended_by)
   const { data: recommendedProfiles } = await sb
     .from("profiles")
-    .select("id, name, recommended_by, cv_score, claimed_at, created_at, sectors, profile_type")
+    .select("id, name, recommended_by, cv_score, claimed_at, created_at, sectors, profile_type, gender")
     .not("recommended_by", "is", null);
 
   const memberName = (cc.name || "").toLowerCase();
@@ -89,6 +89,23 @@ export async function GET() {
   // Network: total co-creators + the user's rank by score
   const { count: totalCcs } = await sb.from("co_creators").select("*", { count: "exact", head: true });
 
+  // Compute leaderboard rank by recommendation count (cheap proxy for score).
+  // Pull every co_creator's name → count their recommendations → rank them.
+  const { data: allCcs } = await sb.from("co_creators").select("id, name");
+  function ccMatches(ccName: string, recBy: string): boolean {
+    const rec = recBy.toLowerCase();
+    const parts = ccName.toLowerCase().split(/\s+/).filter(Boolean);
+    if (parts.length === 0) return false;
+    if (!rec.includes(parts[0])) return false;
+    if (parts.length === 1) return true;
+    return parts.slice(1).some((p: string) => p.length >= 3 && rec.includes(p));
+  }
+  const counts = (allCcs || []).map((c: any) => ({
+    id: c.id,
+    n: (recommendedProfiles || []).filter((p: any) => p.recommended_by && ccMatches(c.name, p.recommended_by)).length,
+  })).sort((a, b) => b.n - a.n);
+  const myRank = counts.findIndex((c) => c.id === cc.id) + 1;
+
   // CV scores history for the recommended pool
   const scored = myRecommended.filter((p: any) => p.cv_score != null);
   const avgCvScore = scored.length > 0
@@ -97,6 +114,14 @@ export async function GET() {
 
   const claimedCount = myRecommended.filter((p: any) => p.claimed_at).length;
   const expertCount = myRecommended.filter((p: any) => p.profile_type === "Expert").length;
+  const maleCount = myRecommended.filter((p: any) => p.gender === "male").length;
+  const femaleCount = myRecommended.filter((p: any) => p.gender === "female").length;
+  const monthAgo = Date.now() - 30 * 86400000;
+  const newThisMonth = myRecommended.filter((p: any) => new Date(p.created_at).getTime() >= monthAgo).length;
+  // Top 3 sectors across recommended people
+  const sectorCounts: Record<string, number> = {};
+  for (const p of myRecommended) for (const s of (p as any).sectors || []) sectorCounts[s] = (sectorCounts[s] || 0) + 1;
+  const topSectors = Object.entries(sectorCounts).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([s, n]) => ({ sector: s, count: n }));
 
   const cvsSent = myRecommended.length;
   const placements = 0; // placeholder
@@ -132,6 +157,11 @@ export async function GET() {
       score,
       tier,
       networkSize: totalCcs || 0,
+      maleCount,
+      femaleCount,
+      newThisMonth,
+      topSectors,
+      rank: myRank > 0 ? myRank : null,
     },
     recommended: myRecommended.map((p: any) => ({
       id: p.id,
