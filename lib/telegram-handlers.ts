@@ -206,25 +206,14 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
-  // Parse "Recommended by" — only from caption (never from filename).
-  // Explicit: "Recommended by Mussie", or plain name if it clearly looks like a person (no filename patterns).
+  // Parse "Recommended by" — only from an explicit "Recommended by X" caption pattern.
+  // If the caption is anything else (a name, a filename, random text), ignore it —
+  // the bot will ask for the recommender in the follow-up message anyway.
   const caption = (msg.caption || "").trim();
   let recommendedBy: string | null = null;
-  const recMatch = caption.match(/(?:recommended|referred|rec|ref)(?:\s+by)?[:\s]+(.+)/i);
+  const recMatch = caption.match(/(?:recommended|referred)(?:\s+by)?[:\s]+(.+)/i);
   if (recMatch) {
     recommendedBy = recMatch[1].trim();
-  } else if (
-    caption &&
-    !caption.includes("/") &&
-    caption.length < 100 &&
-    // Reject anything that looks like a filename (CV_Name.pdf, resume.docx, etc.)
-    !/\.(pdf|docx?|xlsx?|rtf|txt)$/i.test(caption) &&
-    // Require a space — real names are at least two words
-    /\s/.test(caption) &&
-    // Reject common filename patterns (underscores, double-dashes, no vowels)
-    !/_{2,}|--/.test(caption)
-  ) {
-    recommendedBy = caption;
   }
 
   // Only process PDF/DOCX
