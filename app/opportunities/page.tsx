@@ -213,7 +213,7 @@ export default function OpportunitiesPage() {
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { "": opportunities.length };
     for (const opp of opportunities) {
-      const t = opp.classified_type.toLowerCase();
+      const t = (opp.classified_type || "").toLowerCase();
       counts[t] = (counts[t] || 0) + 1;
     }
     return counts;
@@ -227,16 +227,16 @@ export default function OpportunitiesPage() {
       const q = searchQuery.toLowerCase();
       result = result.filter(
         (o) =>
-          o.title.toLowerCase().includes(q) ||
-          o.organization.toLowerCase().includes(q) ||
-          o.description.toLowerCase().includes(q)
+          (o.title || "").toLowerCase().includes(q) ||
+          (o.organization || "").toLowerCase().includes(q) ||
+          (o.description || "").toLowerCase().includes(q)
       );
     }
 
     // Category tab filter
     if (activeTab) {
       result = result.filter(
-        (o) => o.classified_type.toLowerCase() === activeTab.toLowerCase()
+        (o) => (o.classified_type || "").toLowerCase() === activeTab.toLowerCase()
       );
     }
 
@@ -259,11 +259,11 @@ export default function OpportunitiesPage() {
     result.sort((a, b) => {
       switch (sortBy) {
         case "quality":
-          return b.quality_score - a.quality_score;
+          return (b.quality_score || 0) - (a.quality_score || 0);
         case "title":
-          return a.title.localeCompare(b.title);
+          return (a.title || "").localeCompare(b.title || "");
         case "organization":
-          return a.organization.localeCompare(b.organization);
+          return (a.organization || "").localeCompare(b.organization || "");
         case "deadline":
         default:
           if (!a.deadline && !b.deadline) return 0;

@@ -232,8 +232,8 @@ export async function extractCvData(
   logTokens(message, HAIKU);
   let parsed = await tryParse(message);
 
-  // Pass 2: Haiku with trimmed CV (if pass 1 failed)
-  if (!parsed) {
+  // Pass 2: Haiku with trimmed CV (skip when input is already <= 30K — trimming would be a no-op retry)
+  if (!parsed && truncated.length > 30_000) {
     console.warn("[cv-extractor] Pass 1 (Haiku) parse failed — retrying with trimmed CV");
     const trimmed = truncated.slice(0, 30_000);
     message = await callExtractor(HAIKU, 20000, trimmed);

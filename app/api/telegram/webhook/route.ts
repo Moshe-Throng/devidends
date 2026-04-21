@@ -3,7 +3,7 @@ import { getTelegramBot } from "@/lib/telegram";
 import { handleUpdate } from "@/lib/telegram-handlers";
 import { logException } from "@/lib/logger";
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export async function POST(req: NextRequest) {
   let body: any;
