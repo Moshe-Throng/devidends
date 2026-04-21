@@ -157,13 +157,13 @@ export default function CoCreatorDashboard() {
         {/* Recommended people */}
         <section>
           <div className="flex items-baseline justify-between mb-4">
-            <h2 className="text-lg font-bold text-[#e0e2e7]">People you've recommended</h2>
+            <h2 className="text-lg font-bold text-[#e0e2e7]">People you&apos;ve recommended</h2>
             <span className="text-xs text-[#555]">{data.recommended.length} total</span>
           </div>
           {data.recommended.length === 0 ? (
             <div className="bg-[#161923] border border-[#1e2130] rounded-lg p-8 text-center">
               <p className="text-sm text-[#8b95a5] mb-2">No recommendations yet.</p>
-              <p className="text-xs text-[#555] max-w-md mx-auto">Forward a CV to <span className="text-[#27ABD2]">@Devidends_Bot</span> with the caption <code className="bg-[#1e2130] px-1.5 py-0.5 rounded">Recommended by {data.coCreator.name.split(" ")[0]}</code> and they'll show up here.</p>
+              <p className="text-xs text-[#555] max-w-md mx-auto">Forward a CV to <span className="text-[#27ABD2]">@Devidends_Bot</span> with the caption <code className="bg-[#1e2130] px-1.5 py-0.5 rounded">Recommended by {data.coCreator.name.split(" ")[0]}</code> and they&apos;ll show up here.</p>
             </div>
           ) : (
             <div className="space-y-2">
@@ -219,7 +219,7 @@ export default function CoCreatorDashboard() {
             <Star className="w-5 h-5 text-[#27ABD2] mt-0.5" />
             <div>
               <h3 className="text-sm font-bold text-[#e0e2e7] mb-1">Bring someone you trust</h3>
-              <p className="text-xs text-[#8b95a5] leading-relaxed">Forward a CV to <span className="text-[#c8ccd4]">@Devidends_Bot</span> with caption <code className="bg-[#0f1117] border border-[#1e2130] px-1.5 py-0.5 rounded text-[#27ABD2]">Recommended by {data.coCreator.name.split(" ")[0]}</code> — they'll be added and tagged to you automatically.</p>
+              <p className="text-xs text-[#8b95a5] leading-relaxed">Forward a CV to <span className="text-[#c8ccd4]">@Devidends_Bot</span> with caption <code className="bg-[#0f1117] border border-[#1e2130] px-1.5 py-0.5 rounded text-[#27ABD2]">Recommended by {data.coCreator.name.split(" ")[0]}</code> — they&apos;ll be added and tagged to you automatically.</p>
             </div>
           </div>
         </section>
