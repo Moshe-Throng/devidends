@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
 
     const { data: invite, error: findErr } = await sb
       .from("co_creators")
-      .select("id, name, profile_id, status")
+      .select("id, name, profile_id, status, invite_token")
       .eq("invite_token", token)
       .maybeSingle();
 
@@ -152,6 +152,7 @@ export async function POST(req: NextRequest) {
     // Ensure auth user exists + link profile for frictionless sign-in.
     // The invite token is proof of identity — we can auto-create an auth account.
     let signInUrl: string | null = null;
+    let authUserId: string | null = null;
     if (email) {
       try {
         const { data: list } = await sb.auth.admin.listUsers();
@@ -163,20 +164,68 @@ export async function POST(req: NextRequest) {
           });
           authUser = created?.user ?? undefined;
         }
-        if (authUser && invite.profile_id) {
-          // Link profile to auth user
-          await sb.from("profiles").update({ user_id: authUser.id }).eq("id", invite.profile_id);
+        if (authUser) {
+          authUserId = authUser.id;
+          if (invite.profile_id) {
+            // Link profile to auth user
+            await sb.from("profiles").update({ user_id: authUser.id }).eq("id", invite.profile_id);
+          }
         }
         // Generate a one-time magic link so they land signed in
-        const { data: linkData } = await sb.auth.admin.generateLink({
+        const { data: linkData, error: linkErr } = await sb.auth.admin.generateLink({
           type: "magiclink",
           email,
           options: { redirectTo: "https://devidends.net/auth/callback?next=/profile" },
         });
+        if (linkErr) console.warn("[co-creators/invite] generateLink error:", linkErr.message);
         signInUrl = linkData?.properties?.action_link ?? null;
       } catch (e) {
         console.warn("[co-creators/invite] auto-signin setup failed:", e);
       }
+    }
+
+    // Create/update subscription record. Use the user's preferences so they
+    // start receiving the daily digest immediately on their chosen channel.
+    try {
+      const subscribeJobs = body.subscribe_jobs !== false; // default true
+      const subscribeNews = body.subscribe_news !== false;
+      const newsSectors = Array.isArray(body.news_categories) ? body.news_categories : [];
+      const channel = preferred_channel === "telegram" ? "telegram" : "email";
+      if (subscribeJobs || subscribeNews) {
+        // Upsert by email if present, otherwise by co-creator id
+        if (email) {
+          const { data: existing } = await sb
+            .from("subscriptions")
+            .select("id")
+            .eq("email", email)
+            .maybeSingle();
+          const subPatch: any = {
+            email,
+            channel,
+            sectors_filter: Array.isArray(preferred_sectors) ? preferred_sectors : [],
+            country_filter: ["Ethiopia"],
+            news_categories_filter: newsSectors,
+            frequency: ask_frequency || "weekly",
+            is_active: true,
+          };
+          if (existing) {
+            await sb.from("subscriptions").update(subPatch).eq("id", existing.id);
+          } else {
+            await sb.from("subscriptions").insert(subPatch);
+          }
+        }
+      }
+    } catch (e) {
+      console.warn("[co-creators/invite] subscription setup failed:", (e as Error).message);
+    }
+
+    // Build a Telegram deep link so users who picked "telegram" as their
+    // preferred channel have a clear next step (bot opens and binds their
+    // claim token to their Telegram id).
+    let telegramDeepLink: string | null = null;
+    if (preferred_channel === "telegram" && (claimToken || invite.invite_token)) {
+      const startPayload = claimToken ? `claim_${claimToken}` : `cc_${invite.invite_token}`;
+      telegramDeepLink = `https://t.me/Devidends_Bot?start=${startPayload}`;
     }
 
     // Log interaction
@@ -223,6 +272,9 @@ export async function POST(req: NextRequest) {
       cvClaimRequested: !!cv_claim_requested,
       claimToken,
       signInUrl,
+      telegramDeepLink,
+      preferredChannel: preferred_channel,
+      email: email || null,
     });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || "Server error" }, { status: 500 });

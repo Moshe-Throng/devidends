@@ -105,15 +105,20 @@ export default function InvitePage() {
       }
       setShowConfetti(true);
       setTimeout(() => {
-        // Frictionless sign-in: if server gave us a magic link, go straight to it.
-        // Supabase verifies the token and lands the user signed-in on /profile.
-        if (d.signInUrl) {
-          window.location.href = d.signInUrl;
-          return;
-        }
-        const claimParam = d.cvClaimRequested && d.claimToken ? `&claim=${d.claimToken}` : "";
-        router.push(`/cc/welcome?name=${encodeURIComponent(d.name)}&t=${token}${claimParam}`);
-      }, 2000);
+        // Always go to /cc/welcome first — it shows the full summary (profile,
+        // telegram, subscription). Welcome page handles sign-in via a big
+        // "Open profile" action. The old direct-redirect-to-magic-link flow
+        // was too easy to break (cookies failing to set = user stuck with no
+        // visible action).
+        const params = new URLSearchParams();
+        params.set("name", d.name);
+        if (token) params.set("t", token);
+        if (d.claimToken) params.set("claim", d.claimToken);
+        if (d.telegramDeepLink) params.set("tg", d.telegramDeepLink);
+        if (d.preferredChannel) params.set("channel", d.preferredChannel);
+        if (d.signInUrl) params.set("signin", d.signInUrl);
+        router.push(`/cc/welcome?${params.toString()}`);
+      }, 1500);
     } catch (err: any) {
       alert(err.message);
       setSubmitting(false);
