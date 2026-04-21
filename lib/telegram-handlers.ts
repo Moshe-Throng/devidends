@@ -71,21 +71,34 @@ async function fetchRecommenders(): Promise<RecRow[]> {
       if (parts.length === 1) return true;
       return parts.slice(1).some((p) => p.length >= 3 && rb.includes(p));
     }
-    return (recs || []).map((r: any) => ({
+    const rows = (recs || []).map((r: any) => ({
       id: r.id,
       name: r.name,
       count: (recBy || []).filter((p: any) => matches(r.name, p.recommended_by)).length,
     }));
+    // Re-sort by name with titles stripped, so "Dr. Getachew Eshete" sits with the G's.
+    rows.sort((a, b) => stripTitle(a.name).localeCompare(stripTitle(b.name)));
+    return rows;
   } catch {
     return [];
   }
+}
+
+/** Strip honorifics so "Dr. Getachew" buckets under G, not D. */
+function stripTitle(name: string): string {
+  return (name || "").trim().replace(/^(dr\.?|mr\.?|mrs\.?|ms\.?|miss|prof\.?|professor|hon\.?|sir|madam)\s+/i, "").trim();
+}
+
+function bucketLetter(name: string): string {
+  const c = stripTitle(name).charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : "#";
 }
 
 /** Letter buckets present in the recommender list ("A", "B", "C", ...). */
 function lettersPresent(recommenders: RecRow[]): string[] {
   const set = new Set<string>();
   for (const r of recommenders) {
-    const c = (r.name || "").trim().charAt(0).toUpperCase();
+    const c = bucketLetter(r.name);
     if (/[A-Z]/.test(c)) set.add(c);
   }
   return Array.from(set).sort();
@@ -143,7 +156,7 @@ function buildLetterKeyboard(profileId: string, recommenders: RecRow[], letter: 
   }
   const matches = recommenders
     .map((r, idx) => ({ ...r, idx }))
-    .filter((r) => (r.name || "").trim().charAt(0).toUpperCase() === letter);
+    .filter((r) => bucketLetter(r.name) === letter);
   for (let i = 0; i < matches.length; i += 2) {
     rows.push(matches.slice(i, i + 2).map((r) => ({
       text: r.name,
