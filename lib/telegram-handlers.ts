@@ -46,56 +46,117 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
 // Pending follow-up questions for CV ingest (chatId:messageId → profileId + missing fields)
 const pendingIngestFollowups = new Map<string, { profileId: string; missing: string[] }>();
 
-const RECOMMENDER_PAGE_SIZE = 6;
+const TOP_RECOMMENDERS = 6;
 
-/** Fetch all recommenders (is_recommender=true) sorted alphabetically. */
-async function fetchRecommenders(): Promise<{ id: string; name: string }[]> {
+interface RecRow { id: string; name: string; count: number }
+
+/**
+ * Fetch all recommenders (is_recommender=true) sorted alphabetically,
+ * each with a recommendation count (how many profiles cite them as
+ * recommended_by). Used to pick the most active for quick access.
+ */
+async function fetchRecommenders(): Promise<RecRow[]> {
   try {
     const { createClient } = await import("@supabase/supabase-js");
     const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
-    const { data } = await sb
-      .from("profiles")
-      .select("id, name")
-      .eq("is_recommender", true)
-      .order("name", { ascending: true });
-    return (data || []).map((r: any) => ({ id: r.id, name: r.name }));
+    const [{ data: recs }, { data: recBy }] = await Promise.all([
+      sb.from("profiles").select("id, name").eq("is_recommender", true).order("name", { ascending: true }),
+      sb.from("profiles").select("recommended_by").not("recommended_by", "is", null),
+    ]);
+    // Count: a recBy string contains this recommender's first name + at least one other token
+    function matches(recName: string, recBy: string): boolean {
+      const rb = recBy.toLowerCase();
+      const parts = recName.toLowerCase().split(/\s+/).filter(Boolean);
+      if (parts.length === 0 || !rb.includes(parts[0])) return false;
+      if (parts.length === 1) return true;
+      return parts.slice(1).some((p) => p.length >= 3 && rb.includes(p));
+    }
+    return (recs || []).map((r: any) => ({
+      id: r.id,
+      name: r.name,
+      count: (recBy || []).filter((p: any) => matches(r.name, p.recommended_by)).length,
+    }));
   } catch {
     return [];
   }
 }
 
-/** Build the inline keyboard for the follow-up message. */
-function buildFollowupKeyboard(profileId: string, recommenders: { id: string; name: string }[], page: number, needsGender: boolean, needsRecommender: boolean) {
-  const rows: { text: string; callback_data: string }[][] = [];
+/** Letter buckets present in the recommender list ("A", "B", "C", ...). */
+function lettersPresent(recommenders: RecRow[]): string[] {
+  const set = new Set<string>();
+  for (const r of recommenders) {
+    const c = (r.name || "").trim().charAt(0).toUpperCase();
+    if (/[A-Z]/.test(c)) set.add(c);
+  }
+  return Array.from(set).sort();
+}
 
+/**
+ * Top-level keyboard: gender buttons, top 6 recommenders by activity,
+ * and an alphabet quick-jump row. Tapping a letter takes you to the
+ * letter view in one click — total interaction = 2 clicks max.
+ */
+function buildTopKeyboard(profileId: string, recommenders: RecRow[], needsGender: boolean, needsRecommender: boolean) {
+  const rows: { text: string; callback_data: string }[][] = [];
   if (needsGender) {
     rows.push([
       { text: "👨 Male", callback_data: `gen:${profileId}:m` },
       { text: "👩 Female", callback_data: `gen:${profileId}:f` },
     ]);
   }
-
   if (needsRecommender && recommenders.length > 0) {
-    const start = page * RECOMMENDER_PAGE_SIZE;
-    const pageRecs = recommenders.slice(start, start + RECOMMENDER_PAGE_SIZE);
+    // Index lookup so we can encode picks by stable index.
+    // Top by count, then alphabetical tie-break.
+    const indexed = recommenders.map((r, i) => ({ ...r, idx: i }));
+    const top = [...indexed].sort((a, b) => (b.count - a.count) || a.name.localeCompare(b.name)).slice(0, TOP_RECOMMENDERS);
     // 2 per row
-    for (let i = 0; i < pageRecs.length; i += 2) {
-      const row = pageRecs.slice(i, i + 2).map((r, j) => ({
-        text: r.name,
-        callback_data: `rec:${profileId}:${start + i + j}`,
-      }));
-      rows.push(row);
+    for (let i = 0; i < top.length; i += 2) {
+      rows.push(top.slice(i, i + 2).map((r) => ({
+        text: r.count > 0 ? `⭐ ${r.name} (${r.count})` : r.name,
+        callback_data: `rec:${profileId}:${r.idx}`,
+      })));
     }
-    // Nav row
-    const totalPages = Math.ceil(recommenders.length / RECOMMENDER_PAGE_SIZE);
-    const navRow: { text: string; callback_data: string }[] = [];
-    if (page > 0) navRow.push({ text: "◀ Prev", callback_data: `recpg:${profileId}:${page - 1}:${needsGender ? 1 : 0}` });
-    navRow.push({ text: `${page + 1}/${totalPages}`, callback_data: "noop" });
-    if (page < totalPages - 1) navRow.push({ text: "Next ▶", callback_data: `recpg:${profileId}:${page + 1}:${needsGender ? 1 : 0}` });
-    if (navRow.length > 1) rows.push(navRow);
+    // Alphabet quick-jump
+    const letters = lettersPresent(recommenders);
+    for (let i = 0; i < letters.length; i += 6) {
+      rows.push(letters.slice(i, i + 6).map((L) => ({
+        text: L,
+        callback_data: `recAB:${profileId}:${L}:${needsGender ? 1 : 0}`,
+      })));
+    }
   }
-
   return { inline_keyboard: rows };
+}
+
+/**
+ * Letter view: show every recommender whose name starts with `letter`.
+ * Single screen, no further pagination — letter buckets stay small enough.
+ * "← Top" button returns to the top keyboard.
+ */
+function buildLetterKeyboard(profileId: string, recommenders: RecRow[], letter: string, needsGender: boolean) {
+  const rows: { text: string; callback_data: string }[][] = [];
+  if (needsGender) {
+    rows.push([
+      { text: "👨 Male", callback_data: `gen:${profileId}:m` },
+      { text: "👩 Female", callback_data: `gen:${profileId}:f` },
+    ]);
+  }
+  const matches = recommenders
+    .map((r, idx) => ({ ...r, idx }))
+    .filter((r) => (r.name || "").trim().charAt(0).toUpperCase() === letter);
+  for (let i = 0; i < matches.length; i += 2) {
+    rows.push(matches.slice(i, i + 2).map((r) => ({
+      text: r.name,
+      callback_data: `rec:${profileId}:${r.idx}`,
+    })));
+  }
+  rows.push([{ text: "← Back to top recommenders", callback_data: `recTop:${profileId}:${needsGender ? 1 : 0}` }]);
+  return { inline_keyboard: rows };
+}
+
+// Backward-compat alias used by existing callers
+function buildFollowupKeyboard(profileId: string, recommenders: RecRow[], _page: number, needsGender: boolean, needsRecommender: boolean) {
+  return buildTopKeyboard(profileId, recommenders, needsGender, needsRecommender);
 }
 
 /**
@@ -1240,13 +1301,27 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       return;
     }
 
-    // --- Ingest follow-up: recommender page nav ---
-    if (data.startsWith("recpg:")) {
-      const [, profileId, pageStr, needsGenderStr] = data.split(":");
-      const page = parseInt(pageStr, 10);
-      if (!profileId || isNaN(page)) return;
+    // --- Ingest follow-up: jump to recommenders for letter ---
+    if (data.startsWith("recAB:")) {
+      const [, profileId, letter, needsGenderStr] = data.split(":");
+      if (!profileId || !letter) return;
       const recommenders = await fetchRecommenders();
-      const keyboard = buildFollowupKeyboard(profileId, recommenders, page, needsGenderStr === "1", true);
+      const keyboard = buildLetterKeyboard(profileId, recommenders, letter, needsGenderStr === "1");
+      if (query.message?.message_id) {
+        await bot.editMessageReplyMarkup(keyboard, {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+        }).catch(() => {});
+      }
+      return;
+    }
+
+    // --- Ingest follow-up: back to top recommender view ---
+    if (data.startsWith("recTop:")) {
+      const [, profileId, needsGenderStr] = data.split(":");
+      if (!profileId) return;
+      const recommenders = await fetchRecommenders();
+      const keyboard = buildTopKeyboard(profileId, recommenders, needsGenderStr === "1", true);
       if (query.message?.message_id) {
         await bot.editMessageReplyMarkup(keyboard, {
           chat_id: chatId,
