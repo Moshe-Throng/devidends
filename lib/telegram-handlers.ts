@@ -206,15 +206,24 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
-  // Parse "Recommended by" — 3 sources:
-  // 1. Caption text (explicit: "Recommended by Mussie" or just a name)
-  // 2. Sender is a known recommender in the DB → auto-attach
+  // Parse "Recommended by" — only from caption (never from filename).
+  // Explicit: "Recommended by Mussie", or plain name if it clearly looks like a person (no filename patterns).
   const caption = (msg.caption || "").trim();
   let recommendedBy: string | null = null;
   const recMatch = caption.match(/(?:recommended|referred|rec|ref)(?:\s+by)?[:\s]+(.+)/i);
   if (recMatch) {
     recommendedBy = recMatch[1].trim();
-  } else if (caption && !caption.includes("/") && caption.length < 100) {
+  } else if (
+    caption &&
+    !caption.includes("/") &&
+    caption.length < 100 &&
+    // Reject anything that looks like a filename (CV_Name.pdf, resume.docx, etc.)
+    !/\.(pdf|docx?|xlsx?|rtf|txt)$/i.test(caption) &&
+    // Require a space — real names are at least two words
+    /\s/.test(caption) &&
+    // Reject common filename patterns (underscores, double-dashes, no vowels)
+    !/_{2,}|--/.test(caption)
+  ) {
     recommendedBy = caption;
   }
 
@@ -496,11 +505,14 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
           if (f === "Gender") return `<code>Gender: Male</code> or <code>Female</code>`;
           return "";
         }),
+        ``,
+        // Stateless profile marker — parsed from reply_to_message on user reply
+        `<i>pid=${profileId}</i>`,
       ].filter(Boolean).join("\n");
 
       const followUpMsg = await bot.sendMessage(chatId, followUp, { ...replyOpts, reply_to_message_id: undefined });
 
-      // Store profile ID in a pending map so we can update when they reply
+      // Also store in-memory for the same-instance fast path (stateless ref is the fallback)
       pendingIngestFollowups.set(`${chatId}:${followUpMsg.message_id}`, { profileId, missing });
     }
 
@@ -1219,7 +1231,14 @@ export async function handleUpdate(
     // Handle replies to ingest follow-up questions
     if (msg.reply_to_message && msg.text) {
       const replyKey = `${msg.chat.id}:${msg.reply_to_message.message_id}`;
-      const pending = pendingIngestFollowups.get(replyKey);
+      let pending = pendingIngestFollowups.get(replyKey);
+      // Fallback: parse pid=<profileId> from the original followup text (stateless, survives cold starts)
+      if (!pending) {
+        const refMatch = (msg.reply_to_message.text || "").match(/pid=([0-9a-fA-F-]{36})/);
+        if (refMatch) {
+          pending = { profileId: refMatch[1], missing: ["Email", "Phone", "Recommended by", "Gender"] };
+        }
+      }
       if (pending) {
         await handleIngestFollowupReply(bot, msg, pending);
         return;
