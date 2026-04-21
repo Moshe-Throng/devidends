@@ -9,9 +9,7 @@ import {
   Users,
   TrendingUp,
   Sparkles,
-  Calendar,
   CheckCircle2,
-  ExternalLink,
   Loader2,
   Star,
 } from "lucide-react";
@@ -98,12 +96,20 @@ export default function CoCreatorDashboard() {
     );
   }
 
-  if (!data) return null;
+  if (!data || !data.coCreator || !data.stats) {
+    return (
+      <main className="min-h-screen bg-[#0f1117] flex items-center justify-center text-[#8b95a5]">
+        <div className="text-sm">Dashboard data unavailable.</div>
+      </main>
+    );
+  }
 
   const tier = TIER_META[data.stats.tier] || TIER_META.contributor;
-  const next = tier.nextThreshold ? Math.min(100, Math.round((data.stats.cvsSent / tier.nextThreshold) * 100)) : 100;
-  const firstName = data.coCreator.name.split(" ")[0];
-  const joinedYear = new Date(data.coCreator.joined_at).getFullYear();
+  const safeCvsSent = data.stats.cvsSent || 0;
+  const next = tier.nextThreshold ? Math.min(100, Math.round((safeCvsSent / tier.nextThreshold) * 100)) : 100;
+  const ccName = data.coCreator.name || "Friend";
+  const firstName = ccName.split(" ")[0];
+  const joinedYear = data.coCreator.joined_at ? new Date(data.coCreator.joined_at).getFullYear() : "—";
 
   return (
     <main className="min-h-screen bg-[#0f1117] font-[Montserrat] text-[#c8ccd4]">
