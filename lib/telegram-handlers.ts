@@ -1554,6 +1554,21 @@ export async function handleUpdate(
       } else {
         await handleStart(bot, msg);
       }
+    } else if (text.startsWith("/whereami")) {
+      // Admin helper — prints chat and topic id so we can reconfigure the ingest group.
+      const threadId = msg.message_thread_id;
+      const reply = [
+        `<b>Chat ID:</b> <code>${msg.chat.id}</code>`,
+        `<b>Chat type:</b> ${msg.chat.type}`,
+        threadId ? `<b>Topic (message_thread_id):</b> <code>${threadId}</code>` : `<i>No topic — this is the general chat.</i>`,
+        ``,
+        `To set this as the ingest location, update Vercel env vars:`,
+        `<code>TELEGRAM_INGEST_GROUP_ID=${msg.chat.id}</code>`,
+        threadId ? `<code>TELEGRAM_INGEST_TOPIC_ID=${threadId}</code>` : `(no TELEGRAM_INGEST_TOPIC_ID needed — general chat)`,
+      ].filter(Boolean).join("\n");
+      const replyOpts: any = { parse_mode: "HTML" };
+      if (threadId) replyOpts.message_thread_id = threadId;
+      try { await bot.sendMessage(msg.chat.id, reply, replyOpts); } catch {}
     } else if (text.startsWith("/help")) {
       await handleHelp(bot, msg);
     } else if (text.startsWith("/subscribe")) {
