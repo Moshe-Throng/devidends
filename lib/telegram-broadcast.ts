@@ -178,7 +178,17 @@ interface Subscription {
 function matchesSubscriber(opp: SampleOpportunity, sub: Subscription): boolean {
   if (sub.country_filter && sub.country_filter.length > 0) {
     const oppCountry = (opp.country || "").toLowerCase();
-    if (!sub.country_filter.some((c) => oppCountry.includes(c.toLowerCase()))) return false;
+    const title = (opp.title || "").toLowerCase();
+    const matchesCountry = sub.country_filter.some((c) => oppCountry.includes(c.toLowerCase()));
+    // If the subscriber lists Ethiopia (the typical case), also accept regional/international/HQ roles
+    // that Ethiopians can apply to — the caller pre-filtered to Ethiopia-relevant jobs, so trust that.
+    const ethOnlyFilter = sub.country_filter.length === 1 && sub.country_filter[0].toLowerCase() === "ethiopia";
+    const isRegionalOrGlobal =
+      !oppCountry ||
+      /\b(global|regional|remote|international|home.?based|headquarter|hq|roving|multi.?country|pan.?african|horn of africa|east africa|eastern africa)\b/i.test(
+        `${title} ${oppCountry}`
+      );
+    if (!matchesCountry && !(ethOnlyFilter && isRegionalOrGlobal)) return false;
   }
   if (sub.sectors_filter && sub.sectors_filter.length > 0) {
     const text = [opp.title, opp.description, opp.classified_type].filter(Boolean).join(" ").toLowerCase();
