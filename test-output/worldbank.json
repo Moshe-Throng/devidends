@@ -1,66 +1,71 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-21T05:58:41.062Z",
-    "total_fetched": 49,
-    "unique_count": 49,
-    "active_count": 3,
-    "active_projects": 50,
-    "sources": {
-      "reoi": 33,
-      "ifb": 16
-    }
+    "scraped_at": "2026-04-21T07:02:12.969Z",
+    "count": 3
   },
   "opportunities": [
     {
-      "title": "Procurement of Fire Suppression and Rescue Equipment",
-      "description": "Procurement of Fire Suppression and Rescue Equipment\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EDRMC-538775-GO-RFB\n\nContact: Africa Street, Behind Dembel City Center Mall, Addis Ababa, Ethiopia",
-      "deadline": "2026-04-21",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
-      "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Ethiopia Flood Management Project",
-      "project_id": "P176327",
-      "bid_reference": "ET-EDRMC-538775-GO-RFB",
-      "sector": null,
-      "scraped_at": "2026-04-21T05:58:40.325Z"
-    },
-    {
       "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
+      "organization": "World Bank",
       "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
       "deadline": "2026-04-30",
-      "organization": "World Bank",
+      "published": null,
       "country": "Ethiopia",
+      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
       "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Individual Consultant Selection",
-      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-      "project_id": "P174385",
-      "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
-      "sector": null,
-      "scraped_at": "2026-04-21T05:58:39.778Z"
+      "content_type": "tender",
+      "scraped_at": "2026-04-21T07:00:29.528Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+        "project_id": "P174385",
+        "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
+        "sector": ""
+      }
     },
     {
       "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
+      "organization": "World Bank",
       "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
       "deadline": "2026-05-08",
-      "organization": "World Bank",
+      "published": null,
       "country": "Ethiopia",
+      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
-      "type": "tender",
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-      "project_id": "P180076",
-      "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
-      "sector": null,
-      "scraped_at": "2026-04-21T05:58:40.325Z"
+      "content_type": "consulting",
+      "scraped_at": "2026-04-21T07:00:29.788Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Fire Suppression and Rescue Equipment",
+      "organization": "World Bank",
+      "description": "Procurement of Fire Suppression and Rescue Equipment\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EDRMC-538775-GO-RFB\n\nContact: Africa Street, Behind Dembel City Center Mall, Addis Ababa, Ethiopia",
+      "deadline": "2026-04-21",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00434113",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-04-21T07:00:29.788Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Flood Management Project",
+        "project_id": "P176327",
+        "bid_reference": "ET-EDRMC-538775-GO-RFB",
+        "sector": ""
+      }
     }
   ],
   "projects": [
