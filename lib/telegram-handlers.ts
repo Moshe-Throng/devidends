@@ -46,6 +46,58 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
 // Pending follow-up questions for CV ingest (chatId:messageId → profileId + missing fields)
 const pendingIngestFollowups = new Map<string, { profileId: string; missing: string[] }>();
 
+const RECOMMENDER_PAGE_SIZE = 6;
+
+/** Fetch all recommenders (is_recommender=true) sorted alphabetically. */
+async function fetchRecommenders(): Promise<{ id: string; name: string }[]> {
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    const { data } = await sb
+      .from("profiles")
+      .select("id, name")
+      .eq("is_recommender", true)
+      .order("name", { ascending: true });
+    return (data || []).map((r: any) => ({ id: r.id, name: r.name }));
+  } catch {
+    return [];
+  }
+}
+
+/** Build the inline keyboard for the follow-up message. */
+function buildFollowupKeyboard(profileId: string, recommenders: { id: string; name: string }[], page: number, needsGender: boolean, needsRecommender: boolean) {
+  const rows: { text: string; callback_data: string }[][] = [];
+
+  if (needsGender) {
+    rows.push([
+      { text: "👨 Male", callback_data: `gen:${profileId}:m` },
+      { text: "👩 Female", callback_data: `gen:${profileId}:f` },
+    ]);
+  }
+
+  if (needsRecommender && recommenders.length > 0) {
+    const start = page * RECOMMENDER_PAGE_SIZE;
+    const pageRecs = recommenders.slice(start, start + RECOMMENDER_PAGE_SIZE);
+    // 2 per row
+    for (let i = 0; i < pageRecs.length; i += 2) {
+      const row = pageRecs.slice(i, i + 2).map((r, j) => ({
+        text: r.name,
+        callback_data: `rec:${profileId}:${start + i + j}`,
+      }));
+      rows.push(row);
+    }
+    // Nav row
+    const totalPages = Math.ceil(recommenders.length / RECOMMENDER_PAGE_SIZE);
+    const navRow: { text: string; callback_data: string }[] = [];
+    if (page > 0) navRow.push({ text: "◀ Prev", callback_data: `recpg:${profileId}:${page - 1}:${needsGender ? 1 : 0}` });
+    navRow.push({ text: `${page + 1}/${totalPages}`, callback_data: "noop" });
+    if (page < totalPages - 1) navRow.push({ text: "Next ▶", callback_data: `recpg:${profileId}:${page + 1}:${needsGender ? 1 : 0}` });
+    if (navRow.length > 1) rows.push(navRow);
+  }
+
+  return { inline_keyboard: rows };
+}
+
 /**
  * Validate that a "Recommended by" name belongs to someone already flagged as a recommender.
  * Returns the canonical name (from the matched profile) or null if no match.
@@ -520,28 +572,33 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     missing.push("Gender"); // Always ask — can't reliably detect from CV
 
     if (missing.length > 0 && profileId) {
-      const followUp = [
+      const needsGender = missing.includes("Gender");
+      const needsRecommender = missing.includes("Recommended by");
+      const textMissing = missing.filter((f) => f === "Email" || f === "Phone");
+
+      const recommenders = needsRecommender ? await fetchRecommenders() : [];
+      const keyboard = buildFollowupKeyboard(profileId, recommenders, 0, needsGender, needsRecommender);
+
+      const lines = [
         `<b>Missing info for ${escHtml(personal.full_name || profile.name)}:</b>`,
         ``,
-        `Please reply to this message with the following (one per line):`,
-        ...missing.map((f, i) => `${i + 1}. ${f}: ...`),
-        ``,
-        `<i>Example:</i>`,
-        ...missing.map((f) => {
-          if (f === "Email") return `<code>Email: name@example.com</code>`;
-          if (f === "Phone") return `<code>Phone: +251911234567</code>`;
-          if (f === "Recommended by") return `<code>Recommended by: Mussie Tsegaye</code>`;
-          if (f === "Gender") return `<code>Gender: Male</code> or <code>Female</code>`;
-          return "";
-        }),
-        ``,
-        // Stateless profile marker — parsed from reply_to_message on user reply
-        `<i>pid=${profileId}</i>`,
-      ].filter(Boolean).join("\n");
+      ];
+      if (textMissing.length > 0) {
+        lines.push(`Reply to this message with:`);
+        for (const f of textMissing) {
+          if (f === "Email") lines.push(`<code>Email: name@example.com</code>`);
+          if (f === "Phone") lines.push(`<code>Phone: +251911234567</code>`);
+        }
+        lines.push("");
+      }
+      if (needsGender) lines.push(`Pick <b>Gender</b> below${needsRecommender ? " · pick <b>Recommender</b> below" : ""}.`);
+      else if (needsRecommender) lines.push(`Pick <b>Recommender</b> below.`);
+      lines.push("", `<i>pid=${profileId}</i>`);
 
-      const followUpMsg = await bot.sendMessage(chatId, followUp, { ...replyOpts, reply_to_message_id: undefined });
+      const followUp = lines.filter((l) => l !== null && l !== undefined).join("\n");
+      const sendOpts: any = { ...replyOpts, reply_to_message_id: undefined, reply_markup: keyboard };
+      const followUpMsg = await bot.sendMessage(chatId, followUp, sendOpts);
 
-      // Also store in-memory for the same-instance fast path (stateless ref is the fallback)
       pendingIngestFollowups.set(`${chatId}:${followUpMsg.message_id}`, { profileId, missing });
     }
 
@@ -1104,6 +1161,61 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
   try {
     // Acknowledge the callback to remove loading spinner
     await bot.answerCallbackQuery(query.id);
+
+    // No-op (used for pagination indicator buttons)
+    if (data === "noop") return;
+
+    // --- Ingest follow-up: gender pick ---
+    if (data.startsWith("gen:")) {
+      const [, profileId, val] = data.split(":");
+      const gender = val === "m" ? "male" : val === "f" ? "female" : null;
+      if (!profileId || !gender) return;
+      const { createClient } = await import("@supabase/supabase-js");
+      const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+      await sb.from("profiles").update({ gender }).eq("id", profileId);
+      const threadId = query.message?.message_thread_id;
+      const opts: any = { parse_mode: "HTML" };
+      if (threadId) opts.message_thread_id = threadId;
+      await bot.sendMessage(chatId, `✓ Gender set: <b>${gender === "male" ? "Male" : "Female"}</b>`, opts);
+      return;
+    }
+
+    // --- Ingest follow-up: recommender pick ---
+    if (data.startsWith("rec:")) {
+      const [, profileId, idxStr] = data.split(":");
+      const idx = parseInt(idxStr, 10);
+      if (!profileId || isNaN(idx)) return;
+      const recommenders = await fetchRecommenders();
+      const rec = recommenders[idx];
+      if (!rec) {
+        await bot.sendMessage(chatId, `Recommender not found (list changed).`);
+        return;
+      }
+      const { createClient } = await import("@supabase/supabase-js");
+      const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+      await sb.from("profiles").update({ recommended_by: rec.name }).eq("id", profileId);
+      const threadId = query.message?.message_thread_id;
+      const opts: any = { parse_mode: "HTML" };
+      if (threadId) opts.message_thread_id = threadId;
+      await bot.sendMessage(chatId, `✓ Recommender set: <b>${escHtml(rec.name)}</b>`, opts);
+      return;
+    }
+
+    // --- Ingest follow-up: recommender page nav ---
+    if (data.startsWith("recpg:")) {
+      const [, profileId, pageStr, needsGenderStr] = data.split(":");
+      const page = parseInt(pageStr, 10);
+      if (!profileId || isNaN(page)) return;
+      const recommenders = await fetchRecommenders();
+      const keyboard = buildFollowupKeyboard(profileId, recommenders, page, needsGenderStr === "1", true);
+      if (query.message?.message_id) {
+        await bot.editMessageReplyMarkup(keyboard, {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+        }).catch(() => {});
+      }
+      return;
+    }
 
     // --- Sector toggle ---
     if (data.startsWith("toggle_sector:")) {
