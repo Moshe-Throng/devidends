@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
 import {
@@ -86,6 +86,19 @@ export default function AdminIngestPage() {
       setLoadingProfiles(false);
     }
   }
+
+  // Derived: active recommenders (for dropdowns)
+  const recommenderNames = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          (profiles || [])
+            .filter((p) => p.is_recommender && p.name)
+            .map((p) => p.name)
+        )
+      ).sort((a, b) => a.localeCompare(b)),
+    [profiles]
+  );
 
   // Metadata fields for batch ingestion
   const [metaRecommendedBy, setMetaRecommendedBy] = useState("");
@@ -258,7 +271,16 @@ export default function AdminIngestPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div>
               <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Recommended By</label>
-              <input value={metaRecommendedBy} onChange={e => setMetaRecommendedBy(e.target.value)} placeholder="Name" className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none" />
+              <select
+                value={metaRecommendedBy}
+                onChange={e => setMetaRecommendedBy(e.target.value)}
+                className="w-full px-3 py-2 rounded-lg border border-dark-200 text-xs focus:border-cyan-400 focus:outline-none bg-white"
+              >
+                <option value="">— Select recommender —</option>
+                {recommenderNames.map((n) => (
+                  <option key={n} value={n}>{n}</option>
+                ))}
+              </select>
             </div>
             <div>
               <label className="text-[10px] font-semibold text-dark-500 mb-1 block">Gender</label>
@@ -413,7 +435,7 @@ export default function AdminIngestPage() {
                       )}
 
                       {/* Editable admin fields */}
-                      <AdminFields profile={p} onSave={(updated) => setProfiles(prev => prev.map(x => x.id === p.id ? { ...x, ...updated } : x))} />
+                      <AdminFields profile={p} recommenderNames={recommenderNames} onSave={(updated) => setProfiles(prev => prev.map(x => x.id === p.id ? { ...x, ...updated } : x))} />
 
                       {/* Claim links */}
                       {!p.is_claimed && (
@@ -528,7 +550,7 @@ function ChipField({ label, items, color }: { label: string; items: string[] | n
 
 /* ── Editable admin fields ── */
 
-function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave: (updated: Partial<IngestedProfile>) => void }) {
+function AdminFields({ profile: p, onSave, recommenderNames }: { profile: IngestedProfile; onSave: (updated: Partial<IngestedProfile>) => void; recommenderNames: string[] }) {
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -662,7 +684,15 @@ function AdminFields({ profile: p, onSave }: { profile: IngestedProfile; onSave:
         </div>
         <div>
           <label className="text-[10px] text-dark-400 block mb-0.5">Recommended By</label>
-          <input value={recommendedBy} onChange={e => setRecommendedBy(e.target.value)} className={INPUT} placeholder="Name" />
+          <select value={recommendedBy} onChange={e => setRecommendedBy(e.target.value)} className={`${INPUT} bg-white`}>
+            <option value="">— Select —</option>
+            {recommendedBy && !recommenderNames.includes(recommendedBy) && (
+              <option value={recommendedBy}>{recommendedBy} (legacy)</option>
+            )}
+            {recommenderNames.map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
         </div>
         <div className="flex items-end pb-1">
           <label className="flex items-center gap-2 text-xs text-dark-600 cursor-pointer">
