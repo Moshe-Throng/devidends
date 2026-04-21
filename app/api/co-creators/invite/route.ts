@@ -115,6 +115,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: updErr.message }, { status: 500 });
     }
 
+    // Co-Creators ARE the recommenders — flag the linked profile on join.
+    if (invite.profile_id) {
+      await sb.from("profiles").update({ is_recommender: true }).eq("id", invite.profile_id);
+    }
+
     // If they asked to claim their profile, auto-claim it.
     // The invite token itself is proof of identity — no extra claim step needed.
     let claimToken: string | null = null;

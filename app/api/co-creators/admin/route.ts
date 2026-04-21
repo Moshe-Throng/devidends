@@ -171,6 +171,11 @@ export async function POST(req: NextRequest) {
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
+    // Co-Creators ARE the recommenders — keep the flag in sync automatically.
+    if (matchedProfile?.id) {
+      await sb.from("profiles").update({ is_recommender: true }).eq("id", matchedProfile.id);
+    }
+
     return NextResponse.json({
       success: true,
       member: created,
