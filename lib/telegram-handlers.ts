@@ -325,6 +325,23 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
     if (!response.ok) throw new Error("Failed to download file");
     const buffer = Buffer.from(await response.arrayBuffer());
 
+    // Fire-and-forget: back up the raw file to Supabase Storage for audit.
+    // Path is deterministic from file_id, so scripts/ingest-audit.ts can verify presence.
+    const backupKey = `tg-ingest/${new Date().toISOString().slice(0, 10)}/${doc.file_id}.${ext}`;
+    (async () => {
+      try {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sbBackup = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+        const contentType =
+          ext === "pdf" ? "application/pdf" :
+          ext === "docx" ? "application/vnd.openxmlformats-officedocument.wordprocessingml.document" :
+          ext === "doc" ? "application/msword" : "application/octet-stream";
+        await sbBackup.storage.from("cv-downloads").upload(backupKey, buffer, { contentType, upsert: true });
+      } catch (e) {
+        console.warn("[ingest-backup] failed:", (e as Error).message);
+      }
+    })();
+
     // Extract text — with scanned-PDF detection for PDFs
     let cvText = "";
     if (ext === "pdf") {
