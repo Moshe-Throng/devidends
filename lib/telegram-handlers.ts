@@ -46,6 +46,20 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://devidends.net";
 // Pending follow-up questions for CV ingest (chatId:messageId → profileId + missing fields)
 const pendingIngestFollowups = new Map<string, { profileId: string; missing: string[] }>();
 
+/**
+ * Per-chat rate-limit gate. Telegram throttles to ~1 msg/sec per chat for
+ * group messages and ~30/sec globally. When the ingest group gets multiple
+ * CVs within a few seconds we blow past this and hit ETELEGRAM 429s. This
+ * helper serializes outbound sends per chat with a small minimum gap.
+ */
+const _lastChatSend = new Map<string | number, number>();
+async function paceChat(chatId: string | number, minGapMs = 1100): Promise<void> {
+  const last = _lastChatSend.get(chatId) || 0;
+  const wait = last + minGapMs - Date.now();
+  if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+  _lastChatSend.set(chatId, Date.now());
+}
+
 const TOP_RECOMMENDERS = 6;
 
 interface RecRow { id: string; name: string; count: number }
@@ -442,6 +456,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   if (threadId) replyOpts.message_thread_id = threadId;
 
   try {
+    await paceChat(chatId);
     await bot.sendMessage(chatId, `<i>Processing ${escHtml(fileName)}...</i>`, replyOpts);
 
     // Download file
@@ -704,6 +719,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
       `Claim: <code>${claimLink}</code>`,
     ].filter(Boolean).join("\n");
 
+    await paceChat(chatId);
     await bot.sendMessage(chatId, summary, replyOpts);
 
     // Ask follow-up questions for missing fields
@@ -739,6 +755,7 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
 
       const followUp = lines.filter((l) => l !== null && l !== undefined).join("\n");
       const sendOpts: any = { ...replyOpts, reply_to_message_id: undefined, reply_markup: keyboard };
+      await paceChat(chatId);
       const followUpMsg = await bot.sendMessage(chatId, followUp, sendOpts);
 
       pendingIngestFollowups.set(`${chatId}:${followUpMsg.message_id}`, { profileId, missing });
