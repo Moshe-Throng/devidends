@@ -42,9 +42,31 @@ async function main() {
 
   console.log(`[companion-engine] Starting at ${new Date().toISOString()}`);
 
+  // Kill switch: if .broadcast-allowlist.json exists at project root, restrict
+  // outbound proactive messages to the allowlisted telegram_ids only. Set when
+  // we pause subscriptions so we don't spam users while we iterate on content.
+  let allowlist: Set<string> | null = null;
+  const markerPath = path.join(__dirname, "..", ".broadcast-allowlist.json");
+  if (fs.existsSync(markerPath)) {
+    try {
+      const marker = JSON.parse(fs.readFileSync(markerPath, "utf-8"));
+      const ids: string[] = Array.isArray(marker.allowlist_tg_ids) ? marker.allowlist_tg_ids : [];
+      allowlist = new Set(ids.map(String));
+      console.log(`[companion-engine] BROADCAST PAUSED — allowlist only (${allowlist.size} ids): ${Array.from(allowlist).join(",")}`);
+    } catch (e) {
+      console.warn("[companion-engine] Failed to parse broadcast-allowlist marker:", e);
+    }
+  }
+
   // Find candidates
-  const candidates = await generateProactiveMessages();
+  let candidates = await generateProactiveMessages();
   console.log(`[companion-engine] Found ${candidates.length} candidates`);
+
+  if (allowlist) {
+    const before = candidates.length;
+    candidates = candidates.filter((c) => allowlist!.has(String(c.telegram_id)));
+    console.log(`[companion-engine] Allowlist filter: ${before} → ${candidates.length}`);
+  }
 
   if (candidates.length === 0) {
     console.log("[companion-engine] Nothing to send. Done.");

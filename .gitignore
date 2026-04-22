@@ -50,3 +50,4 @@ docs/BidFlow*
 /test-output/_summary.json
 
 .vercel
+.broadcast-allowlist.json

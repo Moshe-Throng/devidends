@@ -181,10 +181,24 @@ export default function AdminIngestPage() {
     } catch (err: any) { setError(`Delete failed: ${err.message}`); }
   }
 
-  // Search + filter
+  // Search + filter + sort
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState<"all" | "claimed" | "pending">("all");
   const [filterSource, setFilterSource] = useState<"all" | "admin_ingest" | "telegram" | "web">("all");
+  const [filterSector, setFilterSector] = useState<string>("all");
+  const [filterType, setFilterType] = useState<"all" | "Expert" | "Senior" | "Mid" | "Junior">("all");
+  const [filterRecOnly, setFilterRecOnly] = useState(false);
+  const [filterHasEmail, setFilterHasEmail] = useState(false);
+  const [filterHasTg, setFilterHasTg] = useState(false);
+  const [filterHasScore, setFilterHasScore] = useState(false);
+  const [sortBy, setSortBy] = useState<"newest" | "oldest" | "score_desc" | "score_asc" | "name_asc" | "name_desc">("newest");
+
+  // Unique sectors across all profiles (for the sector dropdown)
+  const allSectors = useMemo(() => {
+    const set = new Set<string>();
+    for (const p of profiles) for (const s of p.sectors || []) if (s) set.add(s);
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, [profiles]);
 
   // Build a single searchable blob per profile — used by the text search
   // below. Covers everything a reasonable admin search would hit: name,
@@ -220,6 +234,12 @@ export default function AdminIngestPage() {
     if (filterStatus === "claimed" && !p.is_claimed) return false;
     if (filterStatus === "pending" && p.is_claimed) return false;
     if (filterSource !== "all" && (p as any).source !== filterSource) return false;
+    if (filterSector !== "all" && !(p.sectors || []).includes(filterSector)) return false;
+    if (filterType !== "all" && (p as any).profile_type !== filterType) return false;
+    if (filterRecOnly && !p.is_recommender) return false;
+    if (filterHasEmail && !(p as any).email) return false;
+    if (filterHasTg && !(p as any).telegram_id) return false;
+    if (filterHasScore && p.cv_score == null) return false;
     if (search) {
       const q = search.toLowerCase().trim();
       // Multi-word AND search: "livestock ethiopia" matches profiles
@@ -229,7 +249,47 @@ export default function AdminIngestPage() {
       return terms.every((t) => blob.includes(t));
     }
     return true;
+  }).sort((a, b) => {
+    switch (sortBy) {
+      case "newest":
+        return (b.created_at || "").localeCompare(a.created_at || "");
+      case "oldest":
+        return (a.created_at || "").localeCompare(b.created_at || "");
+      case "score_desc":
+        return (b.cv_score ?? -1) - (a.cv_score ?? -1);
+      case "score_asc":
+        return (a.cv_score ?? 999) - (b.cv_score ?? 999);
+      case "name_asc":
+        return (a.name || "").localeCompare(b.name || "");
+      case "name_desc":
+        return (b.name || "").localeCompare(a.name || "");
+      default:
+        return 0;
+    }
   });
+
+  function resetFilters() {
+    setSearch("");
+    setFilterStatus("all");
+    setFilterSource("all");
+    setFilterSector("all");
+    setFilterType("all");
+    setFilterRecOnly(false);
+    setFilterHasEmail(false);
+    setFilterHasTg(false);
+    setFilterHasScore(false);
+    setSortBy("newest");
+  }
+
+  const activeFilterCount =
+    (filterStatus !== "all" ? 1 : 0) +
+    (filterSource !== "all" ? 1 : 0) +
+    (filterSector !== "all" ? 1 : 0) +
+    (filterType !== "all" ? 1 : 0) +
+    (filterRecOnly ? 1 : 0) +
+    (filterHasEmail ? 1 : 0) +
+    (filterHasTg ? 1 : 0) +
+    (filterHasScore ? 1 : 0);
 
   if (authLoading || !user) {
     return (
@@ -268,30 +328,101 @@ export default function AdminIngestPage() {
         {/* AI Expert Matching */}
         <ExpertMatcher />
 
-        {/* Search + filters */}
-        <div className="flex items-center gap-3">
-          <div className="flex-1 relative">
-            <input
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="Search by name, sector, nationality, tag..."
-              className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none bg-white"
-            />
-            <svg className="w-4 h-4 text-dark-300 absolute left-3 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
-            {(["all", "pending", "claimed"] as const).map(s => (
-              <button key={s} onClick={() => setFilterStatus(s)} className={`px-3 py-2 font-semibold capitalize transition-colors ${filterStatus === s ? "bg-cyan-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
-                {s}
+        {/* Search + filters + sort */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex-1 min-w-[240px] relative">
+              <input
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                placeholder="Search name, sector, skill, CV text..."
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none bg-white"
+              />
+              <svg className="w-4 h-4 text-dark-300 absolute left-3 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <select
+              value={sortBy}
+              onChange={e => setSortBy(e.target.value as any)}
+              className="px-3 py-2.5 rounded-xl border border-dark-200 text-xs font-semibold bg-white text-dark-700 focus:border-cyan-400 focus:outline-none"
+              title="Sort"
+            >
+              <option value="newest">Sort: Newest</option>
+              <option value="oldest">Sort: Oldest</option>
+              <option value="score_desc">Sort: Score high → low</option>
+              <option value="score_asc">Sort: Score low → high</option>
+              <option value="name_asc">Sort: Name A → Z</option>
+              <option value="name_desc">Sort: Name Z → A</option>
+            </select>
+            {activeFilterCount > 0 && (
+              <button
+                onClick={resetFilters}
+                className="px-3 py-2.5 rounded-xl border border-dark-200 text-xs font-bold text-dark-500 bg-white hover:bg-dark-50"
+              >
+                Reset ({activeFilterCount})
               </button>
-            ))}
+            )}
           </div>
-          <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
-            {(["all", "admin_ingest", "telegram", "web"] as const).map(s => (
-              <button key={s} onClick={() => setFilterSource(s)} className={`px-3 py-2 font-semibold transition-colors ${filterSource === s ? "bg-teal-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
-                {s === "all" ? "All Sources" : s === "admin_ingest" ? "Ingested" : s === "telegram" ? "Telegram" : "Web"}
-              </button>
-            ))}
+
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* Status */}
+            <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
+              {(["all", "pending", "claimed"] as const).map(s => (
+                <button key={s} onClick={() => setFilterStatus(s)} className={`px-3 py-2 font-semibold capitalize transition-colors ${filterStatus === s ? "bg-cyan-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
+                  {s}
+                </button>
+              ))}
+            </div>
+            {/* Source */}
+            <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
+              {(["all", "admin_ingest", "telegram", "web"] as const).map(s => (
+                <button key={s} onClick={() => setFilterSource(s)} className={`px-3 py-2 font-semibold transition-colors ${filterSource === s ? "bg-teal-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
+                  {s === "all" ? "All Sources" : s === "admin_ingest" ? "Ingested" : s === "telegram" ? "Telegram" : "Web"}
+                </button>
+              ))}
+            </div>
+            {/* Profile type */}
+            <div className="flex rounded-lg border border-dark-200 overflow-hidden text-xs">
+              {(["all", "Expert", "Senior", "Mid", "Junior"] as const).map(s => (
+                <button key={s} onClick={() => setFilterType(s)} className={`px-3 py-2 font-semibold transition-colors ${filterType === s ? "bg-indigo-500 text-white" : "bg-white text-dark-500 hover:bg-dark-50"}`}>
+                  {s === "all" ? "All Levels" : s}
+                </button>
+              ))}
+            </div>
+            {/* Sector */}
+            <select
+              value={filterSector}
+              onChange={e => setFilterSector(e.target.value)}
+              className="px-3 py-2 rounded-lg border border-dark-200 text-xs font-semibold bg-white text-dark-700 focus:border-cyan-400 focus:outline-none"
+            >
+              <option value="all">All Sectors</option>
+              {allSectors.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+            {/* Toggles */}
+            <button
+              onClick={() => setFilterRecOnly(v => !v)}
+              className={`px-3 py-2 rounded-lg border text-xs font-semibold transition-colors ${filterRecOnly ? "bg-amber-500 text-white border-amber-500" : "bg-white text-dark-500 border-dark-200 hover:bg-dark-50"}`}
+            >
+              ★ Recommenders
+            </button>
+            <button
+              onClick={() => setFilterHasEmail(v => !v)}
+              className={`px-3 py-2 rounded-lg border text-xs font-semibold transition-colors ${filterHasEmail ? "bg-emerald-500 text-white border-emerald-500" : "bg-white text-dark-500 border-dark-200 hover:bg-dark-50"}`}
+            >
+              Has email
+            </button>
+            <button
+              onClick={() => setFilterHasTg(v => !v)}
+              className={`px-3 py-2 rounded-lg border text-xs font-semibold transition-colors ${filterHasTg ? "bg-sky-500 text-white border-sky-500" : "bg-white text-dark-500 border-dark-200 hover:bg-dark-50"}`}
+            >
+              Has Telegram
+            </button>
+            <button
+              onClick={() => setFilterHasScore(v => !v)}
+              className={`px-3 py-2 rounded-lg border text-xs font-semibold transition-colors ${filterHasScore ? "bg-violet-500 text-white border-violet-500" : "bg-white text-dark-500 border-dark-200 hover:bg-dark-50"}`}
+            >
+              Has score
+            </button>
+            <span className="text-xs text-dark-400 ml-auto font-semibold">{filtered.length} result{filtered.length === 1 ? "" : "s"}</span>
           </div>
         </div>
 
