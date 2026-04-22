@@ -980,11 +980,26 @@ function ExpertMatcher() {
                   {/* Rank + score */}
                   <div className="text-center shrink-0 w-12">
                     <p className="text-lg font-extrabold text-dark-300">#{i + 1}</p>
-                    <div className={`mt-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${
-                      (r.ai_fit_score || r.match_score) >= 70 ? "bg-emerald-500" :
-                      (r.ai_fit_score || r.match_score) >= 50 ? "bg-amber-500" : "bg-red-400"
-                    }`}>
-                      {r.ai_fit_score || r.match_score}%
+                    <div
+                      className={`mt-0.5 px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${
+                        (r.ai_fit_score || r.match_score) >= 70 ? "bg-emerald-500" :
+                        (r.ai_fit_score || r.match_score) >= 50 ? "bg-amber-500" : "bg-red-400"
+                      }`}
+                      title={
+                        r.match_breakdown
+                          ? `Keyword score (out of 100):\n` +
+                            `  sector: ${r.match_breakdown.sector}/20\n` +
+                            `  skills+terms: ${r.match_breakdown.skills_and_terms}/35\n` +
+                            `  country: ${r.match_breakdown.country}/10\n` +
+                            `  years: ${r.match_breakdown.years}/15\n` +
+                            `  language: ${r.match_breakdown.language}/10\n` +
+                            `  donor: ${r.match_breakdown.donor}/5\n` +
+                            `  seniority: ${r.match_breakdown.seniority}/5` +
+                            (r.ai_fit_score ? `\n\nAI fit score: ${r.ai_fit_score}/100` : "")
+                          : undefined
+                      }
+                    >
+                      {r.ai_fit_score || r.match_score}/100
                     </div>
                   </div>
 

@@ -52,10 +52,10 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       return NextResponse.json({ error: "Could not parse ToR requirements" }, { status: 500 });
     }
 
-    // Step 2: Get all profiles with CV data
+    // Step 2: Get all profiles with CV data (include cv_text for full-text scoring)
     const { data: allProfiles, error: dbErr } = await sb
       .from("profiles")
-      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, profile_type, education_level, languages, nationality, tags, cv_structured_data, email, phone")
+      .select("id, name, headline, sectors, donors, countries, skills, qualifications, years_of_experience, cv_score, profile_type, education_level, languages, nationality, tags, cv_structured_data, cv_text, email, phone")
       .not("cv_text", "is", null)
       .order("cv_score", { ascending: false });
 
@@ -63,7 +63,9 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       return NextResponse.json({ error: "Failed to fetch profiles" }, { status: 500 });
     }
 
-    // Step 2b: Score each profile locally (fast keyword matching)
+    // Step 2b: Score each profile against the FULL CV blob (not just structured fields).
+    // Score is normalized to 0-100: sector(20) + skills+keyterms-in-blob(35) +
+    //   country(10) + years(15) + language(10) + donor(5) + seniority(5)
     const reqSectors = (reqs.sectors || []).map((s: string) => s.toLowerCase());
     const reqSkills = (reqs.required_skills || []).map((s: string) => s.toLowerCase());
     const reqCountries = (reqs.required_countries || []).map((s: string) => s.toLowerCase());
@@ -71,48 +73,107 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
     const reqYears = reqs.required_experience_years || 0;
     const keyTerms = (reqs.key_terms || []).map((t: string) => t.toLowerCase());
 
+    function fullBlob(p: any): string {
+      const cv = p.cv_structured_data || {};
+      const emp = Array.isArray(cv.employment) ? cv.employment : [];
+      const edu = Array.isArray(cv.education) ? cv.education : [];
+      return [
+        p.name,
+        p.headline,
+        p.qualifications,
+        p.nationality,
+        ...(p.sectors || []),
+        ...(p.skills || []),
+        ...(p.countries || []),
+        ...(p.donors || []),
+        ...(p.languages || []),
+        ...(p.tags || []),
+        p.cv_text,
+        cv.professional_summary,
+        cv.key_qualifications,
+        ...emp.map((e: any) => [e.employer, e.position, e.country, e.description_of_duties].filter(Boolean).join(" ")),
+        ...edu.map((e: any) => [e.degree, e.field_of_study, e.institution].filter(Boolean).join(" ")),
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function countMatches(blob: string, term: string): number {
+      if (!term) return 0;
+      const escaped = term.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return (blob.match(new RegExp(escaped, "g")) || []).length;
+    }
+
     const scored = allProfiles.map((p: any) => {
-      let score = 0;
+      const blob = fullBlob(p);
       const pSectors = (p.sectors || []).map((s: string) => s.toLowerCase());
-      const pSkills = (p.skills || []).map((s: string) => s.toLowerCase());
       const pCountries = (p.countries || []).map((s: string) => s.toLowerCase());
       const pLangs = (p.languages || []).map((s: string) => s.toLowerCase());
       const pDonors = (p.donors || []).map((s: string) => s.toLowerCase());
 
-      // Sector match (0-30)
-      const sectorOverlap = reqSectors.filter((s: string) => pSectors.some((ps: string) => ps.includes(s) || s.includes(ps))).length;
-      score += Math.min(30, (sectorOverlap / Math.max(reqSectors.length, 1)) * 30);
+      // Sector match (0-20) — structured sectors first, then fallback to blob
+      const sectorStructOverlap = reqSectors.filter((s: string) => pSectors.some((ps: string) => ps.includes(s) || s.includes(ps))).length;
+      const sectorBlobHits = reqSectors.filter((s: string) => blob.includes(s)).length;
+      const effectiveSector = Math.max(sectorStructOverlap, sectorBlobHits);
+      const sectorScore = Math.min(20, (effectiveSector / Math.max(reqSectors.length, 1)) * 20);
 
-      // Skills match (0-25)
-      const allText = [p.qualifications, p.headline, ...(p.skills || [])].filter(Boolean).join(" ").toLowerCase();
-      const skillHits = reqSkills.filter((s: string) => allText.includes(s)).length;
-      score += Math.min(25, (skillHits / Math.max(reqSkills.length, 1)) * 25);
+      // Combined skills + key terms searched in FULL blob (0-35) — this is the
+      // big change vs previous version, where a Zewdu-style climate CV wouldn't
+      // match if his sectors array was sparse.
+      const combinedTerms = Array.from(new Set([...reqSkills, ...keyTerms]));
+      let termHitTotal = 0;
+      let termsHit = 0;
+      for (const t of combinedTerms) {
+        const n = countMatches(blob, t);
+        if (n > 0) { termsHit++; termHitTotal += Math.min(n, 5); }
+      }
+      const termScore = combinedTerms.length > 0
+        ? Math.min(35, (termsHit / combinedTerms.length) * 25 + Math.min(termHitTotal, 20) * 0.5)
+        : 0;
 
       // Country match (0-10)
-      const countryOverlap = reqCountries.filter((c: string) => pCountries.some((pc: string) => pc.includes(c))).length;
-      score += Math.min(10, (countryOverlap / Math.max(reqCountries.length, 1)) * 10);
+      const countryOverlap = reqCountries.filter((c: string) => pCountries.some((pc: string) => pc.includes(c)) || blob.includes(c)).length;
+      const countryScore = reqCountries.length > 0 ? Math.min(10, (countryOverlap / reqCountries.length) * 10) : 5;
 
       // Years match (0-15)
+      let yearsScore = 0;
       if (p.years_of_experience && reqYears > 0) {
-        const ratio = Math.min(p.years_of_experience / reqYears, 1.5);
-        score += Math.min(15, ratio * 10);
+        const ratio = p.years_of_experience / reqYears;
+        yearsScore = ratio >= 1 ? 15 : Math.max(0, ratio * 15);
+      } else if (p.years_of_experience && p.years_of_experience >= 10) {
+        yearsScore = 10;
       }
 
       // Language match (0-10)
-      const langOverlap = reqLangs.filter((l: string) => pLangs.some((pl: string) => pl.includes(l))).length;
-      score += Math.min(10, (langOverlap / Math.max(reqLangs.length, 1)) * 10);
+      const langOverlap = reqLangs.filter((l: string) => pLangs.some((pl: string) => pl.includes(l)) || blob.includes(l)).length;
+      const langScore = reqLangs.length > 0 ? Math.min(10, (langOverlap / reqLangs.length) * 10) : 5;
 
       // Donor match bonus (0-5)
-      if (reqs.donor && pDonors.some((d: string) => d.includes(reqs.donor.toLowerCase()))) {
-        score += 5;
+      let donorScore = 0;
+      if (reqs.donor) {
+        const dr = reqs.donor.toLowerCase();
+        if (pDonors.some((d: string) => d.includes(dr)) || blob.includes(dr)) donorScore = 5;
       }
 
-      // Key terms in CV (0-5)
-      const cvText = [p.qualifications, p.headline, ...(p.skills || []), ...(p.sectors || [])].join(" ").toLowerCase();
-      const termHits = keyTerms.filter((t: string) => cvText.includes(t)).length;
-      score += Math.min(5, (termHits / Math.max(keyTerms.length, 1)) * 5);
+      // Seniority boost (0-5)
+      let seniorityScore = 0;
+      if (p.profile_type === "Expert") seniorityScore = 5;
+      else if (p.profile_type === "Senior") seniorityScore = 3;
+      else if (p.profile_type === "Mid-level") seniorityScore = 1;
 
-      return { ...p, match_score: Math.round(score) };
+      const total = sectorScore + termScore + countryScore + yearsScore + langScore + donorScore + seniorityScore;
+
+      return {
+        ...p,
+        match_score: Math.round(total),
+        match_breakdown: {
+          sector: Math.round(sectorScore),
+          skills_and_terms: Math.round(termScore),
+          country: Math.round(countryScore),
+          years: Math.round(yearsScore),
+          language: Math.round(langScore),
+          donor: Math.round(donorScore),
+          seniority: Math.round(seniorityScore),
+        },
+      };
     });
 
     // Sort by match score, take top N
@@ -158,7 +219,7 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       }
     }
 
-    // Clean output (don't send full cv_structured_data to client)
+    // Clean output (don't send full cv_structured_data or cv_text to client)
     const results = aiRanked.map((c: any) => ({
       id: c.id,
       name: c.name,
@@ -175,8 +236,9 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       email: c.email,
       phone: c.phone,
       tags: c.tags,
-      match_score: c.match_score,
-      ai_fit_score: c.ai_fit_score || null,
+      match_score: c.match_score,          // 0-100 keyword-based score
+      match_breakdown: c.match_breakdown,  // per-dimension breakdown
+      ai_fit_score: c.ai_fit_score || null, // 0-100 AI final ranking on top N
       ai_reason: c.ai_reason || null,
       recent_roles: (c.cv_structured_data?.employment || []).slice(0, 3).map((e: any) => ({
         position: e.position,

@@ -130,9 +130,20 @@ export default function CvTailorPage() {
           target_role: targetRole || null,
         }),
       });
-      const d = await res.json();
+      // Defensive: server may return an HTML error page on timeout/crash
+      const raw = await res.text();
+      let d: any = null;
+      try {
+        d = JSON.parse(raw);
+      } catch {
+        const hint = res.status >= 500
+          ? `Server error ${res.status}. Likely a timeout with a very long CV, or Claude returned malformed output. Preview: ${raw.slice(0, 200)}`
+          : `Non-JSON response (status ${res.status}). Preview: ${raw.slice(0, 200)}`;
+        setError(hint);
+        return;
+      }
       if (!res.ok) {
-        setError(d.error || "Generation failed");
+        setError(d?.error || `Generation failed (${res.status})`);
       } else {
         setResult(d);
         setExpandedExp(new Set());
