@@ -368,12 +368,18 @@ function ClaimPage() {
                   );
                 })}
               </div>
-              <p className="text-[11px] text-dark-400">{selectedSectors.length} selected — tap to toggle.</p>
+              <p className={`text-[11px] ${selectedSectors.length === 0 ? "text-amber-600" : "text-dark-400"}`}>
+                {selectedSectors.length === 0 ? "Pick at least one — so we can filter briefs to what matters." : `${selectedSectors.length} selected — tap to toggle.`}
+              </p>
               <div className="flex gap-2">
                 <button onClick={() => setStep("channel")} className="flex-1 py-3 rounded-xl border border-dark-200 text-dark-600 font-semibold text-sm flex items-center justify-center gap-1">
                   <ChevronLeft className="w-4 h-4" /> Back
                 </button>
-                <button onClick={onSectorsContinue} className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-1">
+                <button
+                  onClick={onSectorsContinue}
+                  disabled={selectedSectors.length === 0}
+                  className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-1 disabled:opacity-50"
+                >
                   {isRecommender ? (
                     <>Continue <ChevronRight className="w-4 h-4" /></>
                   ) : (

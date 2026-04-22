@@ -135,11 +135,16 @@ export async function POST(req: NextRequest) {
     }
 
     // Build claim patch — include email if the user set/confirmed one
+    // CRITICAL: never overwrite an existing full name. Only set the Telegram
+    // first_name when there's literally nothing on file. Otherwise we lose
+    // "Dagmawi Meshesha Balkew" → "Dagim".
     const patch: any = {
       telegram_id: telegramId,
       claimed_at: new Date().toISOString(),
-      name: claimProfile.name || verified.user.first_name,
     };
+    if (!claimProfile.name || claimProfile.name.trim().length === 0) {
+      patch.name = verified.user.first_name;
+    }
     if (email && typeof email === "string") patch.email = email.trim();
 
     // Claim the profile — set telegram_id, claimed_at, email
