@@ -306,6 +306,42 @@ export function normalizeOpportunity(
   };
 }
 
+/**
+ * Ethiopia-relevance filter — drop entries that are clearly posted for
+ * another country (e.g. GGGI Seoul, UNICEF Guatemala). Keep Ethiopia,
+ * Horn of Africa, and international/global/remote roles (which East
+ * Africans can apply to).
+ *
+ * Errs on the side of inclusion — if country isn't set or is ambiguous,
+ * the job is kept. Only jobs CLEARLY anchored outside the region are
+ * dropped.
+ */
+export function isRelevantForEthiopia(opp: RawOpportunity): boolean {
+  const country = (opp.country || "").toLowerCase();
+  const city = (opp.city || "").toLowerCase();
+  const title = (opp.title || "").toLowerCase();
+
+  // No country set at all → keep (let downstream filters decide)
+  if (!country && !city) return true;
+
+  // Ethiopia / Horn of Africa / East Africa — keep
+  if (/(ethiopia|addis|eritrea|somalia|somaliland|djibouti|kenya|south sudan|sudan|uganda|tanzania|rwanda)/i.test(country + " " + city)) return true;
+  if (/(horn of africa|east africa|eastern africa|greater horn)/i.test(country + " " + city + " " + title)) return true;
+
+  // Africa-regional / Africa-wide — keep
+  if (/(africa|sub[- ]saharan|sahel|pan[- ]african|continent[a-z]*)/i.test(country + " " + title)) return true;
+
+  // International / global / remote / HQ roles — keep
+  if (/\b(international|global|remote|home.?based|headquarters?|\bhq\b|roving|multi.?country|work from anywhere)\b/i.test(title)) return true;
+
+  // HQ cities (major donor HQs that recruit globally) — keep
+  if (/\b(geneva|new york|washington|rome|paris|london|vienna|brussels|nairobi|amsterdam|copenhagen|stockholm|oslo|bonn|berlin)\b/i.test(city + " " + country)) return true;
+
+  // Everything else with a clear non-East-Africa country — drop
+  // (Seoul, Guatemala, Bangkok, Delhi, Lagos, Cape Town, etc.)
+  return false;
+}
+
 export function normalizeAll(
   opps: RawOpportunity[]
 ): NormalizedOpportunity[] {

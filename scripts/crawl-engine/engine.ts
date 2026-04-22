@@ -35,7 +35,7 @@ import type {
   EngineSummary,
 } from "./types";
 import { getAdapterRegistry } from "./adapters/base";
-import { normalizeAll } from "./normalize";
+import { normalizeAll, isRelevantForEthiopia } from "./normalize";
 import { deduplicate } from "./dedup";
 import { closeBrowser } from "./utils/browser";
 
@@ -241,6 +241,27 @@ async function runEngine() {
   console.log(
     `  After dedup: ${deduped.length} (URL dupes: ${dedupStats.urlDupes}, title dupes: ${dedupStats.titleDupes})`
   );
+
+  // 8b. Ethiopia-relevance filter — drop Seoul, Guatemala, Bangkok, etc.
+  // Fixed 2026-04-22: GGGI feed + UNICEF Workday were dumping global
+  // listings. Keep Ethiopia + Horn/East Africa + international/global/HQ.
+  const beforeRelevance = deduped.length;
+  const relevant = deduped.filter(isRelevantForEthiopia);
+  const droppedByRelevance = beforeRelevance - relevant.length;
+  if (droppedByRelevance > 0) {
+    console.log(
+      `  After Ethiopia relevance: ${relevant.length} (dropped ${droppedByRelevance} clearly out-of-region)`
+    );
+    // Sample a few dropped for logs so we can tune if it over-filters
+    const dropped = deduped.filter((d) => !isRelevantForEthiopia(d)).slice(0, 5);
+    for (const d of dropped) {
+      console.log(`    × [${d.source_domain}] ${d.country || "—"} / ${d.city || "—"} · ${(d.title || "").slice(0, 60)}`);
+    }
+  }
+  // Mutate 'deduped' to use relevant list from here on — all downstream
+  // code reads from this variable.
+  deduped.length = 0;
+  deduped.push(...relevant);
 
   // 9. Normalize
   const normalized = normalizeAll(deduped);
