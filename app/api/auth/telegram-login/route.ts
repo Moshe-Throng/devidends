@@ -73,42 +73,67 @@ export async function POST(req: NextRequest) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    // Find or create auth user
+    // CANONICAL-USER POLICY: if this Telegram ID is already tied to a profile
+    // with a user_id, resolve the session to THAT auth user (usually their
+    // real email account). Only fall back to the synthetic tg_<id>@... user
+    // if no profile / no user_id is linked yet. This keeps /profile working
+    // consistently whether they come in via Google, magic link, or TG.
+    const { data: existingProfile } = await sb
+      .from("profiles")
+      .select("id, user_id, email, name")
+      .eq("telegram_id", telegramId)
+      .maybeSingle();
+
     const { data: list } = await sb.auth.admin.listUsers({ perPage: 1000 });
     let authUserId: string;
-    const existing = list?.users?.find((u: any) => u.email === syntheticEmail);
-    if (existing) {
-      authUserId = existing.id;
+    let resolvedEmail: string;
+
+    const canonicalUser = existingProfile?.user_id
+      ? list?.users?.find((u: any) => u.id === existingProfile.user_id)
+      : null;
+
+    if (canonicalUser) {
+      authUserId = canonicalUser.id;
+      resolvedEmail = canonicalUser.email || syntheticEmail;
     } else {
-      const { data: created, error } = await sb.auth.admin.createUser({
-        email: syntheticEmail,
-        email_confirm: true,
-        user_metadata: {
-          telegram_id: telegramId,
-          name: fullName,
-          username: data.username,
-          photo_url: data.photo_url,
-        },
-      });
-      if (error || !created?.user) {
-        console.error("[tg-login] create user failed:", error?.message);
-        return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
+      // No canonical user yet — use synthetic email flow
+      const existing = list?.users?.find((u: any) => u.email === syntheticEmail);
+      if (existing) {
+        authUserId = existing.id;
+      } else {
+        const { data: created, error } = await sb.auth.admin.createUser({
+          email: syntheticEmail,
+          email_confirm: true,
+          user_metadata: {
+            telegram_id: telegramId,
+            name: fullName,
+            username: data.username,
+            photo_url: data.photo_url,
+          },
+        });
+        if (error || !created?.user) {
+          console.error("[tg-login] create user failed:", error?.message);
+          return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
+        }
+        authUserId = created.user.id;
       }
-      authUserId = created.user.id;
+      resolvedEmail = syntheticEmail;
     }
 
-    // Link to any existing profile with this telegram_id (e.g. they claimed
-    // on TG earlier, now coming back via web login)
+    // Link profile to this user_id (handles both "first link" and re-linking
+    // after a profile that previously had no user_id)
     await sb
       .from("profiles")
       .update({ user_id: authUserId })
       .eq("telegram_id", telegramId)
       .is("user_id", null);
 
-    // Generate a magic-link token the client will verify to get a session
+    // Generate a magic-link token the client will verify to get a session.
+    // Always uses the resolved (canonical) email so the session lands on the
+    // user's primary auth account.
     const { data: linkData, error: linkErr } = await sb.auth.admin.generateLink({
       type: "magiclink",
-      email: syntheticEmail,
+      email: resolvedEmail,
     });
     if (linkErr || !linkData?.properties?.hashed_token) {
       return NextResponse.json({ error: "Failed to generate session" }, { status: 500 });
@@ -116,7 +141,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       token_hash: linkData.properties.hashed_token,
-      email: syntheticEmail,
+      email: resolvedEmail,
       telegram_id: telegramId,
     });
   } catch (err) {

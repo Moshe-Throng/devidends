@@ -58,7 +58,10 @@ export async function GET(request: NextRequest) {
     }
 
     // Link web-auth user to any existing Telegram-created profile by email.
-    // Enables seamless sync: CV built on TG appears on web and vice versa.
+    // Case-insensitive match so 'Mussietsegg@gmail.com' (profile) links to
+    // 'mussietsegg@gmail.com' (Google auth user). Last-login-wins: always
+    // update profile.user_id to the current authenticated user so /profile
+    // can find them no matter which auth method they used most recently.
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (user?.email) {
@@ -67,14 +70,12 @@ export async function GET(request: NextRequest) {
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
           process.env.SUPABASE_SERVICE_ROLE_KEY!
         );
-        // Find profile by email with no proper user_id link (likely a TG-created profile)
         const { data: orphan } = await admin
           .from("profiles")
           .select("id, user_id, telegram_id")
-          .eq("email", user.email)
+          .ilike("email", user.email)
           .maybeSingle();
         if (orphan && orphan.user_id !== user.id) {
-          // Link this profile to the authenticated user
           await admin
             .from("profiles")
             .update({ user_id: user.id })
