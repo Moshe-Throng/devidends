@@ -9,21 +9,25 @@ import {
   AlertCircle,
   User,
   Briefcase,
-  BarChart3,
   Mail,
   Bell,
   ChevronRight,
   ChevronLeft,
+  Users,
+  Handshake,
 } from "lucide-react";
 
 interface ClaimProfile {
   name: string;
   headline: string | null;
   sectors: string[];
-  cv_score: number | null;
   profile_type: string | null;
   email: string | null;
   phone: string | null;
+  is_recommender: boolean;
+  recommended_count: number;
+  cc_interests: string[];
+  cc_ask_frequency: string;
 }
 
 const ALL_SECTORS = [
@@ -33,7 +37,16 @@ const ALL_SECTORS = [
   "Environment & Natural Resources", "Humanitarian Aid", "Energy", "Legal",
 ];
 
-type Step = "review" | "email" | "channel" | "sectors" | "claiming" | "done";
+const ENGAGEMENT_OPTIONS: { id: string; label: string; blurb: string }[] = [
+  { id: "recommend_cvs",   label: "Recommend CVs",           blurb: "Bring people I trust into the pool" },
+  { id: "share_tors",      label: "Share ToRs / tenders",    blurb: "Forward live opportunities I come across" },
+  { id: "get_candidates",  label: "Request candidates",      blurb: "Ask the network when I'm building a team" },
+  { id: "vouch_for_peers", label: "Vouch for peers",         blurb: "Add credibility to profiles I know" },
+  { id: "sector_news",     label: "Sector intelligence",     blurb: "Get briefed on donor + tender trends" },
+  { id: "events",          label: "Events + meetups",        blurb: "Occasional private Co-Creator gatherings" },
+];
+
+type Step = "review" | "email" | "channel" | "sectors" | "engagement" | "claiming" | "done";
 
 export default function ClaimPageWrapper() {
   return (
@@ -57,6 +70,8 @@ function ClaimPage() {
   const [email, setEmail] = useState("");
   const [channel, setChannel] = useState<"telegram" | "email" | "both">("telegram");
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
+  const [interests, setInterests] = useState<string[]>([]);
+  const [askFrequency, setAskFrequency] = useState<"daily" | "weekly" | "biweekly" | "monthly">("weekly");
 
   useEffect(() => {
     if (!token) { setError("No claim token provided"); setLoading(false); return; }
@@ -67,6 +82,8 @@ function ClaimPage() {
           setProfile(d.profile);
           setEmail(d.profile.email || "");
           setSelectedSectors(d.profile.sectors || []);
+          setInterests(d.profile.cc_interests || []);
+          setAskFrequency((d.profile.cc_ask_frequency || "weekly") as any);
         } else setError(d.error || "Invalid claim link");
       })
       .catch(() => setError("Failed to load profile"))
@@ -88,6 +105,7 @@ function ClaimPage() {
           email: email || null,
           channel,
           sectors_filter: selectedSectors,
+          ...(profile?.is_recommender ? { interests, ask_frequency: askFrequency } : {}),
         }),
       });
       const data = await res.json();
@@ -97,7 +115,7 @@ function ClaimPage() {
       setTimeout(() => router.push("/tg-app?tour=1"), 2400);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Claim failed");
-      setStep("channel");
+      setStep(isRecommender ? "engagement" : "sectors");
     }
   }
 
@@ -133,10 +151,21 @@ function ClaimPage() {
     );
   }
 
-  const progressLabel = {
-    review: "Profile", email: "Email", channel: "Channel", sectors: "Sectors", claiming: "", done: "",
-  }[step];
-  const progressPct = { review: 25, email: 50, channel: 75, sectors: 90, claiming: 100, done: 100 }[step];
+  const isRecommender = !!profile?.is_recommender;
+  const totalSteps = isRecommender ? 5 : 4;
+  const stepNum: Record<Step, number> = {
+    review: 1, email: 2, channel: 3, sectors: 4, engagement: 5, claiming: totalSteps, done: totalSteps,
+  };
+  const progressLabel = { review: "Profile", email: "Email", channel: "Channel", sectors: "Sectors", engagement: "How you engage", claiming: "", done: "" }[step];
+  const progressPct = Math.round((stepNum[step] / totalSteps) * 100);
+
+  function onSectorsContinue() {
+    if (isRecommender) setStep("engagement");
+    else handleFinalClaim();
+  }
+  function toggleInterest(id: string) {
+    setInterests((prev) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]);
+  }
 
   return (
     <div className="min-h-screen bg-dark-50 pb-10">
@@ -164,19 +193,26 @@ function ClaimPage() {
                 <div className="flex-1 min-w-0">
                   <h2 className="text-lg font-bold text-dark-900">{profile.name}</h2>
                   {profile.headline && <p className="text-xs text-dark-400 mt-0.5">{profile.headline}</p>}
-                  {profile.profile_type && (
-                    <span className="inline-block mt-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">
-                      {profile.profile_type}
-                    </span>
-                  )}
+                  <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                    {profile.profile_type && (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">
+                        {profile.profile_type}
+                      </span>
+                    )}
+                    {isRecommender && (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                        Co-Creator
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
-              {profile.cv_score != null && (
-                <div className="flex items-center gap-3 p-3 bg-dark-50 rounded-xl">
-                  <BarChart3 className="w-5 h-5 text-cyan-500" />
+              {isRecommender && (
+                <div className="flex items-center gap-3 p-3 bg-amber-50/60 border border-amber-200 rounded-xl">
+                  <Users className="w-5 h-5 text-amber-600" />
                   <div>
-                    <p className="text-xs text-dark-400">CV Score</p>
-                    <p className="text-lg font-bold text-dark-900">{profile.cv_score}/100</p>
+                    <p className="text-xs text-amber-700">People you&apos;ve brought to the network so far</p>
+                    <p className="text-lg font-bold text-dark-900">{profile.recommended_count}</p>
                   </div>
                 </div>
               )}
@@ -321,8 +357,76 @@ function ClaimPage() {
                 <button onClick={() => setStep("channel")} className="flex-1 py-3 rounded-xl border border-dark-200 text-dark-600 font-semibold text-sm flex items-center justify-center gap-1">
                   <ChevronLeft className="w-4 h-4" /> Back
                 </button>
-                <button onClick={handleFinalClaim} className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-1">
-                  <CheckCircle className="w-4 h-4" /> Claim my profile
+                <button onClick={onSectorsContinue} className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-1">
+                  {isRecommender ? (
+                    <>Continue <ChevronRight className="w-4 h-4" /></>
+                  ) : (
+                    <><CheckCircle className="w-4 h-4" /> Claim my profile</>
+                  )}
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* Step 5: Engagement (recommenders only) */}
+          {step === "engagement" && (
+            <>
+              <div className="flex items-start gap-3">
+                <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+                  <Handshake className="w-6 h-6 text-amber-600" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-bold text-dark-900">How do you want to engage?</h2>
+                  <p className="text-xs text-dark-400 mt-0.5">As a Co-Creator — pick what fits you. Change anytime.</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                {ENGAGEMENT_OPTIONS.map((opt) => {
+                  const on = interests.includes(opt.id);
+                  return (
+                    <button
+                      key={opt.id}
+                      onClick={() => toggleInterest(opt.id)}
+                      className={`w-full text-left px-3.5 py-3 rounded-xl border transition-all ${
+                        on ? "border-amber-500 bg-amber-50/60" : "border-dark-100 bg-white"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-bold text-dark-900">{opt.label}</p>
+                          <p className="text-[11px] text-dark-400 mt-0.5">{opt.blurb}</p>
+                        </div>
+                        {on && <CheckCircle className="w-5 h-5 text-amber-600 shrink-0" />}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div>
+                <p className="text-xs text-dark-400 font-medium mb-2">How often should we reach out?</p>
+                <div className="grid grid-cols-4 gap-1.5">
+                  {(["daily", "weekly", "biweekly", "monthly"] as const).map((f) => (
+                    <button
+                      key={f}
+                      onClick={() => setAskFrequency(f)}
+                      className={`py-2 rounded-lg text-xs font-bold border transition-all capitalize ${
+                        askFrequency === f ? "border-amber-500 bg-amber-500 text-white" : "border-dark-200 text-dark-500 bg-white"
+                      }`}
+                    >
+                      {f}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <button onClick={() => setStep("sectors")} className="flex-1 py-3 rounded-xl border border-dark-200 text-dark-600 font-semibold text-sm flex items-center justify-center gap-1">
+                  <ChevronLeft className="w-4 h-4" /> Back
+                </button>
+                <button onClick={handleFinalClaim} className="flex-[2] py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-sm flex items-center justify-center gap-1">
+                  <CheckCircle className="w-4 h-4" /> Claim + set preferences
                 </button>
               </div>
             </>

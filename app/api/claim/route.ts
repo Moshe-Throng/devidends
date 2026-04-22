@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   const sb = getAdmin();
   const { data, error } = await sb
     .from("profiles")
-    .select("id, name, headline, sectors, cv_score, profile_type, claimed_at, email, phone")
+    .select("id, name, headline, sectors, profile_type, claimed_at, email, phone, is_recommender")
     .eq("claim_token", token)
     .single();
 
@@ -32,16 +32,51 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "This profile has already been claimed" }, { status: 409 });
   }
 
+  // Recommender extras: count of people they've already brought, and any
+  // existing engagement preferences (so we pre-fill the "how you want to
+  // engage" step instead of starting blank).
+  let recommendedCount = 0;
+  let cc: { interests: string[]; ask_frequency: string } | null = null;
+  if (data.is_recommender) {
+    // Fuzzy count: profiles where recommended_by loosely matches this name.
+    const parts = (data.name || "").toLowerCase().split(/\s+/).filter(Boolean);
+    if (parts.length > 0) {
+      const { data: recs } = await sb
+        .from("profiles")
+        .select("id, recommended_by")
+        .not("recommended_by", "is", null);
+      recommendedCount = (recs || []).filter((p: any) => {
+        const rb = (p.recommended_by || "").toLowerCase();
+        if (!rb.includes(parts[0])) return false;
+        if (parts.length === 1) return true;
+        return parts.slice(1).some((p: string) => p.length >= 3 && rb.includes(p));
+      }).length;
+    }
+
+    const { data: ccRow } = await sb
+      .from("co_creators")
+      .select("interests, ask_frequency")
+      .eq("profile_id", data.id)
+      .maybeSingle();
+    if (ccRow) cc = {
+      interests: Array.isArray(ccRow.interests) ? ccRow.interests : [],
+      ask_frequency: ccRow.ask_frequency || "weekly",
+    };
+  }
+
   return NextResponse.json({
     success: true,
     profile: {
       name: data.name,
       headline: data.headline,
       sectors: data.sectors,
-      cv_score: data.cv_score,
       profile_type: data.profile_type,
       email: data.email,
       phone: data.phone,
+      is_recommender: !!data.is_recommender,
+      recommended_count: recommendedCount,
+      cc_interests: cc?.interests || [],
+      cc_ask_frequency: cc?.ask_frequency || "weekly",
     },
   });
 }
@@ -52,7 +87,7 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
-    const { initData, claimToken, email, channel, sectors_filter } = await req.json();
+    const { initData, claimToken, email, channel, sectors_filter, interests, ask_frequency } = await req.json();
 
     if (!initData || !claimToken) {
       return NextResponse.json({ error: "initData and claimToken required" }, { status: 400 });
@@ -146,6 +181,19 @@ export async function POST(req: NextRequest) {
         await sb.from("subscriptions").update(subPatch).eq("id", existingId);
       } else {
         await sb.from("subscriptions").insert(subPatch);
+      }
+    }
+
+    // If they're a recommender, save their engagement preferences to the
+    // co_creator row so the dashboard + asks are tuned from day one.
+    if (Array.isArray(interests) || ask_frequency) {
+      const ccPatch: any = {};
+      if (Array.isArray(interests)) ccPatch.interests = interests;
+      if (ask_frequency) ccPatch.ask_frequency = ask_frequency;
+      if (!((await sb.from("co_creators").select("id").eq("profile_id", claimProfile.id).maybeSingle()).data)) {
+        // Silently skip if no co_creator row — not a recommender
+      } else {
+        await sb.from("co_creators").update(ccPatch).eq("profile_id", claimProfile.id);
       }
     }
 
