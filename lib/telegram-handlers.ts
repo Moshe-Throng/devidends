@@ -1786,8 +1786,29 @@ export async function handleUpdate(
       // Check if this is a CV drop in the ingest topic
       const ingestGroupId = process.env.TELEGRAM_INGEST_GROUP_ID;
       const ingestTopicId = process.env.TELEGRAM_INGEST_TOPIC_ID;
-      if (ingestGroupId && String(msg.chat.id) === ingestGroupId &&
-          (!ingestTopicId || String(msg.message_thread_id || "") === ingestTopicId)) {
+      const msgChatId = String(msg.chat.id);
+      const msgTopicId = String(msg.message_thread_id || "");
+      const groupMatch = !!ingestGroupId && msgChatId === ingestGroupId;
+      const topicMatch = !ingestTopicId || msgTopicId === ingestTopicId;
+      // Diagnostic: log every doc drop to events so we can debug routing.
+      try {
+        const { trackEvent } = await import("@/lib/logger");
+        trackEvent({
+          event: "doc_received",
+          telegram_id: msg.from?.id ? String(msg.from.id) : undefined,
+          metadata: {
+            chat_id: msgChatId,
+            chat_type: msg.chat.type,
+            topic_id: msgTopicId || null,
+            env_group: ingestGroupId || null,
+            env_topic: ingestTopicId || null,
+            group_match: groupMatch,
+            topic_match: topicMatch,
+            file_name: msg.document.file_name,
+          },
+        });
+      } catch {}
+      if (groupMatch && topicMatch) {
         await handleGroupCvIngest(bot, msg);
         return;
       }
