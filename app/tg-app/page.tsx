@@ -17,10 +17,14 @@ import {
   BarChart3,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
+import { useSearchParams } from "next/navigation";
+import { MiniAppTour } from "@/components/MiniAppTour";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
 
 export default function TgAppHome() {
   const { tgUser, profile, loading, error } = useTelegram();
+  const searchParams = useSearchParams();
+  const forceTour = searchParams?.get("tour") === "1";
   const [recentOpps, setRecentOpps] = useState<SampleOpportunity[]>([]);
   const [oppsLoading, setOppsLoading] = useState(true);
 
@@ -61,7 +65,8 @@ export default function TgAppHome() {
   const profilePct = profile?.profile_score_pct ?? 0;
 
   return (
-    <div className="pb-6">
+    <div className="pb-6" data-tour="welcome">
+      <MiniAppTour force={forceTour} />
       {/* ── Header ── */}
       <div className="bg-gradient-to-br from-cyan-500 via-cyan-600 to-teal-600 px-5 pt-6 pb-8 relative overflow-hidden">
         {/* Dot grid overlay */}
@@ -171,7 +176,7 @@ export default function TgAppHome() {
           Quick Actions
         </h2>
         <div className="grid grid-cols-2 gap-3">
-          <Link href="/tg-app/opportunities">
+          <Link href="/tg-app/opportunities" data-tour="opportunities">
             <div className="bg-white border border-dark-100 rounded-xl p-4 hover:border-cyan-300 transition-colors">
               <div className="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center mb-2.5">
                 <Briefcase className="w-5 h-5 text-cyan-600" />
@@ -181,7 +186,7 @@ export default function TgAppHome() {
             </div>
           </Link>
 
-          <Link href="/tg-app/cv-builder">
+          <Link href="/tg-app/cv-builder" data-tour="cv">
             <div className={`bg-white border rounded-xl p-4 transition-colors ${profile?.cv_structured_data ? "border-teal-200 hover:border-teal-400" : "border-dark-100 hover:border-teal-300"}`}>
               <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-2.5">
                 <FileText className="w-5 h-5 text-teal-600" />
@@ -191,7 +196,7 @@ export default function TgAppHome() {
             </div>
           </Link>
 
-          <Link href="/tg-app/score">
+          <Link href="/tg-app/score" data-tour="score">
             <div className={`bg-white border rounded-xl p-4 transition-colors ${(profile as any)?.cv_score ? "border-indigo-200 hover:border-indigo-400" : "border-dark-100 hover:border-indigo-300"}`}>
               <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-2.5">
                 <BarChart3 className="w-5 h-5 text-indigo-500" />
@@ -223,7 +228,7 @@ export default function TgAppHome() {
         </div>
 
         {/* Alerts — full-width row */}
-        <Link href="/tg-app/alerts" className="block mt-3">
+        <Link href="/tg-app/alerts" className="block mt-3" data-tour="alerts">
           <div className="bg-gradient-to-r from-cyan-50 to-teal-50 border border-cyan-200 rounded-xl px-4 py-3.5 flex items-center gap-3 hover:border-cyan-300 transition-colors">
             <div className="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0">
               <Bell className="w-5 h-5 text-cyan-600" />

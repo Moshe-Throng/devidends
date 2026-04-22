@@ -93,7 +93,8 @@ function ClaimPage() {
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.error || "Failed to claim profile");
       setStep("done");
-      setTimeout(() => router.push("/tg-app/profile"), 2400);
+      // Land on the home page with the tour kicked off (forced for first claim)
+      setTimeout(() => router.push("/tg-app?tour=1"), 2400);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Claim failed");
       setStep("channel");
