@@ -198,6 +198,92 @@ export async function POST(req: NextRequest) {
     }
 
     trackEvent({ event: "claim_completed", profile_id: claimProfile.id, telegram_id: telegramId, metadata: { token: claimToken, channel: channel || null } });
+
+    // Fire-and-forget welcome DM in the bot chat. For recommenders, include
+    // their share link + a paste-ready message. For everyone else, a short
+    // "you're in" with a pointer to the mini app.
+    (async () => {
+      try {
+        const botToken = process.env.TELEGRAM_BOT_TOKEN;
+        if (!botToken) return;
+        // Pull is_recommender + invite_token if they're a Co-Creator
+        const { data: fullProfile } = await sb
+          .from("profiles")
+          .select("id, name, is_recommender")
+          .eq("id", claimProfile.id)
+          .single();
+        const { data: ccRow } = await sb
+          .from("co_creators")
+          .select("invite_token, name")
+          .eq("profile_id", claimProfile.id)
+          .maybeSingle();
+        const fullName = fullProfile?.name || claimProfile.name || verified.user.first_name;
+        const firstName = (fullName || "friend").split(/\s+/)[0];
+        const isRec = !!fullProfile?.is_recommender && !!ccRow?.invite_token;
+        const shareLink = isRec ? `https://t.me/Devidends_Bot?start=ref_${ccRow!.invite_token}` : null;
+        const channelLine = channel === "both"
+          ? "Telegram + email"
+          : channel === "email"
+          ? "email"
+          : "Telegram";
+
+        // Message 1 — welcome
+        const welcomeText = [
+          `<b>Welcome, ${firstName}. You're in. 🎉</b>`,
+          ``,
+          `Your profile is live. Daily briefs start within 24 hours on <b>${channelLine}</b>.`,
+          ``,
+          `Open the mini app anytime from this chat's menu, or tap:`,
+          `https://t.me/Devidends_Bot/app`,
+          isRec ? `` : `` ,
+          isRec ? `<i>Next message: your personal share link for bringing peers into the circle.</i>` : ``,
+        ].filter(Boolean).join("\n");
+
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: telegramId,
+            text: welcomeText,
+            parse_mode: "HTML",
+            disable_web_page_preview: true,
+          }),
+        });
+
+        // Message 2 — share kit, recommenders only
+        if (isRec && shareLink) {
+          const shareText = [
+            `<b>🤝 Your Co-Creator share link</b>`,
+            ``,
+            `Anyone you forward this to lands on the bot pre-tagged as recommended by you:`,
+            shareLink,
+            ``,
+            `<b>Paste-ready message for peers you want to bring in:</b>`,
+            `──────────────`,
+            `<code>Hey — I joined Devidends, a curated Ethiopian development consulting network. Thought of you. Tap to join — you'll land pre-tagged as recommended by me:`,
+            ``,
+            shareLink + `</code>`,
+            `──────────────`,
+            ``,
+            `<i>Top referrers get first invitation to the Founders Dinner.</i>`,
+          ].join("\n");
+
+          await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: telegramId,
+              text: shareText,
+              parse_mode: "HTML",
+              disable_web_page_preview: true,
+            }),
+          });
+        }
+      } catch (e) {
+        console.warn("[api/claim] welcome DM failed:", (e as Error).message);
+      }
+    })();
+
     return NextResponse.json({
       success: true,
       profile_id: claimProfile.id,
