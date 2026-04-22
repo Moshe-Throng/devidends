@@ -235,7 +235,9 @@ export async function POST(req: NextRequest) {
           ``,
           `Open the mini app anytime from this chat's menu, or tap:`,
           `https://t.me/Devidends_Bot/app`,
-          isRec ? `` : `` ,
+          ``,
+          `<b>🔒 Your data stays yours.</b> Only you see your CV and profile. We don't share your info without explicit permission. Delete everything anytime with <code>/delete</code>.`,
+          isRec ? `` : ``,
           isRec ? `<i>Next message: your personal share link for bringing peers into the circle.</i>` : ``,
         ].filter(Boolean).join("\n");
 

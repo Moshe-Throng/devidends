@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   Users,
   Handshake,
+  Lock,
 } from "lucide-react";
 
 interface ClaimProfile {
@@ -229,8 +230,23 @@ function ClaimPage() {
                   </div>
                 </div>
               )}
+              {/* Privacy section — compact, trust-first */}
+              <div className="rounded-xl border border-dark-100 bg-dark-50/40 p-3.5">
+                <div className="flex items-start gap-2.5">
+                  <Lock className="w-4 h-4 text-dark-500 mt-0.5 shrink-0" />
+                  <div className="flex-1">
+                    <p className="text-xs font-bold text-dark-700 mb-1.5">Your data stays yours</p>
+                    <ul className="space-y-1 text-[11px] text-dark-500 leading-relaxed">
+                      <li>• Your CV and profile are visible <b>only to you</b>.</li>
+                      <li>• We <b>never share</b> your info with third parties without your explicit permission.</li>
+                      <li>• You can <b>delete everything</b> anytime — type <code className="bg-white px-1 rounded text-[10px]">/delete</code> in the bot.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <button onClick={() => setStep("email")} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98]">
-                Yes, this is me <ChevronRight className="w-4 h-4" />
+                I understand — continue <ChevronRight className="w-4 h-4" />
               </button>
             </>
           )}

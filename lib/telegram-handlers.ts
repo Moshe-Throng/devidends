@@ -1076,6 +1076,76 @@ async function handleScore(bot: TelegramBot, msg: Message) {
   }
 }
 
+/**
+ * /delete — user-initiated data wipe. Two-step: first /delete shows what
+ * will be removed and asks for confirmation; sending "CONFIRM DELETE" within
+ * the same chat triggers the hard delete across profile + co_creator +
+ * subscription.
+ */
+async function handleDelete(bot: TelegramBot, msg: Message) {
+  const chatId = msg.chat.id;
+  const tgId = String(msg.from?.id || chatId);
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    const { data: profile } = await sb
+      .from("profiles")
+      .select("id, name, cv_text")
+      .eq("telegram_id", tgId)
+      .maybeSingle();
+    if (!profile) {
+      await bot.sendMessage(chatId, "No profile linked to this Telegram account — nothing to delete.");
+      return;
+    }
+    const hasCv = (profile.cv_text || "").length > 200;
+    chatState.set(chatId, `awaiting_delete_confirm:${profile.id}`);
+    await bot.sendMessage(
+      chatId,
+      [
+        "<b>Delete everything?</b>",
+        "",
+        `This will permanently remove:`,
+        `• Your profile (${escHtml(profile.name || "unnamed")})`,
+        hasCv ? `• Your stored CV + structured data` : null,
+        `• Your subscriptions and alerts`,
+        `• Your Co-Creator record (if any)`,
+        ``,
+        `<b>This cannot be undone.</b>`,
+        ``,
+        `Send <code>CONFIRM DELETE</code> within 5 minutes to proceed.`,
+        `Send anything else to cancel.`,
+      ].filter(Boolean).join("\n"),
+      { parse_mode: "HTML" }
+    );
+  } catch (err) {
+    console.error("[delete]", (err as Error).message);
+    await bot.sendMessage(chatId, "Couldn't process delete request. Try again later.");
+  }
+}
+
+async function performDelete(bot: TelegramBot, msg: Message, profileId: string) {
+  const chatId = msg.chat.id;
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    // Order matters: drop referencing rows first
+    await sb.from("subscriptions").delete().eq("telegram_id", String(msg.from?.id || chatId));
+    await sb.from("cv_scores").delete().eq("profile_id", profileId);
+    await sb.from("events").delete().eq("profile_id", profileId);
+    await sb.from("co_creators").delete().eq("profile_id", profileId);
+    await sb.from("profiles").delete().eq("id", profileId);
+    chatState.delete(chatId);
+    await bot.sendMessage(
+      chatId,
+      "<b>Deleted.</b> Everything is gone. Thank you for having been part of Devidends. You can return anytime by forwarding a CV to me again.",
+      { parse_mode: "HTML" }
+    );
+  } catch (err) {
+    console.error("[delete/perform]", (err as Error).message);
+    await bot.sendMessage(chatId, "Delete failed. Reply with details and we'll remove manually.");
+  }
+}
+
 async function handleProfile(bot: TelegramBot, msg: Message) {
   const chatId = msg.chat.id;
   const username = msg.from?.username;
@@ -1569,6 +1639,22 @@ export async function handleUpdate(
       return;
     }
 
+    // Handle delete-confirmation
+    if (msg.text) {
+      const state = chatState.get(msg.chat.id);
+      if (state && state.startsWith("awaiting_delete_confirm:")) {
+        const profileId = state.slice("awaiting_delete_confirm:".length);
+        if (msg.text.trim() === "CONFIRM DELETE") {
+          await performDelete(bot, msg, profileId);
+          return;
+        }
+        // Anything else cancels
+        chatState.delete(msg.chat.id);
+        try { await bot.sendMessage(msg.chat.id, "Cancelled. Nothing was deleted."); } catch {}
+        return;
+      }
+    }
+
     // Handle replies to ingest follow-up questions
     if (msg.reply_to_message && msg.text) {
       const replyKey = `${msg.chat.id}:${msg.reply_to_message.message_id}`;
@@ -1635,6 +1721,24 @@ export async function handleUpdate(
       await handleScore(bot, msg);
     } else if (text.startsWith("/profile")) {
       await handleProfile(bot, msg);
+    } else if (text.startsWith("/delete") || text.startsWith("/deletemydata")) {
+      await handleDelete(bot, msg);
+    } else if (text.startsWith("/privacy")) {
+      try {
+        await bot.sendMessage(msg.chat.id,
+          [
+            "<b>Your data stays yours.</b>",
+            "",
+            "• Your CV and profile are visible only to you.",
+            "• We never share your info with third parties without your explicit permission.",
+            "• Matching to opportunities happens inside our system — your data does not leave.",
+            "• You can delete everything anytime. Type <code>/delete</code> and confirm.",
+            "",
+            "Full policy: https://devidends.net/privacy",
+          ].join("\n"),
+          { parse_mode: "HTML", disable_web_page_preview: true }
+        );
+      } catch {}
     } else if (text.startsWith("/")) {
       // Unknown command
       try {
