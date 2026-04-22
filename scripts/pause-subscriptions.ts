@@ -28,11 +28,17 @@ if (fs.existsSync(envPath)) {
   }
 }
 
-const ALLOWLIST_NAME_PATTERNS = [
-  "mussie",
-  "petros",
-  "yonus",
-  "bezawit liro",
+// Exact email match — avoids false positives like "Mussie Haile" vs "Mussie Tsegaye"
+const ALLOWLIST_EMAILS = [
+  "mussietsegg@gmail.com",
+  "petrosyigzaw@gmail.com",
+  "bezawitedilu@gmail.com",
+  "yonusfantahun@gmail.com",
+];
+const ALLOWLIST_TG_IDS = [
+  "297659579",  // Mussie Tsegaye
+  "1384820361", // Petros
+  "5443365731", // Yonus
 ];
 
 async function main() {
@@ -41,26 +47,11 @@ async function main() {
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
 
-  // Find allowlist profiles by fuzzy name match
-  const { data: profiles } = await sb
-    .from("profiles")
-    .select("id, name, telegram_id, email");
-
-  const matched: { name: string; tg: string | null; email: string | null }[] = [];
-  for (const p of profiles || []) {
-    const nm = (p.name || "").toLowerCase();
-    if (ALLOWLIST_NAME_PATTERNS.some((pat) => nm.includes(pat))) {
-      matched.push({ name: p.name, tg: p.telegram_id, email: p.email });
-    }
-  }
-
-  console.log(`Allowlist matches (${matched.length}):`);
-  for (const m of matched) {
-    console.log(`  - ${m.name}  tg=${m.tg || "-"}  email=${m.email || "-"}`);
-  }
-
-  const allowTgIds = matched.map((m) => m.tg).filter(Boolean) as string[];
-  const allowEmails = matched.map((m) => m.email).filter(Boolean) as string[];
+  const allowTgIds = ALLOWLIST_TG_IDS;
+  const allowEmails = ALLOWLIST_EMAILS;
+  console.log(`Allowlist (explicit):`);
+  console.log(`  tg_ids: ${allowTgIds.join(", ")}`);
+  console.log(`  emails: ${allowEmails.join(", ")}`);
 
   // 1. Deactivate ALL subscriptions
   const { count: beforeCount } = await sb
@@ -78,7 +69,7 @@ async function main() {
     process.exit(1);
   }
 
-  // 2. Re-activate allowlist rows (match by telegram_id OR email)
+  // 2. Re-activate allowlist rows (match by telegram_id OR email, case-insensitive on email)
   let reactivated = 0;
   if (allowTgIds.length > 0) {
     const { data, error } = await sb
@@ -88,11 +79,11 @@ async function main() {
       .select("id");
     if (!error && data) reactivated += data.length;
   }
-  if (allowEmails.length > 0) {
+  for (const em of allowEmails) {
     const { data, error } = await sb
       .from("subscriptions")
       .update({ is_active: true })
-      .in("email", allowEmails)
+      .ilike("email", em)
       .select("id");
     if (!error && data) reactivated += data.length;
   }
@@ -111,7 +102,6 @@ async function main() {
     paused_at: new Date().toISOString(),
     allowlist_tg_ids: allowTgIds,
     allowlist_emails: allowEmails,
-    allowlist_names: matched.map((m) => m.name),
   }, null, 2));
   console.log(`\nWrote marker: ${markerPath}`);
   console.log(`\nNOTE: Copy this file to the VPS project root so companion-engine picks it up.`);

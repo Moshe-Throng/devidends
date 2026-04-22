@@ -45,14 +45,37 @@ async function main() {
 
     const { data: profList } = await sb
       .from("profiles")
-      .select("id, name, claim_token, claimed_at, sectors, years_of_experience, email, is_recommender")
+      .select("id, name, claim_token, claimed_at, sectors, years_of_experience, email, is_recommender, cv_score, cv_text, updated_at")
       .ilike("name", pattern);
 
     if (!profList || profList.length === 0) {
       console.log(`[skip] ${fullName}: no profile match`);
       continue;
     }
-    let prof = profList[0];
+
+    // When multiple profiles match (duplicates), pick the best one so we
+    // don't link a weaker/older record. Rank:
+    //   1. already claimed beats unclaimed  (don't send a second card to someone already claimed)
+    //   2. has CV text
+    //   3. higher cv_score
+    //   4. more recently updated
+    const ranked = [...profList].sort((a: any, b: any) => {
+      if (!!a.claimed_at !== !!b.claimed_at) return a.claimed_at ? -1 : 1;
+      const ax = a.cv_text ? 1 : 0, bx = b.cv_text ? 1 : 0;
+      if (ax !== bx) return bx - ax;
+      const sa = a.cv_score ?? -1, sb = b.cv_score ?? -1;
+      if (sa !== sb) return sb - sa;
+      return (b.updated_at || "").localeCompare(a.updated_at || "");
+    });
+    let prof = ranked[0] as any;
+    if (profList.length > 1) {
+      const others = ranked.slice(1).map((p: any) => `${p.name}[score=${p.cv_score ?? "-"}]`).join(", ");
+      console.log(`  ↳ ${profList.length} matches, picked ${prof.name} (score=${prof.cv_score ?? "-"}). Duplicates present: ${others}`);
+    }
+    if (prof.claimed_at) {
+      console.log(`[skip] ${prof.name}: already claimed at ${prof.claimed_at} — not sending another card`);
+      continue;
+    }
 
     // Promote to recommender if not already
     if (!prof.is_recommender) {
@@ -73,26 +96,61 @@ async function main() {
       const { data: max } = await sb
         .from("co_creators")
         .select("member_number")
+        .not("member_number", "is", null)
         .order("member_number", { ascending: false })
         .limit(1)
         .maybeSingle();
-      const next = ((max as any)?.member_number || 0) + 1;
-      const token = crypto.randomBytes(4).toString("hex");
-      const { data: inserted } = await sb
-        .from("co_creators")
-        .insert({
-          name: prof.name,
-          email: prof.email || null,
-          invite_token: token,
-          member_number: next,
-          profile_id: prof.id,
-          status: "joined",
-          joined_at: new Date().toISOString(),
-        })
-        .select("invite_token, member_number")
-        .single();
-      ccRow = inserted as any;
-      console.log(`+ cc #${next} ${prof.name}`);
+      // Retry on member_number unique-constraint collisions (stale max in a
+      // loop). Re-fetch max fresh and bump up to 5 times.
+      let inserted: any = null;
+      let lastErr: any = null;
+      for (let attempt = 0; attempt < 5 && !inserted; attempt++) {
+        const { data: freshMax } = await sb
+          .from("co_creators")
+          .select("member_number")
+          .not("member_number", "is", null)
+          .order("member_number", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+        const next = ((freshMax as any)?.member_number || 0) + 1 + attempt;
+        const token = crypto.randomBytes(4).toString("hex");
+        const r = await sb
+          .from("co_creators")
+          .insert({
+            name: prof.name,
+            email: prof.email || null,
+            invite_token: token,
+            member_number: next,
+            profile_id: prof.id,
+            status: "joined",
+            joined_at: new Date().toISOString(),
+          })
+          .select("invite_token, member_number")
+          .single();
+        if (r.data) {
+          inserted = r.data;
+          console.log(`+ cc #${next} ${prof.name}`);
+          break;
+        }
+        lastErr = r.error;
+        if (!r.error?.message?.includes("member_number")) break;
+      }
+      if (!inserted) {
+        const { data: existing } = await sb
+          .from("co_creators")
+          .select("invite_token, member_number")
+          .eq("profile_id", prof.id)
+          .maybeSingle();
+        if (existing) {
+          ccRow = existing as any;
+          console.log(`  cc already existed for ${prof.name}`);
+        } else {
+          console.log(`[skip] ${prof.name}: co_creator insert failed: ${lastErr?.message || "unknown"}`);
+          continue;
+        }
+      } else {
+        ccRow = inserted;
+      }
     }
 
     // Count people they've already brought in (fuzzy recommended_by match)

@@ -260,7 +260,7 @@ export default function CvTailorPage() {
                 Output will appear here. Pick a profile, paste a ToR, generate.
               </p>
               <p className="text-xs text-dark-400 mt-2">
-                Humanizer is baked in: no em-dashes, no "serves as", voice matched to the candidate's own CV.
+                Humanizer is baked in: no em-dashes, no &quot;serves as&quot;, voice matched to the candidate&apos;s own CV.
               </p>
             </div>
           )}
