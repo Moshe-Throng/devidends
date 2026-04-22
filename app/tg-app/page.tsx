@@ -17,16 +17,22 @@ import {
   BarChart3,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
-import { useSearchParams } from "next/navigation";
 import { MiniAppTour } from "@/components/MiniAppTour";
 import type { SampleOpportunity } from "@/lib/types/cv-score";
 
 export default function TgAppHome() {
   const { tgUser, profile, loading, error } = useTelegram();
-  const searchParams = useSearchParams();
-  const forceTour = searchParams?.get("tour") === "1";
+  const [forceTour, setForceTour] = useState(false);
   const [recentOpps, setRecentOpps] = useState<SampleOpportunity[]>([]);
   const [oppsLoading, setOppsLoading] = useState(true);
+
+  // Force the tour when claim flow lands here with ?tour=1
+  // Read from window.location to avoid useSearchParams prerender issues.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("tour") === "1") setForceTour(true);
+  }, []);
 
   // Fetch latest opportunities
   useEffect(() => {
