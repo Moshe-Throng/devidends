@@ -3,11 +3,10 @@
 import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Mail, Lock, ArrowRight, Loader2, Eye, EyeOff, ArrowLeft } from "lucide-react";
+import { Mail, Lock, ArrowRight, Loader2, Eye, EyeOff, ArrowLeft, Send } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { TelegramLoginButton } from "@/components/TelegramLoginButton";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 
 export default function LoginPage() {
@@ -36,6 +35,8 @@ function LoginContent() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [tgLoading, setTgLoading] = useState(false);
+  const [tgPending, setTgPending] = useState<{ token: string; tgUrl: string } | null>(null);
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
@@ -58,6 +59,66 @@ function LoginContent() {
       setError(e.message || "Google sign-in failed");
       setGoogleLoading(false);
     }
+  }
+
+  // Bot-DM'd login: generate a one-time token, open the bot in Telegram,
+  // poll for the bot to confirm identity, then verifyOtp to establish the
+  // session. No phone number, no widget, no email.
+  async function handleTelegram() {
+    setError("");
+    setTgLoading(true);
+    try {
+      const res = await fetch("/api/auth/web-login/request", { method: "POST" });
+      const d = await res.json();
+      if (!res.ok || !d.token) {
+        setError(d.error || "Couldn't start Telegram login");
+        setTgLoading(false);
+        return;
+      }
+      setTgPending({ token: d.token, tgUrl: d.tg_url });
+      window.open(d.tg_url, "_blank", "noopener,noreferrer");
+      pollForTelegramLogin(d.token);
+    } catch (e: any) {
+      setError(e.message || "Telegram login failed");
+      setTgLoading(false);
+    }
+  }
+
+  async function pollForTelegramLogin(token: string) {
+    const supa = createSupabaseBrowser();
+    const deadline = Date.now() + 5 * 60 * 1000;
+    while (Date.now() < deadline) {
+      await new Promise((r) => setTimeout(r, 2000));
+      try {
+        const res = await fetch(`/api/auth/web-login/check?token=${encodeURIComponent(token)}`);
+        const d = await res.json();
+        if (d.expired || d.used || d.missing) {
+          setError("Login link expired — try again.");
+          setTgLoading(false);
+          setTgPending(null);
+          return;
+        }
+        if (d.ready && d.magic_token_hash) {
+          const { error: verifyErr } = await supa.auth.verifyOtp({
+            type: "magiclink",
+            token_hash: d.magic_token_hash,
+          });
+          if (verifyErr) {
+            setError(verifyErr.message);
+            setTgLoading(false);
+            setTgPending(null);
+            return;
+          }
+          router.push(searchParams.get("next") || "/profile");
+          return;
+        }
+      } catch {
+        // ignore transient network errors, keep polling
+      }
+    }
+    setError("Timed out. Try again.");
+    setTgLoading(false);
+    setTgPending(null);
   }
 
   useEffect(() => {
@@ -140,9 +201,40 @@ function LoginContent() {
                   )}
                 </button>
 
-                <div>
-                  <TelegramLoginButton onError={(m) => setError(m)} />
-                </div>
+                <button
+                  type="button"
+                  onClick={handleTelegram}
+                  disabled={tgLoading || loading || googleLoading}
+                  className="w-full flex items-center justify-center gap-3 px-6 py-3 rounded-xl bg-[#229ED9] text-white text-sm font-bold transition hover:bg-[#1e8cc3] disabled:opacity-60"
+                >
+                  {tgLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      {tgPending ? "Waiting for Telegram…" : "Opening Telegram…"}
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 fill-white" />
+                      Continue with Telegram
+                    </>
+                  )}
+                </button>
+
+                {tgPending && (
+                  <div className="px-4 py-3 rounded-xl bg-sky-50 border border-sky-100 text-xs text-sky-900 space-y-2">
+                    <p className="font-semibold">Telegram opened in a new tab.</p>
+                    <p>Tap <b>Start</b> in the bot chat — this page will log you in automatically. No phone number needed.</p>
+                    <p className="pt-1">
+                      Didn&apos;t open?{" "}
+                      <a href={tgPending.tgUrl} target="_blank" rel="noopener noreferrer" className="underline font-bold">Click here</a>.
+                    </p>
+                    <p className="pt-1 text-sky-700">
+                      Prefer the <b>mini app</b>? Open{" "}
+                      <a href="https://t.me/Devidends_Bot/app" target="_blank" rel="noopener noreferrer" className="underline font-bold">t.me/Devidends_Bot/app</a>{" "}
+                      — same account, stays inside Telegram.
+                    </p>
+                  </div>
+                )}
 
                 <div className="relative py-2">
                   <div className="absolute inset-0 flex items-center">

@@ -361,6 +361,145 @@ async function handleReferredStart(bot: TelegramBot, msg: Message, refToken: str
 }
 
 // ---------------------------------------------------------------------------
+// Web login handler — user tapped "Log in with Telegram" on devidends.net/login
+// Flow: site POSTs to /api/auth/web-login/request, gets a token, opens
+//       t.me/Devidends_Bot?start=weblogin_<token>. We resolve their canonical
+//       auth user, stash a magic-link token_hash on login_tokens, and tell
+//       them to switch back to the browser. Site polls and verifies.
+// ---------------------------------------------------------------------------
+
+async function handleWebLoginStart(bot: TelegramBot, msg: Message, loginToken: string) {
+  const chatId = msg.chat.id;
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    const { data: tokenRow } = await sb
+      .from("login_tokens")
+      .select("token, expires_at, used_at, magic_token_hash")
+      .eq("token", loginToken)
+      .maybeSingle();
+
+    if (!tokenRow) {
+      await bot.sendMessage(chatId, "This login link is invalid or already used. Head back to devidends.net/login and try again.");
+      return;
+    }
+    if (tokenRow.used_at || new Date(tokenRow.expires_at) < new Date()) {
+      await bot.sendMessage(chatId, "This login link has expired. Head back to devidends.net/login and generate a fresh one.");
+      return;
+    }
+    if (tokenRow.magic_token_hash) {
+      // Already resolved — user tapped the deep link twice
+      await bot.sendMessage(chatId, "You're already logged in on the web. Switch back to the browser tab.");
+      return;
+    }
+
+    const telegramId = String(msg.from?.id || chatId);
+    const telegramUsername = msg.from?.username || null;
+    const firstName = msg.from?.first_name || "";
+    const lastName = msg.from?.last_name || "";
+    const fullName = [firstName, lastName].filter(Boolean).join(" ") || "there";
+
+    // Resolve to a canonical auth user — same policy as /api/auth/telegram-login.
+    const { data: existingProfile } = await sb
+      .from("profiles")
+      .select("id, user_id, email, name, telegram_username")
+      .eq("telegram_id", telegramId)
+      .maybeSingle();
+
+    // Capture tg_username onto the profile if missing (best-effort).
+    if (existingProfile && telegramUsername && existingProfile.telegram_username !== telegramUsername) {
+      await sb
+        .from("profiles")
+        .update({ telegram_username: telegramUsername })
+        .eq("id", existingProfile.id);
+    }
+
+    const { data: list } = await sb.auth.admin.listUsers({ perPage: 1000 });
+    let authUserId: string;
+    let resolvedEmail: string;
+
+    const canonicalUser = existingProfile?.user_id
+      ? list?.users?.find((u: any) => u.id === existingProfile.user_id)
+      : null;
+
+    if (canonicalUser) {
+      authUserId = canonicalUser.id;
+      resolvedEmail = canonicalUser.email || `tg_${telegramId}@users.devidends.app`;
+    } else {
+      // No canonical user yet — create / reuse the synthetic one
+      const syntheticEmail = `tg_${telegramId}@users.devidends.app`;
+      const existing = list?.users?.find((u: any) => u.email === syntheticEmail);
+      if (existing) {
+        authUserId = existing.id;
+      } else {
+        const { data: created, error } = await sb.auth.admin.createUser({
+          email: syntheticEmail,
+          email_confirm: true,
+          user_metadata: {
+            telegram_id: telegramId,
+            telegram_username: telegramUsername,
+            name: fullName,
+          },
+        });
+        if (error || !created?.user) {
+          await bot.sendMessage(chatId, "Something went wrong creating your web session. Try again from devidends.net/login.");
+          console.error("[tg weblogin] createUser error:", error);
+          return;
+        }
+        authUserId = created.user.id;
+      }
+      resolvedEmail = syntheticEmail;
+
+      // Link the profile if we have one
+      if (existingProfile && !existingProfile.user_id) {
+        await sb.from("profiles").update({ user_id: authUserId }).eq("id", existingProfile.id);
+      }
+    }
+
+    // Mint the magic-link token_hash the client will verify
+    const { data: linkData, error: linkErr } = await sb.auth.admin.generateLink({
+      type: "magiclink",
+      email: resolvedEmail,
+    });
+    if (linkErr || !linkData?.properties?.hashed_token) {
+      await bot.sendMessage(chatId, "Couldn't generate your session. Try again in a minute.");
+      console.error("[tg weblogin] generateLink error:", linkErr);
+      return;
+    }
+
+    // Stash on the token row — client polling will pick it up
+    await sb
+      .from("login_tokens")
+      .update({
+        telegram_id: telegramId,
+        telegram_username: telegramUsername,
+        user_id: authUserId,
+        email: resolvedEmail,
+        magic_token_hash: linkData.properties.hashed_token,
+      })
+      .eq("token", loginToken);
+
+    const short = firstName || "friend";
+    const lines = [
+      `<b>✅ Signed in, ${escHtml(short)}.</b>`,
+      ``,
+      `Switch back to the browser tab — it'll load your profile in a second.`,
+      ``,
+      `<i>Prefer Telegram? The mini app is right here:</i>`,
+      `https://t.me/Devidends_Bot/app`,
+    ];
+    await bot.sendMessage(chatId, lines.join("\n"), { parse_mode: "HTML", disable_web_page_preview: true });
+  } catch (err) {
+    console.error("[telegram] handleWebLoginStart error:", err);
+    try { await bot.sendMessage(chatId, "Something went wrong. Head back to devidends.net/login and try again."); } catch {}
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Claim handler — expert clicks t.me/Devidends_Bot?start=claim_XXXXXXXX
 // ---------------------------------------------------------------------------
 
@@ -1696,6 +1835,8 @@ export async function handleUpdate(
       const payload = text.replace(/^\/start\s*/, "").trim();
       if (payload.startsWith("claim_")) {
         await handleClaimStart(bot, msg, payload.slice(6));
+      } else if (payload.startsWith("weblogin_")) {
+        await handleWebLoginStart(bot, msg, payload.slice(9));
       } else if (payload.startsWith("ref_")) {
         // Someone tapped a Co-Creator's referral link. Look up the referrer
         // and personalize the onboarding so the new user feels invited.
