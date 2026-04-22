@@ -186,18 +186,47 @@ export default function AdminIngestPage() {
   const [filterStatus, setFilterStatus] = useState<"all" | "claimed" | "pending">("all");
   const [filterSource, setFilterSource] = useState<"all" | "admin_ingest" | "telegram" | "web">("all");
 
+  // Build a single searchable blob per profile — used by the text search
+  // below. Covers everything a reasonable admin search would hit: name,
+  // headline, sectors, skills, qualifications, recommended_by, tags,
+  // nationality, countries, AND the raw CV text (so "livestock",
+  // "GIZ", "UNICEF", "M&E", "Jimma", etc. all find the person).
+  function searchBlob(p: IngestedProfile): string {
+    const cv = (p as any).cv_structured_data || {};
+    const emp = Array.isArray(cv.employment) ? cv.employment : [];
+    const edu = Array.isArray(cv.education) ? cv.education : [];
+    return [
+      p.name, p.headline,
+      ...(p.sectors || []),
+      ...((p as any).skills || []),
+      ...((p as any).countries || []),
+      (p as any).qualifications,
+      p.recommended_by,
+      ...(p.tags || []),
+      p.nationality,
+      (p as any).city,
+      (p as any).email,
+      (p as any).profile_type,
+      (p as any).education_level,
+      (p as any).cv_text, // raw CV text — catches anything in descriptions
+      cv.professional_summary,
+      cv.key_qualifications,
+      ...emp.map((e: any) => [e.employer, e.position, e.country, e.description_of_duties].filter(Boolean).join(" ")),
+      ...edu.map((e: any) => [e.degree, e.field_of_study, e.institution, e.country].filter(Boolean).join(" ")),
+    ].filter(Boolean).join(" ").toLowerCase();
+  }
+
   const filtered = profiles.filter(p => {
     if (filterStatus === "claimed" && !p.is_claimed) return false;
     if (filterStatus === "pending" && p.is_claimed) return false;
     if (filterSource !== "all" && (p as any).source !== filterSource) return false;
     if (search) {
-      const q = search.toLowerCase();
-      return (p.name || "").toLowerCase().includes(q) ||
-        (p.headline || "").toLowerCase().includes(q) ||
-        (p.sectors || []).some(s => s.toLowerCase().includes(q)) ||
-        (p.recommended_by || "").toLowerCase().includes(q) ||
-        (p.tags || []).some(t => t.toLowerCase().includes(q)) ||
-        (p.nationality || "").toLowerCase().includes(q);
+      const q = search.toLowerCase().trim();
+      // Multi-word AND search: "livestock ethiopia" matches profiles
+      // with BOTH words somewhere in the blob.
+      const terms = q.split(/\s+/).filter(Boolean);
+      const blob = searchBlob(p);
+      return terms.every((t) => blob.includes(t));
     }
     return true;
   });
