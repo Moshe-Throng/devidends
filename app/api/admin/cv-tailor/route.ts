@@ -5,7 +5,7 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { isAdmin } from "@/lib/admin";
 
-export const maxDuration = 120;
+export const maxDuration = 300;
 
 /**
  * POST /api/admin/cv-tailor
@@ -55,9 +55,7 @@ async function requireAdmin() {
   return { ok: true, user };
 }
 
-const SYSTEM_PROMPT = `You are tailoring a development consultant's CV against a specific Terms of Reference (ToR) for a donor-funded bid. Your output will be pasted directly into the candidate's CV before submission to a client.
-
-SEMANTIC PRESERVATION is the most important rule. Violate this and the candidate gets disqualified or misrepresents themselves.
+const VOICE_AND_PRESERVATION_RULES = `SEMANTIC PRESERVATION is the most important rule. Violate this and the candidate gets disqualified or misrepresents themselves.
 
 Never upgrade a role. Never claim responsibility the candidate did not have.
 - If the original says "supported", "assisted", "contributed to", "participated in", do not write "led", "managed", "directed", "headed".
@@ -65,15 +63,7 @@ Never upgrade a role. Never claim responsibility the candidate did not have.
 - If the position title is "Consultant", "Specialist", "Advisor", "Expert", "Officer" under someone else, do not upgrade to "Lead", "Manager", "Director".
 - Keep dates, employers, project names, donors, clients exactly as written. Do not change or invent them.
 - Do not invent skills, certifications, languages, qualifications, clients, budgets, beneficiary numbers, or percentages. If a number is in the source, you can keep it. If it is not, do not make one up.
-- If the ToR asks for experience the candidate lacks evidence for in the source CV, do NOT invent it. Instead add a clarifying_question or enhancement_ask.
-
-WHAT YOU MAY DO:
-- Rephrase descriptions to surface keywords from the ToR that the candidate actually has evidence for.
-- Promote bullets that match ToR language to the top of each experience's description.
-- Demote or cut bullets that are irrelevant to this ToR (but do not delete an entire experience).
-- Normalize donor acronyms (e.g. "WBG" -> "World Bank Group") if the source supports it.
-- Rewrite the professional summary and key qualifications to lead with ToR alignment, using only evidence from the candidate's own CV.
-- Write a one-sentence narrative hook specific to this ToR.
+- If the ToR asks for experience the candidate lacks evidence for in the source CV, do NOT invent it. Instead flag it in a clarifying_question.
 
 VOICE RULES. Read the candidate's own CV text first and match their voice. Do NOT introduce:
 - Em dashes. Use commas, periods, or parentheses.
@@ -85,7 +75,30 @@ VOICE RULES. Read the candidate's own CV text first and match their voice. Do NO
 - Rule of three forced triads.
 - Chatbot pleasantries.
 
-Write like a consultant writing their own CV: short direct sentences, specific project names, specific institutions, specific years. First person where the candidate uses it, third-person-professional where they don't. Concrete and dry.
+Write like a consultant writing their own CV: short direct sentences, specific project names, specific institutions, specific years. First person where the candidate uses it, third-person-professional where they don't. Concrete and dry.`;
+
+const SUMMARY_SYSTEM_PROMPT = `You are tailoring the summary-level sections of a development consultant's CV against a specific Terms of Reference (ToR).
+
+${VOICE_AND_PRESERVATION_RULES}
+
+CLARIFYING QUESTIONS: list 3-7 specific questions you want the candidate to confirm (e.g. "Confirm the beneficiary count on the Jobs Compact programme was 100,000", "Was your role on the X assignment team leader or technical advisor?"). Be specific to this CV and this ToR.
+
+ENHANCEMENT ASKS: list 3-5 short requests for additional material that would strengthen this bid. Only ask for material that would help the ToR fit.
+
+Output strictly as JSON (no markdown fences):
+
+{
+  "narrative_hook": "one sentence",
+  "professional_summary_tailored": "2-4 sentences or null if the source has no summary",
+  "key_qualifications": ["bullet 1", "bullet 2", ...],
+  "clarifying_questions": ["..."],
+  "enhancement_asks": ["..."],
+  "voice_notes": "1-2 sentences"
+}`;
+
+const EXPERIENCES_SYSTEM_PROMPT = `You are rewriting the employment/assignment descriptions of a development consultant's CV against a specific Terms of Reference (ToR).
+
+${VOICE_AND_PRESERVATION_RULES}
 
 FOR EACH experience row, determine the candidate's role_signal:
 - "lead" only if they are explicitly named as TL/lead/manager/director, OR no one else is named as more senior
@@ -95,31 +108,26 @@ FOR EACH experience row, determine the candidate's role_signal:
 
 Use this signal to pick verbs: lead -> "led/managed/directed"; support -> "supported/advised/contributed to"; contributor -> "worked on/contributed to"; unclear -> "worked on".
 
-CLARIFYING QUESTIONS: list 3-7 specific questions you want the candidate to confirm (e.g. "Confirm the beneficiary count on the Jobs Compact programme was 100,000", "Was your role on the X assignment team leader or technical advisor?"). Be specific to this CV and this ToR.
+WHAT YOU MAY DO per experience:
+- Rephrase descriptions to surface keywords from the ToR that the candidate actually has evidence for.
+- Promote bullets that match ToR language to the top of each experience's description.
+- Demote or cut bullets that are irrelevant to this ToR (but do not delete an entire experience).
 
-ENHANCEMENT ASKS: list 3-5 short requests for additional material that would strengthen this bid (e.g. "Two sentences on your engagement with the Ministry of Women and Social Affairs if any", "Examples of OSH programmes you have worked on"). Only ask for material that would help the ToR fit.
-
-Output strictly as JSON (no markdown fences, no preamble, no trailing text). Do not include the experiences array index markers inside description text. Keep the schema exactly:
+Output strictly as JSON with the "experiences" array, one entry per input employment entry, preserving idx:
 
 {
-  "narrative_hook": "one sentence",
-  "professional_summary_tailored": "2-4 sentences or null if the source has no summary",
-  "key_qualifications": ["bullet 1", "bullet 2", ...],
   "experiences": [
     {
       "idx": 0,
-      "employer": "...",
-      "dates": "...",
-      "position": "...",
-      "description_original": "exactly what was in the source, for admin diff comparison",
+      "employer": "exactly from source",
+      "dates": "exactly from source",
+      "position": "exactly from source",
+      "description_original": "the source description unchanged, for admin diff comparison",
       "description_tailored": "rewritten description with ToR alignment, preserving role signal",
-      "change_summary": "one sentence describing what changed and why",
+      "change_summary": "one sentence on what changed and why",
       "role_signal": "lead|support|contributor|unclear"
     }
-  ],
-  "clarifying_questions": ["..."],
-  "enhancement_asks": ["..."],
-  "voice_notes": "1-2 sentences"
+  ]
 }`;
 
 export async function POST(req: NextRequest) {
@@ -182,7 +190,7 @@ export async function POST(req: NextRequest) {
 
     const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-    const userContent = `TARGET ROLE: ${target_role || "(not specified, infer from ToR)"}
+    const commonContext = `TARGET ROLE: ${target_role || "(not specified, infer from ToR)"}
 
 === TERMS OF REFERENCE (ToR) ===
 
@@ -194,49 +202,84 @@ ${cvContext}
 
 === CANDIDATE CV, RAW TEXT (for voice matching and cross-check) ===
 
-${cvText}
+${cvText}`;
 
-Produce the tailored JSON output. Preserve every employment entry by idx. Do NOT upgrade roles. If the source has a separate Team Leader or TTL, the candidate is support on that assignment.`;
-
-    const resp = await client.messages.create({
-      model: "claude-sonnet-4-6",
-      max_tokens: 16000,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userContent }],
-    });
-
-    const textBlock = resp.content.find((b: any) => b.type === "text") as any;
-    const raw = textBlock?.text || "";
-
-    let jsonStr = raw.trim();
-    const fence = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (fence) jsonStr = fence[1].trim();
-    const firstBrace = jsonStr.indexOf("{");
-    const lastBrace = jsonStr.lastIndexOf("}");
-    if (firstBrace >= 0 && lastBrace > firstBrace) {
-      jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
+    function extractJson(raw: string): any {
+      let s = raw.trim();
+      const fence = s.match(/```(?:json)?\s*([\s\S]*?)```/);
+      if (fence) s = fence[1].trim();
+      const first = s.indexOf("{");
+      const last = s.lastIndexOf("}");
+      if (first >= 0 && last > first) s = s.slice(first, last + 1);
+      return JSON.parse(s);
     }
 
-    let parsed: any;
-    try {
-      parsed = JSON.parse(jsonStr);
-    } catch {
+    // Run both calls IN PARALLEL. Use Haiku for both for speed. This turns
+    // a 120+ second sequential Sonnet call (that was timing out) into two
+    // ~20-30 second parallel Haiku calls (total wall time ~30s).
+    const summaryCallPromise = client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 3000,
+      system: SUMMARY_SYSTEM_PROMPT,
+      messages: [{
+        role: "user",
+        content: commonContext + `
+
+Produce the JSON for narrative_hook, professional_summary_tailored, key_qualifications, clarifying_questions, enhancement_asks, voice_notes.`,
+      }],
+    });
+
+    const expCallPromise = client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 12000,
+      system: EXPERIENCES_SYSTEM_PROMPT,
+      messages: [{
+        role: "user",
+        content: commonContext + `
+
+Produce the JSON for the experiences array. There are ${employmentIndexed.length} employment entries. Every one must appear in your output, preserved by idx. Do NOT upgrade roles. If the entry lists a separate Team Leader or TTL, the candidate is support on that assignment, not lead.`,
+      }],
+    });
+
+    const [summaryResp, expResp] = await Promise.all([summaryCallPromise, expCallPromise]);
+
+    const summaryText = (summaryResp.content.find((b: any) => b.type === "text") as any)?.text || "";
+    const expText = (expResp.content.find((b: any) => b.type === "text") as any)?.text || "";
+
+    let summary: any = null;
+    let experiences: any = null;
+    try { summary = extractJson(summaryText); } catch {
       return NextResponse.json({
-        error: "Model returned non-JSON. Try again.",
-        raw: raw.slice(0, 2000),
+        error: "Summary call returned non-JSON. Retry.",
+        raw_summary: summaryText.slice(0, 1500),
+      }, { status: 500 });
+    }
+    try { experiences = extractJson(expText); } catch {
+      return NextResponse.json({
+        error: "Experiences call returned non-JSON. Retry.",
+        raw_experiences: expText.slice(0, 1500),
       }, { status: 500 });
     }
 
-    // Validate: ensure every original employment idx is present in output
-    const returnedIdxs = new Set((parsed.experiences || []).map((e: any) => e.idx));
+    const merged: any = {
+      narrative_hook: summary.narrative_hook,
+      professional_summary_tailored: summary.professional_summary_tailored,
+      key_qualifications: summary.key_qualifications || [],
+      experiences: experiences.experiences || [],
+      clarifying_questions: summary.clarifying_questions || [],
+      enhancement_asks: summary.enhancement_asks || [],
+      voice_notes: summary.voice_notes,
+    };
+
+    const returnedIdxs = new Set((merged.experiences || []).map((e: any) => e.idx));
     const missing = employmentIndexed.filter((e: any) => !returnedIdxs.has(e.idx)).map((e: any) => e.idx);
     if (missing.length > 0) {
-      parsed._warnings = [`Missing experience indices: ${missing.join(", ")}. Re-run if critical.`];
+      merged._warnings = [`Missing experience indices: ${missing.join(", ")}. Re-run if critical.`];
     }
 
     return NextResponse.json({
       profile_name: profile.name,
-      ...parsed,
+      ...merged,
     });
   } catch (err: any) {
     console.error("[cv-tailor]", err);

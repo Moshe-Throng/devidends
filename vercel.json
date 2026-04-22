@@ -15,6 +15,12 @@
     },
     "app/api/profile/extract/route.ts": {
       "maxDuration": 60
+    },
+    "app/api/admin/cv-tailor/route.ts": {
+      "maxDuration": 300
+    },
+    "app/api/admin/match/route.ts": {
+      "maxDuration": 60
     }
   }
 }
