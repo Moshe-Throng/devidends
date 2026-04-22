@@ -884,6 +884,7 @@ function ExpertMatcher() {
   const [reqs, setReqs] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [collapsed, setCollapsed] = useState(true);
+  const [minScore, setMinScore] = useState(40);
 
   async function handleMatch() {
     if (matching || torText.length < 50) return;
@@ -895,7 +896,7 @@ function ExpertMatcher() {
       const res = await fetch("/api/admin/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tor_text: torText, max_results: 15 }),
+        body: JSON.stringify({ tor_text: torText, max_results: 15, min_score: minScore }),
       });
       const data = await res.json();
       if (!data.success) throw new Error(data.error || "Matching failed");
@@ -934,7 +935,7 @@ function ExpertMatcher() {
             placeholder="Paste Terms of Reference, Job Description, or key requirements here...&#10;&#10;Example: Looking for a Senior WASH Specialist with 10+ years of GIZ/World Bank experience in Ethiopia, Masters in Public Health, fluent in English and Amharic..."
             className="w-full h-32 px-3 py-2.5 rounded-xl border border-dark-200 text-sm focus:border-indigo-400 focus:outline-none resize-y placeholder:text-dark-300"
           />
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <button
               onClick={handleMatch}
               disabled={matching || torText.length < 50}
@@ -943,6 +944,20 @@ function ExpertMatcher() {
               {matching ? <Loader2 className="w-4 h-4 animate-spin" /> : <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>}
               {matching ? "Matching..." : "Find Experts"}
             </button>
+            <div className="flex items-center gap-2 text-xs text-dark-600">
+              <label className="font-semibold">Min score:</label>
+              <input
+                type="range"
+                min={20}
+                max={80}
+                step={5}
+                value={minScore}
+                onChange={e => setMinScore(parseInt(e.target.value, 10))}
+                className="w-32"
+              />
+              <span className="font-bold tabular-nums w-8">{minScore}</span>
+              <span className="text-dark-400">/ 100</span>
+            </div>
             {torText.length > 0 && torText.length < 50 && (
               <span className="text-xs text-dark-400">Need at least 50 characters</span>
             )}
@@ -988,11 +1003,11 @@ function ExpertMatcher() {
                       title={
                         r.match_breakdown
                           ? `Keyword score (out of 100):\n` +
-                            `  sector: ${r.match_breakdown.sector}/20\n` +
-                            `  skills+terms: ${r.match_breakdown.skills_and_terms}/35\n` +
+                            `  sector: ${r.match_breakdown.sector}/15\n` +
+                            `  skills+terms: ${r.match_breakdown.skills_and_terms}/50\n` +
                             `  country: ${r.match_breakdown.country}/10\n` +
-                            `  years: ${r.match_breakdown.years}/15\n` +
-                            `  language: ${r.match_breakdown.language}/10\n` +
+                            `  years: ${r.match_breakdown.years}/10\n` +
+                            `  language: ${r.match_breakdown.language}/5\n` +
                             `  donor: ${r.match_breakdown.donor}/5\n` +
                             `  seniority: ${r.match_breakdown.seniority}/5` +
                             (r.ai_fit_score ? `\n\nAI fit score: ${r.ai_fit_score}/100` : "")

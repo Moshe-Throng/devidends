@@ -22,7 +22,7 @@ function getAdmin() {
  */
 export async function POST(req: NextRequest) {
   try {
-    const { tor_text, max_results = 10 } = await req.json();
+    const { tor_text, max_results = 10, min_score = 40 } = await req.json();
 
     if (!tor_text || tor_text.length < 50) {
       return NextResponse.json({ error: "ToR text too short (min 50 chars)" }, { status: 400 });
@@ -63,9 +63,11 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       return NextResponse.json({ error: "Failed to fetch profiles" }, { status: 500 });
     }
 
-    // Step 2b: Score each profile against the FULL CV blob (not just structured fields).
-    // Score is normalized to 0-100: sector(20) + skills+keyterms-in-blob(35) +
-    //   country(10) + years(15) + language(10) + donor(5) + seniority(5)
+    // Step 2b: Score each profile against the CV.
+    // ZONED scoring: hits in headline/summary count 3x more than hits in cv_text.
+    // This gives the signal differentiation the previous flat scoring was missing.
+    // Normalized to 0-100: sector(15) + terms-zoned(50) + country(10) + years(10)
+    //   + language(5) + donor(5) + seniority(5). Total = 100.
     const reqSectors = (reqs.sectors || []).map((s: string) => s.toLowerCase());
     const reqSkills = (reqs.required_skills || []).map((s: string) => s.toLowerCase());
     const reqCountries = (reqs.required_countries || []).map((s: string) => s.toLowerCase());
@@ -73,24 +75,29 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
     const reqYears = reqs.required_experience_years || 0;
     const keyTerms = (reqs.key_terms || []).map((t: string) => t.toLowerCase());
 
-    function fullBlob(p: any): string {
+    // Two zones: "main" = high-signal (headline/title/summary/key_quals) and
+    // "body" = everything else (cv_text, employment descriptions, education).
+    // A hit in the main zone is much stronger evidence than a stray mention
+    // in a long CV body.
+    function mainBlob(p: any): string {
+      const cv = p.cv_structured_data || {};
+      return [
+        p.headline,
+        p.qualifications,
+        cv.professional_summary,
+        cv.key_qualifications,
+        ...(p.sectors || []),
+        ...(p.skills || []),
+        ...(p.tags || []),
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function bodyBlob(p: any): string {
       const cv = p.cv_structured_data || {};
       const emp = Array.isArray(cv.employment) ? cv.employment : [];
       const edu = Array.isArray(cv.education) ? cv.education : [];
       return [
-        p.name,
-        p.headline,
-        p.qualifications,
-        p.nationality,
-        ...(p.sectors || []),
-        ...(p.skills || []),
-        ...(p.countries || []),
-        ...(p.donors || []),
-        ...(p.languages || []),
-        ...(p.tags || []),
         p.cv_text,
-        cv.professional_summary,
-        cv.key_qualifications,
         ...emp.map((e: any) => [e.employer, e.position, e.country, e.description_of_duties].filter(Boolean).join(" ")),
         ...edu.map((e: any) => [e.degree, e.field_of_study, e.institution].filter(Boolean).join(" ")),
       ].filter(Boolean).join(" ").toLowerCase();
@@ -103,54 +110,75 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
     }
 
     const scored = allProfiles.map((p: any) => {
-      const blob = fullBlob(p);
+      const main = mainBlob(p);
+      const body = bodyBlob(p);
       const pSectors = (p.sectors || []).map((s: string) => s.toLowerCase());
       const pCountries = (p.countries || []).map((s: string) => s.toLowerCase());
       const pLangs = (p.languages || []).map((s: string) => s.toLowerCase());
       const pDonors = (p.donors || []).map((s: string) => s.toLowerCase());
 
-      // Sector match (0-20) — structured sectors first, then fallback to blob
-      const sectorStructOverlap = reqSectors.filter((s: string) => pSectors.some((ps: string) => ps.includes(s) || s.includes(ps))).length;
-      const sectorBlobHits = reqSectors.filter((s: string) => blob.includes(s)).length;
+      // Sector match (0-15) — structured sectors first, then fallback to main+body
+      const sectorStructOverlap = reqSectors.filter((s: string) =>
+        pSectors.some((ps: string) => ps.includes(s) || s.includes(ps))
+      ).length;
+      const sectorBlobHits = reqSectors.filter((s: string) => main.includes(s) || body.includes(s)).length;
       const effectiveSector = Math.max(sectorStructOverlap, sectorBlobHits);
-      const sectorScore = Math.min(20, (effectiveSector / Math.max(reqSectors.length, 1)) * 20);
+      const sectorScore = Math.min(15, (effectiveSector / Math.max(reqSectors.length, 1)) * 15);
 
-      // Combined skills + key terms searched in FULL blob (0-35) — this is the
-      // big change vs previous version, where a Zewdu-style climate CV wouldn't
-      // match if his sectors array was sparse.
+      // ZONED terms match (0-50) — the big differentiator.
+      // Each term scored independently. Hits in main zone weighted 3x.
+      // This means "climate risk" in a headline counts 3x more than the same
+      // phrase buried in a 20-page CV body.
       const combinedTerms = Array.from(new Set([...reqSkills, ...keyTerms]));
-      let termHitTotal = 0;
-      let termsHit = 0;
+      let termCoveragePoints = 0;  // how many DIFFERENT terms hit (max 25)
+      let termDensityPoints = 0;   // how many TOTAL occurrences (weighted, max 25)
       for (const t of combinedTerms) {
-        const n = countMatches(blob, t);
-        if (n > 0) { termsHit++; termHitTotal += Math.min(n, 5); }
+        const nMain = countMatches(main, t);
+        const nBody = countMatches(body, t);
+        if (nMain > 0 || nBody > 0) {
+          // Coverage: per distinct term matched. Main-zone hits get bigger coverage weight.
+          termCoveragePoints += nMain > 0 ? 1.5 : 0.6;
+          // Density: weighted total matches, capped per term to prevent stuffing.
+          const weightedDensity = Math.min(nMain, 5) * 1.0 + Math.min(nBody, 8) * 0.25;
+          termDensityPoints += weightedDensity;
+        }
       }
-      const termScore = combinedTerms.length > 0
-        ? Math.min(35, (termsHit / combinedTerms.length) * 25 + Math.min(termHitTotal, 20) * 0.5)
-        : 0;
+      // Normalize coverage: cap at 25. If N terms and full main coverage, termCoveragePoints = N*1.5
+      const maxCoverage = Math.max(combinedTerms.length * 1.5, 1);
+      const coverageScore = Math.min(25, (termCoveragePoints / maxCoverage) * 25);
+      const densityScore = Math.min(25, termDensityPoints * 0.8);
+      const termScore = coverageScore + densityScore;
 
       // Country match (0-10)
-      const countryOverlap = reqCountries.filter((c: string) => pCountries.some((pc: string) => pc.includes(c)) || blob.includes(c)).length;
-      const countryScore = reqCountries.length > 0 ? Math.min(10, (countryOverlap / reqCountries.length) * 10) : 5;
+      const countryOverlap = reqCountries.filter((c: string) =>
+        pCountries.some((pc: string) => pc.includes(c)) || main.includes(c) || body.includes(c)
+      ).length;
+      const countryScore = reqCountries.length > 0
+        ? Math.min(10, (countryOverlap / reqCountries.length) * 10)
+        : 5;
 
-      // Years match (0-15)
+      // Years match (0-10)
       let yearsScore = 0;
       if (p.years_of_experience && reqYears > 0) {
         const ratio = p.years_of_experience / reqYears;
-        yearsScore = ratio >= 1 ? 15 : Math.max(0, ratio * 15);
+        yearsScore = ratio >= 1 ? 10 : Math.max(0, ratio * 10);
       } else if (p.years_of_experience && p.years_of_experience >= 10) {
-        yearsScore = 10;
+        yearsScore = 7;
       }
 
-      // Language match (0-10)
-      const langOverlap = reqLangs.filter((l: string) => pLangs.some((pl: string) => pl.includes(l)) || blob.includes(l)).length;
-      const langScore = reqLangs.length > 0 ? Math.min(10, (langOverlap / reqLangs.length) * 10) : 5;
+      // Language match (0-5)
+      const langOverlap = reqLangs.filter((l: string) =>
+        pLangs.some((pl: string) => pl.includes(l)) || main.includes(l) || body.includes(l)
+      ).length;
+      const langScore = reqLangs.length > 0
+        ? Math.min(5, (langOverlap / reqLangs.length) * 5)
+        : 3;
 
       // Donor match bonus (0-5)
       let donorScore = 0;
       if (reqs.donor) {
         const dr = reqs.donor.toLowerCase();
-        if (pDonors.some((d: string) => d.includes(dr)) || blob.includes(dr)) donorScore = 5;
+        if (pDonors.some((d: string) => d.includes(dr)) || main.includes(dr) || body.includes(dr)) donorScore = 5;
       }
 
       // Seniority boost (0-5)
@@ -176,9 +204,12 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
       };
     });
 
-    // Sort by match score, take top N
+    // Sort by match score
     scored.sort((a: any, b: any) => b.match_score - a.match_score);
-    const topCandidates = scored.slice(0, max_results);
+
+    // Apply cutoff: drop anyone under min_score (default 40).
+    const aboveCutoff = scored.filter((c: any) => c.match_score >= min_score);
+    const topCandidates = aboveCutoff.slice(0, max_results);
 
     // Step 3: AI-rank top candidates (optional, only if we have enough)
     let aiRanked = topCandidates;
@@ -193,9 +224,19 @@ Use standard sectors: Humanitarian Aid, Global Health, Finance & Banking, Projec
 
         const rankMsg = await anthropic.messages.create({
           model: "claude-haiku-4-5-20251001",
-          max_tokens: 400,
-          system: `You rank candidates against a job/ToR. Return ONLY a JSON array of objects: [{"index":0,"fit_score":85,"reason":"2-sentence why"}]. Index is 0-based matching the candidate list. fit_score is 0-100.`,
-          messages: [{ role: "user", content: `ToR: ${tor_text.slice(0, 3000)}\n\nCandidates:\n${candidateSummaries}` }],
+          max_tokens: 1000,
+          system: `You rank candidates against a specific ToR. Use the FULL 0-100 range. Do not compress scores into the 60-70 band. Calibrate:
+
+- 90-100: textbook fit. Candidate's primary specialization matches the ToR's primary requirement. Would be an obvious first-pick in real evaluation.
+- 75-89: strong fit with minor gaps (e.g. missing one secondary qualification).
+- 60-74: adjacent expertise. Candidate has related experience but not the core specialization.
+- 40-59: tangential. Some relevant work but would not be a credible lead for this role.
+- 0-39: irrelevant or wrong field.
+
+Be generous at the top end for genuine specialists. Be strict with adjacent candidates. The goal is to help the admin SEE differentiation, not rank everyone in the same band.
+
+Return ONLY a JSON array: [{"index":0,"fit_score":92,"reason":"one sentence why, cite the specific match"}]. Index is 0-based matching the candidate list order.`,
+          messages: [{ role: "user", content: `ToR:\n${tor_text.slice(0, 3000)}\n\nCandidates to rank:\n${candidateSummaries}` }],
         });
 
         const rankRaw = rankMsg.content[0].type === "text" ? rankMsg.content[0].text : "";
