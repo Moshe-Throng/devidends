@@ -147,6 +147,28 @@ export async function POST(req: NextRequest) {
     }
     if (email && typeof email === "string") patch.email = email.trim();
 
+    // Pre-create a Supabase auth user so web sign-in is one-click later.
+    // If they go to devidends.net/login and enter this email, they get a
+    // single magic-link email (no separate signup confirmation) and land
+    // straight on their synced profile. Skip if already exists.
+    if (email && typeof email === "string") {
+      try {
+        const { data: list } = await sb.auth.admin.listUsers();
+        const existing = list?.users?.find((u: any) => u.email?.toLowerCase() === email.toLowerCase());
+        if (existing) {
+          patch.user_id = existing.id;
+        } else {
+          const { data: created } = await sb.auth.admin.createUser({
+            email: email.trim(),
+            email_confirm: true, // TG initData is proof of identity — skip separate confirmation
+          });
+          if (created?.user?.id) patch.user_id = created.user.id;
+        }
+      } catch (e) {
+        console.warn("[api/claim] auth user pre-create failed:", (e as Error).message);
+      }
+    }
+
     // Claim the profile — set telegram_id, claimed_at, email
     const { error: updateErr } = await sb
       .from("profiles")
