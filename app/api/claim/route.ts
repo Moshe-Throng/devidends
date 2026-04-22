@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   const sb = getAdmin();
   const { data, error } = await sb
     .from("profiles")
-    .select("id, name, headline, sectors, cv_score, profile_type, claimed_at")
+    .select("id, name, headline, sectors, cv_score, profile_type, claimed_at, email, phone")
     .eq("claim_token", token)
     .single();
 
@@ -40,6 +40,8 @@ export async function GET(req: NextRequest) {
       sectors: data.sectors,
       cv_score: data.cv_score,
       profile_type: data.profile_type,
+      email: data.email,
+      phone: data.phone,
     },
   });
 }
@@ -50,7 +52,7 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
-    const { initData, claimToken } = await req.json();
+    const { initData, claimToken, email, channel, sectors_filter } = await req.json();
 
     if (!initData || !claimToken) {
       return NextResponse.json({ error: "initData and claimToken required" }, { status: 400 });
@@ -97,14 +99,18 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Claim the profile — set telegram_id and claimed_at
+    // Build claim patch — include email if the user set/confirmed one
+    const patch: any = {
+      telegram_id: telegramId,
+      claimed_at: new Date().toISOString(),
+      name: claimProfile.name || verified.user.first_name,
+    };
+    if (email && typeof email === "string") patch.email = email.trim();
+
+    // Claim the profile — set telegram_id, claimed_at, email
     const { error: updateErr } = await sb
       .from("profiles")
-      .update({
-        telegram_id: telegramId,
-        claimed_at: new Date().toISOString(),
-        name: claimProfile.name || verified.user.first_name,
-      })
+      .update(patch)
       .eq("id", claimProfile.id)
       .is("claimed_at", null); // Double-check: only if still unclaimed
 
@@ -112,7 +118,38 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to claim profile" }, { status: 500 });
     }
 
-    trackEvent({ event: "claim_completed", profile_id: claimProfile.id, telegram_id: telegramId, metadata: { token: claimToken } });
+    // Create/update the subscription record so they start receiving briefs
+    // immediately on the channel they picked. Unified with the web onboarding.
+    const wantTg = channel === "telegram" || channel === "both";
+    const wantEmail = (channel === "email" || channel === "both") && email;
+    if (wantTg || wantEmail) {
+      const subPatch: any = {
+        channel: wantTg && wantEmail ? "both" : wantTg ? "telegram" : "email",
+        sectors_filter: Array.isArray(sectors_filter) ? sectors_filter : [],
+        country_filter: ["Ethiopia"],
+        is_active: true,
+      };
+      if (wantTg) subPatch.telegram_id = telegramId;
+      if (wantEmail) subPatch.email = email;
+
+      // Upsert: prefer match by email if present, else telegram_id
+      let existingId: string | null = null;
+      if (email) {
+        const { data } = await sb.from("subscriptions").select("id").eq("email", email).maybeSingle();
+        existingId = data?.id || null;
+      }
+      if (!existingId) {
+        const { data } = await sb.from("subscriptions").select("id").eq("telegram_id", telegramId).maybeSingle();
+        existingId = data?.id || null;
+      }
+      if (existingId) {
+        await sb.from("subscriptions").update(subPatch).eq("id", existingId);
+      } else {
+        await sb.from("subscriptions").insert(subPatch);
+      }
+    }
+
+    trackEvent({ event: "claim_completed", profile_id: claimProfile.id, telegram_id: telegramId, metadata: { token: claimToken, channel: channel || null } });
     return NextResponse.json({
       success: true,
       profile_id: claimProfile.id,

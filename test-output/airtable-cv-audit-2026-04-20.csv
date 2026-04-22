@@ -1,0 +1,11 @@
+airtable_id,name,email,filename,size_kb,supabase_profile_id,text_length,scanned,extract_success,confidence,name_ok,email_ok,phone_ok,summary_ok,emp_total,emp_with_dates,emp_with_desc,edu_total,langs,certs,skills,countries,red_flags
+rec0Yl9vpSEUIfzlv,"Sihine Negede",sihine.negede9@gmail.com,"Sihine - Dev CV.pdf",110,d33b6391-e060-48ef-980b-c4796c47cb05,6197,false,true,0.92,Y,Y,Y,Y,6,6,6,2,4,3,21,11,""
+rec0hZTe8FpW0YcR0,"Aklile Fantahun",?,"Aklile - Dev CV.pdf",342,,17851,false,true,0.75,Y,Y,Y,Y,13,13,11,2,2,0,34,1,""
+rec1ZlUVOcdUNsGRd,"Abebaw Belay",abebawb21@gmail.com, gcs21@live.com,"Abebaw - Dev CV.pdf",2508,,11316,false,true,0.92,Y,Y,Y,Y,3,3,3,3,2,16,27,1,""
+rec1oJzxc7zR2x0cM,"Yordanos Tekleab",woldeyordanos@gmail.com,"Yordanos - Dev CV.pdf",272,,21920,false,true,0.95,Y,Y,Y,Y,22,22,22,5,2,5,40,6,""
+rec2EZ7PFhNCpBCeH,"Tsadkan Alemayehu",tsadkanalem19@gmail.com,"Tsadkan - Dev CV (E).pdf",159,8063f44f-c958-42c4-8409-6de718bf824e,6325,false,true,0.92,Y,Y,Y,Y,7,7,7,3,3,1,29,2,""
+rec2dPVgbz0e1mDD1,"Yesu Girma",yesugirma@gmail.com,"Yesu - Dev CV.pdf",68,518130d3-f77a-4b9b-99d7-c2f6abeb3918,11040,false,true,0.92,Y,Y,Y,Y,5,5,5,2,2,6,25,1,""
+rec2dxDh5zspjwxqi,"Helen Asnake",asnakehelen@yahoo.com,"Helen - Dev CV.pdf",278,73f4ad82-6bb1-40d8-8160-ea716cbfdc0c,17045,false,true,0.92,Y,Y,Y,Y,9,9,9,3,2,1,92,4,""
+rec3ErdqEcogcuaKo,"Brook Leulseged T",brookleulseged.tadesse@sciencespo.fr,"Brook Leulseged - Dev CV.pdf",49,6ca189dc-1de7-453a-9418-fa94f56f8aec,3449,false,true,0.92,Y,Y,Y,Y,4,4,4,3,3,0,18,2,""
+rec3d8hS0gQ6IkfcD,"Bereket Girma",bereket.girma01@gmail.com,"Bereket - Dev CV (E).pdf",126,a46a60c8-5026-4d9d-bb79-5ce54541d5a4,7297,false,true,0.92,Y,Y,Y,Y,4,4,4,2,2,2,22,1,""
+rec4HHMb2ZRs1T09Y,"Benyam Simayehu",binysimayehu@gmail.com,"Benyam - Dev CV.pdf",59,6352b88e-3983-4db3-9477-13084cce3db6,1968,false,true,0.85,Y,Y,Y,Y,3,3,3,1,2,2,18,2,""

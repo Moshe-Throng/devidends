@@ -296,6 +296,57 @@ function formatOpportunity(opp: OpportunityRecord): string {
 }
 
 // ---------------------------------------------------------------------------
+// Referred start — new user lands via a Co-Creator's invite link
+//   t.me/Devidends_Bot?start=ref_<invite_token>
+// Looks up the referring CC, warm-welcomes, asks for a CV, pre-tags the
+// eventual profile with the referrer's name.
+// ---------------------------------------------------------------------------
+
+async function handleReferredStart(bot: TelegramBot, msg: Message, refToken: string) {
+  const chatId = msg.chat.id;
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+    const { data: cc } = await sb
+      .from("co_creators")
+      .select("id, name")
+      .eq("invite_token", refToken)
+      .maybeSingle();
+    const referrerName = cc?.name || null;
+
+    // Remember who referred them — used when they later upload a CV
+    if (referrerName) {
+      chatState.set(chatId, `awaiting_document:recommended_by:${referrerName}`);
+    } else {
+      chatState.set(chatId, "awaiting_document");
+    }
+
+    const firstName = referrerName ? referrerName.split(/\s+/)[0] : null;
+    const intro = firstName
+      ? `<b>Welcome — ${escHtml(firstName)} sent you. 👋</b>`
+      : `<b>Welcome to Devidends.</b>`;
+    const body = referrerName
+      ? `${escHtml(referrerName)} vouched for you. You're now in the curated Ethiopian consulting network we're quietly building — 300+ senior consultants, opportunities filtered and matched, CVs scored against donor standards.`
+      : `Ethiopia's curated consulting network — 300+ senior consultants, opportunities filtered and matched, CVs scored against donor standards.`;
+
+    const text = [
+      intro,
+      "",
+      body,
+      "",
+      "<b>Next step:</b> send me your CV as a <b>PDF</b> or <b>DOCX</b>. I'll score it and add you to the pool within 24 hours. You'll be tagged as recommended by " + (referrerName ? `<b>${escHtml(referrerName)}</b>` : "your inviter") + ".",
+      "",
+      "<i>It stays private. You control what shows up in your profile.</i>",
+    ].join("\n");
+
+    await bot.sendMessage(chatId, text, { parse_mode: "HTML" });
+  } catch (err) {
+    console.error("[telegram] handleReferredStart error:", err);
+    await handleStart(bot, msg).catch(() => {});
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Claim handler — expert clicks t.me/Devidends_Bot?start=claim_XXXXXXXX
 // ---------------------------------------------------------------------------
 
@@ -1542,6 +1593,11 @@ export async function handleUpdate(
       const payload = text.replace(/^\/start\s*/, "").trim();
       if (payload.startsWith("claim_")) {
         await handleClaimStart(bot, msg, payload.slice(6));
+      } else if (payload.startsWith("ref_")) {
+        // Someone tapped a Co-Creator's referral link. Look up the referrer
+        // and personalize the onboarding so the new user feels invited.
+        const refToken = payload.slice(4);
+        await handleReferredStart(bot, msg, refToken);
       } else if (payload === "report") {
         // User tapped "Contact our team" from companion
         chatState.set(msg.chat.id, "awaiting_report");
