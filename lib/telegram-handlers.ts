@@ -1119,12 +1119,12 @@ async function handleRecommenderPrivateCvIngest(
       const keyboard = {
         inline_keyboard: [
           [
-            { text: "👋 Light touch", callback_data: `refnotes_lvl:light:${attributionId}:${subject.id}` },
-            { text: "🤝 Know professionally", callback_data: `refnotes_lvl:professional:${attributionId}:${subject.id}` },
+            { text: "👋 Barely know them", callback_data: `refnotes_lvl:light:${attributionId}:${subject.id}` },
+            { text: "🤝 Know them", callback_data: `refnotes_lvl:professional:${attributionId}:${subject.id}` },
           ],
           [
             { text: "💼 Worked with them", callback_data: `refnotes_lvl:worked:${attributionId}:${subject.id}` },
-            { text: "⭐ Strong vouch", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` },
+            { text: "⭐ Highly recommend", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` },
           ],
           [
             { text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` },
@@ -1824,10 +1824,10 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       const [, level, attributionId, subjectProfileId] = data.split(":");
       if (!level || !attributionId || !subjectProfileId) return;
       const labels: Record<string, string> = {
-        light: "Light touch (barely know)",
-        professional: "Know professionally",
+        light: "Barely know them",
+        professional: "Know them",
         worked: "Worked with them",
-        strong: "Strong vouch",
+        strong: "Highly recommend",
       };
       const confidenceMap: Record<string, string> = {
         light: "low",
