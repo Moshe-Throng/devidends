@@ -1074,14 +1074,21 @@ async function handleRecommenderPrivateCvIngest(
         [
           `<b>Any notes on ${escHtml(subject.name)}?</b>`,
           ``,
-          `Reply to this chat with anything you want saved. Things like:`,
+          `Reply with anything you want saved. Things like:`,
           `  • strengths, standout projects, donors they've worked with`,
           `  • availability, rate expectations, sector preferences`,
           `  • specific roles you'd put them forward for`,
           ``,
-          `Reply <b>skip</b> or ignore this to move on.`,
+          `<i>Or tap Skip below.</i>`,
         ].join("\n"),
-        { parse_mode: "HTML" }
+        {
+          parse_mode: "HTML",
+          reply_markup: {
+            inline_keyboard: [[
+              { text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` },
+            ]],
+          },
+        }
       );
       // Stash state so the next free-text message in this chat gets captured as notes.
       chatState.set(chatId, `awaiting_referral_notes:${attributionId}:${subject.id}`);
@@ -1759,6 +1766,16 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
 
     // No-op (used for pagination indicator buttons)
     if (data === "noop") return;
+
+    // --- Recommender-ingest: skip the post-ingest notes prompt ---
+    if (data.startsWith("refnotes_skip:")) {
+      // Clear the awaiting_referral_notes state and acknowledge.
+      chatState.delete(chatId);
+      try {
+        await bot.sendMessage(chatId, "<i>Skipped. You're all set.</i>", { parse_mode: "HTML" });
+      } catch {}
+      return;
+    }
 
     // --- Ingest follow-up: gender pick ---
     if (data.startsWith("gen:")) {
