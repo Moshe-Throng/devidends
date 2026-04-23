@@ -948,6 +948,122 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
 }
 
 // ---------------------------------------------------------------------------
+// Private-chat CV ingest by a claimed recommender ("I'm bringing someone in")
+// Routes through handleGroupCvIngest by pre-filling a synthetic caption with
+// the recommender's canonical name, then logs an attribution row so we can
+// track who's bringing whom into the network.
+// ---------------------------------------------------------------------------
+
+async function handleRecommenderPrivateCvIngest(
+  bot: TelegramBot,
+  msg: Message,
+  sender: { id: string; name: string }
+) {
+  const chatId = msg.chat.id;
+  const doc = msg.document;
+  if (!doc) return;
+
+  // Inject a "Recommended by ..." caption if one isn't already there. The
+  // group-ingest flow reads this from msg.caption to resolve the recommender
+  // against our network.
+  const existingCaption = (msg.caption || "").trim();
+  if (!/(?:recommended|referred)(?:\s+by)?[:\s]/i.test(existingCaption)) {
+    (msg as any).caption = existingCaption
+      ? `${existingCaption}\nRecommended by ${sender.name}`
+      : `Recommended by ${sender.name}`;
+  }
+
+  // Upfront confirmation so they know what's happening. The group-ingest
+  // handler also sends "Processing..." but that lands in the same chat.
+  try {
+    await paceChat(chatId);
+    await bot.sendMessage(
+      chatId,
+      `<b>Got it.</b> Ingesting as a CV you're bringing in, tagged <i>Recommended by ${escHtml(sender.name)}</i>. Hold on ~30 seconds.\n\n<i>If this was your own CV update, tap /score and re-send.</i>`,
+      { parse_mode: "HTML" }
+    );
+  } catch {}
+
+  // Run the standard ingest pipeline. It will reply in this private chat.
+  await handleGroupCvIngest(bot, msg);
+
+  // After ingest, find the profile we just created/updated via the Telegram
+  // file_id we stashed in cv_url, then log an attribution row + send a
+  // recommender-facing summary DM.
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+    const cvUrl = `tg://${doc.file_id}`;
+    const { data: subject } = await sb
+      .from("profiles")
+      .select("id, name, claim_token, sectors, cv_score, years_of_experience, profile_type")
+      .eq("cv_url", cvUrl)
+      .maybeSingle();
+    if (!subject) return;
+
+    // De-dup: does an attribution already exist for this contributor + subject?
+    const { data: existingAttr } = await sb
+      .from("attributions")
+      .select("id")
+      .eq("contributor_profile_id", sender.id)
+      .eq("subject_profile_id", subject.id)
+      .eq("attribution_type", "referral_member")
+      .maybeSingle();
+
+    if (!existingAttr) {
+      await sb.from("attributions").insert({
+        attribution_type: "referral_member",
+        contributor_profile_id: sender.id,
+        subject_profile_id: subject.id,
+        firm_name: "Devidends network",
+        opportunity_title: `Brought in by ${sender.name}: ${subject.name}`,
+        sector: subject.sectors || [],
+        share_pct: 10,
+        stage: "introduced",
+        occurred_at: new Date().toISOString().slice(0, 10),
+        source_of_record: "telegram_bot",
+        confidence: "high",
+        notes: `${sender.name} sent this CV via private chat on @Devidends_Bot on ${new Date().toISOString().slice(0, 10)}.`,
+      });
+    }
+
+    // Count how many people this recommender has brought in total
+    const { count: broughtInCount } = await sb
+      .from("attributions")
+      .select("id", { count: "exact", head: true })
+      .eq("contributor_profile_id", sender.id)
+      .eq("attribution_type", "referral_member");
+
+    const firstName = sender.name.split(/\s+/)[0];
+    const claimLink = `https://t.me/Devidends_Bot?start=claim_${subject.claim_token}`;
+    const yrs = subject.years_of_experience ? `${subject.years_of_experience}y exp` : "years unclear";
+    const score = subject.cv_score != null ? `CV score ${subject.cv_score}/100` : "not yet scored";
+    const sectorsPreview = (subject.sectors || []).slice(0, 3).join(" · ") || "sectors pending";
+
+    const summary = [
+      `<b>✅ Added to your network, ${escHtml(firstName)}.</b>`,
+      ``,
+      `<b>${escHtml(subject.name)}</b>`,
+      `${yrs} · ${subject.profile_type || "tier TBD"} · ${score}`,
+      `Sectors: ${escHtml(sectorsPreview)}`,
+      ``,
+      `This CV is now tagged as recommended by you. Their claim link, if you want to forward it directly:`,
+      claimLink,
+      ``,
+      `<b>Your running total:</b> ${broughtInCount ?? 1} brought in via Devidends.`,
+    ].join("\n");
+
+    await paceChat(chatId);
+    await bot.sendMessage(chatId, summary, { parse_mode: "HTML", disable_web_page_preview: true });
+  } catch (e) {
+    console.warn("[recommender-ingest] post-hook failed:", (e as Error).message);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Handle follow-up replies to ingest questions
 // ---------------------------------------------------------------------------
 
@@ -1812,6 +1928,30 @@ export async function handleUpdate(
         await handleGroupCvIngest(bot, msg);
         return;
       }
+
+      // Private chat: if the sender is a claimed recommender AND they didn't
+      // run /score first, treat this as "I'm bringing someone in" — route
+      // through the ingest pipeline with the sender tagged as recommended_by.
+      // (Self-CV uploads still work via /score which sets the awaiting_document state.)
+      if (msg.chat.type === "private" && chatState.get(msg.chat.id) !== "awaiting_document") {
+        const senderTgId = String(msg.from?.id || msg.chat.id);
+        try {
+          const { createClient } = await import("@supabase/supabase-js");
+          const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+          const { data: senderProfile } = await sb
+            .from("profiles")
+            .select("id, name, is_recommender, claimed_at")
+            .eq("telegram_id", senderTgId)
+            .maybeSingle();
+          if (senderProfile?.is_recommender && senderProfile?.claimed_at) {
+            await handleRecommenderPrivateCvIngest(bot, msg, { id: senderProfile.id, name: senderProfile.name });
+            return;
+          }
+        } catch (e) {
+          console.warn("[doc-dispatch] recommender lookup failed:", (e as Error).message);
+        }
+      }
+
       await handleDocument(bot, msg);
       return;
     }
