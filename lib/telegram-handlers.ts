@@ -867,15 +867,34 @@ async function handleGroupCvIngest(
       `Claim: <code>${claimLink}</code>`,
     ].filter(Boolean).join("\n");
 
+    // When called from the recommender-private flow, the caller will send
+    // its own unified summary + notes prompt. Skip BOTH the group-style
+    // summary AND the missing-fields follow-up. The recommender is already
+    // known, and missing email/phone/gender can be fixed on the admin page.
+    if (opts?.forcedRecommendedBy) {
+      return;
+    }
+
     await paceChat(chatId);
     await bot.sendMessage(chatId, summary, replyOpts);
 
-    // Ask follow-up questions for missing fields
+    // Ask follow-up questions for missing fields.
+    // Check the FINAL profile state (after dedup/update) for gender/email/phone
+    // so we don't re-ask things the DB already has from a prior ingest.
+    let existingProfileFields: any = {};
+    if (profileId) {
+      const { data: existingRow } = await sb
+        .from("profiles")
+        .select("gender, email, phone")
+        .eq("id", profileId)
+        .maybeSingle();
+      existingProfileFields = existingRow || {};
+    }
     const missing: string[] = [];
-    if (!personal.email) missing.push("Email");
-    if (!personal.phone) missing.push("Phone");
+    if (!personal.email && !existingProfileFields.email) missing.push("Email");
+    if (!personal.phone && !existingProfileFields.phone) missing.push("Phone");
     if (!recommendedBy) missing.push("Recommended by");
-    missing.push("Gender"); // Always ask — can't reliably detect from CV
+    if (!existingProfileFields.gender && !(cvStructured?.personal as any)?.gender) missing.push("Gender");
 
     if (missing.length > 0 && profileId) {
       const needsGender = missing.includes("Gender");
@@ -997,12 +1016,31 @@ async function handleRecommenderPrivateCvIngest(
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
     const cvUrl = `tg://${doc.file_id}`;
-    const { data: subject } = await sb
-      .from("profiles")
-      .select("id, name, claim_token, sectors, cv_score, years_of_experience, profile_type")
-      .eq("cv_url", cvUrl)
-      .maybeSingle();
-    if (!subject) return;
+    let subject: any = null;
+    {
+      const { data } = await sb
+        .from("profiles")
+        .select("id, name, claim_token, sectors, cv_score, years_of_experience, profile_type, updated_at")
+        .eq("cv_url", cvUrl)
+        .maybeSingle();
+      if (data) subject = data;
+    }
+    // Fallback: grab the most recently updated profile where recommended_by
+    // matches the sender. Covers edge cases where cv_url didn't persist.
+    if (!subject) {
+      const { data } = await sb
+        .from("profiles")
+        .select("id, name, claim_token, sectors, cv_score, years_of_experience, profile_type, updated_at")
+        .eq("recommended_by", sender.name)
+        .order("updated_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (data) subject = data;
+    }
+    if (!subject) {
+      console.warn(`[recommender-ingest] could not locate subject profile after ingest. cv_url=${cvUrl} recommended_by=${sender.name}`);
+      return;
+    }
 
     // De-dup: does an attribution already exist for this contributor + subject?
     const { data: existingAttr } = await sb
