@@ -565,7 +565,11 @@ function escapeMarkdown(text: string): string {
 // Group CV ingest — drop CVs in a Telegram group topic
 // ---------------------------------------------------------------------------
 
-async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
+async function handleGroupCvIngest(
+  bot: TelegramBot,
+  msg: Message,
+  opts?: { forcedRecommendedBy?: string }
+) {
   const chatId = msg.chat.id;
   const threadId = msg.message_thread_id;
   const doc = msg.document;
@@ -575,15 +579,20 @@ async function handleGroupCvIngest(bot: TelegramBot, msg: Message) {
   const ext = fileName.toLowerCase().split(".").pop();
   const senderName = [msg.from?.first_name, msg.from?.last_name].filter(Boolean).join(" ") || "Unknown";
 
-  // Parse "Recommended by" — only from an explicit "Recommended by X" caption pattern,
-  // then validate against our recommender network. Invalid names fall through to the
-  // follow-up prompt so the user can retry.
-  const caption = (msg.caption || "").trim();
-  let recommendedBy: string | null = null;
-  const recMatch = caption.match(/(?:recommended|referred)(?:\s+by)?[:\s]+(.+)/i);
-  if (recMatch) {
-    const { matched } = await resolveRecommender(recMatch[1].trim());
-    if (matched) recommendedBy = matched;
+  // Resolve "Recommended by":
+  //   1. If caller forced a value (e.g. private-chat recommender ingest, where
+  //      the sender IS the recommender), use it directly and skip parsing.
+  //   2. Otherwise parse an explicit "Recommended by X" caption pattern and
+  //      validate against our recommender network.
+  //   If still unresolved, the follow-up prompt asks the user to pick.
+  let recommendedBy: string | null = opts?.forcedRecommendedBy || null;
+  if (!recommendedBy) {
+    const caption = (msg.caption || "").trim();
+    const recMatch = caption.match(/(?:recommended|referred)(?:\s+by)?[:\s]+(.+)/i);
+    if (recMatch) {
+      const { matched } = await resolveRecommender(recMatch[1].trim());
+      if (matched) recommendedBy = matched;
+    }
   }
 
   // Only process PDF/DOCX
@@ -963,18 +972,7 @@ async function handleRecommenderPrivateCvIngest(
   const doc = msg.document;
   if (!doc) return;
 
-  // Inject a "Recommended by ..." caption if one isn't already there. The
-  // group-ingest flow reads this from msg.caption to resolve the recommender
-  // against our network.
-  const existingCaption = (msg.caption || "").trim();
-  if (!/(?:recommended|referred)(?:\s+by)?[:\s]/i.test(existingCaption)) {
-    (msg as any).caption = existingCaption
-      ? `${existingCaption}\nRecommended by ${sender.name}`
-      : `Recommended by ${sender.name}`;
-  }
-
-  // Upfront confirmation so they know what's happening. The group-ingest
-  // handler also sends "Processing..." but that lands in the same chat.
+  // Upfront confirmation so they know what's happening.
   try {
     await paceChat(chatId);
     await bot.sendMessage(
@@ -984,8 +982,10 @@ async function handleRecommenderPrivateCvIngest(
     );
   } catch {}
 
-  // Run the standard ingest pipeline. It will reply in this private chat.
-  await handleGroupCvIngest(bot, msg);
+  // Run the standard ingest pipeline with the recommender pre-resolved.
+  // This skips the caption parsing AND the "pick a recommender" follow-up
+  // keyboard entirely, since the sender IS the recommender.
+  await handleGroupCvIngest(bot, msg, { forcedRecommendedBy: sender.name });
 
   // After ingest, find the profile we just created/updated via the Telegram
   // file_id we stashed in cv_url, then log an attribution row + send a
@@ -1013,21 +1013,27 @@ async function handleRecommenderPrivateCvIngest(
       .eq("attribution_type", "referral_member")
       .maybeSingle();
 
+    let attributionId: string | null = existingAttr?.id || null;
     if (!existingAttr) {
-      await sb.from("attributions").insert({
-        attribution_type: "referral_member",
-        contributor_profile_id: sender.id,
-        subject_profile_id: subject.id,
-        firm_name: "Devidends network",
-        opportunity_title: `Brought in by ${sender.name}: ${subject.name}`,
-        sector: subject.sectors || [],
-        share_pct: 10,
-        stage: "introduced",
-        occurred_at: new Date().toISOString().slice(0, 10),
-        source_of_record: "telegram_bot",
-        confidence: "high",
-        notes: `${sender.name} sent this CV via private chat on @Devidends_Bot on ${new Date().toISOString().slice(0, 10)}.`,
-      });
+      const { data: created } = await sb
+        .from("attributions")
+        .insert({
+          attribution_type: "referral_member",
+          contributor_profile_id: sender.id,
+          subject_profile_id: subject.id,
+          firm_name: "Devidends network",
+          opportunity_title: `Brought in by ${sender.name}: ${subject.name}`,
+          sector: subject.sectors || [],
+          share_pct: 10,
+          stage: "introduced",
+          occurred_at: new Date().toISOString().slice(0, 10),
+          source_of_record: "telegram_bot",
+          confidence: "high",
+          notes: `${sender.name} sent this CV via private chat on @Devidends_Bot on ${new Date().toISOString().slice(0, 10)}.`,
+        })
+        .select("id")
+        .single();
+      attributionId = created?.id || null;
     }
 
     // Count how many people this recommender has brought in total
@@ -1058,8 +1064,91 @@ async function handleRecommenderPrivateCvIngest(
 
     await paceChat(chatId);
     await bot.sendMessage(chatId, summary, { parse_mode: "HTML", disable_web_page_preview: true });
+
+    // Prompt for optional notes about this candidate. Captured into the
+    // attribution row so we have context for future matching + pitching.
+    if (attributionId) {
+      await paceChat(chatId);
+      await bot.sendMessage(
+        chatId,
+        [
+          `<b>Any notes on ${escHtml(subject.name)}?</b>`,
+          ``,
+          `Reply to this chat with anything you want saved. Things like:`,
+          `  • strengths, standout projects, donors they've worked with`,
+          `  • availability, rate expectations, sector preferences`,
+          `  • specific roles you'd put them forward for`,
+          ``,
+          `Reply <b>skip</b> or ignore this to move on.`,
+        ].join("\n"),
+        { parse_mode: "HTML" }
+      );
+      // Stash state so the next free-text message in this chat gets captured as notes.
+      chatState.set(chatId, `awaiting_referral_notes:${attributionId}:${subject.id}`);
+    }
   } catch (e) {
     console.warn("[recommender-ingest] post-hook failed:", (e as Error).message);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Capture free-text notes the recommender sends after a CV ingest, save them
+// to the attribution row and a copy on the subject profile's admin_notes.
+// ---------------------------------------------------------------------------
+
+async function handleReferralNotesReply(
+  bot: TelegramBot,
+  msg: Message,
+  attributionId: string,
+  subjectProfileId: string
+) {
+  const chatId = msg.chat.id;
+  const text = (msg.text || "").trim();
+  if (!text) return;
+  if (/^skip$/i.test(text) || /^(no|nope|none|n\/a)$/i.test(text)) {
+    chatState.delete(chatId);
+    await bot.sendMessage(chatId, "<i>No notes saved. You're all set.</i>", { parse_mode: "HTML" });
+    return;
+  }
+  try {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sb = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    // Append (don't overwrite) to attributions.notes
+    const { data: existing } = await sb
+      .from("attributions")
+      .select("notes")
+      .eq("id", attributionId)
+      .maybeSingle();
+    const prior = existing?.notes || "";
+    const sep = prior ? "\n\n" : "";
+    const stamped = `${new Date().toISOString().slice(0, 10)} — recommender notes: ${text}`;
+    await sb.from("attributions").update({ notes: prior + sep + stamped }).eq("id", attributionId);
+
+    // Also append to the subject profile's admin_notes for quick visibility.
+    const { data: prof } = await sb
+      .from("profiles")
+      .select("admin_notes")
+      .eq("id", subjectProfileId)
+      .maybeSingle();
+    const priorAdmin = prof?.admin_notes || "";
+    const sep2 = priorAdmin ? "\n" : "";
+    await sb
+      .from("profiles")
+      .update({ admin_notes: priorAdmin + sep2 + stamped })
+      .eq("id", subjectProfileId);
+
+    chatState.delete(chatId);
+    await bot.sendMessage(chatId, "<b>Saved.</b> Notes attached to the profile and the referral record.", {
+      parse_mode: "HTML",
+    });
+  } catch (e) {
+    console.warn("[referral-notes] save failed:", (e as Error).message);
+    chatState.delete(chatId);
+    await bot.sendMessage(chatId, "Couldn't save the notes. Try again or flag it to Mussie.");
   }
 }
 
@@ -1969,6 +2058,15 @@ export async function handleUpdate(
         chatState.delete(msg.chat.id);
         try { await bot.sendMessage(msg.chat.id, "Cancelled. Nothing was deleted."); } catch {}
         return;
+      }
+      // Capture referral notes after a recommender-private CV ingest.
+      if (state && state.startsWith("awaiting_referral_notes:")) {
+        const rest = state.slice("awaiting_referral_notes:".length);
+        const [attributionId, subjectProfileId] = rest.split(":");
+        if (attributionId && subjectProfileId) {
+          await handleReferralNotesReply(bot, msg, attributionId, subjectProfileId);
+          return;
+        }
       }
     }
 
