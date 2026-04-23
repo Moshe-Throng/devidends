@@ -187,6 +187,14 @@ function ClaimPage() {
           {/* Step 1: Review */}
           {step === "review" && profile && (
             <>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-600 mb-1">
+                  Your profile on Devidends
+                </p>
+                <p className="text-xs text-dark-500 leading-relaxed">
+                  Tap the button at the bottom to claim it. You have 4 simple steps to set your preferences.
+                </p>
+              </div>
               <div className="flex items-start gap-3">
                 <div className="w-12 h-12 rounded-full bg-cyan-50 flex items-center justify-center shrink-0">
                   <User className="w-6 h-6 text-cyan-600" />
@@ -245,8 +253,12 @@ function ClaimPage() {
                 </div>
               </div>
 
+              <p className="text-[11px] text-dark-400 leading-relaxed italic">
+                Your Telegram name doesn&apos;t need to match the name on the profile. We recognize you by this claim link.
+              </p>
+
               <button onClick={() => setStep("email")} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98]">
-                I understand — continue <ChevronRight className="w-4 h-4" />
+                Claim my profile <ChevronRight className="w-4 h-4" />
               </button>
             </>
           )}

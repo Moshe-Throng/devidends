@@ -197,6 +197,11 @@ async function main() {
         photo: og,
         caption,
         parse_mode: "HTML",
+        reply_markup: {
+          inline_keyboard: [[
+            { text: "✅ Claim your profile", url: claimLink },
+          ]],
+        },
       }),
     });
     const data = await res.json();
