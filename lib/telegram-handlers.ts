@@ -1103,32 +1103,36 @@ async function handleRecommenderPrivateCvIngest(
     await paceChat(chatId);
     await bot.sendMessage(chatId, summary, { parse_mode: "HTML", disable_web_page_preview: true });
 
-    // Prompt for optional notes about this candidate. Captured into the
-    // attribution row so we have context for future matching + pitching.
+    // Prompt for endorsement strength + optional free-text notes.
+    // Ownership framing so the recommender understands they're on record.
     if (attributionId) {
       await paceChat(chatId);
-      await bot.sendMessage(
-        chatId,
-        [
-          `<b>Any notes on ${escHtml(subject.name)}?</b>`,
-          ``,
-          `Reply with anything you want saved. Things like:`,
-          `  • strengths, standout projects, donors they've worked with`,
-          `  • availability, rate expectations, sector preferences`,
-          `  • specific roles you'd put them forward for`,
-          ``,
-          `<i>Or tap Skip below.</i>`,
-        ].join("\n"),
-        {
-          parse_mode: "HTML",
-          reply_markup: {
-            inline_keyboard: [[
-              { text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` },
-            ]],
-          },
-        }
-      );
-      // Stash state so the next free-text message in this chat gets captured as notes.
+      const prompt = [
+        `<b>${escHtml(subject.name)}</b> is now in Devidends with you as their recommender.`,
+        ``,
+        `This means: if they land an assignment you get credit (and a share). If something goes wrong, we'll know who vouched.`,
+        ``,
+        `<b>How would you describe your relationship with them?</b>`,
+        ``,
+        `<i>Pick one below. You can also reply with context anytime.</i>`,
+      ].join("\n");
+      const keyboard = {
+        inline_keyboard: [
+          [
+            { text: "👋 Light touch", callback_data: `refnotes_lvl:light:${attributionId}:${subject.id}` },
+            { text: "🤝 Know professionally", callback_data: `refnotes_lvl:professional:${attributionId}:${subject.id}` },
+          ],
+          [
+            { text: "💼 Worked with them", callback_data: `refnotes_lvl:worked:${attributionId}:${subject.id}` },
+            { text: "⭐ Strong vouch", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` },
+          ],
+          [
+            { text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` },
+          ],
+        ],
+      };
+      await bot.sendMessage(chatId, prompt, { parse_mode: "HTML", reply_markup: keyboard });
+      // State remains open so a text reply still lands as notes.
       chatState.set(chatId, `awaiting_referral_notes:${attributionId}:${subject.id}`);
     }
   } catch (e) {
@@ -1812,6 +1816,73 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       try {
         await bot.sendMessage(chatId, "<i>Skipped. You're all set.</i>", { parse_mode: "HTML" });
       } catch {}
+      return;
+    }
+
+    // --- Recommender-ingest: endorsement level tap ---
+    if (data.startsWith("refnotes_lvl:")) {
+      const [, level, attributionId, subjectProfileId] = data.split(":");
+      if (!level || !attributionId || !subjectProfileId) return;
+      const labels: Record<string, string> = {
+        light: "Light touch (barely know)",
+        professional: "Know professionally",
+        worked: "Worked with them",
+        strong: "Strong vouch",
+      };
+      const confidenceMap: Record<string, string> = {
+        light: "low",
+        professional: "medium",
+        worked: "high",
+        strong: "high",
+      };
+      const label = labels[level] || level;
+      const confidence = confidenceMap[level] || "medium";
+      try {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!
+        );
+        // Prepend the endorsement line to attributions.notes
+        const { data: existing } = await sb
+          .from("attributions")
+          .select("notes")
+          .eq("id", attributionId)
+          .maybeSingle();
+        const prior = existing?.notes || "";
+        const stamped = `[Endorsement: ${label}] (${new Date().toISOString().slice(0, 10)})`;
+        const newNotes = prior ? `${stamped}\n\n${prior}` : stamped;
+        await sb
+          .from("attributions")
+          .update({ notes: newNotes, confidence })
+          .eq("id", attributionId);
+        // Mirror to profiles.admin_notes for admin page visibility
+        const { data: prof } = await sb
+          .from("profiles")
+          .select("admin_notes")
+          .eq("id", subjectProfileId)
+          .maybeSingle();
+        const priorAdmin = prof?.admin_notes || "";
+        const sep = priorAdmin ? "\n" : "";
+        await sb
+          .from("profiles")
+          .update({ admin_notes: priorAdmin + sep + stamped })
+          .eq("id", subjectProfileId);
+      } catch (e) {
+        console.warn("[refnotes_lvl] save failed:", (e as Error).message);
+      }
+      try {
+        await bot.sendMessage(
+          chatId,
+          [
+            `<b>✓ Saved as ${escHtml(label)}.</b>`,
+            ``,
+            `Want to add context? Reply here with anything — strengths, availability, specific roles you'd put them forward for. Or ignore to move on.`,
+          ].join("\n"),
+          { parse_mode: "HTML" }
+        );
+      } catch {}
+      // Keep the chatState open so a text follow-up is captured as notes.
       return;
     }
 
