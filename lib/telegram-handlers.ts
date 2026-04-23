@@ -1108,9 +1108,9 @@ async function handleRecommenderPrivateCvIngest(
     if (attributionId) {
       await paceChat(chatId);
       const prompt = [
-        `<b>${escHtml(subject.name)}</b> is now in Devidends with you as their recommender.`,
+        `<b>${escHtml(subject.name)}</b> is in Devidends, tagged as recommended by you.`,
         ``,
-        `This means: if they land an assignment you get credit (and a share). If something goes wrong, we'll know who vouched.`,
+        `Your name is on record as the introducer, so when they land assignments through the network, you're credited and share in the outcome.`,
         ``,
         `<b>How would you describe your relationship with them?</b>`,
         ``,
