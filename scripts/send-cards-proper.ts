@@ -122,8 +122,7 @@ async function main() {
             invite_token: token,
             member_number: next,
             profile_id: prof.id,
-            status: "joined",
-            joined_at: new Date().toISOString(),
+            status: "invited",
           })
           .select("invite_token, member_number")
           .single();
