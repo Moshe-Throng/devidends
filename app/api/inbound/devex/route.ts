@@ -103,6 +103,21 @@ export async function POST(req: NextRequest) {
     const sb = getAdmin();
     let saved = 0;
     let skipped = 0;
+
+    // DIAGNOSTIC: if we got 0 entries from a genuine Devex email, save a debug
+    // row with the first slice of HTML so we can inspect and fix the parser.
+    if (parsed.entries.length === 0) {
+      await sb.from("devex_benchmark").insert({
+        inbound_email_id: messageId,
+        email_subject: subject.slice(0, 500),
+        email_from: from.slice(0, 200),
+        batch_date: parsed.batch_date,
+        alert_type: `${parsed.alert_type}__DEBUG_EMPTY`,
+        title: `[DEBUG] parser returned 0 entries`,
+        url: `debug://${messageId}`,
+        raw_snippet: (html || text || "").slice(0, 8000),
+      });
+    }
     for (const e of parsed.entries) {
       // Dedup: skip if we already saved this URL from this exact email
       const { data: existing } = await sb
