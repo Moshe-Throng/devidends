@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-23T07:05:01.423Z",
-    "count": 4
+    "scraped_at": "2026-04-24T07:08:14.427Z",
+    "count": 5
   },
   "opportunities": [
     {
@@ -15,13 +15,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-23T07:03:18.847Z",
+      "scraped_at": "2026-04-24T07:06:28.543Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub",
+      "organization": "World Bank",
+      "description": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533130-GO-RFB\n\nContact: P.P.O. BOX 15881,  Cotobie, Addis Ababa, Ethiopia",
+      "deadline": "2026-06-09",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-04-24T07:06:28.859Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+        "project_id": "P176731",
+        "bid_reference": "ET-EEP-533130-GO-RFB",
         "sector": ""
       }
     },
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-23T07:03:19.204Z",
+      "scraped_at": "2026-04-24T07:06:28.859Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-23T07:03:19.205Z",
+      "scraped_at": "2026-04-24T07:06:28.859Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-23T07:03:19.205Z",
+      "scraped_at": "2026-04-24T07:06:28.859Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",

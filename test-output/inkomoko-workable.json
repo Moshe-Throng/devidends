@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -30,31 +30,11 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program",
         "Business Growth Services"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Security Field Associate - Gambella",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-04-09T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Gambela",
-    "source_url": "https://apply.workable.com/inkomoko/j/BC9FB72DEB/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
-    "raw_fields": {
-      "department": [
-        "Operations & Security"
       ],
       "work_type": ""
     },
@@ -71,7 +51,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -92,7 +72,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -113,7 +93,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -133,7 +113,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -154,11 +134,31 @@
     "source_url": "https://apply.workable.com/inkomoko/j/A582A1AE6F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-23T07:03:26.373Z",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
     "raw_fields": {
       "department": [
         "Program",
         "Monitoring, Evaluation, Research & Learning"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Security Field Associate - Gambella",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-04-09T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Gambela",
+    "source_url": "https://apply.workable.com/inkomoko/j/BC9FB72DEB/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-04-24T07:06:36.706Z",
+    "raw_fields": {
+      "department": [
+        "Operations & Security"
       ],
       "work_type": ""
     },
