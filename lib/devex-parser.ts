@@ -78,34 +78,54 @@ function decodeEntity(s: string): string {
 }
 
 /**
- * Extract each <a href="https://www.devex.com/(jobs|funding)/..."> anchor
- * and walk backwards/forwards in the surrounding markup to find org/country.
- * Works on the current Devex templates as of April 2026.
+ * Unwrap a Devex URL from the raw href value. Devex emails route every
+ * link through Postmark tracking:
+ *   https://track.pstmrk.it/3s/www.devex.com%2Fjobs%2F<slug>%3Faccess_key%3D.../q2Tt/.../...
+ * We URL-decode and extract the real devex.com path. Returns a normalized
+ * canonical devex URL (https://www.devex.com/<category>/<slug>) or null
+ * if the href does not reference an opportunity.
+ */
+function unwrapDevexUrl(href: string): string | null {
+  let s = href;
+  try { s = decodeURIComponent(href); } catch {}
+  const m = s.match(/devex\.com\/(jobs|funding|funding-opportunities|tenders|programs)\/([a-z0-9\-_]+)/i);
+  if (!m) return null;
+  const [, category, slug] = m;
+  // Real opportunity slugs always contain at least one digit (Devex IDs like
+  // "-1428273" suffix). Listing pages like /jobs/search or /funding/r don't.
+  if (!/\d/.test(slug)) return null;
+  return `https://www.devex.com/${category}/${slug}`;
+}
+
+/**
+ * Extract each <a href="..."> anchor whose URL (after unwrapping the
+ * Postmark tracking layer) points to a real Devex opportunity, and walk
+ * forward in the surrounding markup to find org/country/dates.
  */
 function extractEntries(html: string): DevexEntry[] {
-  // Strip scripts/styles before scanning
   const cleaned = html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "");
 
-  // Devex link pattern. /jobs/<slug>, /funding/<slug>, /funding-opportunities/<slug>,
-  // /tenders/<slug>. Allow any http URL but filter by host.
   const entries: DevexEntry[] = [];
   const seenUrls = new Set<string>();
 
-  // Capture anchor tag + its text content + following ~1500 chars for context
-  const anchorRe = /<a\b[^>]*href=["'](https?:\/\/[^"']*devex\.com\/(?:jobs|funding|funding-opportunities|tenders|programs)\/[^"'#\s]+)["'][^>]*>([\s\S]{0,400}?)<\/a>([\s\S]{0,1500})/gi;
+  // Match ALL anchors, then filter to real Devex opportunity URLs after
+  // unwrapping the Postmark tracking wrapper.
+  const anchorRe = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]{0,400}?)<\/a>([\s\S]{0,1500})/gi;
   let m: RegExpExecArray | null;
   while ((m = anchorRe.exec(cleaned)) !== null) {
-    const url = m[1].split("?")[0].replace(/\/+$/, "");
+    const url = unwrapDevexUrl(m[1]);
+    if (!url) continue;
     if (seenUrls.has(url)) continue;
-    seenUrls.add(url);
     const anchorInner = decodeEntity(stripTags(m[2]));
     const ctx = m[3];
 
     if (!anchorInner || anchorInner.length < 5) continue;
-    // Skip nav links (unsubscribe, edit alert, etc)
-    if (/edit this alert|unsubscribe|devex logo|view on devex/i.test(anchorInner)) continue;
+    // Skip nav links (unsubscribe, edit alert, etc) and generic CTAs
+    if (/edit this alert|unsubscribe|devex logo|view on devex|upload.*cv|search again|see all jobs|view all|show more/i.test(anchorInner)) continue;
+
+    seenUrls.add(url);
 
     // Organization + country usually appear on the next 1-3 lines after the title link
     const ctxText = stripTags(ctx).slice(0, 600);
