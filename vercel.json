@@ -21,6 +21,22 @@
     },
     "app/api/admin/match/route.ts": {
       "maxDuration": 60
+    },
+    "app/api/cron/devex-poll/route.ts": {
+      "maxDuration": 120
+    },
+    "app/api/cron/devex-match/route.ts": {
+      "maxDuration": 120
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/devex-poll",
+      "schedule": "0 */4 * * *"
+    },
+    {
+      "path": "/api/cron/devex-match",
+      "schedule": "30 */4 * * *"
+    }
+  ]
 }
