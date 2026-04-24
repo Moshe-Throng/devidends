@@ -32,11 +32,11 @@
   "crons": [
     {
       "path": "/api/cron/devex-poll",
-      "schedule": "0 */4 * * *"
+      "schedule": "0 5 * * *"
     },
     {
       "path": "/api/cron/devex-match",
-      "schedule": "30 */4 * * *"
+      "schedule": "30 5 * * *"
     }
   ]
 }
