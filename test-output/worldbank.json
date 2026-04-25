@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-24T07:08:14.427Z",
+    "scraped_at": "2026-04-25T06:24:04.297Z",
     "count": 5
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-24T07:06:28.543Z",
+      "scraped_at": "2026-04-25T06:22:25.240Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-24T07:06:28.859Z",
+      "scraped_at": "2026-04-25T06:22:25.687Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-24T07:06:28.859Z",
+      "scraped_at": "2026-04-25T06:22:25.687Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-24T07:06:28.859Z",
+      "scraped_at": "2026-04-25T06:22:25.687Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-24T07:06:28.859Z",
+      "scraped_at": "2026-04-25T06:22:25.687Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
