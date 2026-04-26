@@ -168,7 +168,95 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
     }
   }
 
-  // Create new profile for Telegram user
+  // Before falling through to create a new profile, try ONE more match —
+  // an unclaimed recommender-card profile whose first name is identical to
+  // the Telegram first name AND whose telegram_id is null. This catches
+  // the case where Mussie sent someone a claim card, the recipient opened
+  // the hub via the persistent menu button BEFORE clicking the deep link,
+  // and we'd otherwise create an orphan that breaks their CV display +
+  // recommender CV ingest.
+  //
+  // Conservative — only auto-link when the first-name match is exact AND
+  // there is exactly one candidate. Anything ambiguous still creates the
+  // bare profile and pings admin so we can merge manually.
+  const tgFirstName = (user.first_name || "").trim();
+  if (tgFirstName) {
+    const { data: candidates } = await supabase
+      .from("profiles")
+      .select("id, name, claim_token, claimed_at, telegram_id, is_recommender")
+      .ilike("name", `${tgFirstName}%`)
+      .is("telegram_id", null)
+      .not("claim_token", "is", null);
+
+    const exact = (candidates || []).filter((c: any) => {
+      const candidateFirst = String(c.name || "").trim().split(/\s+/)[0] || "";
+      return candidateFirst.toLowerCase() === tgFirstName.toLowerCase();
+    });
+
+    if (exact.length === 1) {
+      const target = exact[0] as any;
+      const linkPatch: Record<string, string | null> = {
+        telegram_id: telegramId,
+        telegram_username: user.username || null,
+      };
+      if (!target.claimed_at) {
+        linkPatch.claimed_at = new Date().toISOString();
+      }
+      await supabase.from("profiles").update(linkPatch).eq("id", target.id);
+      if (linkPatch.claimed_at) {
+        await supabase
+          .from("co_creators")
+          .update({ status: "joined", claimed_at: linkPatch.claimed_at })
+          .eq("profile_id", target.id);
+      }
+      // Tell admin we auto-linked so the merge is visible.
+      try {
+        const botToken = process.env.TELEGRAM_BOT_TOKEN;
+        if (botToken) {
+          await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: "297659579",
+              text:
+                `🔗 <b>Auto-link by first name</b>\n\n` +
+                `Matched ${tgFirstName} (tg=<code>${telegramId}</code>) to canonical profile <b>${target.name}</b>.\n` +
+                `Claimed: ${target.claimed_at ? "already" : "now"}.`,
+              parse_mode: "HTML",
+              disable_web_page_preview: true,
+            }),
+          });
+        }
+      } catch {}
+      return { ...target, telegram_id: telegramId, claimed_at: target.claimed_at || linkPatch.claimed_at };
+    }
+
+    if (exact.length > 1) {
+      // Ambiguous — DON'T auto-merge but ping admin so we know to merge by hand.
+      try {
+        const botToken = process.env.TELEGRAM_BOT_TOKEN;
+        if (botToken) {
+          await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: "297659579",
+              text:
+                `⚠️ <b>Ambiguous bot-joiner</b>\n\n` +
+                `${tgFirstName} (tg=<code>${telegramId}</code>) opened the hub. ` +
+                `${exact.length} unclaimed recommender profiles share this first name. ` +
+                `Falling back to creating a fresh profile — please merge manually if one of these is them:\n\n` +
+                exact.map((c: any) => `• ${c.name} (id=${c.id})`).join("\n"),
+              parse_mode: "HTML",
+              disable_web_page_preview: true,
+            }),
+          });
+        }
+      } catch {}
+    }
+  }
+
+  // Create new profile for Telegram user (organic onboarding path).
   const fullName = [user.first_name, user.last_name]
     .filter(Boolean)
     .join(" ");
@@ -212,6 +300,31 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
     console.error("[telegram-auth] Insert failed:", error.code, error.message, error.details);
     throw new Error(`Failed to create Telegram profile: ${error.message}`);
   }
+
+  // Final safety net — every freshly-created (orphan) profile pings admin
+  // so we catch any duplication early. If the user is in fact one of our
+  // recommender card targets that we couldn't auto-match, this lets us
+  // merge by hand within minutes rather than hours.
+  try {
+    const botToken = process.env.TELEGRAM_BOT_TOKEN;
+    if (botToken && newProfile?.id) {
+      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: "297659579",
+          text:
+            `🆕 <b>New bot-joiner profile created</b>\n\n` +
+            `<b>${(newProfile as any).name || "(no name)"}</b>  tg=<code>${telegramId}</code>` +
+            (user.username ? `  @${user.username}` : "") +
+            `\n` +
+            `If this is one of our recommender targets that we couldn't auto-match, merge them manually.`,
+          parse_mode: "HTML",
+          disable_web_page_preview: true,
+        }),
+      });
+    }
+  } catch {}
 
   return newProfile;
 }
