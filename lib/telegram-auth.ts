@@ -140,12 +140,14 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
     return existing;
   }
 
-  // Also check by telegram_username
+  // Also check by telegram_username — case-insensitive. Telegram normalizes
+  // usernames to lowercase in API payloads, but admin-saved values may have
+  // mixed case ("Btykers" vs "btykers"). ilike sidesteps the mismatch.
   if (user.username) {
     const { data: byUsername } = await supabase
       .from("profiles")
       .select("*")
-      .eq("telegram_username", user.username)
+      .ilike("telegram_username", user.username)
       .single();
 
     if (byUsername) {
