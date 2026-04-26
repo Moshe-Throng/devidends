@@ -1080,7 +1080,7 @@ async function handleRecommenderPrivateCvIngest(
     await paceChat(chatId);
     await bot.sendMessage(
       chatId,
-      `<b>Got it.</b> Ingesting as a CV you're bringing in, tagged <i>Recommended by ${escHtml(sender.name)}</i>. Hold on ~30 seconds.\n\n<i>If this was your own CV update, tap /score and re-send.</i>`,
+      `<b>Got it.</b> Ingesting as a CV you're bringing in, tagged <i>Recommended by ${escHtml(sender.name)}</i>. Hold on ~30 seconds.\n\n<i>To score or update your own CV, open the Dev Hub.</i>`,
       { parse_mode: "HTML" }
     );
   } catch {}
@@ -1436,9 +1436,11 @@ async function handleHelp(bot: TelegramBot, msg: Message) {
     "/start \\- Welcome \\+ main menu",
     "/subscribe \\- Select sector alerts",
     "/search \\<keyword\\> \\- Search opportunities",
-    "/score \\- Upload your CV for AI scoring",
     "/profile \\- View your profile",
     "/help \\- Show this message",
+    "",
+    "_Recommenders: drop any CV here and I'll ingest it under your name\\._",
+    "_To score your own CV, open the Dev Hub below\\._",
   ].join("\n");
 
   try {
@@ -2137,11 +2139,15 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     }
 
     if (data === "score_info") {
-      chatState.set(chatId, "awaiting_document");
+      // Self-scoring is now Dev-Hub-only. Don't accept CV uploads in DM.
       await bot.sendMessage(
         chatId,
-        "Send me your CV as a *PDF* or *DOCX* file and I'll score it\\!",
-        { parse_mode: "MarkdownV2" }
+        [
+          `<b>CV scoring lives in the Dev Hub.</b>`,
+          ``,
+          `Open the <b>Dev Hub</b> below to upload, score, tailor or generate donor-format CVs.`,
+        ].join("\n"),
+        { parse_mode: "HTML", disable_web_page_preview: true },
       );
       return;
     }
@@ -2228,11 +2234,10 @@ export async function handleUpdate(
         return;
       }
 
-      // Private chat: if the sender is a claimed recommender AND they didn't
-      // run /score first, treat this as "I'm bringing someone in" — route
-      // through the ingest pipeline with the sender tagged as recommended_by.
-      // (Self-CV uploads still work via /score which sets the awaiting_document state.)
-      if (msg.chat.type === "private" && chatState.get(msg.chat.id) !== "awaiting_document") {
+      // Private chat — every CV drop is a recommendation, never a self-score.
+      // Self-scoring lives in the Dev Hub. Recommenders are our trust moat;
+      // the bot's job in private DM is to ingest CVs under their name.
+      if (msg.chat.type === "private") {
         const senderTgId = String(msg.from?.id || msg.chat.id);
         try {
           const { createClient } = await import("@supabase/supabase-js");
@@ -2242,16 +2247,38 @@ export async function handleUpdate(
             .select("id, name, is_recommender, claimed_at")
             .eq("telegram_id", senderTgId)
             .maybeSingle();
+
           if (senderProfile?.is_recommender && senderProfile?.claimed_at) {
+            // Recommender — always ingest under their name.
             await handleRecommenderPrivateCvIngest(bot, msg, { id: senderProfile.id, name: senderProfile.name });
             return;
           }
+
+          // Non-recommender drop — politely redirect to the Dev Hub instead
+          // of silently scoring (which created the "your CV got their score"
+          // confusion).
+          try {
+            await bot.sendMessage(
+              msg.chat.id,
+              [
+                `<b>This bot ingests CVs from recommenders.</b>`,
+                ``,
+                `If you're scoring your own CV, open the <b>Dev Hub</b> below — that's where the scorer + tailoring tools live.`,
+                ``,
+                `If you meant to recommend someone, ask whoever invited you to send your claim link first.`,
+              ].join("\n"),
+              { parse_mode: "HTML", disable_web_page_preview: true },
+            );
+          } catch {}
+          return;
         } catch (e) {
           console.warn("[doc-dispatch] recommender lookup failed:", (e as Error).message);
+          // On lookup failure, do not self-score the document — silently drop.
+          return;
         }
       }
 
-      await handleDocument(bot, msg);
+      // Non-private (channel/group not matching ingest topic) — drop silently.
       return;
     }
 
@@ -2345,7 +2372,20 @@ export async function handleUpdate(
     } else if (text.startsWith("/search")) {
       await handleSearch(bot, msg);
     } else if (text.startsWith("/score")) {
-      await handleScore(bot, msg);
+      // /score is removed from the bot — self-scoring lives in the Dev Hub.
+      try {
+        await bot.sendMessage(
+          msg.chat.id,
+          [
+            `<b>Scoring lives in the Dev Hub now.</b>`,
+            ``,
+            `Open the <b>Dev Hub</b> below to score, tailor or update your CV.`,
+            ``,
+            `<i>This private chat is for recommenders to drop CVs they're bringing in — those get ingested under their name.</i>`,
+          ].join("\n"),
+          { parse_mode: "HTML", disable_web_page_preview: true },
+        );
+      } catch {}
     } else if (text.startsWith("/profile")) {
       await handleProfile(bot, msg);
     } else if (text.startsWith("/delete") || text.startsWith("/deletemydata")) {
