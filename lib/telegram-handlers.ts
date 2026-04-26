@@ -506,54 +506,128 @@ async function handleWebLoginStart(bot: TelegramBot, msg: Message, loginToken: s
 async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: string) {
   const chatId = msg.chat.id;
   const firstName = msg.from?.first_name || "there";
+  const telegramId = String(msg.from?.id || chatId);
+  const telegramUsername = msg.from?.username || null;
+  const sb = getSupabaseAdmin();
+
+  const escHtml = (s: string) =>
+    String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  const sendInvalidLink = async (reason: "expired" | "unknown" = "expired") => {
+    const lines = reason === "expired"
+      ? [
+        `<b>This claim link has already been used.</b>`,
+        ``,
+        `If this is your account, just tap below to open the Dev Hub \u2014 your profile is waiting.`,
+      ]
+      : [
+        `<b>This link isn't valid.</b>`,
+        ``,
+        `If a colleague shared it, ask them to resend the latest one. You can still browse the hub:`,
+      ];
+    try {
+      await bot.sendMessage(chatId, lines.join("\n"), {
+        parse_mode: "HTML",
+        reply_markup: {
+          inline_keyboard: [[{ text: "\ud83d\ude80 Open the Dev Hub", web_app: { url: `${SITE_URL}/tg-app` } }]],
+        },
+      });
+    } catch {}
+  };
 
   try {
-    // Verify claim token exists via API
-    const res = await fetch(`${SITE_URL}/api/claim?token=${claimToken}`);
-    const data = await res.json();
+    // 1. Find the profile that owns this claim token. Atomic \u2014 only if not yet claimed.
+    const { data: profile } = await sb
+      .from("profiles")
+      .select("id, name, cv_score, sectors, is_recommender")
+      .eq("claim_token", claimToken)
+      .maybeSingle();
 
-    if (!data.success) {
-      await bot.sendMessage(
-        chatId,
-        `Sorry, this claim link is no longer valid\\. It may have already been claimed\\.`,
-        { parse_mode: "MarkdownV2" }
-      );
+    if (!profile) {
+      await sendInvalidLink("unknown");
       return;
     }
 
-    const name = data.profile.name ? escapeMarkdown(data.profile.name) : firstName;
-    const score = data.profile.cv_score ? ` \\(Score: ${data.profile.cv_score}/100\\)` : "";
+    // 2. Resolve duplicates \u2014 bare tg-only profiles already on this telegram_id
+    //    that have no CV text are orphan /start-no-deeplink artefacts. Move
+    //    any cv_scores to the canonical profile, then delete them.
+    const { data: existingForTg } = await sb
+      .from("profiles")
+      .select("id, cv_text")
+      .eq("telegram_id", telegramId);
+    const orphanIds = (existingForTg || [])
+      .filter((p: { id: string; cv_text: string | null }) => !p.cv_text && p.id !== profile.id)
+      .map((p: { id: string }) => p.id);
+    if (orphanIds.length > 0) {
+      await sb.from("cv_scores").update({ profile_id: profile.id }).in("profile_id", orphanIds);
+      await sb.from("profiles").delete().in("id", orphanIds);
+    }
 
-    await bot.sendMessage(
-      chatId,
-      [
-        `*Welcome, ${name}\\!*`,
-        "",
-        `Your professional profile has been prepared on Devidends${score}\\.`,
-        "",
-        "Tap below to review and claim it:",
-      ].join("\n"),
-      {
-        parse_mode: "MarkdownV2",
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "\u2705 Review & Claim My Profile",
-                web_app: { url: `${SITE_URL}/tg-app/claim?token=${claimToken}` },
-              },
-            ],
-          ],
-        },
-      }
-    );
+    // 3. Atomic claim \u2014 set telegram_id + claimed_at on the canonical profile.
+    //    Token possession + Telegram identity = sufficient claim authority.
+    const claimedAt = new Date().toISOString();
+    const { error: updateErr } = await sb
+      .from("profiles")
+      .update({
+        telegram_id: telegramId,
+        telegram_username: telegramUsername,
+        claimed_at: claimedAt,
+      })
+      .eq("id", profile.id)
+      .is("claimed_at", null);
+
+    if (updateErr) {
+      console.error("[claim] update error:", updateErr.message);
+      await bot.sendMessage(chatId, "Something went wrong. Please try again.");
+      return;
+    }
+
+    // 4. Mirror the claim to co_creators so the recommender dashboard updates.
+    await sb
+      .from("co_creators")
+      .update({ status: "joined", claimed_at: claimedAt })
+      .eq("profile_id", profile.id);
+
+    // 5. Welcome message \u2014 brief overview of the Dev Hub + single CTA into the app.
+    const displayName = profile.name || firstName;
+    const sectors = (profile.sectors as string[]) || [];
+    const sectorsLine =
+      sectors.length > 0 ? `Briefs filtered to: <b>${escHtml(sectors.slice(0, 4).join(" \u00b7 "))}</b>` : null;
+    const scoreLine = profile.cv_score
+      ? `Your CV is on file at <b>${profile.cv_score}/100</b> against donor standards.`
+      : null;
+    const recommenderLine = profile.is_recommender
+      ? `As a recommender, you'll also see who you've brought in and your referral progress.`
+      : null;
+
+    const lines = [
+      `<b>Welcome, ${escHtml(displayName)} \u2014 you're in.</b>`,
+      ``,
+      `<b>Inside the Dev Hub:</b>`,
+      `  \ud83d\udcca  Daily intel feed \u2014 jobs, consultancies and tenders matched to your profile`,
+      `  \ud83c\udfaf  Live CV scoring against GIZ, FCDO, World Bank and EU standards`,
+      `  \ud83e\udd1d  Your trusted network \u2014 recommend or be recommended into live opportunities`,
+      `  \u270d\ufe0f  CV tailoring + donor-format templates on demand`,
+      ``,
+      ...(sectorsLine ? [sectorsLine] : []),
+      ...(scoreLine ? [scoreLine] : []),
+      ...(recommenderLine ? [recommenderLine] : []),
+      ...(sectorsLine || scoreLine || recommenderLine ? [``] : []),
+      `Tap below to enter:`,
+    ];
+
+    await bot.sendMessage(chatId, lines.join("\n"), {
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+      reply_markup: {
+        inline_keyboard: [[{ text: "\ud83d\ude80 Open the Dev Hub", web_app: { url: `${SITE_URL}/tg-app` } }]],
+      },
+    });
   } catch (err) {
     console.error("[telegram] claim start error:", err);
-    await bot.sendMessage(
-      chatId,
-      "Something went wrong\\. Please try again or contact support\\.",
-      { parse_mode: "MarkdownV2" }
-    );
+    try {
+      await bot.sendMessage(chatId, "Something went wrong. Please try again or contact support.");
+    } catch {}
   }
 }
 
