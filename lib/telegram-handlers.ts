@@ -510,6 +510,16 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
   const telegramUsername = msg.from?.username || null;
   const sb = getSupabaseAdmin();
 
+  // Forwarder ref. Cards may be sent as "claim_<token>_by_<forwarderToken>"
+  // when a recommender shares the link. We extract the forwarder claim_token
+  // here so we can credit them with the attribution after the subject claims.
+  let forwarderToken: string | null = null;
+  const byIdx = claimToken.indexOf("_by_");
+  if (byIdx > 0) {
+    forwarderToken = claimToken.slice(byIdx + 4);
+    claimToken = claimToken.slice(0, byIdx);
+  }
+
   const escHtml = (s: string) =>
     String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -592,6 +602,45 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
       .from("co_creators")
       .update({ status: "joined", claimed_at: claimedAt })
       .eq("profile_id", profile.id);
+
+    // 4b. Forwarder attribution. If the link carried a `_by_<forwarderToken>`
+    //     suffix, the user who shared it is credited with bringing this
+    //     subject in. Idempotent — same forwarder/subject combo only logs
+    //     once. Visible later in the recommender's engagement history.
+    if (forwarderToken && forwarderToken !== claimToken) {
+      try {
+        const { data: forwarder } = await sb
+          .from("profiles")
+          .select("id, name")
+          .eq("claim_token", forwarderToken)
+          .maybeSingle();
+        if (forwarder && forwarder.id !== profile.id) {
+          const { data: existingAttr } = await sb
+            .from("attributions")
+            .select("id")
+            .eq("contributor_profile_id", forwarder.id)
+            .eq("subject_profile_id", profile.id)
+            .eq("attribution_type", "referral_member")
+            .maybeSingle();
+          if (!existingAttr) {
+            await sb.from("attributions").insert({
+              attribution_type: "referral_member",
+              contributor_profile_id: forwarder.id,
+              subject_profile_id: profile.id,
+              firm_name: "Devidends network",
+              opportunity_title: `Forwarded claim card: ${forwarder.name} → ${profile.name}`,
+              stage: "introduced",
+              occurred_at: new Date().toISOString().slice(0, 10),
+              source_of_record: "claim_link_share",
+              confidence: "high",
+              notes: `${forwarder.name} shared the claim link; ${profile.name} clicked and claimed via @Devidends_Bot on ${new Date().toISOString().slice(0, 10)}.`,
+            });
+          }
+        }
+      } catch (e) {
+        console.warn("[claim forwarder attribution] failed:", (e as Error).message);
+      }
+    }
 
     // 5. Welcome message \u2014 branched by audience.
     //    Recommenders get a tight 3-line ask (drop a CV here, or open the

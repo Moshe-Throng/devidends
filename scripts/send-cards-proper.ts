@@ -26,10 +26,25 @@ if (fs.existsSync(envPath)) {
 
 const CHAT = "297659579";
 const BOT = process.env.TELEGRAM_BOT_TOKEN!;
-const NAMES = process.argv.slice(2);
+const RAW_ARGS = process.argv.slice(2);
+
+// --from "<name>" or --from=<name> sets the forwarder credited on the link.
+// If omitted, default to Mussie Tsegaye (the admin running the script).
+let forwarderName = "Mussie Tsegaye";
+const NAMES: string[] = [];
+for (let i = 0; i < RAW_ARGS.length; i++) {
+  const a = RAW_ARGS[i];
+  if (a === "--from") {
+    forwarderName = RAW_ARGS[++i] || forwarderName;
+  } else if (a.startsWith("--from=")) {
+    forwarderName = a.slice("--from=".length);
+  } else {
+    NAMES.push(a);
+  }
+}
 
 if (NAMES.length === 0) {
-  console.error("Usage: npx tsx scripts/send-cards-proper.ts \"Saron Berhane\" \"Daruselam Mohammed\"");
+  console.error('Usage: npx tsx scripts/send-cards-proper.ts [--from "Recommender Name"] "Subject 1" "Subject 2"');
   process.exit(1);
 }
 
@@ -38,6 +53,30 @@ async function main() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
+
+  // Resolve the forwarder's claim_token so we can stamp it onto every card
+  // link as ?start=claim_<subjectToken>_by_<forwarderToken>. When the
+  // recipient clicks, the bot credits the forwarder with the attribution.
+  let forwarderToken: string | null = null;
+  let forwarderResolvedName: string | null = null;
+  {
+    const fparts = forwarderName.toLowerCase().split(/\s+/).filter(Boolean);
+    const fpattern = "%" + fparts.join("%") + "%";
+    const { data: fprof } = await sb
+      .from("profiles")
+      .select("id, name, claim_token")
+      .ilike("name", fpattern)
+      .order("cv_score", { ascending: false, nullsFirst: false })
+      .limit(1)
+      .maybeSingle();
+    if (fprof?.claim_token) {
+      forwarderToken = fprof.claim_token;
+      forwarderResolvedName = fprof.name;
+      console.log(`Forwarder credited on every card: ${fprof.name} (token=${fprof.claim_token})`);
+    } else {
+      console.log(`⚠ Forwarder "${forwarderName}" not found — links will be sent without forwarder attribution.`);
+    }
+  }
 
   for (const fullName of NAMES) {
     const parts = fullName.toLowerCase().split(/\s+/).filter(Boolean);
@@ -167,7 +206,11 @@ async function main() {
     const firstName = prof.name.split(/\s+/)[0];
     const yrs = prof.years_of_experience ? `${prof.years_of_experience} years` : "";
     const sectors = (prof.sectors || []).slice(0, 4).join(" · ") || "sectors on your profile";
-    const claimLink = `https://t.me/Devidends_Bot?start=claim_${prof.claim_token}`;
+    // Append _by_<forwarderToken> when we have one, so the bot can credit
+    // the forwarder's recommendation in attributions.
+    const subjectToken = prof.claim_token;
+    const fwdSuffix = forwarderToken && forwarderToken !== subjectToken ? `_by_${forwarderToken}` : "";
+    const claimLink = `https://t.me/Devidends_Bot?start=claim_${subjectToken}${fwdSuffix}`;
     const og = `https://devidends.net/api/og/co-creator/${ccRow.invite_token}`;
 
     const caption = [
