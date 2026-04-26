@@ -517,20 +517,16 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
     const lines = reason === "expired"
       ? [
         `<b>This claim link has already been used.</b>`,
-        ``,
-        `If this is your account, just tap below to open the Dev Hub \u2014 your profile is waiting.`,
+        `If this is your account, tap <b>Dev Hub</b> below \u2014 your profile is waiting.`,
       ]
       : [
         `<b>This link isn't valid.</b>`,
-        ``,
-        `If a colleague shared it, ask them to resend the latest one. You can still browse the hub:`,
+        `Ask whoever shared it to resend the latest one. You can still browse via <b>Dev Hub</b> below.`,
       ];
     try {
       await bot.sendMessage(chatId, lines.join("\n"), {
         parse_mode: "HTML",
-        reply_markup: {
-          inline_keyboard: [[{ text: "\ud83d\ude80 Open the Dev Hub", web_app: { url: `${SITE_URL}/tg-app` } }]],
-        },
+        disable_web_page_preview: true,
       });
     } catch {}
   };
@@ -601,7 +597,7 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
       lines = [
         `<b>Welcome, ${escHtml(displayName)} \u2014 you're our co-creator.</b>`,
         `Drop any CV here and I'll ingest it under your name.`,
-        `Or open the Dev Hub for your referrals, intros and the network you've built.`,
+        `Or tap <b>Dev Hub</b> below for your referrals, intros and the network you've built.`,
       ];
     } else {
       const sectorsLine =
@@ -620,16 +616,13 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
         ...(sectorsLine ? [sectorsLine] : []),
         ...(scoreLine ? [scoreLine] : []),
         ``,
-        `Tap below to enter:`,
+        `Tap <b>Dev Hub</b> below to enter.`,
       ];
     }
 
     await bot.sendMessage(chatId, lines.join("\n"), {
       parse_mode: "HTML",
       disable_web_page_preview: true,
-      reply_markup: {
-        inline_keyboard: [[{ text: "\ud83d\ude80 Open the Dev Hub", web_app: { url: `${SITE_URL}/tg-app` } }]],
-      },
     });
   } catch (err) {
     console.error("[telegram] claim start error:", err);
