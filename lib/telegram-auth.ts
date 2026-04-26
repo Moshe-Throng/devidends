@@ -142,13 +142,29 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
       .single();
 
     if (byUsername) {
-      // Link telegram_id to existing profile
+      // Link telegram_id to existing profile. If this profile was a
+      // recommender-card target (claim_token set, never claimed), the user
+      // arriving here through Telegram identity proof effectively claims
+      // it — don't leave them in the "linked but unclaimed" paradox state.
+      const linkPatch: Record<string, string | null> = { telegram_id: telegramId };
+      if (byUsername.claim_token && !byUsername.claimed_at) {
+        linkPatch.claimed_at = new Date().toISOString();
+      }
       await supabase
         .from("profiles")
-        .update({ telegram_id: telegramId })
+        .update(linkPatch)
         .eq("id", byUsername.id);
 
-      return { ...byUsername, telegram_id: telegramId };
+      // Mirror the claim onto the matching co_creators row so the dashboard +
+      // referral counters update.
+      if (linkPatch.claimed_at) {
+        await supabase
+          .from("co_creators")
+          .update({ status: "joined", claimed_at: linkPatch.claimed_at })
+          .eq("profile_id", byUsername.id);
+      }
+
+      return { ...byUsername, telegram_id: telegramId, claimed_at: linkPatch.claimed_at || byUsername.claimed_at };
     }
   }
 
