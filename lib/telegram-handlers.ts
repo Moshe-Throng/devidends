@@ -588,33 +588,41 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
       .update({ status: "joined", claimed_at: claimedAt })
       .eq("profile_id", profile.id);
 
-    // 5. Welcome message \u2014 brief overview of the Dev Hub + single CTA into the app.
+    // 5. Welcome message \u2014 branched by audience.
+    //    Recommenders get a tight 3-line ask (drop a CV here, or open the
+    //    hub for referrals/intros/network). Experts get the intel-feed +
+    //    CV-scoring overview because that IS their core value.
     const displayName = profile.name || firstName;
     const sectors = (profile.sectors as string[]) || [];
-    const sectorsLine =
-      sectors.length > 0 ? `Briefs filtered to: <b>${escHtml(sectors.slice(0, 4).join(" \u00b7 "))}</b>` : null;
-    const scoreLine = profile.cv_score
-      ? `Your CV is on file at <b>${profile.cv_score}/100</b> against donor standards.`
-      : null;
-    const recommenderLine = profile.is_recommender
-      ? `As a recommender, you'll also see who you've brought in and your referral progress.`
-      : null;
 
-    const lines = [
-      `<b>Welcome, ${escHtml(displayName)} \u2014 you're in.</b>`,
-      ``,
-      `<b>Inside the Dev Hub:</b>`,
-      `  \ud83d\udcca  Daily intel feed \u2014 jobs, consultancies and tenders matched to your profile`,
-      `  \ud83c\udfaf  Live CV scoring against GIZ, FCDO, World Bank and EU standards`,
-      `  \ud83e\udd1d  Your trusted network \u2014 recommend or be recommended into live opportunities`,
-      `  \u270d\ufe0f  CV tailoring + donor-format templates on demand`,
-      ``,
-      ...(sectorsLine ? [sectorsLine] : []),
-      ...(scoreLine ? [scoreLine] : []),
-      ...(recommenderLine ? [recommenderLine] : []),
-      ...(sectorsLine || scoreLine || recommenderLine ? [``] : []),
-      `Tap below to enter:`,
-    ];
+    let lines: string[];
+
+    if (profile.is_recommender) {
+      lines = [
+        `<b>Welcome, ${escHtml(displayName)} \u2014 you're our co-creator.</b>`,
+        `Drop any CV here and I'll ingest it under your name.`,
+        `Or open the Dev Hub for your referrals, intros and the network you've built.`,
+      ];
+    } else {
+      const sectorsLine =
+        sectors.length > 0 ? `Briefs filtered to: <b>${escHtml(sectors.slice(0, 4).join(" \u00b7 "))}</b>` : null;
+      const scoreLine = profile.cv_score
+        ? `Your CV is on file at <b>${profile.cv_score}/100</b> against donor standards.`
+        : null;
+      lines = [
+        `<b>Welcome, ${escHtml(displayName)} \u2014 you're in.</b>`,
+        ``,
+        `<b>Inside the Dev Hub:</b>`,
+        `  \ud83d\udcca  Daily intel \u2014 jobs, consultancies and tenders matched to your profile`,
+        `  \ud83c\udfaf  Live CV scoring against GIZ, FCDO, World Bank and EU standards`,
+        `  \u270d\ufe0f  CV tailoring + donor-format templates on demand`,
+        ...(sectorsLine || scoreLine ? [``] : []),
+        ...(sectorsLine ? [sectorsLine] : []),
+        ...(scoreLine ? [scoreLine] : []),
+        ``,
+        `Tap below to enter:`,
+      ];
+    }
 
     await bot.sendMessage(chatId, lines.join("\n"), {
       parse_mode: "HTML",
