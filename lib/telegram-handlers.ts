@@ -1158,12 +1158,36 @@ async function handleRecommenderPrivateCvIngest(
       attributionId = created?.id || null;
     }
 
-    // Count how many people this recommender has brought in total
-    const { count: broughtInCount } = await sb
+    // Body count: every person this recommender has brought in, including
+    // pre-Devidends introductions captured on profiles.recommended_by (the
+    // legacy free-text field) AND attribution rows where they're the
+    // contributor. We dedupe by subject_profile_id so cross-counted entries
+    // don't inflate the total.
+    const senderParts = (sender.name || "").toLowerCase().split(/\s+/).filter(Boolean);
+    const senderFirst = senderParts[0] || "";
+    const broughtSet = new Set<string>();
+    if (senderFirst) {
+      const { data: legacy } = await sb
+        .from("profiles")
+        .select("id, recommended_by")
+        .ilike("recommended_by", `%${senderFirst}%`);
+      for (const r of legacy || []) {
+        const rb = ((r as any).recommended_by || "").toLowerCase();
+        const matchesFirst = rb.includes(senderFirst);
+        const matchesRest = senderParts.length === 1
+          ? true
+          : senderParts.slice(1).some((p) => p.length >= 3 && rb.includes(p));
+        if (matchesFirst && matchesRest) broughtSet.add((r as any).id);
+      }
+    }
+    const { data: attrRows } = await sb
       .from("attributions")
-      .select("id", { count: "exact", head: true })
-      .eq("contributor_profile_id", sender.id)
-      .eq("attribution_type", "referral_member");
+      .select("subject_profile_id")
+      .eq("contributor_profile_id", sender.id);
+    for (const r of attrRows || []) {
+      if ((r as any).subject_profile_id) broughtSet.add((r as any).subject_profile_id);
+    }
+    const broughtInCount = broughtSet.size;
 
     const firstName = sender.name.split(/\s+/)[0];
     const claimLink = `https://t.me/Devidends_Bot?start=claim_${subject.claim_token}`;
@@ -1181,7 +1205,7 @@ async function handleRecommenderPrivateCvIngest(
       `This CV is now tagged as recommended by you. Their claim link, if you want to forward it directly:`,
       claimLink,
       ``,
-      `<b>Your running total:</b> ${broughtInCount ?? 1} brought in via Devidends.`,
+      `<b>Your running total:</b> ${broughtInCount} brought in to date.`,
     ].join("\n");
 
     await paceChat(chatId);
