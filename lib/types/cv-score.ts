@@ -2,6 +2,12 @@ export interface CvDimension {
   name: string;
   score: number;
   weight: number;
+  /**
+   * One-sentence rationale grounded in THIS CV's content — what specifically
+   * pushed the score up or held it back. Required so the breakdown is
+   * defensible, not just numerals.
+   */
+  rationale?: string;
   gaps: string[];
   suggestions: string[];
 }

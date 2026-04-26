@@ -43,8 +43,17 @@ function setCache(key: string, result: CvScoreResult) {
 
 const SYSTEM_PROMPT_GENERIC = `You are a CV scorer for international development consulting (GIZ, World Bank, EU, UNDP, AfDB). Score 0-100 across 6 dimensions. Be specific to THIS CV's content. Weak CVs score <40, strong >80. Never default to 65.
 
+For EACH dimension, provide a one-sentence "rationale" grounded in concrete evidence from THIS CV (a section name, a project, a missing element, a number). The rationale must justify the score. Bad rationale: "needs work". Good rationale: "Professional summary lists three sectors but never names a donor or a quantified result, so it reads as generic."
+
+Calibration anchors:
+  90-100: textbook donor-grade CV — clear summary, quantified donor projects, sharp skills, strong education, donor-format ready
+  75-89:  strong CV with one or two visible gaps (missing summary, no quantification, weak donor naming)
+  60-74:  competent CV but generic — donor experience implied not named, structure ok, skills loose
+  40-59:  underdeveloped — no summary, vague experience, no donors, length issues
+  <40:    incomplete or off-sector
+
 Return ONLY this JSON (no markdown):
-{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>},{"name":"Summary","score":<0-100>},{"name":"Experience","score":<0-100>},{"name":"Skills","score":<0-100>},{"name":"Education","score":<0-100>},{"name":"Donor Readiness","score":<0-100>}],"top_3_improvements":["specific improvement 1","specific improvement 2","specific improvement 3"]}`;
+{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>,"rationale":"..."},{"name":"Summary","score":<0-100>,"rationale":"..."},{"name":"Experience","score":<0-100>,"rationale":"..."},{"name":"Skills","score":<0-100>,"rationale":"..."},{"name":"Education","score":<0-100>,"rationale":"..."},{"name":"Donor Readiness","score":<0-100>,"rationale":"..."}],"top_3_improvements":["specific improvement 1","specific improvement 2","specific improvement 3"]}`;
 
 const SYSTEM_PROMPT_OPPORTUNITY = `You are scoring a candidate's CV AGAINST A SPECIFIC OPPORTUNITY (not in general). The job posting is provided in the user message.
 
@@ -56,12 +65,14 @@ Your job: judge how well THIS candidate fits THIS role. The 6 dimensions reflect
 - Education: meets the role's education bar?
 - Donor Readiness: would this candidate pass screening for THIS posting's donor + role tier?
 
+For EACH dimension, write a one-sentence "rationale" comparing THIS CV to THIS posting using concrete evidence (e.g. "8 years of WASH project leadership directly answers the role's WASH M&E focus" or "CV is heavy on M&E but the role asks for Procurement, no procurement projects listed"). The rationale must justify the score.
+
 Score harshly when the candidate is mismatched (different sector, junior for senior role, wrong country experience, missing required skills). A strong generic CV that doesn't fit the role should score 40-55. A weak CV that perfectly fits should score 60-70. A strong fit scores 75+. Never default to 65.
 
 top_3_improvements MUST be specific to closing the gap to THIS role (e.g., "Add quantified results from your WASH work to match the M&E officer requirements").
 
 Return ONLY this JSON (no markdown):
-{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>},{"name":"Summary","score":<0-100>},{"name":"Experience","score":<0-100>},{"name":"Skills","score":<0-100>},{"name":"Education","score":<0-100>},{"name":"Donor Readiness","score":<0-100>}],"top_3_improvements":["fit-gap improvement 1","fit-gap improvement 2","fit-gap improvement 3"]}`;
+{"overall_score":<0-100>,"dimensions":[{"name":"Structure","score":<0-100>,"rationale":"..."},{"name":"Summary","score":<0-100>,"rationale":"..."},{"name":"Experience","score":<0-100>,"rationale":"..."},{"name":"Skills","score":<0-100>,"rationale":"..."},{"name":"Education","score":<0-100>,"rationale":"..."},{"name":"Donor Readiness","score":<0-100>,"rationale":"..."}],"top_3_improvements":["fit-gap improvement 1","fit-gap improvement 2","fit-gap improvement 3"]}`;
 
 function buildSystemPrompt(opportunity?: OpportunityInput): string {
   return opportunity ? SYSTEM_PROMPT_OPPORTUNITY : SYSTEM_PROMPT_GENERIC;

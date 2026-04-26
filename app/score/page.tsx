@@ -1522,6 +1522,16 @@ function CvScorerPage() {
 
                       {isOpen && (
                         <div className="px-5 pb-5 border-t border-dark-50 animate-fadeInUp">
+                          {dim.rationale && (
+                            <div className="mt-4 mb-1 px-3 py-2.5 bg-dark-50/40 rounded-lg border-l-2 border-cyan-400">
+                              <p className="text-[10px] font-bold text-dark-500 uppercase tracking-[0.15em] mb-1">
+                                Why this score
+                              </p>
+                              <p className="text-sm text-dark-700 leading-relaxed">
+                                {dim.rationale}
+                              </p>
+                            </div>
+                          )}
                           <div className="grid md:grid-cols-2 gap-5 mt-4">
                             {(dim.gaps?.length ?? 0) > 0 && (
                               <div>

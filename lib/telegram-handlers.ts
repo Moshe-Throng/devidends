@@ -1202,17 +1202,10 @@ async function handleRecommenderPrivateCvIngest(
       ].join("\n");
       const keyboard = {
         inline_keyboard: [
-          [
-            { text: "👋 Barely know them", callback_data: `refnotes_lvl:light:${attributionId}:${subject.id}` },
-            { text: "🤝 Know them", callback_data: `refnotes_lvl:professional:${attributionId}:${subject.id}` },
-          ],
-          [
-            { text: "💼 Worked with them", callback_data: `refnotes_lvl:worked:${attributionId}:${subject.id}` },
-            { text: "⭐ Highly recommend", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` },
-          ],
-          [
-            { text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` },
-          ],
+          [{ text: "👋 I just know them", callback_data: `refnotes_lvl:casual:${attributionId}:${subject.id}` }],
+          [{ text: "🤝 We worked together", callback_data: `refnotes_lvl:worked:${attributionId}:${subject.id}` }],
+          [{ text: "⭐ Strongly recommend", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` }],
+          [{ text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` }],
         ],
       };
       await bot.sendMessage(chatId, prompt, { parse_mode: "HTML", reply_markup: keyboard });
@@ -1909,17 +1902,22 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     if (data.startsWith("refnotes_lvl:")) {
       const [, level, attributionId, subjectProfileId] = data.split(":");
       if (!level || !attributionId || !subjectProfileId) return;
+      // New 3-level scheme + back-compat for any in-flight messages with the
+      // old 4-level keys.
       const labels: Record<string, string> = {
-        light: "Barely know them",
-        professional: "Know them",
-        worked: "Worked with them",
-        strong: "Highly recommend",
+        casual: "I just know them",
+        worked: "We worked together",
+        strong: "Strongly recommend",
+        // legacy keys
+        light: "I just know them",
+        professional: "I just know them",
       };
       const confidenceMap: Record<string, string> = {
-        light: "low",
-        professional: "medium",
+        casual: "medium",
         worked: "high",
         strong: "high",
+        light: "medium",
+        professional: "medium",
       };
       const label = labels[level] || level;
       const confidence = confidenceMap[level] || "medium";
@@ -1957,18 +1955,100 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       } catch (e) {
         console.warn("[refnotes_lvl] save failed:", (e as Error).message);
       }
+      // Check whether the subject profile already has gender on file. If not,
+      // ask the recommender — we use this for diversity reporting in shortlists,
+      // and recommenders almost always know without thinking.
+      let askGender = false;
+      try {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb2 = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+        const { data: subjP } = await sb2
+          .from("profiles")
+          .select("gender")
+          .eq("id", subjectProfileId)
+          .maybeSingle();
+        askGender = !subjP?.gender;
+      } catch {}
+
+      if (askGender) {
+        try {
+          await bot.sendMessage(
+            chatId,
+            [
+              `<b>✓ Saved as ${escHtml(label)}.</b>`,
+              ``,
+              `<b>Quick — what's their gender?</b>`,
+              `<i>Used for diversity reporting on shortlists. Skip if you'd rather not.</i>`,
+            ].join("\n"),
+            {
+              parse_mode: "HTML",
+              reply_markup: {
+                inline_keyboard: [
+                  [
+                    { text: "♀ Woman", callback_data: `refnotes_gender:female:${attributionId}:${subjectProfileId}` },
+                    { text: "♂ Man", callback_data: `refnotes_gender:male:${attributionId}:${subjectProfileId}` },
+                  ],
+                  [
+                    { text: "Prefer not to say", callback_data: `refnotes_gender:nb:${attributionId}:${subjectProfileId}` },
+                    { text: "Skip", callback_data: `refnotes_gender:skip:${attributionId}:${subjectProfileId}` },
+                  ],
+                ],
+              },
+            }
+          );
+        } catch {}
+      } else {
+        try {
+          await bot.sendMessage(
+            chatId,
+            [
+              `<b>✓ Saved as ${escHtml(label)}.</b>`,
+              ``,
+              `Want to add context? Reply here with anything — strengths, availability, specific roles you'd put them forward for. Or ignore to move on.`,
+            ].join("\n"),
+            { parse_mode: "HTML" }
+          );
+        } catch {}
+      }
+      // Keep the chatState open so a text follow-up is captured as notes.
+      return;
+    }
+
+    // --- Recommender-ingest: gender tap ---
+    if (data.startsWith("refnotes_gender:")) {
+      const [, value, attributionId, subjectProfileId] = data.split(":");
+      if (!value || !attributionId || !subjectProfileId) return;
+      try {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+        if (value === "female" || value === "male") {
+          await sb.from("profiles").update({ gender: value }).eq("id", subjectProfileId);
+        } else if (value === "nb") {
+          await sb.from("profiles").update({ gender: "prefer_not_to_say" }).eq("id", subjectProfileId);
+        }
+        // "skip" → write nothing
+      } catch (e) {
+        console.warn("[refnotes_gender] save failed:", (e as Error).message);
+      }
+      const ack: Record<string, string> = {
+        female: "♀ Woman",
+        male: "♂ Man",
+        nb: "Prefer not to say",
+        skip: "Skipped",
+      };
       try {
         await bot.sendMessage(
           chatId,
           [
-            `<b>✓ Saved as ${escHtml(label)}.</b>`,
+            `<b>✓ ${escHtml(ack[value] || "Noted")}.</b>`,
             ``,
             `Want to add context? Reply here with anything — strengths, availability, specific roles you'd put them forward for. Or ignore to move on.`,
           ].join("\n"),
           { parse_mode: "HTML" }
         );
       } catch {}
-      // Keep the chatState open so a text follow-up is captured as notes.
+      // chatState (awaiting_referral_notes) stays open — any text reply
+      // still captures as notes.
       return;
     }
 

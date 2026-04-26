@@ -285,6 +285,11 @@ export default function TgAppScore() {
                     }}
                   />
                 </div>
+                {d.rationale && (
+                  <p className="mt-2 text-[11px] leading-relaxed text-dark-500">
+                    {d.rationale}
+                  </p>
+                )}
               </div>
             ))}
           </div>
