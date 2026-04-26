@@ -113,12 +113,19 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
     .single();
 
   if (existing) {
-    // Update name/username if changed
+    // CRITICAL: never overwrite a fuller existing name with the Telegram
+    // first_name + last_name. Tg display names are often short ("Tsegab A",
+    // "Moshe", "Mekbib") while the profile name is the full proper name
+    // ("Tsegab Alemayehu Bukate", "Mussie Tsegaye", "Mekibib Kebede"). Same
+    // policy as /api/claim — only set the name when the existing field is
+    // empty or trivially short (placeholder).
     const updates: Record<string, string | null> = {};
-    const fullName = [user.first_name, user.last_name]
-      .filter(Boolean)
-      .join(" ");
-    if (existing.name !== fullName) updates.name = fullName;
+    const tgName = [user.first_name, user.last_name].filter(Boolean).join(" ").trim();
+    const existingName = (existing.name || "").trim();
+    const existingIsPlaceholder = !existingName || existingName.length < 3;
+    if (existingIsPlaceholder && tgName) {
+      updates.name = tgName;
+    }
     if (user.username && existing.telegram_username !== user.username) {
       updates.telegram_username = user.username;
     }
@@ -146,6 +153,7 @@ export async function getOrCreateTelegramProfile(user: TelegramUser) {
       // recommender-card target (claim_token set, never claimed), the user
       // arriving here through Telegram identity proof effectively claims
       // it — don't leave them in the "linked but unclaimed" paradox state.
+      // We DO NOT update the name here for the same reason as path 1.
       const linkPatch: Record<string, string | null> = { telegram_id: telegramId };
       if (byUsername.claim_token && !byUsername.claimed_at) {
         linkPatch.claimed_at = new Date().toISOString();
