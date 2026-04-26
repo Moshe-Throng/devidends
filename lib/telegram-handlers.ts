@@ -566,14 +566,39 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
     //    any cv_scores to the canonical profile, then delete them.
     const { data: existingForTg } = await sb
       .from("profiles")
-      .select("id, cv_text")
+      .select("id, name, cv_text, claim_token")
       .eq("telegram_id", telegramId);
     const orphanIds = (existingForTg || [])
-      .filter((p: { id: string; cv_text: string | null }) => !p.cv_text && p.id !== profile.id)
-      .map((p: { id: string }) => p.id);
+      .filter((p: any) => !p.cv_text && p.id !== profile.id)
+      .map((p: any) => p.id);
     if (orphanIds.length > 0) {
       await sb.from("cv_scores").update({ profile_id: profile.id }).in("profile_id", orphanIds);
       await sb.from("profiles").delete().in("id", orphanIds);
+    }
+
+    // 2b. Guardrail \u2014 if this Telegram account already owns a *different*
+    // claimed profile with a CV, refuse the claim. This catches the case
+    // where a recommender clicks the claim link of someone they just
+    // ingested (their own forwarded link) and would otherwise overwrite
+    // the subject's profile with their own telegram_id.
+    const existingClaimed = (existingForTg || []).find(
+      (p: any) => p.id !== profile.id && p.cv_text,
+    );
+    if (existingClaimed) {
+      try {
+        await bot.sendMessage(
+          chatId,
+          [
+            `<b>This claim link belongs to someone else.</b>`,
+            ``,
+            `Your Telegram account is already linked to <b>${escHtml((existingClaimed as any).name || "another profile")}</b>.`,
+            ``,
+            `If you meant to <i>share</i> this link with the person it's for, forward it to them. If you think this is a mistake, message <b>contact@devidends.net</b>.`,
+          ].join("\n"),
+          { parse_mode: "HTML", disable_web_page_preview: true },
+        );
+      } catch {}
+      return;
     }
 
     // 3. Link / claim. Two cases:
