@@ -1,15 +1,62 @@
 [
   {
-    "title": "The UN in Ethiopia",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
+    "title": "Team Assistant – Support for the consultative meeting on Financing Nuclear Power Projects in Africa and the 2026 Nuclear Energy Innovation Summit and Capacity Building Workshop on Tracking the Full I",
+    "organization": "Economic Commission for Africa",
+    "description": "Result of Service The Individual Contractor will ensure the efficient implementation of the two projects by delivering high-quality administrative, logistical, and coordination support. This includes timely handling of complex inquiries, accurate processing of travel and recruitment arrangements, proper filing and archiving of divisional records, and effective liaison with internal service sections. The contractor will guarantee smooth organization of meetings and knowledge delivery events, main",
+    "deadline": "2026-05-01T03:59:59.000Z",
+    "published": "2026-04-24T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/269524?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.695Z",
+    "raw_fields": {
+      "jobLevel": "CON",
+      "categoryCode": "CON",
+      "jobCategory": "Consultants",
+      "jobFamily": "Administration",
+      "jobNetwork": ""
+    }
+  },
+  {
+    "title": "SENIOR STATISTICS ASSISTANT, G7",
+    "organization": "Economic Commission for Africa",
+    "description": "Org. Setting and Reporting ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 SDGs and Agenda 2063. The mission is guided by ECA's five new strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developing macroeconomic and structural policy options to acceler",
+    "deadline": "2026-05-09T03:59:59.000Z",
+    "published": "2026-04-24T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/276231?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "G-7",
+      "categoryCode": "GS",
+      "jobCategory": "General Service and Related Categories",
+      "jobFamily": "Statistics",
+      "jobNetwork": "Economic, Social and Development"
+    }
+  },
+  {
+    "title": "Intern - Sustainable Development and Integrated Planning Section (SDIPS) /MFGPD",
+    "organization": "Economic Commission for Africa",
+    "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 Agenda and Agenda 2063. The mission will be guided by ECA's five new strategic directions which are: (1) advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; ",
+    "deadline": "2026-05-11T03:59:59.000Z",
+    "published": "2026-04-20T04:00:00.000Z",
     "country": "Ethiopia",
     "source_url": "https://ethiopia.un.org/en/about/about-the-un",
     "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.666Z"
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "I-1",
+      "categoryCode": "INT",
+      "jobCategory": "Internship",
+      "jobFamily": "Economic Affairs",
+      "jobNetwork": ""
+    }
   },
   {
     "title": "UN Entities in Ethiopia",
@@ -20,92 +67,73 @@
     "country": "Ethiopia",
     "source_url": "https://ethiopia.un.org/en/about/un-entities-in-country",
     "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "I-1",
+      "categoryCode": "INT",
+      "jobCategory": "Internship",
+      "jobFamily": "IMA",
+      "jobNetwork": ""
+    }
   },
   {
-    "title": "The Resident Coordinator Office",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/about/about-the-resident-coordinator-office",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Our Team in Ethiopia",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/about/our-team",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Contact Us",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/contact-us",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Sustainable Development Group",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://unsdg.un.org/",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Sustainable Development Goals",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
+    "title": "Regional Director, Africa, D2",
+    "organization": "Resident Coordinator System",
+    "description": "Org. Setting and Reporting In its Resolution A/RES/72/279, the United Nations General Assembly endorsed the transformation of the Development Operations Coordination Office (DCO) as a stand-alone coordination office within the United Nations Secretariat. DCO exercises managerial and oversight functions of the resident coordinator system under the oversight of the Chair of the United Nations Sustainable Development Group (UNSDG). In 2026, DCO undertook a recalibration to ensure the RC system rema",
+    "deadline": "2026-05-23T03:59:59.000Z",
+    "published": "2026-04-08T04:00:00.000Z",
     "country": "Ethiopia",
     "source_url": "https://ethiopia.un.org/en/sdgs",
     "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "D-2",
+      "categoryCode": "PD",
+      "jobCategory": "Professional and Higher Categories",
+      "jobFamily": "Programme Management",
+      "jobNetwork": "Economic, Social and Development"
+    }
   },
   {
-    "title": "Take Action",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/take-action",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Publications",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
+    "title": "ACS/ Intern Statistics",
+    "organization": "Economic Commission for Africa",
+    "description": "Work Location Addis Ababa Expected duration 6 Duties and Responsibilities Background: The African Centre for Statistics (ACS) is headed by a director and reports to the Deputy Executive Secretary (Programme). The Centre is responsible for improving the production, dissemination and use of quality and credible data statistics, and integrated geospatial information in Africa to support evidence-based planning, policymaking, implementation, monitoring, evaluation and reporting under the 2030 Agenda",
+    "deadline": "2026-05-02T03:59:59.000Z",
+    "published": "2026-04-02T04:00:00.000Z",
     "country": "Ethiopia",
     "source_url": "https://ethiopia.un.org/en/resources/publications",
     "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "I-1",
+      "categoryCode": "INT",
+      "jobCategory": "Internship",
+      "jobFamily": "Statistics",
+      "jobNetwork": ""
+    }
+  },
+  {
+    "title": "ACS/Data Analysis",
+    "organization": "Economic Commission for Africa",
+    "description": "Work Location Addis Ababa Expected duration 6 Duties and Responsibilities Background: The African Centre for Statistics (ACS) is headed by a director and reports to the Deputy Executive Secretary (Programme). The Centre is responsible for improving the production, dissemination and use of quality and credible data statistics, and integrated geospatial information in Africa to support evidence-based planning, policymaking, implementation, monitoring, evaluation and reporting under the 2030 Agenda",
+    "deadline": "2026-05-02T03:59:59.000Z",
+    "published": "2026-04-02T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/275110?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.696Z",
+    "raw_fields": {
+      "jobLevel": "I-1",
+      "categoryCode": "INT",
+      "jobCategory": "Internship",
+      "jobFamily": "Statistics",
+      "jobNetwork": ""
+    }
   },
   {
     "title": "Press Centre",
@@ -116,79 +144,14 @@
     "country": "Ethiopia",
     "source_url": "https://ethiopia.un.org/en/jobs#",
     "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Press Releases",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/press-centre/press-releases",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Media Contacts",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://ethiopia.un.org/en/press-centre/media-contacts",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Fraud Alert",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://www.un.org/en/about-us/fraud-alert/",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Privacy Notice",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://www.un.org/en/about-us/privacy-notice/",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Site Index",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://www.un.org/en/site-index",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
-  },
-  {
-    "title": "Terms of Use",
-    "description": "",
-    "deadline": null,
-    "organization": "United Nations",
-    "department": null,
-    "country": "Ethiopia",
-    "source_url": "https://www.un.org/en/about-us/terms-of-use",
-    "source_domain": "careers.un.org",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:08:35.676Z"
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:00.697Z",
+    "raw_fields": {
+      "jobLevel": "NO-B",
+      "categoryCode": "NPO",
+      "jobCategory": "National Professional Officers",
+      "jobFamily": "Public Information",
+      "jobNetwork": "Public Information and Conference Management"
+    }
   }
 ]

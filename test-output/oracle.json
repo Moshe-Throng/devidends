@@ -6,9 +6,8 @@
     "organization": "NRC (Norwegian Refugee Council)",
     "country": "Ethiopia",
     "source_url": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/requisitions?keyword=NORCAP",
-    "source_domain": "ekum.fa.em2.oraclecloud.com",
-    "type": "job",
-    "scraped_at": "2026-04-26T05:09:05.763Z",
-    "location": "City, state, country"
+    "source_domain": "oraclecloud.com",
+    "content_type": "job",
+    "scraped_at": "2026-04-26T07:02:48.753Z"
   }
 ]
