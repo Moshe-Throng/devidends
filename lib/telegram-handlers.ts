@@ -532,15 +532,22 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
   };
 
   try {
-    // 1. Find the profile that owns this claim token. Atomic \u2014 only if not yet claimed.
+    // 1. Find the profile that owns this claim token.
     const { data: profile } = await sb
       .from("profiles")
-      .select("id, name, cv_score, sectors, is_recommender")
+      .select("id, name, cv_score, sectors, is_recommender, claimed_at, telegram_id")
       .eq("claim_token", claimToken)
       .maybeSingle();
 
     if (!profile) {
       await sendInvalidLink("unknown");
+      return;
+    }
+
+    // If a different Telegram account already owns this profile, we don't
+    // overwrite \u2014 the user gets the invalid-link path.
+    if (profile.telegram_id && profile.telegram_id !== telegramId) {
+      await sendInvalidLink("expired");
       return;
     }
 
@@ -559,9 +566,12 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
       await sb.from("profiles").delete().in("id", orphanIds);
     }
 
-    // 3. Atomic claim \u2014 set telegram_id + claimed_at on the canonical profile.
-    //    Token possession + Telegram identity = sufficient claim authority.
-    const claimedAt = new Date().toISOString();
+    // 3. Link / claim. Two cases:
+    //    (a) Already claimed (e.g. via email) but no telegram_id yet \u2014
+    //        we link Telegram, preserving the original claimed_at.
+    //    (b) Not yet claimed \u2014 full atomic claim.
+    //    Token possession + Telegram identity = sufficient authority.
+    const claimedAt = profile.claimed_at || new Date().toISOString();
     const { error: updateErr } = await sb
       .from("profiles")
       .update({
@@ -569,8 +579,7 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
         telegram_username: telegramUsername,
         claimed_at: claimedAt,
       })
-      .eq("id", profile.id)
-      .is("claimed_at", null);
+      .eq("id", profile.id);
 
     if (updateErr) {
       console.error("[claim] update error:", updateErr.message);
