@@ -147,8 +147,15 @@ function extractSenderEmail(from: string): string | null {
 }
 
 export async function POST(req: NextRequest) {
+  let body: any;
   try {
-    const body = await req.json();
+    body = await req.json();
+  } catch (e) {
+    // Bad payload — don't 5xx (CloudMailin would retry forever). Just ack.
+    console.warn("[inbound/cv] malformed JSON body:", (e as Error).message);
+    return NextResponse.json({ ok: true, handled: "parse_error" });
+  }
+  try {
 
     // Normalize across parser shapes (Resend, CloudMailin, Postmark, ...).
     // CloudMailin nests headers under `headers`, sender under `envelope.from`,
