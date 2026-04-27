@@ -1,19 +1,84 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-25T06:24:04.297Z",
-    "count": 5
+    "scraped_at": "2026-04-27T07:39:45.516Z",
+    "count": 8
   },
   "opportunities": [
     {
+      "title": "Selection of Senior Special Regional Implementation Advisor XII",
+      "organization": "World Bank",
+      "description": "Selection of Senior Special Regional Implementation Advisor XII\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542249-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-05-07",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440857",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-04-27T07:38:00.786Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542249-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of Senior Special Regional Implementation Advisor XIII",
+      "organization": "World Bank",
+      "description": "Selection of Senior Special Regional Implementation Advisor XIII\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542250-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-05-07",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440855",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-04-27T07:38:00.786Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542250-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of Senior Special Regional Implementation Advisor XI",
+      "organization": "World Bank",
+      "description": "Selection of Senior Special Regional Implementation Advisor XI\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542248-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-05-07",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440859",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-04-27T07:38:00.786Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542248-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
       "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
+      "organization": "World Bank",
       "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
       "deadline": "2026-04-30",
-      "organization": "World Bank",
+      "published": null,
       "country": "Ethiopia",
+      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-25T06:22:25.240Z",
+      "scraped_at": "2026-04-27T07:38:00.786Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -34,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-25T06:22:25.687Z",
+      "scraped_at": "2026-04-27T07:38:01.109Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -55,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-25T06:22:25.687Z",
+      "scraped_at": "2026-04-27T07:38:01.109Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -76,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-25T06:22:25.687Z",
+      "scraped_at": "2026-04-27T07:38:01.109Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -88,14 +153,16 @@
     },
     {
       "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
+      "organization": "World Bank",
       "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
       "deadline": "2026-05-08",
-      "organization": "World Bank",
+      "published": null,
       "country": "Ethiopia",
+      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-25T06:22:25.687Z",
+      "scraped_at": "2026-04-27T07:38:01.109Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
