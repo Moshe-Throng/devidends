@@ -33,8 +33,11 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Single opportunity line — clean, scannable */
-function oppLine(opp: SampleOpportunity, num: number): string {
+/**
+ * Compact one-line opportunity (per-subscriber DM digest — kept tight on
+ * purpose since the recipient has already been pre-matched to their filters).
+ */
+function oppLine(opp: SampleOpportunity, _num: number): string {
   const title = escHtml(truncate(opp.title, 52));
   const org = escHtml(truncate(opp.organization, 25));
   const deadline = opp.deadline
@@ -45,6 +48,74 @@ function oppLine(opp: SampleOpportunity, num: number): string {
   const badge = type === "consultancy" ? "📋" : type === "internship" ? "🎓" : "▪️";
   const meta = [org, deadline].filter(Boolean).join(" · ");
   return `${badge} <a href="${url}"><b>${title}</b></a>\n     <i>${meta}</i>`;
+}
+
+/** Strip HTML tags and collapse whitespace from a description string. */
+function cleanDescription(text: string): string {
+  return text
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#\d+;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function capitalize(s: string): string {
+  if (!s) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+}
+
+/** Format the deadline cell with a friendly countdown. */
+function formatDeadline(deadline: string | null): string | null {
+  if (!deadline) return null;
+  const d = new Date(deadline);
+  if (isNaN(d.getTime())) return null;
+  const dateStr = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  const days = Math.ceil((d.getTime() - Date.now()) / 86_400_000);
+  const tag =
+    days < 0 ? "overdue" :
+    days === 0 ? "today" :
+    days === 1 ? "1 day left" :
+    `${days} days left`;
+  return `${dateStr} (${tag})`;
+}
+
+/**
+ * Rich 4-line block per opportunity (channel digest).
+ *   Line 1: badge + linked title
+ *   Line 2: org · 📍 country · seniority · Xy yrs
+ *   Line 3: ⏰ Deadline date (countdown)
+ *   Line 4: short description preview (italic)
+ */
+function oppBlock(opp: SampleOpportunity): string[] {
+  const url = opp.source_url || `${SITE_URL}/opportunities`;
+  const title = escHtml(truncate(opp.title, 80));
+  const org = escHtml(truncate(opp.organization, 40));
+  const type = (opp.classified_type || opp.type || "job").toLowerCase();
+  const badge = type === "consultancy" ? "📋" : type === "internship" ? "🎓" : "▪️";
+
+  const metaParts: string[] = [`<b>${org}</b>`];
+  if (opp.country) metaParts.push(`📍 ${escHtml(opp.country)}`);
+  if (opp.seniority) metaParts.push(escHtml(capitalize(opp.seniority)));
+  if (opp.experience_years && opp.experience_years > 0) metaParts.push(`${opp.experience_years}+ yrs`);
+
+  const lines: string[] = [
+    `${badge} <a href="${url}"><b>${title}</b></a>`,
+    `     ${metaParts.join(" · ")}`,
+  ];
+
+  const deadlineCell = formatDeadline(opp.deadline);
+  if (deadlineCell) lines.push(`     ⏰ Deadline ${deadlineCell}`);
+
+  if (opp.description) {
+    const cleaned = cleanDescription(opp.description);
+    if (cleaned) lines.push(`     <i>${escHtml(truncate(cleaned, 180))}</i>`);
+  }
+
+  return lines;
 }
 
 // ---------------------------------------------------------------------------
@@ -93,58 +164,114 @@ export async function broadcastToGroup(
   const date = now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   const greeting = now.getUTCHours() < 12 ? "Good morning" : "Good afternoon";
 
-  const lines: string[] = [
+  // Cap at 20 jobs per day, separated into consultancies and regular jobs.
+  // The richer block format (4 lines + blank line ≈ 280 chars) means a
+  // 20-item digest is ~5.5K chars, over Telegram's 4096-char message limit;
+  // we split into Part 1 / Part 2 messages when needed.
+  const MAX_JOBS = 20;
+  const cappedJobs = jobs.slice(0, MAX_JOBS);
+
+  const consultancies = cappedJobs.filter(
+    (j) => (j.classified_type || j.type || "").toLowerCase() === "consultancy"
+  );
+  const regularJobs = cappedJobs.filter(
+    (j) => (j.classified_type || j.type || "").toLowerCase() !== "consultancy"
+  );
+
+  // Build a pool of (header, body) blocks to pack into messages.
+  type Block = { lines: string[] };
+  const blocks: Block[] = [];
+
+  if (regularJobs.length > 0) {
+    const header = [
+      `<b>💼 ${regularJobs.length} New Position${regularJobs.length > 1 ? "s" : ""}</b>`,
+      ``,
+    ];
+    blocks.push({ lines: header });
+    for (const opp of regularJobs) {
+      blocks.push({ lines: [...oppBlock(opp), ``] });
+    }
+  }
+
+  if (consultancies.length > 0) {
+    const header = [
+      `<b>📋 ${consultancies.length} Consultanc${consultancies.length > 1 ? "ies" : "y"}</b>`,
+      ``,
+    ];
+    blocks.push({ lines: header });
+    for (const opp of consultancies) {
+      blocks.push({ lines: [...oppBlock(opp), ``] });
+    }
+  }
+
+  if (news.length > 0) {
+    const newsBlock: string[] = [`<b>📰 Dev Intel</b>`, ``];
+    for (const a of news.slice(0, 3)) {
+      newsBlock.push(
+        `  → <a href="${a.url}">${escHtml(truncate(a.title, 65))}</a>`
+      );
+    }
+    newsBlock.push(``);
+    blocks.push({ lines: newsBlock });
+  }
+
+  if (jobs.length > MAX_JOBS) {
+    blocks.push({
+      lines: [
+        `<i>+ ${jobs.length - MAX_JOBS} more on devidends.net/tg-app</i>`,
+        ``,
+      ],
+    });
+  }
+
+  // Title for the first message; footer for the last.
+  const titleLines = [
     `✦ <b>DEVIDENDS DAILY</b>`,
     `<i>${greeting} — ${escHtml(date)}</i>`,
     ``,
   ];
+  const footerLines = [
+    `━━━━━━━━━━━━━━━━━━━━`,
+    `<a href="${SITE_URL}/tg-app">🔍 Browse All</a>  ·  <a href="${SITE_URL}/score">📊 Score CV</a>  ·  <a href="${SITE_URL}/tg-app/alerts">⚙️ Alerts</a>`,
+  ];
 
-  // Jobs — grouped by type
-  if (jobs.length > 0) {
-    // Separate consultancies from jobs
-    const consultancies = jobs.filter(j => (j.classified_type || j.type || "").toLowerCase() === "consultancy");
-    const regularJobs = jobs.filter(j => (j.classified_type || j.type || "").toLowerCase() !== "consultancy");
-
-    if (regularJobs.length > 0) {
-      lines.push(`<b>💼 ${regularJobs.length} New Position${regularJobs.length > 1 ? "s" : ""}</b>`);
-      lines.push(``);
-      for (const opp of regularJobs.slice(0, 6)) {
-        lines.push(oppLine(opp, 0));
-        lines.push(``);
-      }
-      if (regularJobs.length > 6) {
-        lines.push(`     <i>+ ${regularJobs.length - 6} more positions</i>`);
-        lines.push(``);
-      }
+  // Pack blocks into messages under the 4096-char limit (3800 to leave headroom).
+  const MAX_CHARS = 3800;
+  const messages: string[] = [];
+  let current = titleLines.slice();
+  let currentLen = current.join("\n").length;
+  for (const block of blocks) {
+    const blockText = block.lines.join("\n");
+    const blockLen = blockText.length + 1;
+    if (currentLen + blockLen > MAX_CHARS && current.length > titleLines.length) {
+      messages.push(current.join("\n"));
+      current = [];
+      currentLen = 0;
     }
+    current.push(...block.lines);
+    currentLen += blockLen;
+  }
+  if (current.length > 0) messages.push(current.join("\n"));
 
-    if (consultancies.length > 0) {
-      lines.push(`<b>📋 ${consultancies.length} Consultanc${consultancies.length > 1 ? "ies" : "y"}</b>`);
-      lines.push(``);
-      for (const opp of consultancies.slice(0, 4)) {
-        lines.push(oppLine(opp, 0));
-        lines.push(``);
-      }
-      if (consultancies.length > 4) {
-        lines.push(`     <i>+ ${consultancies.length - 4} more</i>`);
-        lines.push(``);
-      }
+  // Footer goes on the last message; if it would push it over, send footer
+  // as its own short message.
+  const footerText = footerLines.join("\n");
+  if (messages.length > 0) {
+    const last = messages[messages.length - 1];
+    if (last.length + footerText.length + 1 <= MAX_CHARS) {
+      messages[messages.length - 1] = last + "\n" + footerText;
+    } else {
+      messages.push(footerText);
     }
+  } else {
+    messages.push(titleLines.join("\n") + "\n" + footerText);
   }
 
-  // News — compact
-  if (news.length > 0) {
-    lines.push(`<b>📰 Dev Intel</b>`);
-    lines.push(``);
-    for (const a of news.slice(0, 3)) {
-      lines.push(`  → <a href="${a.url}">${escHtml(truncate(a.title, 65))}</a>`);
-    }
-    lines.push(``);
-  }
-
-  // Footer with inline keyboard-style links
-  lines.push(`━━━━━━━━━━━━━━━━━━━━`);
-  lines.push(`<a href="${SITE_URL}/tg-app">🔍 Browse All</a>  ·  <a href="${SITE_URL}/score">📊 Score CV</a>  ·  <a href="${SITE_URL}/tg-app/alerts">⚙️ Alerts</a>`);
+  // Annotate Part X / N markers when more than one message is sent.
+  const total = messages.length;
+  const annotated = total > 1
+    ? messages.map((m, i) => `<i>Part ${i + 1} of ${total}</i>\n${m}`)
+    : messages;
 
   try {
     const opts: Record<string, unknown> = {
@@ -153,9 +280,14 @@ export async function broadcastToGroup(
     };
     if (topicId) opts.message_thread_id = parseInt(topicId, 10);
 
-    await bot.sendMessage(groupId, lines.join("\n"), opts);
-    console.log(`[telegram-broadcast] Group digest sent: ${jobs.length} jobs`);
-    return { sent: true, count: jobs.length };
+    for (let i = 0; i < annotated.length; i++) {
+      await bot.sendMessage(groupId, annotated[i], opts);
+      if (i < annotated.length - 1) await sleep(800); // gentle pacing
+    }
+    console.log(
+      `[telegram-broadcast] Group digest sent: ${cappedJobs.length} jobs in ${annotated.length} message(s)`
+    );
+    return { sent: true, count: cappedJobs.length };
   } catch (err) {
     console.error("[telegram-broadcast] Group digest failed:", err);
     return { sent: false, count: 0 };
