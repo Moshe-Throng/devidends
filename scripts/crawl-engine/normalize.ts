@@ -307,39 +307,28 @@ export function normalizeOpportunity(
 }
 
 /**
- * Ethiopia-relevance filter — drop entries that are clearly posted for
- * another country (e.g. GGGI Seoul, UNICEF Guatemala). Keep Ethiopia,
- * Horn of Africa, and international/global/remote roles (which East
- * Africans can apply to).
- *
- * Errs on the side of inclusion — if country isn't set or is ambiguous,
- * the job is kept. Only jobs CLEARLY anchored outside the region are
- * dropped.
+ * Ethiopia-relevance filter — STRICT. The intel feed serves Ethiopian
+ * development consultants, and the previous "errs on inclusion" rule
+ * left ~60% of the channel digest as international noise. The new rule:
+ * the job MUST mention Ethiopia, Addis Ababa, or the Horn of Africa
+ * somewhere — country, city, title or description — otherwise it is
+ * dropped. No fallback to "regional Africa", no fallback to HQ-cities,
+ * no fallback to "international" titles. If a regional consultancy
+ * legitimately covers Ethiopia, the description will say so.
  */
 export function isRelevantForEthiopia(opp: RawOpportunity): boolean {
   const country = (opp.country || "").toLowerCase();
   const city = (opp.city || "").toLowerCase();
   const title = (opp.title || "").toLowerCase();
+  const desc = (opp.description || "").slice(0, 3000).toLowerCase();
+  const allText = `${country} ${city} ${title} ${desc}`;
 
-  // No country set at all → keep (let downstream filters decide)
-  if (!country && !city) return true;
+  // Must explicitly name Ethiopia or its capital or the Horn of Africa
+  // somewhere. Other Ethiopian cities (Dire Dawa, Mekelle, Hawassa,
+  // Bahir Dar, Adama, Jimma, Gondar) also count.
+  const ETHIOPIA_RE = /\b(ethiopia|ethiopian|addis\s*ababa|addis|dire\s*dawa|mekelle|hawassa|awassa|bahir\s*dar|bahirdar|adama|jimma|gondar|gonder|harar|nazret|nazareth|semera|jijiga|horn of africa|greater horn)\b/i;
 
-  // Ethiopia / Horn of Africa / East Africa — keep
-  if (/(ethiopia|addis|eritrea|somalia|somaliland|djibouti|kenya|south sudan|sudan|uganda|tanzania|rwanda)/i.test(country + " " + city)) return true;
-  if (/(horn of africa|east africa|eastern africa|greater horn)/i.test(country + " " + city + " " + title)) return true;
-
-  // Africa-regional / Africa-wide — keep
-  if (/(africa|sub[- ]saharan|sahel|pan[- ]african|continent[a-z]*)/i.test(country + " " + title)) return true;
-
-  // International / global / remote / HQ roles — keep
-  if (/\b(international|global|remote|home.?based|headquarters?|\bhq\b|roving|multi.?country|work from anywhere)\b/i.test(title)) return true;
-
-  // HQ cities (major donor HQs that recruit globally) — keep
-  if (/\b(geneva|new york|washington|rome|paris|london|vienna|brussels|nairobi|amsterdam|copenhagen|stockholm|oslo|bonn|berlin)\b/i.test(city + " " + country)) return true;
-
-  // Everything else with a clear non-East-Africa country — drop
-  // (Seoul, Guatemala, Bangkok, Delhi, Lagos, Cape Town, etc.)
-  return false;
+  return ETHIOPIA_RE.test(allText);
 }
 
 export function normalizeAll(

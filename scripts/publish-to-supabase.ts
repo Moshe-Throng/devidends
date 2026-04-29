@@ -99,7 +99,9 @@ async function main() {
       description: (opp.description || "").slice(0, 10000),
       deadline: parseDeadline(opp.deadline),
       organization: (opp.organization || "Unknown").slice(0, 200),
-      country: (opp.country || "Ethiopia").slice(0, 100),
+      // Do NOT default to "Ethiopia". The relevance filter relies on
+      // honest empties to drop rows whose location couldn't be parsed.
+      country: (opp.country || "").slice(0, 100),
       source_url: (opp.source_url || opp.url || "").slice(0, 1000),
       source_domain: (opp.source_domain || "").slice(0, 200),
       type: opp.classified_type || opp.content_type || opp.type || "job",
@@ -150,6 +152,44 @@ async function main() {
   rows = rows.filter((_: any, i: number) => keepFlags[i]);
   if (beforeDedup !== rows.length) {
     console.log(`[publish] Title-dedup: removed ${beforeDedup - rows.length} cross-source duplicates`);
+  }
+
+  // Enrichment pass — for rows whose description is empty or thin
+  // (< 200 chars), fetch the source URL via Cheerio (free) with a
+  // Puppeteer fallback for the 6 site-specific rules in
+  // lib/enrich-descriptions.ts. Capped at 80 rows per run so the
+  // daily pipeline doesn't balloon.
+  const ENRICH_THRESHOLD = 200;
+  const ENRICH_CAP = 80;
+  const thinIdxs: number[] = [];
+  for (let i = 0; i < rows.length; i++) {
+    const len = (rows[i].description || "").length;
+    if (len < ENRICH_THRESHOLD && rows[i].source_url) {
+      thinIdxs.push(i);
+      if (thinIdxs.length >= ENRICH_CAP) break;
+    }
+  }
+  if (thinIdxs.length > 0) {
+    console.log(`[publish] Enriching ${thinIdxs.length} thin/empty descriptions via lib/enrich-descriptions...`);
+    try {
+      const { enrichBatch } = await import("@/lib/enrich-descriptions");
+      const items = thinIdxs.map((i) => ({
+        source_url: rows[i].source_url,
+        source_domain: rows[i].source_domain,
+      }));
+      const enriched = await enrichBatch(items, 3, 500, true);
+      let hits = 0;
+      for (const i of thinIdxs) {
+        const got = enriched.get(rows[i].source_url);
+        if (got && got.length > (rows[i].description || "").length) {
+          rows[i].description = got.slice(0, 10000);
+          hits++;
+        }
+      }
+      console.log(`[publish] Enrichment recovered ${hits}/${thinIdxs.length} descriptions`);
+    } catch (err) {
+      console.warn(`[publish] Enrichment skipped:`, (err as Error).message?.slice(0, 200));
+    }
   }
 
   // Format descriptions with Claude Haiku (only unformatted ones)

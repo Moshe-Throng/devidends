@@ -503,13 +503,19 @@ export class PuppeteerSpaAdapter implements CrawlAdapter {
       );
 
       for (const raw of rawJobs) {
+        // Generic-mode crawlers cannot reliably parse the location from a
+        // listing card. We must NOT default to "Ethiopia" — doing so masks
+        // global postings (Bangui, Caracas, Geneva) as Ethiopia-relevant
+        // and defeats the relevance filter downstream. Leave country empty
+        // and let isRelevantForEthiopia drop the row unless title or
+        // description explicitly names Ethiopia.
         jobs.push({
           title: raw.title,
           organization: raw.organization || cfg.orgName,
           description: "",
           deadline: raw.deadline,
           published: null,
-          country: cfg.defaultCountry || "Ethiopia",
+          country: cfg.defaultCountry || "",
           city: null,
           source_url: raw.link || cfg.url,
           source_domain: cfg.sourceDomain,
