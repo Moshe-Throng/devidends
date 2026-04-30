@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-29T07:30:20.559Z",
-    "count": 8
+    "scraped_at": "2026-04-30T07:34:34.807Z",
+    "count": 9
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440855",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-29T07:28:26.750Z",
+      "scraped_at": "2026-04-30T07:32:50.188Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440857",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-29T07:28:26.750Z",
+      "scraped_at": "2026-04-30T07:32:50.188Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440859",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-29T07:28:26.750Z",
+      "scraped_at": "2026-04-30T07:32:50.188Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -78,13 +78,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-04-29T07:28:26.750Z",
+      "scraped_at": "2026-04-30T07:32:50.188Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of post-harvest thresher for 47 watersheds",
+      "organization": "World Bank",
+      "description": "Procurement of post-harvest thresher for 47 watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-541101-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-05-29",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-04-30T07:32:50.444Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+        "project_id": "P174385",
+        "bid_reference": "ET-MOA-541101-GO-RFB",
         "sector": ""
       }
     },
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-29T07:28:27.138Z",
+      "scraped_at": "2026-04-30T07:32:50.444Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-29T07:28:27.138Z",
+      "scraped_at": "2026-04-30T07:32:50.444Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-29T07:28:27.138Z",
+      "scraped_at": "2026-04-30T07:32:50.444Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-04-29T07:28:27.138Z",
+      "scraped_at": "2026-04-30T07:32:50.444Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
