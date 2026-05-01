@@ -95,11 +95,17 @@ function oppBlock(opp: SampleOpportunity): string[] {
   const title = escHtml(truncate(opp.title, 80));
   const org = escHtml(truncate(opp.organization, 40));
   const type = (opp.classified_type || opp.type || "job").toLowerCase();
-  const badge = type === "consultancy" ? "📋" : type === "internship" ? "🎓" : "▪️";
+  const badge = type === "consultancy" || type === "consulting" ? "📋" :
+                type === "internship" ? "🎓" :
+                type === "tender" ? "🏛" : "▪️";
 
+  // The opportunities table stores experience_level on the row directly;
+  // SampleOpportunity also exposes seniority and experience_years for
+  // sources that surface them. Use whichever is populated, in that order.
   const metaParts: string[] = [`<b>${org}</b>`];
   if (opp.country) metaParts.push(`📍 ${escHtml(opp.country)}`);
-  if (opp.seniority) metaParts.push(escHtml(capitalize(opp.seniority)));
+  const seniority = opp.seniority || (opp as any).experience_level || null;
+  if (seniority) metaParts.push(escHtml(capitalize(seniority)));
   if (opp.experience_years && opp.experience_years > 0) metaParts.push(`${opp.experience_years}+ yrs`);
 
   const lines: string[] = [
