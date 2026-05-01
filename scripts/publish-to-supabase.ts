@@ -52,7 +52,20 @@ RULES:
 - If the source already has these exact sections in this order with bullets, return the input unchanged.
 - If the source is genuinely too short for sections (under ~150 characters of useful body), return it unchanged.
 - Use - for bullets. Do not use bold inside bullets unless the source had bold.
-- Output ONLY the formatted markdown, with no preamble or commentary.`;
+- Output ONLY the formatted markdown, with no preamble or commentary.
+
+REFUSAL IS NOT AN OPTION. You must never write meta-commentary about the input. Specifically you must NEVER write any of: "The input appears to be...", "The source text appears...", "I cannot reliably restructure...", "Please provide...", "To properly format this...", "Note:", "Disclaimer:", or any similar message about your inability to process the source. If for any reason you cannot restructure, return the original unchanged input verbatim. Your output MUST either begin with "## " or be a verbatim copy of the input. Anything else is a malformed response.`;
+
+/** Detect when Haiku has written a meta-comment instead of restructuring.
+ *  We use the cheap heuristic that a real structured output starts with a
+ *  section header. */
+function looksLikeRefusal(out: string): boolean {
+  const trimmed = out.trim();
+  if (trimmed.startsWith("## ")) return false;
+  // Common opening phrases of refusal-style outputs.
+  const head = trimmed.slice(0, 200).toLowerCase();
+  return /^(the (input|source|provided|given) text|i (cannot|can'?t)|i'?ll|please|note:|disclaimer:|due to|to (properly|format)|it (appears|seems))/.test(head);
+}
 
 async function formatDescription(raw: string): Promise<string> {
   if (!raw || raw.length < 150) return raw; // Too short to benefit from structure
@@ -65,7 +78,15 @@ async function formatDescription(raw: string): Promise<string> {
       system: FORMAT_SYSTEM,
       messages: [{ role: "user", content: "Format this job description:\n\n" + raw.slice(0, 8000) }],
     });
-    return (msg.content[0] as { text: string }).text || raw;
+    const out = (msg.content[0] as { text: string }).text || raw;
+    if (looksLikeRefusal(out)) {
+      // Haiku wrote a meta-comment instead of restructuring. Discard the
+      // response and keep the original raw description; the publish-time
+      // quality gate will demote the row if the raw isn't good enough.
+      console.warn(`[publish] Haiku refusal detected, keeping raw description (${raw.length} chars)`);
+      return raw;
+    }
+    return out;
   } catch (err) {
     console.warn("[publish] Format failed, using raw description:", (err as Error).message?.slice(0, 80));
     return raw;
