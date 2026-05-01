@@ -1,5 +1,25 @@
 [
   {
+    "title": "HUMAN RIGHTS ASSISTANT (TJO - 17 POSITIONS), G5",
+    "organization": "Office of the High Commissioner for Human Rights",
+    "description": "Org. Setting and Reporting These seventeen (17) positions are located in the Office of the High Commissioner for Human Rights (OHCHR), East and Southern Africa Regional Office (ESARO), within the Ethiopia Country Programme, with duty stations in Addis Ababa (1 position), Bahir Dar (2 positions), Dese (2 positions), Mekelle (2 positions), Semera (2 positions), Shire (2 positions), Jijiga (2 positions), Awasa (2 positions), and Nekemte (2 positions). The incumbents will report to the Human Rights ",
+    "deadline": "2026-05-08T03:59:59.000Z",
+    "published": "2026-05-01T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA, AWASA, JIJIGA, Nekemte, SEMERA, BAHIR DAR, Shire/Endaselassie, MEKELLE, DESE",
+    "source_url": "https://careers.un.org/jobSearchDescription/276701?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-01T17:36:02.837Z",
+    "raw_fields": {
+      "jobLevel": "G-5",
+      "categoryCode": "GS",
+      "jobCategory": "General Service and Related Categories",
+      "jobFamily": "Human Rights Affairs",
+      "jobNetwork": "Political, Peace and Humanitarian"
+    }
+  },
+  {
     "title": "Consultant national – Expert en commerce",
     "organization": "Economic Commission for Africa",
     "description": "Result of Service II. RÉSULTATS ATTENDUS DE LA MISSION 1. Amélioration de l’accès à l’information commerciale pour les entreprises sénégalaises, en particulier les PME ainsi que les femmes et les jeunes commerçants, grâce à un guide pratique étape par étape, permettant une participation effective au commerce dans le cadre de la ZLECAf ; et 2. Renforcement de la mise en œuvre nationale de la ZLECAf en appuyant les efforts du Sénégal pour opérationnaliser l’Accord à travers l’engagement du secteur",
@@ -10,7 +30,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275931?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -30,11 +50,31 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276630?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
       "jobCategory": "Consultants",
+      "jobFamily": "Economic Affairs",
+      "jobNetwork": ""
+    }
+  },
+  {
+    "title": "Intern Economic Affairs",
+    "organization": "Economic Commission for Africa",
+    "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities The Regional Integration and Trade Division (RITD) is responsible for promoting regional cooperation and integration among African countries. It has three main sections: African Trade Policy Centre, Regional Integration and Economic Diversification Section and the Office of the Director. The division aims to enhance the capacity of member states and regional economic communities to develop policies related to deepen",
+    "deadline": "2026-05-04T03:59:59.000Z",
+    "published": "2026-04-27T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/276385?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
+    "raw_fields": {
+      "jobLevel": "I-1",
+      "categoryCode": "INT",
+      "jobCategory": "Internship",
       "jobFamily": "Economic Affairs",
       "jobNetwork": ""
     }
@@ -50,32 +90,12 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276463?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
       "jobCategory": "Consultants",
       "jobFamily": "",
-      "jobNetwork": ""
-    }
-  },
-  {
-    "title": "Intern Economic Affairs",
-    "organization": "Economic Commission for Africa",
-    "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities The Regional Integration and Trade Division (RITD) is responsible for promoting regional cooperation and integration among African countries. It has three main sections: African Trade Policy Centre, Regional Integration and Economic Diversification Section and the Office of the Director. The division aims to enhance the capacity of member states and regional economic communities to develop policies related to deepen",
-    "deadline": "2026-05-04T03:59:59.000Z",
-    "published": "2026-04-27T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/276385?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
-    "raw_fields": {
-      "jobLevel": "I-1",
-      "categoryCode": "INT",
-      "jobCategory": "Internship",
-      "jobFamily": "Economic Affairs",
       "jobNetwork": ""
     }
   },
@@ -90,7 +110,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276231?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "G-7",
       "categoryCode": "GS",
@@ -110,7 +130,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275211?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -130,7 +150,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276035?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -150,7 +170,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275262?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "D-2",
       "categoryCode": "PD",
@@ -170,7 +190,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275112?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -190,7 +210,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275110?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.493Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
