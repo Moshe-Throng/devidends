@@ -181,24 +181,29 @@ export interface NewsArticle {
 }
 
 // ---------------------------------------------------------------------------
-// Group broadcast — ONE clean digest to group topic
+// Group digest — build and send paths split so the approval queue can
+// build messages without sending. buildGroupDigest is pure; sendGroupDigest
+// only handles transport.
 // ---------------------------------------------------------------------------
 
-export async function broadcastToGroup(
+export interface BuiltDigest {
+  /** Annotated, ready-to-send Telegram messages (HTML parse_mode). */
+  messages: string[];
+  /** URLs of jobs included in the digest, for downstream dedup. */
+  urls: string[];
+  /** URLs of news articles included in the digest, for dedup. */
+  newsUrls: string[];
+  /** Number of jobs the digest is built from (after richness filter). */
+  jobCount: number;
+  /** Number of news articles included. */
+  newsCount: number;
+}
+
+export function buildGroupDigest(
   opportunities: SampleOpportunity[],
-  newsArticles?: NewsArticle[]
-): Promise<{ sent: boolean; count: number }> {
-  const groupId = process.env.TELEGRAM_GROUP_ID;
-  const topicId = process.env.TELEGRAM_JOBS_TOPIC_ID;
-
-  if (!groupId) {
-    console.warn("[telegram-broadcast] TELEGRAM_GROUP_ID not set, skipping");
-    return { sent: false, count: 0 };
-  }
-
-  const bot = getTelegramBot();
-
-  // Filter out tenders
+  newsArticles?: NewsArticle[],
+): BuiltDigest {
+  // Filter out tenders by classified type and by title keywords.
   const TENDER_RE = /\b(procurement|supply|rfp|rfq|bid|tender|construction|installation|purchase|provision of goods)\b/i;
   const allJobs = opportunities.filter((o) => {
     const type = (o.classified_type || o.type || "").toLowerCase();
@@ -211,82 +216,51 @@ export async function broadcastToGroup(
     const cleaned = cleanDescription(o.description || "");
     return cleaned.length >= MIN_RICH_DESCRIPTION_LEN;
   });
-  const droppedThin = allJobs.length - jobs.length;
-  if (droppedThin > 0) {
-    console.log(`[telegram-broadcast] Dropped ${droppedThin} thin-description rows from the digest`);
-  }
 
   const news = newsArticles || [];
   if (jobs.length === 0 && news.length === 0) {
-    console.log("[telegram-broadcast] Nothing to broadcast (after richness filter)");
-    return { sent: false, count: 0 };
+    return { messages: [], urls: [], newsUrls: [], jobCount: 0, newsCount: 0 };
   }
 
   const now = new Date();
   const date = now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   const greeting = now.getUTCHours() < 12 ? "Good morning" : "Good afternoon";
 
-  // Cap at 20 jobs per day, separated into consultancies and regular jobs.
-  // The richer block format (4 lines + blank line ≈ 280 chars) means a
-  // 20-item digest is ~5.5K chars, over Telegram's 4096-char message limit;
-  // we split into Part 1 / Part 2 messages when needed.
   const MAX_JOBS = 20;
   const cappedJobs = jobs.slice(0, MAX_JOBS);
-
   const consultancies = cappedJobs.filter(
-    (j) => (j.classified_type || j.type || "").toLowerCase() === "consultancy"
+    (j) => (j.classified_type || j.type || "").toLowerCase() === "consultancy",
   );
   const regularJobs = cappedJobs.filter(
-    (j) => (j.classified_type || j.type || "").toLowerCase() !== "consultancy"
+    (j) => (j.classified_type || j.type || "").toLowerCase() !== "consultancy",
   );
 
-  // Build a pool of (header, body) blocks to pack into messages.
   type Block = { lines: string[] };
   const blocks: Block[] = [];
-
   if (regularJobs.length > 0) {
-    const header = [
-      `<b>💼 ${regularJobs.length} New Position${regularJobs.length > 1 ? "s" : ""}</b>`,
-      ``,
-    ];
-    blocks.push({ lines: header });
-    for (const opp of regularJobs) {
-      blocks.push({ lines: [...oppBlock(opp), ``] });
-    }
+    blocks.push({
+      lines: [`<b>💼 ${regularJobs.length} New Position${regularJobs.length > 1 ? "s" : ""}</b>`, ``],
+    });
+    for (const opp of regularJobs) blocks.push({ lines: [...oppBlock(opp), ``] });
   }
-
   if (consultancies.length > 0) {
-    const header = [
-      `<b>📋 ${consultancies.length} Consultanc${consultancies.length > 1 ? "ies" : "y"}</b>`,
-      ``,
-    ];
-    blocks.push({ lines: header });
-    for (const opp of consultancies) {
-      blocks.push({ lines: [...oppBlock(opp), ``] });
-    }
+    blocks.push({
+      lines: [`<b>📋 ${consultancies.length} Consultanc${consultancies.length > 1 ? "ies" : "y"}</b>`, ``],
+    });
+    for (const opp of consultancies) blocks.push({ lines: [...oppBlock(opp), ``] });
   }
-
   if (news.length > 0) {
     const newsBlock: string[] = [`<b>📰 Dev Intel</b>`, ``];
     for (const a of news.slice(0, 3)) {
-      newsBlock.push(
-        `  → <a href="${a.url}">${escHtml(truncate(a.title, 65))}</a>`
-      );
+      newsBlock.push(`  → <a href="${a.url}">${escHtml(truncate(a.title, 65))}</a>`);
     }
     newsBlock.push(``);
     blocks.push({ lines: newsBlock });
   }
-
   if (jobs.length > MAX_JOBS) {
-    blocks.push({
-      lines: [
-        `<i>+ ${jobs.length - MAX_JOBS} more on devidends.net/tg-app</i>`,
-        ``,
-      ],
-    });
+    blocks.push({ lines: [`<i>+ ${jobs.length - MAX_JOBS} more on devidends.net/tg-app</i>`, ``] });
   }
 
-  // Title for the first message; footer for the last.
   const titleLines = [
     `✦ <b>DEVIDENDS DAILY</b>`,
     `<i>${greeting} — ${escHtml(date)}</i>`,
@@ -297,7 +271,6 @@ export async function broadcastToGroup(
     `<a href="${SITE_URL}/tg-app">🔍 Browse All</a>  ·  <a href="${SITE_URL}/score">📊 Score CV</a>  ·  <a href="${SITE_URL}/tg-app/alerts">⚙️ Alerts</a>`,
   ];
 
-  // Pack blocks into messages under the 4096-char limit (3800 to leave headroom).
   const MAX_CHARS = 3800;
   const messages: string[] = [];
   let current = titleLines.slice();
@@ -314,9 +287,6 @@ export async function broadcastToGroup(
     currentLen += blockLen;
   }
   if (current.length > 0) messages.push(current.join("\n"));
-
-  // Footer goes on the last message; if it would push it over, send footer
-  // as its own short message.
   const footerText = footerLines.join("\n");
   if (messages.length > 0) {
     const last = messages[messages.length - 1];
@@ -329,32 +299,63 @@ export async function broadcastToGroup(
     messages.push(titleLines.join("\n") + "\n" + footerText);
   }
 
-  // Annotate Part X / N markers when more than one message is sent.
   const total = messages.length;
   const annotated = total > 1
     ? messages.map((m, i) => `<i>Part ${i + 1} of ${total}</i>\n${m}`)
     : messages;
 
-  try {
-    const opts: Record<string, unknown> = {
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-    };
-    if (topicId) opts.message_thread_id = parseInt(topicId, 10);
+  return {
+    messages: annotated,
+    urls: cappedJobs.map((o) => o.source_url || (o as any).url).filter(Boolean),
+    newsUrls: news.slice(0, 3).map((a) => a.url),
+    jobCount: cappedJobs.length,
+    newsCount: Math.min(news.length, 3),
+  };
+}
 
-    for (let i = 0; i < annotated.length; i++) {
-      await bot.sendMessage(groupId, annotated[i], opts);
-      if (i < annotated.length - 1) await sleep(800); // gentle pacing
-    }
-    console.log(
-      `[telegram-broadcast] Group digest sent: ${cappedJobs.length} jobs in ${annotated.length} message(s)`
-    );
-    return { sent: true, count: cappedJobs.length };
+/** Send a pre-built digest to the configured group/topic. Returns the
+ *  message_ids written, in order. */
+export async function sendGroupDigest(messages: string[]): Promise<number[]> {
+  const groupId = process.env.TELEGRAM_GROUP_ID;
+  const topicId = process.env.TELEGRAM_JOBS_TOPIC_ID;
+  if (!groupId) throw new Error("TELEGRAM_GROUP_ID not set");
+  const bot = getTelegramBot();
+  const opts: Record<string, unknown> = { parse_mode: "HTML", disable_web_page_preview: true };
+  if (topicId) opts.message_thread_id = parseInt(topicId, 10);
+  const ids: number[] = [];
+  for (let i = 0; i < messages.length; i++) {
+    const m = await bot.sendMessage(groupId, messages[i], opts);
+    if ((m as any)?.message_id) ids.push((m as any).message_id);
+    if (i < messages.length - 1) await sleep(800);
+  }
+  return ids;
+}
+
+export async function broadcastToGroup(
+  opportunities: SampleOpportunity[],
+  newsArticles?: NewsArticle[]
+): Promise<{ sent: boolean; count: number }> {
+  const groupId = process.env.TELEGRAM_GROUP_ID;
+  if (!groupId) {
+    console.warn("[telegram-broadcast] TELEGRAM_GROUP_ID not set, skipping");
+    return { sent: false, count: 0 };
+  }
+
+  const built = buildGroupDigest(opportunities, newsArticles);
+  if (built.messages.length === 0) {
+    console.log("[telegram-broadcast] Nothing to broadcast (after richness filter)");
+    return { sent: false, count: 0 };
+  }
+  try {
+    const ids = await sendGroupDigest(built.messages);
+    console.log(`[telegram-broadcast] Group digest sent: ${built.jobCount} jobs in ${ids.length} message(s)`);
+    return { sent: true, count: built.jobCount };
   } catch (err) {
     console.error("[telegram-broadcast] Group digest failed:", err);
     return { sent: false, count: 0 };
   }
 }
+
 
 // ---------------------------------------------------------------------------
 // Subscriber matching

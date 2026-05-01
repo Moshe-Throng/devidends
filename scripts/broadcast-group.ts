@@ -135,13 +135,117 @@ async function main() {
     return;
   }
 
-  const { broadcastToGroup, notifySubscribersDaily } = await import("../lib/telegram-broadcast");
+  // Approval chain: build the digest, queue it, send a preview to the
+  // admin DM with inline approve/decline buttons. The actual group
+  // broadcast happens later from the webhook handler when admin taps
+  // approve. Subscriber DMs go out unchanged (those don't route through
+  // approval — they're personalised per-user filters and approve/decline
+  // applies to the public group post only).
+  const { buildGroupDigest, notifySubscribersDaily } = await import("../lib/telegram-broadcast");
+  const built = buildGroupDigest(recent, newsArticles);
+  console.log(`Built digest: ${built.jobCount} jobs, ${built.newsCount} news, ${built.messages.length} message(s)`);
 
-  // 1. Group digest (public channel/topic)
-  const groupResult = await broadcastToGroup(recent, newsArticles);
-  console.log(`Group broadcast: sent=${groupResult.sent}, count=${groupResult.count}`);
+  if (built.messages.length > 0) {
+    const ADMIN_TG = process.env.TELEGRAM_ADMIN_CHAT_ID || "297659579";
+    const botToken = process.env.TELEGRAM_BOT_TOKEN;
+    const groupId = process.env.TELEGRAM_GROUP_ID;
+    if (!botToken) {
+      console.error("TELEGRAM_BOT_TOKEN not set");
+    } else if (!groupId) {
+      console.error("TELEGRAM_GROUP_ID not set; queueing skipped");
+    } else {
+      // 1. Insert queue row
+      const supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supaKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+      if (supaUrl && supaKey) {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(supaUrl, supaKey);
+        const { data: queueRow, error: qErr } = await sb
+          .from("broadcast_queue")
+          .insert({
+            status: "pending",
+            payload_messages: built.messages,
+            urls: built.urls,
+            news_urls: built.newsUrls,
+            job_count: built.jobCount,
+            news_count: built.newsCount,
+            preview_chat_id: ADMIN_TG,
+          })
+          .select("id")
+          .single();
+        if (qErr || !queueRow) {
+          console.error(`queue insert failed: ${qErr?.message}`);
+        } else {
+          const queueId = (queueRow as { id: string }).id;
+          console.log(`Queued broadcast ${queueId}`);
 
-  // 2. Combined daily digest to individual subscribers (ONE message with jobs + news)
+          // 2. Send each digest message to admin DM (so admin sees what
+          // would go out). Capture the message_ids for editing later.
+          const previewIds: number[] = [];
+          for (let i = 0; i < built.messages.length; i++) {
+            const r = await fetch(
+              `https://api.telegram.org/bot${botToken}/sendMessage`,
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  chat_id: ADMIN_TG,
+                  text: built.messages[i],
+                  parse_mode: "HTML",
+                  disable_web_page_preview: true,
+                }),
+              },
+            );
+            const j = (await r.json()) as { ok: boolean; result?: { message_id: number } };
+            if (j.ok && j.result?.message_id) previewIds.push(j.result.message_id);
+            await new Promise((r) => setTimeout(r, 600));
+          }
+
+          // 3. Send the approval prompt with inline buttons.
+          const approvalText =
+            `📋 <b>Daily digest ready for review</b>\n` +
+            `${built.jobCount} jobs · ${built.newsCount} news article${built.newsCount === 1 ? "" : "s"} · ${built.messages.length} message${built.messages.length === 1 ? "" : "s"}\n\n` +
+            `Approve to post to the Jobs group, decline to skip today.`;
+          const ar = await fetch(
+            `https://api.telegram.org/bot${botToken}/sendMessage`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                chat_id: ADMIN_TG,
+                text: approvalText,
+                parse_mode: "HTML",
+                reply_markup: {
+                  inline_keyboard: [[
+                    { text: "✅ Approve & broadcast", callback_data: `bcq:approve:${queueId}` },
+                    { text: "❌ Decline", callback_data: `bcq:decline:${queueId}` },
+                  ]],
+                },
+              }),
+            },
+          );
+          const aj = (await ar.json()) as { ok: boolean; result?: { message_id: number } };
+          const approvalId = aj.result?.message_id || null;
+
+          // 4. Save the preview/approval message IDs back to the row.
+          await sb
+            .from("broadcast_queue")
+            .update({
+              preview_message_ids: previewIds,
+              approval_message_id: approvalId,
+            })
+            .eq("id", queueId);
+          console.log(`Sent ${previewIds.length} preview message(s) + approval prompt to admin ${ADMIN_TG}`);
+        }
+      } else {
+        console.error("Supabase env vars missing; queue insert skipped");
+      }
+    }
+  }
+
+  // Subscriber DMs (personalised per-user filters) — these go out without
+  // approval since each one is a one-to-one delivery to a subscriber who
+  // has explicitly opted in.
   const digestResult = await notifySubscribersDaily(recent, newsArticles);
   console.log(`Daily digest: notified=${digestResult.notified}, skipped=${digestResult.skipped}, failed=${digestResult.failed}`);
 }

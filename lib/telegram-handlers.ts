@@ -1986,6 +1986,121 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     // No-op (used for pagination indicator buttons)
     if (data === "noop") return;
 
+    // --- Broadcast queue: approve / decline daily digest ---
+    if (data.startsWith("bcq:approve:") || data.startsWith("bcq:decline:")) {
+      const ADMIN_CHAT = process.env.TELEGRAM_ADMIN_CHAT_ID || "297659579";
+      const fromId = String(query.from?.id || "");
+      if (fromId !== ADMIN_CHAT) {
+        try {
+          await bot.answerCallbackQuery(query.id, {
+            text: "Only admin can decide.",
+            show_alert: true,
+          });
+        } catch {}
+        return;
+      }
+      const isApprove = data.startsWith("bcq:approve:");
+      const queueId = data.split(":")[2];
+      if (!queueId) return;
+      try {
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        );
+        const { data: row } = await sb
+          .from("broadcast_queue")
+          .select("id, status, payload_messages, approval_message_id, urls, news_urls, job_count")
+          .eq("id", queueId)
+          .maybeSingle();
+        if (!row) {
+          await bot.answerCallbackQuery(query.id, { text: "Queue row not found.", show_alert: true }).catch(() => {});
+          return;
+        }
+        const r = row as {
+          id: string;
+          status: string;
+          payload_messages: string[];
+          approval_message_id: number | null;
+          urls: string[];
+          news_urls: string[];
+          job_count: number;
+        };
+        if (r.status !== "pending") {
+          await bot.answerCallbackQuery(query.id, {
+            text: `Already ${r.status}.`,
+            show_alert: true,
+          }).catch(() => {});
+          return;
+        }
+
+        const decidedAt = new Date().toISOString();
+        const groupMessageIds: number[] = [];
+        let resultLabel = "";
+
+        if (isApprove) {
+          try {
+            const { sendGroupDigest } = await import("@/lib/telegram-broadcast");
+            const ids = await sendGroupDigest(r.payload_messages || []);
+            groupMessageIds.push(...ids);
+            resultLabel = `✅ Broadcasted ${r.job_count} job(s) at ${new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
+          } catch (e) {
+            resultLabel = `⚠️ Broadcast failed: ${(e as Error).message?.slice(0, 80)}`;
+            await sb.from("broadcast_queue").update({
+              status: "pending", // keep pending so admin can retry
+              decided_at: null,
+            }).eq("id", queueId);
+            await bot.answerCallbackQuery(query.id, {
+              text: "Broadcast failed; check logs.",
+              show_alert: true,
+            }).catch(() => {});
+            return;
+          }
+          await sb.from("broadcast_queue").update({
+            status: "approved",
+            decided_at: decidedAt,
+            decided_by: fromId,
+            group_message_ids: groupMessageIds,
+          }).eq("id", queueId);
+        } else {
+          await sb.from("broadcast_queue").update({
+            status: "declined",
+            decided_at: decidedAt,
+            decided_by: fromId,
+          }).eq("id", queueId);
+          resultLabel = `❌ Declined at ${new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
+        }
+
+        // Edit the approval message to show the outcome and remove buttons.
+        if (r.approval_message_id) {
+          try {
+            await bot.editMessageText(
+              `📋 <b>Daily digest</b>\n${resultLabel}`,
+              {
+                chat_id: chatId,
+                message_id: r.approval_message_id,
+                parse_mode: "HTML",
+              } as any,
+            );
+          } catch {}
+        }
+        try {
+          await bot.answerCallbackQuery(query.id, {
+            text: isApprove ? "Broadcasted." : "Declined.",
+          });
+        } catch {}
+      } catch (e) {
+        console.error("[bcq] handler failed:", (e as Error).message);
+        try {
+          await bot.answerCallbackQuery(query.id, {
+            text: "Failed to process. Check logs.",
+            show_alert: true,
+          });
+        } catch {}
+      }
+      return;
+    }
+
     // --- Recommender-ingest: skip the post-ingest notes prompt ---
     if (data.startsWith("refnotes_skip:")) {
       // Clear the awaiting_referral_notes state and acknowledge.
