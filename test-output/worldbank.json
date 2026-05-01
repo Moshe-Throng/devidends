@@ -1,33 +1,16 @@
 {
   "metadata": {
-    "scraped_at": "2026-04-29T07:58:59.619Z",
-    "total_fetched": 51,
-    "unique_count": 51,
+    "scraped_at": "2026-05-01T06:41:14.089Z",
+    "total_fetched": 50,
+    "unique_count": 50,
     "active_count": 8,
     "active_projects": 50,
     "sources": {
       "reoi": 33,
-      "ifb": 18
+      "ifb": 17
     }
   },
   "opportunities": [
-    {
-      "title": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.",
-      "description": "Recruitment of a regional-level procurement and contract administration specialist for RLLP-II project implementation in the Sidama Region.\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SIDAMA BOA-531511-NC-RFP\n\nContact: Hawwassa",
-      "deadline": "2026-04-30",
-      "organization": "World Bank",
-      "country": "Ethiopia",
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00435039",
-      "source_domain": "worldbank.org",
-      "type": "consulting",
-      "notice_type": "Request for Expression of Interest",
-      "procurement_method": "Individual Consultant Selection",
-      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-      "project_id": "P174385",
-      "bid_reference": "ET-SIDAMA BOA-531511-NC-RFP",
-      "sector": null,
-      "scraped_at": "2026-04-29T07:58:57.978Z"
-    },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XIII",
       "description": "Selection of Senior Special Regional Implementation Advisor XIII\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542250-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
@@ -43,7 +26,7 @@
       "project_id": "P179040",
       "bid_reference": "ET-NIDP-542250-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:57.957Z"
+      "scraped_at": "2026-05-01T06:41:12.576Z"
     },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XII",
@@ -60,7 +43,7 @@
       "project_id": "P179040",
       "bid_reference": "ET-NIDP-542249-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:57.978Z"
+      "scraped_at": "2026-05-01T06:41:12.589Z"
     },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XI",
@@ -77,7 +60,7 @@
       "project_id": "P179040",
       "bid_reference": "ET-NIDP-542248-CS-INDV",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:57.978Z"
+      "scraped_at": "2026-05-01T06:41:12.589Z"
     },
     {
       "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
@@ -94,7 +77,24 @@
       "project_id": "P180076",
       "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:58.642Z"
+      "scraped_at": "2026-05-01T06:41:13.065Z"
+    },
+    {
+      "title": "Procurement of post-harvest thresher for 47 watersheds",
+      "description": "Procurement of post-harvest thresher for 47 watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-541101-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-05-29",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+      "project_id": "P174385",
+      "bid_reference": "ET-MOA-541101-GO-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-01T06:41:13.065Z"
     },
     {
       "title": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub",
@@ -111,7 +111,7 @@
       "project_id": "P176731",
       "bid_reference": "ET-EEP-533130-GO-RFB",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:58.642Z"
+      "scraped_at": "2026-05-01T06:41:13.065Z"
     },
     {
       "title": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading",
@@ -128,7 +128,7 @@
       "project_id": "P176731",
       "bid_reference": "ET-EEP-533128-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:58.642Z"
+      "scraped_at": "2026-05-01T06:41:13.065Z"
     },
     {
       "title": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading",
@@ -145,7 +145,7 @@
       "project_id": "P176731",
       "bid_reference": "ET-EEP-533129-CW-RFB",
       "sector": null,
-      "scraped_at": "2026-04-29T07:58:58.642Z"
+      "scraped_at": "2026-05-01T06:41:13.065Z"
     }
   ],
   "projects": [
@@ -230,16 +230,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P176255",
-      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
-      "status": "Active",
-      "sector": "Public Administration - Industry, Trade and Services",
-      "total_commitment": "90",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "",
-      "implementing_agency": "Ethiopian Maritime Affairs Authority"
-    },
-    {
       "id": "P179040",
       "name": "Ethiopia Digital ID for Inclusion and Services Project",
       "status": "Active",
@@ -248,6 +238,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "1/7/2029 12:00:00 AM",
       "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
+    },
+    {
+      "id": "P176255",
+      "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
+      "status": "Active",
+      "sector": "Public Administration - Industry, Trade and Services",
+      "total_commitment": "90",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "",
+      "implementing_agency": "Ethiopian Maritime Affairs Authority"
     }
   ]
 }
