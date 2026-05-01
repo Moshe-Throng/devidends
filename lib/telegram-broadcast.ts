@@ -50,7 +50,12 @@ function oppLine(opp: SampleOpportunity, _num: number): string {
   return `${badge} <a href="${url}"><b>${title}</b></a>\n     <i>${meta}</i>`;
 }
 
-/** Strip HTML tags and collapse whitespace from a description string. */
+/**
+ * Convert a markdown / HTML / mixed description into plain text:
+ * strip HTML, drop markdown headers and emphasis, collapse whitespace.
+ * The Haiku formatter in publish-to-supabase produces markdown, so the
+ * channel preview needs to undo that for clean inline display.
+ */
 function cleanDescription(text: string): string {
   return text
     .replace(/<[^>]+>/g, " ")
@@ -59,8 +64,42 @@ function cleanDescription(text: string): string {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&#\d+;/g, " ")
+    // Markdown stripping
+    .replace(/^#+\s+/gm, "")           // headers
+    .replace(/\*\*(.+?)\*\*/g, "$1")    // bold
+    .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "$1") // italic
+    .replace(/`([^`]+)`/g, "$1")        // inline code
+    .replace(/^\s*[-•*]\s+/gm, "")      // bullets
+    .replace(/^\s*\d+\.\s+/gm, "")      // numbered lists
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/**
+ * Truncate at a sentence boundary if possible; otherwise word boundary
+ * with a terminal ellipsis. Avoids the mid-word "...rep..." cuts that
+ * the previous truncate() helper produced.
+ */
+function smartTruncate(text: string, soft: number, hard: number): string {
+  if (text.length <= soft) return text;
+  // Look for a sentence end (.!?) followed by space, within a window
+  // up to `hard` chars. Pick the latest one that's still past `soft - 60`
+  // so we don't cut painfully short on the first short sentence.
+  const window = text.slice(0, hard);
+  const sentenceRe = /[.!?]["')\]]?\s/g;
+  let lastSentenceEnd = -1;
+  let match;
+  while ((match = sentenceRe.exec(window)) !== null) {
+    const endAt = match.index + 1;
+    if (endAt <= soft) lastSentenceEnd = endAt;
+    else break;
+  }
+  if (lastSentenceEnd > Math.max(60, soft - 80)) {
+    return text.slice(0, lastSentenceEnd).trim();
+  }
+  // Fall back: cut at last word boundary before `soft`, add ellipsis.
+  const sliced = text.slice(0, soft).replace(/\s+\S*$/, "");
+  return sliced.trim() + "…";
 }
 
 function capitalize(s: string): string {
@@ -84,41 +123,47 @@ function formatDeadline(deadline: string | null): string | null {
 }
 
 /**
- * Rich 4-line block per opportunity (channel digest).
- *   Line 1: badge + linked title
- *   Line 2: org · 📍 country · seniority · Xy yrs
- *   Line 3: ⏰ Deadline date (countdown)
- *   Line 4: short description preview (italic)
+ * Rich block per opportunity, tuned for mobile Telegram readability.
+ *   Line 1: linked bold title
+ *   Line 2: 🏢 organisation · 📍 country · level (joined cleanly)
+ *   Line 3: ⏰ Closes <date> · <countdown>
+ *   Line 4 (blank gap)
+ *   Line 5: italic description preview, sentence-bounded
+ *
+ * Avoids the previous mid-word "..." cuts and the indent prefixes that
+ * looked cluttered on small screens.
  */
 function oppBlock(opp: SampleOpportunity): string[] {
   const url = opp.source_url || `${SITE_URL}/opportunities`;
-  const title = escHtml(truncate(opp.title, 80));
-  const org = escHtml(truncate(opp.organization, 40));
-  const type = (opp.classified_type || opp.type || "job").toLowerCase();
-  const badge = type === "consultancy" || type === "consulting" ? "📋" :
-                type === "internship" ? "🎓" :
-                type === "tender" ? "🏛" : "▪️";
+  const title = escHtml(truncate(opp.title, 90));
+  const org = escHtml(truncate(opp.organization, 50));
 
-  // The opportunities table stores experience_level on the row directly;
-  // SampleOpportunity also exposes seniority and experience_years for
-  // sources that surface them. Use whichever is populated, in that order.
-  const metaParts: string[] = [`<b>${org}</b>`];
+  // Meta line 1: organisation + location + seniority
+  const metaParts: string[] = [`🏢 ${org}`];
   if (opp.country) metaParts.push(`📍 ${escHtml(opp.country)}`);
   const seniority = opp.seniority || (opp as any).experience_level || null;
-  if (seniority) metaParts.push(escHtml(capitalize(seniority)));
-  if (opp.experience_years && opp.experience_years > 0) metaParts.push(`${opp.experience_years}+ yrs`);
+  if (seniority) metaParts.push(`🎯 ${escHtml(capitalize(seniority))}`);
+  if (opp.experience_years && opp.experience_years > 0) {
+    metaParts.push(`${opp.experience_years}+ yrs`);
+  }
 
   const lines: string[] = [
-    `${badge} <a href="${url}"><b>${title}</b></a>`,
-    `     ${metaParts.join(" · ")}`,
+    `<b><a href="${url}">${title}</a></b>`,
+    metaParts.join("  ·  "),
   ];
 
   const deadlineCell = formatDeadline(opp.deadline);
-  if (deadlineCell) lines.push(`     ⏰ Deadline ${deadlineCell}`);
+  if (deadlineCell) {
+    lines.push(`⏰ Closes ${deadlineCell}`);
+  }
 
   if (opp.description) {
     const cleaned = cleanDescription(opp.description);
-    if (cleaned) lines.push(`     <i>${escHtml(truncate(cleaned, 180))}</i>`);
+    if (cleaned && cleaned.length > 0) {
+      const trimmed = smartTruncate(cleaned, 220, 320);
+      lines.push("");
+      lines.push(`<i>${escHtml(trimmed)}</i>`);
+    }
   }
 
   return lines;
