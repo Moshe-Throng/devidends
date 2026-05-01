@@ -1,5 +1,25 @@
 [
   {
+    "title": "Associate to the Regional Director (ARD) - East Africa Region",
+    "organization": "Humanity & Inclusion",
+    "description": "",
+    "deadline": null,
+    "published": "2026-04-29T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/hi-jobs/j/33D7333C18/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-04-30T07:32:56.428Z",
+    "raw_fields": {
+      "department": [
+        "international Programs Management"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "hi-workable"
+  },
+  {
     "title": "Regional Health Specialist - East Africa Regional Division",
     "organization": "Humanity & Inclusion",
     "description": "",
@@ -10,7 +30,7 @@
     "source_url": "https://apply.workable.com/hi-jobs/j/54C50A0C1F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-04-26T07:01:18.846Z",
+    "scraped_at": "2026-04-30T07:32:56.428Z",
     "raw_fields": {
       "department": [
         "Health & Prevention"
