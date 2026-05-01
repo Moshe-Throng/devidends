@@ -123,50 +123,50 @@ function formatDeadline(deadline: string | null): string | null {
 }
 
 /**
- * Rich block per opportunity, tuned for mobile Telegram readability.
+ * Minimum cleaned-description length required for an opportunity to be
+ * shown in the channel digest. Below this we drop the row rather than
+ * show a thin one — uniform depth matters more than coverage breadth.
+ */
+const MIN_RICH_DESCRIPTION_LEN = 250;
+
+/**
+ * Rich block per opportunity. EVERY block has the exact same shape so
+ * the post reads with consistent rhythm:
  *   Line 1: linked bold title
- *   Line 2: 🏢 organisation · 📍 country · level (joined cleanly)
- *   Line 3: ⏰ Closes <date> · <countdown>
- *   Line 4 (blank gap)
- *   Line 5: italic description preview, sentence-bounded
+ *   Line 2: 🏢 organisation  ·  🎯 level  ·  ⏰ Closes <date> · <countdown>
+ *   Line 3: (blank gap)
+ *   Line 4: italic description preview, sentence-bounded
  *
- * Avoids the previous mid-word "..." cuts and the indent prefixes that
- * looked cluttered on small screens.
+ * Country/location is dropped — titles typically carry it already and
+ * the channel is Ethiopia-focused so the line was redundant.
+ *
+ * Returns an empty array if the description isn't rich enough; the
+ * caller filters those out before building the digest.
  */
 function oppBlock(opp: SampleOpportunity): string[] {
+  const cleaned = cleanDescription(opp.description || "");
+  if (cleaned.length < MIN_RICH_DESCRIPTION_LEN) return [];
+
   const url = opp.source_url || `${SITE_URL}/opportunities`;
-  const title = escHtml(truncate(opp.title, 90));
-  const org = escHtml(truncate(opp.organization, 50));
+  const title = escHtml(truncate(opp.title, 100));
+  const org = escHtml(truncate(opp.organization, 60));
 
-  // Meta line 1: organisation + location + seniority
-  const metaParts: string[] = [`🏢 ${org}`];
-  if (opp.country) metaParts.push(`📍 ${escHtml(opp.country)}`);
+  // Meta line: org · seniority · deadline. Built from a fixed slot order
+  // so blocks line up visually even when one or two slots are missing.
   const seniority = opp.seniority || (opp as any).experience_level || null;
-  if (seniority) metaParts.push(`🎯 ${escHtml(capitalize(seniority))}`);
-  if (opp.experience_years && opp.experience_years > 0) {
-    metaParts.push(`${opp.experience_years}+ yrs`);
-  }
-
-  const lines: string[] = [
-    `<b><a href="${url}">${title}</a></b>`,
-    metaParts.join("  ·  "),
-  ];
-
   const deadlineCell = formatDeadline(opp.deadline);
-  if (deadlineCell) {
-    lines.push(`⏰ Closes ${deadlineCell}`);
-  }
+  const metaSlots: string[] = [`🏢 ${org}`];
+  if (seniority) metaSlots.push(`🎯 ${escHtml(capitalize(seniority))}`);
+  if (deadlineCell) metaSlots.push(`⏰ Closes ${deadlineCell}`);
 
-  if (opp.description) {
-    const cleaned = cleanDescription(opp.description);
-    if (cleaned && cleaned.length > 0) {
-      const trimmed = smartTruncate(cleaned, 220, 320);
-      lines.push("");
-      lines.push(`<i>${escHtml(trimmed)}</i>`);
-    }
-  }
+  const desc = smartTruncate(cleaned, 240, 320);
 
-  return lines;
+  return [
+    `<b><a href="${url}">${title}</a></b>`,
+    metaSlots.join("  ·  "),
+    "",
+    `<i>${escHtml(desc)}</i>`,
+  ];
 }
 
 // ---------------------------------------------------------------------------
@@ -200,14 +200,25 @@ export async function broadcastToGroup(
 
   // Filter out tenders
   const TENDER_RE = /\b(procurement|supply|rfp|rfq|bid|tender|construction|installation|purchase|provision of goods)\b/i;
-  const jobs = opportunities.filter((o) => {
+  const allJobs = opportunities.filter((o) => {
     const type = (o.classified_type || o.type || "").toLowerCase();
     return type !== "tender" && !TENDER_RE.test(o.title || "");
   });
 
+  // Enforce 100% rich descriptions in the digest. Anything below the
+  // minimum length gets silently dropped — uniformity beats coverage.
+  const jobs = allJobs.filter((o) => {
+    const cleaned = cleanDescription(o.description || "");
+    return cleaned.length >= MIN_RICH_DESCRIPTION_LEN;
+  });
+  const droppedThin = allJobs.length - jobs.length;
+  if (droppedThin > 0) {
+    console.log(`[telegram-broadcast] Dropped ${droppedThin} thin-description rows from the digest`);
+  }
+
   const news = newsArticles || [];
   if (jobs.length === 0 && news.length === 0) {
-    console.log("[telegram-broadcast] Nothing to broadcast");
+    console.log("[telegram-broadcast] Nothing to broadcast (after richness filter)");
     return { sent: false, count: 0 };
   }
 
