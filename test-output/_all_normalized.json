@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4209261",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.423Z",
+    "scraped_at": "2026-05-01T17:33:39.255Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -37,7 +37,7 @@
     "source_url": "https://reliefweb.int/node/4209121",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.424Z",
+    "scraped_at": "2026-05-01T17:33:39.256Z",
     "raw_fields": {
       "career_categories": [
         "Information and Communications Technology"
@@ -62,7 +62,7 @@
     "source_url": "https://reliefweb.int/node/4208871",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.424Z",
+    "scraped_at": "2026-05-01T17:33:39.256Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -89,7 +89,7 @@
     "source_url": "https://reliefweb.int/node/4207867",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.424Z",
+    "scraped_at": "2026-05-01T17:33:39.256Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -116,7 +116,7 @@
     "source_url": "https://reliefweb.int/node/4207395",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.424Z",
+    "scraped_at": "2026-05-01T17:33:39.257Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -143,7 +143,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.425Z",
+    "scraped_at": "2026-05-01T17:33:39.257Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -168,7 +168,7 @@
     "source_url": "https://reliefweb.int/node/4202065",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.425Z",
+    "scraped_at": "2026-05-01T17:33:39.258Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -193,7 +193,7 @@
     "source_url": "https://reliefweb.int/node/4197099",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.425Z",
+    "scraped_at": "2026-05-01T17:33:39.258Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -218,7 +218,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440855",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-05-01T08:01:17.395Z",
+    "scraped_at": "2026-05-01T17:33:42.436Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "IC",
@@ -242,7 +242,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440857",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-05-01T08:01:17.395Z",
+    "scraped_at": "2026-05-01T17:33:42.436Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "IC",
@@ -266,7 +266,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440859",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-05-01T08:01:17.395Z",
+    "scraped_at": "2026-05-01T17:33:42.437Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "IC",
@@ -290,7 +290,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-05-01T08:01:17.778Z",
+    "scraped_at": "2026-05-01T17:33:42.935Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -314,7 +314,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-05-01T08:01:17.778Z",
+    "scraped_at": "2026-05-01T17:33:42.935Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -338,7 +338,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-05-01T08:01:17.778Z",
+    "scraped_at": "2026-05-01T17:33:42.935Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -362,7 +362,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-05-01T08:01:17.778Z",
+    "scraped_at": "2026-05-01T17:33:42.935Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -386,7 +386,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-05-01T08:01:17.778Z",
+    "scraped_at": "2026-05-01T17:33:42.935Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -410,7 +410,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175865",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.709Z",
+    "scraped_at": "2026-05-01T17:33:39.765Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Mine Action",
@@ -431,7 +431,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175862",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.709Z",
+    "scraped_at": "2026-05-01T17:33:39.765Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Mine Action",
@@ -452,7 +452,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175861",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.711Z",
+    "scraped_at": "2026-05-01T17:33:39.766Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -473,7 +473,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175849",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.712Z",
+    "scraped_at": "2026-05-01T17:33:39.768Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Monitoring & Evaluation",
@@ -494,7 +494,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175807",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.717Z",
+    "scraped_at": "2026-05-01T17:33:39.772Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -515,7 +515,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175735",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.719Z",
+    "scraped_at": "2026-05-01T17:33:39.775Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Senior Management",
@@ -536,7 +536,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=175700",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:17.719Z",
+    "scraped_at": "2026-05-01T17:33:39.775Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Senior Management",
@@ -557,7 +557,7 @@
     "source_url": "https://ipas.wd5.myworkdayjobs.com/en-US/Ipas/job/US-NC-INTL-Remote/Network-Risk-Analyst_R1370",
     "source_domain": "ipas.wd5.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:34.996Z",
+    "scraped_at": "2026-05-01T17:34:00.025Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -577,7 +577,7 @@
     "source_url": "https://mastercardfoundation.wd10.myworkdayjobs.com/en-US/mastercardfdn/job/Kenya/Lead--Enterprise-Performance---Reporting_JR-0000000666",
     "source_domain": "mastercardfoundation.wd10.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:37.303Z",
+    "scraped_at": "2026-05-01T17:34:02.072Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -597,7 +597,7 @@
     "source_url": "https://jobs.jobvite.com/mercycorps/job/obBWzfw1",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:39.650Z",
+    "scraped_at": "2026-05-01T17:34:03.977Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -613,7 +613,7 @@
     "source_url": "https://jobs.jobvite.com/mercycorps/job/oiBWzfw8",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:39.650Z",
+    "scraped_at": "2026-05-01T17:34:03.977Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -629,7 +629,7 @@
     "source_url": "https://apply.workable.com/hi-jobs/j/33D7333C18/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:40.867Z",
+    "scraped_at": "2026-05-01T17:34:04.983Z",
     "raw_fields": {
       "department": [
         "international Programs Management"
@@ -651,7 +651,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -673,7 +673,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -696,7 +696,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -719,7 +719,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -742,7 +742,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -764,7 +764,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -787,7 +787,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/A582A1AE6F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.007Z",
+    "scraped_at": "2026-05-01T17:34:04.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -810,7 +810,7 @@
     "source_url": "https://job-boards.greenhouse.io/girleffect/jobs/8522963002",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.151Z",
+    "scraped_at": "2026-05-01T17:34:05.165Z",
     "raw_fields": {
       "departments": "Work with Girl Effect - Consultant Opportunities"
     },
@@ -829,7 +829,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7566356",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.265Z",
+    "scraped_at": "2026-05-01T17:34:05.175Z",
     "raw_fields": {
       "departments": "EXC - Executive"
     },
@@ -848,7 +848,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7758033",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.265Z",
+    "scraped_at": "2026-05-01T17:34:05.175Z",
     "raw_fields": {
       "departments": "TRE - Trees"
     },
@@ -867,7 +867,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7822853",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.265Z",
+    "scraped_at": "2026-05-01T17:34:05.176Z",
     "raw_fields": {
       "departments": "MNE - Monitoring, Evaluation, & Learning"
     },
@@ -886,7 +886,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=874",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.413Z",
+    "scraped_at": "2026-05-01T17:34:05.434Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -902,7 +902,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7951",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:41.614Z",
+    "scraped_at": "2026-05-01T17:34:05.694Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -918,7 +918,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60684-clinical-research-facilities-crf-study-manager/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.653Z",
+    "scraped_at": "2026-05-01T17:34:06.231Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -939,7 +939,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60063-consultant-roster-research-methods/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.653Z",
+    "scraped_at": "2026-05-01T17:34:06.231Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -960,7 +960,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.654Z",
+    "scraped_at": "2026-05-01T17:34:06.231Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -981,7 +981,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60605-program-accountant/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.654Z",
+    "scraped_at": "2026-05-01T17:34:06.231Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1002,7 +1002,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60653-research-fellowship-pig-cattle-induced-pluripotent-stem-cells-ipscs-and-assisted-reproductive-technologies/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.654Z",
+    "scraped_at": "2026-05-01T17:34:06.231Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1023,7 +1023,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:42.654Z",
+    "scraped_at": "2026-05-01T17:34:06.232Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1044,7 +1044,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:48.392Z",
+    "scraped_at": "2026-05-01T17:34:08.366Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1065,7 +1065,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:48.392Z",
+    "scraped_at": "2026-05-01T17:34:08.366Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1086,7 +1086,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Principal-Technical-Auditor%2C-PAGL_2/1387545233/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:48.392Z",
+    "scraped_at": "2026-05-01T17:34:08.367Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1107,7 +1107,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Internal-Auditor%2C-PAGL_2/1387328833/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:48.393Z",
+    "scraped_at": "2026-05-01T17:34:08.367Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1128,7 +1128,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Principal-Environmental-and-Social-Audit-Specialist%2C-PAGL2/1387323433/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:01:48.393Z",
+    "scraped_at": "2026-05-01T17:34:08.367Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1149,7 +1149,7 @@
     "source_url": "https://unjobs.org/vacancies/1777585107003",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Infrastructure",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1165,7 +1165,7 @@
     "source_url": "https://unjobs.org/vacancies/1777601140565",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1181,7 +1181,7 @@
     "source_url": "https://unjobs.org/vacancies/1777601142257",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1197,7 +1197,7 @@
     "source_url": "https://unjobs.org/vacancies/1777601540550",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1213,7 +1213,7 @@
     "source_url": "https://unjobs.org/vacancies/1777498178377",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1229,7 +1229,7 @@
     "source_url": "https://unjobs.org/vacancies/1777513094630",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1245,7 +1245,7 @@
     "source_url": "https://unjobs.org/vacancies/1777513757905",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -1261,7 +1261,7 @@
     "source_url": "https://unjobs.org/vacancies/1777397288205",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1277,7 +1277,7 @@
     "source_url": "https://unjobs.org/vacancies/1777397546764",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1293,7 +1293,7 @@
     "source_url": "https://unjobs.org/vacancies/1777402828488",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1309,7 +1309,7 @@
     "source_url": "https://unjobs.org/vacancies/1777402854199",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1325,7 +1325,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403004360",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1341,7 +1341,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403022181",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1357,7 +1357,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403038684",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1373,7 +1373,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403054935",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1389,7 +1389,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403071487",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1405,7 +1405,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403087583",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1421,7 +1421,7 @@
     "source_url": "https://unjobs.org/vacancies/1777403103831",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1437,7 +1437,7 @@
     "source_url": "https://unjobs.org/vacancies/1777405058208",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Environment",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1453,7 +1453,7 @@
     "source_url": "https://unjobs.org/vacancies/1777429341711",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1469,7 +1469,7 @@
     "source_url": "https://unjobs.org/vacancies/1777429263644",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1485,7 +1485,7 @@
     "source_url": "https://unjobs.org/vacancies/1777429304503",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1501,7 +1501,7 @@
     "source_url": "https://unjobs.org/vacancies/1777297306876",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1517,7 +1517,7 @@
     "source_url": "https://unjobs.org/vacancies/1777297976504",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1533,7 +1533,7 @@
     "source_url": "https://unjobs.org/vacancies/1777297989588",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:31.027Z",
+    "scraped_at": "2026-05-01T17:35:53.230Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1549,7 +1549,7 @@
     "source_url": "https://unjobs.org/vacancies/1777300606687",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1565,7 +1565,7 @@
     "source_url": "https://unjobs.org/vacancies/1777295826907",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1581,7 +1581,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192437510",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1597,7 +1597,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192407646",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1613,7 +1613,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192401225",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1629,7 +1629,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192394508",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1645,7 +1645,7 @@
     "source_url": "https://unjobs.org/vacancies/1776675014847",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1661,7 +1661,7 @@
     "source_url": "https://unjobs.org/vacancies/1777032802178",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1677,7 +1677,7 @@
     "source_url": "https://unjobs.org/vacancies/1777030668697",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1693,7 +1693,7 @@
     "source_url": "https://unjobs.org/vacancies/1777191701245",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1709,7 +1709,7 @@
     "source_url": "https://unjobs.org/vacancies/1777191664628",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1725,7 +1725,7 @@
     "source_url": "https://unjobs.org/vacancies/1777191658746",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1741,7 +1741,7 @@
     "source_url": "https://unjobs.org/vacancies/1777191651164",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1757,7 +1757,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192369282",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1773,7 +1773,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192382191",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1789,7 +1789,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192419623",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1805,7 +1805,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192425698",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1821,7 +1821,7 @@
     "source_url": "https://unjobs.org/vacancies/1777192431390",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1837,7 +1837,7 @@
     "source_url": "https://unjobs.org/vacancies/1777118167882",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1853,26 +1853,10 @@
     "source_url": "https://unjobs.org/vacancies/1777118186131",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
-  },
-  {
-    "title": "Team Assistant – Support for the consultative meeting on Financing Nuclear Power Projects in Africa and the 2026 Nuclear Energy Innovation Summit and Capacity Building Workshop on Tracking the Full I, Addis Ababa, Ethiopia",
-    "organization": "UNECA - Economic Commission for Africa",
-    "description": "",
-    "deadline": "2026-04-25T14:05:03Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1777118220033",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
-    "sector_norm": "Education",
-    "work_type_norm": "Full-time",
-    "seniority": "Junior"
   },
   {
     "title": "MEAL Assistant, Assosa, Ethiopia",
@@ -1885,7 +1869,7 @@
     "source_url": "https://unjobs.org/vacancies/1777022662396",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1901,7 +1885,7 @@
     "source_url": "https://unjobs.org/vacancies/1777026353363",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:37.200Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1917,7 +1901,7 @@
     "source_url": "https://unjobs.org/vacancies/1777032669700",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:00.057Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1933,7 +1917,7 @@
     "source_url": "https://unjobs.org/vacancies/1777032883910",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -1949,7 +1933,7 @@
     "source_url": "https://unjobs.org/vacancies/1776918531648",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1965,7 +1949,7 @@
     "source_url": "https://unjobs.org/vacancies/1776938115901",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Infrastructure",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1981,26 +1965,10 @@
     "source_url": "https://unjobs.org/vacancies/1776938441905",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Infrastructure",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
-  },
-  {
-    "title": "Intern  -  Regional Programme Support, Addis Ababa, Ethiopia",
-    "organization": "UNDP - United Nations Development Programme",
-    "description": "",
-    "deadline": "2026-04-23T10:52:15Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1776939859560",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Junior"
   },
   {
     "title": "National Consultant: Category B, Addis Ababa, Ethiopia",
@@ -2013,7 +1981,7 @@
     "source_url": "https://unjobs.org/vacancies/1776675274188",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2029,7 +1997,7 @@
     "source_url": "https://unjobs.org/vacancies/1776656531506",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2045,7 +2013,7 @@
     "source_url": "https://unjobs.org/vacancies/1776721861343",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2061,7 +2029,7 @@
     "source_url": "https://unjobs.org/vacancies/1776721938207",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2077,7 +2045,7 @@
     "source_url": "https://unjobs.org/vacancies/1776722138516",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2093,7 +2061,7 @@
     "source_url": "https://unjobs.org/vacancies/1776642871952",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2109,7 +2077,7 @@
     "source_url": "https://unjobs.org/vacancies/1776393527547",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2125,7 +2093,7 @@
     "source_url": "https://unjobs.org/vacancies/1776393569825",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2141,7 +2109,7 @@
     "source_url": "https://unjobs.org/vacancies/1772600044930",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2157,7 +2125,7 @@
     "source_url": "https://unjobs.org/vacancies/1775578639261",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2173,7 +2141,7 @@
     "source_url": "https://unjobs.org/vacancies/1775507767671",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2189,7 +2157,7 @@
     "source_url": "https://unjobs.org/vacancies/1775591113796",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2205,7 +2173,7 @@
     "source_url": "https://unjobs.org/vacancies/1775846537194",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2221,7 +2189,7 @@
     "source_url": "https://unjobs.org/vacancies/1775684136830",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2237,7 +2205,7 @@
     "source_url": "https://unjobs.org/vacancies/1775493624030",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2253,7 +2221,7 @@
     "source_url": "https://unjobs.org/vacancies/1775483217076",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2269,7 +2237,7 @@
     "source_url": "https://unjobs.org/vacancies/1775590142331",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2285,7 +2253,7 @@
     "source_url": "https://unjobs.org/vacancies/1775507340118",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:42.924Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2301,7 +2269,7 @@
     "source_url": "https://unjobs.org/vacancies/1775389415160",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2317,7 +2285,7 @@
     "source_url": "https://unjobs.org/vacancies/1775165787914",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:07.521Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2333,7 +2301,7 @@
     "source_url": "https://unjobs.org/vacancies/1775165796371",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2349,7 +2317,7 @@
     "source_url": "https://unjobs.org/vacancies/1774970579542",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2365,7 +2333,7 @@
     "source_url": "https://unjobs.org/vacancies/1774973973189",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2381,7 +2349,7 @@
     "source_url": "https://unjobs.org/vacancies/1774973981798",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2397,7 +2365,7 @@
     "source_url": "https://unjobs.org/vacancies/1774452114994",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2413,7 +2381,7 @@
     "source_url": "https://unjobs.org/vacancies/1774100808559",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2429,7 +2397,7 @@
     "source_url": "https://unjobs.org/vacancies/1773245205763",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2445,7 +2413,7 @@
     "source_url": "https://unjobs.org/vacancies/1773245194478",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2461,7 +2429,7 @@
     "source_url": "https://unjobs.org/vacancies/1773245182409",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2477,7 +2445,7 @@
     "source_url": "https://unjobs.org/vacancies/1773245170539",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2493,7 +2461,7 @@
     "source_url": "https://unjobs.org/vacancies/1773935264757",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2509,7 +2477,7 @@
     "source_url": "https://unjobs.org/vacancies/1773677349625",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2525,7 +2493,7 @@
     "source_url": "https://unjobs.org/vacancies/1773677369784",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2541,7 +2509,7 @@
     "source_url": "https://unjobs.org/vacancies/1773677363409",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2557,7 +2525,7 @@
     "source_url": "https://unjobs.org/vacancies/1773677357228",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2573,7 +2541,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726776822",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2589,7 +2557,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726818890",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2605,7 +2573,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726812907",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2621,7 +2589,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726806845",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2637,7 +2605,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726800936",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2653,7 +2621,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726794814",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2669,7 +2637,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726782955",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2685,7 +2653,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726770474",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.020Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2701,7 +2669,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726764554",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2717,7 +2685,7 @@
     "source_url": "https://unjobs.org/vacancies/1772726742022",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:14.780Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2733,7 +2701,7 @@
     "source_url": "https://unjobs.org/vacancies/1772898984615",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2749,7 +2717,7 @@
     "source_url": "https://unjobs.org/vacancies/1772898992390",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2765,7 +2733,7 @@
     "source_url": "https://unjobs.org/vacancies/1772898998008",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2781,7 +2749,7 @@
     "source_url": "https://unjobs.org/vacancies/1772720309812",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2797,7 +2765,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640365009",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2813,7 +2781,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640330034",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2829,7 +2797,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640324390",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2845,7 +2813,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640318568",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2861,7 +2829,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640281741",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2877,7 +2845,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640269996",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2893,7 +2861,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640263863",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2909,7 +2877,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640245441",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2925,7 +2893,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640200750",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2941,7 +2909,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640207867",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2957,7 +2925,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640214635",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2973,7 +2941,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640275514",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2989,7 +2957,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640287679",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3005,7 +2973,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640293395",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3021,7 +2989,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640299286",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3037,7 +3005,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640376348",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3053,7 +3021,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640382136",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3069,7 +3037,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640387960",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:55.172Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3085,7 +3053,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640393775",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3101,7 +3069,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640399457",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:22.182Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3117,7 +3085,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640405123",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3133,7 +3101,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640410604",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3149,7 +3117,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640416276",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Governance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3165,7 +3133,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640421890",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3181,7 +3149,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640434204",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -3197,7 +3165,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640463452",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3213,7 +3181,7 @@
     "source_url": "https://unjobs.org/vacancies/1772640469609",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3229,7 +3197,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553569461",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3245,7 +3213,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553563678",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3261,7 +3229,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553552177",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3277,7 +3245,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553528120",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3293,7 +3261,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553521930",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3309,7 +3277,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553509086",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3325,7 +3293,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553500584",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3341,7 +3309,7 @@
     "source_url": "https://unjobs.org/vacancies/1772600011234",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3357,7 +3325,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553592902",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3373,7 +3341,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553516055",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3389,7 +3357,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553575524",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3405,7 +3373,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553581531",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3421,7 +3389,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553587323",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3437,7 +3405,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553598785",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:01.012Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3453,7 +3421,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553606759",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3469,7 +3437,7 @@
     "source_url": "https://unjobs.org/vacancies/1772553614636",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:29.306Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3485,7 +3453,7 @@
     "source_url": "https://unjobs.org/vacancies/1772600050461",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3501,7 +3469,7 @@
     "source_url": "https://unjobs.org/vacancies/1772600033722",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3517,7 +3485,7 @@
     "source_url": "https://unjobs.org/vacancies/1759045088296",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3533,7 +3501,7 @@
     "source_url": "https://unjobs.org/vacancies/1772467061001",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3549,7 +3517,7 @@
     "source_url": "https://unjobs.org/vacancies/1772459818464",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3565,7 +3533,7 @@
     "source_url": "https://unjobs.org/vacancies/1772466988073",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3581,7 +3549,7 @@
     "source_url": "https://unjobs.org/vacancies/1772065957240",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3597,7 +3565,7 @@
     "source_url": "https://unjobs.org/vacancies/1770943980237",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3613,7 +3581,7 @@
     "source_url": "https://unjobs.org/vacancies/1769183258418",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3629,7 +3597,7 @@
     "source_url": "https://unjobs.org/vacancies/1769003368923",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3645,7 +3613,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279072969",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3661,7 +3629,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279079173",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3677,7 +3645,7 @@
     "source_url": "https://unjobs.org/vacancies/1766279085014",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3693,7 +3661,7 @@
     "source_url": "https://unjobs.org/vacancies/1765541656439",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3709,7 +3677,7 @@
     "source_url": "https://unjobs.org/vacancies/1765541693276",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3725,7 +3693,7 @@
     "source_url": "https://unjobs.org/vacancies/1763689962357",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3741,7 +3709,7 @@
     "source_url": "https://unjobs.org/vacancies/1761241648189",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3757,7 +3725,7 @@
     "source_url": "https://unjobs.org/vacancies/1761241630098",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -3773,7 +3741,7 @@
     "source_url": "https://unjobs.org/vacancies/1756248392638",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3789,7 +3757,7 @@
     "source_url": "https://unjobs.org/vacancies/1753746272882",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -3805,7 +3773,7 @@
     "source_url": "https://unjobs.org/vacancies/1752787320195",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:07.076Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3821,7 +3789,7 @@
     "source_url": "https://unjobs.org/vacancies/1752787314826",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3837,7 +3805,7 @@
     "source_url": "https://unjobs.org/vacancies/1752619095501",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:36.733Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3853,7 +3821,7 @@
     "source_url": "https://unjobs.org/vacancies/1752530474233",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3869,7 +3837,7 @@
     "source_url": "https://unjobs.org/vacancies/1752016925786",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3885,7 +3853,7 @@
     "source_url": "https://unjobs.org/vacancies/1752016930825",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -3901,7 +3869,7 @@
     "source_url": "https://unjobs.org/vacancies/1751593094922",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3917,7 +3885,7 @@
     "source_url": "https://unjobs.org/vacancies/1751593089726",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3933,7 +3901,7 @@
     "source_url": "https://unjobs.org/vacancies/1751593077391",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3949,7 +3917,7 @@
     "source_url": "https://unjobs.org/vacancies/1751593083996",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3965,7 +3933,7 @@
     "source_url": "https://unjobs.org/vacancies/1751492284479",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3981,7 +3949,7 @@
     "source_url": "https://unjobs.org/vacancies/1751318055509",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -3997,7 +3965,7 @@
     "source_url": "https://unjobs.org/vacancies/1750294454917",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4013,7 +3981,7 @@
     "source_url": "https://unjobs.org/vacancies/1750119230398",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4029,7 +3997,7 @@
     "source_url": "https://unjobs.org/vacancies/1749764406462",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4045,7 +4013,7 @@
     "source_url": "https://unjobs.org/vacancies/1749764390005",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4061,7 +4029,7 @@
     "source_url": "https://unjobs.org/vacancies/1748299732138",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4077,7 +4045,7 @@
     "source_url": "https://unjobs.org/vacancies/1748299739147",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:13.271Z",
+    "scraped_at": "2026-05-01T17:36:42.512Z",
     "sector_norm": "Food Security & Livelihoods",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4093,7 +4061,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Senior-National-Immunization-and-Outbreak-Response-Officers%28AfCDC%29/1357380257/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:39.311Z",
+    "scraped_at": "2026-05-01T17:35:50.916Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4109,7 +4077,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Responsables-Nationaux-Charg%C3%A9s-de-la-Vaccination-et-de-la-R%C3%A9ponse-aux-%C3%89pid%C3%A9mies/1357380357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:39.831Z",
+    "scraped_at": "2026-05-01T17:35:51.347Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4125,7 +4093,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:40.342Z",
+    "scraped_at": "2026-05-01T17:35:51.604Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4141,7 +4109,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:40.730Z",
+    "scraped_at": "2026-05-01T17:35:51.868Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4157,7 +4125,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Assistant-Finance-Officer-%28MNJTF%29/1358806957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:41.158Z",
+    "scraped_at": "2026-05-01T17:35:52.120Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4173,7 +4141,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-Adjoint-des-Finances-%28MNJTF%29/1358807057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:43.527Z",
+    "scraped_at": "2026-05-01T17:35:54.377Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4189,7 +4157,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Human-Resource-Officer-%28MNJTF%29/1358808457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:43.898Z",
+    "scraped_at": "2026-05-01T17:35:54.634Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4205,7 +4173,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-des-ressources-humaines-%28MNJTF%29/1358808557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:44.265Z",
+    "scraped_at": "2026-05-01T17:35:54.884Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4221,7 +4189,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-principal-des-finances-%28MNJTF%29/1358810757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:44.628Z",
+    "scraped_at": "2026-05-01T17:35:55.356Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4237,7 +4205,7 @@
     "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Senior-Finance-Officer-%28MNJTF%29/1358810657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:45.019Z",
+    "scraped_at": "2026-05-01T17:35:55.602Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -4253,7 +4221,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Charge-De-Relations-Clients-%28Africa-CDC%29-9000043/1358462857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:47.387Z",
+    "scraped_at": "2026-05-01T17:35:57.843Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4269,7 +4237,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Client-Services-Officer-%28Africa-CDC%29-9000043/1358462757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:47.928Z",
+    "scraped_at": "2026-05-01T17:35:58.091Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4285,7 +4253,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Client-Services-Manager-%28AfCDC%29-9000043/1358462357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:48.301Z",
+    "scraped_at": "2026-05-01T17:35:58.338Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4301,7 +4269,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Manager-Du-Service-Client-%28Africa-CDC%29-9000043/1358462457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:48.671Z",
+    "scraped_at": "2026-05-01T17:35:58.591Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -4317,7 +4285,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28AfCDC%29-9000043/1355057157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:49.044Z",
+    "scraped_at": "2026-05-01T17:35:58.839Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4333,7 +4301,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28AfCDC%29-9000043/1355057057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:51.406Z",
+    "scraped_at": "2026-05-01T17:36:01.089Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4349,7 +4317,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Repr%C3%A9sentant-National-Africa-CDC-%28HF%29/1358624957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:51.917Z",
+    "scraped_at": "2026-05-01T17:36:01.328Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -4365,10 +4333,33 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Country-Representative-Africa-CDC/1358624857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:52.281Z",
+    "scraped_at": "2026-05-01T17:36:01.571Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
+  },
+  {
+    "title": "HUMAN RIGHTS ASSISTANT (TJO - 17 POSITIONS), G5",
+    "organization": "Office of the High Commissioner for Human Rights",
+    "description": "Org. Setting and Reporting These seventeen (17) positions are located in the Office of the High Commissioner for Human Rights (OHCHR), East and Southern Africa Regional Office (ESARO), within the Ethiopia Country Programme, with duty stations in Addis Ababa (1 position), Bahir Dar (2 positions), Dese (2 positions), Mekelle (2 positions), Semera (2 positions), Shire (2 positions), Jijiga (2 positions), Awasa (2 positions), and Nekemte (2 positions). The incumbents will report to the Human Rights ",
+    "deadline": "2026-05-08T03:59:59.000Z",
+    "published": "2026-05-01T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA, AWASA, JIJIGA, Nekemte, SEMERA, BAHIR DAR, Shire/Endaselassie, MEKELLE, DESE",
+    "source_url": "https://careers.un.org/jobSearchDescription/276701?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-01T17:36:02.837Z",
+    "raw_fields": {
+      "jobLevel": "G-5",
+      "categoryCode": "GS",
+      "jobCategory": "General Service and Related Categories",
+      "jobFamily": "Human Rights Affairs",
+      "jobNetwork": "Political, Peace and Humanitarian"
+    },
+    "sector_norm": "Protection & Human Rights",
+    "work_type_norm": "Full-time",
+    "seniority": "Junior"
   },
   {
     "title": "Consultant national – Expert en commerce",
@@ -4381,7 +4372,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275931?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -4404,7 +4395,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276630?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -4417,29 +4408,6 @@
     "seniority": "Senior"
   },
   {
-    "title": "Part-Time Ambulance Driver",
-    "organization": "Economic Commission for Africa",
-    "description": "Result of Service Ambulance reaches patients as swiftly as possible. Timely transportation service to hospitals, following instructions from physicians or nurses. No client complaints due to delays in service. Enhanced client satisfaction and immediate reporting of emergencies, challenges, and incidents to the Chief Medical Officer and supervisor. Strict adherence to medical ethics and confidentiality Work Location UN Health Care Centre Expected duration 8 months Duties and Responsibilities The ",
-    "deadline": "2026-05-04T03:59:59.000Z",
-    "published": "2026-04-27T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/276463?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
-    "raw_fields": {
-      "jobLevel": "CON",
-      "categoryCode": "CON",
-      "jobCategory": "Consultants",
-      "jobFamily": "",
-      "jobNetwork": ""
-    },
-    "sector_norm": "Health",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
     "title": "Intern Economic Affairs",
     "organization": "Economic Commission for Africa",
     "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities The Regional Integration and Trade Division (RITD) is responsible for promoting regional cooperation and integration among African countries. It has three main sections: African Trade Policy Centre, Regional Integration and Economic Diversification Section and the Office of the Director. The division aims to enhance the capacity of member states and regional economic communities to develop policies related to deepen",
@@ -4450,7 +4418,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276385?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.491Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -4463,6 +4431,29 @@
     "seniority": "Junior"
   },
   {
+    "title": "Part-Time Ambulance Driver",
+    "organization": "Economic Commission for Africa",
+    "description": "Result of Service Ambulance reaches patients as swiftly as possible. Timely transportation service to hospitals, following instructions from physicians or nurses. No client complaints due to delays in service. Enhanced client satisfaction and immediate reporting of emergencies, challenges, and incidents to the Chief Medical Officer and supervisor. Strict adherence to medical ethics and confidentiality Work Location UN Health Care Centre Expected duration 8 months Duties and Responsibilities The ",
+    "deadline": "2026-05-04T03:59:59.000Z",
+    "published": "2026-04-27T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/276463?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
+    "raw_fields": {
+      "jobLevel": "CON",
+      "categoryCode": "CON",
+      "jobCategory": "Consultants",
+      "jobFamily": "",
+      "jobNetwork": ""
+    },
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
     "title": "SENIOR STATISTICS ASSISTANT, G7",
     "organization": "Economic Commission for Africa",
     "description": "Org. Setting and Reporting ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 SDGs and Agenda 2063. The mission is guided by ECA's five new strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developing macroeconomic and structural policy options to acceler",
@@ -4473,7 +4464,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276231?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "G-7",
       "categoryCode": "GS",
@@ -4496,7 +4487,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275211?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -4519,7 +4510,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276035?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.838Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -4542,7 +4533,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275262?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "D-2",
       "categoryCode": "PD",
@@ -4565,7 +4556,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275112?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.492Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -4588,7 +4579,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275110?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:03:53.493Z",
+    "scraped_at": "2026-05-01T17:36:02.839Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -4611,7 +4602,7 @@
     "source_url": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/requisitions?keyword=NORCAP",
     "source_domain": "oraclecloud.com",
     "content_type": "job",
-    "scraped_at": "2026-05-01T08:04:39.441Z",
+    "scraped_at": "2026-05-01T17:36:30.850Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
