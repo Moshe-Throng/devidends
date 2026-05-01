@@ -24,11 +24,14 @@ const SITE_RULES: Record<string, ExtractionRule> = {
     requiresJs: true,
   },
   "drc.ngo": {
-    selectors: [".job-description", ".job-details-content", "article", "main"],
-    requiresJs: true,
+    // Verified live: the SSR'd body sits at .jobPage__body__copy
+    selectors: [".jobPage__body__copy", ".jobPage__body", "article", "main"],
+    requiresJs: false,
   },
   "jobs.au.int": {
-    selectors: [".job-description", ".jd-info", "#job-description", "main"],
+    // The visible body is rendered after a cookie modal rewrites the DOM,
+    // so this needs Puppeteer + a wait for the real container.
+    selectors: ["#jobdescriptionwrapper", "[data-careersite-propertyid='jobdescription']", "main"],
     requiresJs: true,
   },
   "kifiya.com": {
@@ -42,6 +45,27 @@ const SITE_RULES: Record<string, ExtractionRule> = {
   "reliefweb.int": {
     selectors: [".article__content", ".content", "main"],
     requiresJs: false,
+  },
+  "careers.gggi.org": {
+    selectors: [".col-md-8"],
+    removeSelectors: ["script", "style", "nav", "aside", ".col-md-4", ".breadcrumb"],
+    requiresJs: false,
+  },
+  "ilri.org": {
+    selectors: [".job-content", ".node__content", "article", "main"],
+    requiresJs: true,
+  },
+  "afdb.org": {
+    selectors: [".job-description", ".jobdescription", "article", "main"],
+    requiresJs: true,
+  },
+  "workable.com": {
+    selectors: ["[data-ui='job-description']", "section[data-ui='job']", "main"],
+    requiresJs: true,
+  },
+  "phg.tbe.taleo.net": {
+    selectors: [".requisitionDescriptionInterface", "[id*='requisitionDescription']", "table.iCIMS_InfoMsg"],
+    requiresJs: true,
   },
 };
 
@@ -67,11 +91,18 @@ function cleanText(text: string): string {
     .trim();
 }
 
-function extractTextFromCheerio($: any, selectors: string[]): string {
+const DEFAULT_REMOVE = "script, style, nav, footer, header, .breadcrumb, .sidebar";
+
+function extractTextFromCheerio(
+  $: any,
+  selectors: string[],
+  extraRemove: string[] = []
+): string {
+  const removeSelector = [DEFAULT_REMOVE, ...extraRemove].join(", ");
   for (const selector of selectors) {
     const el = $(selector).first();
     if (el.length) {
-      el.find("script, style, nav, footer, header, .breadcrumb, .sidebar").remove();
+      el.find(removeSelector).remove();
       const text = (el.text() as string)
         .split("\n")
         .map((line: string) => line.trim())
@@ -111,7 +142,8 @@ function isPrivateUrl(url: string): boolean {
 
 export async function fetchWithCheerio(
   sourceUrl: string,
-  selectors: string[]
+  selectors: string[],
+  removeSelectors: string[] = []
 ): Promise<string> {
   if (isPrivateUrl(sourceUrl)) return "";
 
@@ -134,7 +166,7 @@ export async function fetchWithCheerio(
 
     const html = await res.text();
     const $ = load(html);
-    return extractTextFromCheerio($, selectors);
+    return extractTextFromCheerio($, selectors, removeSelectors);
   } catch {
     clearTimeout(timeout);
     return "";
@@ -145,7 +177,8 @@ export async function fetchWithCheerio(
 
 export async function fetchWithPuppeteer(
   sourceUrl: string,
-  selectors: string[]
+  selectors: string[],
+  removeSelectors: string[] = []
 ): Promise<string> {
   if (isPrivateUrl(sourceUrl)) return "";
 
@@ -169,16 +202,18 @@ export async function fetchWithPuppeteer(
     await page.goto(sourceUrl, { waitUntil: "networkidle2", timeout: 20000 });
 
     // Try each selector
+    const removeQuery = ["script", "style", "nav", "footer", "header", ...removeSelectors].join(", ");
     for (const selector of selectors) {
-      const text = await page.evaluate((sel: string) => {
-        const el = document.querySelector(sel);
-        if (!el) return "";
-        // Remove unwanted elements
-        el.querySelectorAll("script, style, nav, footer, header").forEach(
-          (e) => e.remove()
-        );
-        return el.textContent || "";
-      }, selector);
+      const text = await page.evaluate(
+        (sel: string, rmQ: string) => {
+          const el = document.querySelector(sel);
+          if (!el) return "";
+          el.querySelectorAll(rmQ).forEach((e) => e.remove());
+          return el.textContent || "";
+        },
+        selector,
+        removeQuery,
+      );
 
       const cleaned = cleanText(text);
       if (cleaned.length > 80) {
@@ -219,17 +254,18 @@ export async function fetchDescription(
   )?.[1];
 
   const selectors = rule ? rule.selectors : GENERIC_SELECTORS;
+  const removeSelectors = rule?.removeSelectors ?? [];
   const needsJs = rule?.requiresJs ?? false;
 
   // Try Cheerio first (fast)
-  const cheerioResult = await fetchWithCheerio(sourceUrl, selectors);
+  const cheerioResult = await fetchWithCheerio(sourceUrl, selectors, removeSelectors);
   if (cheerioResult) {
     return { description: cheerioResult, success: true };
   }
 
   // Fall back to Puppeteer if needed and allowed
   if ((needsJs || usePuppeteer) && typeof window === "undefined") {
-    const puppeteerResult = await fetchWithPuppeteer(sourceUrl, selectors);
+    const puppeteerResult = await fetchWithPuppeteer(sourceUrl, selectors, removeSelectors);
     if (puppeteerResult) {
       return { description: puppeteerResult, success: true };
     }

@@ -154,13 +154,14 @@ async function main() {
     console.log(`[publish] Title-dedup: removed ${beforeDedup - rows.length} cross-source duplicates`);
   }
 
-  // Enrichment pass — for rows whose description is empty or thin
-  // (< 200 chars), fetch the source URL via Cheerio (free) with a
-  // Puppeteer fallback for the 6 site-specific rules in
-  // lib/enrich-descriptions.ts. Capped at 80 rows per run so the
-  // daily pipeline doesn't balloon.
-  const ENRICH_THRESHOLD = 200;
-  const ENRICH_CAP = 80;
+  // Enrichment pass — for rows whose description is empty or stub-ish
+  // (< 400 chars catches GGGI's "Contract type: X" boilerplate too),
+  // fetch the source URL via Cheerio first with a Puppeteer fallback
+  // for the JS-rendered domains in lib/enrich-descriptions.ts. Cap is
+  // 250 rows per run so we cover the long tail without blowing past
+  // the cron envelope (~3 concurrent × 500ms ≈ 7 minutes wall time).
+  const ENRICH_THRESHOLD = 400;
+  const ENRICH_CAP = 250;
   const thinIdxs: number[] = [];
   for (let i = 0; i < rows.length; i++) {
     const len = (rows[i].description || "").length;

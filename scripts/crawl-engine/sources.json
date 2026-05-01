@@ -68,7 +68,9 @@
       "countrySelector": ".jobList__item__country",
       "countryFromTitle": true,
       "defaultCountry": "Unknown",
-      "fetchDetails": false
+      "fetchDetails": true,
+      "detailSelector": ".jobPage__body__copy",
+      "maxDetails": 80
     }
   },
   {
