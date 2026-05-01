@@ -47,23 +47,30 @@ const STEPS: Step[] = [
 interface Props {
   /** Force the tour to run regardless of localStorage. Useful for ?tour=1. */
   force?: boolean;
+  /** Server-side flag — the user has completed the tour at least once.
+   *  When true, the tour never fires, even with force=true. This protects
+   *  against Telegram Mini App webviews that don't reliably persist
+   *  localStorage across reopens. */
+  seen?: boolean;
 }
 
-export function MiniAppTour({ force = false }: Props) {
+export function MiniAppTour({ force = false, seen = false }: Props) {
   const [active, setActive] = useState(false);
   const [stepIdx, setStepIdx] = useState(0);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
 
-  // Decide whether to start the tour
+  // Decide whether to start the tour. Server-side seen always wins;
+  // localStorage is the second line of defence; force is the third.
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (seen) return;
     if (force || !localStorage.getItem(STORAGE_KEY)) {
       // Wait one frame so target elements are mounted
       const t = setTimeout(() => setActive(true), 400);
       return () => clearTimeout(t);
     }
-  }, [force]);
+  }, [force, seen]);
 
   // Update rect for the current step
   useEffect(() => {
@@ -100,6 +107,9 @@ export function MiniAppTour({ force = false }: Props) {
   function end() {
     localStorage.setItem(STORAGE_KEY, "1");
     setActive(false);
+    // Persist server-side too. Fire-and-forget; we don't block the UI on
+    // the response. Idempotent on the server.
+    fetch("/api/profile/tour-seen", { method: "POST" }).catch(() => {});
   }
 
   if (!active) return null;

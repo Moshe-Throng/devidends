@@ -26,12 +26,18 @@ export default function TgAppHome() {
   const [recentOpps, setRecentOpps] = useState<SampleOpportunity[]>([]);
   const [oppsLoading, setOppsLoading] = useState(true);
 
-  // Force the tour when claim flow lands here with ?tour=1
-  // Read from window.location to avoid useSearchParams prerender issues.
+  // Force the tour when the claim flow lands here with ?tour=1.
+  // Strip the parameter from the URL after reading so Telegram's webview
+  // history doesn't re-trigger the tour every time the Mini App reopens.
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
-    if (params.get("tour") === "1") setForceTour(true);
+    if (params.get("tour") === "1") {
+      setForceTour(true);
+      // Drop the ?tour=1 from the URL without reloading.
+      const cleanUrl = window.location.pathname + window.location.hash;
+      window.history.replaceState({}, "", cleanUrl);
+    }
   }, []);
 
   // Fetch latest opportunities
@@ -72,7 +78,10 @@ export default function TgAppHome() {
 
   return (
     <div className="pb-6" data-tour="welcome">
-      <MiniAppTour force={forceTour} />
+      <MiniAppTour
+        force={forceTour}
+        seen={!!(profile as any)?.onboarding_stage && (profile as any).onboarding_stage !== "new"}
+      />
       {/* ── Header ── */}
       <div className="bg-gradient-to-br from-cyan-500 via-cyan-600 to-teal-600 px-5 pt-6 pb-8 relative overflow-hidden">
         {/* Dot grid overlay */}
