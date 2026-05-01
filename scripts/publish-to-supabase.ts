@@ -27,21 +27,35 @@ if (fs.existsSync(envPath)) {
 
 /* ── Description formatter (Claude Haiku) ── */
 
-const FORMAT_SYSTEM = `You format job/opportunity descriptions into clean, scannable markdown. Rules:
-- Use ## for section headers (Responsibilities, Qualifications, About, How to Apply, etc.)
-- Use - for bullet points
-- Keep ALL factual content — never add, remove, or rephrase information
-- If already well-formatted, return as-is
-- If very short or just a title, return unchanged
-- Output ONLY the formatted description, nothing else.`;
+const FORMAT_SYSTEM = `You restructure job and opportunity descriptions into clean, scannable markdown. Output is rendered to job-seekers reading on Telegram and on a mobile web app, so a wall-of-text input becomes a poor user experience and must be sectioned.
+
+REQUIRED structure — produce these sections in this order, omitting any section the source genuinely has no content for:
+
+## About the role
+A 2-3 sentence summary of the position and the hiring organisation's context. Pull it from the source's opening paragraph or the role overview if there is one.
+
+## Responsibilities
+- Bullet points, one per responsibility
+- Use the exact phrasing from the source where possible
+- Group related duties into single bullets rather than fragmenting
+
+## Qualifications
+- Bullet points covering education, experience, skills, languages
+- Distinguish 'Required' from 'Preferred' as sub-headings only if the source does
+- Quantitative requirements (e.g. years of experience, degree level) must survive verbatim
+
+## How to apply
+A short paragraph or single bullet covering deadline, application method, contact, and links if any.
+
+RULES:
+- Keep ALL factual content. Never add, remove, infer, or rephrase substantive information. The output is a structural rewrite, not editorial.
+- If the source already has these exact sections in this order with bullets, return the input unchanged.
+- If the source is genuinely too short for sections (under ~150 characters of useful body), return it unchanged.
+- Use - for bullets. Do not use bold inside bullets unless the source had bold.
+- Output ONLY the formatted markdown, with no preamble or commentary.`;
 
 async function formatDescription(raw: string): Promise<string> {
-  if (!raw || raw.length < 100) return raw; // Too short to format
-  // Already formatted (has markdown)
-  if ((raw.includes("##") || raw.includes("**")) && (raw.includes("- ") || raw.includes("• "))) {
-    return raw;
-  }
-
+  if (!raw || raw.length < 150) return raw; // Too short to benefit from structure
   try {
     const Anthropic = (await import("@anthropic-ai/sdk")).default;
     const client = new Anthropic();
@@ -193,22 +207,44 @@ async function main() {
     }
   }
 
-  // Format descriptions with Claude Haiku (only unformatted ones)
-  console.log(`[publish] Formatting descriptions with Claude Haiku...`);
+  // Structure-pass every substantial description with Haiku — the prompt
+  // is idempotent so already-structured rows return unchanged. We removed
+  // the prior "skip if has-markdown" gate because the detector misfired
+  // on rows that had inline ** without proper sections, leaving wall-of-
+  // text descriptions in the channel digest.
+  console.log(`[publish] Structuring descriptions with Claude Haiku...`);
   let formatCount = 0;
   for (let i = 0; i < rows.length; i++) {
     const raw = rows[i].description;
-    if (raw && raw.length >= 100) {
-      const hasMarkdown = (raw.includes("##") || raw.includes("**")) && (raw.includes("- ") || raw.includes("• "));
-      if (!hasMarkdown) {
-        rows[i].description = await formatDescription(raw);
-        formatCount++;
-        // Rate limit: ~5 per second
-        if (formatCount % 5 === 0) await new Promise(r => setTimeout(r, 1000));
-      }
+    if (raw && raw.length >= 150) {
+      rows[i].description = await formatDescription(raw);
+      formatCount++;
+      if (formatCount % 5 === 0) await new Promise(r => setTimeout(r, 1000));
     }
   }
-  console.log(`[publish] Formatted ${formatCount} descriptions`);
+  console.log(`[publish] Structured ${formatCount} descriptions`);
+
+  // Quality gate: every row must have a structured OR substantial description.
+  // Anything that didn't get sectioned by Haiku and is still under 300 chars
+  // gets is_active=false at publish time so it won't appear in the digest,
+  // the mini-app feed, or the public opportunity list. Title-only stubs and
+  // "Visit the source link..." placeholders fall here. Mussie's bar:
+  // "no job passes without a structured description."
+  function isStructured(s: string): boolean {
+    return /^## (About|Responsibilities|Qualifications|How to apply|How to Apply)/im.test(s) && /^- /m.test(s);
+  }
+  let demoted = 0;
+  for (const r of rows) {
+    const desc = r.description || "";
+    const passes = isStructured(desc) || desc.length >= 300;
+    if (!passes && r.is_active) {
+      r.is_active = false;
+      demoted++;
+    }
+  }
+  if (demoted > 0) {
+    console.log(`[publish] Demoted ${demoted} unstructured / stub-description rows to is_active=false`);
+  }
 
   console.log(`[publish] Publishing ${rows.length} valid opportunities to Supabase...`);
 
