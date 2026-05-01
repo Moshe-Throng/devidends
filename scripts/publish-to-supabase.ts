@@ -29,10 +29,7 @@ if (fs.existsSync(envPath)) {
 
 const FORMAT_SYSTEM = `You restructure job and opportunity descriptions into clean, scannable markdown. Output is rendered to job-seekers reading on Telegram and on a mobile web app, so a wall-of-text input becomes a poor user experience and must be sectioned.
 
-REQUIRED structure — produce these sections in this order, omitting any section the source genuinely has no content for:
-
-## About the role
-A 2-3 sentence summary of the position and the hiring organisation's context. Pull it from the source's opening paragraph or the role overview if there is one.
+REQUIRED structure — produce these sections in this order, omitting any section the source genuinely has no content for. Do NOT add an introductory section, "About" section, role overview, or organisation summary. Start directly with the Responsibilities section.
 
 ## Responsibilities
 - Bullet points, one per responsibility
@@ -252,7 +249,7 @@ async function main() {
   // "Visit the source link..." placeholders fall here. Mussie's bar:
   // "no job passes without a structured description."
   function isStructured(s: string): boolean {
-    return /^## (About|Responsibilities|Qualifications|How to apply|How to Apply)/im.test(s) && /^- /m.test(s);
+    return /^## (Responsibilities|Qualifications|How to apply|How to Apply)/im.test(s) && /^- /m.test(s);
   }
   let demoted = 0;
   for (const r of rows) {
