@@ -2040,7 +2040,7 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
 
         if (isApprove) {
           try {
-            const { sendGroupDigest } = await import("@/lib/telegram-broadcast");
+            const { sendGroupDigest } = await import("./telegram-broadcast");
             const ids = await sendGroupDigest(r.payload_messages || []);
             groupMessageIds.push(...ids);
             resultLabel = `✅ Broadcasted ${r.job_count} job(s) at ${new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
