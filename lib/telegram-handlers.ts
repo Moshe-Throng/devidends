@@ -2244,10 +2244,8 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
           await bot.sendMessage(
             chatId,
             [
-              `<b>✓ Saved as ${escHtml(label)}.</b>`,
-              ``,
-              `<b>Last question — what's their gender?</b>`,
-              `<i>Used for diversity reporting on shortlists.</i>`,
+              `<b>✓ ${escHtml(label)}.</b>`,
+              `<i>One last tap — gender (for diversity reporting):</i>`,
             ].join("\n"),
             {
               parse_mode: "HTML",
@@ -2265,18 +2263,15 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
             }
           );
         } else {
+          // Gender already on file — short close-out, no text-solicit.
           await bot.sendMessage(
             chatId,
-            [
-              `<b>✓ Saved as ${escHtml(label)}.</b>`,
-              ``,
-              `Want to add context? Reply here with anything — strengths, availability, specific roles you'd put them forward for. Or ignore to move on.`,
-            ].join("\n"),
+            `<b>✓ ${escHtml(label)}.</b> Done — drop another CV anytime.`,
             { parse_mode: "HTML" }
           );
+          chatState.delete(chatId);
         }
       } catch {}
-      // Keep the chatState open so a text follow-up is captured as notes.
       return;
     }
 
@@ -2308,18 +2303,20 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
         skip: "Skipped",
       };
       try {
+        // Short, indicative close-out for the recommender. Don't solicit
+        // free-text — the verbose "Want to add context?" was confusing
+        // and made the bot's AI companion hallucinate generic job-search
+        // answers when the recommender did reply with context. They can
+        // always send another CV; that's the loop we want.
         await bot.sendMessage(
           chatId,
-          [
-            `<b>✓ ${escHtml(ack[value] || "Noted")}.</b>`,
-            ``,
-            `Want to add context? Reply here with anything — strengths, availability, specific roles you'd put them forward for. Or ignore to move on.`,
-          ].join("\n"),
+          `<b>✓ ${escHtml(ack[value] || "Noted")}.</b> Done — drop another CV anytime.`,
           { parse_mode: "HTML" }
         );
       } catch {}
-      // chatState (awaiting_referral_notes) stays open — any text reply
-      // still captures as notes.
+      // Clear chatState so any follow-up text isn't routed to the
+      // referral-notes handler (and isn't picked up by the companion AI).
+      chatState.delete(chatId);
       return;
     }
 
@@ -2792,7 +2789,34 @@ export async function handleUpdate(
         }
         return;
       }
-      // Free-text in private chat → AI companion
+      // Free-text in private chat. Recommenders DM the bot for ingest
+      // only — sending them through the AI companion produces
+      // hallucinated job-search responses ("I can't access external
+      // links… try /search GIZ…") when they're actually adding context
+      // to a CV they just sent. Short-circuit here with a recommender-
+      // shaped hint instead.
+      try {
+        const senderTgId = String(msg.from?.id || msg.chat.id);
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb = createClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!,
+        );
+        const { data: senderProfile } = await sb
+          .from("profiles")
+          .select("is_recommender, claimed_at")
+          .eq("telegram_id", senderTgId)
+          .maybeSingle();
+        if (senderProfile?.is_recommender && senderProfile?.claimed_at) {
+          await bot.sendMessage(
+            msg.chat.id,
+            "<i>Drop a CV here to ingest it under your name, or open the Dev Hub for the network.</i>",
+            { parse_mode: "HTML" },
+          );
+          return;
+        }
+      } catch {}
+      // Non-recommender — let the AI companion respond.
       await handleCompanionMessage(bot, msg);
     }
   } catch (err) {
