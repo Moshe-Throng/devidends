@@ -1269,18 +1269,39 @@ async function handleRecommenderPrivateCvIngest(
     const score = subject.cv_score != null ? `CV score ${subject.cv_score}/100` : "not yet scored";
     const sectorsPreview = (subject.sectors || []).slice(0, 3).join(" · ") || "sectors pending";
 
-    const summary = [
-      `<b>✅ Added to your network, ${escHtml(firstName)}.</b>`,
-      ``,
-      `<b>${escHtml(subject.name)}</b>`,
-      `${yrs} · ${subject.profile_type || "tier TBD"} · ${score}`,
-      `Sectors: ${escHtml(sectorsPreview)}`,
-      ``,
-      `This CV is now tagged as recommended by you. Their claim link, if you want to forward it directly:`,
-      claimLink,
-      ``,
-      `<b>Your running total:</b> ${broughtInCount} brought in to date.`,
-    ].join("\n");
+    // First-ingest celebration. broughtInCount === 1 reliably means this is
+    // the recommender's first ever contribution — both legacy
+    // recommended_by lookups and attribution rows are deduped into the same
+    // set, so the count includes the row we just inserted. We swap the
+    // header for a celebratory one and add a Co-Creator unlock note rather
+    // than sending a separate message (keeps the chat tidy and lets the
+    // moment land on the same screen as the score + body count).
+    const isFirstIngest = broughtInCount === 1;
+    const summary = isFirstIngest
+      ? [
+          `🎉 <b>First one in, ${escHtml(firstName)} — welcome to the Co-Creator circle.</b>`,
+          ``,
+          `<b>${escHtml(subject.name)}</b>`,
+          `${yrs} · ${subject.profile_type || "tier TBD"} · ${score}`,
+          `Sectors: ${escHtml(sectorsPreview)}`,
+          ``,
+          `This CV is now tagged as recommended by you. Forward their claim link if you want to give them direct access:`,
+          claimLink,
+          ``,
+          `<b>You're on the leaderboard.</b> Every CV you bring in stacks up here, and you're credited when they win work through Devidends. Keep going — the network grows with you. ✨`,
+        ].join("\n")
+      : [
+          `<b>✅ Added to your network, ${escHtml(firstName)}.</b>`,
+          ``,
+          `<b>${escHtml(subject.name)}</b>`,
+          `${yrs} · ${subject.profile_type || "tier TBD"} · ${score}`,
+          `Sectors: ${escHtml(sectorsPreview)}`,
+          ``,
+          `This CV is now tagged as recommended by you. Their claim link, if you want to forward it directly:`,
+          claimLink,
+          ``,
+          `<b>Your running total:</b> ${broughtInCount} brought in to date.`,
+        ].join("\n");
 
     // Combine the ingest confirmation and the relationship-strength buttons
     // in a SINGLE message so the prompt can't get buried when a recommender
