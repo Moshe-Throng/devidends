@@ -24,6 +24,7 @@ import { IATIAdapter } from "./iati";
 import { SamGovAdapter } from "./samgov";
 import { TedAdapter } from "./ted";
 import { GggiAdapter } from "./gggi";
+import { LinkedInGuestAdapter } from "./linkedin-guest";
 
 /**
  * Get the adapter registry — maps adapter name to implementation.
@@ -54,6 +55,9 @@ export function getAdapterRegistry(): Map<string, CrawlAdapter> {
 
   // Custom JSON feed adapters
   registry.set("gggi-api", new GggiAdapter());
+
+  // Public guest endpoint — LinkedIn (no auth, geo-filtered)
+  registry.set("linkedin-guest", new LinkedInGuestAdapter());
 
   return registry;
 }

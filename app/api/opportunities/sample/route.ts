@@ -43,6 +43,8 @@ async function loadFromSupabase(): Promise<SampleOpportunity[]> {
     source_url: row.source_url || "",
     source_domain: row.source_domain || "",
     type: row.type || "job",
+    sectors: Array.isArray(row.sectors) ? row.sectors : [],
+    experience_level: row.experience_level ?? null,
   }));
 
   const result = processOpportunities(rawItems);

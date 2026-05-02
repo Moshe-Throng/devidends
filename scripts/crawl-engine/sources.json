@@ -1,5 +1,23 @@
 [
   {
+    "id": "linkedin-ethiopia",
+    "name": "LinkedIn — Ethiopia",
+    "adapter": "linkedin-guest",
+    "content_type": "job",
+    "enabled": true,
+    "priority": 35,
+    "config": {
+      "location": "Ethiopia",
+      "timePosted": "r604800",
+      "maxPages": 6,
+      "pageDelay": 1500,
+      "fetchDetails": true,
+      "detailDelay": 1500,
+      "maxDetails": 60,
+      "requireEthiopiaMention": true
+    }
+  },
+  {
     "id": "reliefweb",
     "name": "ReliefWeb",
     "adapter": "reliefweb",

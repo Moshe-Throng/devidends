@@ -12,6 +12,8 @@ export interface RawOpportunity {
   source_url: string;
   source_domain: string;
   type: string;
+  sectors?: string[];
+  experience_level?: string | null;
 }
 
 /* ─── Hard Filter Config ─────────────────────────────────── */
@@ -196,6 +198,8 @@ export function processOpportunities(
       experience_years: extractExperienceYears(combinedText),
       is_expired: isExpired,
       classified_type: classifyType(opp.title, opp.type),
+      sectors: Array.isArray(opp.sectors) ? opp.sectors : [],
+      experience_level: opp.experience_level ?? null,
     };
   });
 

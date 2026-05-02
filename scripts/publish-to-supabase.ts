@@ -51,17 +51,44 @@ RULES:
 - Use - for bullets. Do not use bold inside bullets unless the source had bold.
 - Output ONLY the formatted markdown, with no preamble or commentary.
 
-REFUSAL IS NOT AN OPTION. You must never write meta-commentary about the input. Specifically you must NEVER write any of: "The input appears to be...", "The source text appears...", "I cannot reliably restructure...", "Please provide...", "To properly format this...", "Note:", "Disclaimer:", or any similar message about your inability to process the source. If for any reason you cannot restructure, return the original unchanged input verbatim. Your output MUST either begin with "## " or be a verbatim copy of the input. Anything else is a malformed response.`;
+REFUSAL IS NOT AN OPTION. You must never write meta-commentary about the input. Specifically you must NEVER write any of: "I notice this/the …", "The input appears to be…", "The source text appears…", "The source material is/appears…", "I cannot reliably restructure…", "Please provide …", "To format this … properly", "Note: …" (especially anything along the lines of "Note: the source material is incomplete"), "Disclaimer: …", "---" followed by a Note about inability, or any similar message about your inability to process the source. NEVER list missing fields ("position title", "key responsibilities", "qualifications and experience requirements", "application instructions and deadline") as bullets in a Note. If for any reason you cannot restructure, return the original unchanged input verbatim. Your output MUST either be a clean structured rewrite (## Responsibilities / ## Qualifications / ## How to apply with bullets) or a verbatim copy of the input. Anything else is a malformed response.`;
 
-/** Detect when Haiku has written a meta-comment instead of restructuring.
- *  We use the cheap heuristic that a real structured output starts with a
- *  section header. */
+/**
+ * Detect when Haiku has written meta-commentary instead of (or in addition to)
+ * restructuring. Two checks:
+ *   1. The output opens with a refusal phrase.
+ *   2. The output contains a refusal block ANYWHERE in the body — Haiku has
+ *      a habit of producing a real "## About the role" paragraph followed
+ *      by a "---" divider and a "Note: the source material is incomplete"
+ *      list of missing fields. The whole row is poisoned in that case.
+ */
 function looksLikeRefusal(out: string): boolean {
   const trimmed = out.trim();
-  if (trimmed.startsWith("## ")) return false;
-  // Common opening phrases of refusal-style outputs.
   const head = trimmed.slice(0, 200).toLowerCase();
-  return /^(the (input|source|provided|given) text|i (cannot|can'?t)|i'?ll|please|note:|disclaimer:|due to|to (properly|format)|it (appears|seems))/.test(head);
+  // Open of refusal — common patterns at the very top of the response.
+  const HEAD_RE = /^(the (input|source|provided|given) (text|material|content)|i (cannot|can'?t|notice (this|the))|i'?ll|please|note:|disclaimer:|due to|to (properly|format)|it (appears|seems))/;
+  if (HEAD_RE.test(head)) return true;
+  // In-body refusal markers — these appear after a real-looking section.
+  // We look for the meta-Note pattern, the "please provide the full…"
+  // request, the "appears incomplete/truncated/cut off mid-sentence"
+  // disclaimer, and the missing-fields list rendered as bullets.
+  const lower = trimmed.toLowerCase();
+  // High-signal patterns only — anything that's also legitimate prose in
+  // real listings was removed. The remaining patterns are Haiku-specific
+  // disclaimer fingerprints.
+  const BODY_RES: RegExp[] = [
+    /\bnote:\s*(the\s+(source|provided)\s+(material|text|content)\s+(provided\s+)?is|to\s+format\s+this\s+job\s+description)/,
+    /\bappears\s+(incomplete|truncated|cut\s+off\s+mid)/,
+    /\bcuts?\s+off\s+mid[- ]sentence/,
+    /\bsource\s+(material|text|content)\s+(provided\s+)?is\s+incomplete/,
+    /\bplease\s+(provide|supply)\s+(the\s+(full|complete|specific|original)\s+(job\s+)?(description|text|content))/,
+    // The signature Haiku missing-fields list — three of the four canonical
+    // items co-occurring within a 400-char window. No legitimate listing
+    // produces this combination.
+    /(specific\s+position\s+title)[\s\S]{0,400}(qualifications\s+and\s+experience\s+requirements|application\s+instructions\s+and\s+deadline)/,
+  ];
+  for (const r of BODY_RES) if (r.test(lower)) return true;
+  return false;
 }
 
 async function formatDescription(raw: string): Promise<string> {
@@ -138,7 +165,13 @@ async function main() {
       source_domain: (opp.source_domain || "").slice(0, 200),
       type: opp.classified_type || opp.content_type || opp.type || "job",
       experience_level: opp.seniority || null,
-      sectors: opp.sectors || [],
+      // normalize.ts produces a single canonical `sector_norm`; the schema
+      // expects an array. Prefer an explicit sectors[] from the adapter,
+      // otherwise wrap the canonical sector_norm so the mini-app chip
+      // filter has something to match against. "Other" is dropped.
+      sectors: Array.isArray(opp.sectors) && opp.sectors.length > 0
+        ? opp.sectors
+        : (opp.sector_norm && opp.sector_norm !== "Other" ? [opp.sector_norm] : []),
       is_active: true,
       scraped_at: opp.scraped_at || new Date().toISOString(),
       // Devisor intelligence fields

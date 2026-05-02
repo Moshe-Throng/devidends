@@ -64,4 +64,6 @@ export interface SampleOpportunity {
   experience_years: number | null;
   is_expired: boolean;
   classified_type: string;
+  sectors: string[];
+  experience_level: string | null;
 }

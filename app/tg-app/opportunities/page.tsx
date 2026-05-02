@@ -35,6 +35,31 @@ const SECTOR_CHIPS = [
   "Project Management",
 ];
 
+// Map each chip to the canonical sector labels produced by
+// scripts/crawl-engine/normalize.ts. Chips that don't substring-match the
+// canonical name (ICT, Agriculture, Humanitarian, Energy, Research, Media,
+// Project Management) need an explicit mapping to avoid silently returning
+// zero. Each chip can also list extra title keywords used as a fallback for
+// rows whose `sectors[]` is still empty.
+const CHIP_FILTER: Record<string, { sectors: string[]; titleKeywords: string[] }> = {
+  Health: { sectors: ["Health"], titleKeywords: ["health", "medical", "nutrition", "clinical", "epidemiol", "hiv", "malaria", "doctor", "nurse"] },
+  Finance: { sectors: ["Admin & Finance"], titleKeywords: ["finance", "accountant", "audit", "compliance", "procurement", "grants management"] },
+  ICT: { sectors: ["IT & Technology"], titleKeywords: ["ict", "digital", "software", "developer", "data analyst", "engineering", "it support"] },
+  Agriculture: { sectors: ["Food Security & Livelihoods"], titleKeywords: ["agriculture", "agronom", "livestock", "crop", "farm", "food security", "livelihood"] },
+  Education: { sectors: ["Education"], titleKeywords: ["education", "teacher", "school", "learning", "training"] },
+  WASH: { sectors: ["WASH"], titleKeywords: ["wash", "water", "sanitation", "hygiene"] },
+  Governance: { sectors: ["Governance"], titleKeywords: ["governance", "rule of law", "anti-corruption", "civil society", "justice", "decentrali", "pfm"] },
+  Gender: { sectors: ["Gender", "Protection & Human Rights"], titleKeywords: ["gender", "women", "gbv", "gender-based"] },
+  Environment: { sectors: ["Environment"], titleKeywords: ["environment", "climate", "conservation", "natural resources"] },
+  Humanitarian: { sectors: ["Protection & Human Rights", "Food Security & Livelihoods"], titleKeywords: ["humanitarian", "refugee", "displacement", "emergency", "protection"] },
+  Energy: { sectors: ["Environment"], titleKeywords: ["energy", "renewable", "solar", "electric"] },
+  Economic: { sectors: ["Economic Development"], titleKeywords: ["economic", "trade", "private sector", "enterprise", "value chain", "sme"] },
+  Legal: { sectors: ["Legal"], titleKeywords: ["legal", "lawyer", "law"] },
+  Research: { sectors: ["M&E"], titleKeywords: ["research", "monitoring", "evaluation", "m&e", "meal"] },
+  Media: { sectors: ["Communications"], titleKeywords: ["media", "communications", "journalism", "public relations", "advocacy"] },
+  "Project Management": { sectors: ["Program/Project Management"], titleKeywords: ["program manager", "project manager", "coordinator", "country director", "chief of party"] },
+};
+
 export default function TgAppOpportunities() {
   const { profile } = useTelegram();
   const [opportunities, setOpportunities] = useState<SampleOpportunity[]>([]);
@@ -66,15 +91,21 @@ export default function TgAppOpportunities() {
   const filtered = useMemo(() => {
     let result = opportunities;
 
-    // Sector filter
+    // Sector filter — primary path is the sectors[] column (canonical
+    // taxonomy from normalize.ts) using an explicit chip→sector map. Falls
+    // back to a title-only keyword match for rows whose sectors[] hasn't
+    // been backfilled yet. Never substrings on organization or
+    // classified_type — those caused massive false positives (every UNEP
+    // role looking like "Environment", every Economic Commission role
+    // looking like "Economic").
     if (activeSector !== "All") {
-      const sectorLower = activeSector.toLowerCase();
-      result = result.filter(
-        (o) =>
-          o.title?.toLowerCase().includes(sectorLower) ||
-          o.organization?.toLowerCase().includes(sectorLower) ||
-          o.classified_type?.toLowerCase().includes(sectorLower)
-      );
+      const cfg = CHIP_FILTER[activeSector];
+      result = result.filter((o) => {
+        if (cfg && o.sectors?.some((s) => cfg.sectors.includes(s))) return true;
+        const t = o.title?.toLowerCase() ?? "";
+        const kws = cfg?.titleKeywords ?? [activeSector.toLowerCase()];
+        return kws.some((kw) => t.includes(kw));
+      });
     }
 
     // Search filter
