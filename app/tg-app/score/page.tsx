@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -15,7 +15,18 @@ import {
 import { useTelegram } from "@/components/TelegramProvider";
 import type { CvScoreResult, OpportunityInput, SampleOpportunity } from "@/lib/types/cv-score";
 
-export default function TgAppScore() {
+// useSearchParams forces the page out of static rendering, so we wrap the
+// inner client component in <Suspense>. This matches the pattern used by
+// app/score/page.tsx on the web side.
+export default function TgAppScorePageWrapper() {
+  return (
+    <Suspense fallback={null}>
+      <TgAppScore />
+    </Suspense>
+  );
+}
+
+function TgAppScore() {
   const { profile, refreshProfile, loading } = useTelegram();
   const searchParams = useSearchParams();
   const [phase, setPhase] = useState<"ready" | "scoring" | "results">("ready");
