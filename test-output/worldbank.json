@@ -1,176 +1,151 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-01T17:36:53.658Z",
-    "count": 8
+    "scraped_at": "2026-05-02T05:21:43.355Z",
+    "total_fetched": 50,
+    "unique_count": 50,
+    "active_count": 8,
+    "active_projects": 50,
+    "sources": {
+      "reoi": 33,
+      "ifb": 17
+    }
   },
   "opportunities": [
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XIII",
-      "organization": "World Bank",
       "description": "Selection of Senior Special Regional Implementation Advisor XIII\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542250-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
       "deadline": "2026-05-07",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440855",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-05-01T17:33:42.436Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
-        "project_id": "P179040",
-        "bid_reference": "ET-NIDP-542250-CS-INDV",
-        "sector": ""
-      }
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "project_id": "P179040",
+      "bid_reference": "ET-NIDP-542250-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.051Z"
     },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XII",
-      "organization": "World Bank",
       "description": "Selection of Senior Special Regional Implementation Advisor XII\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542249-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
       "deadline": "2026-05-07",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440857",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-05-01T17:33:42.436Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
-        "project_id": "P179040",
-        "bid_reference": "ET-NIDP-542249-CS-INDV",
-        "sector": ""
-      }
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "project_id": "P179040",
+      "bid_reference": "ET-NIDP-542249-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.084Z"
     },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XI",
-      "organization": "World Bank",
       "description": "Selection of Senior Special Regional Implementation Advisor XI\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542248-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
       "deadline": "2026-05-07",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440859",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-05-01T17:33:42.437Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
-        "project_id": "P179040",
-        "bid_reference": "ET-NIDP-542248-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of post-harvest thresher for 47 watersheds",
-      "organization": "World Bank",
-      "description": "Procurement of post-harvest thresher for 47 watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-541101-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
-      "deadline": "2026-05-29",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-01T17:33:42.935Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-MOA-541101-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub",
-      "organization": "World Bank",
-      "description": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533130-GO-RFB\n\nContact: P.P.O. BOX 15881,  Cotobie, Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-01T17:33:42.935Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533130-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading",
-      "organization": "World Bank",
-      "description": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533128-CW-RFB\n\nContact: P.P.O. Box 15881  Kotobie, Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-01T17:33:42.935Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533128-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading",
-      "organization": "World Bank",
-      "description": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533129-CW-RFB\n\nContact: P.O.BOX: 15881, Yeka Sub-City, Wereda 09 (Cotobie), Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-01T17:33:42.935Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533129-CW-RFB",
-        "sector": ""
-      }
+      "type": "consulting",
+      "notice_type": "Request for Expression of Interest",
+      "procurement_method": "Individual Consultant Selection",
+      "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "project_id": "P179040",
+      "bid_reference": "ET-NIDP-542248-CS-INDV",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.084Z"
     },
     {
       "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
-      "organization": "World Bank",
       "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
       "deadline": "2026-05-08",
-      "published": null,
+      "organization": "World Bank",
       "country": "Ethiopia",
-      "city": null,
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-01T17:33:42.935Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
-        "sector": ""
-      }
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+      "project_id": "P180076",
+      "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.546Z"
+    },
+    {
+      "title": "Procurement of post-harvest thresher for 47 watersheds",
+      "description": "Procurement of post-harvest thresher for 47 watersheds\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-541101-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-05-29",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+      "project_id": "P174385",
+      "bid_reference": "ET-MOA-541101-GO-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.546Z"
+    },
+    {
+      "title": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub",
+      "description": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533130-GO-RFB\n\nContact: P.P.O. BOX 15881,  Cotobie, Addis Ababa, Ethiopia",
+      "deadline": "2026-06-09",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+      "project_id": "P176731",
+      "bid_reference": "ET-EEP-533130-GO-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.546Z"
+    },
+    {
+      "title": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading",
+      "description": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533128-CW-RFB\n\nContact: P.P.O. Box 15881  Kotobie, Addis Ababa, Ethiopia",
+      "deadline": "2026-06-09",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+      "project_id": "P176731",
+      "bid_reference": "ET-EEP-533128-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.546Z"
+    },
+    {
+      "title": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading",
+      "description": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533129-CW-RFB\n\nContact: P.O.BOX: 15881, Yeka Sub-City, Wereda 09 (Cotobie), Addis Ababa, Ethiopia",
+      "deadline": "2026-06-09",
+      "organization": "World Bank",
+      "country": "Ethiopia",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
+      "source_domain": "worldbank.org",
+      "type": "tender",
+      "notice_type": "Invitation for Bids",
+      "procurement_method": "Request for Bids",
+      "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+      "project_id": "P176731",
+      "bid_reference": "ET-EEP-533129-CW-RFB",
+      "sector": null,
+      "scraped_at": "2026-05-02T05:21:42.546Z"
     }
   ],
   "projects": [
@@ -255,16 +230,6 @@
       "implementing_agency": ""
     },
     {
-      "id": "P179040",
-      "name": "Ethiopia Digital ID for Inclusion and Services Project",
-      "status": "Active",
-      "sector": "ICT Services",
-      "total_commitment": "350",
-      "approval_date": "2023-12-13T00:00:00Z",
-      "closing_date": "1/7/2029 12:00:00 AM",
-      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
-    },
-    {
       "id": "P176255",
       "name": "ADDITIONAL FINANCING -  TRADE LOGISTICS PROJECT",
       "status": "Active",
@@ -273,6 +238,16 @@
       "approval_date": "2023-12-13T00:00:00Z",
       "closing_date": "",
       "implementing_agency": "Ethiopian Maritime Affairs Authority"
+    },
+    {
+      "id": "P179040",
+      "name": "Ethiopia Digital ID for Inclusion and Services Project",
+      "status": "Active",
+      "sector": "ICT Services",
+      "total_commitment": "350",
+      "approval_date": "2023-12-13T00:00:00Z",
+      "closing_date": "1/7/2029 12:00:00 AM",
+      "implementing_agency": "Ministry of Finance and Economic Development, Prime Minister's Office"
     }
   ]
 }
