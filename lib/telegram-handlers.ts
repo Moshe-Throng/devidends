@@ -1282,34 +1282,40 @@ async function handleRecommenderPrivateCvIngest(
       `<b>Your running total:</b> ${broughtInCount} brought in to date.`,
     ].join("\n");
 
+    // Combine the ingest confirmation and the relationship-strength buttons
+    // in a SINGLE message so the prompt can't get buried when a recommender
+    // ingests several CVs in quick succession. The body count + claim link
+    // are still visible; the keyboard is pinned to the same message.
+    //
+    // We use the subject_profile_id as the canonical correlation key — the
+    // attribution row is metadata, not a hard requirement. If the
+    // attribution insert failed, the callback can still find or create one.
+    // Skip is removed deliberately: the recommender's relationship to the
+    // expert is the trust signal that powers shortlisting, so making it
+    // optional defeats the point.
+    const attrPart = attributionId ? attributionId : "0";
+    const promptPrefix = [
+      summary,
+      ``,
+      `<b>One quick step — how well do you know ${escHtml(subject.name)}?</b>`,
+      `<i>Used for shortlist confidence and diversity reporting. Pick one:</i>`,
+    ].join("\n");
+    const relationshipKeyboard = {
+      inline_keyboard: [
+        [{ text: "👋 I just know them", callback_data: `refnotes_lvl:casual:${attrPart}:${subject.id}` }],
+        [{ text: "🤝 We worked together", callback_data: `refnotes_lvl:worked:${attrPart}:${subject.id}` }],
+        [{ text: "⭐ Strongly recommend", callback_data: `refnotes_lvl:strong:${attrPart}:${subject.id}` }],
+      ],
+    };
     await paceChat(chatId);
-    await bot.sendMessage(chatId, summary, { parse_mode: "HTML", disable_web_page_preview: true });
-
-    // Prompt for endorsement strength + optional free-text notes.
-    // Ownership framing so the recommender understands they're on record.
-    if (attributionId) {
-      await paceChat(chatId);
-      const prompt = [
-        `<b>${escHtml(subject.name)}</b> is in Devidends, tagged as recommended by you.`,
-        ``,
-        `Your name is on record as the introducer, so when they land assignments through the network, you're credited and share in the outcome.`,
-        ``,
-        `<b>How would you describe your relationship with them?</b>`,
-        ``,
-        `<i>Pick one below. You can also reply with context anytime.</i>`,
-      ].join("\n");
-      const keyboard = {
-        inline_keyboard: [
-          [{ text: "👋 I just know them", callback_data: `refnotes_lvl:casual:${attributionId}:${subject.id}` }],
-          [{ text: "🤝 We worked together", callback_data: `refnotes_lvl:worked:${attributionId}:${subject.id}` }],
-          [{ text: "⭐ Strongly recommend", callback_data: `refnotes_lvl:strong:${attributionId}:${subject.id}` }],
-          [{ text: "Skip", callback_data: `refnotes_skip:${attributionId}:${subject.id}` }],
-        ],
-      };
-      await bot.sendMessage(chatId, prompt, { parse_mode: "HTML", reply_markup: keyboard });
-      // State remains open so a text reply still lands as notes.
-      chatState.set(chatId, `awaiting_referral_notes:${attributionId}:${subject.id}`);
-    }
+    await bot.sendMessage(chatId, promptPrefix, {
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+      reply_markup: relationshipKeyboard,
+    });
+    // State stays open so a free-text reply lands as notes after the
+    // recommender has answered the structured questions.
+    chatState.set(chatId, `awaiting_referral_notes:${attrPart}:${subject.id}`);
   } catch (e) {
     console.warn("[recommender-ingest] post-hook failed:", (e as Error).message);
   }
@@ -2114,14 +2120,12 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     // --- Recommender-ingest: endorsement level tap ---
     if (data.startsWith("refnotes_lvl:")) {
       const [, level, attributionId, subjectProfileId] = data.split(":");
-      if (!level || !attributionId || !subjectProfileId) return;
-      // New 3-level scheme + back-compat for any in-flight messages with the
-      // old 4-level keys.
+      if (!level || !subjectProfileId) return;
+      // 3-level scheme + back-compat for legacy 4-level keys.
       const labels: Record<string, string> = {
         casual: "I just know them",
         worked: "We worked together",
         strong: "Strongly recommend",
-        // legacy keys
         light: "I just know them",
         professional: "I just know them",
       };
@@ -2134,26 +2138,49 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       };
       const label = labels[level] || level;
       const confidence = confidenceMap[level] || "medium";
+      // Resolve a usable attribution row. The keyboard correlation key may
+      // be "0" (insert failed earlier) or a real uuid (insert succeeded).
+      // Either way we want the endorsement persisted, so we look up an
+      // existing row by subject + sender or create one on the fly.
       try {
         const { createClient } = await import("@supabase/supabase-js");
         const sb = createClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
           process.env.SUPABASE_SERVICE_ROLE_KEY!
         );
-        // Prepend the endorsement line to attributions.notes
-        const { data: existing } = await sb
-          .from("attributions")
-          .select("notes")
-          .eq("id", attributionId)
-          .maybeSingle();
-        const prior = existing?.notes || "";
         const stamped = `[Endorsement: ${label}] (${new Date().toISOString().slice(0, 10)})`;
-        const newNotes = prior ? `${stamped}\n\n${prior}` : stamped;
-        await sb
-          .from("attributions")
-          .update({ notes: newNotes, confidence })
-          .eq("id", attributionId);
-        // Mirror to profiles.admin_notes for admin page visibility
+
+        let attrRow: { id: string; notes: string | null } | null = null;
+        if (attributionId && attributionId !== "0") {
+          const { data } = await sb
+            .from("attributions")
+            .select("id, notes")
+            .eq("id", attributionId)
+            .maybeSingle();
+          attrRow = data as any;
+        }
+        if (!attrRow) {
+          // Try to find any existing referral_member row for this subject.
+          const { data } = await sb
+            .from("attributions")
+            .select("id, notes")
+            .eq("subject_profile_id", subjectProfileId)
+            .eq("attribution_type", "referral_member")
+            .order("occurred_at", { ascending: false })
+            .limit(1)
+            .maybeSingle();
+          attrRow = data as any;
+        }
+        if (attrRow) {
+          const prior = attrRow.notes || "";
+          const newNotes = prior ? `${stamped}\n\n${prior}` : stamped;
+          await sb
+            .from("attributions")
+            .update({ notes: newNotes, confidence })
+            .eq("id", attrRow.id);
+        }
+        // Always mirror to profiles.admin_notes so the answer is visible
+        // even if no attribution row exists yet.
         const { data: prof } = await sb
           .from("profiles")
           .select("admin_notes")
@@ -2168,10 +2195,11 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       } catch (e) {
         console.warn("[refnotes_lvl] save failed:", (e as Error).message);
       }
-      // Check whether the subject profile already has gender on file. If not,
-      // ask the recommender — we use this for diversity reporting in shortlists,
-      // and recommenders almost always know without thinking.
-      let askGender = false;
+      // Always check whether the subject profile already has gender on file.
+      // If yes, skip directly to the notes prompt; otherwise ask. We attach
+      // the keyboard to the same "saved" confirmation message so it appears
+      // even when the recommender is processing several CVs in a row.
+      let hasGender = false;
       try {
         const { createClient } = await import("@supabase/supabase-js");
         const sb2 = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
@@ -2180,18 +2208,18 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
           .select("gender")
           .eq("id", subjectProfileId)
           .maybeSingle();
-        askGender = !subjP?.gender;
+        hasGender = !!subjP?.gender;
       } catch {}
 
-      if (askGender) {
-        try {
+      try {
+        if (!hasGender) {
           await bot.sendMessage(
             chatId,
             [
               `<b>✓ Saved as ${escHtml(label)}.</b>`,
               ``,
-              `<b>Quick — what's their gender?</b>`,
-              `<i>Used for diversity reporting on shortlists. Skip if you'd rather not.</i>`,
+              `<b>Last question — what's their gender?</b>`,
+              `<i>Used for diversity reporting on shortlists.</i>`,
             ].join("\n"),
             {
               parse_mode: "HTML",
@@ -2203,15 +2231,12 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
                   ],
                   [
                     { text: "Prefer not to say", callback_data: `refnotes_gender:nb:${attributionId}:${subjectProfileId}` },
-                    { text: "Skip", callback_data: `refnotes_gender:skip:${attributionId}:${subjectProfileId}` },
                   ],
                 ],
               },
             }
           );
-        } catch {}
-      } else {
-        try {
+        } else {
           await bot.sendMessage(
             chatId,
             [
@@ -2221,8 +2246,8 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
             ].join("\n"),
             { parse_mode: "HTML" }
           );
-        } catch {}
-      }
+        }
+      } catch {}
       // Keep the chatState open so a text follow-up is captured as notes.
       return;
     }

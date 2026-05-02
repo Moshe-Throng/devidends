@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowLeft,
   FileText,
@@ -9,15 +10,36 @@ import {
   CheckCircle,
   AlertCircle,
   TrendingUp,
+  Target,
 } from "lucide-react";
 import { useTelegram } from "@/components/TelegramProvider";
-import type { CvScoreResult } from "@/lib/types/cv-score";
+import type { CvScoreResult, OpportunityInput, SampleOpportunity } from "@/lib/types/cv-score";
 
 export default function TgAppScore() {
   const { profile, refreshProfile, loading } = useTelegram();
+  const searchParams = useSearchParams();
   const [phase, setPhase] = useState<"ready" | "scoring" | "results">("ready");
   const [result, setResult] = useState<CvScoreResult | null>(null);
   const [error, setError] = useState("");
+  // When the page is opened from a job detail page (`?oppId=...`) we score
+  // the CV AGAINST that specific role rather than running the generic
+  // donor-readiness scorer. The opportunity, once fetched, is held here so
+  // the API call carries it through.
+  const [opportunity, setOpportunity] = useState<SampleOpportunity | null>(null);
+  const [oppLoading, setOppLoading] = useState(false);
+  const oppId = searchParams.get("oppId");
+
+  useEffect(() => {
+    if (!oppId) { setOpportunity(null); return; }
+    setOppLoading(true);
+    fetch(`/api/opportunities/sample?id=${encodeURIComponent(oppId)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success && data.opportunity) setOpportunity(data.opportunity);
+      })
+      .catch(() => {})
+      .finally(() => setOppLoading(false));
+  }, [oppId]);
 
   // Gate: no saved CV → redirect to Build CV
   if (!loading && !profile?.cv_structured_data) {
@@ -88,11 +110,25 @@ export default function TgAppScore() {
     setError("");
 
     try {
-      // Score saved CV text directly (no file upload needed)
+      // If an opportunity was deep-linked, send it along so the scorer
+      // uses the fit-aware system prompt instead of the generic one.
+      const oppPayload: OpportunityInput | undefined = opportunity
+        ? {
+            title: opportunity.title,
+            organization: opportunity.organization,
+            description: opportunity.description || "",
+            deadline: opportunity.deadline,
+            source_url: opportunity.source_url,
+          }
+        : undefined;
+
       const res = await fetch("/api/cv/score", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cv_text: cvText }),
+        body: JSON.stringify({
+          cv_text: cvText,
+          ...(oppPayload ? { opportunity: oppPayload } : {}),
+        }),
       });
 
       const json = await res.json();
@@ -137,18 +173,48 @@ export default function TgAppScore() {
         <div className="px-4 mt-6">
           <div className="text-center mb-6">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mx-auto mb-3">
-              <FileText className="w-8 h-8 text-white" />
+              {opportunity ? (
+                <Target className="w-8 h-8 text-white" />
+              ) : (
+                <FileText className="w-8 h-8 text-white" />
+              )}
             </div>
             <h2 className="text-xl font-bold text-dark-900">
-              Score Your CV
+              {opportunity ? "Score Fit for This Role" : "Score Your CV"}
             </h2>
             <p className="text-sm text-dark-400 mt-1 max-w-xs mx-auto">
-              AI-powered analysis scored against GIZ, World Bank, EU, and UN donor CV standards
+              {opportunity
+                ? "AI compares your CV against this specific posting's responsibilities, skills, and seniority."
+                : "AI-powered analysis scored against GIZ, World Bank, EU, and UN donor CV standards"}
             </p>
-            <p className="text-[11px] text-dark-300 mt-2 max-w-xs mx-auto">
-              Evaluates structure, donor readiness, experience relevance, keywords, and formatting
-            </p>
+            {!opportunity && (
+              <p className="text-[11px] text-dark-300 mt-2 max-w-xs mx-auto">
+                Evaluates structure, donor readiness, experience relevance, keywords, and formatting
+              </p>
+            )}
           </div>
+
+          {/* Targeted opportunity badge — only shown when scoring against a job */}
+          {opportunity && (
+            <div className="bg-gradient-to-br from-cyan-50 to-teal-50 border-2 border-cyan-300 rounded-xl px-4 py-3 mb-3">
+              <p className="text-[10px] font-bold text-cyan-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <Target className="w-3 h-3" />
+                Scoring against
+              </p>
+              <p className="text-sm font-bold text-dark-900 leading-snug line-clamp-2">
+                {opportunity.title}
+              </p>
+              <p className="text-xs text-dark-500 mt-0.5">
+                {opportunity.organization}
+              </p>
+            </div>
+          )}
+          {oppLoading && (
+            <div className="bg-dark-50 border border-dark-100 rounded-xl px-4 py-3 mb-3 flex items-center gap-2">
+              <Loader2 className="w-4 h-4 animate-spin text-dark-400" />
+              <p className="text-xs text-dark-500">Loading job details…</p>
+            </div>
+          )}
 
           {/* Saved CV info */}
           <div className="bg-cyan-50 border border-cyan-200 rounded-xl px-4 py-3 flex items-center gap-3 mb-4">
@@ -170,9 +236,10 @@ export default function TgAppScore() {
 
           <button
             onClick={handleScore}
-            className="w-full mt-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm"
+            disabled={oppLoading}
+            className="w-full mt-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold text-sm disabled:opacity-60"
           >
-            Score My CV
+            {opportunity ? "Score My Fit for This Role" : "Score My CV"}
           </button>
 
           <p className="text-center text-[11px] text-dark-300 mt-2">
