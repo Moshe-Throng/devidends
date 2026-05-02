@@ -1284,16 +1284,19 @@ async function handleRecommenderPrivateCvIngest(
 
     // Combine the ingest confirmation and the relationship-strength buttons
     // in a SINGLE message so the prompt can't get buried when a recommender
-    // ingests several CVs in quick succession. The body count + claim link
-    // are still visible; the keyboard is pinned to the same message.
+    // ingests several CVs in quick succession.
     //
-    // We use the subject_profile_id as the canonical correlation key — the
-    // attribution row is metadata, not a hard requirement. If the
-    // attribution insert failed, the callback can still find or create one.
-    // Skip is removed deliberately: the recommender's relationship to the
-    // expert is the trust signal that powers shortlisting, so making it
-    // optional defeats the point.
-    const attrPart = attributionId ? attributionId : "0";
+    // Telegram caps `callback_data` at 64 bytes. The previous shape
+    // `refnotes_lvl:LEVEL:ATTR_UUID:SUBJ_UUID` came out at ~93 bytes and the
+    // API was silently rejecting the whole message with BUTTON_DATA_INVALID,
+    // which is why ingest looked like it had stopped responding. We now
+    // encode only the subject_profile_id and let the callback handler
+    // resolve the attribution row by subject (it already does that
+    // gracefully if the insert above failed).
+    //
+    // Skip is removed: the recommender's relationship to the expert is the
+    // trust signal that powers shortlisting, so making it optional defeats
+    // the point.
     const promptPrefix = [
       summary,
       ``,
@@ -1302,20 +1305,37 @@ async function handleRecommenderPrivateCvIngest(
     ].join("\n");
     const relationshipKeyboard = {
       inline_keyboard: [
-        [{ text: "👋 I just know them", callback_data: `refnotes_lvl:casual:${attrPart}:${subject.id}` }],
-        [{ text: "🤝 We worked together", callback_data: `refnotes_lvl:worked:${attrPart}:${subject.id}` }],
-        [{ text: "⭐ Strongly recommend", callback_data: `refnotes_lvl:strong:${attrPart}:${subject.id}` }],
+        [{ text: "👋 I just know them", callback_data: `rfn_lvl:casual:${subject.id}` }],
+        [{ text: "🤝 We worked together", callback_data: `rfn_lvl:worked:${subject.id}` }],
+        [{ text: "⭐ Strongly recommend", callback_data: `rfn_lvl:strong:${subject.id}` }],
       ],
     };
-    await paceChat(chatId);
-    await bot.sendMessage(chatId, promptPrefix, {
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-      reply_markup: relationshipKeyboard,
-    });
+    try {
+      await paceChat(chatId);
+      await bot.sendMessage(chatId, promptPrefix, {
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+        reply_markup: relationshipKeyboard,
+      });
+    } catch (sendErr) {
+      // Defensive fallback — if the keyboard ever fails for any reason
+      // (Telegram quirks, oversized payload, parse-mode issue), at least
+      // get the ingest summary out so the user knows the CV landed.
+      console.warn("[recommender-ingest] combined send failed:", (sendErr as Error).message);
+      try {
+        await bot.sendMessage(chatId, summary, { parse_mode: "HTML", disable_web_page_preview: true });
+        await bot.sendMessage(
+          chatId,
+          `<b>How well do you know ${escHtml(subject.name)}?</b>`,
+          { parse_mode: "HTML", reply_markup: relationshipKeyboard },
+        );
+      } catch (e2) {
+        console.warn("[recommender-ingest] fallback send also failed:", (e2 as Error).message);
+      }
+    }
     // State stays open so a free-text reply lands as notes after the
     // recommender has answered the structured questions.
-    chatState.set(chatId, `awaiting_referral_notes:${attrPart}:${subject.id}`);
+    chatState.set(chatId, `awaiting_referral_notes:${attributionId || "0"}:${subject.id}`);
   } catch (e) {
     console.warn("[recommender-ingest] post-hook failed:", (e as Error).message);
   }
@@ -2118,8 +2138,16 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     }
 
     // --- Recommender-ingest: endorsement level tap ---
-    if (data.startsWith("refnotes_lvl:")) {
-      const [, level, attributionId, subjectProfileId] = data.split(":");
+    // Two formats accepted:
+    //   rfn_lvl:LEVEL:SUBJ_UUID                       (current — fits 64-byte cap)
+    //   refnotes_lvl:LEVEL:ATTR_UUID:SUBJ_UUID        (legacy in-flight messages)
+    if (data.startsWith("rfn_lvl:") || data.startsWith("refnotes_lvl:")) {
+      const parts = data.split(":");
+      // current short form: [prefix, level, subjId]
+      // legacy long form:  [prefix, level, attrId, subjId]
+      const level = parts[1];
+      const subjectProfileId = parts.length >= 4 ? parts[3] : parts[2];
+      const attributionId = parts.length >= 4 ? parts[2] : "0";
       if (!level || !subjectProfileId) return;
       // 3-level scheme + back-compat for legacy 4-level keys.
       const labels: Record<string, string> = {
@@ -2226,11 +2254,11 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
               reply_markup: {
                 inline_keyboard: [
                   [
-                    { text: "♀ Woman", callback_data: `refnotes_gender:female:${attributionId}:${subjectProfileId}` },
-                    { text: "♂ Man", callback_data: `refnotes_gender:male:${attributionId}:${subjectProfileId}` },
+                    { text: "♀ Woman", callback_data: `rfn_gen:female:${subjectProfileId}` },
+                    { text: "♂ Man", callback_data: `rfn_gen:male:${subjectProfileId}` },
                   ],
                   [
-                    { text: "Prefer not to say", callback_data: `refnotes_gender:nb:${attributionId}:${subjectProfileId}` },
+                    { text: "Prefer not to say", callback_data: `rfn_gen:nb:${subjectProfileId}` },
                   ],
                 ],
               },
@@ -2253,9 +2281,14 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
     }
 
     // --- Recommender-ingest: gender tap ---
-    if (data.startsWith("refnotes_gender:")) {
-      const [, value, attributionId, subjectProfileId] = data.split(":");
-      if (!value || !attributionId || !subjectProfileId) return;
+    // Two formats accepted:
+    //   rfn_gen:VAL:SUBJ_UUID                         (current — fits 64-byte cap)
+    //   refnotes_gender:VAL:ATTR_UUID:SUBJ_UUID       (legacy in-flight messages)
+    if (data.startsWith("rfn_gen:") || data.startsWith("refnotes_gender:")) {
+      const parts = data.split(":");
+      const value = parts[1];
+      const subjectProfileId = parts.length >= 4 ? parts[3] : parts[2];
+      if (!value || !subjectProfileId) return;
       try {
         const { createClient } = await import("@supabase/supabase-js");
         const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
