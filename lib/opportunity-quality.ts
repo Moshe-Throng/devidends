@@ -40,13 +40,36 @@ const SPAM_TITLE_PATTERNS = [
   /^guiding documents$/i,
 ];
 
-const ETHIOPIA_ONLY_SOURCES = [
-  "workday",
-  "drc",
-  "drc.ngo",
-  "fhi.wd1.myworkdayjobs.com",
-  "unhcr.wd3.myworkdayjobs.com",
+// Sources that pre-filter to Ethiopia at scrape time (countryFilter param,
+// Ethiopia-only career pages, etc.). These are trusted — every result they
+// return is genuinely Ethiopia-related, even if the title doesn't mention
+// it. Anything NOT on this list goes through the universal corpus check.
+const PRE_FILTERED_ETHIOPIA_SOURCES = [
+  "reliefweb.int",
+  "worldbank.org",
+  "careers.un.org",
+  "afdb.org",
+  "workable.com",
+  "unicef.org",
+  "linkedin.com", // LinkedIn adapter has its own corpus relevance filter
 ];
+
+// Strict Ethiopia / Horn-of-Africa regex — same vocabulary as
+// scripts/crawl-engine/normalize.ts so the API filter and the crawler
+// filter stay aligned. Adds Ethiopian-program shorthands that appear
+// on legitimate roles even when the literal "Ethiopia" word doesn't.
+const ETHIOPIA_CORPUS_RE =
+  /\b(ethiopia|ethiopian|addis\s*ababa|addis|oromia|amhara|tigray|sidama|gambella|afar|harari|dire\s*dawa|south\s*west\s*ethiopia|bahir\s*dar|hawassa|mekelle|jimma|adama|arba\s*minch|gondar|gonder|nazret|nazareth|semera|jijiga|au[-\s]cdc|africa\s+cdc|liway|pepfar\s+ethiopia|usaid\s+ethiopia|abh\s+partners|inkomoko|odixcity|snv\s+ethiopia|horn\s+of\s+africa|greater\s+horn)\b/i;
+
+function isEthiopiaRelevant(opp: RawOpportunity): boolean {
+  // Pre-filtered source → trust the upstream filter
+  if (PRE_FILTERED_ETHIOPIA_SOURCES.includes(opp.source_domain)) return true;
+  // Universal corpus check — title + organization + country + first 2k of
+  // description. Misses are rare; the few legitimate Ethiopia roles whose
+  // adapter strips location context get reactivated by the cleanup script.
+  const corpus = `${opp.title || ""} ${opp.organization || ""} ${opp.country || ""} ${(opp.description || "").slice(0, 2000)}`;
+  return ETHIOPIA_CORPUS_RE.test(corpus);
+}
 
 /* ─── Seniority Extraction ────────────────────────────────── */
 
@@ -141,12 +164,6 @@ function generateId(title: string, org: string, source: string): string {
   return ((h1 >>> 0).toString(16) + (h2 >>> 0).toString(16)).slice(0, 12);
 }
 
-/* ─── Country Check ───────────────────────────────────────── */
-
-function isEthiopiaRelated(country: string): boolean {
-  return country.toLowerCase().includes("ethiopia");
-}
-
 /* ═══════════════════════════════════════════════════════════════
    MAIN: processOpportunities
    ═══════════════════════════════════════════════════════════════ */
@@ -167,10 +184,11 @@ export function processOpportunities(
     // Title too short
     if (!opp.title || opp.title.length < 5) return false;
 
-    // Ethiopia-only enforcement for specific sources
-    if (ETHIOPIA_ONLY_SOURCES.includes(opp.source_domain)) {
-      if (!isEthiopiaRelated(opp.country)) return false;
-    }
+    // Universal Ethiopia relevance — drops global jobs that leak in from
+    // any source not on the pre-filtered allowlist (CARE / GGGI /
+    // MasterCard / Jobvite / Greenhouse / FHI Workday were all dumping
+    // Burundi / Korea / Colombia / etc. into the feed).
+    if (!isEthiopiaRelevant(opp)) return false;
 
     return true;
   });
