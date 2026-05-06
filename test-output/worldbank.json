@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-05T07:25:07.514Z",
-    "count": 9
+    "scraped_at": "2026-05-06T07:41:44.639Z",
+    "count": 11
   },
   "opportunities": [
+    {
+      "title": "Selection of Senior Special Regional Implementation Advisor XIV",
+      "organization": "World Bank",
+      "description": "Selection of Senior Special Regional Implementation Advisor XIV\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542251-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-05-15",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442625",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-05-06T07:38:54.651Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542251-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of Senior Special Regional Implementation Advisor X",
+      "organization": "World Bank",
+      "description": "Selection of Senior Special Regional Implementation Advisor X\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-542247-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-05-15",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442622",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-05-06T07:38:54.651Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542247-CS-INDV",
+        "sector": ""
+      }
+    },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XIII",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440855",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-05T07:22:18.371Z",
+      "scraped_at": "2026-05-06T07:38:54.651Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440857",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-05T07:22:18.371Z",
+      "scraped_at": "2026-05-06T07:38:54.651Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00440859",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-05T07:22:18.371Z",
+      "scraped_at": "2026-05-06T07:38:54.651Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.722Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.722Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.723Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.723Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.723Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-05T07:22:18.723Z",
+      "scraped_at": "2026-05-06T07:38:55.064Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
