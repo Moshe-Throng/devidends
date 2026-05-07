@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -30,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -51,7 +51,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -72,7 +72,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -93,7 +93,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -113,7 +113,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -124,21 +124,20 @@
     "_sourceId": "inkomoko-workable"
   },
   {
-    "title": "Monitoring, Evaluation and Learning (MEL) Associate -Adama and Bishoftu",
+    "title": "Advocacy Manager",
     "organization": "Inkomoko",
     "description": "",
     "deadline": null,
-    "published": "2026-04-20T00:00:00.000Z",
+    "published": "2026-05-06T00:00:00.000Z",
     "country": "Ethiopia",
-    "city": "Adama",
-    "source_url": "https://apply.workable.com/inkomoko/j/A582A1AE6F/",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/F64D59C205/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-06T07:39:32.814Z",
+    "scraped_at": "2026-05-07T07:47:14.917Z",
     "raw_fields": {
       "department": [
-        "Program",
-        "Monitoring, Evaluation, Research & Learning"
+        "Country Leadership"
       ],
       "work_type": ""
     },
