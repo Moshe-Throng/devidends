@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4210614",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.138Z",
+    "scraped_at": "2026-05-08T06:55:45.419Z",
     "raw_fields": {
       "career_categories": [
         "Human Resources"
@@ -32,7 +32,7 @@
     "source_url": "https://reliefweb.int/node/4210384",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.139Z",
+    "scraped_at": "2026-05-08T06:55:45.420Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -56,7 +56,7 @@
     "source_url": "https://reliefweb.int/node/4209261",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.140Z",
+    "scraped_at": "2026-05-08T06:55:45.420Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -70,28 +70,6 @@
     }
   },
   {
-    "title": "AI Engineer",
-    "organization": "3iS",
-    "description": "Organization 3iS is a non-for-profit organization that provides information management services to humanitarian and development organizations. Through information management, we help our partners target assistance to the world’s most vulnerable populations, and we support local authorities and institutions to enhance their capacities and become autonomous in their internal data and information management activities. Scope of work The AI Engineer will be responsible for designing, developing, and maintaining web-based platforms and applications that support humanitarian information management and data analysis for 3iS Ethiopia programmed. The role focuses on building end-to-end digital systems including frontend user interfaces, backend services, APIs, and database architectures that enable efficient collection, processing, visualization, and reporting of humanitarian data. Working closely with Information Management Officers, humanitarian partners, the AI Engineer will contribute to building of reliable digital tools that support needs assessments, operational monitoring, reporting, and humanitarian coordination. Special focus on the Description of Duties Support the Disaster prevention and alert system dashboard The AI Engineer will ensure the implementation of a closed-loop humanitarian information system on Disaster prevention and alert system dashboard by: Integrate AI and advanced analytics to enhance data-driven decision-making Develop models to identify response gaps, overlaps, and data anomalies Automate generation of insights and summaries for coordination and reporting Implement NLP tools to produce real-time narrative reports and trend analysis Apply predictive analytics to support anticipatory action and early response planning. Digitalization of Response Tracking Predictive Model Integration : Work with AI engineers to integrate Machine Learning (ML) models into the ETRRM Dashboard. These models will ingest historical disaster data, climate patterns, and socio-economic indicators to predict potential crises. Anticipatory Action Triggers : Work with IMOs, to Set &quot;Automated Alerts&quot; based on AI predictions, allowing partners to pivot from response to prevention. Anticipatory Triggers : Work with IMO to Set up AI-driven thresholds that notify stakeholders before a disaster occurs, enabling Anticipatory Action (AA). Automated Reporting & High-Quality Geospatial Mapping Dynamic Map Generation : Integrate GIS (Geographic Information Systems) with the AI model to produce automated, high-resolution Risk vs. Response maps. These maps will visualize: Probability of disaster occurrence. Partner saturation vs. resource gaps. Accessibility routes based on predicted environmental changes (e.g., flood-prone roads). AI-Synthesized Reporting : work with IMO to Implement a Natural Language Generation (NLG) layer to automatically draft donor-ready situation reports (SitReps) based on real-time data shifts and AI predictions, reducing human reporting cycles by 70%. Capacity Building In consultation with Capacity Building team, facilitate need based high quality in person, virtual and online IM training sessions focusing on Ai applications and different models. Support the whole preparation of an online plate form contents in consultation with the Capacity Building Team. Train and provide technical support to the identified staff as needed on all Ai models and tool development Provide mentorship and support in Information Management to the humanitarian community responding in Ethiopia through different mechanisms. Accountability to Beneficiaries & Guiding Principles To respect principles of accountability to beneficiaries of The Employer programs, in line with international standards while actively engaging beneficiary communities as equal partners in the design, monitoring and evaluation of field projects. To respect the local culture and The Employer’s policies, procedures, and values at all times and in all countries. The Employer has zero-tolerance for sexual harassment, exploitation and abuse, human trafficking, child abuse and exploitation. Any violations of these principles and policies will be treated as serious misconduct. The Employer is an Equal Opportunity Employer regardless of background. In addition to any other task which could be requested by the PM or HQ Working Conditions Type of contract: Employment Fixed Tem Contract Eligibility: Only Ethiopian Duty station: Addis Ababa, Ethiopia Salary: between 2,000 and 2,200 USD (all inclusive) Expected start date: 15 May 2026 Duration: 11.5 Months Requirements Education Bachelor’s or master’s degree in computer science, Software Engineering, Information Systems, Web Development, or a related field Languages English (fluent) – essential Experience Minimum 3–5 years of professional experience in full stack development. Demonstrated experience building web applications and data platforms. Experience working with data-driven applications and dashboards. Experience working with international NGOs or humanitarian organizations is an advantage. Skills Programming & Development: JavaScript/TypeScript, Python, HTML/CSS; frontend frameworks (React, Angular, Vue); backend frameworks (Node.js, Django, Flask, FastAPI) Frontend & UI: Responsive web/mobile design, data visualization, API integration, low-bandwidth optimization Backend & API: Scalable systems, microservices, authentication/security, performance optimization Databases: Relational (PostgreSQL, MySQL) and non-relational (MongoDB, Elasticsearch); schema design, query optimization, data security Cloud & DevOps: AWS/Azure/Google Cloud, serverless deployment, Docker, CI/CD pipelines Data Integration & Visualization: Power BI, Tableau, GIS, dashboards Security & Compliance: Secure software practices, data encryption, GDPR compliance Desirable Skills: Humanitarian data systems, GIS integration, AI applications, low-bandwidth field solutions Organizational Learning as part of the 3iS' commitment to organizational development, and in support of the understanding that learning organizations are more effective, efficient and relevant to the communities they serve. It is expected that all 3iS' personnel will commit 5% of their time to learning activities that benefit 3iS as well as individual professional development. Accountability to Beneficiaries 3iS' personnel is expected to respect principles of accountability to beneficiaries of 3iS programs, in line with international standards while actively engaging beneficiary communities as equal partners in the design, monitoring and evaluation of field projects. Guiding Principles Personnel is expected to respect the local culture and 3iS' policies, procedures, and values at all times. 3iS has zero-tolerance for sexual harassment, exploitation and abuse, human trafficking, child abuse and exploitation. Any violations of these principles and policies will be treated as serious misconduct. 3iS is an Equal Opportunity Employer regardless of background. 3iS may carry out reference checks with other organizations on matters related to sexual harassment, exploitation and abuse.\n\nHow to Apply: **How to apply** Please apply via this link: [https://3is.org/job-openings/](https://3is.org/job-openings/) **Notes**: - Any application received by e-mail will not be considered. - This vacancy will remain open for a maximum of 14 days, but it may be closed sooner if a suitable candidate is found. - This vacancy is open exclusively to candidates of Ethiopian nationality",
-    "deadline": "2026-05-07T00:00:00+00:00",
-    "published": "2026-04-24T07:51:39+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4209121",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.140Z",
-    "raw_fields": {
-      "career_categories": [
-        "Information and Communications Technology"
-      ],
-      "themes": [],
-      "experience": "3-4 years",
-      "languages": [],
-      "work_type": "Job"
-    }
-  },
-  {
     "title": "Disaster Risk Management Advisor for Ethiopia",
     "organization": "People in Need",
     "description": "Contract Length: 6 months with a possibility of extension Country Programme : Ethiopia Base : Addis Ababa, Ethiopia Line Manager : Country Director National posting People in Need (PIN) is an international, non-profit organization providing humanitarian and development assistance around the world. Present in Ethiopia since 2003, PIN has directly implemented numerous humanitarian and development projects across five regions of the country, mainly focusing on emergency and development WASH, Shelter, Food Security, Agriculture, Education, and Job creation interventions (funded by BHA (USAID); DG ECHO; FCDO; UN OCHA; Czech government, etc.). The overall annual budget of Ethiopia country programme is about 4.7 mil. EUR, and it has 130 staff. About this role: The Disaster Risk Management (DRM) Advisor is a senior strategic leadership position responsible for shaping and advancing PIN Ethiopia’s DRM, Early Warning System (EWS), and Anticipatory Action (AA) agenda. The role focuses primarily on strategic positioning, sectoral leadership, and high-level engagement with national systems, donors, and partners, while providing technical oversight and quality assurance across programmes. The Advisor supports the Country Director and Senior Management Team in positioning PIN as a credible and influential actor within Ethiopia’s DRM ecosystem, ensuring alignment with national priorities, donor strategies, and PIN’s global DRM framework. He/she is responsible for strategic guidance and follow-up on the developments in the Ethiopian’s DRM sector (with the respective agenda on EWS and AA), ensuring the quality and compliance of PIN’s programmes, values, policies and the strategy of the Relief and Development Department (RDD). He/she will represent PIN at EDRMC’s EWS and AA Technical working groups (TWGs) and other working groups and community of practice. He/she will support the Country Director in strategic planning within this sector and follow-up on relevant agenda, including representation in front of partners and donors and partnership building. DRM Advisor also leads on project proposal development and implementation of potential DRM programming or activities in the country. Duties and Responsibilities: Strategic Leadership & Sector Engagement Provide strategic leadership for PIN Ethiopia’s DRM, EWS, and AA portfolio , ensuring long-term relevance, coherence, and impact Lead PIN’s strategic positioning within Ethiopia’s DRM architecture , including alignment with national DRM, EWS, and climate risk governance frameworks Monitor and analyse policy, institutional, and financing trends in DRM, climate risk management, & anticipatory approaches at national and regional levels, and regularly update internal team members Translate sectoral developments into strategic recommendations for the Country Director, Senior Management Team, and PSI DRM Advisory. Identify and pursue strategic entry points for PIN’s engagement within national systems (e.g. EWS roadmap) and key partner’s initiatives related to DRM, EWS, and AA Contribute to country programme strategy development and ensure alignment with global PIN priorities in DRM/EWS/AA Position PIN as a thought leader by promoting evidence-based approaches, innovation, and learning within the DRM and AA space Partnerships, Donor Engagement & Representation Lead high-level engagement and relationship management with key government counterparts (e.g. EDRMC, sectoral DRM authorities, meteorological and sectoral institutions) to strengthen system-level collaboration Develop and maintain strategic partnerships with national and international NGOs, research institutions, UN agencies, and consortia working in DRM, EWS, and climate risk management Act as a senior focal point for donor engagement on DRM, EWS and AA, contributing to donor intelligence, positioning, and portfolio growth Actively participate and represent PIN at external forums , technical platforms and working groups in the country (e.g. EWS and AA TWG), ensuring visibility of PIN’s technical expertise and solutions and driving its portfolio forward Support the Country Director and Grants teams in strategic donor dialogue, concept note development, and pre-positioning for funding opportunities. Enhance PIN’s external visibility and credibility through active contribution to policy dialogue, joint initiatives, and sector learning platforms. Programme Design, Technical Leadership & Implementation Oversight Lead the design of complex and multi-year DRM, EWS, and AA proposals , ensuring strong technical quality, innovation, and alignment with government, donor and PIN priorities Provide senior technical oversight and quality assurance across DRM, EWS, and AA programmes implemented by PIN and partners Ensure DRM programming integrates multi-hazard risk analysis, impact-based forecasting, conflict sensitivity, protection, gender, and social inclusion . Guide field teams and partners in translating complex DRM and EWS concepts into operationally feasible and scalable interventions . Promote alignment and integration with national systems & frameworks (e.g. EDRMC roadmap, national EWS development) to support sustainability, institutionalisation, and government ownership Oversee systematic documentation of lessons learned, evidence, and best practices to strengthen PIN’s DRM track record and inform scale-up. In collaboration with PSI DRM Advisors, contribute to the development, adaptation, and roll-out of tools, methodologies, and guidance Support capacity strengthening of PIN staff and partners through mentoring, coaching, and targeted technical trainings Main Requirement: Advanced university degree (Master’s or higher) in Disaster Risk Management, Climate Change, Environmental Science, Development Studies, Public Policy, or a related field Minimum 7–10 years of progressive experience in DRM, DRR, EWS, Anticipatory Action, or climate risk management, including experience in advisory or leadership roles Experience engaging with government institutions, donors, and coordination mechanisms at national or regional level Strong understanding of international and national DRM, DRR, and humanitarian-development nexus frameworks Proven experience in strategic programme design, donor engagement, and portfolio development Excellent analytical, facilitation, negotiation, and representation skills Strong written and verbal communication skills in English; knowledge of local languages is an asset Experience working with international NGOs, UN agencies, or government DRM institutions is required Core Competencies Strategic thinking and systems-level analysis Leadership, influence, and partnership-building Technical credibility in DRM, EWS, and Anticipatory Action Strong advisory and facilitation skills Results-oriented, adaptive, and solutions-focused approach Commitment to PIN’s values, humanitarian principles, and ethical standards PIN offers: Standard work schedule of 40 hours per week from Monday to Friday Salary: 1,945.00-2,188.00 USD (depending on experience) Per diems for working and Accommodation outside of the duty office depending on the location Transport Allowance Bank loan facilities 20 days of paid annual and after 5 years of work an extra paid day for every year Extra days of paid leaves for selected holidays Medical insurance, including spouse and children Accident insurance for all injuries during work time based on the law Pension contribution of 11 % from PIN Living cost adjustment allowance Paternity leave of extra 2 paid days above the mandatory 3 days Maternity leave according to the law and extra financial motherhood support Monthly mobile phone hybrid tariff PIN supports fast career growth and internal mobility International environment with opportunities to learn from other PIN’s country programs Extensive Capacity Building program, both internal and external trainings, including the Induction training Internal online learning opportunities, such as access to PIN’s e-learning platform and webinars\n\nHow to Apply: If you are interested in this position, send us your CV and short cover letter via [our application form.](https://career.peopleinneed.net/?pos=865) Please note only the shortlisted candidates will be contacted. Interviews will be conducted on rolling basis and the vacancy will be closed when filled. *People in Need is committed to preventing any type of unwanted behaviour at work including sexual harassment, exploitation and abuse, lack of integrity and financial misconduct and committed to promoting the welfare of children and adults with whom People in Need involves. People in Need expects all staff to perform job duties and responsibilities in accordance with People in Need code of conduct and key policies (available at:* [*https://www.peopleinneed.net/key-policies-4142gp)*](https://www.peopleinneed.net/key-policies-4142gp))*. People in Need Staff will undertake the appropriate level of training.* *All offers of employment will be subject to satisfactory references and appropriate screening checks, which can include criminal records and terrorism finance checks.* *We are committed to ensuring diversity and gender equality within our organization and encourage applicants from diverse backgrounds to apply.*",
@@ -102,7 +80,7 @@
     "source_url": "https://reliefweb.int/node/4207867",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.140Z",
+    "scraped_at": "2026-05-08T06:55:45.420Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -126,7 +104,7 @@
     "source_url": "https://reliefweb.int/node/4207395",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.140Z",
+    "scraped_at": "2026-05-08T06:55:45.421Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -150,7 +128,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.141Z",
+    "scraped_at": "2026-05-08T06:55:45.421Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -172,7 +150,7 @@
     "source_url": "https://reliefweb.int/node/4202065",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.141Z",
+    "scraped_at": "2026-05-08T06:55:45.421Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -194,7 +172,7 @@
     "source_url": "https://reliefweb.int/node/4197099",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:46:31.141Z",
+    "scraped_at": "2026-05-08T06:55:45.421Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"

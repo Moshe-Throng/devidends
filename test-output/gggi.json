@@ -1,5 +1,165 @@
 [
   {
+    "title": "GLOBAL EVENTS & STAKEHOLDER ENGAGEMENT OFFICER",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-05-29 00:00:00",
+    "published": "2026-05-07 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/global-events-stakeholder-engagement-officer-610961.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "HQ: MARKETING & GLOBAL COMMUNICATIONS CAMPAIGNS ASSOCIATE",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-05-29 00:00:00",
+    "published": "2026-05-07 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/hq-marketing-global-communications-campaigns-associate-610960.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "INDONESIA: LOCAL GOVERNANCE EXPERT (CLIMATE INNOVATION AND ENTREPRENEURSHIP)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-05-28 00:00:00",
+    "published": "2026-05-05 00:00:00",
+    "country": "Indonesia",
+    "city": "Jakarta ",
+    "source_url": "https://careers.gggi.org/vacancy/indonesia-local-governance-expert-climate-innovation-and-entrepreneurship-610720.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Indonesia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "HQ: ASSOCIATE, CARBON FINANCE DEPARTMENT (2 positions)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-05-28 00:00:00",
+    "published": "2026-04-30 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/hq-associate-carbon-finance-department-2-positions-610489.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "CARBON FUND MANAGER, CARBON FINANCE DEPARTMENT",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-06-04 00:00:00",
+    "published": "2026-04-30 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/carbon-fund-manager-carbon-finance-department-610477.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "CAMBODIA: NATIONAL PROGRAMME CONSULTANT FOR CLIMATE TECHNOPRENEURSHIP",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Daily Rate)",
+    "deadline": "2026-05-28 00:00:00",
+    "published": "2026-05-04 00:00:00",
+    "country": "Cambodia",
+    "city": "Phnom Penh",
+    "source_url": "https://careers.gggi.org/vacancy/cambodia-national-programme-consultant-for-climate-technopreneurship-610710.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Daily Rate)",
+      "all_locations": [
+        "Cambodia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "INDONESIA: GESI CONSULTANT (CLIMATE INNOVATION AND ENTREPRENEURSHIP)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-05-28 00:00:00",
+    "published": "2026-05-04 00:00:00",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "source_url": "https://careers.gggi.org/vacancy/indonesia-gesi-consultant-climate-innovation-and-entrepreneurship-610711.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Indonesia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "INDONESIA: GREEN FINANCE NETWORK ESTABLISHMENT CONSULTANT",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-05-22 00:00:00",
+    "published": "2026-05-05 00:00:00",
+    "country": "Indonesia",
+    "city": "Jakarta ",
+    "source_url": "https://careers.gggi.org/vacancy/indonesia-green-finance-network-establishment-consultant-610724.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Indonesia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
     "title": "Communications Intern (deadline extended)",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Internship",
@@ -10,7 +170,7 @@
     "source_url": "https://careers.gggi.org/vacancy/communications-intern-deadline-extended-609024.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -30,7 +190,7 @@
     "source_url": "https://careers.gggi.org/vacancy/hq-bkcf-fund-management-intern-20262-609905.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -50,7 +210,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-investment-officer-609445.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -70,7 +230,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-program-officer-green-investment-cote-divoire-610717.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -90,7 +250,7 @@
     "source_url": "https://careers.gggi.org/vacancy/junior-communications-consultant-605595.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
@@ -110,7 +270,7 @@
     "source_url": "https://careers.gggi.org/vacancy/indonesia-sign-smart-training-facilitator-610709.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -130,7 +290,7 @@
     "source_url": "https://careers.gggi.org/vacancy/hq-climate-investment-readiness-consultant-610046.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -150,31 +310,11 @@
     "source_url": "https://careers.gggi.org/vacancy/mongolia-consultant-for-the-finalization-of-mongolia-ndc-30-610362.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
         "Mongolia"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Officer, Global Voluntary Carbon Market (GVCM) Unit",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-05-07 00:00:00",
-    "published": "2026-04-21 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul ",
-    "source_url": "https://careers.gggi.org/vacancy/officer-global-voluntary-carbon-market-gvcm-unit-609729.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
@@ -190,7 +330,7 @@
     "source_url": "https://careers.gggi.org/vacancy/head-publicprivate-partnerships-and-private-sector-engagement-609711.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -210,7 +350,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-project-assistant-sustainable-infrastructure-finance-609792.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -230,7 +370,7 @@
     "source_url": "https://careers.gggi.org/vacancy/green-investment-senior-officer-and-project-manager-609985.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -250,51 +390,11 @@
     "source_url": "https://careers.gggi.org/vacancy/resilient-green-housing-finance-and-investment-structuring-consultant-610032.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
         "Grenada"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Finance and Administration Associate - Sustainable Transport",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-05-07 00:00:00",
-    "published": "2026-04-23 00:00:00",
-    "country": "Pacific",
-    "city": "Suva",
-    "source_url": "https://careers.gggi.org/vacancy/finance-and-administration-associate-sustainable-transport-609369.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Pacific"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Visual Communications Intern - Carbon Finance",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Internship",
-    "deadline": "2026-05-07 00:00:00",
-    "published": "2026-04-16 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/visual-communications-intern-carbon-finance-609451.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
-    "raw_fields": {
-      "contract_type": "Internship",
-      "all_locations": [
-        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
@@ -310,7 +410,7 @@
     "source_url": "https://careers.gggi.org/vacancy/finance-internship-609035.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-05-07T07:47:16.901Z",
+    "scraped_at": "2026-05-08T06:56:28.502Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
