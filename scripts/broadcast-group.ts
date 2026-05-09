@@ -91,11 +91,41 @@ async function main() {
     return false;
   }
 
-  const recent = opportunities.filter((o: any) => {
+  const recentByJson = opportunities.filter((o: any) => {
     const url = o.source_url || o.url;
     if (!url || lastUrls.has(url)) return false;
     return isRelevantForEthiopians(o);
   });
+
+  // Cross-check against DB: drop any URL that has been deactivated by the
+  // publish-side dev-sector / Ethiopia filters. Without this the JSON-only
+  // path would include rows the API has already filtered out (e.g. UK
+  // SECURITY OFFICER rows, Dashen Bank branch managers, machine operators).
+  const supaUrlForCheck = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supaKeyForCheck = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  let recent = recentByJson;
+  if (supaUrlForCheck && supaKeyForCheck) {
+    const { createClient } = await import("@supabase/supabase-js");
+    const sbCheck = createClient(supaUrlForCheck, supaKeyForCheck);
+    const urlBatch = recentByJson.map((o: any) => o.source_url || o.url).filter(Boolean);
+    const inactiveUrls = new Set<string>();
+    // PostgREST .in() is fine for ~100 ids; chunk in case of larger batches.
+    for (let i = 0; i < urlBatch.length; i += 100) {
+      const slice = urlBatch.slice(i, i + 100);
+      const { data: rowsCheck } = await sbCheck
+        .from("opportunities")
+        .select("source_url, is_active")
+        .in("source_url", slice);
+      for (const r of (rowsCheck || []) as any[]) {
+        if (r.is_active === false) inactiveUrls.add(r.source_url);
+      }
+    }
+    if (inactiveUrls.size > 0) {
+      const before = recent.length;
+      recent = recentByJson.filter((o: any) => !inactiveUrls.has(o.source_url || o.url));
+      console.log(`DB cross-check: dropped ${before - recent.length} rows flagged is_active=false (dev/ethiopia filter)`);
+    }
+  }
 
   // Save today's URLs (ALL, not just filtered — so dedup stays correct)
   fs.writeFileSync(snapshotPath, JSON.stringify(allUrls));
@@ -245,9 +275,15 @@ async function main() {
 
   // Subscriber DMs (personalised per-user filters) — these go out without
   // approval since each one is a one-to-one delivery to a subscriber who
-  // has explicitly opted in.
-  const digestResult = await notifySubscribersDaily(recent, newsArticles);
-  console.log(`Daily digest: notified=${digestResult.notified}, skipped=${digestResult.skipped}, failed=${digestResult.failed}`);
+  // has explicitly opted in. Set SKIP_SUBSCRIBER_DMS=1 to suppress (used
+  // when re-running the broadcast manually after a fix, to avoid spamming
+  // subscribers with the same digest twice).
+  if (process.env.SKIP_SUBSCRIBER_DMS === "1") {
+    console.log(`Daily digest: SKIP_SUBSCRIBER_DMS=1, skipped subscriber DMs.`);
+  } else {
+    const digestResult = await notifySubscribersDaily(recent, newsArticles);
+    console.log(`Daily digest: notified=${digestResult.notified}, skipped=${digestResult.skipped}, failed=${digestResult.failed}`);
+  }
 }
 
 main().catch((err) => {
