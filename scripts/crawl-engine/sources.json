@@ -14,7 +14,8 @@
       "fetchDetails": true,
       "detailDelay": 1500,
       "maxDetails": 60,
-      "requireEthiopiaMention": true
+      "requireEthiopiaMention": true,
+      "requireDevelopmentSector": true
     }
   },
   {

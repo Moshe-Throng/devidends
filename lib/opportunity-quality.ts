@@ -61,6 +61,38 @@ const PRE_FILTERED_ETHIOPIA_SOURCES = [
 const ETHIOPIA_CORPUS_RE =
   /\b(ethiopia|ethiopian|addis\s*ababa|addis|oromia|amhara|tigray|sidama|gambella|afar|harari|dire\s*dawa|south\s*west\s*ethiopia|bahir\s*dar|hawassa|mekelle|jimma|adama|arba\s*minch|gondar|gonder|nazret|nazareth|semera|jijiga|au[-\s]cdc|africa\s+cdc|liway|pepfar\s+ethiopia|usaid\s+ethiopia|abh\s+partners|inkomoko|odixcity|snv\s+ethiopia|horn\s+of\s+africa|greater\s+horn)\b/i;
 
+// ── Development-sector relevance ───────────────────────────────
+// Devidends's value prop is donor / development consulting. Sales
+// clerks, hotel cashiers, drivers, FMCG ops, generic marketing
+// agencies and crypto miners do not belong in the feed even if
+// they happen to be Ethiopia-tagged.
+//
+// Strategy: a title denylist + an org denylist with a strict
+// "dev keep" allowlist override (donor names + dev role keywords).
+// If anything in the title or organization screams development,
+// it passes regardless of denylist hits.
+
+const DEV_KEEP_RE =
+  /\b(giz|world\s+bank|usaid|fcdo|dfid|undp|unicef|unfpa|unhcr|fao|wfp\b|who\b|ilo\b|undss|iom\b|unops|unesco|un\s*women|unaids|unhabitat|un[-\s]habitat|afdb|kfw|sida|norad|danida|gavi|gates\s+foundation|mastercard\s+foundation|rockefeller|bmgf|drc\b|nrc\b|irc\b|save\s+the\s+children|oxfam|care\s+international|mercy\s+corps|pact\b|chemonics|\bdai\b|\babt\b|tetra\s+tech|palladium|crown\s+agents|adam\s+smith|coffey|sos\s+children'?s?\s+village|world\s+vision|plan\s+international|acted\b|actionaid|action\s+aid|helpage|concern\s+worldwide|christian\s+aid|cesvi|coopi|cordaid|catholic\s+relief|caritas|adra\b|samaritan'?s?\s+purse|tearfund|trocaire|danchurchaid|finn\s+church\s+aid|ngo\s+forum|inkomoko|abh\s+partners|m&e|monitoring\s+and\s+evaluation|meal\b|wash\s+(officer|coordinator|advisor|manager|specialist)|gender\s+(officer|advisor|specialist|coordinator)|protection\s+(officer|advisor|coordinator|cluster|team\s+leader)|nutrition\s+(officer|specialist|coordinator)|child\s+protection|gbv\b|consultant|consultancy|expression\s+of\s+interest|terms\s+of\s+reference|tor\b|reoi\b|rfp\b|advisor|adviser|sector\s+lead|programme\s+(officer|manager|coordinator|specialist|associate|cashier|driver|assistant)|program\s+(officer|manager|coordinator|specialist|associate|cashier|driver|assistant)|country\s+representative|head\s+of\s+(programmes?|programs?|operations?)|chief\s+of\s+party|deputy\s+(country\s+director|chief\s+of\s+party)|technical\s+(officer|specialist|advisor|lead)|policy\s+(officer|advisor|specialist|analyst)|research(er)?|evaluation\s+specialist|grant(s)?\s+(officer|manager|coordinator)|emergency\s+(officer|coordinator|response|cashier|driver)|humanitarian\s+(officer|advisor|coordinator|cashier|driver)|livelihoods?\s+(officer|advisor)|rural\s+development|public\s+health|epidemiolog|capacity\s+building|project\s+(cashier|driver|assistant|officer))\b/i;
+
+const NON_DEV_TITLE_RE =
+  /\b(sales\s+(assistant|representative|associate|clerk|executive|consultant|development\s+representative|specialist|operative)|sales\s+manager|head\s+of\s+sales|account\s+(manager|executive)|key\s+account|appointment\s+setter|brand\s+ambassador|territory\s+(retention\s+)?manager|product\s+demonstrator|merchandiser|cashier|waiter|waitress|barista|cook(?!\s*county)|chef|bartender|housekeeping|room\s+attendant|food\s+and\s+beverage|hotel\s+(dining|cashier|operations|manager)|driver(?!\s*(safety|behavior))|chauffeur|porter|cleaner|janitor|security\s+(guard|officer)(?!\s*(programme|programs?|advisor))|mechanic|electrician|welder|plumber|carpenter|fitter|machinist|hvac\b|wastewater|treatment\s+plant\s+operator|receptionist|telemarketer|customer\s+service\s+(representative|agent)|call\s+center|chat\s+support|telephone\s+operator|graphic\s+designer|copywriter|video\s+editor|social\s+media\s+(buyer|specialist|intern)(?!\s+(advocacy|campaign))|seo\s+(executive|specialist|manager)|search\s+engine\s+optimization|meta\s+ads|media\s+buyer|qualified\s+consultants?\b|talent\s+acquisition|recruiter\s*(?!.*(emergency|humanitarian|donor))|data\s+abstractor|legal\s+counsel\s+(remote|full[-\s]time)?$|veterinary\s+medicine$|software\s+engineer\s+(?!.*\b(donor|m&e|health|wash|education|gender|governance|humanitarian|programme|program|policy|gis)))/i;
+
+const NON_DEV_ORG_RE =
+  /\b(heineken|coca[-\s]?cola|pepsi|nestle|diageo|unilever|p\s*&\s*g|procter\s*&\s*gamble|safaricom|ethio\s*telecom|mtn\b|airtel|vodafone|orange\s+(ethiopia|telecom)|d\.light|kifiya|synax|comcore|odixcity|talentworld|hire\s*hangar|toloka|merixstudio|union\s+farms|huzzle|huzzle\.com|qodeyard|wing\s+legal|kinetic\s+business\s+solution|good\s+boi\s+marketing|flowmingo|topcast|sika\b|bitdeer|zte\b|hilton|marriott|sheraton|radisson|smollan|jti\b|guardian\s+jobs|alberta\s+health|nhs\b|bupa|livewest|kings\s+secure|rws\s+group|american\s+data\s+network|east\s+africa\s+gate|dhl\s+express|fedex|aramex|southern\s+ethiopia\s+peoples'?\s+democratic\s+movement|prosperity\s+party|tplf|girl\s+effect)\b/i;
+
+function isDevelopmentSector(opp: RawOpportunity): boolean {
+  const title = opp.title || "";
+  const org = opp.organization || "";
+  // Donor / dev keyword allowlist wins over any denylist hit. Protects
+  // legitimate edge cases like "Sales Specialist at IFC" or "Driver
+  // Safety Programme Coordinator".
+  if (DEV_KEEP_RE.test(title) || DEV_KEEP_RE.test(org)) return true;
+  if (NON_DEV_TITLE_RE.test(title)) return false;
+  if (NON_DEV_ORG_RE.test(org)) return false;
+  return true;
+}
+
 function isEthiopiaRelevant(opp: RawOpportunity): boolean {
   // Pre-filtered source → trust the upstream filter
   if (PRE_FILTERED_ETHIOPIA_SOURCES.includes(opp.source_domain)) return true;
@@ -189,6 +221,13 @@ export function processOpportunities(
     // MasterCard / Jobvite / Greenhouse / FHI Workday were all dumping
     // Burundi / Korea / Colombia / etc. into the feed).
     if (!isEthiopiaRelevant(opp)) return false;
+
+    // Development-sector relevance — drops sales / hospitality / FMCG /
+    // industrial / generic-marketing roles that satisfy the Ethiopia
+    // check but aren't donor / development consulting. Donor and
+    // dev-keyword allowlist overrides this so legitimate edge cases
+    // (e.g. Sales Specialist at IFC, Senior M&E Officer Sales) survive.
+    if (!isDevelopmentSector(opp)) return false;
 
     return true;
   });
