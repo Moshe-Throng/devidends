@@ -143,6 +143,38 @@ const MIN_RICH_DESCRIPTION_LEN = 250;
  * Returns an empty array if the description isn't rich enough; the
  * caller filters those out before building the digest.
  */
+// Detect a specific Ethiopian city in the row's title + description, falling
+// back to "Ethiopia" when no city is found. Pre-publish filters guarantee
+// every published row is Ethiopia-relevant, so the fallback is safe.
+const ETHIOPIAN_CITIES: [string, RegExp][] = [
+  ["Addis Ababa", /\baddis\s*ababa\b/i],
+  ["Dire Dawa", /\bdire\s*dawa\b/i],
+  ["Bahir Dar", /\bbahir\s*dar\b/i],
+  ["Hawassa", /\bhawassa\b|\bawassa\b/i],
+  ["Mekelle", /\bmekelle\b/i],
+  ["Adama", /\badama\b/i],
+  ["Jimma", /\bjimma\b/i],
+  ["Gambella", /\bgambella\b/i],
+  ["Gondar", /\bgondar\b|\bgonder\b/i],
+  ["Arba Minch", /\barba\s*minch\b/i],
+  ["Jijiga", /\bjijiga\b/i],
+  ["Semera", /\bsemera\b/i],
+  ["Nazreth", /\bnazret\b|\bnazareth\b/i],
+];
+
+function detectLocation(opp: SampleOpportunity): string {
+  const country = (opp.country || "").trim();
+  // Explicit non-Ethiopian country wins (rare but possible for global roles).
+  if (country && !/ethiopia/i.test(country) && country.toLowerCase() !== "unknown") {
+    return country;
+  }
+  const corpus = `${opp.title || ""}  ${(opp.description || "").slice(0, 1500)}`;
+  for (const [name, re] of ETHIOPIAN_CITIES) {
+    if (re.test(corpus)) return name;
+  }
+  return "Ethiopia";
+}
+
 function oppBlock(opp: SampleOpportunity): string[] {
   const cleaned = cleanDescription(opp.description || "");
   if (cleaned.length < MIN_RICH_DESCRIPTION_LEN) return [];
@@ -151,12 +183,14 @@ function oppBlock(opp: SampleOpportunity): string[] {
   const title = escHtml(truncate(opp.title, 100));
   const org = escHtml(truncate(opp.organization, 60));
 
-  // Meta line: org · seniority · deadline. Built from a fixed slot order
-  // so blocks line up visually even when one or two slots are missing.
+  // Meta line: org · level · location · deadline. Built from a fixed slot
+  // order so blocks line up visually even when one or two slots are missing.
   const seniority = opp.seniority || (opp as any).experience_level || null;
   const deadlineCell = formatDeadline(opp.deadline);
+  const location = detectLocation(opp);
   const metaSlots: string[] = [`🏢 ${org}`];
   if (seniority) metaSlots.push(`🎯 ${escHtml(capitalize(seniority))}`);
+  metaSlots.push(`📍 ${escHtml(location)}`);
   if (deadlineCell) metaSlots.push(`⏰ Closes ${deadlineCell}`);
 
   const desc = smartTruncate(cleaned, 240, 320);
