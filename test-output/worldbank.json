@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-08T06:58:26.291Z",
+    "scraped_at": "2026-05-09T07:19:02.512Z",
     "count": 10
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442625",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-08T06:55:45.667Z",
+      "scraped_at": "2026-05-09T07:14:53.483Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,13 +36,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442622",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-08T06:55:45.667Z",
+      "scraped_at": "2026-05-09T07:14:53.483Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
         "project_id": "P179040",
         "bid_reference": "ET-NIDP-542247-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Block Storage",
+      "organization": "World Bank",
+      "description": "Procurement of Block Storage\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-NIDP-542234-GO-RFB\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-06-11",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-542234-GO-RFB",
         "sector": ""
       }
     },
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,34 +204,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
+      "scraped_at": "2026-05-09T07:14:54.031Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEP-533129-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.",
-      "organization": "World Bank",
-      "description": "Procurement for the Construction of Shentuwo 01 to Angela kebele unpaved gravel access road Project of 24km length in Jor Woreda, Gambella Regional State.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-GAM-RPCU-543506-CW-RFB\n\nContact: Gembella,\nEthiopia",
-      "deadline": "2026-05-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00438480",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-08T06:55:46.189Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-543506-CW-RFB",
         "sector": ""
       }
     }
