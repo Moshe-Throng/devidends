@@ -30,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -113,7 +113,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -134,7 +134,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -155,7 +155,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -176,7 +176,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -196,11 +196,31 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-14T07:49:31.644Z",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
     "raw_fields": {
       "department": [
         "Program",
         "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Advocacy Manager",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-05-06T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/F64D59C205/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-05-09T13:22:58.689Z",
+    "raw_fields": {
+      "department": [
+        "Country Leadership"
       ],
       "work_type": ""
     },
