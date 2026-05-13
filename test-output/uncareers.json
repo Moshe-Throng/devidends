@@ -1,6 +1,26 @@
 [
   {
-    "title": "HUMAN RESOURCES ASSISTANT, G6",
+    "title": "Human Resources Assistant",
+    "organization": "Economic Commission for Africa",
+    "description": "Result of Service Finalize the Panel’s interview report and prepare the selection memo. Support onboarding of MIF fellow, in coordination with the HR Partner. Work with the ECA division focal point for ECA fellows recruitment, receive applications, conduct preliminary assessment of candidates, prepare long/short list for review. Provide back up support for the RPMS system and transition of recruitment processes to the SSG project Work Location Addis Ababa Expected duration 9 months Duties and Re",
+    "deadline": "2026-05-19T03:59:59.000Z",
+    "published": "2026-05-12T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/277424?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-05-13T07:58:17.526Z",
+    "raw_fields": {
+      "jobLevel": "CON",
+      "categoryCode": "CON",
+      "jobCategory": "Consultants",
+      "jobFamily": "Human Resources",
+      "jobNetwork": ""
+    }
+  },
+  {
+    "title": "HUMAN RESOURCES ASSISTANT (Temporary Job Opening), G6",
     "organization": "Economic Commission for Africa",
     "description": "Org. Setting and Reporting ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 SDGs and Agenda 2063. The mission is guided by ECA's five new strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developing macroeconomic and structural policy options to acceler",
     "deadline": "2026-05-18T03:59:59.000Z",
@@ -10,7 +30,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/277229?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.844Z",
+    "scraped_at": "2026-05-13T07:58:17.526Z",
     "raw_fields": {
       "jobLevel": "G-6",
       "categoryCode": "GS",
@@ -30,7 +50,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275887?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.844Z",
+    "scraped_at": "2026-05-13T07:58:17.526Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -50,7 +70,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276873?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.844Z",
+    "scraped_at": "2026-05-13T07:58:17.527Z",
     "raw_fields": {
       "jobLevel": "G-7",
       "categoryCode": "GS",
@@ -70,33 +90,13 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276832?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.844Z",
+    "scraped_at": "2026-05-13T07:58:17.527Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
       "jobCategory": "Professional and Higher Categories",
       "jobFamily": "Programme Management",
       "jobNetwork": "Economic, Social and Development"
-    }
-  },
-  {
-    "title": "Consultant national – Expert en commerce",
-    "organization": "Economic Commission for Africa",
-    "description": "Result of Service II. RÉSULTATS ATTENDUS DE LA MISSION 1. Amélioration de l’accès à l’information commerciale pour les entreprises sénégalaises, en particulier les PME ainsi que les femmes et les jeunes commerçants, grâce à un guide pratique étape par étape, permettant une participation effective au commerce dans le cadre de la ZLECAf ; et 2. Renforcement de la mise en œuvre nationale de la ZLECAf en appuyant les efforts du Sénégal pour opérationnaliser l’Accord à travers l’engagement du secteur",
-    "deadline": "2026-05-13T03:59:59.000Z",
-    "published": "2026-04-29T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/275931?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.845Z",
-    "raw_fields": {
-      "jobLevel": "CON",
-      "categoryCode": "CON",
-      "jobCategory": "Consultants",
-      "jobFamily": "Economic Affairs",
-      "jobNetwork": ""
     }
   },
   {
@@ -110,7 +110,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/276231?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.845Z",
+    "scraped_at": "2026-05-13T07:58:17.527Z",
     "raw_fields": {
       "jobLevel": "G-7",
       "categoryCode": "GS",
@@ -130,7 +130,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275211?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.845Z",
+    "scraped_at": "2026-05-13T07:58:17.527Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -150,7 +150,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/275262?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:50:49.845Z",
+    "scraped_at": "2026-05-13T07:58:17.527Z",
     "raw_fields": {
       "jobLevel": "D-2",
       "categoryCode": "PD",

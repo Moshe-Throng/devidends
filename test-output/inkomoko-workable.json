@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/F64D59C205/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Country Leadership"
@@ -30,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program"
@@ -50,7 +50,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/4A6E4BC67F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -71,11 +71,32 @@
     "source_url": "https://apply.workable.com/inkomoko/j/AD184CEF3A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
         "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Client Relationship Officer-Gambella",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-05-12T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Gambela",
+    "source_url": "https://apply.workable.com/inkomoko/j/9861B119FF/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
+    "raw_fields": {
+      "department": [
+        "Program",
+        "Investment"
       ],
       "work_type": ""
     },
@@ -92,7 +113,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -113,7 +134,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -134,7 +155,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -155,7 +176,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
@@ -175,7 +196,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-12T07:49:14.045Z",
+    "scraped_at": "2026-05-13T07:56:34.168Z",
     "raw_fields": {
       "department": [
         "Program",
