@@ -15,14 +15,19 @@ export async function POST(req: NextRequest) {
 
   // Check if this is a long-running operation:
   // - CV ingest from group (up to 60s for extraction)
+  // - CV ingest from private DM (recommender ingest path — same 30-60s
+  //   work as group ingest, was previously running inline which caused
+  //   Telegram to retry the webhook after its ~60s timeout, resulting
+  //   in duplicate 'Got it' / duplicate profile creation)
   // - Free-text in private chat (2-4s for Haiku response)
   const msg = body?.message;
   const isGroupDoc = msg?.document &&
     String(msg.chat?.id) === process.env.TELEGRAM_INGEST_GROUP_ID;
+  const isPrivateDoc = msg?.document && msg.chat?.type === "private";
   const isPrivateText = msg?.text && !msg.text.startsWith("/") &&
     msg.chat?.type === "private" && !msg.reply_to_message;
 
-  if (isGroupDoc || isPrivateText) {
+  if (isGroupDoc || isPrivateDoc || isPrivateText) {
     // Use after() to process AFTER returning 200 to Telegram
     // This keeps the function alive for up to maxDuration
     after(async () => {

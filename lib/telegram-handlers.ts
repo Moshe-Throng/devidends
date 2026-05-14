@@ -2569,11 +2569,37 @@ async function handleCompanionMessage(bot: TelegramBot, msg: Message) {
 // Main update dispatcher
 // ---------------------------------------------------------------------------
 
+// In-memory set of recently-seen Telegram update_ids. Telegram will retry
+// the same update if the webhook doesn't respond fast enough — without this
+// guard, a slow ingest (or any handler taking too long) results in the bot
+// processing the same CV twice, sending the "Got it" twice, and risking
+// duplicate profile rows.
+const SEEN_UPDATE_IDS = new Set<number>();
+const SEEN_UPDATE_IDS_MAX = 500;
+
 export async function handleUpdate(
   bot: TelegramBot,
   update: Update
 ): Promise<void> {
   try {
+    // Idempotency guard. Telegram's documented retry behaviour: if the
+    // webhook hasn't returned 200 within ~60s, the same update is
+    // re-delivered up to several times. Serverless cold-starts wipe this
+    // set but that's a harmless degradation (worst case: brief window
+    // where dedup is gone, same as before this guard existed).
+    if (typeof update.update_id === "number") {
+      if (SEEN_UPDATE_IDS.has(update.update_id)) {
+        console.log(`[telegram] duplicate update_id ${update.update_id}, ignoring`);
+        return;
+      }
+      SEEN_UPDATE_IDS.add(update.update_id);
+      // Bound the set so memory doesn't grow unbounded
+      if (SEEN_UPDATE_IDS.size > SEEN_UPDATE_IDS_MAX) {
+        const first = SEEN_UPDATE_IDS.values().next().value;
+        if (first !== undefined) SEEN_UPDATE_IDS.delete(first);
+      }
+    }
+
     // Handle callback queries (inline keyboard presses)
     if (update.callback_query) {
       await handleCallbackQuery(bot, update.callback_query);
