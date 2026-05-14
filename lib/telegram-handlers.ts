@@ -2244,20 +2244,23 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
       } catch (e) {
         console.warn("[refnotes_lvl] save failed:", (e as Error).message);
       }
-      // Always check whether the subject profile already has gender on file.
-      // If yes, skip directly to the notes prompt; otherwise ask. We attach
-      // the keyboard to the same "saved" confirmation message so it appears
-      // even when the recommender is processing several CVs in a row.
+      // Pull subject name + gender state so every follow-up message
+      // explicitly identifies WHICH expert it's about. When a recommender
+      // processes several CVs in a row, plain "✓ Saved as I just know
+      // them. Last question — gender?" is ambiguous; embedding the name
+      // ties each question to a specific expert.
       let hasGender = false;
+      let subjectName = "the expert";
       try {
         const { createClient } = await import("@supabase/supabase-js");
         const sb2 = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
         const { data: subjP } = await sb2
           .from("profiles")
-          .select("gender")
+          .select("gender, name")
           .eq("id", subjectProfileId)
           .maybeSingle();
         hasGender = !!subjP?.gender;
+        if (subjP?.name) subjectName = subjP.name;
       } catch {}
 
       try {
@@ -2265,8 +2268,8 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
           await bot.sendMessage(
             chatId,
             [
-              `<b>✓ ${escHtml(label)}.</b>`,
-              `<i>One last tap — gender (for diversity reporting):</i>`,
+              `<b>✓ ${escHtml(label)}</b> — for <b>${escHtml(subjectName)}</b>.`,
+              `<i>One last tap — what's <b>${escHtml(subjectName)}</b>'s gender? (for diversity reporting)</i>`,
             ].join("\n"),
             {
               parse_mode: "HTML",
@@ -2287,7 +2290,7 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
           // Gender already on file — short close-out, no text-solicit.
           await bot.sendMessage(
             chatId,
-            `<b>✓ ${escHtml(label)}.</b> Done — drop another CV anytime.`,
+            `<b>✓ ${escHtml(label)}</b> — for <b>${escHtml(subjectName)}</b>. Done — drop another CV anytime.`,
             { parse_mode: "HTML" }
           );
           chatState.delete(chatId);
@@ -2323,15 +2326,24 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
         nb: "Prefer not to say",
         skip: "Skipped",
       };
+      // Look up the subject name so the close-out names the expert.
+      // Important when the recommender is mid-flight on several CVs and
+      // gender taps stream back in non-deterministic order.
+      let closeName = "the expert";
       try {
-        // Short, indicative close-out for the recommender. Don't solicit
-        // free-text — the verbose "Want to add context?" was confusing
-        // and made the bot's AI companion hallucinate generic job-search
-        // answers when the recommender did reply with context. They can
-        // always send another CV; that's the loop we want.
+        const { createClient } = await import("@supabase/supabase-js");
+        const sb2 = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+        const { data: subjP } = await sb2
+          .from("profiles")
+          .select("name")
+          .eq("id", subjectProfileId)
+          .maybeSingle();
+        if (subjP?.name) closeName = subjP.name;
+      } catch {}
+      try {
         await bot.sendMessage(
           chatId,
-          `<b>✓ ${escHtml(ack[value] || "Noted")}.</b> Done — drop another CV anytime.`,
+          `<b>✓ ${escHtml(ack[value] || "Noted")}</b> — for <b>${escHtml(closeName)}</b>. Done — drop another CV anytime.`,
           { parse_mode: "HTML" }
         );
       } catch {}
