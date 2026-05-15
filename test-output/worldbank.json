@@ -1,9 +1,72 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-09T13:25:36.103Z",
-    "count": 10
+    "scraped_at": "2026-05-15T08:11:20.546Z",
+    "count": 13
   },
   "opportunities": [
+    {
+      "title": "CONSULTANCY SERVICE TO CONDUCT AN AQUATIC, RIPARIAN AND TERRESTRIAL BIODIVERSITY ASSESSMENT FOR ALALOBAD AND TENDAHO GEOTHERMAL SUB PROJECT UNDER PRIME-1 COMPONENET-3",
+      "organization": "World Bank",
+      "description": "CONSULTANCY SERVICE TO CONDUCT AN AQUATIC, RIPARIAN AND TERRESTRIAL BIODIVERSITY ASSESSMENT FOR ALALOBAD AND TENDAHO GEOTHERMAL SUB PROJECT UNDER PRIME-1 COMPONENET-3\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-EEP-552463-CS-CQS\n\nContact: Yeka Sub City, Woreda 09 (Kotebe)\nEthiopian Electric Power Compound, Block 09, R/No. 203",
+      "deadline": "2026-05-28",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444534",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-05-15T08:08:04.161Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+        "project_id": "P176731",
+        "bid_reference": "ET-EEP-552463-CS-CQS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Consultancy Service for Construction Supervision of Mengeshi Main Road to Jenje Unpaved Gravel Access Road Subproject in Mengeshi Woreda [10.2 Km]",
+      "organization": "World Bank",
+      "description": "Procurement of Consultancy Service for Construction Supervision of Mengeshi Main Road to Jenje Unpaved Gravel Access Road Subproject in Mengeshi Woreda [10.2 Km]\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Least Cost Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-GAM-RPCU-522628-CS-LCS\n\nContact: Gembella,\nEthiopia",
+      "deadline": "2026-05-26",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00430304",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-15T08:08:04.161Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "LCS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-GAM-RPCU-522628-CS-LCS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Project E&S Support Consultancy: Conduct Resettlement Plan (RP) for Addis Abaab Power Supply and Reinforcemetnt Power Transmission Project.",
+      "organization": "World Bank",
+      "description": "Project E&S Support Consultancy: Conduct Resettlement Plan (RP) for Addis Abaab Power Supply and Reinforcemetnt Power Transmission Project.\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-EEP-538006-CS-QCBS\n\nContact: Yeka Sub City, Woreda 09 (Kotebe)\nEthiopian Electric Power Compound, Block 09, R/No. 203",
+      "deadline": "2026-06-03",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444086",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-05-15T08:08:04.161Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+        "project_id": "P176731",
+        "bid_reference": "ET-EEP-538006-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Selection of Senior Special Regional Implementation Advisor XIV",
       "organization": "World Bank",
@@ -15,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442625",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-09T13:21:42.831Z",
+      "scraped_at": "2026-05-15T08:08:04.161Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442622",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-09T13:21:42.831Z",
+      "scraped_at": "2026-05-15T08:08:04.162Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-09T13:21:43.443Z",
+      "scraped_at": "2026-05-15T08:08:04.585Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
