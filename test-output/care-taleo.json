@@ -1,19 +1,5 @@
 [
   {
-    "title": "ASSOCIATE DIRECTOR, MAJOR GIFTS",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "MAJOR GIFTS",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7896",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.997Z",
-    "_sourceId": "care-taleo"
-  },
-  {
     "title": "CHIEF OF PARTY (COP) ), USDA McGovern-Dole",
     "organization": "CARE",
     "description": "",
@@ -24,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7950",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.997Z",
+    "scraped_at": "2026-05-16T07:21:22.726Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7942",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.997Z",
+    "scraped_at": "2026-05-16T07:21:22.726Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7892",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.726Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7948",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.726Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7951",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7962",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,21 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7905",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "DIRECTOR, PRINCIPAL GIFTS",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "MAJOR GIFTS",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7898",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +108,35 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7913",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-05-15T08:09:04.998Z",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "GENERAL APPLICATION",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "GENERAL JOB APPLICATIONS",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "HR DATA QUALITY ASSURANCE ANALYST",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "PEOPLE AND CULTURE",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7899",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-05-16T07:21:22.727Z",
     "_sourceId": "care-taleo"
   }
 ]
