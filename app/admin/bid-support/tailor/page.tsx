@@ -221,18 +221,36 @@ export default function CvTailorPage() {
               {filteredProfiles.map((p) => {
                 const active = p.id === selectedProfileId;
                 return (
-                  <button
+                  <div
                     key={p.id}
-                    onClick={() => setSelectedProfileId(p.id)}
-                    className={`w-full text-left px-3 py-2 text-xs border-b border-dark-100 last:border-b-0 transition-colors ${
-                      active ? "bg-cyan-50 text-cyan-900" : "bg-white hover:bg-dark-50 text-dark-700"
+                    className={`w-full flex items-stretch border-b border-dark-100 last:border-b-0 transition-colors ${
+                      active ? "bg-cyan-50" : "bg-white hover:bg-dark-50"
                     }`}
                   >
-                    <div className="font-bold">{p.name}</div>
-                    <div className="text-[11px] text-dark-400 truncate">
-                      {p.profile_type || "-"} · {p.years_of_experience ? `${p.years_of_experience}y` : "?y"} · cv={p.cv_score ?? "-"} · {p.headline || "(no headline)"}
-                    </div>
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProfileId(p.id)}
+                      className={`flex-1 text-left px-3 py-2 text-xs ${active ? "text-cyan-900" : "text-dark-700"}`}
+                    >
+                      <div className="font-bold">{p.name}</div>
+                      <div className="text-[11px] text-dark-400 truncate">
+                        {p.profile_type || "-"} · {p.years_of_experience ? `${p.years_of_experience}y` : "?y"} · cv={p.cv_score ?? "-"} · {p.headline || "(no headline)"}
+                      </div>
+                    </button>
+                    <a
+                      href={`/api/admin/cv-download?profile_id=${encodeURIComponent(p.id)}`}
+                      download
+                      onClick={(e) => e.stopPropagation()}
+                      title="Download CV"
+                      className="px-3 flex items-center text-dark-400 hover:text-cyan-600 hover:bg-cyan-50 border-l border-dark-100"
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                    </a>
+                  </div>
                 );
               })}
               {filteredProfiles.length === 0 && (
