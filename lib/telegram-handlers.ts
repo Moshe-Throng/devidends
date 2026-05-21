@@ -723,10 +723,40 @@ function escapeMarkdown(text: string): string {
 // Group CV ingest — drop CVs in a Telegram group topic
 // ---------------------------------------------------------------------------
 
+/**
+ * Fuzzy self-match: does the extracted CV name belong to the same person
+ * as the sender's name? Used by the self-CV detection so a recommender
+ * dropping their own CV doesn't create a duplicate "expert" profile.
+ *
+ * Rule: case-insensitive token comparison. Match if either:
+ *   - The first two tokens of each name match (handles "Kaleb Mekonnen"
+ *     vs "Kaleb Mekonnen Bogale" — middle name added)
+ *   - One full name is a prefix of the other (handles abbreviated entries)
+ *   - At least 2 tokens overlap and both share the first token
+ */
+function isSelfCvMatch(extractedName: string, senderName: string): boolean {
+  const norm = (s: string) =>
+    s.toLowerCase()
+      .replace(/[^a-z\s]+/g, " ")
+      .split(/\s+/)
+      .filter((t) => t.length >= 2);
+  const a = norm(extractedName);
+  const b = norm(senderName);
+  if (a.length < 2 || b.length < 2) return false;
+  // Prefix match either direction
+  if (a.join(" ") === b.join(" ")) return true;
+  if (a.slice(0, b.length).join(" ") === b.join(" ")) return true;
+  if (b.slice(0, a.length).join(" ") === a.join(" ")) return true;
+  // Shared first token + at least one more shared token
+  if (a[0] !== b[0]) return false;
+  const overlap = a.filter((t) => b.includes(t)).length;
+  return overlap >= 2;
+}
+
 async function handleGroupCvIngest(
   bot: TelegramBot,
   msg: Message,
-  opts?: { forcedRecommendedBy?: string }
+  opts?: { forcedRecommendedBy?: string; senderProfileId?: string }
 ) {
   const chatId = msg.chat.id;
   const threadId = msg.message_thread_id;
@@ -911,11 +941,32 @@ async function handleGroupCvIngest(
     let profileId: string | null = null;
 
     // Dedup strategy (in priority order):
+    //   0. Self-CV detection — if a claimed recommender drops their OWN CV
+    //      (extracted name fuzzy-matches the sender's name), update the
+    //      sender's profile in place. Prevents the duplicate-profile bug
+    //      where claim + self-upload created two records.
     //   1. Same telegram file_id → same CV re-uploaded → update
     //   2. Same email (if present) → same person → update
     //   3. Exact name match (case-insensitive, trimmed) AND name is not "Unknown"/empty → update
     //   Never dedup on fallback/generic names — always insert a new row instead.
     let existing: { id: string; name: string; claim_token: string | null } | null = null;
+    let isSelfUpdate = false;
+
+    // 0. Self-CV detection
+    if (opts?.senderProfileId && opts?.forcedRecommendedBy && expertName) {
+      if (isSelfCvMatch(expertName, opts.forcedRecommendedBy)) {
+        const { data } = await sb
+          .from("profiles")
+          .select("id, name, claim_token")
+          .eq("id", opts.senderProfileId)
+          .maybeSingle();
+        if (data) {
+          existing = data;
+          isSelfUpdate = true;
+          console.log(`[ingest] self-CV detected for sender ${opts.forcedRecommendedBy} — updating own profile ${data.id}`);
+        }
+      }
+    }
 
     // 1. By telegram file_id (most reliable — same file)
     const cvUrl = `tg://${doc.file_id}`;
@@ -976,9 +1027,13 @@ async function handleGroupCvIngest(
       languages: languages,
       education_level: eduLevel,
       tags: tags,
-      recommended_by: recommendedBy || null,
-      admin_notes: `Added by ${senderName}${recommendedBy ? ` | Recommended by ${recommendedBy}` : ""}`,
-      source: "telegram_ingest" as const,
+      // On self-update, recommended_by would point to the recommender
+      // themselves (a self-referral). Null it out instead.
+      recommended_by: isSelfUpdate ? null : (recommendedBy || null),
+      admin_notes: isSelfUpdate
+        ? `Self CV update by ${senderName} on ${new Date().toISOString().slice(0, 10)}`
+        : `Added by ${senderName}${recommendedBy ? ` | Recommended by ${recommendedBy}` : ""}`,
+      source: isSelfUpdate ? "self_update" : "telegram_ingest",
     };
 
     if (existing) {
@@ -1149,20 +1204,26 @@ async function handleRecommenderPrivateCvIngest(
   const doc = msg.document;
   if (!doc) return;
 
-  // Upfront confirmation so they know what's happening.
+  // Upfront confirmation. Wording is neutral about whether this is the
+  // sender's own CV or someone else's — handleGroupCvIngest detects
+  // self-CVs by name match and routes accordingly.
   try {
     await paceChat(chatId);
     await bot.sendMessage(
       chatId,
-      `<b>Got it.</b> Ingesting as a CV you're bringing in, tagged <i>Recommended by ${escHtml(sender.name)}</i>. Hold on ~30 seconds.\n\n<i>To score or update your own CV, open the Dev Hub.</i>`,
+      `<b>Got it.</b> Ingesting CV… hold on ~30 seconds.\n\n<i>If it's your own CV, your profile gets updated. If it's someone else's, they'll be tagged as recommended by you.</i>`,
       { parse_mode: "HTML" }
     );
   } catch {}
 
-  // Run the standard ingest pipeline with the recommender pre-resolved.
-  // This skips the caption parsing AND the "pick a recommender" follow-up
-  // keyboard entirely, since the sender IS the recommender.
-  await handleGroupCvIngest(bot, msg, { forcedRecommendedBy: sender.name });
+  // Run the standard ingest pipeline with the recommender pre-resolved AND
+  // the sender's own profile_id passed through. handleGroupCvIngest uses
+  // both to detect "self-CV" (name match) and update the sender's profile
+  // in place rather than creating a duplicate "expert" row.
+  await handleGroupCvIngest(bot, msg, {
+    forcedRecommendedBy: sender.name,
+    senderProfileId: sender.id,
+  });
 
   // After ingest, find the profile we just created/updated via the Telegram
   // file_id we stashed in cv_url, then log an attribution row + send a
@@ -1197,6 +1258,32 @@ async function handleRecommenderPrivateCvIngest(
     }
     if (!subject) {
       console.warn(`[recommender-ingest] could not locate subject profile after ingest. cv_url=${cvUrl} recommended_by=${sender.name}`);
+      return;
+    }
+
+    // Self-CV update path: handleGroupCvIngest detected the CV belonged
+    // to the sender themselves and updated their own profile in place.
+    // Skip the attribution insert (no self-referral) and skip the
+    // relationship/gender keyboard (it's their own data — no need to
+    // grade their relationship with themselves). Send a different
+    // confirmation message.
+    if (subject.id === sender.id) {
+      try {
+        await paceChat(chatId);
+        const yrs = subject.years_of_experience ? `${subject.years_of_experience}y exp` : "years unclear";
+        const score = subject.cv_score != null ? `CV score ${subject.cv_score}/100` : "not yet scored";
+        await bot.sendMessage(
+          chatId,
+          [
+            `<b>✓ Your CV has been updated on Devidends, ${escHtml(sender.name.split(/\s+/)[0])}.</b>`,
+            ``,
+            `${yrs} · ${subject.profile_type || "tier TBD"} · ${score}`,
+            ``,
+            `Drop someone else's CV anytime — they'll be tagged as recommended by you, and you'll be credited if they win work through the network.`,
+          ].join("\n"),
+          { parse_mode: "HTML", disable_web_page_preview: true },
+        );
+      } catch {}
       return;
     }
 
