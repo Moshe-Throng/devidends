@@ -1,83 +1,5 @@
 [
   {
-    "title": "Assistant Finance Officer (MNJTF) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Assistant-Finance-Officer-%28MNJTF%29/1358806957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:23.575Z"
-  },
-  {
-    "title": "Chargé Adjoint des Finances (MNJTF) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-Adjoint-des-Finances-%28MNJTF%29/1358807057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:23.976Z"
-  },
-  {
-    "title": "Human Resource Officer (MNJTF) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Human-Resource-Officer-%28MNJTF%29/1358808457/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:24.370Z"
-  },
-  {
-    "title": "Chargé des ressources humaines (MNJTF) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-des-ressources-humaines-%28MNJTF%29/1358808557/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:24.653Z"
-  },
-  {
-    "title": "Chargé principal des finances (MNJTF) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-principal-des-finances-%28MNJTF%29/1358810757/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:24.926Z"
-  },
-  {
-    "title": "Senior Finance Officer (MNJTF) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Senior-Finance-Officer-%28MNJTF%29/1358810657/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:27.203Z"
-  },
-  {
     "title": "Senior Internal Auditor Africa CDC Job Details",
     "organization": "African Union",
     "description": "",
@@ -88,7 +10,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Senior-Internal-Auditor-Africa-CDC/1360806857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:27.488Z"
+    "scraped_at": "2026-05-21T08:41:38.564Z"
   },
   {
     "title": "Chargé Principal Audit interne (H/F) Africa CDC Détails du poste",
@@ -101,7 +23,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Charg%C3%A9-Principal-Audit-interne-%28HF%29-Africa-CDC/1360806957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:27.755Z"
+    "scraped_at": "2026-05-21T08:41:39.083Z"
   },
   {
     "title": "Programme de stages Détails du poste",
@@ -114,7 +36,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:28.025Z"
+    "scraped_at": "2026-05-21T08:41:39.440Z"
   },
   {
     "title": "Internship Program Job Details",
@@ -127,7 +49,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:28.285Z"
+    "scraped_at": "2026-05-21T08:41:39.812Z"
   },
   {
     "title": "Principal Civil Affairs Officer (AUSSOM) Job Details",
@@ -140,7 +62,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Principal-Civil-Affairs-Officer-%28AUSSOM%29/1360713657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:34:30.562Z"
+    "scraped_at": "2026-05-21T08:41:40.173Z"
   },
   {
     "title": "Mogadishu Chargé principal des affaires civiles (AUSSOM)",
@@ -153,7 +75,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-principal-des-affaires-civiles-%28AUSSOM%29/1360713757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:00.784Z"
+    "scraped_at": "2026-05-21T08:42:12.320Z"
   },
   {
     "title": "Head of Mission Support (AUSSOM) Job Details",
@@ -166,7 +88,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Head-of-Mission-Support-%28AUSSOM%29/1360714057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:01.778Z"
+    "scraped_at": "2026-05-21T08:42:15.583Z"
   },
   {
     "title": "Chef du Service d'appui de la Mission (AUSSOM) Détails du poste",
@@ -179,7 +101,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Chef-du-Service-d'appui-de-la-Mission-%28AUSSOM%29/1360714157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:02.758Z"
+    "scraped_at": "2026-05-21T08:42:15.965Z"
   },
   {
     "title": "Senior Risk and Compliance Officer Africa CDC Job Details",
@@ -192,7 +114,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Senior-Risk-and-Compliance-Officer-Africa-CDC/1360805757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:03.700Z"
+    "scraped_at": "2026-05-21T08:42:16.331Z"
   },
   {
     "title": "Chargé Principal des risques et de la conformité (H/F) Africa CDC Détails du poste",
@@ -205,7 +127,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Charg%C3%A9-Principal-des-risques-et-de-la-conformit%C3%A9-%28HF%29-Africa-CDC/1360805857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:04.664Z"
+    "scraped_at": "2026-05-21T08:42:16.758Z"
   },
   {
     "title": "Senior ID Management Officer (AUSSOM) Job Details",
@@ -218,7 +140,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-ID-Management-Officer-%28AUSSOM%29/1360999457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:07.600Z"
+    "scraped_at": "2026-05-21T08:42:17.135Z"
   },
   {
     "title": "Chargé principal de la gestion des cartes d'identité (AUSSOM) Détails du poste",
@@ -231,7 +153,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-principal-de-la-gestion-des-cartes-d'identit%C3%A9-%28AUSSOM%29/1360999557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:08.073Z"
+    "scraped_at": "2026-05-21T08:42:19.527Z"
   },
   {
     "title": "Country Representative Africa CDC Job Details",
@@ -244,7 +166,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Country-Representative-Africa-CDC/1358624857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:08.370Z"
+    "scraped_at": "2026-05-21T08:42:19.913Z"
   },
   {
     "title": "Représentant National Africa CDC (H/F) Détails du poste",
@@ -257,6 +179,84 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Repr%C3%A9sentant-National-Africa-CDC-%28HF%29/1358624957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-20T08:35:08.633Z"
+    "scraped_at": "2026-05-21T08:42:20.286Z"
+  },
+  {
+    "title": "Chargé des ressources humaines (MNJTF) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-des-ressources-humaines-%28MNJTF%29/1358808557/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:20.671Z"
+  },
+  {
+    "title": "Senior Finance Officer (MNJTF) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Senior-Finance-Officer-%28MNJTF%29/1358810657/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:21.045Z"
+  },
+  {
+    "title": "Human Resource Officer (MNJTF) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Human-Resource-Officer-%28MNJTF%29/1358808457/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:23.411Z"
+  },
+  {
+    "title": "Chargé Adjoint des Finances (MNJTF) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-Adjoint-des-Finances-%28MNJTF%29/1358807057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:23.795Z"
+  },
+  {
+    "title": "Chargé principal des finances (MNJTF) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Charg%C3%A9-principal-des-finances-%28MNJTF%29/1358810757/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:24.293Z"
+  },
+  {
+    "title": "Assistant Finance Officer (MNJTF) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Ndjamena-%28Chad%29-Assistant-Finance-Officer-%28MNJTF%29/1358806957/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-05-21T08:42:24.669Z"
   }
 ]

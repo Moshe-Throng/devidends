@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-20T08:35:54.798Z",
-    "count": 12
+    "scraped_at": "2026-05-21T08:43:06.097Z",
+    "count": 13
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444534",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-20T08:32:17.756Z",
+      "scraped_at": "2026-05-21T08:39:26.715Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00430304",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:17.756Z",
+      "scraped_at": "2026-05-21T08:39:26.715Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "LCS",
@@ -57,13 +57,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444086",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-20T08:32:17.756Z",
+      "scraped_at": "2026-05-21T08:39:26.715Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEP-538006-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "procurement of Agricultural Mechanization Machineries with installations (Maize Sheller Machines)",
+      "organization": "World Bank",
+      "description": "procurement of Agricultural Mechanization Machineries with installations (Maize Sheller Machines)\n\nProject: Development Response to Displacement Impacts Project in the Horn of Africa Phase II\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-544335-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-06-16",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445554",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Development Response to Displacement Impacts Project in the Horn of Africa Phase II",
+        "project_id": "P178047",
+        "bid_reference": "ET-MOA-544335-GO-RFB",
         "sector": ""
       }
     },
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,34 +120,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
         "project_id": "P179040",
         "bid_reference": "ET-NIDP-542234-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories",
-      "organization": "World Bank",
-      "description": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545746-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-06-19",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-545746-GO-RFB",
         "sector": ""
       }
     },
@@ -141,13 +141,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-545747-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories",
+      "organization": "World Bank",
+      "description": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545746-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-06-19",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Education and Skills for Employability Project",
+        "project_id": "P177881",
+        "bid_reference": "ET-MOLS-545746-GO-RFB",
         "sector": ""
       }
     },
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.037Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.038Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-20T08:32:18.201Z",
+      "scraped_at": "2026-05-21T08:39:27.038Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
