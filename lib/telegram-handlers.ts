@@ -545,7 +545,7 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
     // 1. Find the profile that owns this claim token.
     const { data: profile } = await sb
       .from("profiles")
-      .select("id, name, cv_score, sectors, is_recommender, claimed_at, telegram_id")
+      .select("id, name, email, cv_score, cv_text, cv_url, sectors, is_recommender, claimed_at, telegram_id")
       .eq("claim_token", claimToken)
       .maybeSingle();
 
@@ -667,6 +667,73 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
       }
     }
 
+    // 4c. Merge-on-claim. If the user previously dropped a CV anonymously
+    //     (web /score, /cv-builder, or non-recommender bot DM) we'll find
+    //     that row by email or telegram_id and fold it into the claimed
+    //     profile so nothing is lost. Best-effort \u2014 wrapped in try/catch.
+    const ANON_SOURCES = [
+      "scored_anon",
+      "web_score_anon",
+      "web_cv_builder_anon",
+      "bot_dm_anon",
+      "telegram_score_command",
+    ];
+    let mergedFromSource: string | null = null;
+    try {
+      const claimedEmail = (profile as any).email ? String((profile as any).email).toLowerCase() : null;
+      let anonQuery = sb
+        .from("profiles")
+        .select("id, name, email, cv_text, cv_url, cv_score, sectors, donors, countries, skills, qualifications, headline, source, telegram_id, cv_structured_data, years_of_experience, education_level, languages, nationality, city, phone")
+        .in("source", ANON_SOURCES)
+        .neq("id", profile.id);
+      if (claimedEmail) {
+        anonQuery = anonQuery.or(`email.ilike.${claimedEmail},telegram_id.eq.${telegramId}`);
+      } else {
+        anonQuery = anonQuery.eq("telegram_id", telegramId);
+      }
+      const { data: anonRows } = await anonQuery;
+
+      for (const anon of (anonRows || []) as any[]) {
+        const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };
+        // Only fill empty fields on the claimed profile \u2014 never clobber.
+        const claimed = profile as any;
+        if (!claimed.cv_text && anon.cv_text) patch.cv_text = anon.cv_text;
+        if (!claimed.cv_url && anon.cv_url) patch.cv_url = anon.cv_url;
+        if (claimed.cv_score == null && anon.cv_score != null) patch.cv_score = anon.cv_score;
+        if (anon.cv_structured_data) patch.cv_structured_data = anon.cv_structured_data;
+        for (const arrField of ["sectors", "donors", "countries", "skills", "languages"]) {
+          if ((!claimed[arrField] || (Array.isArray(claimed[arrField]) && claimed[arrField].length === 0)) && Array.isArray(anon[arrField]) && anon[arrField].length > 0) {
+            patch[arrField] = anon[arrField];
+          }
+        }
+        for (const scalarField of ["qualifications", "headline", "years_of_experience", "education_level", "nationality", "city", "phone"]) {
+          if (!claimed[scalarField] && anon[scalarField]) patch[scalarField] = anon[scalarField];
+        }
+        if (!claimedEmail && anon.email) patch.email = anon.email;
+
+        if (Object.keys(patch).length > 1) {
+          await sb.from("profiles").update(patch).eq("id", profile.id);
+        }
+
+        // Repoint FKs from the anon row to the claimed profile.
+        await sb.from("cv_scores").update({ profile_id: profile.id }).eq("profile_id", anon.id);
+        await sb.from("attributions").update({ subject_profile_id: profile.id }).eq("subject_profile_id", anon.id);
+        await sb.from("attributions").update({ contributor_profile_id: profile.id }).eq("contributor_profile_id", anon.id);
+        try { await sb.from("profile_edits").update({ profile_id: profile.id }).eq("profile_id", anon.id); } catch {}
+        try { await sb.from("co_creators").update({ profile_id: profile.id }).eq("profile_id", anon.id); } catch {}
+
+        // Delete the anon row.
+        await sb.from("profiles").delete().eq("id", anon.id);
+
+        if (!mergedFromSource) mergedFromSource = anon.source;
+        // Refresh local `profile` so the welcome message can use the merged values.
+        if (patch.cv_score != null) (profile as any).cv_score = patch.cv_score;
+        if (patch.sectors) (profile as any).sectors = patch.sectors;
+      }
+    } catch (e) {
+      console.warn("[claim merge-on-claim] failed:", (e as Error).message);
+    }
+
     // 5. Welcome message \u2014 branched by audience.
     //    Recommenders get a tight 3-line ask (drop a CV here, or open the
     //    hub for referrals/intros/network). Experts get the intel-feed +
@@ -701,6 +768,18 @@ async function handleClaimStart(bot: TelegramBot, msg: Message, claimToken: stri
         ``,
         `Tap <b>Dev Hub</b> below to enter.`,
       ];
+    }
+
+    if (mergedFromSource) {
+      const sourceLabel =
+        mergedFromSource === "scored_anon" || mergedFromSource === "web_score_anon"
+          ? "your earlier CV score"
+          : mergedFromSource === "web_cv_builder_anon"
+            ? "the CV you started in the builder"
+            : mergedFromSource === "bot_dm_anon"
+              ? "the CV you sent me earlier"
+              : "your earlier CV";
+      lines.push("", `✅ Found ${sourceLabel} and merged it into your profile.`);
     }
 
     await bot.sendMessage(chatId, lines.join("\n"), {
