@@ -2748,18 +2748,75 @@ export async function handleUpdate(
             return;
           }
 
-          // Non-recommender drop — politely redirect to the Dev Hub instead
-          // of silently scoring (which created the "your CV got their score"
-          // confusion).
+          // Non-recommender drop — DO NOT silently lose the file. Forward
+          // to admin DM so the CV is preserved, and capture the sender's
+          // TG identity into a 'bot_dm_anon' profile (or update existing)
+          // so we have a record to merge into a real profile if/when they
+          // claim. Then politely redirect to Dev Hub.
+          try {
+            // Download the file and forward to admin (preserves the CV)
+            const doc = msg.document!;
+            const fileLink = await bot.getFileLink(doc.file_id).catch(() => null);
+            let buffer: Buffer | null = null;
+            if (fileLink) {
+              try {
+                const res = await fetch(fileLink);
+                buffer = Buffer.from(await res.arrayBuffer());
+              } catch {}
+            }
+            const senderTgName = `${msg.from?.first_name || ""} ${msg.from?.last_name || ""}`.trim() || (msg.from?.username || `tg_${senderTgId}`);
+            if (buffer && buffer.length > 200) {
+              const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+              forwardCvToAdmin({
+                buffer,
+                filename: doc.file_name || "cv.pdf",
+                senderName: senderTgName,
+                senderTelegramId: senderTgId,
+                source: "tg_bot_dm",
+                status: "rejected",
+                resultSummary: `Non-recommender DM drop. Sender not in network — file preserved for review.`,
+              }).catch(() => {});
+            }
+            // Create or update a bot_dm_anon profile so we have a record
+            // of this person + their TG ID for later claim/merge
+            try {
+              const { createClient: cli } = await import("@supabase/supabase-js");
+              const sbAdmin = cli(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
+              const { data: existingAnon } = await sbAdmin
+                .from("profiles")
+                .select("id")
+                .eq("telegram_id", senderTgId)
+                .maybeSingle();
+              if (!existingAnon) {
+                await sbAdmin.from("profiles").insert({
+                  name: senderTgName,
+                  telegram_id: senderTgId,
+                  source: "bot_dm_anon",
+                  cv_url: `tg://${doc.file_id}`,
+                  admin_notes: `Non-recommender CV drop on ${new Date().toISOString().slice(0,10)}. File forwarded to admin DM. No identity yet — awaiting claim or email.`,
+                });
+              } else {
+                // Already have a row for this TG ID — at least update cv_url if empty
+                await sbAdmin
+                  .from("profiles")
+                  .update({ cv_url: `tg://${doc.file_id}`, updated_at: new Date().toISOString() })
+                  .eq("id", (existingAnon as any).id);
+              }
+            } catch (e) {
+              console.warn("[non-rec ingest] profile persist failed:", (e as Error).message);
+            }
+          } catch (e) {
+            console.warn("[non-rec ingest] preserve-and-cc failed:", (e as Error).message);
+          }
           try {
             await bot.sendMessage(
               msg.chat.id,
               [
-                `<b>This bot ingests CVs from recommenders.</b>`,
+                `<b>Got your CV — it's safe with us.</b>`,
                 ``,
-                `If you're scoring your own CV, open the <b>Dev Hub</b> below — that's where the scorer + tailoring tools live.`,
+                `Your file is stored. To activate scoring, donor templates, and personalised matching, open the <b>Dev Hub</b> below.`,
                 ``,
-                `If you meant to recommend someone, ask whoever invited you to send your claim link first.`,
+                `If a colleague invited you, ask them to send your claim link so we can link your account.`,
               ].join("\n"),
               { parse_mode: "HTML", disable_web_page_preview: true },
             );
@@ -2767,7 +2824,27 @@ export async function handleUpdate(
           return;
         } catch (e) {
           console.warn("[doc-dispatch] recommender lookup failed:", (e as Error).message);
-          // On lookup failure, do not self-score the document — silently drop.
+          // On lookup failure, still forward to admin to preserve the CV.
+          try {
+            const doc = msg.document!;
+            const fileLink = await bot.getFileLink(doc.file_id).catch(() => null);
+            if (fileLink) {
+              const res = await fetch(fileLink);
+              const buffer = Buffer.from(await res.arrayBuffer());
+              if (buffer.length > 200) {
+                const { forwardCvToAdmin } = await import("@/lib/cv-admin-cc");
+                forwardCvToAdmin({
+                  buffer,
+                  filename: doc.file_name || "cv.pdf",
+                  senderName: `${msg.from?.first_name || ""} (lookup failed)`,
+                  senderTelegramId: String(msg.from?.id || msg.chat.id),
+                  source: "tg_bot_dm",
+                  status: "error",
+                  resultSummary: `Recommender lookup failed (${(e as Error).message}). File preserved.`,
+                }).catch(() => {});
+              }
+            }
+          } catch {}
           return;
         }
       }

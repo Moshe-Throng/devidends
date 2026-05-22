@@ -1071,6 +1071,13 @@ export default function CvBuilderPage() {
               </button>
             </div>
 
+            {/* Save-anon banner — only for anonymous web users (no TG session,
+                no web auth). Without it, anonymous cv-builder visitors lose
+                everything when they close the tab. */}
+            {!user && !tgSession && (
+              <SaveAnonBuilderCard cvData={cvData} file={file} />
+            )}
+
             {/* Loaded-from-DB notice */}
             {loadedFromDb && confidence === 0 && cvData.personal.full_name.trim() && (
               <div className="flex items-center justify-between gap-3 p-4 rounded-xl bg-dark-50/60 border border-dark-100">
@@ -2087,6 +2094,95 @@ export default function CvBuilderPage() {
       )}
 
       <SiteFooter />
+    </div>
+  );
+}
+
+/**
+ * SaveAnonBuilderCard — anonymous web users in /cv-builder otherwise leave
+ * no trace. Captures email + persists structured data via /api/cv/save-anon
+ * so the data is on file for later claim.
+ */
+function SaveAnonBuilderCard({
+  cvData,
+  file,
+}: {
+  cvData: StructuredCvData;
+  file: File | null;
+}) {
+  const [email, setEmail] = useState((cvData?.personal?.email as string) || "");
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setErr("Enter a valid email");
+      return;
+    }
+    setSaving(true);
+    setErr(null);
+    try {
+      const fd = new FormData();
+      fd.append("email", email);
+      const name = (cvData?.personal?.full_name as string | undefined) || "";
+      if (name.trim()) fd.append("name", name.trim());
+      const phone = (cvData?.personal?.phone as string | undefined) || "";
+      if (phone.trim()) fd.append("phone", phone.trim());
+      // Serialise the structured CV as a JSON blob for cv_text
+      const summary = JSON.stringify(cvData, null, 2);
+      fd.append("cv_text", summary);
+      fd.append("source_tag", "web_cv_builder_anon");
+      if (file) fd.append("file", file);
+      const r = await fetch("/api/cv/save-anon", { method: "POST", body: fd });
+      const j = await r.json();
+      if (!r.ok || !j.ok) throw new Error(j.error || "Save failed");
+      setSaved(true);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Save failed");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (saved) {
+    return (
+      <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-5">
+        <p className="text-sm font-bold text-emerald-800">✓ Your CV is on file</p>
+        <p className="text-xs text-emerald-700 mt-1">
+          Saved to {email}. When you&apos;re invited to Devidends, this CV will
+          be ready and your edits will merge in automatically.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 to-white p-5">
+      <p className="text-sm font-bold text-dark-900 mb-1">Don&apos;t lose your CV</p>
+      <p className="text-xs text-dark-500 mb-3">
+        Save your work in progress. We&apos;ll keep it on file so the next time
+        someone invites you to Devidends, your CV is ready.
+      </p>
+      <form onSubmit={submit} className="flex flex-col sm:flex-row gap-2">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email@example.com"
+          required
+          className="flex-1 px-3 py-2 rounded-lg border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none"
+        />
+        <button
+          type="submit"
+          disabled={saving}
+          className="px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-sm font-bold disabled:opacity-60"
+        >
+          {saving ? "Saving…" : "Save my CV"}
+        </button>
+      </form>
+      {err && <p className="text-xs text-red-600 mt-2">{err}</p>}
     </div>
   );
 }

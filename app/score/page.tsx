@@ -1226,6 +1226,18 @@ function CvScorerPage() {
               </div>
             )}
 
+            {/* Save-your-score banner — only for anonymous users (signed-in
+                users already have their score auto-saved to a profile).
+                Without this, anonymous /score visitors leave no trace at
+                all and we lose their CV entirely. */}
+            {!user && (
+              <SaveAnonScoreCard
+                cvText={result.cv_text}
+                cvScore={result.overall_score}
+                file={file}
+              />
+            )}
+
             {/* ══════════════════════════════════════════════════
                TIER 1: SUMMARY (everyone, no login required)
                ══════════════════════════════════════════════════ */}
@@ -1908,6 +1920,108 @@ function CvScorerPage() {
       )}
 
       <SiteFooter />
+    </div>
+  );
+}
+
+/**
+ * SaveAnonScoreCard — shown to anonymous /score visitors after their
+ * score is rendered. Captures email so the CV (text + file + score)
+ * gets persisted as a `scored_anon` profile that can be merged into a
+ * real profile when the user later claims via a recommender link.
+ * Without this, anonymous score visits leave no trace.
+ */
+function SaveAnonScoreCard({
+  cvText,
+  cvScore,
+  file,
+}: {
+  cvText?: string;
+  cvScore: number;
+  file: File | null;
+}) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setErr("Enter a valid email");
+      return;
+    }
+    if (!cvText || cvText.length < 100) {
+      setErr("No CV text to save — try re-uploading");
+      return;
+    }
+    setSaving(true);
+    setErr(null);
+    try {
+      const fd = new FormData();
+      fd.append("email", email);
+      if (name.trim()) fd.append("name", name.trim());
+      fd.append("cv_text", cvText);
+      fd.append("cv_score", String(cvScore));
+      fd.append("source_tag", "web_score_anon");
+      if (file) fd.append("file", file);
+      const r = await fetch("/api/cv/save-anon", { method: "POST", body: fd });
+      const j = await r.json();
+      if (!r.ok || !j.ok) throw new Error(j.error || "Save failed");
+      setSaved(true);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Save failed");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (saved) {
+    return (
+      <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-5">
+        <p className="text-sm font-bold text-emerald-800">✓ Saved to {email}</p>
+        <p className="text-xs text-emerald-700 mt-1">
+          Your CV and score are on file. When a colleague invites you via Devidends, your profile will be ready and your score history merges in automatically.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border-2 border-cyan-200 bg-gradient-to-br from-cyan-50 to-white p-5">
+      <p className="text-sm font-bold text-dark-900 mb-1">Save your score & CV</p>
+      <p className="text-xs text-dark-500 mb-3">
+        We&apos;ll keep your CV on file so we can match you to jobs as they come in.
+        No spam — you can unsubscribe anytime.
+      </p>
+      <form onSubmit={submit} className="space-y-2">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your name (optional)"
+            className="flex-1 px-3 py-2 rounded-lg border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none"
+          />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="email@example.com"
+            required
+            className="flex-1 px-3 py-2 rounded-lg border border-dark-200 text-sm focus:border-cyan-400 focus:outline-none"
+          />
+        </div>
+        {err && <p className="text-xs text-red-600">{err}</p>}
+        <button
+          type="submit"
+          disabled={saving}
+          className="w-full sm:w-auto px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-sm font-bold disabled:opacity-60"
+        >
+          {saving ? "Saving…" : "Save my score"}
+        </button>
+      </form>
     </div>
   );
 }
