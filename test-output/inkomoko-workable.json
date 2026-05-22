@@ -1,25 +1,5 @@
 [
   {
-    "title": "Terms of Reference (TOR) - Market Systems Assessment in Ethiopia",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-03-19T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/FDDAFD4B1A/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
-    "raw_fields": {
-      "department": [
-        "Program"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
     "title": "Investment Administrator",
     "organization": "Inkomoko",
     "description": "",
@@ -30,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/F783ED6BFD/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -51,7 +31,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/4A6E4BC67F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -72,7 +52,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/445F51024D/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -93,7 +73,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/AD184CEF3A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -114,7 +94,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/9861B119FF/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -135,7 +115,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/1D009D2824/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -156,7 +136,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/E98F11EDE3/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -177,7 +157,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
@@ -198,11 +178,31 @@
     "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-05-21T08:40:31.328Z",
+    "scraped_at": "2026-05-22T08:27:48.993Z",
     "raw_fields": {
       "department": [
         "Program",
         "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Admin Assistant/Reception - Gambella",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-03-11T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Gambela",
+    "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-05-22T08:27:48.994Z",
+    "raw_fields": {
+      "department": [
+        "Operations & Security"
       ],
       "work_type": ""
     },

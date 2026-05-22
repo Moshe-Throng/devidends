@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-21T08:43:06.097Z",
+    "scraped_at": "2026-05-22T08:30:42.700Z",
     "count": 13
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444534",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-21T08:39:26.715Z",
+      "scraped_at": "2026-05-22T08:27:11.693Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00430304",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:26.715Z",
+      "scraped_at": "2026-05-22T08:27:11.694Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "LCS",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444086",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-21T08:39:26.715Z",
+      "scraped_at": "2026-05-22T08:27:11.694Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445554",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,34 +120,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
         "project_id": "P179040",
         "bid_reference": "ET-NIDP-542234-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procure computers and accessories for PTCs",
-      "organization": "World Bank",
-      "description": "Procure computers and accessories for PTCs\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545747-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-06-19",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-545747-GO-RFB",
         "sector": ""
       }
     },
@@ -162,13 +141,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-545746-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procure computers and accessories for PTCs",
+      "organization": "World Bank",
+      "description": "Procure computers and accessories for PTCs\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545747-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-06-19",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Education and Skills for Employability Project",
+        "project_id": "P177881",
+        "bid_reference": "ET-MOLS-545747-GO-RFB",
         "sector": ""
       }
     },
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.037Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.038Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-21T08:39:27.038Z",
+      "scraped_at": "2026-05-22T08:27:12.007Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
