@@ -156,7 +156,12 @@ async function main() {
         ? newsArticles.filter((a) => newsFilter.includes(a.category))
         : newsArticles;
 
-      if (matchedOpps.length === 0 && matchedNews.length === 0) {
+      // Hard rule: never send a news-only digest. People subscribe for
+      // jobs first; a "Devidends Daily Brief" with zero opportunities and
+      // 5 news articles reads like a magazine they didn't sign up for and
+      // tanks open rates over time. If there are no matching opportunities
+      // for this subscriber today, skip — even if news matched.
+      if (matchedOpps.length === 0) {
         skipped++;
         continue;
       }

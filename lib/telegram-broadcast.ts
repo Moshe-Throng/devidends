@@ -529,7 +529,11 @@ export async function notifySubscribersDaily(
         ? newsArticles.filter((a) => catFilter.includes(a.category))
         : newsArticles;
 
-      if (matchedJobs.length === 0 && matchedNews.length === 0) {
+      // Hard rule: never send a news-only digest. Subscribers signed up
+      // for opportunities; a brief with zero jobs and a few news articles
+      // reads like a newsletter they didn't ask for. If no opportunities
+      // matched this subscriber today, skip even if news matched.
+      if (matchedJobs.length === 0) {
         skipped++;
         continue;
       }

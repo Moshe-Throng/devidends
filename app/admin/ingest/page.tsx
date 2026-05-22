@@ -12,6 +12,7 @@ import {
   Copy,
   ExternalLink,
   Trash2,
+  Download,
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
@@ -659,6 +660,16 @@ export default function AdminIngestPage() {
                             ev.target.value = "";
                           }} />
                         </label>
+                        <a
+                          href={`/api/admin/cv-download?profile_id=${encodeURIComponent(p.id)}`}
+                          download
+                          onClick={(e) => e.stopPropagation()}
+                          title="Download this expert's CV"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-cyan-600 hover:bg-cyan-50 transition-colors"
+                        >
+                          <Download className="w-3 h-3" />
+                          Download CV
+                        </a>
                         <button
                           onClick={(e) => { e.stopPropagation(); handleDelete(p.id, p.name); }}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-red-500 hover:bg-red-50 transition-colors"
