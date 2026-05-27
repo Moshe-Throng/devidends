@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-05-26T08:41:13.048Z",
+    "scraped_at": "2026-05-27T08:47:39.355Z",
     "count": 13
   },
   "opportunities": [
@@ -15,34 +15,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444534",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-26T08:37:59.027Z",
+      "scraped_at": "2026-05-27T08:43:36.505Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEP-552463-CS-CQS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Consultancy Service for Construction Supervision of Mengeshi Main Road to Jenje Unpaved Gravel Access Road Subproject in Mengeshi Woreda [10.2 Km]",
-      "organization": "World Bank",
-      "description": "Procurement of Consultancy Service for Construction Supervision of Mengeshi Main Road to Jenje Unpaved Gravel Access Road Subproject in Mengeshi Woreda [10.2 Km]\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Least Cost Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-GAM-RPCU-522628-CS-LCS\n\nContact: Gembella,\nEthiopia",
-      "deadline": "2026-05-26",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00430304",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:37:59.027Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "LCS",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-GAM-RPCU-522628-CS-LCS",
         "sector": ""
       }
     },
@@ -57,13 +36,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00444086",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-05-26T08:37:59.027Z",
+      "scraped_at": "2026-05-27T08:43:36.505Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEP-538006-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Combined School Desks for Tigray and Computer Desks for selected Schools under Tigary and Amhara Regions!",
+      "organization": "World Bank",
+      "description": "Procurement of Combined School Desks for Tigray and Computer Desks for selected Schools under Tigary and Amhara Regions!\n\nProject: Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOF-529391-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-06-23",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00446937",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
+        "project_id": "P177233",
+        "bid_reference": "ET-MOF-529391-GO-RFB",
         "sector": ""
       }
     },
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445554",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.066Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.185Z",
+      "scraped_at": "2026-05-27T08:43:37.067Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00441518",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.186Z",
+      "scraped_at": "2026-05-27T08:43:37.067Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.186Z",
+      "scraped_at": "2026-05-27T08:43:37.067Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.186Z",
+      "scraped_at": "2026-05-27T08:43:37.067Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-05-26T08:38:00.186Z",
+      "scraped_at": "2026-05-27T08:43:37.067Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
