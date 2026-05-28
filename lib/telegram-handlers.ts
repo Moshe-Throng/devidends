@@ -2201,7 +2201,7 @@ async function handleCallbackQuery(bot: TelegramBot, query: CallbackQuery) {
 
     // --- Broadcast queue: approve / decline daily digest ---
     if (data.startsWith("bcq:approve:") || data.startsWith("bcq:decline:")) {
-      const ADMIN_CHAT = process.env.TELEGRAM_ADMIN_CHAT_ID || "297659579";
+      const ADMIN_CHAT = process.env.TELEGRAM_ADMIN_CHAT_ID || "5443365731";
       const fromId = String(query.from?.id || "");
       if (fromId !== ADMIN_CHAT) {
         try {

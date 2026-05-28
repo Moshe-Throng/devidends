@@ -176,7 +176,7 @@ async function main() {
   console.log(`Built digest: ${built.jobCount} jobs, ${built.newsCount} news, ${built.messages.length} message(s)`);
 
   if (built.messages.length > 0) {
-    const ADMIN_TG = process.env.TELEGRAM_ADMIN_CHAT_ID || "297659579";
+    const ADMIN_TG = process.env.TELEGRAM_ADMIN_CHAT_ID || "5443365731";
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const groupId = process.env.TELEGRAM_GROUP_ID;
     if (!botToken) {
