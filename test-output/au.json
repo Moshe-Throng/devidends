@@ -1,31 +1,5 @@
 [
   {
-    "title": "Senior Internal Auditor Africa CDC Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Senior-Internal-Auditor-Africa-CDC/1360806857/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:27.807Z"
-  },
-  {
-    "title": "Chargé Principal Audit interne (H/F) Africa CDC Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Charg%C3%A9-Principal-Audit-interne-%28HF%29-Africa-CDC/1360806957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:28.336Z"
-  },
-  {
     "title": "Programme de stages Détails du poste",
     "organization": "African Union",
     "description": "",
@@ -36,7 +10,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:28.837Z"
+    "scraped_at": "2026-05-28T08:51:52.336Z"
   },
   {
     "title": "Internship Program Job Details",
@@ -49,7 +23,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:29.214Z"
+    "scraped_at": "2026-05-28T08:51:52.719Z"
   },
   {
     "title": "Head of Mission Support (AUSSOM) Job Details",
@@ -62,7 +36,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Head-of-Mission-Support-%28AUSSOM%29/1360714057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:29.583Z"
+    "scraped_at": "2026-05-28T08:51:53.097Z"
   },
   {
     "title": "Chef du Service d'appui de la Mission (AUSSOM) Détails du poste",
@@ -75,33 +49,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Chef-du-Service-d'appui-de-la-Mission-%28AUSSOM%29/1360714157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:31.976Z"
-  },
-  {
-    "title": "Senior Risk and Compliance Officer Africa CDC Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Senior-Risk-and-Compliance-Officer-Africa-CDC/1360805757/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:32.361Z"
-  },
-  {
-    "title": "Chargé Principal des risques et de la conformité (H/F) Africa CDC Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Charg%C3%A9-Principal-des-risques-et-de-la-conformit%C3%A9-%28HF%29-Africa-CDC/1360805857/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:32.769Z"
+    "scraped_at": "2026-05-28T08:51:53.395Z"
   },
   {
     "title": "Senior ID Management Officer (AUSSOM) Job Details",
@@ -114,7 +62,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-ID-Management-Officer-%28AUSSOM%29/1360999457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:33.152Z"
+    "scraped_at": "2026-05-28T08:51:53.680Z"
   },
   {
     "title": "Chargé principal de la gestion des cartes d'identité (AUSSOM) Détails du poste",
@@ -127,7 +75,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-principal-de-la-gestion-des-cartes-d'identit%C3%A9-%28AUSSOM%29/1360999557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:34.679Z"
+    "scraped_at": "2026-05-28T08:51:56.035Z"
   },
   {
     "title": "Spécialiste de la fabrication de vaccins (Africa CDC) Détails du poste",
@@ -140,7 +88,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Sp%C3%A9cialiste-de-la-fabrication-de-vaccins-%28Africa-CDC%29-9000043/1361547957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:37.181Z"
+    "scraped_at": "2026-05-28T08:51:56.293Z"
   },
   {
     "title": "Vaccine Manufacturing Specialist - (Africa CDC) Job Details",
@@ -153,7 +101,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Vaccine-Manufacturing-Specialist-%28Africa-CDC%29-9000043/1361548057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:37.551Z"
+    "scraped_at": "2026-05-28T08:51:56.576Z"
   },
   {
     "title": "Principal Civil Affairs Officer (AUSSOM) Job Details",
@@ -166,7 +114,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Principal-Civil-Affairs-Officer-%28AUSSOM%29/1360713657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:37.922Z"
+    "scraped_at": "2026-05-28T08:51:56.847Z"
   },
   {
     "title": "Chargé principal des affaires civiles (AUSSOM) Détails du poste",
@@ -179,6 +127,6 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-principal-des-affaires-civiles-%28AUSSOM%29/1360713757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-05-27T08:46:38.286Z"
+    "scraped_at": "2026-05-28T08:51:57.120Z"
   }
 ]
