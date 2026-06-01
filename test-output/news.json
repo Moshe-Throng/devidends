@@ -1,14 +1,135 @@
 [
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "All of Africa Today - May 29, 2026",
+    "title": "All of Africa Today - June 1, 2026",
     "summary": "[allAfrica]",
-    "url": "https://allafrica.com/stories/202605290101.html",
+    "url": "https://allafrica.com/stories/202606010089.html",
     "source_name": "AllAfrica",
     "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-29T06:58:24.000Z",
+    "published_at": "2026-06-01T07:04:56.000Z",
     "category": "General",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopians Begin Voting in Historic 7th General Election",
+    "summary": "[ENA] Addis Ababa, June 1, 2026 --Millions of Ethiopians began casting their ballots on Monday as the country launched its 7th General Election, a vote widely seen as a significant milestone in Ethiopia's ongoing democratic journey.",
+    "url": "https://allafrica.com/stories/202606010079.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T05:41:23.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "AU Observer Mission Chief Kenyatta Engages African Diplomatic Corps As Ethiopia Prepares for Tomorrow's Vote",
+    "summary": "[ENA] Addis Ababa, May 31, 2026 --Former Kenyan President Uhuru Kenyatta, who is leading the African Union Election Observation Mission (AUEOM), met today with representatives of the African Diplomatic Corps in Addis Ababa as Ethiopia prepares for its seventh general election scheduled for tomorrow June 1, 2026.",
+    "url": "https://allafrica.com/stories/202606010049.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:19:24.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "54 Million Voices, One Nation - Ethiopia Prepares for a Historic Decision",
+    "summary": "[ENA] Addis Ababa, May 31, 2026 --Ethiopia has entered a period of contemplation--the mandatory electoral silence period ahead of the June 1 General Election that follows the hectic debates, arguments and counter arguments of the 42 competing parties.",
+    "url": "https://allafrica.com/stories/202606010048.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:18:15.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Heads to Polls in Seventh General Election",
+    "summary": "[Horn Diplomat] Addis Ababa, May 31 (Horn Diplomat) -- Ethiopians headed to the polls on Monday in the country's seventh general election, with more than 54 million registered voters expected to cast their ballots in what authorities describe as an important milestone in the nation's democratic development.",
+    "url": "https://allafrica.com/stories/202606010044.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:18:12.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopians to Choose Between Terrorism or Inclusive Prosperity - Emeritus Prof. Al Mariam",
+    "summary": "[ENA] Addis Ababa -- In the 2026 Ethiopian general election that takes place tomorrow, Ethiopians have a clear choice: Terrorism or collective inclusive prosperity, according to Emeritus Professor Alemayehu G. Mariam, widely known as Al Mariam.",
+    "url": "https://allafrica.com/stories/202606010016.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:25.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Denying the Undeniable - Ethiopia's Achievements Speak for Themselves",
+    "summary": "[ENA] Addis Ababa, May 31, 2026 --The past eight years in Ethiopia have been defined by a complex reality marked by sweeping institutional reforms, major infrastructure achievements, and far-reaching national transformation, alongside significant challenges. Yet much of the international and domestic discourse surrounding the country has often focused disproportionately on its vulnerabilities while overlooking substantial progress made across multiple sectors.",
+    "url": "https://allafrica.com/stories/202606010011.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:24.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia's Election Carries Significance Beyond Its Borders, Says U.S. Analyst",
+    "summary": "[ENA] Addis Ababa -- As Africa's second-most populous country and one of the continent's most influential states, Ethiopia has long drawn close international attention whenever its citizens head to the polls, American political analyst Andrew Korybko told ENA.",
+    "url": "https://allafrica.com/stories/202606010012.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:24.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Votes - a Choice, Not a Coronation",
+    "summary": "[ENA] There is a familiar pattern in the way many Western media organizations report on Africa.",
+    "url": "https://allafrica.com/stories/202606010013.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:24.000Z",
+    "category": "General",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Beyond the Noise - What Ethiopia's 2026 Election Reveals About the Nation's Future",
+    "summary": "[ENA] As Ethiopia prepares for its seventh general election on June 1, 2026, international commentary often focuses narrowly on security challenges, neglecting the broader context and positive developments within the country.",
+    "url": "https://allafrica.com/stories/202606010014.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:24.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Emeritus Prof. Al Mariam Says Ethiopia Marching Fast Toward Promised Land of Prosperity",
+    "summary": "[ENA] Addis Ababa -- Ethiopia is moving rapidly out of poverty toward the promised land of prosperity, according to Emeritus Professor Al Mariam.",
+    "url": "https://allafrica.com/stories/202606010015.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T03:03:24.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Election Overshadowed By War, Instability and Muted Opposition",
+    "summary": "[RFI] Ethiopia goes to the polls on Monday in an election which is expected to return Prime Minister Abiy Ahmed's Prosperity Party to power, but has been marked by instability, restricted voting and questions over whether the vote can challenge the status quo.",
+    "url": "https://allafrica.com/stories/202606010008.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-01T02:59:51.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -19,7 +140,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-29T06:03:40.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -30,7 +151,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-29T04:19:05.000Z",
     "category": "Climate & Environment",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -41,7 +162,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-29T04:10:11.000Z",
     "category": "General",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -52,7 +173,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-29T03:56:02.000Z",
     "category": "Health",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -63,7 +184,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-28T05:07:48.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -74,7 +195,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-28T04:21:36.000Z",
     "category": "Economy & Trade",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -85,7 +206,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-28T04:19:13.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -96,7 +217,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-28T04:19:13.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -107,7 +228,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-28T04:19:12.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -118,7 +239,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-27T05:32:56.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -129,7 +250,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-27T05:19:49.000Z",
     "category": "Climate & Environment",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -140,7 +261,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-27T05:19:48.000Z",
     "category": "General",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -151,7 +272,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-27T05:19:48.000Z",
     "category": "General",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -162,7 +283,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-27T05:19:47.000Z",
     "category": "Health",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -173,7 +294,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-26T15:24:24.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -184,7 +305,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-26T12:21:24.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -195,138 +316,6 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-05-26T12:21:14.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ex-Ethiopia PM Deepens Engagement On Liberia Disability Inclusion and Development Agenda",
-    "summary": "[New Dawn] The National Commission on Disabilities (NCD), under its ongoing institutional reform and disability-inclusive development agenda, has welcomed renewed international interest and partnership opportunities aimed at improving the lives of persons with disabilities and other vulnerable populations in Liberia.",
-    "url": "https://allafrica.com/stories/202605260241.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-26T10:16:47.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Nation At Ballot Box - Ethiopia's Defining Democratic Moment",
-    "summary": "[ENA] Addis Ababa -- With only days remaining before Ethiopians head to the polls on June 1, 2026, the country is preparing for what many observers consider one of the most important elections in its modern history.",
-    "url": "https://allafrica.com/stories/202605260123.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-26T09:05:21.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Abiy Ahmed Meets Rwandan Doctors Pursuing Specialist Training",
-    "summary": "[New Times] Ethiopian Prime Minister Abiy Ahmed has met with 128 Rwandan medical practitioners pursuing specialty training in Ethiopia, alongside more than 400 counterparts from across Africa enrolled in advanced medical programmes.",
-    "url": "https://allafrica.com/stories/202605250353.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-25T11:19:33.000Z",
-    "category": "Health",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Human Rights Consortium Praises Ethiopia's Digital Voting Reform As Electoral Participation Surges",
-    "summary": "[ENA] Addis Ababa -- Consortium of Ethiopian Human Rights Organizations (CEHRO) has praised the National Election Board of Ethiopia (NEBE) for introducing digital voter registration.",
-    "url": "https://allafrica.com/stories/202605250044.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-25T05:21:10.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Global Media Networks Simplify Ethiopia's Conflicts - Insights From 5 Years of Data",
-    "summary": "[The Conversation Africa] When conflicts break out, most people around the world rely on international media to understand what is happening. These reports do more than inform. They shape how crises are interpreted, which actors are seen as responsible and where global attention is directed.",
-    "url": "https://allafrica.com/stories/202605250010.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-25T04:28:47.000Z",
-    "category": "Humanitarian",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Former Ethiopian Prime Minister Seeks Investment in Liberia",
-    "summary": "[New Dawn] Monrovia -- Former Ethiopian Prime Minister Tamrat Layne Admassu has engaged the Liberian government in discussions to strengthen bilateral relations and expand investment opportunities in Liberia.",
-    "url": "https://allafrica.com/stories/202605220278.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-22T10:46:56.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "This Year's Ethiopian General Election Reflects Strong Public Participation, Democratic Maturity - Minister Enatalem",
-    "summary": "[ENA] Addis Ababa -- Ethiopia's Minister of Government Communication Service, Enatalem Melese said this year's general election demonstrated strong citizen participation and growing democratic maturity in the country.",
-    "url": "https://allafrica.com/stories/202605210253.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-21T10:35:53.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Favorable Environment Created for Broad Public Participation in Seventh General Election - Ministry",
-    "summary": "[ENA] Addis Ababa -- The Ministry of Women and Social Affairs has announced that an enabling environment has been established to ensure the full participation of all segments of society in Ethiopia's upcoming Seventh General Election.",
-    "url": "https://allafrica.com/stories/202605210244.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-21T10:32:40.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopian Airlines Living Up to Its Motto 'The New Spirit of Africa,' Says British Envoy",
-    "summary": "[ENA] Addis Ababa -- A British envoy has praised Ethiopian Airlines for truly embodying its motto, \"The New Spirit of Africa,\" pointing to the carrier's modern fleet, extensive global connectivity, and exceptional hospitality.",
-    "url": "https://allafrica.com/stories/202605210240.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-21T10:31:39.000Z",
-    "category": "Health",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Process of Upcoming Election Strengthens State Building - GCS' State Minister",
-    "summary": "[ENA] Addis Ababa -- The process of the forthcoming 7th General Election not only strengthens the foundation of state building but also serves as a practical exercise in building a democratic system, Government Communication Service (GCS) State Minister, Tesfahun Gobezay, said.",
-    "url": "https://allafrica.com/stories/202605210236.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-21T10:28:05.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Diplomats and Foreign Visitors Praise Addis Ababa's Rapid Transformation, Green Development",
-    "summary": "[ENA] Addis Ababa -- Diplomats and foreign visitors have praised the sweeping transformation of Addis Ababa, describing it as a modern, green, and fast-growing metropolis that is becoming increasingly attractive to residents, tourists, and the international diplomatic community.",
-    "url": "https://allafrica.com/stories/202605210235.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-21T10:26:47.000Z",
-    "category": "Climate & Environment",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "EU Lifts Visa Restrictions On Ethiopia Citing Cooperation On Migrant Readmissions",
-    "summary": "[Capital FM] Nairobi -- The Council of the European Union has lifted restrictive visa measures imposed on Ethiopia in 2024, citing significant improvements in Addis Ababa's cooperation on the readmission of nationals staying illegally in EU member states.",
-    "url": "https://allafrica.com/stories/202605200096.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-05-20T07:19:10.000Z",
-    "category": "Funding & Donors",
-    "fetched_at": "2026-05-31T08:23:24.658Z"
+    "fetched_at": "2026-06-01T10:31:15.767Z"
   }
 ]
