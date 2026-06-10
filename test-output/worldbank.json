@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-06-09T08:40:09.344Z",
-    "count": 14
+    "scraped_at": "2026-06-10T09:00:39.452Z",
+    "count": 11
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448445",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-09T08:36:44.594Z",
+      "scraped_at": "2026-06-10T08:56:24.707Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00449180",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00446937",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445554",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00445352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00443422",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,76 +225,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
+      "scraped_at": "2026-06-10T08:56:24.928Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-545747-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub",
-      "organization": "World Bank",
-      "description": "Procurement of: Lot-1; Supply of Transformers & associated bay equipment for Gelan, Legetafo & Sululta Substation Lot-2, Supply of Transformers & associated bay equipment for Addis West, Gefersa, Cotobie, Kaliti II, Mekanissa, Torhayiloch & Sebeta-I Sub\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533130-GO-RFB\n\nContact: P.P.O. BOX 15881,  Cotobie, Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439432",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533130-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading",
-      "organization": "World Bank",
-      "description": "Procurenet of Plant Design, Supply, Installation, Test and Commissioning of : Lot-1, Addis Centre, Black Lion, Gofa & Kaliti-I and Kaliti North Substations and Lot-2, Cotobie, Gurara, and Weregenu Substations -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533128-CW-RFB\n\nContact: P.P.O. Box 15881  Kotobie, Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439425",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533128-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading",
-      "organization": "World Bank",
-      "description": "Plant Design, Supply, Installation, Test and Commissioning of Kaliti I-Gofa-Addis Center- Black Lion 132kV; Cotobie - Weregenu 132kV; Gurara Lines 230kV & 132kV LiLo and Kaliti North 132kV LiLo Transmission Lines -AA Transmission Rehablitation & upgrading\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-533129-CW-RFB\n\nContact: P.O.BOX: 15881, Yeka Sub-City, Wereda 09 (Cotobie), Addis Ababa, Ethiopia",
-      "deadline": "2026-06-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00439431",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-09T08:36:44.909Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-533129-CW-RFB",
         "sector": ""
       }
     }

@@ -10,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/F783ED6BFD/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -30,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/4A6E4BC67F/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -50,7 +50,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/F35FAD8D7A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Monitoring, Evaluation, Research & Learning"
@@ -70,27 +70,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B6D371D42A/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
-    "raw_fields": {
-      "department": [
-        "Business Growth Services"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Business Associate - Gambella",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2025-12-25T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Bambasi",
-    "source_url": "https://apply.workable.com/inkomoko/j/EAA658CDC9/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Business Growth Services"
@@ -110,30 +90,10 @@
     "source_url": "https://apply.workable.com/inkomoko/j/D4B3322D82/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Operations & Security"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Social Worker - Gambella",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2025-12-25T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Gambela",
-    "source_url": "https://apply.workable.com/inkomoko/j/333DA7A81F/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
-    "raw_fields": {
-      "department": [
-        "Business Growth Services"
       ],
       "work_type": ""
     },
@@ -150,7 +110,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B180DBA3FA/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -170,7 +130,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/BAFE5EE5CF/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-09T08:37:26.359Z",
+    "scraped_at": "2026-06-10T08:57:05.054Z",
     "raw_fields": {
       "department": [
         "Program",
