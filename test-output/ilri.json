@@ -1,16 +1,111 @@
 [
   {
-    "title": "Consultant Roster – Research Methods",
+    "title": "Administrative Officer",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60063-consultant-roster-research-methods/detail",
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61379-administrative-officer/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.113Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Grants Officer",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61375-associate-grants-officer/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer - Safeguarding",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61377-associate-program-officer-safeguarding/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer - Youth, Gender, and Enterprise Development",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61376-associate-program-officer-youth-gender-and-enterprise-development/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer – Agribusiness and Agri-services",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61378-associate-program-officer-agribusiness-and-agri-services/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Finance Officer (III)",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61374-finance-officer-iii/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +124,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61226-head-of-internal-audit/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +143,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61323-hospitality-coordinator-iii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,64 +162,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI PhD Graduate Fellowship: Epidemiology, Agentic AI, and Integrated Wastewater Genomic Surveillance",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61057-ilri-phd-graduate-fellowship-epidemiology-agentic-ai-and-integrated-wastewater-genomic-surveillance/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI PhD Graduate Fellowship: Genomic Data Modelling for Public Health Response Using Wastewater Genomic and Clinical Data.",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61056-ilri-phd-graduate-fellowship-genomic-data-modelling-for-public-health-response-using-wastewater-genomic-and-clinical-data/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Research Fellow - Developing Climate-Smart Forages for Resilient Livestock Systems in East Africa",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60909-ilri-research-fellow-developing-climate-smart-forages-for-resilient-livestock-systems-in-east-africa/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -143,7 +181,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61016-ilri-research-fellowship-pig-cattle-induced-pluripotent-stem-cells-ipscs-and-assisted-reproductive-technologies-closing-date-26-may-2026/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -162,7 +200,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61225-regional-internal-auditor-iita/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -181,7 +219,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61172-research-associate-ii-stem-cell-biology-organoids-and-biobanking/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -190,17 +228,17 @@
     "_sourceId": "ilri"
   },
   {
-    "title": "Research Fellowship - Pig & Cattle induced Pluripotent Stem Cells (iPSCs) and Assisted Reproductive Technologies",
+    "title": "Senior Scientist -Digital Agriculture",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60653-research-fellowship-pig-cattle-induced-pluripotent-stem-cells-ipscs-and-assisted-reproductive-technologies/detail",
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61407-senior-scientist-digital-agriculture/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -209,17 +247,36 @@
     "_sourceId": "ilri"
   },
   {
-    "title": "ILRI Research Fellow - Developing Climate-Smart Forages for Resilient Livestock Systems in East Africa",
+    "title": "Administrative Officer",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60909-ilri-research-fellow-developing-climate-smart-forages-for-resilient-livestock-systems-in-east-africa/detail",
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61379-administrative-officer/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer - Safeguarding",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61377-associate-program-officer-safeguarding/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -238,7 +295,83 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60908-msc-graduate-fellow-genetic-diversity-forage-spp-collections-four-positions/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Grants Officer",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61375-associate-grants-officer/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer - Youth, Gender, and Enterprise Development",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61376-associate-program-officer-youth-gender-and-enterprise-development/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Associate Program Officer – Agribusiness and Agri-services",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61378-associate-program-officer-agribusiness-and-agri-services/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Finance Officer (III)",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61374-finance-officer-iii/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -257,7 +390,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60958-director-strategic-partnerships-advocacy-and-communications/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -276,45 +409,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI PhD Graduate Fellowship: Epidemiology, Agentic AI, and Integrated Wastewater Genomic Surveillance",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61057-ilri-phd-graduate-fellowship-epidemiology-agentic-ai-and-integrated-wastewater-genomic-surveillance/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.614Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI PhD Graduate Fellowship: Genomic Data Modelling for Public Health Response Using Wastewater Genomic and Clinical Data.",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61056-ilri-phd-graduate-fellowship-genomic-data-modelling-for-public-health-response-using-wastewater-genomic-and-clinical-data/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -333,26 +428,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61016-ilri-research-fellowship-pig-cattle-induced-pluripotent-stem-cells-ipscs-and-assisted-reproductive-technologies-closing-date-26-may-2026/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Research Fellowship - Pig & Cattle induced Pluripotent Stem Cells (iPSCs) and Assisted Reproductive Technologies",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60653-research-fellowship-pig-cattle-induced-pluripotent-stem-cells-ipscs-and-assisted-reproductive-technologies/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -371,7 +447,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61323-hospitality-coordinator-iii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -390,7 +466,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -409,26 +485,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61225-regional-internal-auditor-iita/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Consultant Roster – Research Methods",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60063-consultant-roster-research-methods/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -447,7 +504,45 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61226-head-of-internal-audit/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Scientist -Gender Responsive Digital Transformation",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61406-scientist-gender-responsive-digital-transformation/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Senior Scientist -Digital Agriculture",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61407-senior-scientist-digital-agriculture/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -466,7 +561,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61172-research-associate-ii-stem-cell-biology-organoids-and-biobanking/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-06-11T09:17:51.615Z",
+    "scraped_at": "2026-06-12T09:06:25.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
