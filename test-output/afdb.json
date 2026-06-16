@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "title": "Title Location Job Family",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-16T10:17:36.679Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Reset",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-16T10:17:36.679Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "SHORT-TERM STAFF (STS), OFFICE CLERK, RDGNSHORT-TERM STAFF (STS), OFFICE CLERK, RDGN",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Tunis-SHORT-TERM-STAFF-%28STS%29%2C-OFFICE-CLERK%2C-RDGN/1274044801/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-16T10:17:36.679Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  }
+]
