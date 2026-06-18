@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "Business Associate-Jigjiga",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-06-17T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Jijiga",
+    "source_url": "https://apply.workable.com/inkomoko/j/4CF59C709D/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-06-18T09:22:27.964Z",
+    "raw_fields": {
+      "department": [
+        "Business Growth Services"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  }
+]
