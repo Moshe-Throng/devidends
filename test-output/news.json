@@ -1,6 +1,83 @@
 [
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Tale of Two Ethiopias",
+    "summary": "[CFR] Landslide victory in this month's elections belies the country's profound internal instability and degrading foreign relations.",
+    "url": "https://allafrica.com/stories/202606180628.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T20:42:27.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Washington Announces Visa Restrictions On TPLF Leaders",
+    "summary": "[Reporter] The US State Department announced today it will enforce visa restrictions on the leaders of the Tigray People's Liberation Front (TPLF) amid a flare in tensions stoking fears about a return to conflict in northern Ethiopia.",
+    "url": "https://allafrica.com/stories/202606180485.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T16:15:03.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Hosts Conference On Migration Research for Peacebuilding, Sustainable Development",
+    "summary": "[ENA] Ethiopia has hosted a regional conference aimed at strengthening the role of migration research in shaping policies for peacebuilding and sustainable development",
+    "url": "https://allafrica.com/stories/202606180156.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T10:45:16.000Z",
+    "category": "General",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia's Circular Economy, Green Legacy Initiative Offer Model for Africa - Finnish Embassy Official",
+    "summary": "[ENA] Addis Ababa -- Ethiopia's efforts to advance a circular economy and implement the Green Legacy Initiative are emerging as a model for other African countries seeking sustainable and climate-resilient development, a senior Finnish Embassy official has said.",
+    "url": "https://allafrica.com/stories/202606180155.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T10:44:53.000Z",
+    "category": "Climate & Environment",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Nebe Approves Results From 723 Constituencies",
+    "summary": "[ENA] Addis Ababa -- The National Election Board of Ethiopia (NEBE) has confirmed and approved the election results from 723 constituencies following the seventh general election.",
+    "url": "https://allafrica.com/stories/202606180154.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T10:44:42.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "National Dialogue Serving As Stepping Stone Toward Consensus and Peace, Says Commissioner Yonas Adaye",
+    "summary": "[ENA] Addis Ababa -- Ethiopia's ongoing National Dialogue is laying the foundation for national consensus and sustainable peace by creating an inclusive platform for citizens to address differences through discussion, Commissioner Yonas Adaye said.",
+    "url": "https://allafrica.com/stories/202606180153.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T10:44:26.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Consolidates Continental Leadership in Electric Vehicle Infrastructure",
+    "summary": "[ENA] Addis Ababa -- Ethiopia is strengthening its position as Africa's leading adopter of electric vehicles by expanding reliable and resilient charging infrastructure across the country, State Minister of Transport and Logistics Bareo Hassen said.",
+    "url": "https://allafrica.com/stories/202606180152.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-06-18T10:44:12.000Z",
+    "category": "Economy & Trade",
+    "fetched_at": "2026-06-19T09:51:18.399Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
     "title": "Ethiopia Among Beneficiaries of USD 1 Billion in Us Global Humanitarian Assistance",
     "summary": "[Reporter] The United States has announced more than USD one billion in humanitarian and disaster-response assistance through the United Nations Children's Fund (UNICEF) and the World Food Programme (WFP), with Ethiopia among the over 40 countries expected to benefit from the funding.",
     "url": "https://allafrica.com/stories/202606180052.html",
@@ -8,7 +85,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-18T07:32:58.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -19,7 +96,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-17T18:05:38.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -30,7 +107,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-16T16:27:30.000Z",
     "category": "Economy & Trade",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -41,7 +118,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-16T09:36:15.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -52,7 +129,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-16T08:32:37.000Z",
     "category": "Climate & Environment",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -63,7 +140,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-15T14:02:55.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -74,7 +151,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-15T06:21:59.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -85,7 +162,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-15T06:21:47.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -96,7 +173,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-12T08:35:47.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -107,7 +184,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-12T04:22:33.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -118,7 +195,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-12T04:21:56.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -129,7 +206,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T11:57:58.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -140,7 +217,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T09:57:37.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -151,7 +228,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T09:57:04.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -162,7 +239,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T09:54:39.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -173,7 +250,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T08:28:07.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -184,7 +261,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-11T04:16:49.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -195,7 +272,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-10T07:14:24.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -206,7 +283,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-10T05:09:16.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -217,7 +294,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-10T05:09:15.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -228,7 +305,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-10T05:09:15.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -239,40 +316,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-10T05:09:15.000Z",
     "category": "Economy & Trade",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Council of Ministers Passes Over 2.3 Trillion Birr Draft Budget for Upcoming EFY",
-    "summary": "[ENA] Addis Ababa -- The Council of Ministers has passed over 2.3-trillion Birr draft budget for the upcoming 2019 Ethiopian fiscal year (EFY).",
-    "url": "https://allafrica.com/stories/202606100069.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-10T05:09:15.000Z",
-    "category": "Funding & Donors",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Harvard Scholar Commends Addis Ababa's Child-Friendly Urban Development",
-    "summary": "[ENA] Addis Ababa -- A senior scholar from Harvard University has praised Addis Ababa's efforts to create a child-friendly city through investments in early childhood development, green spaces, playgrounds, and family-oriented infrastructure.",
-    "url": "https://allafrica.com/stories/202606100070.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-10T05:09:15.000Z",
-    "category": "Education",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Central Bank Postpones Fx Auction Amid Technical Issues",
-    "summary": "[Reporter] The National Bank of Ethiopia (NBE) has postponed its latest foreign-exchange auction, citing \"unforeseen technical issues.\"",
-    "url": "https://allafrica.com/stories/202606090561.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-09T15:31:30.000Z",
-    "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -283,51 +327,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-06-09T11:40:27.000Z",
     "category": "Economy & Trade",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Cabinet Forwards Record 2.34tln Birr Federal Budget Proposal to Parliament",
-    "summary": "[Reporter] The Council of Ministers has approved a proposal for a 2.34 trillion Birr budget for the 2026/27 fiscal year (EFY 2019) and forwarded it to Parliament for review, according to a statement issued by the Office of the Prime Minister today.",
-    "url": "https://allafrica.com/stories/202606090351.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-09T11:39:51.000Z",
-    "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Made in Ethiopia Movement Playing Essential Role in Meeting Domestic Demand, Generating Foreign Exchange",
-    "summary": "[ENA] Addis Ababa, June 8, 2026 -- The Ethiopia Tamirt (Made in Ethiopia) Movement has been pivotal to producing high-quality products that meet domestic demand and generate foreign exchange, Minister of Industry Melaku Alebel said.",
-    "url": "https://allafrica.com/stories/202606090161.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-09T09:09:43.000Z",
-    "category": "Economy & Trade",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Foreign Ministry Concludes Diplomatic Training Program for South Sudanese Officials",
-    "summary": "[Reporter] The Ministry of Foreign Affairs has completed a five-day diplomatic training program for South Sudanese diplomats, an initiative officials said was aimed at strengthening professional capacity and deepening ties between the neighboring countries.",
-    "url": "https://allafrica.com/stories/202606090126.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-09T07:41:52.000Z",
-    "category": "Policy & Governance",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "U.S. Health Aid to African Countries Tied to Harmful Conditions - HRW",
-    "summary": "[HRW] Washington -- Pacts Require Abortion Surveillance, Rights to Specimen Sharing, Data Access",
-    "url": "https://allafrica.com/stories/202606090105.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-06-09T07:21:38.000Z",
-    "category": "Health",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly93d3cudGhlbmV3aHVtYW5p",
@@ -338,7 +338,7 @@
     "source_id": "the-new-humanitarian",
     "published_at": "2026-05-22T05:25:06.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly93d3cudGhlbmV3aHVtYW5p",
@@ -349,7 +349,7 @@
     "source_id": "the-new-humanitarian",
     "published_at": "2026-05-20T09:23:42.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly93d3cudGhlbmV3aHVtYW5p",
@@ -360,7 +360,7 @@
     "source_id": "the-new-humanitarian",
     "published_at": "2026-03-04T12:57:00.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly93d3cudGhlbmV3aHVtYW5p",
@@ -371,7 +371,7 @@
     "source_id": "the-new-humanitarian",
     "published_at": "2026-03-03T08:10:26.000Z",
     "category": "General",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   },
   {
     "id": "aHR0cHM6Ly93d3cudGhlbmV3aHVtYW5p",
@@ -382,6 +382,6 @@
     "source_id": "the-new-humanitarian",
     "published_at": "2025-09-22T11:40:00.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-06-18T09:24:47.025Z"
+    "fetched_at": "2026-06-19T09:51:18.399Z"
   }
 ]
