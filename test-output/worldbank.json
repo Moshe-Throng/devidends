@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-06-19T09:51:17.316Z",
+    "scraped_at": "2026-06-20T08:29:31.549Z",
     "count": 12
   },
   "opportunities": [
+    {
+      "title": "Consultancy Service for Basin level study for strategic study basins to identify and prioritize physical flood risk reduction investments, feasibility study, and detailed design for prioritized investments (2 basins-Genalle-Dawa and Wabishebele)",
+      "organization": "World Bank",
+      "description": "Consultancy Service for Basin level study for strategic study basins to identify and prioritize physical flood risk reduction investments, feasibility study, and detailed design for prioritized investments (2 basins-Genalle-Dawa and Wabishebele)\n\nProject: Ethiopia Flood Management Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOWE-522455-CS-QCBS\n\nContact: Haile Gebreselassie Road\nP.O. Box 5744\nAddis Ababa\nEthiopia",
+      "deadline": "2026-06-29",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436650",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-06-20T08:25:54.915Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Ethiopia Flood Management Project",
+        "project_id": "P176327",
+        "bid_reference": "ET-MOWE-522455-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Consultancy service for Designing flash flood forecasting & early warning system for Awash, Wabishebele, Omo-Gibe, RVL & Genale dawa & system installation for selected areas in priority basins & Research based Operation of flash flood system & application",
+      "organization": "World Bank",
+      "description": "Consultancy service for Designing flash flood forecasting & early warning system for Awash, Wabishebele, Omo-Gibe, RVL & Genale dawa & system installation for selected areas in priority basins & Research based Operation of flash flood system & application\n\nProject: Ethiopia Flood Management Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOWE-411802-CS-QCBS\n\nContact: Haile Gebreselassie Road\nP.O. Box 5744\nAddis Ababa\nEthiopia",
+      "deadline": "2026-07-10",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436037",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-06-20T08:25:54.915Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Ethiopia Flood Management Project",
+        "project_id": "P176327",
+        "bid_reference": "ET-MOWE-411802-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Service for Basin level study for strategic study basins to identify and prioritise physical flood risk reduction investments, and feasibility study for prioritized investments (2 basins-Abay and Baro-Akobo)",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450598",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-19T09:47:54.408Z",
+      "scraped_at": "2026-06-20T08:25:54.915Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450685",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.408Z",
+      "scraped_at": "2026-06-20T08:25:54.915Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "LCS",
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.181Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00449180",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,55 +246,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00446937",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
+      "scraped_at": "2026-06-20T08:25:55.182Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
         "project_id": "P177233",
         "bid_reference": "ET-MOF-529391-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories",
-      "organization": "World Bank",
-      "description": "Procurement of EV and Hybrid Vehicle Lab Training Equipment and Accessories\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545746-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-06-19",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442716",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-545746-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procure computers and accessories for PTCs",
-      "organization": "World Bank",
-      "description": "Procure computers and accessories for PTCs\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545747-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-06-19",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442717",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-19T09:47:54.672Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-545747-GO-RFB",
         "sector": ""
       }
     }
