@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-06-23T08:36:27.069Z",
-    "count": 13
+    "scraped_at": "2026-06-24T08:32:03.565Z",
+    "count": 12
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450959",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-23T08:33:17.143Z",
+      "scraped_at": "2026-06-24T08:28:27.169Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436650",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-23T08:33:17.143Z",
+      "scraped_at": "2026-06-24T08:28:27.169Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436037",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-23T08:33:17.143Z",
+      "scraped_at": "2026-06-24T08:28:27.169Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450598",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-23T08:33:17.143Z",
+      "scraped_at": "2026-06-24T08:28:27.169Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,34 +99,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450685",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.143Z",
+      "scraped_at": "2026-06-24T08:28:27.169Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "LCS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-GAM-RPCU-537556-CS-LCS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procrument of Training Equipments and accessories of Manufacturing and Industrial Automation, ICT and Welding PTCs(Entoto,Axum ,,Harar and other collages)",
-      "organization": "World Bank",
-      "description": "Procrument of Training Equipments and accessories of Manufacturing and Industrial Automation, ICT and Welding PTCs(Entoto,Axum ,,Harar and other collages)\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-556244-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-07-30",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-556244-GO-RFB",
         "sector": ""
       }
     },
@@ -141,13 +120,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-556238-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procrument of Training Equipments and accessories of Manufacturing and Industrial Automation, ICT and Welding PTCs(Entoto,Axum ,,Harar and other collages)",
+      "organization": "World Bank",
+      "description": "Procrument of Training Equipments and accessories of Manufacturing and Industrial Automation, ICT and Welding PTCs(Entoto,Axum ,,Harar and other collages)\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-556244-GO-RFB\n\nContact: Addis Ababa",
+      "deadline": "2026-07-30",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Education and Skills for Employability Project",
+        "project_id": "P177881",
+        "bid_reference": "ET-MOLS-556244-GO-RFB",
         "sector": ""
       }
     },
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00449180",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,34 +246,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
+      "scraped_at": "2026-06-24T08:28:43.009Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-ILLD-521764-GO-RFB-2",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Combined School Desks for Tigray and Computer Desks for selected Schools under Tigary and Amhara Regions!",
-      "organization": "World Bank",
-      "description": "Procurement of Combined School Desks for Tigray and Computer Desks for selected Schools under Tigary and Amhara Regions!\n\nProject: Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOF-529391-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-06-23",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00446937",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-06-23T08:33:17.408Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Response - Recovery - Resilience for Conflict-Affected Communities in Ethiopia Project",
-        "project_id": "P177233",
-        "bid_reference": "ET-MOF-529391-GO-RFB",
         "sector": ""
       }
     }
