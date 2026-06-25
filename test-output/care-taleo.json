@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7977",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.504Z",
+    "scraped_at": "2026-06-25T08:28:55.396Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7968",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.504Z",
+    "scraped_at": "2026-06-25T08:28:55.396Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7951",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.504Z",
+    "scraped_at": "2026-06-25T08:28:55.396Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,21 +52,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7978",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.504Z",
+    "scraped_at": "2026-06-25T08:28:55.396Z",
     "_sourceId": "care-taleo"
   },
   {
-    "title": "DIRECTOR OF FINANCIAL SERVICES",
+    "title": "DIRECTOR FINANCIAL SERVICES",
     "organization": "CARE",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "FINANCE AND ADMINISTRATION",
     "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7913",
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7998",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
+    "scraped_at": "2026-06-25T08:28:55.396Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7966",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
+    "scraped_at": "2026-06-25T08:28:55.397Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
+    "scraped_at": "2026-06-25T08:28:55.397Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,21 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7900",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "INTERNAL AUDIT MANAGER",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "FINANCE AND ADMINISTRATION",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7975",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
+    "scraped_at": "2026-06-25T08:28:55.397Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +122,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7974",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-06-24T08:29:32.505Z",
+    "scraped_at": "2026-06-25T08:28:55.397Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "PRINCIPAL GIVING MANAGER",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "MAJOR GIFTS",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7971",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-06-25T08:28:55.397Z",
     "_sourceId": "care-taleo"
   }
 ]
