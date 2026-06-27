@@ -1,187 +1,5 @@
 [
   {
-    "title": "Chargé des équipements des contingents (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-des-%C3%A9quipements-des-contingents-%28AUSSOM%29/1362282857/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:15.050Z"
-  },
-  {
-    "title": "Contingent Owned Equipment Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Contingent-Owned-Equipment-Officer-%28AUSSOM%29/1362282757/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:15.695Z"
-  },
-  {
-    "title": "Gender Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Gender-Officer-%28AUSSOM%29/1362285057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:16.206Z"
-  },
-  {
-    "title": "Chargé(e) de la question du genre (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9%28e%29-de-la-question-du-genre-%28AUSSOM%29/1362285157/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:16.702Z"
-  },
-  {
-    "title": "Civil Affairs Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Civil-Affairs-Officer-%28AUSSOM%29/1362286057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:17.198Z"
-  },
-  {
-    "title": "Chargé(e) des affaires civiles (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9%28e%29-des-affaires-civiles-%28AUSSOM%29/1362286157/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:19.828Z"
-  },
-  {
-    "title": "Security Investigation and VIP Protection Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Security-Investigation-and-VIP-Protection-Officer-%28AUSSOM%29/1362284457/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:20.407Z"
-  },
-  {
-    "title": "Officier Chargé des Enquêtes de Sécurité et de la Protection des VIP (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Officier-Charg%C3%A9-des-Enqu%C3%AAtes-de-S%C3%A9curit%C3%A9-et-de-la-Protection-des-VIP-%28AUSSOM%29/1362284557/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:20.916Z"
-  },
-  {
-    "title": "Administrateur Chargé des Politiques et de la Liaison (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Administrateur-Charg%C3%A9-des-Politiques-et-de-la-Liaison-%28AUSSOM%29/1362284957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:21.492Z"
-  },
-  {
-    "title": "Policy and Liaison Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Policy-and-Liaison-Officer-%28AUSSOM%29/1362284857/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:21.977Z"
-  },
-  {
-    "title": "Protection and Human Rights Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Protection-and-Human-Rights-Officer-%28AUSSOM%29/1362285257/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:24.468Z"
-  },
-  {
-    "title": "Administrateur Chargé de la Protection et des Droits de l'Homme (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Administrateur-Charg%C3%A9-de-la-Protection-et-des-Droits-de-l'Homme-%28AUSSOM%29/1362285357/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:24.969Z"
-  },
-  {
-    "title": "Joint Support Operations Centre Officer (AUSSOM) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Joint-Support-Operations-Centre-Officer-%28AUSSOM%29/1362283957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:25.454Z"
-  },
-  {
-    "title": "Officier du Centre conjoint d'opérations d'appui (AUSSOM) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Mogadishu-Officier-du-Centre-conjoint-d'op%C3%A9rations-d'appui-%28AUSSOM%29/1362284057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:25.944Z"
-  },
-  {
     "title": "Senior Officer Joint Mission Analysis Cell (AUSSOM) Job Details",
     "organization": "African Union",
     "description": "",
@@ -192,7 +10,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-Officer-Joint-Mission-Analysis-Cell-%28AUSSOM%29/1363479057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:26.442Z"
+    "scraped_at": "2026-06-27T07:55:03.528Z"
   },
   {
     "title": "Officier Principal de la Cellule d'Analyse Interarmées de la Mission (AUSSOM) Détails du poste",
@@ -205,7 +23,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Officier-Principal-de-la-Cellule-d'Analyse-Interarm%C3%A9es-de-la-Mission-%28AUSSOM%29/1363479157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:29.023Z"
+    "scraped_at": "2026-06-27T07:55:03.957Z"
   },
   {
     "title": "Senior Civil Engineer (AUSSOM) Job Details",
@@ -218,7 +36,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-Civil-Engineer-%28AUSSOM%29/1363496557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:29.524Z"
+    "scraped_at": "2026-06-27T07:55:04.304Z"
   },
   {
     "title": "Ingénieur civil principal  (AUSSOM) Détails du poste",
@@ -231,7 +49,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Ing%C3%A9nieur-civil-principal-%28AUSSOM%29/1363496657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:30.111Z"
+    "scraped_at": "2026-06-27T07:55:04.657Z"
   },
   {
     "title": "Head of Compliance, Protection of Civilians and Gender (AUSSOM) Job Details",
@@ -244,7 +62,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Head-of-Compliance%2C-Protection-of-Civilians-and-Gender-%28AUSSOM%29/1363494357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:30.591Z"
+    "scraped_at": "2026-06-27T07:55:04.992Z"
   },
   {
     "title": "Chef de l'Unité Conformité, protection des civils et genre (AUSSOM) Détails du poste",
@@ -257,7 +75,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Chef-de-l'Unit%C3%A9-Conformit%C3%A9%2C-protection-des-civils-et-genre-%28AUSSOM%29/1363494457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:31.089Z"
+    "scraped_at": "2026-06-27T07:55:07.342Z"
   },
   {
     "title": "Senior Civil Affairs Officer (AUSSOM) Job Details",
@@ -270,7 +88,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-Civil-Affairs-Officer-%28AUSSOM%29/1363478557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:33.584Z"
+    "scraped_at": "2026-06-27T07:55:07.666Z"
   },
   {
     "title": "Chargé Principal des Affaires Civiles (AUSSOM) Détails du poste",
@@ -283,7 +101,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-Principal-des-Affaires-Civiles-%28AUSSOM%29/1363478657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:34.067Z"
+    "scraped_at": "2026-06-27T07:55:07.997Z"
   },
   {
     "title": "Programme de stages Détails du poste",
@@ -296,7 +114,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:34.551Z"
+    "scraped_at": "2026-06-27T07:55:08.341Z"
   },
   {
     "title": "Internship Program Job Details",
@@ -309,7 +127,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:35.042Z"
+    "scraped_at": "2026-06-27T07:55:08.660Z"
   },
   {
     "title": "Head of AU Liaison Office Job Details",
@@ -322,7 +140,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Head-of-AU-Liaison-Office/1364190057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:35.527Z"
+    "scraped_at": "2026-06-27T07:55:10.986Z"
   },
   {
     "title": "Chargé (e) du bureau de liaison ZLECAf-UA Détails du poste",
@@ -335,7 +153,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Charg%C3%A9-%28e%29-du-bureau-de-liaison-ZLECAf-UA/1364190157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:38.015Z"
+    "scraped_at": "2026-06-27T07:55:11.317Z"
   },
   {
     "title": "Recruitment Officer Job Details",
@@ -348,7 +166,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Recruitment-Officer/1364139157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:38.508Z"
+    "scraped_at": "2026-06-27T07:55:11.656Z"
   },
   {
     "title": "Responsable du recrutement - ZLECAf Détails du poste",
@@ -361,7 +179,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Responsable-du-recrutement-ZLECAf/1364139257/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:38.997Z"
+    "scraped_at": "2026-06-27T07:55:11.984Z"
   },
   {
     "title": "Senior Information Technology Officer (AUSSOM) Job Details",
@@ -374,7 +192,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Senior-Information-Technology-Officer-%28AUSSOM%29/1363494957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:39.508Z"
+    "scraped_at": "2026-06-27T07:55:12.312Z"
   },
   {
     "title": "Chargé principal des Technologies de l'information (AUSSOM) Détails du poste",
@@ -387,7 +205,7 @@
     "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-principal-des-Technologies-de-l'information-%28AUSSOM%29/1363495057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:40.007Z"
+    "scraped_at": "2026-06-27T07:55:14.642Z"
   },
   {
     "title": "Senior Record Assistant Job Details",
@@ -400,7 +218,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Senior-Record-Assistant/1364009057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:42.489Z"
+    "scraped_at": "2026-06-27T07:55:14.979Z"
   },
   {
     "title": "Assistant(e) principal(e) chargé(e) des dossiers Détails du poste",
@@ -413,7 +231,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Assistant%28e%29-principal%28e%29-charg%C3%A9%28e%29-des-dossiers/1364009157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:43.055Z"
+    "scraped_at": "2026-06-27T07:55:15.308Z"
   },
   {
     "title": "Travel Assistant Job Details",
@@ -426,7 +244,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Travel-Assistant/1364189657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:43.556Z"
+    "scraped_at": "2026-06-27T07:55:15.642Z"
   },
   {
     "title": "Assistant(e) De Voyage - ZLECAf Détails du poste",
@@ -439,7 +257,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Assistant%28e%29-De-Voyage-ZLECAf/1364189757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:44.138Z"
+    "scraped_at": "2026-06-27T07:55:15.977Z"
   },
   {
     "title": "Administrative Assistant - AfCFTA Job Details",
@@ -452,7 +270,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Administrative-Assistant-AfCFTA/1364213057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:44.617Z"
+    "scraped_at": "2026-06-27T07:55:18.307Z"
   },
   {
     "title": "Assistant(e) administratif(ve) - ZLECAf Détails du poste",
@@ -465,7 +283,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Assistant%28e%29-administratif%28ve%29-ZLECAf/1364213157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:47.101Z"
+    "scraped_at": "2026-06-27T07:55:18.627Z"
   },
   {
     "title": "Bilingual Secretary Job Details",
@@ -478,7 +296,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Bilingual-Secretary/1364189357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:47.610Z"
+    "scraped_at": "2026-06-27T07:55:18.964Z"
   },
   {
     "title": "Secrétaire Bilingu - ZLECAf Détails du poste",
@@ -491,33 +309,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Secr%C3%A9taire-Bilingu-ZLECAf/1364189457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:48.103Z"
-  },
-  {
-    "title": "Principal Regional Coordinator RCCs (Africa CDC) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Principal-Regional-Coordinator-RCCs-%28Africa-CDC%29/1363532057/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:48.618Z"
-  },
-  {
-    "title": "Coordonnateur(trice) régional(e) principal (Afrique CDC) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Coordonnateur%28trice%29-r%C3%A9gional%28e%29-principal-%28Afrique-CDC%29/1363531957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:49.110Z"
+    "scraped_at": "2026-06-27T07:55:19.293Z"
   },
   {
     "title": "Junior Program Officer - (AfCFTA) Job Details",
@@ -530,7 +322,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Junior-Program-Officer-%28AfCFTA%29/1364438857/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:51.597Z"
+    "scraped_at": "2026-06-27T07:55:19.629Z"
   },
   {
     "title": "Chargé (e) de programme junior - ZLECAF Détails du poste",
@@ -543,7 +335,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Charg%C3%A9-%28e%29-de-programme-junior-ZLECAF/1364438957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:52.089Z"
+    "scraped_at": "2026-06-27T07:55:21.963Z"
   },
   {
     "title": "CHARGÉ(E) PRINCIPAL(E) -Commerce des services (ZLECAF) Détails du poste",
@@ -556,7 +348,7 @@
     "source_url": "https://jobs.au.int/job/Accra-CHARG%C3%89%28E%29-PRINCIPAL%28E%29-Commerce-des-services-%28ZLECAF%29/1364435457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:52.596Z"
+    "scraped_at": "2026-06-27T07:55:22.294Z"
   },
   {
     "title": "Principal Officer - Trade in Services (AfCFTA) Job Details",
@@ -569,7 +361,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Principal-Officer-Trade-in-Services-%28AfCFTA%29/1364435357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:53.114Z"
+    "scraped_at": "2026-06-27T07:55:22.635Z"
   },
   {
     "title": "Secrétaire Bilingu Détails du poste",
@@ -582,7 +374,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Secr%C3%A9taire-Bilingu/1364139757/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:53.607Z"
+    "scraped_at": "2026-06-27T07:55:22.980Z"
   },
   {
     "title": "African Union Commission Chairperson's Youth Envoy Job Details",
@@ -595,7 +387,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-African-Union-Commission-Chairperson's-Youth-Envoy/1364859457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:56.604Z"
+    "scraped_at": "2026-06-27T07:55:25.637Z"
   },
   {
     "title": "Envoyé(e) du Président de la Commission de l'Union Africaine pour la jeunesse Détails du poste",
@@ -608,6 +400,214 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Envoy%C3%A9%28e%29-du-Pr%C3%A9sident-de-la-Commission-de-l'Union-Africaine-pour-la-jeunesse/1364859557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-06-26T08:36:57.109Z"
+    "scraped_at": "2026-06-27T07:55:25.977Z"
+  },
+  {
+    "title": "Principal Regional Coordinator RCCs (Africa CDC) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Principal-Regional-Coordinator-RCCs-%28Africa-CDC%29/1363532057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:26.322Z"
+  },
+  {
+    "title": "Coordonnateur(trice) régional(e) principal (Afrique CDC) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Coordonnateur%28trice%29-r%C3%A9gional%28e%29-principal-%28Afrique-CDC%29/1363531957/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:26.664Z"
+  },
+  {
+    "title": "Civil Affairs Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Civil-Affairs-Officer-%28AUSSOM%29/1362286057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:26.985Z"
+  },
+  {
+    "title": "Administrateur Chargé de la Protection et des Droits de l'Homme (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Administrateur-Charg%C3%A9-de-la-Protection-et-des-Droits-de-l'Homme-%28AUSSOM%29/1362285357/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:29.334Z"
+  },
+  {
+    "title": "Chargé(e) des affaires civiles (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9%28e%29-des-affaires-civiles-%28AUSSOM%29/1362286157/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:29.759Z"
+  },
+  {
+    "title": "Protection and Human Rights Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Protection-and-Human-Rights-Officer-%28AUSSOM%29/1362285257/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:30.088Z"
+  },
+  {
+    "title": "Administrateur Chargé des Politiques et de la Liaison (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Administrateur-Charg%C3%A9-des-Politiques-et-de-la-Liaison-%28AUSSOM%29/1362284957/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:30.555Z"
+  },
+  {
+    "title": "Security Investigation and VIP Protection Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Security-Investigation-and-VIP-Protection-Officer-%28AUSSOM%29/1362284457/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:30.882Z"
+  },
+  {
+    "title": "Policy and Liaison Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Policy-and-Liaison-Officer-%28AUSSOM%29/1362284857/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:33.204Z"
+  },
+  {
+    "title": "Contingent Owned Equipment Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Contingent-Owned-Equipment-Officer-%28AUSSOM%29/1362282757/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:33.539Z"
+  },
+  {
+    "title": "Gender Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Gender-Officer-%28AUSSOM%29/1362285057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:33.875Z"
+  },
+  {
+    "title": "Officier du Centre conjoint d'opérations d'appui (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Officier-du-Centre-conjoint-d'op%C3%A9rations-d'appui-%28AUSSOM%29/1362284057/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:34.209Z"
+  },
+  {
+    "title": "Officier Chargé des Enquêtes de Sécurité et de la Protection des VIP (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Officier-Charg%C3%A9-des-Enqu%C3%AAtes-de-S%C3%A9curit%C3%A9-et-de-la-Protection-des-VIP-%28AUSSOM%29/1362284557/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:34.682Z"
+  },
+  {
+    "title": "Chargé des équipements des contingents (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9-des-%C3%A9quipements-des-contingents-%28AUSSOM%29/1362282857/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:37.016Z"
+  },
+  {
+    "title": "Joint Support Operations Centre Officer (AUSSOM) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Joint-Support-Operations-Centre-Officer-%28AUSSOM%29/1362283957/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:37.343Z"
+  },
+  {
+    "title": "Chargé(e) de la question du genre (AUSSOM) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Mogadishu-Charg%C3%A9%28e%29-de-la-question-du-genre-%28AUSSOM%29/1362285157/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-06-27T07:55:37.677Z"
   }
 ]
