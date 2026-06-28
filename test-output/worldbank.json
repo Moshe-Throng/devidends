@@ -1,9 +1,72 @@
 {
   "metadata": {
-    "scraped_at": "2026-06-27T07:56:22.473Z",
-    "count": 10
+    "scraped_at": "2026-06-28T08:29:25.245Z",
+    "count": 13
   },
   "opportunities": [
+    {
+      "title": "Consultancy service to evaluate current call center operations and develop specification for software and hardware to meet \"to be\" requirements",
+      "organization": "World Bank",
+      "description": "Consultancy service to evaluate current call center operations and develop specification for software and hardware to meet \"to be\" requirements\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-474940-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
+      "deadline": "2026-07-16",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454160",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-MOR-474940-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of individual consultant to support the management of ITAS",
+      "organization": "World Bank",
+      "description": "Selection of individual consultant to support the management of ITAS\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-474927-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
+      "deadline": "2026-07-16",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454164",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-MOR-474927-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of an Individual Consultant as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS)",
+      "organization": "World Bank",
+      "description": "Selection of an Individual Consultant as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS)\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-555525-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
+      "deadline": "2026-07-16",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454166",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-MOR-555525-CS-INDV",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy service for Designing flash flood forecasting & early warning system for Awash, Wabishebele, Omo-Gibe, RVL & Genale dawa & system installation for selected areas in priority basins & Research based Operation of flash flood system & application",
       "organization": "World Bank",
@@ -15,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436037",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-27T07:53:09.721Z",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450959",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-27T07:53:09.721Z",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436650",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-27T07:53:09.721Z",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450598",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-27T07:53:09.721Z",
+      "scraped_at": "2026-06-28T08:26:15.203Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-27T07:53:10.001Z",
+      "scraped_at": "2026-06-28T08:26:15.409Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
