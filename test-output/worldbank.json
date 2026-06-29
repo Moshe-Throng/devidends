@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "scraped_at": "2026-06-28T08:29:25.245Z",
+    "scraped_at": "2026-06-29T09:57:48.306Z",
     "count": 13
   },
   "opportunities": [
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454160",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454164",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454166",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436037",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450959",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00436650",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -141,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450598",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-06-28T08:26:15.203Z",
+      "scraped_at": "2026-06-29T09:54:08.653Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00448847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00442469",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-06-28T08:26:15.409Z",
+      "scraped_at": "2026-06-29T09:54:09.419Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
