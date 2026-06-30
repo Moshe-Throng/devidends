@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "title": "Title Location Job Family",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-30T08:35:38.185Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Reset",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-30T08:35:38.185Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Evaluation Officer, IDEV2Evaluation Officer, IDEV2",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Evaluation-Officer%2C-IDEV2/1409531233/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-06-30T08:35:38.185Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  }
+]
