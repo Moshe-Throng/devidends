@@ -1,5 +1,25 @@
 [
   {
+    "title": "Investment Officer-Assosa",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-06-28T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Asosa",
+    "source_url": "https://apply.workable.com/inkomoko/j/D9DE61E520/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
+    "raw_fields": {
+      "department": [
+        "Investment"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
     "title": "Investment Officer-Jigjiga",
     "organization": "Inkomoko",
     "description": "",
@@ -10,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/8F118D2925/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -30,47 +50,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/8D024C0B3B/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
-    "raw_fields": {
-      "department": [
-        "Investment"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Investment Officer-Assosa",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-06-28T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Asosa",
-    "source_url": "https://apply.workable.com/inkomoko/j/D9DE61E520/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
-    "raw_fields": {
-      "department": [
-        "Investment"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Recovery Officer-Addis Ababa",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-06-28T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/A286EB2672/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -90,7 +70,27 @@
     "source_url": "https://apply.workable.com/inkomoko/j/9BF0D48D4D/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
+    "raw_fields": {
+      "department": [
+        "Investment"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Recovery Officer-Addis Ababa",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-06-28T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/A286EB2672/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
     "raw_fields": {
       "department": [
         "Investment"
@@ -110,7 +110,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/4CF59C709D/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
     "raw_fields": {
       "department": [
         "Business Growth Services"
@@ -130,7 +130,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/118237A896/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-06-30T08:35:11.467Z",
+    "scraped_at": "2026-07-01T08:53:11.011Z",
     "raw_fields": {
       "department": [
         "Investment"
