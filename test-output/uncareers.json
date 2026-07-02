@@ -1,5 +1,25 @@
 [
   {
+    "title": "ACS/Data Specialist",
+    "organization": "Economic Commission for Africa",
+    "description": "Result of Service Report outlining the proposed data model, technical stack (tools, server requirements), and a work plan for developing the data repository and front-end architecture. A functional database hosting 7–12 regional and national datasets. Documented scripts for automated data ingestion and cleaning (ETL/ELT processes). Two fully operational, interactive Thematic Analytic Hubs equipped with advanced analytical features, including rich visualizations and customizable reports. One oper",
+    "deadline": "2026-07-08T03:59:59.000Z",
+    "published": "2026-07-01T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/279692?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-02T08:19:14.822Z",
+    "raw_fields": {
+      "jobLevel": "CON",
+      "categoryCode": "CON",
+      "jobCategory": "Consultants",
+      "jobFamily": "Statistics",
+      "jobNetwork": ""
+    }
+  },
+  {
     "title": "FINANCE AND BUDGET OFFICER (Temporary Job Opening), P4",
     "organization": "Economic Commission for Africa",
     "description": "Org. Setting and Reporting The Economic Commission for Africa's (ECA) mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 Agenda and Agenda 2063. The mission will be guided by ECA's five new strategic directions which are: Advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solution to the continent; developing macroeconom",
@@ -10,7 +30,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/280076?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.655Z",
+    "scraped_at": "2026-07-02T08:19:14.822Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
@@ -30,7 +50,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/279707?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.655Z",
+    "scraped_at": "2026-07-02T08:19:14.822Z",
     "raw_fields": {
       "jobLevel": "P-5",
       "categoryCode": "PD",
@@ -50,7 +70,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/279768?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.655Z",
+    "scraped_at": "2026-07-02T08:19:14.822Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -70,7 +90,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/278100?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.655Z",
+    "scraped_at": "2026-07-02T08:19:14.823Z",
     "raw_fields": {
       "jobLevel": "P-3",
       "categoryCode": "PD",
@@ -90,47 +110,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/279344?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.655Z",
-    "raw_fields": {
-      "jobLevel": "I-1",
-      "categoryCode": "INT",
-      "jobCategory": "Internship",
-      "jobFamily": "Administration",
-      "jobNetwork": ""
-    }
-  },
-  {
-    "title": "Communications Intern",
-    "organization": "Economic Commission for Africa",
-    "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities Daily responsibilities will vary and depend on the individual's background, including but not limited to: • Assist in the design and dissemination of internal communications materials such as announcements, digital flyers, and intranet updates • Support the promotion of events, trainings, and HR campaigns organized by HRMS • Contribute to introducing new staff members through internal communication channels • Help a",
-    "deadline": "2026-07-02T03:59:59.000Z",
-    "published": "2026-06-17T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/278715?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.656Z",
-    "raw_fields": {
-      "jobLevel": "I-1",
-      "categoryCode": "INT",
-      "jobCategory": "Internship",
-      "jobFamily": "",
-      "jobNetwork": ""
-    }
-  },
-  {
-    "title": "Human Resources Intern",
-    "organization": "Economic Commission for Africa",
-    "description": "Work Location Addis Ababa Expected duration 6 months Duties and Responsibilities ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 Agenda and Agenda 2063. The mission will be guided by ECA's five strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developi",
-    "deadline": "2026-07-02T03:59:59.000Z",
-    "published": "2026-06-17T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/279131?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.656Z",
+    "scraped_at": "2026-07-02T08:19:14.823Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -150,7 +130,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/278851?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.656Z",
+    "scraped_at": "2026-07-02T08:19:14.823Z",
     "raw_fields": {
       "jobLevel": "NO-C",
       "categoryCode": "NPO",
@@ -170,11 +150,31 @@
     "source_url": "https://careers.un.org/jobSearchDescription/278889?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.656Z",
+    "scraped_at": "2026-07-02T08:19:14.824Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
       "jobCategory": "Professional and Higher Categories",
+      "jobFamily": "Human Rights Affairs",
+      "jobNetwork": "Political, Peace and Humanitarian"
+    }
+  },
+  {
+    "title": "Human Rights Officer, NOC",
+    "organization": "Office of the High Commissioner for Human Rights",
+    "description": "Org. Setting and Reporting This post is found in the Office of the United Nations High Commissioner for Human Rights (OHCHR) Regional Hub for East and Southern Africa, Addis Ababa, Ethiopia. The incumbent will report to the relevant workstream lead under the overall guidance of the Regional Director or his/her delegated representative. The Human Rights Officer is responsible for conducting a wide range of tasks. Depending on the organizational setting, these may include monitoring and investigat",
+    "deadline": "2026-07-08T03:59:59.000Z",
+    "published": "2026-06-08T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/278845?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-02T08:19:14.824Z",
+    "raw_fields": {
+      "jobLevel": "NO-C",
+      "categoryCode": "NPO",
+      "jobCategory": "National Professional Officers",
       "jobFamily": "Human Rights Affairs",
       "jobNetwork": "Political, Peace and Humanitarian"
     }
@@ -190,33 +190,13 @@
     "source_url": "https://careers.un.org/jobSearchDescription/278849?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.656Z",
+    "scraped_at": "2026-07-02T08:19:14.824Z",
     "raw_fields": {
       "jobLevel": "NO-C",
       "categoryCode": "NPO",
       "jobCategory": "National Professional Officers",
       "jobFamily": "Programme Management",
       "jobNetwork": "Economic, Social and Development"
-    }
-  },
-  {
-    "title": "Human Rights Officer, NOC",
-    "organization": "Office of the High Commissioner for Human Rights",
-    "description": "Org. Setting and Reporting This post is found in the Office of the United Nations High Commissioner for Human Rights (OHCHR) Regional Hub for East and Southern Africa, Addis Ababa, Ethiopia. The incumbent will report to the relevant workstream lead under the overall guidance of the Regional Director or his/her delegated representative. The Human Rights Officer is responsible for conducting a wide range of tasks. Depending on the organizational setting, these may include monitoring and investigat",
-    "deadline": "2026-07-08T03:59:59.000Z",
-    "published": "2026-06-08T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/278845?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.657Z",
-    "raw_fields": {
-      "jobLevel": "NO-C",
-      "categoryCode": "NPO",
-      "jobCategory": "National Professional Officers",
-      "jobFamily": "Human Rights Affairs",
-      "jobNetwork": "Political, Peace and Humanitarian"
     }
   },
   {
@@ -230,7 +210,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/278481?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-07-01T08:54:53.657Z",
+    "scraped_at": "2026-07-02T08:19:14.824Z",
     "raw_fields": {
       "jobLevel": "G-6",
       "categoryCode": "GS",
