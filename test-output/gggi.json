@@ -1,5 +1,45 @@
 [
   {
+    "title": "Forestry Consultant",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-07-17 00:00:00",
+    "published": "2026-06-26 00:00:00",
+    "country": "Paraguay",
+    "city": "Asuncion",
+    "source_url": "https://careers.gggi.org/vacancy/forestry-consultant-614368.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Paraguay"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Forestry Monitoring, Reporting, and Verification (MRV) Specialist Consultant",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-07-17 00:00:00",
+    "published": "2026-06-26 00:00:00",
+    "country": "Paraguay",
+    "city": "Asuncion",
+    "source_url": "https://careers.gggi.org/vacancy/forestry-monitoring-reporting-and-verification-mrv-specialist-consultant-614452.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Paraguay"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
     "title": "Mongolia: Program Lead",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
@@ -10,7 +50,7 @@
     "source_url": "https://careers.gggi.org/vacancy/mongolia-program-lead-613949.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -30,7 +70,7 @@
     "source_url": "https://careers.gggi.org/vacancy/ctaf-ai-secretariat-coding-intern-614869.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -50,7 +90,7 @@
     "source_url": "https://careers.gggi.org/vacancy/consultant-for-national-strategy-for-international-development-cooperation-615054.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -70,7 +110,7 @@
     "source_url": "https://careers.gggi.org/vacancy/hq-internship-with-human-resources-office-615060.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -90,7 +130,7 @@
     "source_url": "https://careers.gggi.org/vacancy/regional-communications-senior-associate-612488.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -110,7 +150,7 @@
     "source_url": "https://careers.gggi.org/vacancy/capacity-and-market-needs-assessment-of-clean-cooking-enterprises-614750.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -130,7 +170,7 @@
     "source_url": "https://careers.gggi.org/vacancy/individual-consultant-prefeasibility-studies-for-pellet-briquette-value-c-614767.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -150,7 +190,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-communication-intern-for-qatar-614302.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -170,7 +210,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-carbon-finance-officer-614746.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -190,7 +230,7 @@
     "source_url": "https://careers.gggi.org/vacancy/togo-consultant-for-field-project-assistance-614548.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
@@ -210,7 +250,7 @@
     "source_url": "https://careers.gggi.org/vacancy/global-green-growth-institute-internship-program-613462.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.798Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -230,7 +270,7 @@
     "source_url": "https://careers.gggi.org/vacancy/viet-nam-investment-officer-methane-mitigation-readvertised-614948.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -250,7 +290,7 @@
     "source_url": "https://careers.gggi.org/vacancy/capacity-assessment-and-training-consultant-614744.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -270,31 +310,11 @@
     "source_url": "https://careers.gggi.org/vacancy/palau-cbit-greenhouse-gas-inventory-consultant-614668.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
         "Pacific"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Comms&KS Unit Intern - Global Events Management",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Internship",
-    "deadline": "2026-07-09 00:00:00",
-    "published": "2026-05-28 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/commsks-unit-intern-global-events-management-612403.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
-    "raw_fields": {
-      "contract_type": "Internship",
-      "all_locations": [
-        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
@@ -310,7 +330,7 @@
     "source_url": "https://careers.gggi.org/vacancy/green-ai-senior-associate-614371.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -330,7 +350,7 @@
     "source_url": "https://careers.gggi.org/vacancy/associate-to-pacific-regional-director-614300.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -350,7 +370,7 @@
     "source_url": "https://careers.gggi.org/vacancy/intern-for-dggi-ded-office-614026.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -370,71 +390,11 @@
     "source_url": "https://careers.gggi.org/vacancy/palau-cbit-enhanced-transparency-framework-consultant-614123.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
         "Pacific"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Forestry Monitoring, Reporting, and Verification (MRV) Specialist Consultant",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-07-10 00:00:00",
-    "published": "2026-06-26 00:00:00",
-    "country": "Paraguay",
-    "city": "Asuncion",
-    "source_url": "https://careers.gggi.org/vacancy/forestry-monitoring-reporting-and-verification-mrv-specialist-consultant-614452.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Paraguay"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Forestry Consultant",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-07-10 00:00:00",
-    "published": "2026-06-26 00:00:00",
-    "country": "Paraguay",
-    "city": "Asuncion",
-    "source_url": "https://careers.gggi.org/vacancy/forestry-consultant-614368.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Paraguay"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "INDIA: SENIOR OFFICER, ASIA LOW CARBON BUILDINGS TRANSITION (ALCBT) PROJECT",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-07-09 00:00:00",
-    "published": "2026-06-16 00:00:00",
-    "country": "India",
-    "city": "New Delhi",
-    "source_url": "https://careers.gggi.org/vacancy/india-senior-officer-asia-low-carbon-buildings-transition-alcbt-project-613639.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.577Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "India"
       ]
     },
     "_sourceId": "gggi"
@@ -450,7 +410,7 @@
     "source_url": "https://careers.gggi.org/vacancy/ev-financing-expert-consultant-vanuatu-614025.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.578Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -470,31 +430,11 @@
     "source_url": "https://careers.gggi.org/vacancy/junior-professional-officer-lift-programme-green-lending-613320.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.578Z",
+    "scraped_at": "2026-07-10T08:29:06.799Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
         "Cote d'Ivoire"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Deputy Executive Director, Head Of Directorate Of Green Finance & C.S.",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-07-09 00:00:00",
-    "published": "2026-06-18 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/deputy-executive-director-head-of-directorate-of-green-finance-cs-613860.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-09T08:34:23.578Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
