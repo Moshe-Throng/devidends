@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4221118",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.058Z",
+    "scraped_at": "2026-07-16T07:27:14.556Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -32,7 +32,7 @@
     "source_url": "https://reliefweb.int/node/4221074",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.058Z",
+    "scraped_at": "2026-07-16T07:27:14.556Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -54,7 +54,7 @@
     "source_url": "https://reliefweb.int/node/4220971",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.058Z",
+    "scraped_at": "2026-07-16T07:27:14.556Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -76,7 +76,7 @@
     "source_url": "https://reliefweb.int/node/4220674",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.058Z",
+    "scraped_at": "2026-07-16T07:27:14.557Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -98,7 +98,7 @@
     "source_url": "https://reliefweb.int/node/4219724",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.059Z",
+    "scraped_at": "2026-07-16T07:27:14.557Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -122,7 +122,7 @@
     "source_url": "https://reliefweb.int/node/4219721",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.059Z",
+    "scraped_at": "2026-07-16T07:27:14.557Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -146,7 +146,7 @@
     "source_url": "https://reliefweb.int/node/4219717",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.059Z",
+    "scraped_at": "2026-07-16T07:27:14.557Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -170,7 +170,7 @@
     "source_url": "https://reliefweb.int/node/4218780",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.059Z",
+    "scraped_at": "2026-07-16T07:27:14.558Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -192,7 +192,7 @@
     "source_url": "https://reliefweb.int/node/4217971",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.059Z",
+    "scraped_at": "2026-07-16T07:27:14.558Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -216,7 +216,7 @@
     "source_url": "https://reliefweb.int/node/4217002",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.060Z",
+    "scraped_at": "2026-07-16T07:27:14.558Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -240,7 +240,7 @@
     "source_url": "https://reliefweb.int/node/4216605",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.060Z",
+    "scraped_at": "2026-07-16T07:27:14.558Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -262,7 +262,7 @@
     "source_url": "https://reliefweb.int/node/4216437",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.060Z",
+    "scraped_at": "2026-07-16T07:27:14.559Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -284,10 +284,32 @@
     "source_url": "https://reliefweb.int/node/4216366",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.060Z",
+    "scraped_at": "2026-07-16T07:27:14.559Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
+      ],
+      "themes": [],
+      "experience": "5-9 years",
+      "languages": [],
+      "work_type": "Job"
+    }
+  },
+  {
+    "title": "Compliance and Systems Director for Ethiopia",
+    "organization": "People in Need",
+    "description": "Contract Length: 1 year with the possibility of extension Country Programme : Ethiopia Base : Addis Ababa, Ethiopia Line Manager : Country Director for Ethiopia People in Need (PIN) is an international, non-profit organization providing humanitarian assistance and development cooperation worldwide. PIN adopts a triple nexus approach, linking humanitarian, development and resilience programming, with a strong focus on systems strengthening, locally led action and support to civil society. About the Ethiopia Programme of People in Need Present in Ethiopia since 2003, PIN works in partnership with communities, local organisations and public institutions to support sustainable development and improve people’s well-being across the country. Through integrated programming, PIN combines immediate assistance with longer-term, systems-oriented approaches aimed at strengthening resilience, expanding access to essential services and economic opportunities, and enabling locally led solutions. Guided by its Relief and Development strategy, PIN operates across multiple regions and works with a diverse portfolio of institutional donors and partners. About the role: The Compliance and Systems Director (CSD) is a member of the country programme senior management (together with the Country Director (CD) and Head of Programmes (HoP)/Program Manager (ProgM)) and shares responsibility for the effective and efficient delivery of People in Need’s (PIN) country programme. Specifically, CSD leads and oversees organisational compliance by providing guidance to staff on the application and enforcement of internal and external regulations. This includes ensuring the interpretation and implementation of donors’ contractual requirements and adherence to PIN internal procedures. The role of the CSD is to manage and improve the support systems and operations required to achieve this objective comprising of Logistic, Procurement, Finance and HR agendas. In performing this role, the CSD also ensures an enabling environment for the implementation of the country programme, while maintaining operations and systems that meet with the accountability requirements of PIN and its donors. CSD also directly leads the process of the development and staff capacity building across the departments. Reporting Relations & Interdependencies with Other Functions The CSD´s line manager is CD. Technically the CSD is supervised by the Regional Head of Systems and Operations based at HQ. At country programme level, the CSD is the line manager of the Head of Finance, Head of Operations, HR Manager, or, should this position be unfilled, to another equivalent supervisory role. The CSD also works closely with DCD-P and Programme and Project Managers. At headquarters (HQ) level, apart from the RHoSO, her/his counterparts on the methodological level are Regional Logistic Coordinator, Regional HR Coordinator, Finance coordinator, RDD Logistics & Procurement Department, RDD HR Department as well as the Compliance department. Main Duties and Responsibilities: Strategic Leadership The CSD assists the CD in the management of the country programme, participates in the senior management meetings, and pro-actively takes part in the decision-making processes; Ensures that systems and operations support the implementation of the country programme strategy and that procedures and regulations are implemented in full transparency and in accordance with donor and PIN rules; represents PIN towards local authorities, donors, partners, and other stakeholders; is responsible for adequate staffing of all supervised departments in order to achieve efficient delivery of People in Need’s (PIN) country programme; promotes team spirit, a culture of respect, personal responsibility, transparency, and openness; ensures and promote efficient communication and information sharing among operations and program teams. Finance & Accounting Oversee Finance team while ensuring they have sufficient capacity both in number and qualification and securing their continuous capacity building based on personal development plans; The CSD makes sure that relevant country programme financial and administrative procedures are in place and respected; Ensures financial and administrative systems (ELO, Navision) are properly administrated and used by the whole country programme; In cooperation with the financial team guarantees that financial requirements are met in all sectors, including budgeting, reporting and accounting of the country programme; Optimizes financial resources allocation to cover operations costs; monitors and notifies HQ about crucial operations costs misbalance as compared to the total country programme budget; In cooperation with Head of Finance, prepares financial and economic overviews and interprets economic data for country programme and programme management teams; Supervise the Head of Finance and Project Managers and provides methodological support during the new project budgeting process; Supervise the Head of Finance and Project Managers and provides methodological support during project budget spending monitoring and planning process; Supervises the financial aspects of partner selection and assessment processes, partnership agreement preparation, capacity building and reporting; CSD is involved in negotiation and establishing partnership with implementing partners (INGOs and national NGOs), drafts the relevant provision to partnership and implementing agreements, based on the assessment of partners´ capacities, PIN procedures and donor´s compliance requirement Supervise and support the Head of Finance during audits Supervise and support the Head of Finance during annual accounting closing Is responsible for preparation and monitoring CP Operational Budget Procurement Oversee and lead the Procurement team; Ensure the CP Procurement Guidelines are updated and respected Oversee and implement the procurement system, following all relevant donor and PIN guidelines and procedures, and considering relevant corruption risks; Ensure that the Annual Procurement Plans are in place and regularly updated; On a regular basis audit the procurement process in order to highlight flaws and pressures associated with operating in the Country Programme context; Logistics Oversee the Logistic team while ensuring they have sufficient capacity both in number and qualification and securing their continuous capacity building based on personal development plans; Implement and/or strengthen systems of oversight and prevention of corruption; Oversee Logistics budgets and contribute to planning needs for new projects with regards to security and logistics; Supervise functioning of asset registry and inventory control; Supervise and support Head of Operations during yearly inventories; Ensure efficient tools for fleet planning and costs monitoring are in place and efficiently used Human Resources and Capacity Development Oversee the HR team while ensuring they have sufficient capacity both in number and qualification and securing their continuous capacity building based on personal development plans The CSD is familiar with PIN HR procedures and ensures that all country programme staff follows them; Makes sure that relevant country programme HR procedures are in place and respected, and updates them on regular basis; Supervises the process of internal and external recruitment of national staff; Ensure that system of in-country induction for both international and national staff is in place; Ensures that regular staff evaluation is in place and that bonuses and capacity development tools are being used according to HR guidelines; Ensures that the contract termination procedures are followed properly; Ensure that all HR administration systems for country programme are operating properly, in particular overseeing the proper implementation of administrative issues related to HR; Together with the country programme senior management and national HR personnel, cooperate with HQ HR department on HR audits, setting and improving of HR procedures, and supporting their implementation; Together with the national HR personnel, inform HQ HR about current HR related needs and requests from country programmes Proactive identification and response to staff concerns, working with the ETHHR team in identifying and understanding satisfaction/interpersonal issues and how to effectively address them Responsible for consulting and providing guidance on the revision of staff salaries and the ETH salary scale Responsible for establishing succession plans for key roles, helping to identify high potential staff members, and establishing development plans for key individuals and the ETH HR team External and Internal Compliance The CSD ensures that all taxes are paid in line with national regulatory framework; Ensures that tax exemption (when possible) will be applied by NGO; In coordination with the CD, ensures that all agenda related to permits, licences, and registrations are dealt with as and when required. Ensures the current contract templates on the country programme are up to date and properly used; Conducts regular checks on proper archiving of finance, procurement and HR documents; Is familiar with donors’ conditions in finance, logistics and procurement and requirements and makes sure they are respected; Acts as a communication channel between donors in case of any requests related to the compliance in HR or procurement field And fulfils any other tasks as required. Main Requirements: University degree preferably in Finance/Economics, Logistic, Public Administration, Law or related field; Significant previous experience with managing systems, finance, procurement, administration and HR; Ability to work closely with senior management (Country Director and Head of Programmes) to share the strategic direction of the country programme, ensuring that systems support programme implementation; Experience with financial management, including budgeting, financial reporting and compliance with donor regulations; Knowledge of logistics and procurement processes, including asset management, fleet planning, and procurement systems that comply with donor regulations; Experience in overseeing HR functions, including capacity building, staff evaluations, and salary scale management, ensuring compliance with national regulations and organizational policies; Ability to develop teams across logistics, procurement, finance, and HR; Strong problem-solving skills; Excellent communication skills, including fluent spoken and written English; IT literacy, advanced knowledge of MS Excel, working experience with accounting and economic software; We offer: Working environment in a well-established humanitarian organization in a challenging context Salary & Benefits : Salary based on PIN’s salary scale and HR policies; expected salary range between 3250 - 3600 EUR super gross (based on experience) Additional allowances include : Monthly Subsistence Allowance of 1440 EUR Housing Allowance/Accommodation in PIN guesthouse Time off and Rest: 25 days of holiday annually 10 sick days Travel benefits: Reimbursement of travel expenses with travel to the country of residence once every 6 months of work Reimbursement of costs of visas and vaccinations; assistance with the visa application procedure Reimbursement for the medical check-up before and after the deployment Travel health insurance covering medical care, incl. the repatriation Health and Well-being: 24/7 Medical Support available online Free psychological consultations available online Professional Development: Free access to e-learning platforms and PIN Learning Hub; PIN’s global Induction Training, and tailored capacity-building opportunities\n\nHow to Apply: **How to apply:** If you are interested in this position, send us your CV and short cover letter [via our application form](https://career.peopleinneed.net/?pos=876). Please note only the shortlisted candidates will be contacted. Interviews will be conducted on rolling basis and the vacancy will be closed when filled. *People in Need is committed to preventing any type of unwanted behaviour at work including sexual harassment, exploitation and abuse, lack of integrity and financial misconduct and committed to promoting the welfare of children and adults with whom People in Need involves. People in Need expects all staff to perform job duties and responsibilities in accordance with People in Need code of conduct and key policies (available at:* [*https://www.peopleinneed.net/key-policies-4142gp)*](https://www.peopleinneed.net/key-policies-4142gp))*. People in Need Staff will undertake the appropriate level of training.* *All offers of employment will be subject to satisfactory references and appropriate screening checks, which can include criminal records and terrorism finance checks.* *We are committed to ensuring diversity and gender equality within our organization and encourage applicants from diverse backgrounds to apply.*",
+    "deadline": "2026-07-31T00:00:00+00:00",
+    "published": "2026-06-08T08:23:37+00:00",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://reliefweb.int/node/4215186",
+    "source_domain": "reliefweb.int",
+    "content_type": "job",
+    "scraped_at": "2026-07-16T07:27:14.559Z",
+    "raw_fields": {
+      "career_categories": [
+        "Administration/Finance"
       ],
       "themes": [],
       "experience": "5-9 years",
@@ -306,7 +328,7 @@
     "source_url": "https://reliefweb.int/node/4215013",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.061Z",
+    "scraped_at": "2026-07-16T07:27:14.559Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -330,7 +352,7 @@
     "source_url": "https://reliefweb.int/node/4215006",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.061Z",
+    "scraped_at": "2026-07-16T07:27:14.560Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -354,7 +376,7 @@
     "source_url": "https://reliefweb.int/node/4214618",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.061Z",
+    "scraped_at": "2026-07-16T07:27:14.560Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -378,7 +400,7 @@
     "source_url": "https://reliefweb.int/node/4213525",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.062Z",
+    "scraped_at": "2026-07-16T07:27:14.560Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -400,7 +422,7 @@
     "source_url": "https://reliefweb.int/node/4211950",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.062Z",
+    "scraped_at": "2026-07-16T07:27:14.560Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -414,30 +436,6 @@
     }
   },
   {
-    "title": "MEL Intern",
-    "organization": "One Acre Fund",
-    "description": "About One Acre Fund Founded in 2006, One Acre Fund equips 5.5 million smallholder farmers to make their farms more productive. Across nine countries that together are home to two-thirds of Africa's farmers, we provide high-quality farm supplies, tree seedlings, accessible credit, modern agronomic training, and a wide range of other agricultural services. On average, this model enables any farmer to increase their income and assets on supported land by more than 35 percent, while permanently improving their resilience. This is all made possible by our team of 9,000+ full-time staff, drawn from diverse backgrounds and professions. To learn more, please see our Why Work Here blog post. About the Young Professionals Program One Acre Fund’s Young Professionals Program offers high-performing African graduates meaningful internships and training opportunities at a high-performing, mission-driven organization. Our internships are paid and all interns can expect to receive substantive work assignments working on high-impact projects that support One Acre Fund's operations. When joining, interns will participate in an onboarding program and receive training on how to design and execute projects. Over the period of your internship, you will get the opportunity to work with like-minded individuals and receive learning opportunities to build strong foundations for your future career. About the Role We are seeking two interns for 4-6 month internships to support our Monitoring, Evaluation, and Learning (MEL) team. As an intern, you will contribute to impactful projects aimed at enhancing One Acre Fund’s ability to serve farmers and improve agricultural productivity and incomes. You will gain exposure to real-world data challenges and opportunities to generate actionable insights. You will work as a part of our dynamic MEL team and will directly report to the MEL Leads. Responsibilities Clean and analyze primary data collected from the farmers and markets. Visualize results and compile them into actionable reports and automated dashboards. Career Growth and Development We have a strong culture of constant learning and we deeply invest in our people. You’ll have weekly check-ins with your manager, access to mentorship and training, and regular feedback on your performance. We’ll hold career reviews every one-three months, and set aside time to discuss your aspirations and career goals. You’ll have the opportunity to shape a growing organization and gain rewarding technical experience. Qualifications Across all roles, these are the general qualifications we look for . For this role specifically, you will have: Education in Economics, Statistics, or a related field. Experience cleaning and analyzing large datasets. Proficiency in R or Stata. Skills in data visualization and report writing. Fluency in English. Preferred Start Date As soon as possible Job Location Ethiopia Benefits Interns will be provided with a reasonable stipend for the duration of their contract. Rural area based fellows will be provided assistance in locating suitable housing. Eligibility This role is only open to citizens or permanent residents of Ethiopia. Application Deadline 15 July 2026. We hire on a rolling basis which means that applications are reviewed and processed on a continuous basis until a hire is made. One Acre Fund never asks candidates to pay any money or pay for tests at any stage of the interview process. Official One Acre Fund emails will always arrive from an @ oneacrefund.org address. Please report any suspicious communication here ( globalhotline@oneacrefund.org ), but do not send applications or application materials to this email address. Diversity, Equity, Inclusion (DEI), and anti-racism are deeply connected to our organization’s mission and purpose. One Acre Fund aspires to build a culture where all staff feel consistently valued, represented, and connected – so that our team can thrive as professionals, and achieve exceptional impact for the farmers we serve. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, marital status, disability, gender, gender identity or expression. We are proud to be an equal opportunity workplace.\n\nHow to Apply: [HERE](https://grnh.se/3or3dmr11us)",
-    "deadline": "2026-07-15T00:00:00+00:00",
-    "published": "2026-04-27T05:17:09+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4209382",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.062Z",
-    "raw_fields": {
-      "career_categories": [
-        "Monitoring and Evaluation"
-      ],
-      "themes": [
-        "Agriculture"
-      ],
-      "experience": "0-2 years",
-      "languages": [],
-      "work_type": "Internship"
-    }
-  },
-  {
     "title": "Government Relations Advisor, Africa",
     "organization": "Vital Strategies",
     "description": "PLEASE NOTE: This search is being conducted by Ethiojobs. Please apply DIRECTLY through the link below : https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies _________________ Vital Strategies is an international public health organization. Our programs strengthen public health systems and address the world’s leading causes of illness, injury and death. We currently work in 73 countries, supporting data-driven decision making in government, advancing evidence-based public health policies, and mounting strategic communication campaigns. Vital Strategies’ priorities are driven by the greatest potential to improve and save lives. They include non-communicable disease prevention, tobacco control, road safety, obesity prevention, overdose prevention, environmental health, and vital statistics systems building. Our programs are primarily concentrated in low- and middle-income countries in Africa, Latin America, Asia and the Pacific. Please visit our website at www.vitalstrategies.org to find out more about our work. Vital Strategies is committed to building a diverse, equitable and inclusive (DEI) organization. We believe our programs are strengthened when they are developed and supported by individuals with diverse life experiences, whose understanding of social and cultural issues can help make our work and workforce more inclusive. We welcome applications from people of all backgrounds. Lead Poisoning Prevention Program: Vital Strategies is expanding our program that addresses the issue of lead poisoning in low- and middle-income countries. We plan to build upon existing efforts and interest by collaborating with governmental agencies in countries in Africa, Asia, and Latin America to strengthen health systems and build local expertise in childhood lead exposure to enact sound, cost-effective policies to address exposures. Job Purpose: The position of Government Relations Advisor, Africa will facilitate regional exchange and coordinate high-level engagement and partnership building for the Lead Poisoning Prevention Program across multiple countries in Africa. The role will focus on managing and strengthening relationships with key government and program partners, stakeholders, facilitating regional exchanges and strategy development, and ensuring program alignment with countries’ priorities and global objectives. The incumbent will work closely with country teams to support government engagement, partnership building, share updates on implementation progress, and ensure exchange and coordination among government and consortium partners across the regional portfolio. The role will also provide representation at regional events, support policy engagement, and ensure effective collaboration among regional stakeholders and technical partners. It is preferred that this role be based in Ethiopia, on a full-time hybrid schedule, out of Vital Strategies' office in Addis Ababa, but we are also open to qualified candidates from Ghana, Rwanda, and Tanzania. The candidate must have authorization to work legally in the respective country at the time of hire. Vital Strategies offers highly competitive compensation and comprehensive benefits. The salary range for this position will vary by location, experience and qualifications. Duties and Responsibilities: Regional program coordination and strategic vision - · In coordination with the global team, facilitate regional exchanges and development of regional partnerships and a consistent strategy for government engagement and partnership building in the region; · Initiate and/or sustain government partnerships with ministries, regulatory bodies, and other national and regional institutions in priority countries; · Support project launches and startups in new countries within the region, including support for staff recruitment; · Support country teams in translating strategy into implementation plans, including identification of key capacity gaps to be filled, and government engagement needed to ensure quality and timely delivery of program activities; · Identify and participate in regional opportunities and events that help elevate lead poisoning on national agendas; · Promote multisectoral collaboration and partnership-driven approaches to environmental health policy development; · Manage relationships with regional organizations engaged in lead-related activities, and develop, where appropriate, formal or contractual relationships for discrete programmatic activities in support of the initiative. Partnership Management - · Support country teams in managing key government and institutional partners across the region, as well as non-government organizations in relevant sectors; · Represent Vital Strategies in regional lead poisoning prevention meetings, technical forums, public hearings, and governance bodies in the region; · Support the development and review of reports, policy briefs, and training materials developed in the region; · Promote cross-sector dialogues that support the development of integrated, evidence-based public policies; · Facilitate knowledge exchange across the region; · Coordinate work with national and international partners, ensuring alignment across local and global strategies; · Assist with other duties as specified by the supervisor. Qualifications: Education & Degree - · Master’s degree in public health, public policy/Administration, Global Health, international development, environmental health science, or related field. Skills & Abilities - · Strong government engagement and partnership-building skills, with the ability to establish and sustain relationships with ministries, regulatory bodies, and regional institutions; · Demonstrated ability to coordinate multi-country initiatives and facilitate regional exchange and collaboration; · Strategic thinking skills, with the ability to translate regional strategy into actionable country-level implementation plans; · Strong stakeholder management skills across government, NGOs, multilateral agencies, and technical partners; · Ability to promote and facilitate multisectoral collaboration and policy dialogue; · Ability to monitor program quality, performance, and outcomes across a regional portfolio; · Ability to coordinate and engage program stakeholders and other country teams; · Demonstrated sensitivity in handling confidential information; · Proven ability to interpret public health data, generate actionable insights, and support policy recommendations; · Exhibits strong organizational skills with the ability to manage multiple competing priorities and meet deadlines; demonstrates personal integrity, credibility, and professionalism while taking initiative and making sound, informed decisions in a fast-paced environment; · Professional oral and written proficiency in English; · Excellent interpersonal skills, including the ability to communicate effectively to technical and non-technical audiences, and contribute to an interdisciplinary international team; · Solid knowledge of Microsoft Office Suite (Excel, Word, PowerPoint, Outlook); · Experience working with a geographically distributed team with demonstrated ability to work collaboratively, communicate clearly and regularly, monitor performance, and inspire, engage, and motivate staff; · Demonstrated commitment to contributing to an inclusive working and learning environment. Experience: Required - · Minimum of eight years of experience in government engagement and public health programming, ideally with experience in health policy, environmental health, and/or global health, especially related to lead poisoning prevention or environmental pollution; · Experience in representing organizations with governments, international institutions, and senior stakeholder forums; · Experience managing multi-country programs in Africa; · Experience working with government agencies, regulatory bodies, and public health facilities; · Experience with program reporting and monitoring. Preferred - · Demonstrated experience in communicating scientific and health information to varied audiences; · Experience in using project management platforms. Working Conditions and Physical Requirements: · If hired in Ghana, Rwanda, or Tanzania, the candidate will be hired via Vital Strategies’ Employer of Record on a remote schedule; · The position will require travel up to 30% of the time to visit operating countries in the region to visit field implementation or attend meetings with partners; · The candidate needs to be willing to work with colleagues across different time zones.\n\nHow to Apply: **PLEASE NOTE:** This search is being conducted by Ethiojobs. **Please apply DIRECTLY through the link below**: [https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies](https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies)",
@@ -448,7 +446,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.062Z",
+    "scraped_at": "2026-07-16T07:27:14.561Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -470,7 +468,7 @@
     "source_url": "https://reliefweb.int/node/4197099",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-07-15T07:19:32.063Z",
+    "scraped_at": "2026-07-16T07:27:14.562Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
