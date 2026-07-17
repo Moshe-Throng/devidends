@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-07-16T07:30:54.859Z",
-    "count": 12
+    "scraped_at": "2026-07-17T07:26:56.168Z",
+    "count": 9
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455721",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
+      "scraped_at": "2026-07-17T07:23:22.825Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455723",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
+      "scraped_at": "2026-07-17T07:23:22.825Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455920",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
+      "scraped_at": "2026-07-17T07:23:22.825Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454825",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
+      "scraped_at": "2026-07-17T07:23:22.825Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -89,65 +89,23 @@
       }
     },
     {
-      "title": "Consultancy service to evaluate current call center operations and develop specification for software and hardware to meet \"to be\" requirements",
+      "title": "Procurement of calibrated drape, Thermal ablation machine with accessories and LEEP machines with accessories",
       "organization": "World Bank",
-      "description": "Consultancy service to evaluate current call center operations and develop specification for software and hardware to meet \"to be\" requirements\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-474940-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
-      "deadline": "2026-07-16",
+      "description": "Procurement of calibrated drape, Thermal ablation machine with accessories and LEEP machines with accessories\n\nProject: Innovative Systems to Promote Integrated, Resilient and Enhanced Responses to Women and Girls’ Healt\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOH-527291-GO-RFB\n\nContact: Ethiopia Ministry of Health\nSudan St, Addis Ababa, Ethiopia\nTel: 00251 115517011\nP.O.Box 1234",
+      "deadline": "2026-07-28",
       "published": null,
       "country": "Ethiopia",
       "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454160",
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00456437",
       "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
+      "content_type": "consulting",
+      "scraped_at": "2026-07-17T07:23:38.132Z",
       "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-MOR-474940-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Selection of individual consultant to support the management of ITAS",
-      "organization": "World Bank",
-      "description": "Selection of individual consultant to support the management of ITAS\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-474927-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
-      "deadline": "2026-07-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454164",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-MOR-474927-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Selection of an Individual Consultant as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS)",
-      "organization": "World Bank",
-      "description": "Selection of an Individual Consultant as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS)\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-555525-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
-      "deadline": "2026-07-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454166",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-16T07:27:14.717Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-MOR-555525-CS-INDV",
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Innovative Systems to Promote Integrated, Resilient and Enhanced Responses to Women and Girls’ Healt",
+        "project_id": "P504281",
+        "bid_reference": "ET-MOH-527291-GO-RFB",
         "sector": ""
       }
     },
@@ -162,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-16T07:27:15.025Z",
+      "scraped_at": "2026-07-17T07:23:38.132Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-16T07:27:15.025Z",
+      "scraped_at": "2026-07-17T07:23:38.132Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-16T07:27:15.025Z",
+      "scraped_at": "2026-07-17T07:23:38.132Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,34 +183,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-16T07:27:15.025Z",
+      "scraped_at": "2026-07-17T07:23:38.132Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEP-537754-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Inputs for Ethiopian Livestock Identification and Traceability System (ET-LITS), Ministry of Agriculture",
-      "organization": "World Bank",
-      "description": "Procurement of Inputs for Ethiopian Livestock Identification and Traceability System (ET-LITS), Ministry of Agriculture\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-ILLD-521764-GO-RFB-2\n\nContact: Addis Ababa",
-      "deadline": "2026-07-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00447590",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-07-16T07:27:15.025Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-ILLD-521764-GO-RFB-2",
         "sector": ""
       }
     }

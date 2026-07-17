@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "title": "Communications Associate",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-07-16T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/C2C19DE0D9/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-07-17T07:24:18.538Z",
+    "raw_fields": {
+      "department": [
+        "Country Leadership"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Digital Transformation Product Manager",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-07-16T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/B1575C994C/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-07-17T07:24:18.538Z",
+    "raw_fields": {
+      "department": [
+        "Digital Transformation"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  }
+]
