@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-07-17T07:26:56.168Z",
+    "scraped_at": "2026-07-18T07:06:43.022Z",
     "count": 9
   },
   "opportunities": [
+    {
+      "title": "GFPP - Procurement of individual consulting services for Procurement and procurement manual & guidelines Development",
+      "organization": "World Bank",
+      "description": "GFPP - Procurement of individual consulting services for Procurement and procurement manual & guidelines Development\n\nProject: Livestock and Fisheries Sector Development Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLF-551203-CS-INDV\n\nContact: Megenagna area\nP. Box 19394\nAddis Ababa",
+      "deadline": "2026-07-31",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00453599",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-07-18T07:03:19.013Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Livestock and Fisheries Sector Development Project",
+        "project_id": "P159382",
+        "bid_reference": "ET-MOLF-551203-CS-INDV",
+        "sector": ""
+      }
+    },
     {
       "title": "Selection of Individual Consultant for Technology Governance",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455721",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-17T07:23:22.825Z",
+      "scraped_at": "2026-07-18T07:03:19.013Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455723",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-17T07:23:22.825Z",
+      "scraped_at": "2026-07-18T07:03:19.013Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,34 +78,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455920",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-17T07:23:22.825Z",
+      "scraped_at": "2026-07-18T07:03:19.013Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Horn of Africa Initiative: Regional Economic Corridor Project (Addis-Djibouti Corridor)",
         "project_id": "P174485",
         "bid_reference": "ET-ERA-481600-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Consultancy Service for Supervision of Amibara Right side embankment works of Awash river Basin in different lots",
-      "organization": "World Bank",
-      "description": "Consultancy Service for Supervision of Amibara Right side embankment works of Awash river Basin in different lots\n\nProject: Ethiopia Flood Management Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOWE-547334-CS-QCBS\n\nContact: Haile Gebreselassie Road\nP.O. Box 5744\nAddis Ababa\nEthiopia",
-      "deadline": "2026-07-17",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00454825",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-17T07:23:22.825Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QCBS",
-        "project_name": "Ethiopia Flood Management Project",
-        "project_id": "P176327",
-        "bid_reference": "ET-MOWE-547334-CS-QCBS",
         "sector": ""
       }
     },
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00456437",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-17T07:23:38.132Z",
+      "scraped_at": "2026-07-18T07:03:19.240Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-17T07:23:38.132Z",
+      "scraped_at": "2026-07-18T07:03:19.240Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-17T07:23:38.132Z",
+      "scraped_at": "2026-07-18T07:03:19.240Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-17T07:23:38.132Z",
+      "scraped_at": "2026-07-18T07:03:19.240Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-17T07:23:38.132Z",
+      "scraped_at": "2026-07-18T07:03:19.240Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
