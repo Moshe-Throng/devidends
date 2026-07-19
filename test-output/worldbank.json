@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-07-18T07:06:43.022Z",
-    "count": 9
+    "scraped_at": "2026-07-19T07:34:18.680Z",
+    "count": 10
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00453599",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-18T07:03:19.013Z",
+      "scraped_at": "2026-07-19T07:31:19.102Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455721",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-18T07:03:19.013Z",
+      "scraped_at": "2026-07-19T07:31:19.102Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455723",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-18T07:03:19.013Z",
+      "scraped_at": "2026-07-19T07:31:19.102Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -78,13 +78,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455920",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-18T07:03:19.013Z",
+      "scraped_at": "2026-07-19T07:31:19.102Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Horn of Africa Initiative: Regional Economic Corridor Project (Addis-Djibouti Corridor)",
         "project_id": "P174485",
         "bid_reference": "ET-ERA-481600-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement for Construction of galil Medium Span Bridge 40M in Bililbur project Woreda.",
+      "organization": "World Bank",
+      "description": "Procurement for Construction of galil Medium Span Bridge 40M in Bililbur project Woreda.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-SOM- RPCU-557410-CW-RFB\n\nContact: Jigjiga, Ethiopia",
+      "deadline": "2026-08-20",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457415",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-SOM- RPCU-557410-CW-RFB",
         "sector": ""
       }
     },
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00456437",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-18T07:03:19.240Z",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-18T07:03:19.240Z",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-18T07:03:19.240Z",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-18T07:03:19.240Z",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-18T07:03:19.240Z",
+      "scraped_at": "2026-07-19T07:31:19.392Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
