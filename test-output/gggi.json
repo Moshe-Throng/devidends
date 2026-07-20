@@ -1,5 +1,45 @@
 [
   {
+    "title": "Carbon Pricing Senior Officer",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-03 00:00:00",
+    "published": "2026-05-17 00:00:00",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://careers.gggi.org/vacancy/carbon-pricing-senior-officer-611673.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Ethiopia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "INVESTMENT AND PARTNERSHIP LEAD, GREEN TRUST FUND UNIT",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-10 00:00:00",
+    "published": "2026-07-16 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/investment-and-partnership-lead-green-trust-fund-unit-615775.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
     "title": "Consultant for the Climate Risk Disclosure Guidelines, Fiji",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Individual Consultant (Deliverable)",
@@ -10,7 +50,7 @@
     "source_url": "https://careers.gggi.org/vacancy/consultant-for-the-climate-risk-disclosure-guidelines-fiji-615670.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -30,7 +70,7 @@
     "source_url": "https://careers.gggi.org/vacancy/regional-senior-officer-cfan-615389.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -50,7 +90,7 @@
     "source_url": "https://careers.gggi.org/vacancy/ctaf-ai-secretariat-planning-design-and-operations-intern-615277.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -70,7 +110,7 @@
     "source_url": "https://careers.gggi.org/vacancy/prefeasibility-study-for-bankable-biodiesel-project-in-enb-papua-new-guinea-614864.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -90,7 +130,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-global-green-growth-institute-internship-program-mel-vanuatu-615276.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -110,7 +150,7 @@
     "source_url": "https://careers.gggi.org/vacancy/ev-financing-expert-consultant-vanuatu-614025.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -130,7 +170,7 @@
     "source_url": "https://careers.gggi.org/vacancy/global-green-growth-institute-internship-program-613462.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -150,51 +190,11 @@
     "source_url": "https://careers.gggi.org/vacancy/mongolia-program-lead-613949.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
         "Mongolia"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "CTAF AI Secretariat Coding Intern",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Internship",
-    "deadline": "2026-07-19 00:00:00",
-    "published": "2026-07-03 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/ctaf-ai-secretariat-coding-intern-614869.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
-    "raw_fields": {
-      "contract_type": "Internship",
-      "all_locations": [
-        "Republic of Korea, HQ"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "HQ: Internship with Human Resources Office",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Internship",
-    "deadline": "2026-07-19 00:00:00",
-    "published": "2026-07-07 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/hq-internship-with-human-resources-office-615060.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
-    "raw_fields": {
-      "contract_type": "Internship",
-      "all_locations": [
-        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
@@ -210,7 +210,7 @@
     "source_url": "https://careers.gggi.org/vacancy/regional-communications-senior-associate-612488.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -230,7 +230,7 @@
     "source_url": "https://careers.gggi.org/vacancy/capacity-and-market-needs-assessment-of-clean-cooking-enterprises-614750.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -250,7 +250,7 @@
     "source_url": "https://careers.gggi.org/vacancy/individual-consultant-prefeasibility-studies-for-pellet-briquette-value-c-614767.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -270,7 +270,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-communication-intern-for-qatar-614302.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -290,7 +290,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-carbon-finance-officer-614746.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-07-19T07:31:53.159Z",
+    "scraped_at": "2026-07-20T08:13:45.809Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
