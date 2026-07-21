@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-07-20T08:16:06.219Z",
-    "count": 10
+    "scraped_at": "2026-07-21T07:41:05.397Z",
+    "count": 8
   },
   "opportunities": [
     {
@@ -15,55 +15,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00453599",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-20T08:12:29.542Z",
+      "scraped_at": "2026-07-21T07:37:28.343Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Livestock and Fisheries Sector Development Project",
         "project_id": "P159382",
         "bid_reference": "ET-MOLF-551203-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Selection of Individual Consultant for Technology Governance",
-      "organization": "World Bank",
-      "description": "Selection of Individual Consultant for Technology Governance\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-544238-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-07-20",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455721",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-20T08:12:29.542Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-CSC-544238-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Selection of Individual Consultant for Monitoring, Customizing, and developing Software.",
-      "organization": "World Bank",
-      "description": "Selection of Individual Consultant for Monitoring, Customizing, and developing Software.\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-CSC-544241-CS-INDV\n\nContact: 2Q47+26X, Unnamed Road, Addis Ababa",
-      "deadline": "2026-07-20",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455723",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-20T08:12:29.542Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
-        "project_id": "P178808",
-        "bid_reference": "ET-CSC-544241-CS-INDV",
         "sector": ""
       }
     },
@@ -78,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455920",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-20T08:12:29.542Z",
+      "scraped_at": "2026-07-21T07:37:28.343Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457415",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00456437",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00450900",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451715",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-20T08:12:29.922Z",
+      "scraped_at": "2026-07-21T07:37:28.914Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
