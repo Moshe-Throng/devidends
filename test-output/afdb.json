@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-07-21T07:38:15.642Z",
+    "scraped_at": "2026-07-22T07:38:35.313Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +29,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-07-21T07:38:15.643Z",
+    "scraped_at": "2026-07-22T07:38:35.313Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +48,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Sanitation-Officer-%28TA%29%2C-AWTF/1412896733/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-07-21T07:38:15.643Z",
+    "scraped_at": "2026-07-22T07:38:35.313Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +67,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Evaluation-Officer%2C-IDEV2/1409531233/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-07-21T07:38:15.643Z",
+    "scraped_at": "2026-07-22T07:38:35.313Z",
     "raw_fields": {
       "region": "",
       "category": "",
