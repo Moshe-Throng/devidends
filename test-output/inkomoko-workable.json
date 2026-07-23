@@ -10,10 +10,30 @@
     "source_url": "https://apply.workable.com/inkomoko/j/C2C19DE0D9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-07-22T07:38:31.091Z",
+    "scraped_at": "2026-07-23T07:39:36.376Z",
     "raw_fields": {
       "department": [
         "Country Leadership"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
+    "title": "Business Advisor Talent Pool - Ethiopia",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-07-22T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/87B84B5B76/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-07-23T07:39:36.376Z",
+    "raw_fields": {
+      "department": [
+        "Business Growth Services"
       ],
       "work_type": ""
     },
@@ -30,7 +50,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/197B2C5316/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-07-22T07:38:31.091Z",
+    "scraped_at": "2026-07-23T07:39:36.376Z",
     "raw_fields": {
       "department": [
         "Communications"
@@ -50,7 +70,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/B1575C994C/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-07-22T07:38:31.091Z",
+    "scraped_at": "2026-07-23T07:39:36.376Z",
     "raw_fields": {
       "department": [
         "Digital Transformation"
