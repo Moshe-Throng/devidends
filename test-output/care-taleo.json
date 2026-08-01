@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7977",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.697Z",
+    "scraped_at": "2026-08-01T07:32:29.387Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8004",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.697Z",
+    "scraped_at": "2026-08-01T07:32:29.387Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8018",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.697Z",
+    "scraped_at": "2026-08-01T07:32:29.387Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "COUNTRY DIRECTOR ATLANTIC CLUSTER (Ghana, Sierra Leone and Liberia)",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "INTL PROGRAMS AND OPERATIONS",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8026",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-08-01T07:32:29.387Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7968",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8005",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8025",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8017",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,21 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7978",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "DIRECTOR, PRINCIPAL GIFTS",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "RESOURCE DEVELOPMENT LEAD",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7994",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.698Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7995",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-07-31T07:57:19.699Z",
+    "scraped_at": "2026-08-01T07:32:29.388Z",
     "_sourceId": "care-taleo"
   }
 ]

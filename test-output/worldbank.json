@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-07-31T07:59:35.576Z",
-    "count": 13
+    "scraped_at": "2026-08-01T07:35:50.896Z",
+    "count": 11
   },
   "opportunities": [
     {
@@ -15,34 +15,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457534",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-07-31T07:56:20.167Z",
+      "scraped_at": "2026-08-01T07:32:21.662Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
         "project_id": "P176731",
         "bid_reference": "ET-EEU-530084-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "GFPP - Procurement of individual consulting services for Procurement and procurement manual & guidelines Development",
-      "organization": "World Bank",
-      "description": "GFPP - Procurement of individual consulting services for Procurement and procurement manual & guidelines Development\n\nProject: Livestock and Fisheries Sector Development Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLF-551203-CS-INDV\n\nContact: Megenagna area\nP. Box 19394\nAddis Ababa",
-      "deadline": "2026-07-31",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00453599",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-07-31T07:56:20.167Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Livestock and Fisheries Sector Development Project",
-        "project_id": "P159382",
-        "bid_reference": "ET-MOLF-551203-CS-INDV",
         "sector": ""
       }
     },
@@ -57,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00459349",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458345",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458356",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458335",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458354",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457311",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457415",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,34 +225,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00455716",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
+      "scraped_at": "2026-08-01T07:32:21.945Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-545745-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Supply and Installation of Water supply system for drilling purposes for Alalobad and Dubti-Tendaho Site",
-      "organization": "World Bank",
-      "description": "Supply and Installation of Water supply system for drilling purposes for Alalobad and Dubti-Tendaho Site\n\nProject: Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EEP-537754-CW-RFB\n\nContact: P.O.BOX 15881 Addis Ababa",
-      "deadline": "2026-07-31",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00451263",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-07-31T07:56:20.415Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
-        "project_id": "P176731",
-        "bid_reference": "ET-EEP-537754-CW-RFB",
         "sector": ""
       }
     }
