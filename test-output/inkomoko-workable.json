@@ -1,25 +1,5 @@
 [
   {
-    "title": "TOR: Field Content Collection: Photography & Videography - Ethiopia",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-07-21T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://apply.workable.com/inkomoko/j/197B2C5316/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-08-03T08:35:57.012Z",
-    "raw_fields": {
-      "department": [
-        "Communications"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
     "title": "Business Advisor Talent Pool - Ethiopia",
     "organization": "Inkomoko",
     "description": "",
@@ -30,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/87B84B5B76/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-08-03T08:35:57.012Z",
+    "scraped_at": "2026-08-04T07:44:48.310Z",
     "raw_fields": {
       "department": [
         "Business Growth Services"
