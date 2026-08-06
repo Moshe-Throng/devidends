@@ -1,176 +1,36 @@
 [
   {
-    "title": "Senior Carbon Finance Officer (deadline extended)",
+    "title": "FINANCE AND ADMINISTRATION ASSISTANT, FIJI",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-09-06 00:00:00",
-    "published": "2026-07-02 00:00:00",
-    "country": "Philippines",
-    "city": "Manila",
-    "source_url": "https://careers.gggi.org/vacancy/senior-carbon-finance-officer-deadline-extended-614746.html",
+    "deadline": "2026-08-19 00:00:00",
+    "published": "2026-08-06 00:00:00",
+    "country": "Fiji",
+    "city": "Suva ",
+    "source_url": "https://careers.gggi.org/vacancy/finance-and-administration-assistant-fiji-617008.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
-        "Philippines"
+        "Fiji"
       ]
     },
     "_sourceId": "gggi"
   },
   {
-    "title": "Individual Consultant - Kenya Green Hydrogen (H2X)",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-11 00:00:00",
-    "published": "2026-08-03 00:00:00",
-    "country": "Republic of Kenya",
-    "city": "Nairobi",
-    "source_url": "https://careers.gggi.org/vacancy/individual-consultant-kenya-green-hydrogen-h2x-616870.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Republic of Kenya"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Energy Efficiency Consultant (Electricity Generation and Distribution,Transport)",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-11 00:00:00",
-    "published": "2026-07-10 00:00:00",
-    "country": "Rwanda",
-    "city": "Kigali",
-    "source_url": "https://careers.gggi.org/vacancy/energy-efficiency-consultant-electricity-generation-and-distributiontransport-615464.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Rwanda"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Bioenergy Consultant",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-23 00:00:00",
-    "published": "2026-08-03 00:00:00",
-    "country": "Senegal",
-    "city": "Dakar",
-    "source_url": "https://careers.gggi.org/vacancy/bioenergy-consultant-616868.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Senegal"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Energy Efficiency Consultant (Agriculture, Waste, and Industry)",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-10 00:00:00",
-    "published": "2026-07-10 00:00:00",
-    "country": "Rwanda",
-    "city": "Kigali",
-    "source_url": "https://careers.gggi.org/vacancy/energy-efficiency-consultant-agriculture-waste-and-industry-615463.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Rwanda"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Sustainable and Climate Finance Initiatives Consultant, Mexico",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-15 00:00:00",
-    "published": "2026-07-31 00:00:00",
-    "country": "Mexico",
-    "city": "Mexico City",
-    "source_url": "https://careers.gggi.org/vacancy/sustainable-and-climate-finance-initiatives-consultant-mexico-616773.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Mexico"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Eco-intensification of Hass Avocado Cultivation. (ANDI Bioeconomy Hub 2025)",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Deliverable)",
-    "deadline": "2026-08-11 00:00:00",
-    "published": "2026-07-31 00:00:00",
-    "country": "Colombia",
-    "city": "Antioquia (Colombia)",
-    "source_url": "https://careers.gggi.org/vacancy/ecointensification-of-hass-avocado-cultivation-andi-bioeconomy-hub-2025-616770.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Deliverable)",
-      "all_locations": [
-        "Colombia"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Consultant, GVCM Pilot Project Development and Implementation Support",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Individual Consultant (Daily Rate)",
-    "deadline": "2026-08-14 00:00:00",
-    "published": "2026-07-30 00:00:00",
-    "country": "Republic of Korea, HQ",
-    "city": "Seoul",
-    "source_url": "https://careers.gggi.org/vacancy/consultant-gvcm-pilot-project-development-and-implementation-support-616697.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Individual Consultant (Daily Rate)",
-      "all_locations": [
-        "Republic of Korea, HQ"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Bioeconomy Officer, Oman ARISE Program",
+    "title": "Senior Associate, Data Analytics - Data collection Mechanism",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-08-13 00:00:00",
-    "published": "2026-07-29 00:00:00",
+    "deadline": "2026-08-16 00:00:00",
+    "published": "2026-07-07 00:00:00",
     "country": "Oman",
-    "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/bioeconomy-officer-oman-arise-program-616619.html",
+    "city": "Salalah ",
+    "source_url": "https://careers.gggi.org/vacancy/senior-associate-data-analytics-data-collection-mechanism-615058.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -180,17 +40,57 @@
     "_sourceId": "gggi"
   },
   {
-    "title": "Chief of Party (ARISE Program Lead)",
+    "title": "Senior Green Entrepreneurship & Accelerator Program Officer",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-08-20 00:00:00",
-    "published": "2026-07-29 00:00:00",
+    "deadline": "2026-08-16 00:00:00",
+    "published": "2026-07-07 00:00:00",
     "country": "Oman",
     "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/chief-of-party-arise-program-lead-616609.html",
+    "source_url": "https://careers.gggi.org/vacancy/senior-green-entrepreneurship-accelerator-program-officer-615077.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Monitoring, Evaluation, Learning and Data Officer",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-16 00:00:00",
+    "published": "2026-07-07 00:00:00",
+    "country": "Oman",
+    "city": "Salalah",
+    "source_url": "https://careers.gggi.org/vacancy/monitoring-evaluation-learning-and-data-officer-615072.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Senior Infrastructure Investment Officer",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-16 00:00:00",
+    "published": "2026-07-07 00:00:00",
+    "country": "Oman",
+    "city": "Muscat",
+    "source_url": "https://careers.gggi.org/vacancy/senior-infrastructure-investment-officer-615069.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -203,14 +103,14 @@
     "title": "Communications Officer, Oman ARISE Program",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-08-13 00:00:00",
+    "deadline": "2026-08-23 00:00:00",
     "published": "2026-07-29 00:00:00",
     "country": "Oman",
     "city": "Salalah",
     "source_url": "https://careers.gggi.org/vacancy/communications-officer-oman-arise-program-616620.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -220,17 +120,17 @@
     "_sourceId": "gggi"
   },
   {
-    "title": "Community Engagement & Campaign Assistant (Animator), Oman ARISE Program",
+    "title": "Chief of Party (ARISE Program Lead)",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-08-13 00:00:00",
+    "deadline": "2026-08-23 00:00:00",
     "published": "2026-07-29 00:00:00",
     "country": "Oman",
     "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/community-engagement-campaign-assistant-animator-oman-arise-program-616622.html",
+    "source_url": "https://careers.gggi.org/vacancy/chief-of-party-arise-program-lead-616609.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -243,14 +143,54 @@
     "title": "Senior Program Assistant, Oman ARISE Program",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Staff",
-    "deadline": "2026-08-13 00:00:00",
+    "deadline": "2026-08-23 00:00:00",
     "published": "2026-07-29 00:00:00",
     "country": "Oman",
     "city": "Salalah",
     "source_url": "https://careers.gggi.org/vacancy/senior-program-assistant-oman-arise-program-616625.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Bioeconomy Officer, Oman ARISE Program",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-23 00:00:00",
+    "published": "2026-07-29 00:00:00",
+    "country": "Oman",
+    "city": "Salalah",
+    "source_url": "https://careers.gggi.org/vacancy/bioeconomy-officer-oman-arise-program-616619.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Community Engagement & Campaign Assistant (Animator), Oman ARISE Program",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-23 00:00:00",
+    "published": "2026-07-29 00:00:00",
+    "country": "Oman",
+    "city": "Salalah",
+    "source_url": "https://careers.gggi.org/vacancy/community-engagement-campaign-assistant-animator-oman-arise-program-616622.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -270,11 +210,171 @@
     "source_url": "https://careers.gggi.org/vacancy/-investment-officer-africa-regional-office-616671.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
         "Cote d'Ivoire"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Senior Carbon Finance Officer (deadline extended)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-06 00:00:00",
+    "published": "2026-07-02 00:00:00",
+    "country": "Philippines",
+    "city": "Manila",
+    "source_url": "https://careers.gggi.org/vacancy/senior-carbon-finance-officer-deadline-extended-614746.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Philippines"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Individual Consultant - Kenya Green Hydrogen (H2X)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-11 00:00:00",
+    "published": "2026-08-03 00:00:00",
+    "country": "Republic of Kenya",
+    "city": "Nairobi",
+    "source_url": "https://careers.gggi.org/vacancy/individual-consultant-kenya-green-hydrogen-h2x-616870.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Republic of Kenya"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Energy Efficiency Consultant (Electricity Generation and Distribution,Transport)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-11 00:00:00",
+    "published": "2026-07-10 00:00:00",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "source_url": "https://careers.gggi.org/vacancy/energy-efficiency-consultant-electricity-generation-and-distributiontransport-615464.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Rwanda"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Bioenergy Consultant",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-23 00:00:00",
+    "published": "2026-08-03 00:00:00",
+    "country": "Senegal",
+    "city": "Dakar",
+    "source_url": "https://careers.gggi.org/vacancy/bioenergy-consultant-616868.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Senegal"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Energy Efficiency Consultant (Agriculture, Waste, and Industry)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-10 00:00:00",
+    "published": "2026-07-10 00:00:00",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "source_url": "https://careers.gggi.org/vacancy/energy-efficiency-consultant-agriculture-waste-and-industry-615463.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Rwanda"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Sustainable and Climate Finance Initiatives Consultant, Mexico",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-15 00:00:00",
+    "published": "2026-07-31 00:00:00",
+    "country": "Mexico",
+    "city": "Mexico City",
+    "source_url": "https://careers.gggi.org/vacancy/sustainable-and-climate-finance-initiatives-consultant-mexico-616773.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Mexico"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Eco-intensification of Hass Avocado Cultivation. (ANDI Bioeconomy Hub 2025)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Deliverable)",
+    "deadline": "2026-08-11 00:00:00",
+    "published": "2026-07-31 00:00:00",
+    "country": "Colombia",
+    "city": "Antioquia (Colombia)",
+    "source_url": "https://careers.gggi.org/vacancy/ecointensification-of-hass-avocado-cultivation-andi-bioeconomy-hub-2025-616770.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Deliverable)",
+      "all_locations": [
+        "Colombia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Consultant, GVCM Pilot Project Development and Implementation Support",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Daily Rate)",
+    "deadline": "2026-08-14 00:00:00",
+    "published": "2026-07-30 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/consultant-gvcm-pilot-project-development-and-implementation-support-616697.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Daily Rate)",
+      "all_locations": [
+        "Republic of Korea, HQ"
       ]
     },
     "_sourceId": "gggi"
@@ -290,51 +390,11 @@
     "source_url": "https://careers.gggi.org/vacancy/article-6-national-expert-consultant-operationalization-of-carbon-markets-peru-616495.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
         "Peru"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Senior Associate, Data Analytics - Data collection Mechanism",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-08-11 00:00:00",
-    "published": "2026-07-07 00:00:00",
-    "country": "Oman",
-    "city": "Salalah ",
-    "source_url": "https://careers.gggi.org/vacancy/senior-associate-data-analytics-data-collection-mechanism-615058.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Oman"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Monitoring, Evaluation, Learning and Data Officer",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-08-07 00:00:00",
-    "published": "2026-07-07 00:00:00",
-    "country": "Oman",
-    "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/monitoring-evaluation-learning-and-data-officer-615072.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Oman"
       ]
     },
     "_sourceId": "gggi"
@@ -350,51 +410,11 @@
     "source_url": "https://careers.gggi.org/vacancy/climate-finance-senior-officer-project-manager-616017.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
         "Ethiopia"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Senior Infrastructure Investment Officer",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-08-07 00:00:00",
-    "published": "2026-07-07 00:00:00",
-    "country": "Oman",
-    "city": "Muscat",
-    "source_url": "https://careers.gggi.org/vacancy/senior-infrastructure-investment-officer-615069.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Oman"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Senior Green Entrepreneurship & Accelerator Program Officer",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-08-07 00:00:00",
-    "published": "2026-07-07 00:00:00",
-    "country": "Oman",
-    "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/senior-green-entrepreneurship-accelerator-program-officer-615077.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Oman"
       ]
     },
     "_sourceId": "gggi"
@@ -410,7 +430,7 @@
     "source_url": "https://careers.gggi.org/vacancy/sustainable-finance-senior-associate-latin-america-and-the-caribbean-615945.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -430,7 +450,7 @@
     "source_url": "https://careers.gggi.org/vacancy/investment-and-partnership-lead-green-trust-fund-unit-615775.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-05T07:45:39.915Z",
+    "scraped_at": "2026-08-06T07:45:23.356Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
