@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4224779",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.039Z",
+    "scraped_at": "2026-08-11T05:57:32.040Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -32,7 +32,7 @@
     "source_url": "https://reliefweb.int/node/4224663",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.041Z",
+    "scraped_at": "2026-08-11T05:57:32.040Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -54,7 +54,7 @@
     "source_url": "https://reliefweb.int/node/4224434",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.041Z",
+    "scraped_at": "2026-08-11T05:57:32.040Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -78,7 +78,7 @@
     "source_url": "https://reliefweb.int/node/4224453",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.041Z",
+    "scraped_at": "2026-08-11T05:57:32.041Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -102,7 +102,7 @@
     "source_url": "https://reliefweb.int/node/4224280",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.041Z",
+    "scraped_at": "2026-08-11T05:57:32.041Z",
     "raw_fields": {
       "career_categories": [
         "Other"
@@ -126,7 +126,7 @@
     "source_url": "https://reliefweb.int/node/4223846",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.041Z",
+    "scraped_at": "2026-08-11T05:57:32.041Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -148,7 +148,7 @@
     "source_url": "https://reliefweb.int/node/4223664",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.042Z",
+    "scraped_at": "2026-08-11T05:57:32.042Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -170,7 +170,7 @@
     "source_url": "https://reliefweb.int/node/4222949",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.042Z",
+    "scraped_at": "2026-08-11T05:57:32.042Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -194,7 +194,7 @@
     "source_url": "https://reliefweb.int/node/4222633",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.042Z",
+    "scraped_at": "2026-08-11T05:57:32.042Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -218,7 +218,7 @@
     "source_url": "https://reliefweb.int/node/4216605",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.043Z",
+    "scraped_at": "2026-08-11T05:57:32.042Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -240,7 +240,7 @@
     "source_url": "https://reliefweb.int/node/4216437",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.043Z",
+    "scraped_at": "2026-08-11T05:57:32.043Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -262,7 +262,7 @@
     "source_url": "https://reliefweb.int/node/4216366",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.043Z",
+    "scraped_at": "2026-08-11T05:57:32.043Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -284,34 +284,10 @@
     "source_url": "https://reliefweb.int/node/4215013",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.044Z",
+    "scraped_at": "2026-08-11T05:57:32.043Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
-      ],
-      "themes": [
-        "Agriculture"
-      ],
-      "experience": "3-4 years",
-      "languages": [],
-      "work_type": "Job"
-    }
-  },
-  {
-    "title": "Ethiopia Logistics & Operations Senior Coordinator",
-    "organization": "One Acre Fund",
-    "description": "About One Acre Fund Founded in 2006, One Acre Fund equips 5.5 million smallholder farmers to make their farms more productive. Across nine countries that together are home to two-thirds of Africa's farmers, we provide high-quality farm supplies, tree seedlings, accessible credit, modern agronomic training, and a wide range of other agricultural services. On average, this model enables any farmer to increase their income and assets on supported land by more than 35 percent, while permanently improving their resilience. This is all made possible by our team of 9,000+ full-time staff, drawn from diverse backgrounds and professions. To learn more, please see our Why Work Here blog post. One Acre Fund has been working with farmers in the Amhara region of Ethiopia since 2014, with a specific focus on trees since 2018. The Ethiopia program has now expanded into the South Region of Ethiopia in 2024. Our aim with the tree program is to provide not only short-term income opportunities but also long-term benefits, such as soil health improvements and erosion control, so that farmers build resilience over time About the Role As the Logistics & Operations Coordinator, you are accountable for the end-to-end execution of all logistics and business operations. You own the input delivery process and warehouse operations, ensuring every task is completed on time, at high quality, and within defined standards. You’ll serve as the primary execution owner, translating strategic plans into field action, resolving challenges in real-time, and ensuring seamless day-to-day operations across all functions. Responsibilities Input Delivery Execution Ownership Take full ownership of the input delivery process, making sure plans turn into real, timely support for program activities on the ground. Work closely with transport service providers and field teams to solve problems quickly and keep deliveries on track, even when challenges come up. Ensure every delivery is completed fully and responsibly, keeping losses extremely low and maintaining strong accountability. Lead post-delivery checks, including inventory reconciliation and back-checks, to make sure what was planned is what actually reached farmers. Track all the delivery discrepancies and make sure top up delivery is made Warehouse & Inventory Operations Management Oversee day-to-day warehouse operations across different locations, ensuring inventories are safe, organized, and well-run. Take responsibility for stock accuracy by leading regular counts and following up on any differences to understand and fix root causes. Support the setup and readiness of new storage sites as the program grows, ensuring they are fully prepared to serve field operations. Operational Tools & Reporting Maintain and improve key operational tools and trackers so that everyone is working from the same, reliable information. Regularly track and share progress, challenges, and risks with stakeholders in a simple and transparent way. Ensure data is consistent across systems so teams can make informed decisions and reports can be trusted. In-house Printing & Operational Support Execution Manage the full printing process for operational materials, making sure everything is accurate and ready when teams need it. Work with different teams to check that all materials are complete and correct before distribution. Oversee the availability of essential supplies and consumables so that both field and office teams can work without interruption. People Management & Team Leadership Supervise and support logistics and operations staff, helping them build their skills and grow in their roles. Coordinate casual staff, data collectors, and Quality Control teams, ensuring tasks are clear and work is well organized. Set clear expectations and support teams to meet them, creating a positive and accountable working environment. Career Growth and Development We have a strong culture of constant learning and we invest in developing our people. You’ll have weekly check-ins with your manager, access to mentorship and training programs, and regular feedback on your performance. We hold career reviews every six months, and set aside time to discuss your aspirations and career goals. You’ll have the opportunity to shape a growing organization and build a rewarding long-term career. Qualifications Across all roles, these are the general qualifications we look for . For this role specifically, you will have: Proven ability to manage end-to-end operations in logistics, supply chain, or field programs Strong track record of delivering complex operations on time and at high quality Advanced proficiency in Excel/Google Sheets (comfortable managing and improving tools) Experience with Warehouse Management Systems (e.g., SAP Business One) is an advantage Ability to quickly identify issues and implement practical solutions in dynamic environments. Experience managing teams and coordinating large-scale casual labor. 3+ years in logistics, supply chain, or operations management Preferred Start Date As soon as possible Job Location Bahir Dar, Ethiopia -with frequent field Visits of to 25% Benefits Health insurance, paid time off Eligibility This role is open to Ethiopian citizens, permanent residents, and origin cardholders. Application Deadline 10 August 2026. Please note that we hire on a rolling basis which means that applications are reviewed and processed on a continuous basis until a hire is made. One Acre Fund never asks candidates to pay any money or pay for tests at any stage of the interview process. Official One Acre Fund emails will always arrive from an @ oneacrefund.org address. Please report any suspicious communication here ( globalhotline@oneacrefund.org ), but do not send applications or application materials to this email address. Diversity, Equity, Inclusion (DEI), and anti-racism are deeply connected to our organization’s mission and purpose. One Acre Fund aspires to build a culture where all staff feel consistently valued, represented, and connected – so that our team can thrive as professionals, and achieve exceptional impact for the farmers we serve. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, marital status, disability, gender, gender identity or expression. We are proud to be an equal opportunity workplace.\n\nHow to Apply: Apply here: https://grnh.se/vvw11o7g1us",
-    "deadline": "2026-08-10T00:00:00+00:00",
-    "published": "2026-06-05T11:57:24+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4215006",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.044Z",
-    "raw_fields": {
-      "career_categories": [
-        "Logistics/Procurement"
       ],
       "themes": [
         "Agriculture"
@@ -332,7 +308,7 @@
     "source_url": "https://reliefweb.int/node/4214618",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.044Z",
+    "scraped_at": "2026-08-11T05:57:32.044Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -356,7 +332,7 @@
     "source_url": "https://reliefweb.int/node/4214420",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.044Z",
+    "scraped_at": "2026-08-11T05:57:32.044Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -378,7 +354,7 @@
     "source_url": "https://reliefweb.int/node/4214419",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.044Z",
+    "scraped_at": "2026-08-11T05:57:32.044Z",
     "raw_fields": {
       "career_categories": [
         "Information and Communications Technology"
@@ -400,7 +376,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.045Z",
+    "scraped_at": "2026-08-11T05:57:32.044Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -422,7 +398,7 @@
     "source_url": "https://reliefweb.int/node/4197099",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:15:46.045Z",
+    "scraped_at": "2026-08-11T05:57:32.044Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"

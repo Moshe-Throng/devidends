@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8004",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8026",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7968",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8005",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8025",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +80,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7978",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.212Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "DIRECTOR, PARTNERSHIPS",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "PSAI - PROG STRATEGY INNOVATION",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8029",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8019",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.213Z",
+    "scraped_at": "2026-08-11T05:58:17.540Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,7 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.213Z",
+    "scraped_at": "2026-08-11T05:58:17.541Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,21 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7995",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.213Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "EXECUTIVE DIRECTOR OF PERFORMANCE, ANALYTICS AND AI",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "RESOURCE DEVELOPMENT LEAD",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8024",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-08-10T06:16:16.213Z",
+    "scraped_at": "2026-08-11T05:58:17.541Z",
     "_sourceId": "care-taleo"
   }
 ]
