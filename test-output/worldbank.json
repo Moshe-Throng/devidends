@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-08-21T05:41:39.492Z",
-    "count": 13
+    "scraped_at": "2026-08-22T05:36:35.615Z",
+    "count": 15
   },
   "opportunities": [
+    {
+      "title": "consulting Services for Construction Skills Training-through Framework Agreement",
+      "organization": "World Bank",
+      "description": "consulting Services for Construction Skills Training-through Framework Agreement\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Quality Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLS-556908-CS-QBS\n\nContact: Addis Ababa",
+      "deadline": "2026-09-09",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463244",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-08-22T05:33:45.397Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QBS",
+        "project_name": "Ethiopia Education and Skills for Employability Project",
+        "project_id": "P177881",
+        "bid_reference": "ET-MOLS-556908-CS-QBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Consulting Services for Hospitality & Tourism Skills Training-through Framework Agreement",
+      "organization": "World Bank",
+      "description": "Consulting Services for Hospitality & Tourism Skills Training-through Framework Agreement\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Quality Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLS-556894-CS-QBS\n\nContact: Addis Ababa",
+      "deadline": "2026-09-09",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463405",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-08-22T05:33:45.397Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QBS",
+        "project_name": "Ethiopia Education and Skills for Employability Project",
+        "project_id": "P177881",
+        "bid_reference": "ET-MOLS-556894-CS-QBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Procurement of consultancy service for Network Upgrading, Strengthening and Rehabilitating to improve the reliability of supply in towns under phase II, package I (Bambasi, Gilgele Beles,Pawi, Meti, Dima, Bedele, Metu, Ghimbi Dembi Dolo, Chiro, Deder,",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457534",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-08-21T05:38:44.506Z",
+      "scraped_at": "2026-08-22T05:33:45.397Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458345",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -57,34 +99,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Productive Safety Net Project 6",
         "project_id": "P511478",
         "bid_reference": "ET-MOA/FSCD-555575-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Tigray and Afar regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Tigray and Afar regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555578-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555578-NC-RFB",
         "sector": ""
       }
     },
@@ -99,13 +120,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458356",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Productive Safety Net Project 6",
         "project_id": "P511478",
         "bid_reference": "ET-MOA/FSCD-555574-NC-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Cluster of Tigray and Afar regional e-payment service",
+      "organization": "World Bank",
+      "description": "Cluster of Tigray and Afar regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555578-NC-RFB\n\nContact: Addis Ababa,",
+      "deadline": "2026-09-08",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Productive Safety Net Project 6",
+        "project_id": "P511478",
+        "bid_reference": "ET-MOA/FSCD-555578-NC-RFB",
         "sector": ""
       }
     },
@@ -120,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458335",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458354",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00461642",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457759",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00460122",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00460124",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00459349",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457311",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-08-21T05:38:44.840Z",
+      "scraped_at": "2026-08-22T05:33:45.664Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
