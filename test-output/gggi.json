@@ -1,5 +1,205 @@
 [
   {
+    "title": "PHILIPPINES : RESEARCH AND PROJECT SUPPORT INTERN",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Internship",
+    "deadline": "2026-09-16 00:00:00",
+    "published": "2026-08-24 00:00:00",
+    "country": "Philippines",
+    "city": "Manila",
+    "source_url": "https://careers.gggi.org/vacancy/philippines-research-and-project-support-intern-618197.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Internship",
+      "all_locations": [
+        "Philippines"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "PHILIPPINES : PROJECT LEAD, GCF READINESS AND PREPARATORY SUPPORT PROGRAM",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-16 00:00:00",
+    "published": "2026-08-18 00:00:00",
+    "country": "Philippines",
+    "city": "National Capital Region (Metro Manila)",
+    "source_url": "https://careers.gggi.org/vacancy/philippines-project-lead-gcf-readiness-and-preparatory-support-program-617869.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Philippines"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "NATIONAL CARBON MARKETS CONSULTANT",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Individual Consultant (Daily Rate)",
+    "deadline": "2026-09-04 00:00:00",
+    "published": "2026-08-19 00:00:00",
+    "country": "Cambodia",
+    "city": "Phnom Penh",
+    "source_url": "https://careers.gggi.org/vacancy/national-carbon-markets-consultant-617999.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Individual Consultant (Daily Rate)",
+      "all_locations": [
+        "Cambodia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "PROGRAM MANAGER",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-14 00:00:00",
+    "published": "2026-08-24 00:00:00",
+    "country": "Republic of Korea, HQ",
+    "city": "Seoul",
+    "source_url": "https://careers.gggi.org/vacancy/program-manager-618182.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Republic of Korea, HQ"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "SENIOR ADVOCACY OFFICER",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-14 00:00:00",
+    "published": "2026-08-24 00:00:00",
+    "country": "Indonesia or Thailand",
+    "city": "Jakarta or Bangkok",
+    "source_url": "https://careers.gggi.org/vacancy/senior-advocacy-officer-618183.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Indonesia or Thailand"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "ASIA CLIMATE PARTNERSHIPS SENIOR OFFICER",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": null,
+    "published": "2026-08-24 00:00:00",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "source_url": "https://careers.gggi.org/vacancy/asia-climate-partnerships-senior-officer-618184.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Indonesia"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Chief of Party (ARISE Program Lead)",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-26 00:00:00",
+    "published": "2026-07-29 00:00:00",
+    "country": "Oman",
+    "city": "Salalah",
+    "source_url": "https://careers.gggi.org/vacancy/chief-of-party-arise-program-lead-616609.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Livestock Husbandry Officer",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-08 00:00:00",
+    "published": "2026-08-21 00:00:00",
+    "country": "Oman",
+    "city": "salalah",
+    "source_url": "https://careers.gggi.org/vacancy/livestock-husbandry-officer-618153.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Water Resource Management Officer - Civil Engineer, Oman ARISE Program",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-08-26 00:00:00",
+    "published": "2026-08-06 00:00:00",
+    "country": "Oman",
+    "city": "Salalah",
+    "source_url": "https://careers.gggi.org/vacancy/water-resource-management-officer-civil-engineer-oman-arise-program-617142.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
+    "title": "Admin and Logistics Senior Assistant",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "Contract type: Staff",
+    "deadline": "2026-09-08 00:00:00",
+    "published": "2026-08-21 00:00:00",
+    "country": "Oman",
+    "city": "salalah",
+    "source_url": "https://careers.gggi.org/vacancy/admin-and-logistics-senior-assistant-618154.html",
+    "source_domain": "careers.gggi.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
+    "raw_fields": {
+      "contract_type": "Staff",
+      "all_locations": [
+        "Oman"
+      ]
+    },
+    "_sourceId": "gggi"
+  },
+  {
     "title": "CTAF Global Showcase and Visualization Intern",
     "organization": "Global Green Growth Institute (GGGI)",
     "description": "Contract type: Internship",
@@ -10,7 +210,7 @@
     "source_url": "https://careers.gggi.org/vacancy/ctaf-global-showcase-and-visualization-intern-618021.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -30,7 +230,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-pakistan-spar6c-carbon-market-specialist-and-copasic-coordinator-618009.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
@@ -50,7 +250,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-communications-associate-617515.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -70,7 +270,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-monitoring-evaluation-and-learning-mel-associate-617733.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -90,7 +290,7 @@
     "source_url": "https://careers.gggi.org/vacancy/green-investment-senior-officer-and-project-manager-readvertised-609985.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -110,7 +310,7 @@
     "source_url": "https://careers.gggi.org/vacancy/palau-cbit-mrv-individual-consultant-for-climate-support-reporting-617623.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -130,7 +330,7 @@
     "source_url": "https://careers.gggi.org/vacancy/palau-cbit-mrv-individual-consultant-for-ndc-tracking-and-reporting-617622.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -150,7 +350,7 @@
     "source_url": "https://careers.gggi.org/vacancy/india-green-buildings-intern-617428.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Internship",
       "all_locations": [
@@ -170,7 +370,7 @@
     "source_url": "https://careers.gggi.org/vacancy/indonesia-national-consultant-on-carbon-markets-617031.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
@@ -190,7 +390,7 @@
     "source_url": "https://careers.gggi.org/vacancy/indonesia-national-policy-consultant-617033.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Daily Rate)",
       "all_locations": [
@@ -210,7 +410,7 @@
     "source_url": "https://careers.gggi.org/vacancy/togo-consultant-for-waste-recycling-business-development-617660.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -230,31 +430,11 @@
     "source_url": "https://careers.gggi.org/vacancy/indonesia-ess-and-gesi-consultant-617010.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
         "Indonesia"
-      ]
-    },
-    "_sourceId": "gggi"
-  },
-  {
-    "title": "Water Resource Management Officer - Civil Engineer, Oman ARISE Program",
-    "organization": "Global Green Growth Institute (GGGI)",
-    "description": "Contract type: Staff",
-    "deadline": "2026-08-26 00:00:00",
-    "published": "2026-08-06 00:00:00",
-    "country": "Oman",
-    "city": "Salalah",
-    "source_url": "https://careers.gggi.org/vacancy/water-resource-management-officer-civil-engineer-oman-arise-program-617142.html",
-    "source_domain": "careers.gggi.org",
-    "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
-    "raw_fields": {
-      "contract_type": "Staff",
-      "all_locations": [
-        "Oman"
       ]
     },
     "_sourceId": "gggi"
@@ -270,7 +450,7 @@
     "source_url": "https://careers.gggi.org/vacancy/es-and-adaptation-expert-for-gcf-funding-proposal-review-consultant-617527.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Individual Consultant (Deliverable)",
       "all_locations": [
@@ -290,7 +470,7 @@
     "source_url": "https://careers.gggi.org/vacancy/lao-pdr-senior-associate-green-investment-readvertised-617528.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -310,7 +490,7 @@
     "source_url": "https://careers.gggi.org/vacancy/-investment-officer-africa-regional-office-616671.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -330,7 +510,7 @@
     "source_url": "https://careers.gggi.org/vacancy/associate-norwegian-article-6-climate-action-naca-fund-616965.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -350,7 +530,7 @@
     "source_url": "https://careers.gggi.org/vacancy/senior-carbon-finance-officer-deadline-extended-614746.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-08-25T05:38:00.340Z",
+    "scraped_at": "2026-08-26T05:40:31.912Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
