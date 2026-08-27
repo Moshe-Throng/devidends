@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "title": "Title Location Job Family",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-27T16:21:01.124Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Reset",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-27T16:21:01.124Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "REGIONAL HUB DIRECTORREGIONAL HUB DIRECTOR",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/REGIONAL-HUB-DIRECTOR/1430510233/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-08-27T16:21:01.124Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  }
+]

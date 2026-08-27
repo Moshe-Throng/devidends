@@ -1,25 +1,5 @@
 [
   {
-    "title": "Senior Investment Officer - Jigjiga",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-08-13T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Jijiga",
-    "source_url": "https://apply.workable.com/inkomoko/j/AC111FB422/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-08-26T05:40:30.184Z",
-    "raw_fields": {
-      "department": [
-        "Investment"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
     "title": "Client Relationship Officer-Gambella",
     "organization": "Inkomoko",
     "description": "",
@@ -30,7 +10,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/9861B119FF/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-08-26T05:40:30.184Z",
+    "scraped_at": "2026-08-27T16:20:44.631Z",
     "raw_fields": {
       "department": [
         "Investment"
