@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-01T09:56:50.687Z",
-    "count": 14
+    "scraped_at": "2026-09-02T09:28:45.920Z",
+    "count": 13
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463405",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.065Z",
+      "scraped_at": "2026-09-02T09:25:57.640Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463244",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.065Z",
+      "scraped_at": "2026-09-02T09:25:57.640Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
@@ -57,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458345",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458356",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458335",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458354",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00461642",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457759",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,34 +267,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00460122",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
+      "scraped_at": "2026-09-02T09:25:58.153Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
         "project_id": "P179040",
         "bid_reference": "ET-NIDP-502637-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Agricultural Machinery Equipment,Agro processing Equipements and Accessories for(Ardaita,Jinka,Shire,Bonga,Daye,Teppi and Jigjiga)",
-      "organization": "World Bank",
-      "description": "Procurement of Agricultural Machinery Equipment,Agro processing Equipements and Accessories for(Ardaita,Jinka,Shire,Bonga,Daye,Teppi and Jigjiga)\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOLS-545744-GO-RFB\n\nContact: Addis Ababa",
-      "deadline": "2026-09-01",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457311",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-01T09:54:20.349Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-545744-GO-RFB",
         "sector": ""
       }
     }
