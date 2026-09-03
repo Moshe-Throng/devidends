@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4227984",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.499Z",
+    "scraped_at": "2026-09-03T09:36:09.204Z",
     "raw_fields": {
       "career_categories": [
         "Monitoring and Evaluation"
@@ -34,7 +34,7 @@
     "source_url": "https://reliefweb.int/node/4227929",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.499Z",
+    "scraped_at": "2026-09-03T09:36:09.204Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -56,7 +56,7 @@
     "source_url": "https://reliefweb.int/node/4227889",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.499Z",
+    "scraped_at": "2026-09-03T09:36:09.204Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -78,7 +78,7 @@
     "source_url": "https://reliefweb.int/node/4227295",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.500Z",
+    "scraped_at": "2026-09-03T09:36:09.205Z",
     "raw_fields": {
       "career_categories": [
         "Donor Relations/Grants Management"
@@ -100,7 +100,7 @@
     "source_url": "https://reliefweb.int/node/4227036",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.500Z",
+    "scraped_at": "2026-09-03T09:36:09.205Z",
     "raw_fields": {
       "career_categories": [
         "Human Resources"
@@ -122,7 +122,7 @@
     "source_url": "https://reliefweb.int/node/4227027",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.500Z",
+    "scraped_at": "2026-09-03T09:36:09.205Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -144,7 +144,7 @@
     "source_url": "https://reliefweb.int/node/4226970",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.500Z",
+    "scraped_at": "2026-09-03T09:36:09.205Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -168,7 +168,7 @@
     "source_url": "https://reliefweb.int/node/4224779",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.502Z",
+    "scraped_at": "2026-09-03T09:36:09.206Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -190,7 +190,7 @@
     "source_url": "https://reliefweb.int/node/4224453",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.502Z",
+    "scraped_at": "2026-09-03T09:36:09.206Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -214,7 +214,7 @@
     "source_url": "https://reliefweb.int/node/4224280",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.502Z",
+    "scraped_at": "2026-09-03T09:36:09.206Z",
     "raw_fields": {
       "career_categories": [
         "Other"
@@ -238,7 +238,7 @@
     "source_url": "https://reliefweb.int/node/4222949",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.503Z",
+    "scraped_at": "2026-09-03T09:36:09.206Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -262,7 +262,7 @@
     "source_url": "https://reliefweb.int/node/4216437",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.503Z",
+    "scraped_at": "2026-09-03T09:36:09.207Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -284,7 +284,7 @@
     "source_url": "https://reliefweb.int/node/4215186",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.503Z",
+    "scraped_at": "2026-09-03T09:36:09.207Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -306,31 +306,7 @@
     "source_url": "https://reliefweb.int/node/4215013",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.503Z",
-    "raw_fields": {
-      "career_categories": [
-        "Program/Project Management"
-      ],
-      "themes": [
-        "Agriculture"
-      ],
-      "experience": "3-4 years",
-      "languages": [],
-      "work_type": "Job"
-    }
-  },
-  {
-    "title": "Ethiopia TREE - Agroforestry Training Senior Officer ( Fixed - Term)",
-    "organization": "One Acre Fund",
-    "description": "About One Acre Fund Founded in 2006, One Acre Fund equips 5.5 million smallholder farmers to make their farms more productive. Across nine countries that together are home to two-thirds of Africa's farmers, we provide high-quality farm supplies, tree seedlings, accessible credit, modern agronomic training, and a wide range of other agricultural services. On average, this model enables any farmer to increase their income and assets on supported land by more than 35 percent, while permanently improving their resilience. This is all made possible by our team of 9,000+ full-time staff, drawn from diverse backgrounds and professions. To learn more, please see our Why Work Here blog post. In Ethiopia, we engage farmers in agroforestry and community-based seed multiplication to increase farmers’ incomes and make farming systems more resilient. Engaging with local actors at every step but bringing innovative ideas from outside, we are making rural farming more market-friendly and environmentally sustainable. The farmers we work with in Ethiopia have planted more than 30 million trees, produced over 1500 metric tonnes of improved teff seed, and improved the futures of nearly 200,000 community members. Our permanent team numbers over 180 with nearly 1,000 rural seasonal staff supporting them. Our country headquarters are in Addis Ababa and we have a large program office in Bahir Dar, plus several smaller field offices. About the Role Seeking an agroforestry training professional to lead technical content creation, revision, and delivery for field teams, Stakeholders and Tree Nursery Operators, driving reforestation impact across the South Tree Program. Responsibilities Organize/lead training components of the tree team in South Tree Program Seedling Production, Marketing, and Distribution Training With support from the training coordinator, revise training manuals on yearly basis (with new species and changes of recommendations if any) and preparation of new contents for seedling production, marketing, distribution, and tree planting. Conduct data quality checks for the printed training documents and bindings works. Lead Technical TOT sessions for the field team Follow up on the deliverability of training cascaded down to the Tree Nursery Operator, ensuring training directly translates to improved nursery activities and achieving production goals Support non TAF non technical training Professional Development Training Support the training coordinator in the preparation of a year-round professional development training plan when needed. Contribute in execution of field team acceleration program. Execute small-medium complexity/scope training related projects for the south tree team Support on planning and implementation of small-medium complexity tree related projects like conducting needs assessment from the field, measure knowledge retention and assess training compliance. The projects may relate but are not limited to increasing performance at the field, increase field survival, bring more farmers to our nurseries to take seedlings, help achieve the production goals of the tree team and increase adoption of new species and AGF practices. Few examples of such projects include: Agroforestry seed quality check (QC) Marketing and Distribution Support with local seed procurement Lead the Small SBC projects that aim to provide directional information to the program Career Growth and Development We have a strong culture of constant learning and we invest in developing our people. You’ll have weekly check-ins with your manager, access to mentorship and training programs, and regular feedback on your performance. We hold career reviews every six months, and set aside time to discuss your aspirations and career goals. You’ll have the opportunity to shape a growing organization and build a rewarding long-term career. Qualifications Across all roles, these are the general qualifications we look for . For this role specifically, you will have: 2 year minimum experience Speak Wolayta , Amharic, and English language Preferably Experience related to training and agro forestry preferable Preferred Start Date As soon as possible Job Location Sodo, Ethiopia Benefits Health insurance, paid time off Contract Duration 1 Year Eligibility This role is open to Ethiopian citizens, permanent residents, and origin cardholders. Application Deadline 2 September 2026. Please note that we hire on a rolling basis which means that applications are reviewed and processed on a continuous basis until a hire is made. One Acre Fund never asks candidates to pay any money or pay for tests at any stage of the interview process. Official One Acre Fund emails will always arrive from an @ oneacrefund.org address. Please report any suspicious communication here ( globalhotline@oneacrefund.org ), but do not send applications or application materials to this email address. Diversity, Equity, Inclusion (DEI), and anti-racism are deeply connected to our organization’s mission and purpose. One Acre Fund aspires to build a culture where all staff feel consistently valued, represented, and connected – so that our team can thrive as professionals, and achieve exceptional impact for the farmers we serve. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, marital status, disability, gender, gender identity or expression. We are proud to be an equal opportunity workplace.\n\nHow to Apply: Apply here: https://grnh.se/f91udk9f1us",
-    "deadline": "2026-09-02T00:00:00+00:00",
-    "published": "2026-06-03T08:12:34+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4214618",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.504Z",
+    "scraped_at": "2026-09-03T09:36:09.207Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -354,7 +330,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.504Z",
+    "scraped_at": "2026-09-03T09:36:09.207Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -376,7 +352,7 @@
     "source_url": "https://reliefweb.int/node/4197099",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-09-02T09:25:57.504Z",
+    "scraped_at": "2026-09-03T09:36:09.208Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
