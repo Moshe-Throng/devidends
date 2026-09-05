@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-04T09:42:29.573Z",
-    "count": 12
+    "scraped_at": "2026-09-05T08:58:42.214Z",
+    "count": 13
   },
   "opportunities": [
+    {
+      "title": "Consultancy Service for Independent Procurement Audit of 2017, 2018, 2019 and 2020 EFY for Lowlands Livelihood Resilience Project Phase II (LLRP-II)",
+      "organization": "World Bank",
+      "description": "Consultancy Service for Independent Procurement Audit of 2017, 2018, 2019 and 2020 EFY for Lowlands Livelihood Resilience Project Phase II (LLRP-II)\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ILLD-548919-CS-QCBS-2\n\nContact: Addis Ababa",
+      "deadline": "2026-09-21",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457758",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-09-05T08:55:45.290Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-ILLD-548919-CS-QCBS-2",
+        "sector": ""
+      }
+    },
     {
       "title": "consulting Services for Construction Skills Training-through Framework Agreement",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463244",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.283Z",
+      "scraped_at": "2026-09-05T08:55:45.290Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
@@ -36,13 +57,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463405",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.283Z",
+      "scraped_at": "2026-09-05T08:55:45.290Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
         "project_name": "Ethiopia Education and Skills for Employability Project",
         "project_id": "P177881",
         "bid_reference": "ET-MOLS-556894-CS-QBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Civil works for Construction of Amibara Right side embankment works at Awash river Basin in different lots",
+      "organization": "World Bank",
+      "description": "Procurement of Civil works for Construction of Amibara Right side embankment works at Awash river Basin in different lots\n\nProject: Ethiopia Flood Management Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOWE-555057-CW-RFB\n\nContact: Haile Gebreselassie Road\nP.O. Box 5744\nAddis Ababa\nEthiopia",
+      "deadline": "2026-10-22",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Ethiopia Flood Management Project",
+        "project_id": "P176327",
+        "bid_reference": "ET-MOWE-555057-CW-RFB",
         "sector": ""
       }
     },
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458345",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,34 +162,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458352",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Productive Safety Net Project 6",
         "project_id": "P511478",
         "bid_reference": "ET-MOA/FSCD-555575-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Tigray and Afar regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Tigray and Afar regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555578-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555578-NC-RFB",
         "sector": ""
       }
     },
@@ -162,13 +183,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458356",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Productive Safety Net Project 6",
         "project_id": "P511478",
         "bid_reference": "ET-MOA/FSCD-555574-NC-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Cluster of Tigray and Afar regional e-payment service",
+      "organization": "World Bank",
+      "description": "Cluster of Tigray and Afar regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555578-NC-RFB\n\nContact: Addis Ababa,",
+      "deadline": "2026-09-08",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Productive Safety Net Project 6",
+        "project_id": "P511478",
+        "bid_reference": "ET-MOA/FSCD-555578-NC-RFB",
         "sector": ""
       }
     },
@@ -183,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458335",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458354",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,34 +267,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00461642",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
+      "scraped_at": "2026-09-05T08:55:45.515Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
         "project_id": "P179040",
         "bid_reference": "ET-NIDP-529005-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement for the 61.5 km Hamedela (Berhale) – Adokwa (Dalol) DC-2 Gravel Road Construction project.(LOT-I:Hamedeela to Ayshit , LOT-II: Ayshit to Simbilale , LOT-III: Simbilale to Adokwa )",
-      "organization": "World Bank",
-      "description": "Procurement for the 61.5 km Hamedela (Berhale) – Adokwa (Dalol) DC-2 Gravel Road Construction project.(LOT-I:Hamedeela to Ayshit , LOT-II: Ayshit to Simbilale , LOT-III: Simbilale to Adokwa )\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-AFR-RPCU-545930-CW-RFB\n\nContact: Semera,\nEthiopia",
-      "deadline": "2026-09-04",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457759",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-04T09:38:33.624Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-AFR-RPCU-545930-CW-RFB",
         "sector": ""
       }
     }
