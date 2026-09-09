@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-08T09:34:26.243Z",
-    "count": 13
+    "scraped_at": "2026-09-09T09:36:54.890Z",
+    "count": 8
   },
   "opportunities": [
+    {
+      "title": "Selection and Employment of an independent procurement audit service for Five years procurement Audit of ETOL (P501017) and Additional Financing (P182107) programs, by MoE",
+      "organization": "World Bank",
+      "description": "Selection and Employment of an independent procurement audit service for Five years procurement Audit of ETOL (P501017) and Additional Financing (P182107) programs, by MoE\n\nProject: Ethiopia Education Transformation Operation for Learning\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOE-562913-CS-QCBS\n\nContact: P. O. Box 1367Addis AbabaEthiopia",
+      "deadline": "2026-09-28",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00466946",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-09-09T09:33:34.633Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Ethiopia Education Transformation Operation for Learning",
+        "project_id": "P501017",
+        "bid_reference": "ET-MOE-562913-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Service for Independent Procurement Audit of 2017, 2018, 2019 and 2020 EFY for Lowlands Livelihood Resilience Project Phase II (LLRP-II)",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457758",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-08T09:31:00.598Z",
+      "scraped_at": "2026-09-09T09:33:34.633Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463244",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.598Z",
+      "scraped_at": "2026-09-09T09:33:34.633Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463405",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.598Z",
+      "scraped_at": "2026-09-09T09:33:34.633Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QBS",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
+      "scraped_at": "2026-09-09T09:33:35.040Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
+      "scraped_at": "2026-09-09T09:33:35.040Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,139 +141,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
+      "scraped_at": "2026-09-09T09:33:35.040Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Ethiopia Rural Connectivity to Support Food Security Program",
         "project_id": "P176303",
         "bid_reference": "ET-MUI-564073-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Sidama, South Ethiopia, SWE and Central Ethiopia regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Sidama, South Ethiopia, SWE and Central Ethiopia regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555577-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458345",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555577-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Oromia regional e-payment service",
-      "organization": "World Bank",
-      "description": "Oromia regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555575-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458352",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555575-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Tigray and Afar regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Tigray and Afar regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555578-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458341",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555578-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Amhara regional e-payment service",
-      "organization": "World Bank",
-      "description": "Amhara regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555574-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458356",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555574-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Somali, Diredawa and Harari regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Somali, Diredawa and Harari regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555579-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458335",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555579-NC-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Cluster of Gambella and Benshangul regional e-payment service",
-      "organization": "World Bank",
-      "description": "Cluster of Gambella and Benshangul regional e-payment service\n\nProject: Productive Safety Net Project 6\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA/FSCD-555580-NC-RFB\n\nContact: Addis Ababa,",
-      "deadline": "2026-09-08",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00458354",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Productive Safety Net Project 6",
-        "project_id": "P511478",
-        "bid_reference": "ET-MOA/FSCD-555580-NC-RFB",
         "sector": ""
       }
     },
@@ -267,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00461642",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-08T09:31:00.996Z",
+      "scraped_at": "2026-09-09T09:33:35.040Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
