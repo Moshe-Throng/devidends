@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-09T09:36:54.890Z",
-    "count": 8
+    "scraped_at": "2026-09-10T09:35:45.290Z",
+    "count": 7
   },
   "opportunities": [
+    {
+      "title": "Consultancy Services for the Design and Establishment of a Wholesale (Apex) Development Finance Framework",
+      "organization": "World Bank",
+      "description": "Consultancy Services for the Design and Establishment of a Wholesale (Apex) Development Finance Framework\n\nProject: Access to Distributed Electricity and Lighting in Ethiopia (ADELE)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-DBE-571276-CS-QCBS\n\nContact: 511 Tito St, Addis Ababa\nDevelopment Bank of Ethiopia, Adresse",
+      "deadline": "2026-09-22",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00467559",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-09-10T09:32:45.747Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Access to Distributed Electricity and Lighting in Ethiopia (ADELE)",
+        "project_id": "P171742",
+        "bid_reference": "ET-DBE-571276-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Selection and Employment of an independent procurement audit service for Five years procurement Audit of ETOL (P501017) and Additional Financing (P182107) programs, by MoE",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00466946",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-09T09:33:34.633Z",
+      "scraped_at": "2026-09-10T09:32:45.747Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,55 +57,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457758",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-09T09:33:34.633Z",
+      "scraped_at": "2026-09-10T09:32:45.747Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-ILLD-548919-CS-QCBS-2",
-        "sector": ""
-      }
-    },
-    {
-      "title": "consulting Services for Construction Skills Training-through Framework Agreement",
-      "organization": "World Bank",
-      "description": "consulting Services for Construction Skills Training-through Framework Agreement\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Quality Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLS-556908-CS-QBS\n\nContact: Addis Ababa",
-      "deadline": "2026-09-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463244",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:34.633Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QBS",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-556908-CS-QBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Consulting Services for Hospitality & Tourism Skills Training-through Framework Agreement",
-      "organization": "World Bank",
-      "description": "Consulting Services for Hospitality & Tourism Skills Training-through Framework Agreement\n\nProject: Ethiopia Education and Skills for Employability Project\n\nMethod: Quality Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOLS-556894-CS-QBS\n\nContact: Addis Ababa",
-      "deadline": "2026-09-09",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463405",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:34.633Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QBS",
-        "project_name": "Ethiopia Education and Skills for Employability Project",
-        "project_id": "P177881",
-        "bid_reference": "ET-MOLS-556894-CS-QBS",
         "sector": ""
       }
     },
@@ -99,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:35.040Z",
+      "scraped_at": "2026-09-10T09:32:46.035Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:35.040Z",
+      "scraped_at": "2026-09-10T09:32:46.035Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:35.040Z",
+      "scraped_at": "2026-09-10T09:32:46.035Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00461642",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-09T09:33:35.040Z",
+      "scraped_at": "2026-09-10T09:32:46.035Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
