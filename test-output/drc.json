@@ -10,7 +10,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176779",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.753Z",
+    "scraped_at": "2026-09-15T09:57:17.753Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -28,7 +28,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176778",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.753Z",
+    "scraped_at": "2026-09-15T09:57:17.753Z",
     "raw_fields": {
       "region": "Africa",
       "category": "IT",
@@ -46,7 +46,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176736",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.754Z",
+    "scraped_at": "2026-09-15T09:57:17.754Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -64,7 +64,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176769",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.754Z",
+    "scraped_at": "2026-09-15T09:57:17.754Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Other",
@@ -82,7 +82,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176746",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.754Z",
+    "scraped_at": "2026-09-15T09:57:17.754Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -100,7 +100,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176742",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.754Z",
+    "scraped_at": "2026-09-15T09:57:17.755Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -118,7 +118,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176745",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.756Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -136,7 +136,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176744",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.756Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -154,7 +154,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176735",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.756Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -172,7 +172,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176734",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.756Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -190,7 +190,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176739",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.757Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -208,7 +208,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176741",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.757Z",
+    "scraped_at": "2026-09-15T09:57:17.757Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -226,28 +226,10 @@
     "source_url": "https://drc.ngo/jobs/job?id=176743",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.757Z",
+    "scraped_at": "2026-09-15T09:57:17.758Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
-      "contract_type": "National"
-    }
-  },
-  {
-    "title": "MEAL Partnership Specialist",
-    "organization": "Danish Refugee Council (DRC)",
-    "description": "MEAL Partnership Specialist\n\nThe Danish Refugee Council (DRC), one of the world’s leading NGOs, with a focus on responding to displacement, have been registered in Sudan since 2004, delivering life-saving programming in protection, emergency response, shelter, food security and livelihoods, disaster risk reduction, camp management, and humanitarian mine action. DRC has implemented projects in Central Darfur, South Kordofan, Gedaref, Port Sudan, and White Nile. Sudan hosts one of the largest displaced populations in Africa, with over 3.7 million internally displaced people and over 1.1 million refugees from South Sudan, Ethiopia, Eritrea, Central African Republic, Chad, Yemen and Syria. Against a background of political crisis, Sudan faces economic and social turmoil, with sharp increases in food and energy costs, further exacerbated by disease outbreaks and ongoing conflict.\n\nPOSITION PROFILE\n\nThe overall purpose of the role:\n\nThe MEAL Partnership Specialist supports the strengthening of Monitoring, Evaluation, Accountability, and Learning (MEAL) systems and practices of DRC’s local partners, including national NGOs, CBOs, and volunteer groups such as Emergency Response Rooms and Mutual Aid Groups. \n\nWorking under the supervision of the MEAL Manager and in close coordination and technical guidance from the Partnership Manager/ Partnership Coordinator, the role provides tailored technical support to partners in developing MEAL frameworks, data collection tools, partners’ IPTTs, FCM and reporting systems while ensuring compliance with DRC MEAL standards and donor requirements.\n\nThe position focuses on improving data quality, verification of Means of Verification (MoVs), capturing and sharing lessons learnt, and accuracy of reporting practices, including consolidation of indicators in the indicators in the Indicator Performance Tracking Table (IPTT). It also contributes to strengthening partners’ capacities and promoting the use of the data for accountability, learning and program design and improvement.\n\nDUTIES & RESPONSIBILITIES\n\nSupport to Local Partners:\n\n\n\tIn collaboration with partners and under the guidance of the MEAL Manager, support the design of a logical framework, indicators and MEAL workplans for partner implemented projects.\n\tProvide ongoing technical support to partner MEAL focal points in developing and reviewing data collection tools for surveys, assessments, and monitoring activities in line with DRC MEAL standards and donor requirement.\n\tWork closely with Area Office teams to support partners in developing their workplans aligned with agreed objectives and implementation timelines.\n\tEnsue partners implement verification exercises in line with DRC MEAL SOPs and guidelines.\n\tReview Means of Verification (MoVs) submitted by partners to ensure quality, completeness, and compliance with project requirements.\n\tConduct regular follow-ups with partner organizations to support accurate and timely reporting of achievements.\n\tSupport the documentation and consolidation of reported indicators in the IPTT and ensure alignment with approved logframes.\n\tCollaborate with partners during planning and implementation of assessments such as baselines, PDMs, and end-lines.\n\tReviews partner reports (narrative and MEAL related sections), provide technical feedback and follow up on identified gaps or inconsistencies.\n\n\nCapacity Strengthening:\n\n\n\tConducts MEAL Due Diligence (DD) assessments of partners during the onboarding to identify gaps in systems, tools and capacities.\n\tContribute to the  development and lead on the implementation of partners capacity building plan from MEAL perspective through technical support for each partner as per their assigned tier (1,2 or 3) resulted from the MEAL DD.\n\tConduct targeted coaching and on-the-job mentoring for partner MEAL staff in data collection, quality assurance, and analysis techniques.\n\tAssist partners in aligning their monitoring tools and methodologies with DRC MEAL minimum operating procedures (MOPs) and donor expectations.\n\tFacilitate learning and knowledge sharing across partners to improve MEAL practice and use of data.\n\n\nMonitoring and Evaluation:\n\n\n\tParticipate in joint monitoring visits with programme, operations and partner teams as per the agreed monitoring plan.\n\tSupport partners in digital data collection (e.g., KoboToolbox) and ensure a proper data management practices.\n\tEnsure harmonization and alignment of Scope of work, IPTTs, MEAL Framework, and data collection processes across different partners and sectors.\n\tConduct data quality checks, including validation and triangulation of partner reported data against field observations and other sources.\n\tIdentify data inconsistencies and follow up with partners to ensure corrective action are taken\n\n\nAccountability and Learning:\n\n\n\tSupport partners in integrating accountability mechanisms (Community feedback Mechanism and Information sharing), in coordination with the accountability team and Area Office ma",
-    "deadline": "14 Sept 2026",
-    "published": "07 Sept 2026",
-    "country": "Sudan",
-    "city": null,
-    "source_url": "https://drc.ngo/jobs/job?id=176670",
-    "source_domain": "drc.ngo",
-    "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.757Z",
-    "raw_fields": {
-      "region": "Africa",
-      "category": "Monitoring & Evaluation",
       "contract_type": "National"
     }
   },
@@ -262,7 +244,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176672",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-09-13T10:07:20.764Z",
+    "scraped_at": "2026-09-15T09:57:17.760Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
