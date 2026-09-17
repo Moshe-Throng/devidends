@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-16T09:51:47.238Z",
-    "count": 7
+    "scraped_at": "2026-09-17T09:58:38.701Z",
+    "count": 8
   },
   "opportunities": [
+    {
+      "title": "Procurement of consultancy services for the feasibility study, detailed design, tender document preparation, construction supervision and contract administration for the Gidabo irrigation project an area of 3,000 ha. (west guji zone, abaya woreda)",
+      "organization": "World Bank",
+      "description": "Procurement of consultancy services for the feasibility study, detailed design, tender document preparation, construction supervision and contract administration for the Gidabo irrigation project an area of 3,000 ha. (west guji zone, abaya woreda)\n\nProject: Ethiopia Climate Resilient Irrigation for Sustainable Production Preparation Facilities\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOIL-544259-CS-QCBS\n\nContact: Kazanchis, Addis Ababa, Ethiopia",
+      "deadline": "2026-10-05",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00468424",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-09-17T09:55:34.937Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Ethiopia Climate Resilient Irrigation for Sustainable Production Preparation Facilities",
+        "project_id": "P182114",
+        "bid_reference": "ET-MOIL-544259-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Services for the assessment of Ethiopia Digital Health regulatory frame work for EFDA",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463394",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-16T09:48:37.287Z",
+      "scraped_at": "2026-09-17T09:55:34.937Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00467559",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-16T09:48:37.287Z",
+      "scraped_at": "2026-09-17T09:55:34.937Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00466946",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-16T09:48:37.287Z",
+      "scraped_at": "2026-09-17T09:55:34.937Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00457758",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-16T09:48:37.287Z",
+      "scraped_at": "2026-09-17T09:55:34.937Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-16T09:48:37.652Z",
+      "scraped_at": "2026-09-17T09:55:35.247Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-16T09:48:37.652Z",
+      "scraped_at": "2026-09-17T09:55:35.247Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-16T09:48:37.652Z",
+      "scraped_at": "2026-09-17T09:55:35.247Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
