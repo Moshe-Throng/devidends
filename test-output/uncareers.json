@@ -1,21 +1,21 @@
 [
   {
-    "title": "Public Information Officer (Publishing Officer), NOC",
+    "title": "MEETINGS SERVICES ASSISTANT (Temporary Job Opening), G6",
     "organization": "Economic Commission for Africa",
     "description": "Org. Setting and Reporting ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 SDGs and Agenda 2063. The mission is guided by ECA's five new strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developing macroeconomic and structural policy options to acceler",
-    "deadline": "2026-10-17T03:59:59.000Z",
-    "published": "2026-09-17T04:00:00.000Z",
+    "deadline": "2026-10-03T03:59:59.000Z",
+    "published": "2026-09-18T04:00:00.000Z",
     "country": "Ethiopia",
     "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/280814?language=en",
+    "source_url": "https://careers.un.org/jobSearchDescription/283174?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.780Z",
+    "scraped_at": "2026-09-19T09:23:00.796Z",
     "raw_fields": {
-      "jobLevel": "NO-C",
-      "categoryCode": "NPO",
-      "jobCategory": "National Professional Officers",
-      "jobFamily": "Public Information",
+      "jobLevel": "G-6",
+      "categoryCode": "GS",
+      "jobCategory": "General Service and Related Categories",
+      "jobFamily": "Conference Services",
       "jobNetwork": "Public Information and Conference Management"
     }
   },
@@ -30,13 +30,33 @@
     "source_url": "https://careers.un.org/jobSearchDescription/284612?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.780Z",
+    "scraped_at": "2026-09-19T09:23:00.796Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
       "jobCategory": "Affiliate Personnel – Internships",
       "jobFamily": "Public Information",
       "jobNetwork": ""
+    }
+  },
+  {
+    "title": "Public Information Officer (Publishing Officer), NOC",
+    "organization": "Economic Commission for Africa",
+    "description": "Org. Setting and Reporting ECA's mission is to deliver ideas and actions for an empowered and transformed Africa; informed by the 2030 SDGs and Agenda 2063. The mission is guided by ECA's five new strategic directions which are: advancing ECA's position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent's problems and take local solutions to the continent; developing macroeconomic and structural policy options to acceler",
+    "deadline": "2026-10-17T03:59:59.000Z",
+    "published": "2026-09-17T04:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "ADDIS ABABA",
+    "source_url": "https://careers.un.org/jobSearchDescription/280814?language=en",
+    "source_domain": "careers.un.org",
+    "content_type": "job",
+    "scraped_at": "2026-09-19T09:23:00.796Z",
+    "raw_fields": {
+      "jobLevel": "NO-C",
+      "categoryCode": "NPO",
+      "jobCategory": "National Professional Officers",
+      "jobFamily": "Public Information",
+      "jobNetwork": "Public Information and Conference Management"
     }
   },
   {
@@ -50,7 +70,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/283207?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.780Z",
+    "scraped_at": "2026-09-19T09:23:00.797Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -70,7 +90,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/282906?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.780Z",
+    "scraped_at": "2026-09-19T09:23:00.797Z",
     "raw_fields": {
       "jobLevel": "P-3",
       "categoryCode": "PD",
@@ -90,7 +110,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/283985?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.780Z",
+    "scraped_at": "2026-09-19T09:23:00.797Z",
     "raw_fields": {
       "jobLevel": "P-3",
       "categoryCode": "PD",
@@ -110,7 +130,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/282691?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.781Z",
+    "scraped_at": "2026-09-19T09:23:00.797Z",
     "raw_fields": {
       "jobLevel": "P-5",
       "categoryCode": "PD",
@@ -130,7 +150,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/281872?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.781Z",
+    "scraped_at": "2026-09-19T09:23:00.798Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
@@ -150,7 +170,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/281157?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.781Z",
+    "scraped_at": "2026-09-19T09:23:00.798Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
@@ -170,7 +190,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/282832?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-09-18T09:36:23.782Z",
+    "scraped_at": "2026-09-19T09:23:00.798Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
