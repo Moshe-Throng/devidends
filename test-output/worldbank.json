@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-22T09:51:26.174Z",
-    "count": 9
+    "scraped_at": "2026-09-23T09:54:46.008Z",
+    "count": 8
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00468424",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-22T09:48:30.667Z",
+      "scraped_at": "2026-09-23T09:51:28.805Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,34 +36,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463394",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-22T09:48:30.667Z",
+      "scraped_at": "2026-09-23T09:51:28.805Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Health Emergency Preparedness, Response and Resilience Program Using the Multiphase Programmatic App",
         "project_id": "P180127",
         "bid_reference": "ET-MOH-526428-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Consultancy Services for the Design and Establishment of a Wholesale (Apex) Development Finance Framework",
-      "organization": "World Bank",
-      "description": "Consultancy Services for the Design and Establishment of a Wholesale (Apex) Development Finance Framework\n\nProject: Access to Distributed Electricity and Lighting in Ethiopia (ADELE)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-DBE-571276-CS-QCBS\n\nContact: 511 Tito St, Addis Ababa\nDevelopment Bank of Ethiopia, Adresse",
-      "deadline": "2026-09-22",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00467559",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-09-22T09:48:30.667Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QCBS",
-        "project_name": "Access to Distributed Electricity and Lighting in Ethiopia (ADELE)",
-        "project_id": "P171742",
-        "bid_reference": "ET-DBE-571276-CS-QCBS",
         "sector": ""
       }
     },
@@ -78,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00466946",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-22T09:48:30.667Z",
+      "scraped_at": "2026-09-23T09:51:28.805Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469617",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-22T09:48:30.981Z",
+      "scraped_at": "2026-09-23T09:51:29.034Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-22T09:48:30.981Z",
+      "scraped_at": "2026-09-23T09:51:29.034Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -141,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-22T09:48:30.981Z",
+      "scraped_at": "2026-09-23T09:51:29.034Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464847",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-22T09:48:30.981Z",
+      "scraped_at": "2026-09-23T09:51:29.034Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00464858",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-22T09:48:30.981Z",
+      "scraped_at": "2026-09-23T09:51:29.034Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",

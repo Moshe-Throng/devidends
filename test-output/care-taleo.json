@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8041",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.263Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8026",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.263Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8056",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.263Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7978",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.264Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.264Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8024",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.264Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.264Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,21 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8057",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "MANAGER, DIRECT MARKETING TECHNOLOGY AND DATA STRATEGY",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "MASS MARKET AND MID LEVEL",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8003",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.725Z",
+    "scraped_at": "2026-09-23T09:53:05.264Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +122,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8051",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:06.726Z",
+    "scraped_at": "2026-09-23T09:53:05.265Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "MONITORING, EVALUATION AND ACCOUNTABILITY AND LEARNING LEAD",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8012",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-09-23T09:53:05.265Z",
     "_sourceId": "care-taleo"
   }
 ]

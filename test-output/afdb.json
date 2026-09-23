@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:32.326Z",
+    "scraped_at": "2026-09-23T09:53:08.406Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +29,26 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:32.326Z",
+    "scraped_at": "2026-09-23T09:53:08.406Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "2027 MO IBRAHIM FOUNDATION LEADERSHIP FELLOWSHIP PROGRAM2027 MO IBRAHIM FOUNDATION LEADERSHIP FELLOWSHIP PROGRAM",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-2027-MO-IBRAHIM-FOUNDATION-LEADERSHIP-FELLOWSHIP-PROGRAM/1440251733/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-09-23T09:53:08.406Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +67,7 @@
     "source_url": "https://afdb.jobs2web.com/job/REGIONAL-HUB-DIRECTOR/1430510233/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-09-22T09:49:32.326Z",
+    "scraped_at": "2026-09-23T09:53:08.406Z",
     "raw_fields": {
       "region": "",
       "category": "",
