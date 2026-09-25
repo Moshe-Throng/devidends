@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scraped_at": "2026-09-24T09:54:53.976Z",
-    "count": 6
+    "scraped_at": "2026-09-25T10:09:24.852Z",
+    "count": 8
   },
   "opportunities": [
     {
@@ -15,7 +15,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00468424",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-24T09:51:25.773Z",
+      "scraped_at": "2026-09-25T10:06:41.779Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00463394",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-24T09:51:25.773Z",
+      "scraped_at": "2026-09-25T10:06:41.779Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,13 +57,55 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00466946",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-09-24T09:51:25.773Z",
+      "scraped_at": "2026-09-25T10:06:41.779Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Ethiopia Education Transformation Operation for Learning",
         "project_id": "P501017",
         "bid_reference": "ET-MOE-562913-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Lot 1. Procurement of Row Planter, forage baler, Choppers for forge processing purpose Lot 2. Procurement of Multi crop Mechanical thrashers, handheld harvester for cereal crops, and Weed Slasher for promoting conservation agriculture",
+      "organization": "World Bank",
+      "description": "Lot 1. Procurement of Row Planter, forage baler, Choppers for forge processing purpose Lot 2. Procurement of Multi crop Mechanical thrashers, handheld harvester for cereal crops, and Weed Slasher for promoting conservation agriculture\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-571908-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-10-27",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470624",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-09-25T10:06:42.095Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+        "project_id": "P174385",
+        "bid_reference": "ET-MOA-571908-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Equipment's for Pastoral and Agro-pastoral Center for Knowledge PACKs for Ten (28) project Woredas",
+      "organization": "World Bank",
+      "description": "Procurement of Equipment's for Pastoral and Agro-pastoral Center for Knowledge PACKs for Ten (28) project Woredas\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-SOM- RPCU-570440-GO-RFB\n\nContact: Jigjiga, Ethiopia",
+      "deadline": "2026-10-23",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470520",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-09-25T10:06:42.095Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-SOM- RPCU-570440-GO-RFB",
         "sector": ""
       }
     },
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469617",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-24T09:51:26.603Z",
+      "scraped_at": "2026-09-25T10:06:42.095Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -99,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-24T09:51:26.603Z",
+      "scraped_at": "2026-09-25T10:06:42.095Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-09-24T09:51:26.603Z",
+      "scraped_at": "2026-09-25T10:06:42.095Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
