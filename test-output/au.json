@@ -10,7 +10,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:22.055Z"
+    "scraped_at": "2026-09-26T09:49:26.832Z"
   },
   {
     "title": "Internship Program Job Details",
@@ -23,7 +23,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:22.542Z"
+    "scraped_at": "2026-09-26T09:49:27.304Z"
   },
   {
     "title": "Chauffeur (VIP) Détails du poste",
@@ -36,33 +36,7 @@
     "source_url": "https://jobs.au.int/job/Accra-Chauffeur-%28VIP%29/1371453457/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:23.044Z"
-  },
-  {
-    "title": "Finance Director (Africa CDC) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28Africa-CDC%29-9000043/1371396557/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:23.420Z"
-  },
-  {
-    "title": "Directeur des Finances (Africa CDC) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28Africa-CDC%29-9000043/1371396657/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:23.795Z"
+    "scraped_at": "2026-09-26T09:49:27.959Z"
   },
   {
     "title": "Director General Job Details",
@@ -75,20 +49,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-General/1371994557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:26.162Z"
-  },
-  {
-    "title": "Director Center for Laboratory Diagnostics and Systems(Africa CDC) Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Center-for-Laboratory-Diagnostics-and-Systems%28Africa-CDC%29/1371825957/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:26.517Z"
+    "scraped_at": "2026-09-26T09:49:28.291Z"
   },
   {
     "title": "Directeur du Centre de Diagnostics et de Systèmes de Laboratoire Détails du poste",
@@ -101,20 +62,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-du-Centre-de-Diagnostics-et-de-Syst%C3%A8mes-de-Laboratoire/1371826057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:26.904Z"
-  },
-  {
-    "title": "Directeur Général Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-G%C3%A9n%C3%A9ral/1371994657/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:27.278Z"
+    "scraped_at": "2026-09-26T09:49:28.620Z"
   },
   {
     "title": "Driver (VIP) Job Details",
@@ -127,6 +75,58 @@
     "source_url": "https://jobs.au.int/job/Accra-Driver-%28VIP%29/1371453357/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-09-25T10:08:27.657Z"
+    "scraped_at": "2026-09-26T09:49:30.984Z"
+  },
+  {
+    "title": "Finance Director (Africa CDC) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28Africa-CDC%29-9000043/1371396557/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-09-26T09:49:31.324Z"
+  },
+  {
+    "title": "Directeur Général Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-G%C3%A9n%C3%A9ral/1371994657/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-09-26T09:49:31.664Z"
+  },
+  {
+    "title": "Director Center for Laboratory Diagnostics and Systems(Africa CDC) Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Center-for-Laboratory-Diagnostics-and-Systems%28Africa-CDC%29/1371825957/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-09-26T09:49:32.017Z"
+  },
+  {
+    "title": "Directeur des Finances (Africa CDC) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28Africa-CDC%29-9000043/1371396657/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-09-26T09:49:32.356Z"
   }
 ]
