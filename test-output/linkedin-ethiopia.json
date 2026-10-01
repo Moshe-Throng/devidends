@@ -1,5 +1,23 @@
 [
   {
+    "title": "Accountant",
+    "organization": "Tinaw flower",
+    "description": "Company Description We suggest you enter details here. Role Description This is a full-time on-site role for an Accountant located in Addis Ababa, Ethiopia. The Accountant will be responsible for managing financial records, preparing accurate financial statements, reconciling accounts, and ensuring compliance with relevant financial regulations. Additional duties include processing transactions, managing budgets, preparing reports, and assisting with audits. The role requires close collaboration with other departments to support efficient financial operations within the organization. Qualifications Expertise in financial management, budgeting, and financial analysis. Proficiency in accounting software, bookkeeping, and reconciliations. Strong knowledge of financial regulations, reporting standards, and audit practices. Excellent attention to detail, problem-solving, and organizational skills. Effective communication skills and the ability to collaborate across teams. Ability to meet deadlines and work independently in a fast-paced environment. Bachelor’s degree in Accounting, Finance, or a related field (CPA or equivalent certification is a plus). Previous experience in accounting roles, preferably within a related industry.",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/accountant-4472155037",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:00.533Z",
+    "raw_fields": {
+      "li_job_id": "4472155037",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Radiologist",
     "organization": ".",
     "description": "Company Description The hiring organization is a healthcare provider committed to delivering high-quality diagnostic and clinical services to the local community in Addis Ababa, Ethiopia. The facility is focused on expanding access to advanced medical imaging and radiology services to support accurate diagnosis and treatment. Team members collaborate across disciplines to provide safe, patient-centered care grounded in evidence-based practices. The organization values professional growth, ethical standards, and continuous improvement in clinical outcomes. Radiology professionals joining the team can expect a supportive environment that encourages learning and excellence in practice. Role Description This is a full-time, on-site Radiologist role based in Addis Ababa, Ethiopia. The Radiologist will interpret a wide range of diagnostic imaging studies, such as X-rays, CT scans, MRI, ultrasound, and mammography, and provide clear, timely reports to referring clinicians. Day-to-day responsibilities include reviewing patient histories, selecting appropriate imaging protocols, ensuring image quality, and correlating imaging findings with clinical information. The Radiologist will participate in multidisciplinary discussions, communicate results and recommendations to healthcare teams, and contribute to patient counseling when needed. Additional tasks may include supervising radiologic technologists, supporting quality assurance initiatives, adhering to radiation safety standards, and engaging in continuing education to maintain up-to-date clinical knowledge. Qualifications Strong foundation in Medicine, including comprehensive clinical knowledge and patient-centered care. Proficiency in Radiology and Medical Imaging, with experience interpreting common modalities (e.g., X-ray, CT, MRI, ultrasound). Experience or training in Nuclear Medicine, including safe use of radiopharmaceuticals and interpretation of functional imaging. Competence in Mammography, with skills in screening, diagnostic imaging, and appropriate follow-up recommendations. Recognized medical degree and completed residency or specialist training in Radiology (or equivalent credential). Valid medical license or eligibility for licensure in Ethiopia, and compliance with local regulatory requirements. Attention to detail, strong analytical and diagnostic skills, and ability to produce clear, concise reports. Effective communication skills and ability to work collaboratively with multidisciplinary healthcare teams. Commitment to patient safety, radiation protection principles, and continuous professional development.",
@@ -10,46 +28,10 @@
     "source_url": "https://et.linkedin.com/jobs/view/radiologist-4472021182",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.290Z",
+    "scraped_at": "2026-10-01T11:30:00.533Z",
     "raw_fields": {
       "li_job_id": "4472021182",
       "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Product Engineer",
-    "organization": "The Flex",
-    "description": "About Us Base360.ai is the AI operating system for short-term rental businesses, helping property managers run their operations on autopilot. Born out of The Flex, a short-term rental operator that scaled to an eight-figure business using its own software, Base360.ai is now launching as a standalone platform for short-term rental operators worldwide. We bring reservations, guest communication, pricing, payments, cleaning, maintenance, and reporting into one platform—helping operators automate manual work, reduce costs, increase revenue, and scale their portfolios. We're looking for an ambitious Product Engineer who wants to turn real customer problems into intuitive, reliable software. You'll work closely with founders, designers, and operators to identify what matters, build solutions, and improve them based on how people use them. If you enjoy owning the full journey from customer problem to shipped product—and you're excited by AI, automation, and short-term rentals—we want to meet you. What You'll Build As a Product Engineer, you'll help shape and scale Base360.ai across the entire short-term rental lifecycle. You'll build customer-facing features, operational dashboards, automation engines, AI-powered workflows, and integrations that help property managers grow without increasing their workload at the same rate. Your work will connect what users see with the systems behind it—from a guest’s check-in experience to the workflows coordinating reservations, cleaning, payments, and owner reporting. Your Mission Understand Customer Problems Work directly with property managers and internal teams to understand their workflows, identify friction, and decide which problems are worth solving. Build Products End-to-End Take features from idea and prototype through frontend, backend, integrations, testing, and deployment. Own the complete experience and how it performs in production. Create Intuitive User Experiences Work with designers to make complex short-term rental operations easy to manage. Build interfaces that help users complete tasks quickly and confidently. Create Powerful Automations Build event-driven workflows that eliminate repetitive work—from scheduling cleaning after a booking to sending check-in instructions and generating owner statements. Develop AI-Powered Features Use LLMs and AI agents to automate guest communication, triage maintenance requests, support pricing decisions, and help operators manage their portfolios more efficiently. Connect the Ecosystem Build reliable APIs and integrations with platforms including Airbnb, Hostaway, Stripe, Twilio, OpenAI, Google, and other partners across the short-term rental ecosystem. Solve Real Operational Problems Build Solutions For Real-time reservation and availability synchronization Dynamic pricing intelligence Smart lock access and key management Automated guest communication across channels Guest check-in and upsell journeys Operational forecasting Cleaning and maintenance automation Owner reporting and financial workflows AI-powered monitoring and alerts Measure and Improve Use customer feedback, product usage, and operational results to evaluate what you ship. Improve features based on adoption, time saved, fewer errors, and better user outcomes. Build for Scale Make sound technical decisions that balance delivery speed, maintainability, security, and reliability as more operators and properties join the platform. Tech Stack We care more about capability than specific technologies, but our current stack includes: Python FastAPI React TypeScript Supabase PostgreSQL AWS Serverless architecture OpenAI APIs Twilio Stripe Docker GitHub Actions You Might Be a Great Fit If You Have Strong experience building and shipping production software The ability to work across frontend and backend systems Experience with React, TypeScript, Python, FastAPI, or similar technologies Strong understanding of APIs, databases, integrations, and cloud architecture A product mindset and curiosity about why users need a feature Good judgment around usability, scope, and technical trade-offs The ability to turn an ambiguous problem into a practical, working solution Confidence working directly with customers, designers, and founders The ability to work independently and own outcomes Curiosity about AI, automation, and operational efficiency A bias toward shipping, learning, and iterating Bonus Points For Experience With Short-term rentals, hospitality technology, or property management systems Multi-tenant SaaS platforms Marketplace businesses and booking channel integrations AI agents and workflow automation Product analytics and experimentation Event-driven architectures Supabase AWS serverless infrastructure What Success Looks Like Within Your First 12 Months You've shipped features that property managers actively use Core short-term rental workflows are automated through products you've built Customers spend less time on manual administration and repetitive tasks Co",
-    "deadline": null,
-    "published": "2026-09-23",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/product-engineer-at-the-flex-4470933304",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.291Z",
-    "raw_fields": {
-      "li_job_id": "4470933304",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Senior Software Engineer",
-    "organization": "The Flex",
-    "description": "About Us Base360.ai is the AI operating system for short-term rental businesses, helping property managers run their operations on autopilot. Born out of The Flex, a short-term rental operator that scaled to an eight-figure business using its own software, Base360.ai is now launching as a standalone platform for short-term rental operators worldwide. We bring reservations, guest communication, pricing, payments, cleaning, maintenance, and reporting into one platform—helping operators automate manual work, reduce costs, increase revenue, and scale their portfolios. We're looking for a highly ambitious Senior Software Engineer who wants to build systems that solve real problems at scale. You'll build, ship, automate, and deliver products that directly impact property managers, their teams, and their guests. If you're excited by APIs, automation, AI agents, cloud infrastructure, and building products from the ground up, we want to meet you. What You'll Build As a Senior Software Engineer, you'll help architect and scale Base360.ai—the platform powering every aspect of a short-term rental business. You'll build customer-facing products, automation engines, AI-powered workflows, integrations, and operational systems that help property managers grow without increasing their workload at the same rate. Your work will span the entire short-term rental lifecycle: from listing distribution, pricing, and bookings to guest stays, property operations, and financial reporting. Your Mission Build the Core Platform Design and develop scalable applications, services, and APIs that power reservations, availability, pricing, payments, guest experiences, and property operations. Create Powerful Automations Build event-driven workflows that eliminate repetitive work—from scheduling cleaning after a booking to sending check-in instructions and generating owner statements. Develop AI-Powered Systems Use LLMs and AI agents to automate guest communication, triage maintenance requests, support pricing decisions, and help operators manage their portfolios more efficiently. Design API-First Architecture Create robust APIs that connect internal services, booking channels, third-party providers, and customer systems. Integrate the Ecosystem Build and maintain integrations with platforms including Airbnb, Hostaway, Stripe, Twilio, OpenAI, Google, and other strategic partners across the short-term rental ecosystem. Scale Infrastructure Deploy and manage cloud-native infrastructure designed for reliability, performance, and global growth across multiple property management businesses. Solve Complex Operational Problems Build Solutions For Real-time reservation and availability synchronization Dynamic pricing intelligence Smart lock access and key management Automated guest communication across channels Operational forecasting Cleaning and maintenance automation Owner reporting and financial workflows AI-powered monitoring and alerts Move Fast and Own Delivery Own projects end-to-end—from understanding an operator’s problem to architecture, implementation, deployment, and ongoing improvement. Bring senior engineering judgment to technical decisions, code reviews, and the reliability of the systems you build. Tech Stack We care more about capability than specific technologies, but our current stack includes: Python FastAPI React TypeScript Supabase PostgreSQL AWS Serverless architecture OpenAI APIs Twilio Stripe Docker GitHub Actions You Might Be a Great Fit If You Have Strong experience building and owning production-grade software systems Experience with FastAPI, Python, React, or similar frameworks Strong understanding of APIs, distributed systems, and cloud architecture Experience designing scalable backend systems and reliable data models The ability to work independently and make sound technical decisions Strong problem-solving skills and a product mindset Curiosity about AI, automation, and operational efficiency A bias toward action, shipping, and learning from real users The ability to balance delivery speed with maintainability and reliability Bonus Points For Experience With Short-term rentals, hospitality technology, or property management systems Multi-tenant SaaS platforms Marketplace businesses and booking channel integrations AI agents and workflow automation Event-driven architectures Supabase AWS serverless infrastructure What Success Looks Like Within Your First 12 Months Core short-term rental workflows are automated through systems you've built Property managers spend less time on manual administration Reservations, availability, payments, and operational data move reliably between systems New integrations are deployed and maintained reliably AI-powered workflows become part of customers’ everyday operations The platform supports more operators and properties while maintaining reliability and performance Base360.ai helps customers grow their portfolios, improve guest experiences, and operate more profitably Why Join Us Bu",
-    "deadline": null,
-    "published": "2026-09-23",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-software-engineer-at-the-flex-4470938001",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.292Z",
-    "raw_fields": {
-      "li_job_id": "4470938001",
-      "location_raw": "Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
@@ -64,7 +46,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/pattern-maker-4472739233",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.292Z",
+    "scraped_at": "2026-10-01T11:30:00.534Z",
     "raw_fields": {
       "li_job_id": "4472739233",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -74,7 +56,7 @@
   {
     "title": "Area General Manager - Ethiopia",
     "organization": "The First Group Hospitality",
-    "description": "",
+    "description": "The First Group Hospitality is a Dubai-headquartered, full-service hospitality management company specialising in hotel operations, asset management, and F&B strategy. With a team of industry veterans and a proven track record, the company delivers tailored solutions that enhance efficiency, optimise revenue, and maximise asset value for investors and hotel owners. As a trusted third-party hotel management provider, The First Group Hospitality partners with leading global brands to drive operational excellence and long-term profitability, thanks to expertise spanning property performance optimisation, cost management, and guest experience enhancement. Beyond management, The First Group Hospitality develops and operates a dynamic portfolio of upscale hotels, residences, and award-winning restaurants, creating high-value hospitality assets that stand out in the market. For more information, visit tfghospitality.com The Area General Manager - Ethiopia is responsible for leading all TFG Hospitality-managed hotels and Food & Beverage operations in Ethiopia, ensuring strong guest satisfaction, financial performance, brand governance, and compliance with Hotel Management Agreements (HMAs). Country & Portfolio Leadership Provide overall leadership for TFG Hospitality’s Ethiopia operations, acting as the senior in-country representative Lead and support Hotel Managers at the property level, ensuring alignment with TFG Hospitality standards, KPIs, and operating philosophy Act as the primary custodian of TFG Hospitality culture in Ethiopia, embedding a guest-first, people-centric, and performance-driven mindset across all hotels Establish a strong leadership, coaching, and training culture with a clear focus on developing and promoting local management and operational talent Establish scalable country-level operating structures to support portfolio growth Hotel Operations & Performance Management Drive consistent operational excellence across all properties, with clear accountability for guest satisfaction (NPS), financial performance (GOP, flow-through), and service quality Conduct regular performance reviews with Property GMs focused on revenue, cost control, guest experience, and talent development Ensure compliance with HMAs, operating budgets, and approved business plans Food & Beverage Leadership & Portfolio Management Provide strategic leadership and accountability for Food & Beverage operations in Ethiopia as a core pillar alongside hotel operations Ensure clear accountability for Food & Beverage performance across the portfolio, with Hotel General Managers fully responsible for the operational and financial results of in-hotel F&B outlets Hold direct responsibility for the operational and financial performance of all standalone Food & Beverage outlets, including full ownership of P&Ls, profitability, and commercial outcomes Lead the development and scaling of standalone Food & Beverage outlets, from concept definition through opening and stabilization Collaborate closely with TFG Hospitality’s F&B specialists to deliver strong concepts, consistent guest experiences, operational excellence, and sustainable financial performance Hotel Openings & Pre-Opening Execution Oversee pre-opening budgets, staffing plans, training, OS&E procurement, and operational readiness Ensure new hotels are opened in line with TFG Hospitality standards and owner expectations Owner & Stakeholder Management Provide transparent reporting, performance updates, and issue resolution Balance owner priorities with long-term asset value creation and operational sustainability Commercial, Entrepreneurial & Revenue Leadership Work closely with TFG Hospitality’s central Commercial, Sales, Revenue, and Marketing teams to optimize performance across the Ethiopian portfolio Ensure effective pricing, segmentation, and channel strategies suited to local and international demand Demonstrate a strong entrepreneurial mindset, identifying and executing commercial opportunities appropriate to each market and asset Take a leading role in the initial set-up, development, and scaling of Food & Beverage operations, applying a restaurateur-led and commercially focused approach Support market positioning for both unbranded and future branded hotels People Leadership, Training & Localization Lead talent development and succession planning across all properties Design and implement structured training and development programs aligned with TFG Hospitality culture, covering service excellence, leadership capability, and operational standards Build a strong local talent pipeline with clear development paths, mentoring, and performance management Ensure compliance with Ethiopian labor law, employment practices, and regulatory requirements Drive localization of leadership roles where possible, building long-term organizational capability Governance, Risk & Compliance Ensure full compliance with local laws, safety regulations, licensing, and reporting requirements Act",
     "deadline": null,
     "published": "2026-09-26",
     "country": "",
@@ -82,7 +64,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/area-general-manager-ethiopia-at-the-first-group-hospitality-4470748682",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.293Z",
+    "scraped_at": "2026-10-01T11:30:00.535Z",
     "raw_fields": {
       "li_job_id": "4470748682",
       "location_raw": "Ethiopia"
@@ -92,7 +74,7 @@
   {
     "title": "Senior Accountant",
     "organization": "Kagool",
-    "description": "",
+    "description": "About Kagool Kagool is a leading global Systems Integrator/consultancy, delivering innovative solutions that drive business transformation. With offices and clients around the world, we specialize in helping organizations harness the power of data to make smarter, faster decisions. The Role We are seeking a highly experienced Senior Accountant to join our finance team and take ownership of managing global financial operations. This is a pivotal role requiring deep expertise in international accounting practices, intercompany operations, and financial reporting across multiple currencies and jurisdictions. Key Responsibilities Lead and manage end-to-end finance operations across multiple global entities. Oversee the preparation and consolidation of local and international financial statements in compliance with international accounting standards (e.g. IFRS). Manage multi-currency accounting, including foreign exchange translation and revaluation. Drive the month-end and year-end close processes across entities. Oversee intercompany transactions and ensure timely reconciliation. Collaborate with external auditors, tax advisors, and internal stakeholders to ensure compliance and transparency. Continuously improve and standardize financial processes and controls across all geographies. Mentor and lead a high-performing finance team. Requirements 10+ years of progressive accounting experience, with at least 5 years in a senior or managerial capacity. Proven track record managing the full suite of finance team capabilities – including AP/AR, general ledger, reporting, tax, and audit functions. Hands-on experience with global financial operations and intercompany accounting . Strong understanding of multi-currency accounting and consolidation. Experience working in a complex multinational environment . Proficient with modern ERP systems (e.g., NetSuite, SAP, Oracle). Accounting qualification (e.g., CPA, ACCA, CIMA) preferred. Exceptional attention to detail, analytical thinking, and leadership skills. Why Join Kagool? Be part of a fast-growing, globally recognized data consultancy. Work with cutting-edge technologies and high-profile clients. Flexible working environment with opportunities for professional growth and development. Collaborative culture that values innovation, impact, and excellence.",
     "deadline": null,
     "published": "2026-09-28",
     "country": "",
@@ -100,7 +82,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/senior-accountant-at-kagool-4472700644",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.293Z",
+    "scraped_at": "2026-10-01T11:30:00.536Z",
     "raw_fields": {
       "li_job_id": "4472700644",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -118,7 +100,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/anaesthetist-4471210642",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.294Z",
+    "scraped_at": "2026-10-01T11:30:00.536Z",
     "raw_fields": {
       "li_job_id": "4471210642",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -126,27 +108,27 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Assistant Underwriting Officer",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
+    "title": "Florist",
+    "organization": "Newflower",
+    "description": "🌸 We're hiring a Florist — Addis Ababa Newflower helps people show up for the people they love, especially when they can't be there in person. Someone in Los Angeles trusts us with their mother's birthday. A bride in Bole trusts us with her wedding flowers. You're the one who makes that trust real. We're a curated marketplace for flowers, artisan gifts, and thoughtful products — connecting Addis Ababa's best florists and makers with customers near and far. We need a Florist to join our team. Full-time, on-site in Addis Ababa. WHAT YOU'LL DO • Design arrangements for everyday orders, events, and our curated gift offerings • Select and care for flowers and plants — handling, storage, keeping things fresh • Advise customers on what to send, especially when they aren't sure • Prepare and package orders to a high standard, on time • Work with our team on product photography and online listings • Bring creative concepts to seasonal campaigns and special collections WHAT WE'RE LOOKING FOR • Strong floral design across styles — daily gifting and events • Real creativity: unique concepts, color palettes, and design themes that fit our brand • Customer service experience — active listening, clear communication, warmth with all kinds of people • Styling skills for displays, gift sets, and photo setups • Knowledge of flower and plant care • Ability to manage multiple orders and stay detailed under time pressure • Basic inventory and organizational skills Prior florist experience or floral design training preferred. TO APPLY To apply: Click Easy Apply below to submit your application. If you'd like us to see your work, feel free to message us a few photos of your arrangements directly. Prefer email? Send your CV and photos to jobs@newflower.com with \"Florist\" in the subject line.",
     "deadline": null,
-    "published": "2026-09-28",
+    "published": "2026-09-27",
     "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/assistant-underwriting-officer-at-ngo-jobs-in-ethiopia-4471531231",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/florist-at-newflower-4472402096",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:27.294Z",
+    "scraped_at": "2026-10-01T11:30:00.536Z",
     "raw_fields": {
-      "li_job_id": "4471531231",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+      "li_job_id": "4472402096",
+      "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
     "title": "Research Manager",
     "organization": "Precision Development (PxD)",
-    "description": "",
+    "description": "Title: Research Manager Location: Addis Ababa, Ethiopia Position: Full-time Posted On: 24 September 2026 Application Deadline: 23 October 2026, 6 PM EAT (applications will be reviewed as they are submitted) About This Role: Precision Development (PxD) is seeking a dynamic, creative, and self-motivated Research Manager to join PxD’s Ethiopia team and work closely with a team embedded within an Ethiopian government office. This is an opportunity to combine rigorous research with real-world program delivery—designing, testing, and improving digital agriculture services that can reach farmers at scale. The successful candidate will have a strong interest in and commitment to PxD’s mission to provide actionable information and other cost-effective, scalable services to individuals in poverty, enabling them to sustainably improve their incomes and well-being. You will work across research, program design, data, and implementation, collaborating with government partners, researchers, and PxD colleagues to turn evidence into practical solutions. About PxD: Precision Development (PxD) is a global non-profit with the mission to scale innovations that millions of smallholder farmers in low and middle-income countries can use to improve their lives. PxD's primary approach is delivering timely, evidence-based digital information to farmers via basic mobile phones. So far, PxD has scaled digital agriculture services to more than 46 million farmers across Africa and Asia. PxD scales these digital information services through three models: i) direct service delivery to farmers; ii) improvement of partners' existing services; and iii) strategic government advisory. Responsibilities: Will evolve as the role develops; key initial areas below. Identify opportunities to improve program impact and provide strategic input into the design of new research ideas and projects. Identify learning objectives and available resources across multiple projects and manage the implementation of research activities, ensuring appropriate rigor, policies, timelines, and budgets. Lead research projects from research questions and study design through implementation, analysis, and dissemination. Work with team leadership and colleagues to scope, design, pilot, and scale evidence-backed digital agriculture services. Interpret and contextualize external and internal evidence and translate findings into practical recommendations for PxD programs. Guide teams on the use of evidence-based approaches and help ensure that PxD maintains high standards of technical quality and rigor. Oversee data management and analysis for research projects, including survey design, A/B testing, and implementation. Oversee documentation of research activities, findings, and the rationale behind key decisions. Develop and maintain frameworks to identify and communicate program insights. Manage relationships with government, research, and other external partners and work with stakeholders to implement program activities. Develop and ensure compliance with IRB protocols and relevant in-country research permission requirements. Contribute to funding proposals, project reports, and other external deliverables. Contribute to strategic planning and the broader functioning of the organization. Provide mentorship and guidance to Associate and Manager-level staff. Support internal and external communications to disseminate project results and research findings through briefs, blogs, reports, presentations, and other formats. Contribute to PxD’s institutional knowledge management and internal learning efforts. What You'll Bring: The ideal candidate will have: A Master's degree or PhD in economics, agricultural economics, public policy, or a related field. Professional experience working on at least three large projects involving the design and management of rigorous research and evidence-based programs in low- and middle-income countries. Strong ability to draw inferences from data and apply findings to program design and decision-making. Experience consuming and synthesizing academic and scientific literature and other technical information and applying key findings to research and program design. A deep understanding of economics and randomized evaluations. Strong knowledge of Stata, R, or similar software for data analysis. Experience with survey design using SurveyCTO, ODK, or similar tools. A strong understanding of the research and program life cycle, including experience managing or supervising research activities in the field. Experience managing or mentoring researchers or other team members. Experience working with government agencies, research institutions, development organizations, or other external stakeholders. Strong written and oral communication skills in English, including the ability to communicate technical findings clearly to both technical and non-technical audiences. Fluency in Amharic would be an advantage. Willingness to travel to field sites in Ethiopia. H",
     "deadline": null,
     "published": "2026-09-25",
     "country": "",
@@ -154,7 +136,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/research-manager-at-precision-development-pxd-4470081219",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.123Z",
+    "scraped_at": "2026-10-01T11:30:02.315Z",
     "raw_fields": {
       "li_job_id": "4470081219",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -162,9 +144,27 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
+    "title": "People and Finance Assistant",
+    "organization": "International Rescue Committee",
+    "description": "The International Rescue Committee (IRC) responds to the world's worst humanitarian crises, helping to restore health, safety, education, economic wellbeing, and power to people devastated by conflict and disaster. Founded in 1933 at the call of Albert Einstein, the IRC is one of the world's largest international humanitarian non-governmental organizations (INGO), at work in more than 40 countries and 29 U.S. cities helping people to survive, reclaim control of their future and strengthen their communities. A force for humanity, IRC employees deliver lasting impact by restoring safety, dignity and hope to millions. If you're a solutions-driven, passionate change-maker, come join us in positively impacting the lives of millions of people world-wide for a better future. Background The International Rescue Committee (IRC) responds to the world’s worst humanitarian crises and helps people whose lives and livelihoods are shattered by conflict and disaster to survive, recover, and gain control of their lives. The IRC works with people forced to flee from war, conflict and disaster and the host communities which support them, as well as those who remain within their homes and communities. We began work in Ethiopia since 2000 and currently implementing emergency and development programs in health, water and sanitation, economic recovery and development (ERD), women’s protection and empowerment, education, child protection, and multi-sectoral emergency response. The IRC has a focus on narrowing the gender gap in humanitarian aid and ensuring that we contribute to gender equality, diversity, and inclusion in both our programs and operations by working to establish a context where our clients (including those from minority groups) enjoy the same rights and opportunities as well as an equal access to services. The IRC also has a strong commitment to creating an equitable and inclusive culture, where safeguarding is upheld in our workplace and programs. We are determined to protect our clients and staff from safeguarding violations through prevention and, where misconduct is alleged, to address it without fear or favor. Job Overview Under the supervision of the Sr. Finance Officer Assosa, the People / Finance Assistant is a junior position that is responsible for basic People & Culture and Finance department functions including talent management, contracts management, onboarding, payroll and related payments, follow up on contract extension, Timesheet collection, insurance and HRMIS. The position holder will be responsible for maintaining and upholding all organizational standards and codes of conduct and facilitating People & Culture and finance -related tasks within the field office. The incumbent will ensure uniform compliance with policies & procedures at the field site and provide technical support to field office staff. He/ She will work closely with all departments in the field office, People & Culture in Addis. Major Responsibilities People & Culture Review job specification against the position classification guideline; and all the basic information is filled in on the Personnel requisition form (PRF) before sharing it with the Country office. Advice Hiring managers on reviewing job descriptions and specifications for temporary, Incentive/Refugee staff and guide the field team on screening applicants, conduct job interviews/written tests, reference checks, extending job offers, and ensuring new employee’s paperwork/hire pack is processed accurately Participate in the field national staff recruitment process for the roles on or below Grade 9, ensure vacancy announcements are made through appropriate media, CV reviewing, interviewing, reference checking, job offer, and placement are going in line with the recruitment plan and HR Policy. Ensure proper orientation for all new staff with periodic follow up and collaborate and coordinate with field coordinators and other departments to provide an engaging and welcoming orientation. Ensure all P&C documents prepared, reviewed and sent to Addis Ababa in due dates (such as payroll, Overtime pay, back pay, severance, adjustments, acting allowance, new employee insurance list, hiring recommendation and new contracts) In collaboration with country Office team, Provide the required support the field office staff on the HRMIS data utilizations and system application. Ensure that the field office organogram is updated on HRMIS in line with the workday. Follow up with Recruitment team that all increment, promotion, transfer, and disciplinary letters are following personnel policy in timely manner. Ensure all personnel files are kept complete and maintained confidentially in a lockable cabinet. Scan and share medical documents with the insurance co. and follow up on repayment. Identify and share any Duty of Care concerns with the field coordinator and Country P&C. Finance To process all bank/ cash accounting transactions within Finance department, petty cash entries, bank entri",
+    "deadline": null,
+    "published": "2026-10-01",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/people-and-finance-assistant-at-international-rescue-committee-4474144148",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:02.315Z",
+    "raw_fields": {
+      "li_job_id": "4474144148",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Horticulturist",
     "organization": "Burie Poly TVET College",
-    "description": "",
+    "description": "Company Description Burie Poly TVET College is a technical and vocational education and training institution committed to developing practical skills and competencies for diverse industries. Located in Burie, the college focuses on hands-on learning, industry relevance, and community impact. It offers programs that prepare learners for employment, entrepreneurship, and further education. The college values sustainability, quality training, and collaboration with local partners to support regional development. Role Description This is a full-time, on-site Horticulturist role based at Burie Poly TVET College in Burie. The Horticulturist will plan, develop, and maintain gardens, landscaped areas, and instructional horticulture plots across the campus. Daily tasks include planting, pruning, weeding, soil preparation, pest and disease monitoring, and ensuring proper irrigation and fertilization. The role involves designing and improving landscape layouts, supervising routine landscape maintenance, and keeping tools, equipment, and work areas in good condition. The Horticulturist may also support training activities, demonstrate best practices to students, and collaborate with staff to integrate horticulture into college projects and events. Qualifications Strong practical skills in Landscape Maintenance and Landscaping, including design, installation, and upkeep of outdoor spaces. Hands-on experience in Gardening, covering planting, pruning, lawn care, and general garden management. Foundational knowledge of Botany to understand plant physiology, growth requirements, and species selection. Proficiency in Irrigation practices, including system operation, basic troubleshooting, and water-efficient techniques. Relevant qualification in Horticulture, Agriculture, Environmental Science, or a related field (diploma or degree preferred). Ability to perform physically active work outdoors in varying weather conditions and to handle tools and equipment safely. Good organizational and time-management skills, with attention to detail and care for plant health and campus aesthetics. Effective communication skills and willingness to work collaboratively with staff, students, and external partners. Experience in an educational, public garden, or agricultural setting is an advantage.",
     "deadline": null,
     "published": "2026-09-29",
     "country": "",
@@ -172,7 +172,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/horticulturist-4471722503",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.124Z",
+    "scraped_at": "2026-10-01T11:30:02.316Z",
     "raw_fields": {
       "li_job_id": "4471722503",
       "location_raw": "Burie, Amhara Region, Ethiopia"
@@ -182,7 +182,7 @@
   {
     "title": "Senior Director Monitoring, Evaluation, Learning, and Innovation",
     "organization": "Management Sciences for Health",
-    "description": "",
+    "description": "The Senior Director for Monitoring, Evaluation, Learning (MEL) and Innovation provides overall leadership for the integrated MEL, digital systems, analytics, learning, knowledge management, communications, and innovation functions of Implementing the America First Global Health Strategy (AFGHS) and the Supply Chain Strengthening (SCS) projects in Ethiopia in consultation with the Chief of Party/Country Lead. The position leads the evidence and innovation strategy across the Supply Chain and Tuberculosis work streams and ensures performance information is accurate, timely, decision-oriented, and aligned with U.S. Department of State/GHSD requirements and Government of Ethiopia systems. In this context, innovation includes the identification, adaptation, testing, and use of new or improved M&E tools, systems, ideas, methods, and approaches that strengthen data quality, learning, knowledge management, decision-making, and program performance. As a member of the senior leadership team, the Senior Director is accountable for the technical quality and coherence of the project-wide MEL and Innovation system, achievement of project milestones and targets, and leadership of a multidisciplinary team of digital health, M&E, communications and knowledge management. Specific Accountability Strategy, governance, and technical leadership Set and steward the project-wide MEL and Innovation strategy, results framework, MEL plan, learning agenda, research agenda, data strategy, and innovation roadmap across Implementing the America First Global Health Strategy (AFGHS) and the Supply Chain Strengthening (SCS) projects Define and institutionalize governance, decision rights, roles, standards, and coordination mechanisms across the multidisciplinary team and technical work streams. Serve as the project’s senior technical authority for MEL methods, indicator and target design, milestone measurement and verification, data quality, evaluation design, and evidence products. Advise and influence project leadership on performance, emerging risks, attribution, value for money, transition readiness, and strategic course correction. Performance, milestones, and data use Architect and govern an integrated performance management system linking objectives, activities, work plans, indicators, and milestones. Chair and drive quarterly technical performance reviews that translate findings into documented decisions, accountabilities, timelines, and follow-up actions. Safeguard the integrity, consistency, timeliness, and audit readiness of donor, government, management, and MSH reporting. Digital systems, analytics, and innovation Direct and govern interoperable project data architecture and the responsible use of DHIS2, DAGU/e-LMIS, e-RIS, laboratory connectivity platforms, and other approved systems. Sponsor and oversee the testing and scale-up of practical innovations, including AI-assisted tools, with quality, privacy, security, ethics, and human-review safeguards. Position digital investments to strengthen government ownership, interoperability, sustainability, and routine data use. Evaluation, research, learning, and knowledge translation Drive the development and adoption of innovative solutions, including methodologies, tools, and systems, that transform supply chain and TB program management to enhance efficiency, sustainability, quality, equity, and program impact. Set the strategic direction for mixed-method evaluations, implementation research, operational studies, assessments, and evidence syntheses related to TB, supply chains, health security, capacity, and transition. Uphold compliance with human subjects research, ethical review, informed consent, data protection, and dissemination requirements. Institutionalize adaptive learning practices, including pause-and-reflect sessions, after-action reviews, and evidence-informed course correction. Shape and quality assure technical briefs, presentations, abstracts, manuscripts, and communications that translate evidence for key audiences. People, partner, and institutional leadership Lead and develop a multidisciplinary team of MEL, communications and knowledge management and innovation experts, ensuring strategic alignment, role clarity, and high-quality delivery. Cultivate a high-performing leadership culture grounded in clear objectives, complementary roles, professional development, quality assurance, and succession planning. Represent and position the project in senior government, donor, partner, and technical forums, advancing institutional capacity and strategic alignment. Leverage MSH home office MERL-Tech and other technical teams to mobilize specialized expertise, reinforce standards, and strengthen project-wide technical quality. Qualifications Required: Master’s degree in MEL, public health, epidemiology, biostatistics, data science, health informatics, social sciences, implementation science, health systems, supply chain management, or a closely related field. Preferred: D",
     "deadline": null,
     "published": "2026-09-28",
     "country": "",
@@ -190,7 +190,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/senior-director-monitoring-evaluation-learning-and-innovation-at-management-sciences-for-health-4472793078",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.124Z",
+    "scraped_at": "2026-10-01T11:30:02.316Z",
     "raw_fields": {
       "li_job_id": "4472793078",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -198,9 +198,27 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
+    "title": "Learning Project Coordinator",
+    "organization": "Menzies Aviation",
+    "description": "Overview People. Passion. Pride. This is what has driven our teams since 1833. Since that time, we have developed to become a critical partner in the global aviation industry, delivering time-critical logistics services at 350 locations in more than 65 countries, across six continents. But at the heart of our business is our people. Role Purpose The Learning Project Coordinator is responsible for assuring the quality, consistency, and timely review of the corporate training program. The role focuses on the development, translation, and continuous improvement of our Corporate Training Program, ensuring we remain aligned to our Standard Operating Procedures as well as Industry Standards and regulatory requirements. In addition, the role provides coordination of the content review and translation of learning modules to ensure they are delivered as intended and remain effective, current, and compliant. What You Will Be Doing Review and support the updates of the corporate training programme. Coordinate translations with Subject Matter Experts and Learning Content Specialists. Prioritise the update and review of learning modules. Maintain the project tracker and Training Review Tracker for global visibility. Support the Learning Content Specialists in releasing updated content. Liaise with the Learning Systems Coordinators to upload new releases and archive. Ensure content is translated into the required languages and is verified by Subject Matter Experts. Would you like to see more detail on the accountabilities of the role? Please see the attached job description for further information Safety, Security, Wellbeing and Compliance: You will have a responsibility and duty whilst at work to take reasonable care of the health, safety and wellbeing of yourself and others in accordance with provided information, training, and workplace health and safety rules or procedures. The company is committed to providing a safe working environment for all staff members. In all areas of our business there is a potential risk to the health, safety and welfare to everyone on our sites through the misuse of alcohol and drugs. As such the Company prohibits such misuse and carries out regular testing to enforce our Substance Misuse Policy. Please see the attached job description for further details on safety, security, wellbeing & compliance. What We Are Looking For Project management skills or accreditation. Experience of working within the corporate training environment Robust, collaborative team player with the ability to engage at all levels. Output orientated. Flexible, detailed, a completer/finisher. Experience using project management tools, such as Prism (Work Otter), Microsoft Project Knowledge of translation tools. Diversity Menzies Aviation are a committed equal opportunity employer and encourage applications for suitably qualified and eligible applicants regardless of sex, race, disability, age, sexual orientation, gender reassignment, religion or belief, marital status, pregnancy, and maternity. We strive to create an inclusive working environment, where the different knowledge, perspectives, experiences, and approaches of our global workforce are represented. Where everyone feels valued and can reach their full potential. Please be aware that as part of our recruitment process, we may look to use a variety of resourcing tools to help us understand your skills and experience in relation to the role. Please feel free to contact to recruiter below, if there are any reasonable adjustments to our process that you would like us to consider. As part of our recruitment process, we will always consider how candidates fit with our values which you can learn more about here. Application Instructions Is this role ticking all the boxes for you? If so, please click apply now!",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Central, Tigray, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/learning-project-coordinator-at-menzies-aviation-4473904814",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:02.317Z",
+    "raw_fields": {
+      "li_job_id": "4473904814",
+      "location_raw": "Central, Tigray, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Health Safety Environment Officer",
     "organization": "CANDIDZONE",
-    "description": "",
+    "description": "We are looking for an experienced and qualified HSE officer to join a long-term construction project in Ethiopia. The ideal candidate should have strong experience in high-rise building projects , a solid background in construction HSE management, and internationally recognized safety certifications. Key Responsibilities Implement and monitor HSE policies and procedures at the project site. Conduct regular site inspections, safety audits, and risk assessments. Ensure compliance with project HSE requirements and applicable standards. Monitor construction activities and identify potential safety hazards. Conduct toolbox talks, safety inductions, and HSE awareness programs. Investigate incidents, near misses, and unsafe conditions. Prepare HSE reports, records, and inspection documentation. Coordinate with project teams and subcontractors to maintain safe working practices. Support emergency preparedness and response activities. Promote a strong safety culture across the project. Requirements BSc. in HSE, Engineering, or a related discipline. Minimum 7+ years of relevant HSE experience . High-rise building experience is mandatory. Previous experience with international construction companies . Professional proficiency in English is mandatory . Candidate should be a resident of Ethiopia . Required / Preferred Certifications NEBOSH IOSH Managing Safely IOSH Working Safely OSHA 30 Hours ISO 14001:2015 Lead Auditor ISO 45001:2018 Lead Auditor",
     "deadline": null,
     "published": "2026-09-29",
     "country": "",
@@ -208,7 +226,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/health-safety-environment-officer-at-candidzone-4473081689",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.124Z",
+    "scraped_at": "2026-10-01T11:30:02.317Z",
     "raw_fields": {
       "li_job_id": "4473081689",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -218,7 +236,7 @@
   {
     "title": "Maintenance Supervisor - Trucks (m/f)",
     "organization": "Mota-Engil",
-    "description": "",
+    "description": "He will be responsible for coordinating, planning and carrying out preventive and corrective maintenance activities on equipment, namely excavators, guaranteeing their availability and in accordance with the company's safety, quality and productivity procedures. Job Requirements And Competences Profile Technical degree or higher in Mechanical, Electrical or Electromechanical Engineering or similar; Proven experience in the maintenance of excavators and mining equipment; Knowledge of hydraulic, electrical and mechanical systems; Proficiency in English; Team management and problem solving; Proactivity and ability to analyse; Availability for mobility. Location: Karmuk, Ethiopia",
     "deadline": null,
     "published": "2026-09-26",
     "country": "",
@@ -226,7 +244,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/maintenance-supervisor-trucks-m-f-at-mota-engil-4470563075",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.125Z",
+    "scraped_at": "2026-10-01T11:30:02.318Z",
     "raw_fields": {
       "li_job_id": "4470563075",
       "location_raw": "Ethiopia"
@@ -234,9 +252,27 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
+    "title": "Agronomist",
+    "organization": "Addisketma",
+    "description": "Company Description We suggest you enter details here. Role Description This is a full-time on-site role located in ADDIS ABEBA, ETHIOPIA, for an Agronomist. The Agronomist will be responsible for conducting soil and plant assessments, developing and implementing agricultural strategies, and providing expertise on plant nutrition and irrigation methods. The role involves collaborating with teams to perform research, analyse agricultural needs, and formulate solutions to optimize crop production and soil health. Qualifications Proficiency in Soil Science and a strong understanding of soil management and fertility Expertise in Agriculture, including crop management and sustainable farming practices Hands-on experience and knowledge in Irrigation techniques and systems Strong background in Plant Nutrition and its application to improve crop yields Ability to conduct Research and interpret data to provide practical solutions Bachelor's degree in Agronomy, Agriculture, or a related field Strong analytical and problem-solving skills Good communication skills for providing technical advice and collaborating with stakeholders Prior experience in fieldwork and agricultural project management is an advantage",
+    "deadline": null,
+    "published": "2026-10-01",
+    "country": "",
+    "city": "Region 14, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/agronomist-4473775913",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:02.318Z",
+    "raw_fields": {
+      "li_job_id": "4473775913",
+      "location_raw": "Region 14, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Chief Executive Officer",
     "organization": "Transsion",
-    "description": "",
+    "description": "Position Overview We are seeking a highly experienced and results-oriented Chief Executive officer-CEO to jointly lead the company’s operations in Ethiopia in partnership with the Chinese General Manager. The successful candidate will play a key role in shaping and executing the company’s Ethiopia strategy, driving sustainable business growth, ensuring operational and financial performance, strengthening government and banking relationships, and accelerating the localization of the organization. The position requires a strong combination of strategic leadership, P&L management, business operations, government affairs, financial resource management, and local market expertise . Key Responsibilities 1. Business Strategy & Leadership Develop and drive the implementation of the annual business plan and medium- to long-term strategy for the Ethiopia market. Lead the transformation of the business from rapid scale expansion toward sustainable, profitable, and well-structured operations . Translate corporate strategy into clear business priorities, targets, and execution plans for the local market. Monitor business performance and take timely corrective actions to achieve strategic and financial objectives. Provide strategic insights and recommendations to headquarters based on local market conditions, opportunities, risks, and regulatory developments. 2. P&L and Business Performance Management Take overall responsibility for key business performance indicators, including revenue, profitability, market share, operating costs, and cash flow . Develop and manage annual budgets and business forecasts. Drive effective cost control and resource allocation while maintaining sustainable business growth. Monitor the company's P&L and ensure business decisions are aligned with profitability and long-term sustainability. Establish performance management mechanisms and regularly review business results with the management team. 3. Government & Regulatory Affairs Build and maintain strong, professional relationships with key Ethiopian government authorities and regulatory institutions. Develop effective working relationships with relevant authorities, including: Ministry of Finance Ethiopian Investment Commission Immigration Service Ethiopian Customs Commission Ethiopian Airports Administration Other relevant government and regulatory bodies Support the company in obtaining and maintaining required licenses, approvals, permits, and regulatory compliance. Monitor changes in government policies, regulations, taxation, foreign exchange, investment, import/export, and other matters affecting the company's operations. Represent the company in high-level government and external stakeholder engagements when required. 4. Banking, Financing & Foreign Exchange Management Lead the development of the company's local banking and financial ecosystem. Establish and maintain strong relationships with leading Ethiopian banks, including Commercial Bank of Ethiopia, Dashen Bank, Awash Bank, and other relevant financial institutions. Support local-currency financing, working-capital management, banking facilities, and other financing requirements. Coordinate foreign-currency acquisition and support the company in navigating Ethiopia's foreign exchange environment. Work closely with Finance and headquarters to manage cross-border payments, import financing, and other financial requirements. Identify and integrate appropriate local financial resources to support the company's business operations and growth. 5. Business Operations & Resource Allocation Coordinate major local resources and ensure efficient execution across key business functions. Support the resolution of complex operational issues related to foreign exchange, importation, customs, logistics, cross-border payments, and regulatory compliance. Work closely with Supply Chain, Sales, Marketing, Finance, HR, Retail, and other functions to ensure smooth end-to-end business operations. Ensure that business resources are allocated effectively according to strategic priorities and commercial objectives. 6. Market Development, Sales & Channel Management Support the development and execution of market, sales, distribution, retail, and channel strategies. Develop a strong understanding of the Ethiopian consumer electronics/mobile phone/FMCG market. Identify market opportunities, competitive developments, customer trends, and potential business risks. Strengthen distribution and retail capabilities to support sustainable market penetration and brand growth. Work with commercial teams to improve sales effectiveness, channel productivity, and market coverage. 7. Localization & Talent Development Lead the development and implementation of the company's localization strategy. Build a strong local management team and develop a sustainable talent pipeline for critical positions. Identify and develop high-potential Ethiopian employees for future leadership roles. Support the achievement of the company'",
     "deadline": null,
     "published": "2026-09-28",
     "country": "",
@@ -244,7 +280,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/chief-executive-officer-at-transsion-4471325696",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.125Z",
+    "scraped_at": "2026-10-01T11:30:02.318Z",
     "raw_fields": {
       "li_job_id": "4471325696",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -252,63 +288,99 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Manufacturing Engineer",
-    "organization": "Oromia construction Corporation",
-    "description": "",
+    "title": "Geologist",
+    "organization": "Ethipian electric utility",
+    "description": "Company Description Ethipian electric utility is a national power provider focused on developing and maintaining reliable electricity infrastructure to support economic growth and community well-being. The organization invests in exploration, generation, and distribution projects to expand access to energy across the country. It emphasizes sustainable resource management and the responsible development of energy assets. Team members collaborate across technical disciplines to ensure safe, efficient, and environmentally conscious operations. Role Description This is a full-time, on-site Geologist role based in Adis Zemen. The Geologist will conduct field investigations to assess geological conditions for current and planned utility projects, including site characterization for power generation and transmission infrastructure. Day-to-day responsibilities include collecting and analyzing geological data, preparing logs and maps, supporting drilling programs, and applying geophysical methods to evaluate subsurface conditions. The role involves preparing technical reports, collaborating with engineering and environmental teams, and ensuring compliance with safety and regulatory standards. The Geologist will also contribute to risk assessments related to geohazards and support project planning and decision-making. Qualifications Ability to perform Field Work, including site visits, sampling, and on-site data collection. Experience with Logging and documentation of boreholes, cores, and other subsurface data. Proficiency in Geological Mapping and interpretation of surface and subsurface geological features. Knowledge of Geophysics techniques for subsurface investigation and resource evaluation. Experience supporting Drilling operations, including planning, supervision, and data integration. Bachelor’s degree or higher in Geology, Geoscience, or a closely related field. Strong analytical and report-writing skills, with attention to accuracy and detail. Ability to work safely in field environments and collaborate with multidisciplinary teams. Familiarity with GIS or geological modeling software is an advantage. Prior experience in infrastructure, energy, or utility projects is beneficial.",
+    "deadline": null,
+    "published": "2026-10-01",
+    "country": "",
+    "city": "Adis Zemen, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/geologist-4472610874",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:02.319Z",
+    "raw_fields": {
+      "li_job_id": "4472610874",
+      "location_raw": "Adis Zemen, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Service Manager – Automotive Service Center",
+    "organization": "People First Consult",
+    "description": "Job Purpose To lead the overall operations and performance of the automotive service center, ensuring efficient workshop operations, high repair quality, excellent customer satisfaction, strong financial performance, and compliance with OEM standards, procedures, and safety requirements. Key Responsibilities Manage daily service center operations, including service reception, diagnosis, maintenance, repairs, PDI, quality control, and vehicle delivery. Ensure compliance with OEM service standards, technical procedures, warranty policies, and safety requirements. Manage workshop capacity, job allocation, workflow, WIP, technician productivity, and vehicle turnaround time. Drive service revenue, profitability, productivity, efficiency, utilization, and vehicle throughput. Lead, coach, and develop Service Advisors, Workshop Supervisors, Technicians, and support staff. Ensure accurate diagnosis, high repair quality, effective final inspection, and reduction of repeat repairs. Monitor customer satisfaction and ensure customer complaints are handled and resolved promptly. Coordinate with the Parts Department to ensure parts availability and minimize vehicle downtime. Manage warranty operations, including accurate and timely warranty claims and resolution of warranty-related issues. Oversee NEV/PHEV service operations, ensuring appropriate technical procedures, diagnostic equipment, safety practices, and technician competencies. Support new model introductions, technical campaigns, recalls, and PDI activities. Identify training and certification requirements and coordinate technical training with the OEM. Ensure workshop safety, 5S, tools, equipment, and facility standards are maintained. Prepare regular operational and KPI reports and implement corrective actions where required. Identify opportunities to improve customer retention, service quality, workshop efficiency, and aftersales business growth. Requirements Bachelor's degree or Diploma in Automotive/Mechanical Engineering, Electrical Engineering, or a related field. 7–10 years of automotive aftersales/service experience, with at least 3 years in a Service Manager, Workshop Manager, or equivalent leadership role. Strong experience in automotive dealership and workshop operations. Mandatory experience in NEV/PHEV or electric vehicle service operations. Strong knowledge of workshop operations, diagnostics, warranty, quality control, and customer service. Strong leadership, team management, problem-solving, and decision-making skills. Good understanding of workshop KPIs, service revenue, productivity, and profitability. Good English communication, reporting, and computer skills. Key Performance Indicators Service revenue and profitability Workshop productivity, efficiency, and utilization Vehicle throughput and turnaround time WIP and WIP aging On-time vehicle delivery First-Time Fix Rate (FTFR) Repeat repair rate Customer Satisfaction (CSI) Warranty performance Safety and 5S compliance",
+    "deadline": null,
+    "published": "2026-09-25",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/service-manager-%E2%80%93-automotive-service-center-at-people-first-consult-4470314570",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:04.032Z",
+    "raw_fields": {
+      "li_job_id": "4470314570",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "urban engineer",
+    "organization": "Adil Corporate Group Company",
+    "description": "Company Description Adil Corporate Group Company is a growing organization focused on delivering high-quality infrastructure and urban development projects. The company is committed to sustainable growth, efficient project delivery, and collaboration with public and private stakeholders. Adil Corporate Group Company values innovation, integrity, and professional excellence, offering team members opportunities to contribute to impactful projects that shape urban environments. The organization supports continuous learning and professional development to help employees build long-term careers. Role Description This is a full-time, on-site Urban Engineer role based in Addis Ababa, Ethiopia. The Urban Engineer will plan, design, and implement urban infrastructure projects, including roads, drainage systems, public spaces, and utilities, in alignment with local regulations and sustainable development principles. Daily responsibilities include conducting site assessments, analyzing data, preparing technical drawings and reports, and coordinating with architects, planners, contractors, and local authorities. The role involves monitoring project progress, ensuring compliance with safety and quality standards, and proposing improvements to optimize land use, transportation networks, and environmental impact. The Urban Engineer will also support feasibility studies, cost estimates, and stakeholder presentations to guide decision-making. Qualifications Strong foundation in urban engineering, civil engineering, or related fields, with experience in planning and designing urban infrastructure. Proficiency in technical tools such as CAD software, GIS, and other design or modeling applications used for urban and infrastructure projects. Knowledge of urban planning principles, zoning regulations, environmental standards, and sustainable development practices. Ability to conduct site surveys, analyze engineering data, prepare technical documentation, and contribute to feasibility and cost studies. Effective communication and collaboration skills for working with multidisciplinary teams, contractors, and government agencies. Strong organizational and problem-solving abilities, with attention to detail and a focus on safety, quality, and deadlines. Bachelor’s degree in Urban Engineering, Civil Engineering, Urban Planning, or a closely related discipline; relevant professional certifications are an advantage. Experience working on urban or infrastructure projects in Addis Ababa or similar urban contexts is preferred.",
+    "deadline": null,
+    "published": "2026-10-01",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/urban-engineer-4473923714",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:04.032Z",
+    "raw_fields": {
+      "li_job_id": "4473923714",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "MATH TEACHERS AT MARANATHA KINDERGARTEN AND PRIMARY SCHOOL",
+    "organization": "Maranatha Kindergarten and Primary School",
+    "description": "Mathematics Teacher – Job Description Plan and teach Mathematics lessons according to the school curriculum. Prepare lesson plans, exercises, assignments, tests, and examinations. Assess and monitor students’ academic progress. Provide remedial support to students who need additional help. Maintain accurate attendance and academic records. Manage the classroom and promote a positive learning environment. Participate in teachers’ meetings, examinations, and school activities. Work collaboratively with other teachers and the Academic Department.",
     "deadline": null,
     "published": "2026-09-29",
     "country": "",
-    "city": "Naqamte, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manufacturing-engineer-4471267595",
+    "city": "Gambela, Gambela Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/math-teachers-at-maranatha-kindergarten-and-primary-school-4473202237",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.125Z",
+    "scraped_at": "2026-10-01T11:30:04.032Z",
     "raw_fields": {
-      "li_job_id": "4471267595",
-      "location_raw": "Naqamte, Oromia Region, Ethiopia"
+      "li_job_id": "4473202237",
+      "location_raw": "Gambela, Gambela Region, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Eletricista | AVAC (m/f)",
-    "organization": "Mota-Engil",
-    "description": "",
+    "title": "Data, Economic & Impact Analyst",
+    "organization": "NTU International A/S",
+    "description": "Non-Key Expert – Data, Economic & Impact Analyst NTU International is preparing a proposal for the project “Support to the Africa-EU Space Partnership Programme – AESPP Boost.” The programme aims to strengthen cooperation between Africa and the European Union in the space sector , supporting policy dialogue, institutional partnerships, knowledge exchange, innovation, private sector engagement and investment, while contributing to stronger and more sustainable African space ecosystems. In this context, we are seeking a qualified Non-Key Expert – Data, Economic & Impact Analyst to support data and economic analysis, monitoring and evaluation, impact assessment, evidence synthesis, indicator monitoring, and results reporting under the programme. Minimum Qualifications and Skills University degree of at least three years in statistics, economics, data analytics, social sciences , or a related field. Excellent command of English . Working knowledge of French and/or Portuguese is an asset . Minimum General Professional Experience Minimum 3 years of professional experience in data analysis, economic analysis, surveys, reporting or indicator monitoring. Minimum Specific Professional Experience At least 1 year of professional experience supporting MEL, evaluation or impact assessment , including quantitative and qualitative analysis, evidence synthesis, data compilation and preparation of dashboards or performance reports. If you are interested in this opportunity, please apply and upload your CV via LinkedIn or send to recruitment@ntu.eu. Please note that only selected candidates will be contacted due to the large amount of applicants.",
     "deadline": null,
-    "published": "2026-09-26",
+    "published": "2026-09-25",
     "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/eletricista-avac-m-f-at-mota-engil-4470555253",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/data-economic-impact-analyst-at-ntu-international-a-s-4472016579",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.125Z",
+    "scraped_at": "2026-10-01T11:30:04.033Z",
     "raw_fields": {
-      "li_job_id": "4470555253",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Mid wife nurse",
-    "organization": "Jugal general hospital",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-24",
-    "country": "",
-    "city": "Harar, Harar, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/mid-wife-nurse-4467351212",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:29.126Z",
-    "raw_fields": {
-      "li_job_id": "4467351212",
-      "location_raw": "Harar, Harar, Ethiopia"
+      "li_job_id": "4472016579",
+      "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
     "title": "IT Operations Coordinator",
     "organization": "Scale Army Careers",
-    "description": "",
+    "description": "This role is open to candidates based in LATAM, Africa, and Eastern Europe. Please note that as this role supports U.S.-based clients, candidates must be available to work during U.S. business hours aligned with the client’s time zone. Our client is a rapidly growing private aviation company focused on delivering exceptional operational execution and customer service. Operating in a fast-paced, high-performance environment, they are seeking an IT Operations Coordinator to serve as a trusted operational partner to leadership while supporting internal technology coordination, administrative operations, and cross-functional process improvement as the company continues to scale. Role Overview The IT Operations Coordinator will be responsible for coordinating employee technology support, executive administration, project management, vendor relationships, and day-to-day business operations. The IT Operations Coordinator will work closely with leadership and the company's outsourced IT provider to ensure employees receive timely support while helping improve internal processes, maintain operational documentation, and coordinate cross-functional initiatives. This role is ideal for someone who enjoys wearing multiple hats, solving problems proactively, and bringing structure and organization to a fast-growing business. Location Fully Remote | 9:00 AM - 5:00 PM EST Key Responsibilities IT Coordination & Employee Support Serve as the primary internal point of contact for employee technology requests. Coordinate with the outsourced IT provider to resolve hardware, software, and access-related issues. Support employee onboarding and offboarding, including user account creation, permissions, and equipment coordination. Assist with Microsoft 365 administration, user management, and basic technology troubleshooting. Maintain IT documentation, asset inventories, and internal technology processes. Executive & Administrative Support Provide administrative support to company leadership, including calendar management, scheduling, meeting coordination, and follow-up on action items. Coordinate travel arrangements and other executive administrative tasks. Maintain organized documentation and ensure operational records remain accurate and current. Project Coordination Coordinate cross-functional projects using Asana or similar project management platforms. Monitor project timelines and follow up with stakeholders to ensure deliverables remain on schedule. Document workflows and identify opportunities to improve operational efficiency. HR & Vendor Administration Support employee onboarding and general HR administration. Coordinate relationships with software vendors and external service providers. Track contracts, renewals, subscriptions, and vendor agreements. Maintain employee records and operational documentation. General Operations Support leadership with day-to-day operational initiatives. Take ownership of administrative and operational projects from initiation through completion. Continuously identify opportunities to improve internal organization, communication, and operational efficiency. Qualifications Experience 2–4 years of experience in Operations, Executive Support, IT Administration, Office Management, or a related role. Experience supporting Microsoft 365 and/or Google Workspace environments. Experience coordinating with third-party vendors or outsourced IT providers is preferred. Previous experience supporting executive leadership in a fast-paced environment is a plus. Experience coordinating cross-functional operational projects is preferred. Skills Strong organizational and time management skills. Excellent written and verbal English communication skills. Exceptional attention to detail and accuracy. Experience using Asana or similar project management software. Strong proficiency with Microsoft Office, including Outlook, Excel, Word, and Teams. Experience with Microsoft 365 administration. Ability to learn new software platforms and internal systems quickly. Strong problem-solving and troubleshooting abilities. Ability to manage multiple priorities while maintaining professionalism. Excellent stakeholder management and follow-up skills. Proactive, resourceful, and highly accountable. What Success Looks Like Employees receive timely, organized support for technology requests through effective coordination with the outsourced IT provider. Leadership confidently delegates operational and administrative responsibilities, allowing greater focus on strategic priorities. Projects remain organized, deadlines are consistently met, and follow-up across departments is proactive. Company documentation, vendor relationships, and operational records are maintained with accuracy. Internal processes become increasingly efficient through proactive problem-solving and continuous improvement. Leadership recognizes the Executive Operations & IT Coordinator as a trusted operational partner. Opportunity This is an exciting opportunit",
     "deadline": null,
     "published": "2026-09-29",
     "country": "",
@@ -316,7 +388,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/it-operations-coordinator-at-scale-army-careers-4471912466",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.855Z",
+    "scraped_at": "2026-10-01T11:30:04.033Z",
     "raw_fields": {
       "li_job_id": "4471912466",
       "location_raw": "Ethiopia"
@@ -324,9 +396,63 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
+    "title": "Student Counselor",
+    "organization": "Luminous Global Links",
+    "description": "Student Counselor – Luminous Educational Consultancy Luminous Educational Consultancy is hiring experienced Student Counselors to join our Admissions & Student Services team in Addis Ababa. The Student Counselor will handle student counseling, sales and customer conversion, university applications, visa application support, student follow-up, and collaboration with our marketing team. Key Responsibilities * Counsel prospective students and recommend suitable study options. * Convert qualified inquiries into paying students. * Handle university applications from document collection through submission and follow-up. * Support students with visa applications and documentation. * Follow up with prospective and active students. * Maintain accurate student and lead records. * Work closely with the Social Media & Digital Marketing team. * Participate in educational videos, promotional content, and TikTok Live sessions. Mandatory Requirements * Minimum 1 year of professional experience in international education, study-abroad consultancy, educational consultancy, admissions, or student recruitment. * Previous experience in this sector is mandatory. * Proven experience in student counseling and/or sales. * Experience handling university applications. * Experience supporting student visa applications. * Strong communication, sales, and follow-up skills. * Good English communication skills. * Strong computer and online application skills. * Comfortable appearing in videos and participating in live sessions. * Ability to work with performance targets and KPIs. Performance The expected target after the initial training/ramp-up period is 8 paying students per month. Compensation includes a fixed salary plus performance-based commission. Location: Addis Ababa Employment: Full-Time Hiring: Immediate IMPORTANT — APPLICATION IS MANDATORY All candidates MUST complete the Luminous Educational Consultancy Google Application Form to be considered for this position. Applying through LinkedIn alone is NOT sufficient. Complete the required application form here: https://forms.gle/F8VQooBfjnNbuWtR7 Candidates who do not complete the Google Form will not proceed to the selection process.",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/student-counselor-at-luminous-global-links-4473907448",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:04.033Z",
+    "raw_fields": {
+      "li_job_id": "4473907448",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Teacher",
+    "organization": "3years as a teacher",
+    "description": "Company Description 3years as a teacher is an educational organization committed to providing quality learning experiences and academic support to students. The organization focuses on fostering a positive and inclusive learning environment where learners can grow intellectually and personally. It values professional teaching practices, continuous improvement, and collaboration among staff. Team members are encouraged to use innovative teaching methods and support each learner’s unique needs. The organization aims to make a meaningful impact in the community through education. Role Description The Teacher role is a full-time, on-site position based in Gonder. The Teacher will plan and deliver engaging lessons that align with the curriculum and support diverse learning styles. Daily responsibilities include preparing instructional materials, teaching classes, assessing student progress, and providing constructive feedback. The Teacher will maintain a safe and respectful classroom environment, communicate regularly with learners and guardians, and participate in staff meetings and professional development activities. The role also involves collaborating with colleagues to enhance teaching practices and contribute to school initiatives. Qualifications Candidates should possess strong Lesson Planning and Teaching skills to design and deliver effective instruction. Candidates should possess solid Education and Training skills to support learner development and apply sound pedagogical practices. Candidates should possess excellent Communication skills to interact clearly and respectfully with students, guardians, and colleagues. Relevant teaching certification or diploma in Education or a related field is preferred. Minimum of 3 years of classroom teaching experience is beneficial. Ability to manage classrooms, adapt lessons, and work collaboratively in a school setting. Commitment to inclusive, student-centered teaching and ongoing professional growth.",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Gonder, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/teacher-4472155725",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:04.033Z",
+    "raw_fields": {
+      "li_job_id": "4472155725",
+      "location_raw": "Gonder, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Communication officer CYRO",
+    "organization": "Children and Youth Relief Organization (CYRO)",
+    "description": "Company Description Children and Youth Relief Organization (CYRO) is a humanitarian organization dedicated to improving the lives of children and young people through relief, protection, and development programs. CYRO focuses on creating safe, supportive environments where children and youth can access essential services, education, and opportunities for growth. The organization works closely with communities, local authorities, and partners to design and implement sustainable initiatives that address immediate needs and long-term challenges. CYRO values transparency, inclusivity, and community participation in all aspects of its work, aiming to empower young people as active contributors to their own futures. Role Description The Communication Officer CYRO is a full-time, on-site position based in Jijiga. This role is responsible for developing and implementing communication strategies that support CYRO’s programs and visibility at local and regional levels. Day-to-day tasks include drafting press releases, preparing communication materials, writing stories and updates, and managing relationships with media outlets and other stakeholders. The Communication Officer will coordinate internal and external communications, ensure consistent messaging across channels, and support advocacy and awareness campaigns. The position also involves collecting field information, documenting program activities, and collaborating with program teams to highlight impact and share key achievements. Qualifications Candidates should possess strong Communication and Strategic Communications skills, with the ability to tailor messages for diverse audiences. Candidates should possess experience in Press Releases and Media Relations, including engaging local media and managing inquiries. Candidates should possess excellent Writing skills, with the ability to produce clear, accurate, and compelling content. Candidates should possess skills in stakeholder engagement, community outreach, and basic advocacy or public awareness work. Relevant qualifications such as a diploma or degree in Communications, Journalism, Public Relations, or a related field are beneficial. Experience working with NGOs or humanitarian organizations, preferably in child and youth-focused projects, is an advantage. Strong organizational skills, attention to detail, and the ability to manage multiple tasks and deadlines are important. Proficiency in commonly used office and communication tools, and strong interpersonal and teamwork skills, are desirable.",
+    "deadline": null,
+    "published": "2026-10-01",
+    "country": "",
+    "city": "Jijiga, Somali Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/communication-officer-cyro-4473764340",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:04.034Z",
+    "raw_fields": {
+      "li_job_id": "4473764340",
+      "location_raw": "Jijiga, Somali Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Professor of English",
     "organization": "Wolaita Sodo University",
-    "description": "",
+    "description": "Company Description St. Mary’s University, Addis Ababa, Ethiopia — a leading private institution committed to academic excellence, community engagement, and professional development. Role Description Currently serving as an Editor and Community Engagement Coordinator at St. Mary’s University, with extensive experience as an Associate Professor of TEFL . My responsibilities include editing academic and institutional documents, coordinating community outreach initiatives, and facilitating partnerships with NGOs and academic institutions. Previously, I lectured English courses for MA and PhD students at Wolaita Sodo University, contributing to curriculum development, student mentorship, and departmental growth. Qualifications PhD in TEFL with Associate Professor rank Expertise in English language teaching Strong background in curriculum design and academic editing Proven experience mentoring graduate and doctoral students Skilled in fostering collaborative academic and community partnerships Track record of research and publications in TEFL and English education",
     "deadline": null,
     "published": "2026-09-27",
     "country": "",
@@ -334,7 +460,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/professor-of-english-4470591843",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.855Z",
+    "scraped_at": "2026-10-01T11:30:04.034Z",
     "raw_fields": {
       "li_job_id": "4470591843",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -342,315 +468,135 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Affiliate Contractor - Senior Programme Associate (Grants Management) - Addis Ababa",
-    "organization": "IOM - UN Migration",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-24",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/affiliate-contractor-senior-programme-associate-grants-management-addis-ababa-at-iom-un-migration-4471485611",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.856Z",
-    "raw_fields": {
-      "li_job_id": "4471485611",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Salesperson",
-    "organization": "Abdi guddina Association",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-29",
-    "country": "",
-    "city": "Boke Tiko, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/salesperson-4472777800",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.856Z",
-    "raw_fields": {
-      "li_job_id": "4472777800",
-      "location_raw": "Boke Tiko, Oromia Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Senior Pharmacist",
-    "organization": "Sifene pharmacy",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-29",
-    "country": "",
-    "city": "Shakiso, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-pharmacist-4473251158",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.856Z",
-    "raw_fields": {
-      "li_job_id": "4473251158",
-      "location_raw": "Shakiso, Oromia Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Virtual Assistance--GoHighLevel Pro",
-    "organization": "HibLink Tech",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-30",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/virtual-assistance-gohighlevel-pro-at-hiblink-tech-4472145075",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:30.857Z",
-    "raw_fields": {
-      "li_job_id": "4472145075",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Regional Coordinator - Ethiopia",
-    "organization": "Simprints",
-    "description": "",
+    "title": "Health & Nutrition Officer - MHNT { Moyale)",
+    "organization": "Save the Children International",
+    "description": "JOB DESCRIPTION Internal/External vacancy for MHTN Officer OCATION : MHTN Officer_ GRADE : 4A Vacant Position : 1 POST TYPE : National Child Safeguarding: Level 3: the role holder will have contact with children and/or young people either frequently (e.g. once a week or more) or intensively (e.g. four days in one month or more or overnight) because they work in country programs; or are visiting country programs; ore because they are responsible for implementing the police checking/vetting process staff. ROLE PURPOSE: The position holder shall be in charge of technical quality implementation and delivery of the mobile health and Nutrition services in the assigned woreda. S/He will mainly be responsible for the daily implementation of the screening, OTP, consultation, outreach EPI, health education, sanitation, safe motherhood and child health as per the guideline of Somali RHB mobile health and Nutrition teams. In addition the position holder is also expected to provide supervision, technical assistance and capacity building to health extension workers and Health workers in health facilities. She/He will be responsible for the daily implementation of mobile health and Nutrition services package as per the standard, supporting health facilities assigned as integrated mobile health & Nutrition modality and daily dispensary and drug supply management SCOPE OF ROLE: Reports to: Health Nutrition Coordinator Dimensions: Save the Children works in - regions in Ethiopia with a current staff complement of approximately - staff and current expenditure of approximately $90+ million each year Number of direct reports: Health Nutrition Coordinator Staff reporting to this post: N/A Job Description KEY AREAS OF ACCOUNTABILITY: Specific Duties And Responsibilities: Specific Duties and Responsibilities: Improving basic preventive health care at community level with emphasis health, immunization, health and nutrition services Conduct & undertake PHC like consultation & provide proper treatment based on the protocol Strengthening of linkages and coordination mechanisms between community and the woreda health bureaus Strengthening of early referrals mechanism Plan and implement project outlined in the protocol for OTP and SC to achieve objectives of the project. The health and nutrition Officer will help facilitate admission of the patient at the OTP, and SC. Train and support the HEWs in severe acute malnutrition case management and follow-up (e.g., referral to SC) according to national guidelines. Train and support community-based volunteer health workers for the implementation of the community component of the project. Ensure each and every admitted child receives adequate and quality clinical and nutritional care through existing resources. Ensure at all times adequately equipped and supplied with the necessary nutritional and clinical Ensure referral system and linkage between services and the health facilities Adherence to medical and nutritional treatment protocols and procedures for children and infants. Provide onsite training to HEW and nurses. Ensure Job aids are available in Health posts (HEW quick reference, Look up table, report format, tally sheet, Plumpnut and drug stock control balance form) Receive weekly reports from HEW at weekly basis, cross check the completeness and accuracy and submit to Woreda Project officers. Mentoring and assist HEW in decision of patients who are at severe risks and need to be transferred to nearby hospital Participate in capacity building training, in health education sessions and ENA/BCC application Follow up absentees/defaulters and keep current record of both beneficiaries and the staff (CHAs, volunteers). Accountability: SKILLS AND BEHAVIOURS (our Values in Practice) Holds self-accountable for making decisions, managing resources efficiently, achieving and role modelling Save the Children values. Holds the team and partners accountable to deliver on their responsibilities - giving them the freedom to deliver in the best way they see fit, providing the necessary capacity to improve performance and applying appropriate measures when results are not achieved. Ambition: Sets ambitious and challenging goals for himself/herself (and their team). Take responsibility for his/her own personal actions and encourage others to do the same. Widely shares his/her personal vision for Save the Children, engages and motivates others. Future-orientated, thinks strategically. Collaboration: Builds and maintains effective relationships, his/her team, colleagues, members and external partners and supporters. Values diversity sees it as a source of competitive strength. Approachable, good listener, easy to talk to. Creativity: Develops and encourages new and innovative solutions. Willing to take disciplined risks Integrity: Honest encourages openness and transparency. Qualifications And Experience To be successful, you will bring/have: Essential BSc/College Diploma in Nursing and/or other health rel",
     "deadline": null,
     "published": "2026-09-30",
     "country": "",
     "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/regional-coordinator-ethiopia-at-simprints-4472158321",
+    "source_url": "https://et.linkedin.com/jobs/view/health-nutrition-officer-mhnt-moyale-at-save-the-children-international-4472040737",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.605Z",
+    "scraped_at": "2026-10-01T11:30:05.813Z",
     "raw_fields": {
-      "li_job_id": "4472158321",
+      "li_job_id": "4472040737",
       "location_raw": "Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Construction Manager",
-    "organization": "Allegiance Global",
-    "description": "",
+    "title": "የአስተዳደርና ፋይናንስ ዳይሬክተር",
+    "organization": "Ethio Serve Trade and Consultancy Enterprise",
+    "description": "ኢትዮ-ሰርቭ ንግድና ማማከር ኢንተርፕራይዝ በድጋሚ የወጣ አስቸኳይ ክፍት የሥራ መደብ ማስታወቂያ ኢትዮ-ሰርቭ ንግድና ማማከር ኢንተርፕራይዝ የኢትዮጵያ ፐብሊክ ሰርቪስ ዩኒቨርስቲ የንግድ ክንፍ ሆኖ በተለያዩ የንግድ ዘርፎች ገበያ ተኮር አገልግሎቶችን ለመስጠት የተቋቋመ መንግሥታዊ የልማት ድርጅት ነው፡፤ ኢንተርፕራይዙ በቦርድ ያጸደቀ የሰው ሀብት አስተዳደር፣ የሥራ መደብና የደረጃ አወቃቀር፣ የደመወዝ ስኬል እና የሙያ ዕድገት ሥርዓት ያለው ሲሆን፣ ከታች በተመላከተው መደብ ብቁ ባለሙያ በተቋሙ የቅጥርና የሥራ ሥርዓት መሠረት በቋሚነት ለመቅጠር ይፈልጋል። የስራ መደብ ፡ የአስተዳደርና ፋይናንስ ዳይሬክተር የሥራ ደረጃ፡- XVI ብዛት፡- 1 የትምህርት ደረጃ፡- በአካውንቲንግ፣ በአካውንቲንግና ፋይናንስ፣ በፐብሊክ ፋይናንስ፣ በማናጅመንት፣ በቢዝነስ አስተዳደር፣ ወይም በኢኮኖሚክስ የመጀመሪያ/ሁለተኛ/ሶስተኛ ዲግሪ ያለው/ላት የስራ ልምድ፡- ቢያንስ ለመጀመሪያ ዲግሪ ቢያንስ 8 ዓመት፣ ለሁለተኛ ዲግሪ ቢያንስ 6 ዓመት ወይም ለሶስተኛ ዲግሪ ቢያንስ 4 ዓመት ቀጥተኛና (አግባብነት) ያለው የሥስራ ልምድ ያለው/ላት የቅጥር ሁኔታ ፡- ቋሚ ደመወዝ፡- 55,000.00 ጥቅማ ጥቅም፡- የኃላፊት አበል፣ የቤት አበልና እና በኢንተርፕራይዙ ሥርዓት የተፈቀዱ ሌሎች ጥቅማ ጥቅሞች፡፡ Required Competencies በድርጅታዊ ፋይናንስ ስትራቴጂ፣ በበጀትና በፋይናንስ ዕቅድ፣ በገንዘብ ፍሰትና በካፒታል አስተዳደር ጠንካራ ሙያዊ ብቃት። በፋይናንስ ትንተና፣ በትርፋማነት ማሻሻያ፣ በወጪ ቁጥጥርና በፋይናንስ አደጋ አስተዳደር ተግባራዊ እውቀት። በውስጥ ቁጥጥር፣ በኦዲት፣ በፋይናንስ ሪፖርትና በተጠያቂነት ሥርዓት የመምራት ብቃት። ጠንካራ የአመራር፣ የትንታኔ፣ የውሳኔ አሰጣጥና የግንኙነት ችሎታ። Preferred Competencies በልማት ወይም ንግድ ድርጅት ወይም በግል ዘርፍ የፋይናንስ አመራር የሥራ ልምድ። ማሳሰቢያ የምዝገባ ሁኔታ፡ ምዝገባ ከታች በተመላከተው የድህረ መረብ ሊንክ (google form) በመጠቀም ወይም QR code ስካን በማድረግ መሆን ይኖርበታል፡፡ አመልካቾች ቅጹ የሚጠይቀውን መረጃዎች በአግባቡ መሙላት ይኖርባቸዋል፡፡ እንዲሀም አስፈላጊ ማስረጃዎችን በአንድ ፒ.ዲ.ኤፍ/ PDF መጫን ይኖርባቸዋል፡፡ https://forms.gle/YJo51Psc1gAs8uo89 አስፈላጊውን ደጋፊ ማስረጃ ያላቀረበ አመልካች ተቀባይነት አይኖረውም/ራትም፡፡ አመልካቾች ሊያቀርቧቸው የሚገባ ሰነዶች(Necessary Uploaded Documents) የማመልከቻ ደብዳቤ (Application Letter) (የትምህርት ደረጃ፣ የስራ ልምድ ዓመታት፣ ልዩ ሰርተፊኬት (ካለ)፣የሚያመለክቱበትን የስራ መደብ የሚገልጽ) አጭር የግል መግለጫ (Curriculum Vitae/CV) የትምህርት እና ተዛማጅ ስልጠና ዲግሪ/ደረጃ ማስረጃዎች እና ሰርተፊኬቶች ቀጥተኛ የስራ ልምድ እና ኃላፊነት የሚያሳይ የስራ ልምድ ደብዳቤ ከግል ድርጅት የሚቀርብ የስራ ልምድ የስራ ግብር የተከፈለበት ስለመሆኑ መገለፅ ይኖርበታል። አመልካቾች ዋና ማስረጃቸውን ለፈተና ሲጠሩ ማቅረብ ይኖርባቸዋል የማመልከቻ ቀን፡ ብቁ አመልካቾች ይህ ማስታወቂያ ከወጣበት ቀን ጀምሮ ባሉት 5(አምስት) ተከታታይ ቀናት ብቻ ማመልከት ይኖርባቸዋል። ዝቅተኛ መስፈርት ያሟሉ ተወዳዳሪዎች ብቻ ለፈተና እና/ወይም ቃለ-ምልልስ ይጠራሉ፤ ውጤቱ በውስጥ ማስታወቂያና አመልካቾች ባቀረቡት በኢሜይል አድራሻ ይገለጻል። ማሳሰቢያ፡- ኢንተርፕራይዙ ምንም አይነት ማመልቻ በአካል የማይቀበል መሆኑን እንገልጻለን፡፡ በዚህ የድህረ መረብ ሊንክ ያመልክቱ፡ https://forms.gle/YJo51Psc1gAs8uo89 ለበለጠ መረጃ: እባክዎ የ ኢትዮጵያ ፐብሊክ ሰርቪስ ዮኒቨርስቲ የፌስቡክ ገጽ ወይም @epsutelegram የቴሌግራም ቻናልን ይጎብኙ ወይም ጥያቄ ካሎት ethioserventerprise@gmail.com ይጠቀሙ።",
+    "deadline": null,
+    "published": "2026-09-29",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/%E1%8B%A8%E1%8A%A0%E1%88%B5%E1%89%B0%E1%8B%B3%E1%8B%B0%E1%88%AD%E1%8A%93-%E1%8D%8B%E1%8B%AD%E1%8A%93%E1%8A%95%E1%88%B5-%E1%8B%B3%E1%8B%AD%E1%88%AC%E1%8A%AD%E1%89%B0%E1%88%AD-at-ethio-serve-trade-and-consultancy-enterprise-4471250814",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:05.814Z",
+    "raw_fields": {
+      "li_job_id": "4471250814",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Legal Associate and Senior Legal Associate",
+    "organization": "Dadimos & Partners LLP",
+    "description": "We are Hiring: Associate & Senior Associate Dadimos & Partners LLP is seeking talented, ambitious and commercially minded lawyers to join our team as an Associate or Senior Associate . Associate · LL.B. degree from a recognised university; an LL.M. or another relevant degree may be an advantage. · Minimum of three years’ post-graduation legal experience; law-firm experience is preferred. · Experience in one or any combination of the following practice areas: corporate and commercial law, construction law, mining and energy, and tax law. · Strong legal research, analysis and drafting skills. · Excellent written and oral communication skills in English. · Sound judgment, attention to detail, professionalism, initiative and the ability to work effectively both independently and as part of a team. Senior Associate · LL.B. degree from a recognised university; an LL.M. or another relevant degree may be an advantage. · Minimum of six years’ post-graduation legal experience; law-firm experience is preferred. · Substantial experience in one or any combination of the following practice areas: corporate and commercial law, construction law, mining and energy, and tax law. · Demonstrated ability to lead and manage complex matters independently, provide practical and commercially sound legal advice, and deliver high-quality work within deadlines. · Excellent legal research, analytical, drafting, negotiation and communication skills, with high proficiency in English. · Ability to supervise and mentor junior lawyers, manage client relationships and contribute to the firm’s knowledge development and business-development initiatives. · Strong professional judgment, integrity, initiative, attention to detail and a client-focused approach. What we offer · Competitive salary and benefits commensurate with qualifications and experience. · Meaningful responsibility and exposure to sophisticated, high-value and cross-border matters. · A collaborative professional environment with opportunities for learning, leadership and career development. How to apply Please send your CV, cover letter, academic record, and the names and contact details of two referees to dp@dadimoshaile.com . Please state the position you are applying for in the subject line. Application deadline: 19 October 2026 If you meet the above requirements and are ready to advance your legal career in a challenging and rewarding environment, we would be pleased to hear from you. Please share this opportunity with qualified candidates in your network. #LegalJobs #LegalCareers #LawFirmHiring #AssociateLawyer #SeniorAssociate #AddisAbaba #Ethiopia",
+    "deadline": null,
+    "published": "2026-09-29",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/legal-associate-and-senior-legal-associate-4473554319",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:05.814Z",
+    "raw_fields": {
+      "li_job_id": "4473554319",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Project Manager - Technical Assistance",
+    "organization": "COLEAD.link",
+    "description": "🌱 We’re hiring: Project Manager – Technical Assistance (Ethiopia) 🌱 Organisation: COLEAD Programme: Mobilizing Actors in Horticulture for Entrepreneurship and Boosting Ethiopian Resilience (MAHEBER) Location: Addis Ababa, Ethiopia Start date: As soon as possible Contract: Independent consultancy agreement - 1 year (renewable) About COLEAD & the programme COLEAD is a non-profit interprofessional association founded in 1973 whose mission is to support the sustainable transformation of agri-food systems and strengthen the contribution of the agri-food sector to achieving the United Nations Sustainable Development Goals (SDGs). COLEAD manages development programmes in more than 50 countries across Africa, the Caribbean and the Pacific, supporting private-sector operators, producer organisations, public institutions and other stakeholders to improve competitiveness, sustainability and market access. As part of the implementation of the MAHEBER Programme – “Mobilizing Actors in Horticulture for Entrepreneurship and Boosting Ethiopian Resilience”, COLEAD is recruiting a Project Manager within its Technical Assistance Department. MAHEBER aims to strengthen the competitiveness and sustainability of Ethiopia’s horticulture sector by supporting stakeholders in adapting to evolving sanitary and phytosanitary (SPS), commercial, social and environmental requirements in local, regional and international markets. The Role Based in Addis Ababa, Ethiopia, the Project Manager will work under the supervision of the MAHEBER Programme Coordinator and in close collaboration with COLEAD teams in Addis Ababa, Nairobi, Brussels and Lomé. The successful candidate will manage a portfolio of partner-beneficiaries and coordinate technical assistance and capacity-building activities supporting horticultural businesses, producer organisations, public institutions and support-service providers. The role requires strong project management skills, experience in the Ethiopian agricultural or horticultural sector, and the ability to translate identified needs into practical and impactful support interventions. Key responsibilities Assess support requests from partner-beneficiaries and identify priority needs, challenges and capacity-building opportunities. Develop and manage tailored support projects, including the implementation of COLEAD’s Sustainability Self-Assessment System (SAS). Coordinate technical assistance, training and other capacity-building activities from planning through implementation, monitoring and follow-up. Prepare terms of reference, support the selection and contracting of experts and service providers, and supervise the delivery of assignments. Coordinate with programme partners and stakeholders to ensure effective technical, administrative and logistical implementation of activities. Organise and monitor calls for expressions of interest and other beneficiary selection processes. Ensure activities are delivered on time, to the required quality standards, and in accordance with COLEAD and donor procedures. Contribute to programme monitoring, evaluation and reporting, including activity documentation, financial follow-up and performance tracking. Maintain strong relationships with horticultural companies, producer organisations, public institutions, experts and other programme stakeholders. Contribute to workshops, conferences, trade fairs, training resources and other programme activities. Profile Master’s degree (or equivalent) in agriculture, agronomy, horticulture, agribusiness, project management, or a related field. Minimum 7 years’ relevant professional experience, including substantial experience in Ethiopia’s agricultural or horticultural sector and at least 3 years in project management. Experience designing, implementing, and monitoring technical assistance, capacity-building, or organisational development activities. Strong understanding of horticultural value chains and experience working with businesses, producer organisations, public institutions, and support-service providers. Experience managing external experts and service providers, as well as project monitoring, reporting, and administrative follow-up. Strong project management, analytical, organisational, communication, and stakeholder engagement skills, with the ability to manage multiple priorities in a multicultural environment. Good digital literacy and fluency in English and Amharic. Knowledge of French, Spanish, or Portuguese is an asset. Conditions 📍 Full-time position based in Addis Ababa, Ethiopia ✈️ Regular travel within Ethiopia and occasional travel within the Eastern African region and Belgium may be required 📆 Start date: As soon as possible 📩 How to Apply Send your CV + Cover Letter + References by Friday 16th of October 2026 17:00 CEST . Joining COLEAD means joining a multicultural and committed team working to promote sustainable and inclusive agri-food systems. It is an opportunity to contribute to meaningful development impact",
+    "deadline": null,
+    "published": "2026-09-28",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/project-manager-technical-assistance-at-colead-link-4472750934",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:05.815Z",
+    "raw_fields": {
+      "li_job_id": "4472750934",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Program Manager II - Emergency",
+    "organization": "Catholic Relief Services",
+    "description": "Job Description Job title: Program Manager II - Emergency Job grade: 10 Reporting to: Deputy Head of Programs, PQ Department: Programs Duty location: CRS/Addis Ababa, Ethiopia Term of Employment: Definite term (i.e. up to Sep 30, 2027) with possibility of extension contingent up on performance and availability of funding. Note: This position is for Ethiopian nationals only Job Summary You will manage and provide technical oversight of the development and implementation of the Country Program’s (CP) emergency programming, ensuring effective systems and processes are in place that support high-quality programming advancing Catholic Relief Services’ (CRS) work in serving the poor and vulnerable. Your management skills and knowledge will ensure that the CP delivers high-quality programming and continuously works towards improving the impact of its emergency programming. Roles And Key Responsibilities Provide management, guidance, and technical oversight of all new and existing projects within the CP’s Emergency Program throughout the project cycle to ensure project design, start-up, implementation, and close-out are in line with CRS quality principles and standards, donor guidelines, and industry best practices. Effectively manage talent for Emergency Program and supervise. Manage team dynamics and staff well-being. Provide coaching, strategically tailor individual development plans, and complete performance management for direct reports. Lead cross-functional emergency preparedness and response planning processes, working closely with sector and operations teams to develop, regularly update, and operationalize cohesive emergency preparedness and integrated response plans. Lead the development and implementation of program learning and MEAL systems for the emergency portfolio, including the design and maintenance of a cohesive portfolio-level MEAL plan, processes, and reporting systems. Identify opportunities for learning, research, and publications related to emergency programming and implementation of MEAL policy. Facilitate the dissemination of promising practices and lessons learned to contribute to the agency’s knowledge management agenda and ensure the integration of innovations and best practices across emergency interventions. Contribute to the proactive pursuit of opportunities for new funding to ensure growth of the emergency sector portfolio in line with agency, regional, and CP Emergency Program strategic priorities. Serve as the technical lead and technical writer to ensure quality proposals in Emergency Program per agency and donor standards. Contribute to budgeting and staffing plans and activities for proposals. Oversee technical assistance and capacity strengthening activities in Emergency Program for staff and partner organizations to enhance program quality and impact. Oversee the identification, assessment and strengthening of partnerships relevant to Emergency Program and the appropriate application of partnership concepts, tools and approaches. Participate and represent CRS in different forums, including relevant National Clusters. Ensure timely and appropriate project expenditures in line with financial plans and efficient use and stewardship of project material sources. Knowledge, Skills And Abilities Strong analytical and problem-solving skills, with ability to make sound judgment and decisions and offer innovative solutions Strong relations management abilities. Ability to relate to people at all levels internally and externally. Strategic in how you approach each relationship. Good presentation and facilitation skills Proactive, resourceful, solutions-oriented and results-oriented Preferred Qualifications Good experience in project grants management, including project design, preferably for grants from multiple public donors. Demonstrated ability to write high quality technical proposals. Experience engaging with partner organizations MEAL skills and experience required. Staff management experience and abilities that are conducive to a learning environment. Experience using MS Windows and MS Office packages (Excel, Word, PowerPoint), Web Conferencing Applications, information management systems. Required Languages - English and Amharic Travel - Must be willing and able to travel up to 25%. Supervisory Responsibilities - Technical Advisor Key Working Relationships Internal: Deputy Country Representative; MEL, Program Managers, Deputy Chiefs of Party External: Local partners, UN agencies, national and local disaster management officials and cluster leads Qualifications Basic Qualifications Master's Degree in International Development, International Relations or in the field of required. Additional experience may substitute for some education. Minimum of 5 years experience in relevant field-based project management experience required, with preferably at least 2-3 years working in the area of , Experience in managing moderately complex projects preferably with an international NGO. Agenc",
+    "deadline": null,
+    "published": "2026-09-25",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/program-manager-ii-emergency-at-catholic-relief-services-4470308334",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:05.815Z",
+    "raw_fields": {
+      "li_job_id": "4470308334",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Technical Advisor – Neonatal Respiratory Care",
+    "organization": "Jhpiego",
+    "description": "Overview The Senior Technical Advisor – Neonatal Respiratory Care will lead the execution of a 24-month project funded by the Gates Foundation focused on Ethiopia's national scale-up of newborn respiratory care. Operating within Jhpiego's role as a neutral delivery integrator, the Senior Technical Advisor will work closely with the Ministry of Health (MOH) and key health partners to transition from fragmented CPAP device procurement to a coordinated, sustainably financed national system. The primary objective is to facilitate the co-design and delivery of a government-endorsed National Neonatal Respiratory Care Investment Roadmap. This position will manage the local landscape mapping, convene stakeholder validation mechanisms, and lead the secretariat for the government-led Investment Coordination Forum across bubble CPAP (bCPAP), medical oxygen systems, and pulse oximetry. Contract Type - Fixed Term Contract for One Year Responsibilities Technical Leadership & Roadmap Co-Design Oversee Phase 1 (Ecosystem Mapping & Landscape Analysis) and Phase 2 (Validation & Roadmap Development) in Ethiopia. Direct the technical analysis of Ethiopia's newborn care landscape, focusing on CPAP expansion across Level 2 Small and Sick Newborn Care (SSNC) facilities, oxygen availability, pulse oximetry, and supply chain constraints. Ensure CPAP (including Vayu and Diamedica devices), oxygen, and monitoring tools are integrated into a single clinical package alongside cross-cutting needs (workforce training, equipment maintenance, and digital health data systems). Lead the drafting, refinement, and finalization of the government-endorsed National Neonatal Respiratory Care Investment Roadmap. Stakeholder Engagement & Government Facilitation Serve as Jhpiego’s primary technical focal point to the Ministry of Health (MOH) and regional health bureaus for this investment. Provide technical and secretariat support to establish and institutionalize the government-led Investment Coordination Forum. Facilitate national co-design workshops, pulse surveys, and consensus-building sessions with donors, implementing partners, procurement agencies, and professional associations to align funding and eliminate parallel implementation. Program Monitoring, Learning & Reporting Document key learnings, success factors, and operational bottlenecks throughout the roadmap development process. Organize thematic learning exchanges and participate in regional virtual roundtables to share Ethiopia’s experiences with peer countries. Track project deliverables, manage grant reporting requirements, and ensure compliance with Jhpiego and donor guidelines. Required Qualifications Education: Advanced degree (Master’s or MD) in Public Health, Medicine (Pediatrics/Neonatology preferred), Health Systems Management, or related field. Experience: 9 - 10 years of professional experience leading maternal, newborn, and child health (MNCH) or health systems strengthening programs in Ethiopia. Demonstrated track record of working collaboratively with the Ministry of Health (MOH), regional health bureaus, and international donors (e.g., Gates Foundation, Department of State). Direct experience in clinical newborn care interventions, Level 2 SSNC scale-up, or biomedical technology/equipment delivery systems. Experience conducting health facility landscape analyses, policy synthesis, or drafting national strategy documents and investment plans. Core Competencies Stakeholder Facilitation: Strong ability to convene diverse stakeholders, mediate competing priorities, and foster government ownership. Analytical & Writing Skills: Exceptional capacity to synthesize complex healthcare data, facility assessments, and financial projections into clear technical reports and strategic roadmaps. Language: Professional fluency in English and Amharic Knowledge of additional Ethiopian languages is an advantage Salary: Between 28,659 – 47,848 USD per annum. Jhpiego offers competitive salaries and a comprehensive employee benefits package. Please apply at www.jobs-jhpiego.icims.com Applicants must submit a single document for upload to include: cover letter, resume, and references. For further information about Jhpiego, visit our website at www.jhpiego.org Note: The successful candidate selected for this position will be subject to a pre-employment background investigation. Jhpiego is an Affirmative Action/Equal Opportunity Employer “ Jhpiego, a Johns Hopkins University affiliate, is an equal opportunity employer and does not discriminate on the basis of gender, marital status, pregnancy, race, color, ethnicity, national origin, age, disability, religion, sexual orientation, gender identity or expression, veteran status, other legally protected characteristics or any other occupationally irrelevant criteria. Jhpiego promotes Affirmative Action for minorities, women, individuals who are disabled, and veterans. EEO is the Law Application Deadline: October 8, 2026",
+    "deadline": null,
+    "published": "2026-09-29",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-technical-advisor-%E2%80%93-neonatal-respiratory-care-at-jhpiego-4473202153",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:05.816Z",
+    "raw_fields": {
+      "li_job_id": "4473202153",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Veterinary Medicine Professional",
+    "organization": "Nathan dairy farm",
+    "description": "Company Description Nathan Dairy Farm is a growing agricultural business located in Addis Ababa, Ethiopia, with a focus on sustainable dairy production and high standards of animal welfare. The farm maintains a mixed herd and emphasizes modern herd management practices to ensure consistent milk quality and productivity. Team members collaborate closely to improve animal health, optimize feeding programs, and adopt evidence-based practices. The organization values professionalism, continuous learning, and a safe working environment for both people and animals. Role Description This full-time Veterinary Medicine Professional role is a hybrid position based at Nathan Dairy Farm in Addis Ababa, Ethiopia, with some flexibility for work from home on administrative and planning tasks. The professional will oversee the clinical health of the herd, including routine examinations, diagnosis and treatment of illness, and implementation of preventive health programs such as vaccination, parasite control, and biosecurity measures. Daily responsibilities include monitoring animal behavior and welfare, advising on nutrition and housing conditions, performing minor surgical procedures when required, and maintaining accurate medical records. The role also involves training farm staff on animal handling and health protocols, collaborating on breeding and herd improvement strategies, and supporting compliance with relevant veterinary and agricultural regulations. Qualifications Candidates should possess strong skills in Animal Care and Animal Health for herd monitoring, welfare management, and preventive care. Candidates should possess solid knowledge of Medicine and Veterinary Surgery for diagnosis, treatment, and basic surgical interventions in dairy cattle. Candidates should possess effective Communication skills for educating farm staff, documenting health plans, and coordinating with external veterinary and regulatory bodies. Veterinary degree (DVM or equivalent) and valid authorization to practice veterinary medicine in Ethiopia or eligibility to obtain it. Experience working with dairy cattle or large animals in a farm or clinical setting is highly beneficial. Ability to interpret laboratory results, use diagnostic tools, and apply evidence-based veterinary practices. Strong organizational skills, attention to detail, and ability to work safely in a farm environment with a collaborative mindset.",
     "deadline": null,
     "published": "2026-09-30",
     "country": "",
     "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/construction-manager-at-allegiance-global-4471285538",
+    "source_url": "https://et.linkedin.com/jobs/view/veterinary-medicine-professional-4472139532",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.606Z",
+    "scraped_at": "2026-10-01T11:30:05.816Z",
     "raw_fields": {
-      "li_job_id": "4471285538",
+      "li_job_id": "4472139532",
       "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Aftersales Manager",
-    "organization": "GoodWe",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-28",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/aftersales-manager-at-goodwe-4471353546",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.607Z",
-    "raw_fields": {
-      "li_job_id": "4471353546",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Corporate Czech and English Trainer",
-    "organization": "goFLUENT",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-25",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/corporate-czech-and-english-trainer-at-gofluent-4470095254",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.607Z",
-    "raw_fields": {
-      "li_job_id": "4470095254",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Consultant, Digital Health (Ethiopia)",
-    "organization": "Last Mile Health",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-29",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/consultant-digital-health-ethiopia-at-last-mile-health-4446699057",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.607Z",
-    "raw_fields": {
-      "li_job_id": "4446699057",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Digital Marketing and Engagements Specialist",
-    "organization": "World Vision",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-24",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/digital-marketing-and-engagements-specialist-at-world-vision-4470972706",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.608Z",
-    "raw_fields": {
-      "li_job_id": "4470972706",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Senior Non-Key Expert – Investigation Audit (SNKE – Audit 14)",
-    "organization": "DAI",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-25",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-non-key-expert-%E2%80%93-investigation-audit-snke-%E2%80%93-audit-14-at-dai-4472029348",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.608Z",
-    "raw_fields": {
-      "li_job_id": "4472029348",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Social & Behavior Change (SBC) Specialist (NO-3), FT, #00133327, Addis Ababa - Ethiopia, ESAR, (For Ethiopian Nationals Only)",
-    "organization": "Unicef CHAD",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-25",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/social-behavior-change-sbc-specialist-no-3-ft-%2300133327-addis-ababa-ethiopia-esar-for-ethiopian-nationals-only-at-unicef-chad-4470196334",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:32.609Z",
-    "raw_fields": {
-      "li_job_id": "4470196334",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Manager, Investment & Financial Planning Division",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-28",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manager-investment-financial-planning-division-at-ngo-jobs-in-ethiopia-4471531250",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.283Z",
-    "raw_fields": {
-      "li_job_id": "4471531250",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Assistant Accountant",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-28",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/assistant-accountant-at-ngo-jobs-in-ethiopia-4471527456",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.283Z",
-    "raw_fields": {
-      "li_job_id": "4471527456",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Product Designer",
-    "organization": "The Flex",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-26",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/product-designer-at-the-flex-4472404332",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.283Z",
-    "raw_fields": {
-      "li_job_id": "4472404332",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Manager, Grade I Branch",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-28",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manager-grade-i-branch-at-ngo-jobs-in-ethiopia-4471530280",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.284Z",
-    "raw_fields": {
-      "li_job_id": "4471530280",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Manager, Grade II Branch",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-28",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manager-grade-ii-branch-at-ngo-jobs-in-ethiopia-4471536126",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.284Z",
-    "raw_fields": {
-      "li_job_id": "4471536126",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
     "title": "Finance Director",
     "organization": "Management Sciences for Health",
-    "description": "",
+    "description": "Management Sciences for Health (MSH) is seeking a Finance Director for two U.S. Government (USG)-funded projects in Ethiopia: Implementing the America First Global Health Strategy (AFGHS) and the Supply Chain Strengthening (SCS) projects. MSH is a global health nonprofit that makes foundational changes to health systems to protect people from diseases and improve their health. MSH collaborates with local partners, from ministries of health to communities, to strengthen and complement existing health systems. Since 1971, MSH has worked in more than 150 countries to help ensure sustainable, resilient, and equitable access to quality health care around the globe. Overall Responsibilities Reporting to the Senior Director for Finance & Administration (SDFA), the Finance Director leads day-to-day financial management, accounting, budgeting, forecasting, cash management, and reporting for the AFGHS and SCS projects. The role translates approved work plans, budgets, policies, and donor requirements into sound processes, analyses, controls, and reports; supervises the country finance and accounting team; and supports project managers and technical teams in timely implementation and informed decision-making. Working within MSH and project financial and administrative frameworks, the Finance Director provides analyses and recommendations to the SDFA, implements approved decisions, and escalates material variances, compliance concerns, cash-flow constraints, suspected fraud, and other significant financial risks. Specific Responsibilities Budgeting, Forecasting, and Financial Analysis: Coordinate annual work plan budgets, life-of-project forecasts, activity budgets, and periodic reforecasts for SDFA and project leadership review and approval. Consolidate technical and operational budget inputs, verifying completeness, accuracy, coding, assumptions, and alignment with approved work plans and cost principles. Monitor expenditures, commitments, pipelines, burn rates, and budget variances, and provide monthly analyses and recommended corrective actions to the SDFA and project leadership. Maintain current project financial projections and support scenario analysis, budget realignments, and budget amendment packages under the direction of the SDFA. Prepare routine and ad hoc dashboards and management reports highlighting trends, risks, and required decisions. Accounting, Cash Management, And Financial Reporting Oversee daily accounting operations, including transaction review and coding, journal entries, reconciliations, month-end close, accounts payable and receivable, advances, and supporting documentation. Coordinate monthly cash forecasts and funding requests for SDFA review and approval, monitor liquidity, and promptly flag projected shortfalls or excess cash. Prepare timely internal and donor financial reports, invoices, and supporting schedules for SDFA review and authorized submission. Maintain accurate data in MSH systems and complete, current, organized, audit-ready project financial records. Monitor staff time charging and cost allocation for accuracy and consistency with approved budgets, activities, and levels of effort; resolve routine discrepancies and escalate recurring or material concerns. Internal Controls, Compliance, And Audit Support Implement established financial policies, standard operating procedures, donor requirements, approval workflows, and segregation-of-duties controls. Conduct routine quality-control reviews of financial transactions and supporting documentation before processing or submission for approval. In collaboration with the Compliance Manager, monitor adherence to USG financial requirements and MSH policies, document exceptions, and recommend corrective actions to the SDFA. Support fraud prevention and detection within the finance function, immediately escalating suspected fraud, misconduct, conflicts of interest, or significant control weaknesses in accordance with MSH policy. Provide practical guidance and training to project staff on budgeting, financial documentation, allowable costs, time charging, and other finance-related compliance requirements. Coordinate finance-team preparation for internal and external audits, financial reviews, and compliance assessments under SDFA direction. Compile requested schedules and supporting documents and track findings and approved corrective actions. Monitor recurring findings and control gaps, providing the SDFA with status updates and recommendations. Team Management And Collaboration Directly supervise assigned finance and accounting staff, including annual goal-setting, routine coaching, quality review, performance feedback, and identification of training needs. Allocate finance-team workloads to support timely close, reporting, payment processing, forecasting, and project implementation. Collaborate with technical, procurement, operations, contracts, and subaward colleagues to ensure timely, accurate, and appropriately documented financi",
     "deadline": null,
     "published": "2026-09-28",
     "country": "",
@@ -658,7 +604,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/finance-director-at-management-sciences-for-health-4472784422",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.284Z",
+    "scraped_at": "2026-10-01T11:30:07.579Z",
     "raw_fields": {
       "li_job_id": "4472784422",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -666,27 +612,9 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "DOCUMENT CONTROLLER",
-    "organization": "CANDIDZONE",
-    "description": "",
-    "deadline": null,
-    "published": "2026-09-29",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/document-controller-at-candidzone-4473097256",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.284Z",
-    "raw_fields": {
-      "li_job_id": "4473097256",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
     "title": "HR Specilaist",
     "organization": "Management Sciences for Health",
-    "description": "",
+    "description": "OVERALL RESPOSIBILITIES The HR Specialist is responsible for the onboarding process, HRIS management, and providing overall administrative, logistical, and coordination support to the Country team. They support the Country Human Resources and F&A Director and assist with the coordination of activities initiated by and pertaining to project offices. The HR Specialist is responsible for a full range of duties including but not limited to processing employment letters and terms of assignments, updating the HR database and creating reports, preparing correspondence and presentations, and acting as a resource person for answering HR inquiries. The HR Specialist will be involved in additional HRM projects, as requested. The HR Specialist is aware of and adheres to human resources-related laws and regulations and with MSH’s Procurement Integrity standards. They handle information and documents relevant to human resources with a high degree of confidentiality, discretion, and attention to detail. Specific Responsibilities Recruitment Support Facilitate applicant screening and coordinate with hiring managers throughout the recruitment process. Participate in recruitment activities based on the position grade and organizational requirements. Support HR administrative activities, including scheduling assessments and interviews, conducting reference checks, and maintaining recruitment documentation. New Employee Onboarding Coordinate and facilitate the onboarding process for all new employees. Ensure new staff receive the required staff information pack before their reporting date. Ensure employees receive identity and health insurance cards and complete all required enrollment forms. Process work permits and related documentation for expatriate employees. Coordinate employee orientation sessions, including interim orientation during the first week of employment and general orientation on a monthly basis. Follow up with supervisors and new employees to ensure all onboarding requirements are completed. Maintain and provide weekly updates to the onboarding tracker. HRIS and Employee Data Management Process employee status changes and other employment actions in the appropriate HRIS. Maintain accurate and up-to-date employee information in HR databases and payroll systems. Ensure relevant employment changes are communicated promptly to employees and concerned stakeholders. Personnel Records Management Maintain complete, accurate, and confidential employee personnel files. Routinely file HR documents and ensure personnel records remain current and complete. Conduct annual personnel file audits and address any identified gaps or discrepancies in a timely manner. Leave, Pension, and Insurance Administration Manage employee leave records, ensuring all leave requests are properly authorized and accurately recorded in the leave database. Verify leave information against timesheets during payroll processing to ensure accurate payroll inputs. Share updated leave information with staff on a weekly basis. Support and coordinate pension and insurance-related processes for employees. Employee Benefits and Medical Insurance Coordinate with the Country HR Manager and Finance & Administration Director on the administration of employee benefits. Ensure employee medical insurance information is accurate and up to date before processing payments. Liaise with medical insurance providers to resolve employee medical insurance-related issues and concerns. Maintain accurate records of employee benefits and insurance enrollment. Employee Separation Coordinate employee separation processes in accordance with organizational policies and procedures. Prepare employment separation and confirmation letters, including confirmation of the employee's final date of employment. Provide departing employees with relevant benefits and separation information. Schedule and coordinate exit interviews and ensure required separation documentation is completed. HR Projects and Other Responsibilities Provide support for HR initiatives, projects, and activities as assigned by the HR Manager based on organizational needs. Contribute to the continuous improvement of HR administrative processes and employee services Qualifications Qualifucations Bachelor’s degree in human resources or equivalent relevant education At least 3-5 years relevant working experience Basic knowledge of employment legislation English fluency and strong administrative, organizational, and written and verbal communication skills. Excellent interpersonal skills and demonstrated ability to interact professionally with culturally diverse staff, clients and consultant’s environment. Ability to work independently with minimum supervision, execute tasks efficiently and is proactive. Excellent organizational and prioritization skills, and attention to detail. Advanced computer skills in word processing, database, presentation, organizational chart and spreadsheet applications; Microsoft Office preferred",
     "deadline": null,
     "published": "2026-09-28",
     "country": "",
@@ -694,7 +622,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/hr-specilaist-at-management-sciences-for-health-4472719652",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.285Z",
+    "scraped_at": "2026-10-01T11:30:07.579Z",
     "raw_fields": {
       "li_job_id": "4472719652",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -702,37 +630,127 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Manager, Grade III Branch",
-    "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
+    "title": "DOCUMENT CONTROLLER",
+    "organization": "CANDIDZONE",
+    "description": "We are looking for an experienced and organized Document Controller to support a long-term construction project in Ethiopia. The ideal candidate should have strong experience in site construction works and building projects , with excellent document management and coordination skills. Key Responsibilities Manage and maintain project documents and records. Control the distribution, filing, and tracking of project documentation. Maintain document registers and ensure proper revision control. Manage incoming and outgoing documents, drawings, and correspondence. Coordinate document submissions and transmittals with project teams. Ensure documents are properly reviewed, approved, and distributed. Maintain accurate electronic and hard-copy filing systems. Track document status, revisions, and approvals. Coordinate with engineers, consultants, contractors, and subcontractors. Prepare document control reports and maintain project records. Ensure confidentiality and proper handling of project documentation. Requirements Diploma or BSc. in a relevant discipline. Minimum 5+ years of relevant experience . Experience in site construction works . Building project experience is mandatory. Previous experience with international construction companies is preferred. Professional proficiency in English is mandatory . Candidate should be a resident of Ethiopia .",
     "deadline": null,
-    "published": "2026-09-28",
+    "published": "2026-09-29",
     "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manager-grade-iii-branch-at-ngo-jobs-in-ethiopia-4471529304",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/document-controller-at-candidzone-4473097256",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.285Z",
+    "scraped_at": "2026-10-01T11:30:07.580Z",
     "raw_fields": {
-      "li_job_id": "4471529304",
+      "li_job_id": "4473097256",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "5 Positions (Operations, Credit Control, Lending & Information Security)",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "About The Institution Digaf Micro Credit Provider is hiring for five job vacancies in Ethiopia in operations, credit control, lending, corporate lending, and information security. The available positions are based in Addis Ababa and Hawassa. Jobs These Digaf Microcredit jobs offer opportunities for professionals with relevant qualifications and experience in microfinance, digital lending, banking, credit, financial services, sales operations, and cybersecurity. Job Summary Employer: Digaf Micro Credit Provider Number of Vacancies: 5 Job Locations: Addis Ababa and Hawassa, Ethiopia Application Deadline: October 9, 2026 Application Method: EthioJobs or Email Email: hr.admin@digafcredit.com Available Positions Operation Officer — 1 vacancy — relevant experience in microfinance, digital lending, banking, sales operations, or performance management — Addis Ababa Credit Control Officer — 1 vacancy — 1–3 years of relevant experience in credit control or finance — Addis Ababa Branch Loan Officer — 1 vacancy — 1–3 years of relevant experience in microfinance, banking, credit, lending, or financial services preferred — Hawassa Corporate Loan Officer — 1 vacancy — 2–3 years of relevant experience in banking, microfinance, financial services, sales, relationship management, or corporate lending — Addis Ababa Senior Information Security Officer — 1 vacancy — 3–5 years of relevant experience in information security, cybersecurity, IT audit, network security, or a related field — Addis Ababa Required Qualifications Operation Officer Bachelor’s degree in Business Administration, Management, Economics, Accounting, Finance, Industrial Engineering, or a related field. Relevant experience in microfinance, digital lending, banking, sales operations, or performance management. Experience managing Loan Officers or field sales teams is an advantage. Credit Control Officer Bachelor’s degree in Accounting, Finance, Economics, or a related field. 1–3 years of relevant experience in credit control or finance. Strong analytical and communication skills. Attention to detail and problem-solving ability. Branch Loan Officer Bachelor’s degree in Accounting, Finance, Economics, Management, Business Administration, or a related field. 1–3 years of relevant experience in microfinance, banking, credit, lending, or financial services is preferred. Good knowledge of: Loan processing Credit assessment Customer relationship management Collection practices Corporate Loan Officer Bachelor’s degree in Marketing, Management, Economics, Accounting, Finance, Business Administration, or a related field. 2–3 years of relevant experience in banking, microfinance, financial services, sales, relationship management, or corporate lending. Experience in payroll lending, institutional lending, corporate relationship management, or business development is an advantage. Senior Information Security Officer Bachelor’s degree in Information Technology, Computer Science, Information Systems, or a related field. 3–5 years of relevant experience in information security, cybersecurity, IT audit, network security, or a related field. Strong knowledge of: Information security principles Risk management Cybersecurity practices How to Apply Interested and qualified applicants can apply through EthioJobs or submit their application directly by email. Email Application Send Your Updated CV Application letter Email: hr.admin@digafcredit.com Applicants should mention their location in the email subject line. Application Deadline October 9, 2026 Applicants are encouraged to submit their applications before the deadline.",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/5-positions-operations-credit-control-lending-information-security-at-ngo-jobs-in-ethiopia-4472321810",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:07.580Z",
+    "raw_fields": {
+      "li_job_id": "4472321810",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "IT Auditor",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "Job Summary To perform complex technical audits of the Bank’s information systems, digital platforms, and IT infrastructure to identify vulnerabilities and ensure data Security, reliability integrity of digital assets and core banking applications. Banking Key Responsibilities Engage in conducting technical audits of the Core Banking System (CBS), ERP, and peripheral applications. Perform vulnerability assessments on the Bank’s internal and external networks and firewalls. Review database access logs and configuration settings to prevent unauthorized data changes. Apply Computer Assisted Audit Techniques (CAATs) to extract and analyze large datasets for audit evidence. Assess the security and transaction integrity of Mobile Banking, Internet Banking, and ATM switches. Test the implementation of IT security policies, including password management and physical access controls. Audit server configurations (Windows/Linux) to ensure they are hardened against known exploits. Review the technical specifications and UAT (User Acceptance Testing) results for new software. Assist in the technical investigation of any attempted or successful system breaches. Verify that the IT functional organs have addressed findings from previous internal and external (NBE) IT audits. Draft detailed technical reports translating complex IT risks into business-impact language. Keep pace with new banking technologies, including mobile apps and API security. Actively participate in developing, reviewing and implementing policies & procedures, plan /budget of the division; Mentor and enable staffs below his /grades towards achieving their effective performance; Demonstrate the Bank’s code of conduct; embody the bank’s good culture and corporate image to the public; Engage in teamwork, collaboration, and transparency work practices; Provide services as per the service level agreement; Contribute to the bank’s profitability as per the target set; Adhere to internal control system and risk management program of the Bank; Provide the concerned organ with timely, relevant, accurate, and complete reports on the plan performance; Implement timely corrective action on deficiencies and issues that have been raised or reported by different internal and external regulatory bodies Handle other related generic activities as deemed necessary Required Qualifications Qualification: BSc in Computer Science/Information Technology, or any other related fields Experience: Three/3 years of relevant experience preferably in banking industry of which One/1 year on officer position. Required Skills And Competencies Auditing skills Audit & Compliance Management Audit Coordination Audit Documentation Audit Reporting How to Apply Female applicants highly encouraged Only shortlisted candidates will be communicated Hard copy or physical applications will not be accepted The Bank has the right to cancel the post advertised Interested applicants fulfilling the above requirements are invited to apply within five (5) Consecutive days from September 28, 2026 to October 02, 2026. Apply online at https://vacancy.amharabank.com.et/",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/it-auditor-at-ngo-jobs-in-ethiopia-4472327614",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:07.581Z",
+    "raw_fields": {
+      "li_job_id": "4472327614",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Manager, Network Administration Division",
+    "title": "Senior Data Center and Core System Officer",
     "organization": "NGO Jobs - In Ethiopia",
-    "description": "",
+    "description": "About The Institution Bunna Bank S.C. is a private commercial bank in Ethiopia providing modern, inclusive retail, digital, and international banking services. Banking Job Summary High level summary of the role including an overview of the job's main purpose, who the job holder will report to and how the job contributes to the organisation's success. In larger firms, some information about the department the role sits within would be helpful. Key Responsibilities Manage and maintain enterprise IT systems, including servers, storage systems, and hardware. Monitor system performance and troubleshoot Operating Systems, hardware, software, and network issues. Implement and enforce security policies and access controls. Oversee data backup, recovery, and disaster recovery planning. Support system upgrades, patches, and migrations with minimal downtime. Manage user access, permissions, and authentication systems (Active Directory, LDAP, etc.). Collaborate with IT teams and vendors to ensure smooth operations. Maintain compliance with industry standards and regulations. Required Qualifications First Degree/2nd degree (Bsc) in Computer Science, software engineering, Computer Engineering, electrical engineering, information technology, or related fields with minimum of 5 years of relevant experience. Type: Full-Time / Permanent Location: Addis Ababa/Head Office Expectations: High operational accuracy and strict adherence to NBE standards. Required Skills And Competencies Experience in virtualization technologies (Oracle LDOM, Nutanix, VMware). Strong knowledge of Linux and Unix based (Oracle Solaris, Ubuntu, CentOS, RedHat) systems administration is mandatory. Strong knowledge of networking. Experience in Microsoft Windows Server Administration. Strong knowledge and experience in Storage Area Network (SAN) and Hyper Converged Infrastructure (HCI). Experience with automation tools is a plus. Excellent problem-solving and communication skills. Any certifications related to the above experiences and knowledge are desirable. How to Apply Submit your CV and credentials via: https://forms.gle/yifGyXfeT6VprLj26",
     "deadline": null,
-    "published": "2026-09-28",
+    "published": "2026-09-24",
     "country": "",
     "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/manager-network-administration-division-at-ngo-jobs-in-ethiopia-4471520681",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-data-center-and-core-system-officer-at-ngo-jobs-in-ethiopia-4470003908",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:34.285Z",
+    "scraped_at": "2026-10-01T11:30:07.581Z",
     "raw_fields": {
-      "li_job_id": "4471520681",
+      "li_job_id": "4470003908",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Maintenance Supervisor - Tyre Fleet (m/f)",
+    "organization": "Mota-Engil",
+    "description": "He will be responsible for coordinating, planning, and carrying out preventive and corrective maintenance activities for equipment, particularly the tire fleet, ensuring their availability in accordance with the company’s safety, quality, and productivity procedures. Job Requirements And Competences Profile Technical degree or higher in Mechanical, Electrical or Electromechanical Engineering or similar; Proven experience in the maintenance/replacement of tires of mining equipment; Knowledge of hydraulic, electrical and mechanical systems; Proficiency in English; Team management and problem solving; Proactivity and ability to analyse; Availability for mobility. Location: Karmuk, Ethiopia",
+    "deadline": null,
+    "published": "2026-09-26",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/maintenance-supervisor-tyre-fleet-m-f-at-mota-engil-4470566027",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:07.582Z",
+    "raw_fields": {
+      "li_job_id": "4470566027",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Innovation & Business Research Officer",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "About The Institution Enat Bank is a private financial institution established to provide effective, efficient and full-fledged banking service, focusing on addressing women with financial access, aiming at development, business growth and profitability to meet the expectation of all its stakeholders. It is also where the career of promising banking talents are shaped into seasoned banking professionals with challenging but conducive working environment. Value adding and committed Management Team and enlightened and forward looking institutional vision along with the attractive compensation packages is what has already been in place to attract and retain employees. Banking Job Summary We are currently hiring one professional to join our team as Senior Innovation & Business Research Officer, based at Addis Ababa. This is a permanent position. Women applicants are highly encouraged. Key Responsibilities Undertake research and bear responsibility for ensuring analysis on internal processes, sector trends, and external business issues that impact the bank. Ensure the proper development, management, and use of databases, models, and analytical tools to support research outputs. Take responsibility for the preparation and quality of sectoral studies and market scans. Ensure innovation labs and idea-generation platforms produce relevant and usable outputs. Author reports and policy documents with evidence-based recommendations. Contribute substantive input to corporate strategy, policy development, and long-term planning. Ensure that research findings are communicated effectively and applied across departments. Provide guidance and support to junior officers in their research and analytical tasks. Facilitate branch licence as requested by branches and districts. Identifying profile of prominent women's for branch naming approval. Perform other duties as required by the department. Required Qualifications Education: BA/MBA/MA in Marketing and Communication, Business Administration, Management, Any other related fields. Years of Experience: 5.5/3.5 years of experience in relevant fields, preferably in banking industry. Relevant Experience: at least 2 years as a relevant officer position. How to Apply Interested applicants fulfilling the above requirements are invited to submit their applications only online. Application Link: https://evacancy.enatbanksc.com/#/vacancy-details Date of Registration: until October 6, 2026. Vacancy Number: EB/1088/26 Selection Process: Please note, Only short listed candidates will be communicated Important Application Notice The Bank has the right to cancel the post advertised National ID is mandatory For Inquiries Regarding This Position, Please Contact Phone Number: 0115522835",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-innovation-business-research-officer-at-ngo-jobs-in-ethiopia-4472320831",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:07.582Z",
+    "raw_fields": {
+      "li_job_id": "4472320831",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Administrative Assistant I",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "Job Summary The National Bank of Ethiopia is seeking an Administrative Assistant I to provide administrative and clerical support to a directorate and team, handling visitor reception, document preparation, records management, meeting coordination, and correspondence. Banking Key Responsibilities Greets, receives, and directs all visitors, including employees, clients, and external stakeholders, in a professional and courteous manner. Types, formats, and edits reports, correspondence, presentations, and other routine and periodic documents. Manages, organizes, and maintains physical and electronic files, records, and confidential documents of the team in accordance with record-keeping standards. Facilitates office logistics and administrative support services, including stationery, office supplies, and basic equipment follow-up for the team. Organizes and coordinates directorate and team meetings, prepares agendas, takes minutes, and prepares and circulates meeting reports and action points. Receives, records, screens, and distributes incoming and outgoing correspondence in accordance with established procedures. Drafts routine letters, memos, and internal communications and ensures their timely distribution upon approval and instruction. Follows up on outgoing correspondence to ensure timely dispatch and proper delivery to intended recipients. Registers, tracks, and files all outgoing and incoming letters and correspondence, maintaining accurate logs and proper filing systems. Produces, reproduces, and distributes correspondence, memos, letters, reports, study documents, and other official materials. Provides administrative assistance and guidance to visitors and staff and directs them to the appropriate officers or units. Develops, updates, and maintains an efficient filing and document-tracking system to ensure easy retrieval and data integrity. Supports basic data entry, record updating, and compilation of administrative information for reports and reference purposes. Ensures confidentiality and proper handling of sensitive documents and information. Performs other related administrative duties as assigned by the supervisor. Required Qualifications Diploma in Secretarial Science, Office Administration, Customer Service Management, or a related field. No prior work experience required; CoC Level IV is mandatory. Age shall not exceed 40 years. Required Skills And Competencies Effective communication and sociability. Client follow-up and communication. Communication and MS Office skills; commitment. Creativity. Ability to coordinate multiple tasks and work under pressure. How to Apply Interested and qualified applicants are encouraged to apply by submitting their CV/Resume and copies of Grade 8th certificate, diploma including Level IV CoC no later than September 30, 2026. Application address: In person, NBE Building 2, 6th floor, Talent and Culture Directorate. Note Incomplete and doubtful/suspicious documents will not be accepted by the Bank. Only short-listed candidates will be contacted for an assessment.",
+    "deadline": null,
+    "published": "2026-09-24",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/administrative-assistant-i-at-ngo-jobs-in-ethiopia-4470018229",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:07.583Z",
+    "raw_fields": {
+      "li_job_id": "4470018229",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
@@ -740,15 +758,15 @@
   {
     "title": "MHNT - Midwifery Nurse Afdem",
     "organization": "Save the Children International",
-    "description": "",
+    "description": "JOB DESCRIPTION Internal/External Vacancy Advertisement (MHNT Midwife) LOCATION: Afdem, GRADE: 4B Vacant Position: 1 POST TYPE: National Child Safeguarding: Level 3: Child Safeguarding: Level 3 - the role holder will have contact with children and/or young people either frequently (e.g. once a week or more) or intensively (e.g. four days in one month or more or overnight) because they work in country programs; or are visiting country programs; ore because they are responsible for implementing the police checking/vetting process staff. Risk And Compliance: The role holder is required to carry out the duties in accordance with the SCI Fraud, Bribery, and Corruption policy and code of conduct. The key responsibilities include understanding and complying with the SCI policies and procedures, not committing any act of fraud, bribery, or corruption, understanding risks in their area/role, and implementing mitigation measures, report any suspected fraud, bribery, or corruption immediately, declare conflicts of interest in accordance with internal procedures and complete mandatory training related to ethics and anti-fraud measure ROLE PURPOSE: The purpose of this role is to provide essential support to Save the Children’s emergency programs in Afar, focusing on promoting accountability to beneficiaries with the objective of empowering communities and obtaining feedback on SC UK projects leading to improved quality and impact. The incumbent will work very closely with the MEAL Coordinator as well as all concerned project staff and project beneficiaries in establishing accountability mechanisms. SCOPE OF ROLE: Reports to: None Dimensions: Save the Children works in all regions of Ethiopia with a current staff complement of approximately 1900 and current expenditure of approximately $190090+ million each year . Staff directly reporting to this post: Health Nutrition. Coordinator KEY AREAS OF ACCOUNTABILITY: Coordinate and facilitate implementation of mobile health and Nutrition activities, site selection and prepare weekly movement plan. Provide basic health and nutrition services including community ANC, FP IMNCI/ICCM, safe motherhood, emergency services, referral, health education, EPI as per MOH Mobile health and nutrition guideline Facilitate essential drugs, supplies and therapeutic products for the team and the selected health facilities Facilitate training and work closely with MOH staff at Health posts, Health centre and hospital and district level. Organize daily, weekly and monthly overview and reports of ANC, FP & EPI, health education and consultations. Ensure referral system and linkage between services and with the health facilities Adherence to medical and nutritional treatment protocols and procedures for children and infants. Provide onsite training to HEW and nurses. Ensure Job aids are available in Health posts (HEW quick reference, Look up table, report format, tally sheet, Plumpnut and drug stock control balance form) Receive weekly reports from HEW at weekly basis, cross check the completeness and accuracy and submit to Woreda Project officers. Mentoring and assist HEW in decision of patients who are at severe risks and need to be transferred to nearby hospital Participate in capacity building training, in health education sessions and ENA/BCC application Follow up absentees/defaulters and keep current record of both beneficiaries and the staff (CHAs, volunteers). Work any tasks assigned by the line manager and the organization. Accountability: SKILLS AND BEHAVIOURS (our Values in Practice) Holds self-accountable for making decisions, managing resources efficiently, achieving and role modelling Save the Children values. Ambition: Setting ambitious and challenging goals, takes responsibility for own personal development and encourages others to do the same. Widely shares personal vision for Save the Children, engages and motivates others. Future orientated, thinks strategically. Collaboration: Builds and maintains effective relationships, with colleagues, members and external partners and supporters. Values diversity sees it as a source of competitive strength. Approachable, good listener, easy to talk to Creativity: Develops and encourages new and innovative solutions. Willing to take disciplined risks. Integrity: Honest, encourages openness and transparency. QUALIFICATIONS AND EXPERIENCE In order to be successful, you will bring/have: Diploma/ Bachelor in Midwifery. Experience: Minimum three years working experience of which two years in MCH programe Experience in clinical setups is mandatory particularly Maternal and child health areas Application Information: Please attach a copy of your CV and cover letter with your application, and include details of your current remuneration and salary expectations. Use The Below Link To Apply: https://hcri.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1 We need to keep children safe so our selection process, which includes rigorous backgroun",
     "deadline": null,
-    "published": "2026-09-25",
+    "published": "2026-10-01",
     "country": "",
     "city": "Ethiopia",
     "source_url": "https://et.linkedin.com/jobs/view/mhnt-midwifery-nurse-afdem-at-save-the-children-international-4472040739",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:36.011Z",
+    "scraped_at": "2026-10-01T11:30:09.328Z",
     "raw_fields": {
       "li_job_id": "4472040739",
       "location_raw": "Ethiopia"
@@ -756,38 +774,56 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Affiliate Contractor - Senior Project Associate (Reintegration)",
-    "organization": "IOM - UN Migration",
-    "description": "",
+    "title": "Junior Customer Service Specialist",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "About The Institution Enat Bank is a private financial institution established to provide effective, efficient and full-fledged banking service, focusing on addressing women with financial access, aiming at development, business growth and profitability to meet the expectation of all its stakeholders. It is also where the career of promising banking talents are shaped into seasoned banking professionals with challenging but conducive working environment. Value adding and committed Management Team and enlightened and forward looking institutional vision along with the attractive compensation packages is what has already been in place to attract and retain employees. Job Summary We are currently hiring one professional to join our team as a Junior Customer Service Specialist. This is a permanent position based at Gelemso. No prior experience is required. Women applicants are highly encouraged. Preferred age group: candidates age ≤ 30. Key Responsibilities Receives and delivers physical cash from and to Cash Administrator Collects and validates original Payment Instruments against the System Issues and signs Payment Instruments Verifies and Validates DRS incoming transfers Initiates DRS outgoing transfers Exchanges cash denominations and post the transactions Performs other duties as required by the supervisor Required Qualifications Education: BA in Accounting, Banking & Insurance, Banking & Finance, Management, Business Administration, Sales, Marketing, Economics or related fields Minimum cumulative GPA requirement: 3.00 for male and 2.75 for female applicants Experience: No prior experience is required Preferred Age Group: ≤ 30 How to Apply Interested applicants fulfilling the above requirements are invited to submit their applications only online via: https://evacancy.enatbanksc.com/#/vacancy-details Date of Registration: until October 6, 2026. Vacancy Number: EB/1088/26 Important Application Notice The Bank has the right to cancel the post advertised National ID is mandatory Exit Exam is required. (Mandatory) Selection Process: Please note, Only short listed candidates will be communicated For Inquiries Regarding This Position, Please Contact Phone Number: 0115522835",
     "deadline": null,
-    "published": "2026-09-24",
+    "published": "2026-09-30",
     "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/affiliate-contractor-senior-project-associate-reintegration-at-iom-un-migration-4471413895",
+    "city": "Gelemso, Oromia Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/junior-customer-service-specialist-at-ngo-jobs-in-ethiopia-4472336359",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:36.012Z",
+    "scraped_at": "2026-10-01T11:30:09.329Z",
     "raw_fields": {
-      "li_job_id": "4471413895",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+      "li_job_id": "4472336359",
+      "location_raw": "Gelemso, Oromia Region, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Project Associate (Reintegration)",
-    "organization": "IOM - UN Migration",
-    "description": "",
+    "title": "Senior Economic and Public Finance National/International Consultant: Debt and Social Sector Financing, Addis Ababa, Ethiopia (remote) 7.5 months (595328) Re-advertised",
+    "organization": "Unicef CHAD",
+    "description": "Apply now Job no: 595328 Contract type: Consultant Duty Station: Addis Ababa Level: Consultancy Location: Ethiopia Categories: Social Policy UNICEF works in over 190 countries and territories to save children’s lives, defend their rights, and help them fulfill their potential, from early childhood through adolescence. At UNICEF, we are committed, passionate, and proud of what we do for as long as we are needed. Promoting the rights of every child is not just a job – it is a calling. UNICEF is a place where careers are built. We offer our staff diverse opportunities for professional and personal development that will help them reinforce a sense of purpose while serving children and communities across the world. We welcome everyone who wants to belong and grow in a diverse and passionate culture, coupled with an attractive compensation and benefits package. Visit our website to learn more about what we do at UNICEF. How can you make a difference? The purpose of the consultancy is to undertake a high-level economic and public finance analysis of debt dynamics, fiscal adjustment, external financing pressures and social sector financing in Ethiopia, with a focus on implications for children and future human capital development. UNICEF is undertaking a broader global initiative to strengthen understanding of how debt dynamics, fiscal pressures, access to development financing and macroeconomic reform processes affect investments in children and future human capital development. The initiative seeks to generate evidence and policy analysis that can inform national and international discussions on sustainable financing for development, fiscal space, and the protection of essential social sector investments. The work recognises that economic policies, debt management decisions and financing conditions have important implications for governments’ capacity to invest in health, education, social protection, nutrition and other services that are critical to child well-being and long-term development. As part of this broader effort, UNICEF Ethiopia will undertake an in-depth economic and public finance analysis examining how debt dynamics, fiscal adjustment, external financing pressures and macroeconomic reforms influence fiscal space and social sector financing in Ethiopia. The assignment will combine empirical analysis, political economy analysis and policy reform analysis to identify key drivers, constraints and opportunities for protecting and strengthening investments in children. The resulting analysis is intended to support evidence-informed policy dialogue, contribute to national discussions on public finance and development financing, and generate lessons that may be relevant to broader international discussions on debt, fiscal policy and child outcomes. The consultant will undertake a comprehensive analysis of the relationships between debt dynamics, public finance management, macroeconomic reforms and social sector financing in Ethiopia. Particular attention should be given to the interaction between debt dynamics, external financing, exchange-rate reform and social sector financing. If you would like to know more about this consultancy, please review the complete Terms of Reference here: ToR_ext_TMC0005569.pdf To qualify as an advocate for every child you will have... QUALIFICATIONS / SPECIALIZED KNOWLEDGE / EXPERIENCE/ COMPETENCIES (CORE/TECHNICAL/FUNCTIONAL) / LANGUAGE SKILLS REQUIRED FOR THE ASSIGNMENT Education Advanced university degree in economics, macroeconomics, development economics, public finance, public policy, political economy or related fields. Work Experience Minimum 10 years of progressively responsible experience in economics, public finance management, fiscal policy, debt management, macroeconomic analysis, political economy, development financing, or related fields. Demonstrated track record of leading or substantially contributing to high-level analytical work, policy advisory assignments, or economic reform processes for governments, international financial institutions, multilateral organisations, development partners, or research institutions. Proven experience producing policy-relevant analytical products and recommendations for senior decision-makers, including on public finance, debt, fiscal reform, economic governance, social sector financing, or related areas. Previous experience working on economic policy, public finance management, debt, fiscal policy or development financing in Ethiopia or comparable contexts is highly desirable. Existing professional networks with relevant government institutions, development partners, international financial institutions, research institutions or other key stakeholders are considered an asset. Language Requirements Fluency in spoken and written English is required Knowledge/Expertise/Skills Strong expertise in macroeconomics, public finance management, sovereign debt, fiscal policy, and development financing, including the interaction betwee",
     "deadline": null,
-    "published": "2026-09-24",
+    "published": "2026-10-01",
     "country": "",
     "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/project-associate-reintegration-at-iom-un-migration-4471430433",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-economic-and-public-finance-national-international-consultant-debt-and-social-sector-financing-addis-ababa-ethiopia-remote-7-5-months-595328-re-advertised-at-unicef-chad-4472690562",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-09-30T11:03:36.012Z",
+    "scraped_at": "2026-10-01T11:30:09.329Z",
     "raw_fields": {
-      "li_job_id": "4471430433",
+      "li_job_id": "4472690562",
       "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Planning, Monitoring & Evaluation Officer",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "About The Institution Enat Bank is a private financial institution established to provide effective, efficient and full-fledged banking service, focusing on addressing women with financial access, aiming at development, business growth and profitability to meet the expectation of all its stakeholders. It is also where the career of promising banking talents are shaped into seasoned banking professionals with challenging but conducive working environment. Value adding and committed Management Team and enlightened and forward looking institutional vision along with the attractive compensation packages is what has already been in place to attract and retain employees. Banking Job Summary Perform new customer acquisition and existing customer retention activity, build high end customer relationships to mobilize deposit, FCY and Share capital of the Bank, and engage in high value customer base expansion. Key Responsibilities Perform new customer acquisition and existing customer retention activity Build high end customer relationship to mobilize deposit, FCY and Share capital of the Bank Perform follow-ups on high value customers acquisition and retention undertakings Understanding key customer individual needs and develop proposal Engage in high value customer base expansion of the bank Conducting business reviews based customer relationship program Works on ways to improve customer acquisition continuously Assess and select a rising business area in order to capture the expected value Propose new ideas or initiatives based on the assessment made on market analyses Continually seek innovative means of attracting financial resource and make contact Performs any other duties assigned by the supervisor Required Qualifications Years of Experience: 5.5 years of experience in relevant fields Relevant Experience: at least 2 years as a relevant officer position in banking industry Educational Requirements: BA in Banking & Finance, Marketing & Communication, Accounting and Finance, Management, Business Administration, Any other related fields How to Apply Interested applicants fulfilling the above requirements are invited to submit their applications only online. Application Link : https://evacancy.enatbanksc.com/#/vacancy-details Date of Registration : until October 6, 2026. Selection Process : Please note, Only short listed candidates will be communicated Vacancy Number : EB/1088/26 Important Application Notice The Bank has the right to cancel the post advertised National ID is mandatory For Inquiries Regarding This Position, Please Contact Phone Number : 0115522835",
+    "deadline": null,
+    "published": "2026-09-30",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-planning-monitoring-evaluation-officer-at-ngo-jobs-in-ethiopia-4472332320",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-01T11:30:09.331Z",
+    "raw_fields": {
+      "li_job_id": "4472332320",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   }
