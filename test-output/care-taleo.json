@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8041",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.631Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7950",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8056",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "DIRECTOR, FINANCE AND OPERATIONS",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=7978",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8024",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8063",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.448Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,7 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8057",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.449Z",
+    "scraped_at": "2026-10-02T10:59:45.632Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,21 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8051",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.449Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "PROJECT COORDINATOR",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "PRESIDENT'S OFFICE",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8047",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-10-01T11:30:14.449Z",
+    "scraped_at": "2026-10-02T10:59:45.633Z",
     "_sourceId": "care-taleo"
   }
 ]
