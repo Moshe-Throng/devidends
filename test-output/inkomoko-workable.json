@@ -1,5 +1,25 @@
 [
   {
+    "title": "Communications Associate - Ethiopia",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-02T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://apply.workable.com/inkomoko/j/C2C19DE0D9/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-03T10:19:44.619Z",
+    "raw_fields": {
+      "department": [
+        "Country Leadership"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  },
+  {
     "title": "Client Relationship Officer-Gambella",
     "organization": "Inkomoko",
     "description": "",
@@ -10,7 +30,7 @@
     "source_url": "https://apply.workable.com/inkomoko/j/9861B119FF/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-10-02T10:59:44.929Z",
+    "scraped_at": "2026-10-03T10:19:44.619Z",
     "raw_fields": {
       "department": [
         "Investment"
