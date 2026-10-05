@@ -10,30 +10,10 @@
     "source_url": "https://apply.workable.com/inkomoko/j/C2C19DE0D9/",
     "source_domain": "workable.com",
     "content_type": "job",
-    "scraped_at": "2026-10-04T11:03:21.623Z",
+    "scraped_at": "2026-10-05T12:11:22.164Z",
     "raw_fields": {
       "department": [
         "Country Leadership"
-      ],
-      "work_type": ""
-    },
-    "_sourceId": "inkomoko-workable"
-  },
-  {
-    "title": "Client Relationship Officer-Gambella",
-    "organization": "Inkomoko",
-    "description": "",
-    "deadline": null,
-    "published": "2026-08-10T00:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "Gambela",
-    "source_url": "https://apply.workable.com/inkomoko/j/9861B119FF/",
-    "source_domain": "workable.com",
-    "content_type": "job",
-    "scraped_at": "2026-10-04T11:03:21.623Z",
-    "raw_fields": {
-      "department": [
-        "Investment"
       ],
       "work_type": ""
     },
