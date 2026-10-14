@@ -1,5 +1,430 @@
 [
   {
+    "title": "Senior Mobile & Platform Engineer - iOS/Android, KMP & DevOps",
+    "organization": "M365Consult",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-mobile-platform-engineer-ios-android-kmp-devops-at-m365consult-4477963106",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.660Z",
+    "raw_fields": {
+      "li_job_id": "4477963106",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Budget & Cost Division Head",
+    "organization": "People First Consult",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/budget-cost-division-head-at-people-first-consult-4477949616",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.660Z",
+    "raw_fields": {
+      "li_job_id": "4477949616",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Senior Android Developer - Kotlin Multiplatform & AI Coding",
+    "organization": "M365Consult",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-android-developer-kotlin-multiplatform-ai-coding-at-m365consult-4477962095",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.661Z",
+    "raw_fields": {
+      "li_job_id": "4477962095",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "IT & Technology",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Electrical Division Head",
+    "organization": "People First Consult",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/electrical-division-head-at-people-first-consult-4477962091",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.661Z",
+    "raw_fields": {
+      "li_job_id": "4477962091",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Risk Management Officer II",
+    "organization": "NGO Jobs - In Ethiopia",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-12",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/risk-management-officer-ii-at-ngo-jobs-in-ethiopia-4477294636",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.662Z",
+    "raw_fields": {
+      "li_job_id": "4477294636",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Solution Architect",
+    "organization": "Ericsson",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-07",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/solution-architect-at-ericsson-4475455647",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.503Z",
+    "raw_fields": {
+      "li_job_id": "4475455647",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Administrative Clerk",
+    "organization": "Bank",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-14",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/administrative-clerk-4479095029",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.503Z",
+    "raw_fields": {
+      "li_job_id": "4479095029",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Admin & Finance",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Zonal Operations Head",
+    "organization": "VAS Global",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/zonal-operations-head-at-vas-global-4478766546",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.503Z",
+    "raw_fields": {
+      "li_job_id": "4478766546",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Senior Planning Engineer",
+    "organization": "SHAFA AL NAHDAH BUILDING CONTRACTING LLC",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-planning-engineer-at-shafa-al-nahdah-building-contracting-llc-4478778283",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.504Z",
+    "raw_fields": {
+      "li_job_id": "4478778283",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Physiotherapist",
+    "organization": "Teklehaimanot General Hospital",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/physiotherapist-at-teklehaimanot-general-hospital-4478025667",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.504Z",
+    "raw_fields": {
+      "li_job_id": "4478025667",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Customer Service Manager M/F",
+    "organization": "TLD",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-08",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/customer-service-manager-m-f-at-tld-4474832133",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.504Z",
+    "raw_fields": {
+      "li_job_id": "4474832133",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Carbon Pricing Senior Officer",
+    "organization": "Global Green Growth Institute",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-14",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/carbon-pricing-senior-officer-at-global-green-growth-institute-4478777575",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:43.505Z",
+    "raw_fields": {
+      "li_job_id": "4478777575",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Pharmacy Technician",
+    "organization": "Luxury Beauty & Aesthetics Brand",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-10",
+    "country": "",
+    "city": "Harar, Harar, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/pharmacy-technician-4478061733",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.374Z",
+    "raw_fields": {
+      "li_job_id": "4478061733",
+      "location_raw": "Harar, Harar, Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Tireman (m/f)",
+    "organization": "Mota-Engil",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-07",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/tireman-m-f-at-mota-engil-4474488245",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.375Z",
+    "raw_fields": {
+      "li_job_id": "4474488245",
+      "location_raw": "Ethiopia"
+    },
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Grants Coordinator - Maternity Cover",
+    "organization": "Norwegian Refugee Council",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-13",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/grants-coordinator-maternity-cover-at-norwegian-refugee-council-4478770896",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.375Z",
+    "raw_fields": {
+      "li_job_id": "4478770896",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "MHNT Health Officer/Team Leader - Habru woreda",
+    "organization": "Save the Children International",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-12",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/mhnt-health-officer-team-leader-habru-woreda-at-save-the-children-international-4478552467",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.375Z",
+    "raw_fields": {
+      "li_job_id": "4478552467",
+      "location_raw": "Ethiopia"
+    },
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Steel Traders - Ethiopia",
+    "organization": "C&D Steel International Trading Co., Limited",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-10",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/steel-traders-ethiopia-at-c-d-steel-international-trading-co-limited-4478013751",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.375Z",
+    "raw_fields": {
+      "li_job_id": "4478013751",
+      "location_raw": "Ethiopia"
+    },
+    "sector_norm": "Economic Development",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Coordinator, Digital Health (Ethiopia)",
+    "organization": "Last Mile Health",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-07",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/coordinator-digital-health-ethiopia-at-last-mile-health-4450494974",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.376Z",
+    "raw_fields": {
+      "li_job_id": "4450494974",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "MEAL Officer - Woldiya PO",
+    "organization": "Save the Children International",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-12",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/meal-officer-woldiya-po-at-save-the-children-international-4478555416",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.376Z",
+    "raw_fields": {
+      "li_job_id": "4478555416",
+      "location_raw": "Ethiopia"
+    },
+    "sector_norm": "M&E",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Economic Programming and Private Business Partnerships Advisor",
+    "organization": "ReliefWeb",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-07",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/economic-programming-and-private-business-partnerships-advisor-at-reliefweb-4476799281",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:45.376Z",
+    "raw_fields": {
+      "li_job_id": "4476799281",
+      "location_raw": "Ethiopia"
+    },
+    "sector_norm": "Economic Development",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Country Director - Ethiopia",
+    "organization": "GOAL",
+    "description": "About Us GOAL has responded to the world’s major humanitarian crises since its founding in 1977, working with vulnerable communities in 13 countries across the globe with a dedicated team of personnel. While GOAL continues to be an agile first-responder to humanitarian crises, it is also committed to working with vulnerable communities to help them survive crises and support them on the road to recovery. About Our Programme GOAL has been operating in Ethiopia since the 1980s and today leads a diverse portfolio of humanitarian and development programmes delivered by approximately 500 staff. Our work reaches communities across 60 districts in eight regions and two city administrations, supporting people affected by conflict, displacement, climate-related shocks, and poverty. Working alongside government partners, local communities, UN agencies, and institutional donors, GOAL delivers programmes in Health & Nutrition, WASH, Food Security & Livelihoods, Protection, Safeguarding, and Emergency Response. Our work is supported by partners including Irish Aid, the European Union, UNHCR, UNICEF, OCHA, and others. Job Purpose We are seeking an experienced Country Director to lead GOAL's Ethiopia programme. Reporting to the Regional Director for Africa, you will provide strategic leadership across our programmes, operations, people, partnerships, and resources. As GOAL's most senior representative in Ethiopia, you will lead a large and diverse team, drive programme quality and growth, build strategic relationships with donors and stakeholders, and ensure the safe, effective, and accountable delivery of our work. This is a unique opportunity for an accomplished humanitarian leader to shape one of GOAL's largest country programmes and contribute to meaningful change for vulnerable communities across Ethiopia. Key Areas of Responsibility: Provide strategic leadership and direction for GOAL's Ethiopia programme, ensuring alignment with organisational priorities and country needs. Lead and support a high-performing Country Management Team and foster a culture of accountability, collaboration, and innovation. Oversee the delivery of high-quality humanitarian and development programmes that achieve impact and meet donor commitments. Drive business development efforts by identifying funding opportunities and building strong donor and partner relationships. Represent GOAL with government authorities, donors, UN agencies, NGOs, and other key stakeholders. Ensure effective financial, operational, and risk management systems are in place to support programme delivery and growth. Maintain oversight of security, safeguarding, compliance, and duty of care across all country operations. Champion staff development, wellbeing, inclusion, and organisational culture. Skills & Qualifications We're looking for an experienced leader with a strong track record of managing complex humanitarian and development programmes. You will ideally bring: Significant senior leadership experience within an international NGO, humanitarian, or development organisation. Experience managing large-scale programmes and multi-disciplinary teams in complex or challenging environments. Demonstrated success in securing and managing institutional donor funding. Strong understanding of programme quality, operational management, compliance, and risk oversight. Excellent relationship-building, representation, and influencing skills. Experience working with government partners, institutional donors, and coordination bodies. A collaborative leadership style with a strong commitment to people management and team development. Commitment to safeguarding, accountability, and humanitarian principles. Why Join GOAL? This is a rare opportunity to lead one of GOAL's largest and most impactful country programmes. You will join a respected INGO with a strong reputation for delivering high-quality programmes and responding rapidly to emerging needs. The role offers the opportunity to influence strategy, strengthen partnerships, drive programme growth, and make a meaningful contribution to communities across Ethiopia. We strongly encourage you to apply even if you do not meet every single requirement listed. At GOAL we welcome people of all abilities and want to ensure that our hiring and interview process meets the needs of all applicants. If you require a reasonable accommodation to make your application or interview experience a great one, please just contact our Recruitment Team at recruitment.hq@goal.ie GOAL commitment to Diversity, Equity and Inclusion: GOAL is an equal opportunity employer. We celebrate diversity and are committed to building an inclusive environment for all employees. We foster an inclusive culture where all voices are heard and valued, we are particularly eager to receive applications from women (and other underrepresented groups). We know that the more inclusive we are, the better our work will be. All employees share in the responsibility for fulfilling GOAL’s commitment to equal employment opportunity and equal treatment. GOAL does not discriminate against any employee or volunteer; or any applicant for employment or volunteering on the basis of age, gender identity, ancestry, political opinion, civil status, medical condition, ethnic background, disability, race, religion, sexual orientation, or any other characteristic protected by applicable laws.\n\nHow to Apply: To view the full job description and apply please click [County Director Ethiopia](https://www.goalglobal.org/careers/?vacancy=country-director&gh_jid=8267544)",
+    "deadline": "2026-10-30T00:00:00+00:00",
+    "published": "2026-10-13T13:46:01+00:00",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://reliefweb.int/node/4233781",
+    "source_domain": "reliefweb.int",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.722Z",
+    "raw_fields": {
+      "career_categories": [
+        "Program/Project Management"
+      ],
+      "themes": [],
+      "experience": "10+ years",
+      "languages": [],
+      "work_type": "Job"
+    },
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Director"
+  },
+  {
     "title": "Country Director – Ethiopia",
     "organization": "Concern Worldwide",
     "description": "Job Title: Country Director – Ethiopia Terms: Two-Year Fixed Term, Accompanied terms Location: Addis Ababa, Ethiopia Salary: GB8: €63,461 - €70,513 Requirements: At least 20% travel to programme sites About Concern: Established in 1968, Concern is a non-profit, non-governmental humanitarian organisation, dedicated to the reduction of suffering and the ultimate elimination of extreme poverty in the world’s poorest countries. Concern’s vision, our mission and our work are all defined by one goal – ending extreme poverty, whatever it takes. Concern strives for a world free from poverty, fear and oppression. Our culture is values driven and we believe that our people are central to all that we do and are key to delivering on our goal of Reaching the Furthest Behind First. We are committed to ensuring a workplace where everybody feels valued and are enabled to succeed in their work and contribute to delivering on our mission. Role Purpose: You will have the overall responsibility for strategic planning, programmatic direction, and management oversight of all programmes and operations of Concern Worldwide in Ethiopia. You will provide strategic direction and leadership to the Country Management Team ensuring effective and professional management of all aspects of the country programme, ensuring compliance with Concern’s organisational procedures, policies, and values. Responsibilities: Leadership Develop and implement a coherent country programme that contributes to achieving Concern’s global strategy and objectives in particular addressing emergency needs of conflict/disaster affected population. Provide leadership in the overall effective planning and direction of Concern’s programme and operations at country level. Build strong and committed team of national and international staff adhering to Concern policies and procedures and applying key principles of transparency, accountability, good stewardship and participation. Create and maintain shared vision, amongst all Concern staff, of Concern’s programme aims and objectives and their role in achieving these. Lead and support in strengthening coordination and collaboration within teams and across all teams, maintain and ensure constructive communications, contribute to a positive working environment. Security Management Take overall responsibility for the security and safety of Concern personnel and resources. Be responsible for participatory development and implementation of the Country Security Management Plan and Standard Operating Procedures. Liaise with necessary external bodies to keep abreast of current affairs in order to maintain an awareness of economic, political, humanitarian and security developments. Ensure a functioning Security Focal Group (SFG) and keep up to date with security incidents at central and field locations. Work with the SFG to ensure the development and maintenance of effective security systems for Concern employees, programmes and property including the regular revision and implementation of the Security Management Plan. Report any security threats and incidents to the Regional Director. Programme Development and Management Lead the strategic development and implementation of programmes in line with Concern organisational strategic plan and following the Concern Project Cycle Management policy including proposal writing and sourcing funding. Ensure effective coordination of technical inputs (e.g. Head Office advisors) in designing, implementing, monitoring and evaluating programmes. Take lead in ensuring targets of the country level funding strategy are met and establish productive working relationships with donors and be responsible for undertaking country level negotiations related to securing funding, programming contracts, and reports. Develop partnerships with local NGOs and CBOs through the application of Concern assessment tools Manage the country programme effectively including allocation of resources and ensuring that appropriate monitoring and controls are established and maintained at all levels by working with programme and systems managers, staff and where relevant partners. Provide adequate leadership and support to programme managers in setting up high quality standards and implementation of programmes to include equality, prevention of GBV and DRR. Ensure that all programmes are implemented and completed according to programme documents including agreed plans and budget, and in compliance with donors and internal policies. Maintain effective communication and liaise with Concern Head office in Dublin and ensure that high standard internal and donor reports are produced and submitted in timely manner and in line with relevant targets and objectives. People Management Line manage senior management staff (Country Management Team – CMT) and be responsible for the overall management and development of national and international staff. Manage and support country programme team ensuring that there is clearly defined structure and job descriptions for all staff. Ensure that regular staff Performance and Development Review (PDR) system is established and maintained and that PDRs are adequately undertaken at all levels. Develop, review, and effectively implement all Human Resources related procedures in accordance with Concern policies and procedures and in line with the national labour laws. Establish and maintain regular, participative and documented forums and meetings for all key staff to discuss policy, strategic, operational and management issues, coordinate planning and implementation of activities, and ensure information sharing. Budget and Financial Management Responsible for overall financial management including participatory budget preparation, revision and monitoring and timely submission of budgets and reports. Ensure that the Concern organisational financial guidelines and procedures are adhered to. Develop and implement work and expenditure plans and ensure that the country programmes are implemented within agreed and approved budget through undertaking regular budget monitoring of expenditure against budget. Ensure that internal and donor financial reports are submitted in timely manner and up to high-quality standard. Representation and networking Represent Concern in and establish/maintain coordination and networking relationships with the government, local authorities, donors and other national and international humanitarian actors including Alliance 2015 members in the country. Ensure compliance with Concern’s statutory obligations in relation to registration compliance, including submission of mandatory reports to the authorities. Ensure that relationship and formal agreements with the government are established, maintained and updated as appropriate. Represent Concern at various coordination forums. Promote the humanitarian principles of Concern in external settings, ensuring that the organisation’s neutrality, impartiality and independence is well communicated and consistently presented, and that we are perceived as an independent humanitarian organisation addressing the needs of the most vulnerable. Policies and procedures Ensure that support systems are in place and functioning in accordance with best practices in order to ensure transparency and accountability to programme participants, donors, government, and other relevant stakeholder. Promote and ensure compliance with the requirements of Concern’s Code of Conduct and its associated policies and implementation of the Core Humanitarian Standard (CHS), along with Concern’s community-based complaints and response mechanism (CRM) to ensure maximum protection of and accountability to programme beneficiaries. Accountability Promote and ensure compliance with the Core Humanitarian Standard (CHS) commitments and quality criteria Ensure that all staff are familiar with the principles underpinning accountability, safeguarding and Concern's Complaints and Response Mechanism (CRM) and ensure that information about Concern's commitments on accountability and safeguarding are disseminated among programme participants and communities Ensure that the CRM is functional, effectively implemented and accessible in all programmes' locations, enabling safe reporting of both programmatic and sensitive complaints, including safeguarding concerns Ensure that complaints are welcomed, managed and responded to in a timely, fair and appropriate manner; ensure that sensitive complaints, including safeguarding concerns, are handled with utmost confidentiality and that the safety of the complainants and those affected is prioritised at all stages. Other As a commitment to our humanitarian mandate the Country Director will be responsible for the implementation of any new emergency response. The programme is in a dynamic context that requires continuous contextual analysis and adaptation of the strategic planning frameworks. Role Holder Requirements: Essential: This position demands a dynamic individual with a demonstrated ability to achieve results in a demanding and fast-paced environment. Advance Degree preferably in social science or development management or business management or related discipline or equivalent in experience. At least 5 years’ overseas experience in management and coordination of development and humanitarian programmes with at least 3 years’ experience in a senior management position. Strong leadership skills and ability to manage change effectively. Excellent communication and presentation skills in English Strong communication and interpersonal skills with an ability/confidence to engage and represent Concern at public forums, media and donors. Strong coordination and conflict resolution skills. Cross cultural awareness and sensitivity. Ability to work under pressure and to strict deadlines. Good coaching, motivational, facilitation and capacity-building skills. Dynamic and willing to take initiatives to complete assigned tasks and work independently. Delegation, time management and prioritizing skills and coping with broad range of demands. Willingness to travel regularly to the project sites. Experience of managing major donor grants such as ECHO, EU, USAID/BHA, UN Agencies and Irish Aid Desirable: Previous work experience in Horn of Africa generally, or Ethiopia specifically Experience with commercial contracts and climate financing Affinity with organisational values, mission and vision, commitment to humanitarian principles Familiarity with sector and governmental coordination mechanisms\n\nHow to Apply: **To apply:** CVs should be submitted through our website at [https://jobs.concern.net](https://jobs.concern.net/) by the closing date.",
@@ -10,7 +435,7 @@
     "source_url": "https://reliefweb.int/node/4233675",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.799Z",
+    "scraped_at": "2026-10-14T10:01:41.722Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -35,7 +460,7 @@
     "source_url": "https://reliefweb.int/node/4233658",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.799Z",
+    "scraped_at": "2026-10-14T10:01:41.722Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -60,7 +485,7 @@
     "source_url": "https://reliefweb.int/node/4233043",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.799Z",
+    "scraped_at": "2026-10-14T10:01:41.723Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -85,7 +510,7 @@
     "source_url": "https://reliefweb.int/node/4233075",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.800Z",
+    "scraped_at": "2026-10-14T10:01:41.723Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -112,7 +537,7 @@
     "source_url": "https://reliefweb.int/node/4232334",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.800Z",
+    "scraped_at": "2026-10-14T10:01:41.723Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -139,7 +564,7 @@
     "source_url": "https://reliefweb.int/node/4232329",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.800Z",
+    "scraped_at": "2026-10-14T10:01:41.723Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -166,7 +591,7 @@
     "source_url": "https://reliefweb.int/node/4232189",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.800Z",
+    "scraped_at": "2026-10-14T10:01:41.723Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -183,31 +608,6 @@
     "seniority": "Manager"
   },
   {
-    "title": "MEAL Officer",
-    "organization": "HelpAge International",
-    "description": "Location: Ethiopia, India, Italy, Jordan, Kenya (as long as HelpAge International holds the registration in this country), Nepal, Pakistan, Spain, Tanzania, Thailand, Turkey, United Kingdom and Zimbabwe Department: Global Impact Reports to (Line Manager): Global Impact Advisor Grade: C Contract Type: Open-ended contract About HelpAge HelpAge International works with a diverse global network of around 200 organisations across 99 countries to promote the rights of older people to lead dignified, healthy and secure lives. Through partnership and collaborations, we work to ensure the inclusion of older people across society and strive to deliver a just and fair world for everyone as they get older. Our work is driven by our desire to achieve real impact for older people, to be inclusive, to work in partnership and to learn from our shared experience. About the Job The MEAL Officer plays a critical role in enhancing the quality, effectiveness, and accountability of HelpAge’s global programmes, advocacy efforts, and organizational performance. This role coordinates and provides technical input into the design and implementation of monitoring and evaluation (M&E) frameworks, supports learning processes, and provides technical advice to teams and Network Members. The postholder will work collaboratively across teams and Impact Vehicles to coordinates performance measurement, evaluations, rapid needs assessments and key planning and reporting processes, ensuring that HelpAge’s programmes and influencing initiatives are grounded in evidence, informed by the voices of older people, and contribute to a strong culture of learning, transparency, and continuous improvement. Key areas for impact/influence and responsibilities 1. Organisational Performance and Monitoring and Evaluation Frameworks Coordinate and provide technical input into the development and implementation of robust M&E frameworks and tools for global programmes, advocacy initiatives, and Impact Vehicles. Support Impact Vehicle, cross-functional, and programmes teams in defining indicators, setting baselines, and tracking outcomes aligned to HelpAge’s Global Impact Framework. Coordinate the development and review of results frameworks, log frames, indicators, baselines, and targets across teams and Impact Vehicles. Lead the identification and development of appropriate data sources, data-collection methodologies and evidence requirements for organisational and Impact Vehicle indicators and targets. Act as the organisational focal point for standardising KPI measurement across all Impact Vehicles, establishing and maintaining consistent indicator definitions, measurement tools, evidence requirements and reporting approaches, subject to final technical sign-off by the Global Impact Adviser. Coordinate organisation-wide Impact Vehicle performance tracking, working with relevant teams to ensure the timely and consistent collection, analysis and reporting of results. Coordinate and undertake the drafting and revision of organisational MEAL policies, procedures, standards and guidance. 2. Technical MEL Support for Global Impact Team Provide advanced technical MEAL advice, support, and quality assurance across HelpAge’s global programme portfolio, working with programme teams and Network Members throughout proposal development, programme design, implementation, monitoring, reporting and learning. Provide technical support to advocacy teams to track and measure the outcomes and influence of campaigns, policy engagement, and strategic partnerships. Develop and apply methodologies and tools for monitoring policy change, stakeholder influence, and advocacy impact. 3. Accountability and Participation Provide guidance on participatory monitoring approaches, ensuring meaningful inclusion of older people and marginalised groups. Work with programme and network member teams to build inclusive, culturally appropriate feedback and response systems at community or country level. Collaborate with the Data and Accountability Officer to ensure feedback data is analysed and used to inform adaptive programming and advocacy refinement. Promote transparency, responsiveness, and power-sharing through strengthened accountability practices. 4. Organisational Learning and Knowledge Sharing Coordinate learning reviews, after-action reviews, and annual and mid-term reflection processes within and across teams. Document and disseminate key learning, good practices, and innovations. Facilitate cross-organisational learning events, webinars, and communities of practice. 5. Rapid Needs Assessments Act as HelpAge’s technical focal point for rapid needs assessments, establishing and maintaining organisational methodologies, tools, standards and guidance.Advise and coordinate teams undertaking rapid needs assessments, determining appropriate sampling approaches, data-collection methods, questionnaire design, analytical process, and quality-assurance requirements Undertake the coordination and final technical quality assurance of rapid needs assessment reports, including establishing requirements and timelines, coordinating and consolidating inputs from colleagues, and ensuring that findings and recommendations are methodologically robust, supported by the available evidence and suitable for organisational or external use. 6. Evaluation and Evidence Generation Act as a technical focal point for evaluations of short-term projects, advising teams on appropriate evaluation approaches, methodology and design, and coordinating evaluations as required, with overall organisational technical oversight remaining with the Global Impact Adviser. Provide technical quality assurance on evaluation design, methodology, findings, and deliverables. Support the development of evaluation terms of reference and methodologies, and support the process, from inception, data collection, analysis and delivery. Coordinate the dissemination of evaluation findings across the organisation, and support teams to use findings to influence strategy, fundraising, and programme design. Capacity Strengthening Design and deliver training and tailored support to HelpAge teams, partners, and network members on MEL and accountability. Develop user-friendly guidance, templates, and toolkits to strengthen MEL practices across the organisation. Build internal capacity for adaptive management and evidence use in decision-making. 7. Planning, Reporting, and Coordination Support the Global Impact Adviser by coordinating key components of HelpAge’s annual business planning, organisational and donor reporting cycles, including coordinating and reviewing inputs from teams across functions and regions. Work closely with the Global Impact Advisor and Data and Accountability Officer to ensure effective data use and alignment of organizational planning and reporting, systems, data use, and frameworks. Actively participate in the relevant cross-team learning and coordination platforms. Contribute MEL insights to fundraising, donor reporting, and strategic planning processes. Skills and experience required Essential Significant experience in Monitoring, Evaluation, Accountability and Learning in international development, humanitarian, or advocacy-focused organisations. Advanced knowledge of MEAL principles, demonstrated by experience designing M&E frameworks, theories of change, indicators, and MEL plans. Strong technical skills in both quantitative and qualitative data collection and analysis. Experience applying MEL in advocacy, campaigning, or policy-influencing settings. Experience coordinating donor or organisational reporting and translating complex programme and performance information into clear, evidence-based narratives. Experience coordinating organisation-wide or multi-team planning, performance measurement or reporting processes, including setting requirements, managing inputs and challenging incomplete or poor-quality submissions. Knowledge of accountability principles and practical experience with feedback, complaints, and response mechanisms. Strong facilitation skills and experience designing and delivering MEAL training and learning events. Ability to communicate technical information clearly to non-specialist audiences. Proven ability to work collaboratively across diverse teams and cultural contexts. Familiarity with digital data collection and analysis tools (e.g., Power BI, Kobo Toolbox, DHIS2, Excel). Demonstrated experience coordinating rapid needs assessments in humanitarian contexts, including developing methodologies and tools, directing technical inputs, addressing data-quality and analytical issues, coordinating report production, and providing final technical quality assurance. Excellent written and spoken English, including the ability to produce and quality assure high-quality organisational and donor reports. Flexibility to work across different time zones. Demonstrated understanding of and a commitment to the principles of Partner Led Programming is essential. Desirable Excellent communication skills in English (spoken and written); Fluency in one or more additional languages used in the Global South (e.g., Spanish, French, Arabic) are highly desirable. Ability to work across cultures, sectors, and geographies in inclusive and equitable ways. Knowledge of ageing, disability, inclusion, humanitarian inclusion, or rights-based programming. Key Behavioural Competencies Working Collaboratively with Others: Work collaboratively, building mutual trust and respect, with external organizations and partners to achieve our strategic aims and objectives; being accountable for the work we do together. Adaptability and Flexibility: Adapt to new directions or opportunities arising within the organisation and in our work area; being flexible in our role, constantly using the feedback to learn more and evolve further. Supporting and Facilitating Change: Lead behavioural and cultural change through embracing a supportive, collaborative and highly inclusive environment where everybody feels supported, respected and engaged. Extend HelpAge’s Reach and Impact: Extend HelpAge’s reach and impact by creating and identifying new business development opportunities and building relationships with new partners. Diversity and Inclusion: Lead and promote a culture of including the voices of older people across our support, convening and thought leadership roles, in a way that is transformative, empowering and highly inclusive of those marginalised by gender, economic status, disability and other factors of discrimination. Leading Others(for managers): Demonstrate strong leadership to own unit/department and manage people in a well and reputable manner. Create an atmosphere of trust and an enabling environment where staff can contribute their best and develop their potential. Safeguarding HelpAge International is committed to safeguarding the communities with which we work, our partners, staff and any others who we come into contact with. The post holder will also be responsible for: Preventing harm and abuse from our people, operations and programmes to anyone that encounters our work. Reporting all safeguarding incidents you see, hear, hear about or suspect, using our internal reporting mechanism. Complying with all safeguarding framework policies and practices. Completing mandatory training courses relating to our safeguarding policy framework and complying with HR vetting procedures. SAFER RECRUITMENT All employments at HelpAge International will be subject to satisfactory references and appropriate screening checks, which can include misconduct disclosure schemes and terrorism finance checks.\n\nHow to Apply: Qualified and experienced candidates are encouraged to review the full Job Description and submit their **Cover Letter and CV** to **Jobs@helpage.org** no later than **Tuesday,** **13 October 2026**. Applicants must have the legal right to live and work in the stated locations. Please note that only shortlisted candidates will be contacted.",
-    "deadline": "2026-10-13T00:00:00+00:00",
-    "published": "2026-09-29T09:41:43+00:00",
-    "country": "Ethiopia, India, Italy, Jordan, Kenya, Nepal, Pakistan, Spain, Thailand, Türkiye, United Kingdom of Great Britain and Northern Ireland, United Republic of Tanzania, Zimbabwe",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4231801",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.801Z",
-    "raw_fields": {
-      "career_categories": [
-        "Monitoring and Evaluation"
-      ],
-      "themes": [],
-      "experience": "5-9 years",
-      "languages": [],
-      "work_type": "Job"
-    },
-    "sector_norm": "M&E",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
     "title": "Country Director, Ethiopia",
     "organization": "Right To Play",
     "description": "Job Title: Country Director, Ethiopia Location: Addis Ababa, Ethiopia (Only candidates who are eligible to work legally without work visa sponsorship in Ethiopia will be considered.) Contract Type: Full-time (40 hours per week), 1-year fixed term contract with possibility of renewal based on funding and performance. This is a national position. Hiring Salary: ETB 508,934 per month (before taxes) Target Start Date: January 2027 Application Closing Date: October 20, 2026 23:59 EAT This job advert is for an existing vacancy. About Right To Play: For more than 25 years, Right To Play has been protecting, educating, and empowering millions of children each year to rise above adversity through the power of play. We offer programs in 10 countries across Africa, Asia, the Middle East and North America, reaching millions of children each year in some of the most difficult places on earth, helping them to connect, learn and thrive. We do this by harnessing play, one of the most fundamental forces in a child's life, to equip children with the critical skills they need to dismantle barriers and embrace opportunities, in learning and in life. This work is supported by our two global offices in Toronto, Canada and London, UK; and seven National Offices in North America and Europe. Right To Play in Ethiopia is working with government, civil society organizations, communities, teachers and parents to increase access to quality education, enhance primary school children's learning and social emotional skills, promote children's access to inclusive, high quality, play-based Early Childhood Care and Education, provide play-based psychosocial support to improve the holistic well-being of children and young people and address the challenges that children face in host, internally displaced and refugee communities. Learn more about our programs in Ethiopia from our website . Benefits Highlights: Connect and collaborate with a global team who are passionate about protecting, educating and empowering children and youth using the power of play! Culture premised on our Culture Code (accept everyone, make things happen, display courage, demonstrate care, and be playful) Paid leave (20 days annual leave and 3 personal days per year) Competitive benefits such as medical insurance for employee and eligible family members, life insurance for employee, transportation allowance, and communications allowance 10% temporary allowance for Ethiopia employees from October to December 2026 and the next salary review is in January 2027 Learning opportunities and 5 learning and development (L&D) days per year Flexible work arrangements More information on what we offer is available on our website . Job Description: Job Title: Country Director (CD) Grade: 11 Reports to: Vice President, Transformation and Impact Location: Ethiopia Direct Reports: Program Manager, Education Specialist, Finance Manager, People and Culture Specialist, MEL Specialist, Logistics Officer Department: Global Program Unit 1.Purpose: Provides overall strategic and programmatic leadership including business development, fundraising, compliance and risk, financial and people management to ensure the success and growth of the country programme. 2.Accountability & Responsibilities: Governance and representation (20%) Identifies and manages organisational risk , including legal and governance matters, and acts as RTP’s legal representative in country. Represents RTP at country level , engaging government, donors, UN agencies, and NGO coordination platforms to build influence, credibility, and strategic partnerships. Fundraising and Communication (20%) Leads country-level fundraising and resource mobilisation , driving proposal development, donor engagement, and diversified funding partnerships. Leads in-country media and external engagement , strengthening RTP’s profile and ensuring alignment with organisational values and objectives. Strategy development and implementation (15%) Sets and leads the strategic direction of the country programme , ensuring alignment with RTP strategy, national priorities, and legal and regulatory requirements. Programmatic oversight, learning and innovation (15%) Oversees the country programme portfolio , ensuring high-quality delivery, measurable impact for children and young people, and timely reporting to donors, government, and HQ. Promotes collaboration and learning , advising partners on play-based and sport-for-development approaches and embedding evidence-informed practice. Champions innovation and continuous improvement , driving excellence in programming and efficiency across internal systems and processes. Operational management (15%) Provides strategic oversight of finance and administration , including budgeting, expenditure control, audits, grant compliance, and strong internal controls. Holds overall accountability for safeguarding, safety, and security , ensuring compliance with RTP policies and national legislation. Staff and workplace management (15%) Ensures effective people management , including recruitment, performance management, learning and development, payroll, and the promotion of a safe and inclusive culture. Leads, mentors, and develops a diverse country team , fostering staff wellbeing, inclusion, and high performance. Promote Safeguarding, foster a safe, respectful, and accountable work environment by modelling appropriate conduct and addressing any behaviour that undermines a healthy workplace. Perform other duties as assigned 3.Scope (geographical and/or functional), Impact and Autonomy: Oversees all aspects of the country office, providing guidance and support to the team, while serving on the Global Leadership Team to ensure quality program delivery, adherence to budgets, and contributing to global initiatives that enhance organizational systems and processes. 4.Leadership and Staff Management: Leads and develops the Country Management Team through coaching, mentoring, and capability-building while championing a safe, inclusive, and high-performing culture. Oversees People & Culture processes to ensure compliance, best practices, and effective performance management, upholding strong DEIA standards, staff safety, and well-being. Demonstrates integrity and resilience, proactively addressing and mitigating legal risks, including seeking legal advice when necessary. 5.Information Requirement for Decision-Making: Makes decisions based on a combination of internal and external information, often requiring an analytic approach to draw conclusions from incomplete information or non-conclusive information. 6.Innovation and Improvements Drives innovation and continuous improvement to deliver high-quality, impactful programs and more efficient internal systems and ways of working. 7. Relationships & Communications: Internal / External: Builds and sustains strategic relationships with key stakeholders, including donors, government officials, UN agencies, academia, media, NGOs, and local partners, while promoting RTP’s identity and relevance to the needs of vulnerable populations, in alignment with the localization strategy. Leads strategic donor, HQ visits, workshops, represents RTP in high-level meetings, conferences, and media to strengthen its profile. 8. Expertise (Certifications / Education, Professional Experience): Extensive experience in leadership roles within a large or medium international development organization, including: strategic planning, leadership and people management, project management and planning, monitoring and evaluation and financial and risk management. Master’s degree in business administration, social sciences, development studies or related discipline. Experience working in or managing programmes in stable and fragile contexts. Proven success with mobilizing new sources of program funding. Understanding of laws, regulations and cultural dynamics local and international. Fluency in spoken and written Amharic and English Significant experience with a child-focused organization is desirable. 9.Core Competences: Collaboration: Highly collaborative with strong interpersonal skills; excels at working in with a multicultural team and builds rapport and trust to develop strong external partnerships. Growth Mindset: Demonstrates commitment to own professional development and encourages their team to develop their potential, creates a learning culture through effective coaching and mentorship. Communication: Communicates complex operational, technical & strategic issues clearly & credibly to diverse audiences, leveraging strong networks to secure donor funding & influence stakeholders. Resilience: Strong organizational skills and the ability to work under pressure: multi-tasking, meeting deadlines, solving problems creatively and embracing challenges with resilience. Professionalism: Models professionalism and RTP’s values, promoting a safe, inclusive workplace and positive impact for children and youth. Management and Interpersonal Skills : Lead and mentor country team with influence, fostering trust, high performance, and shared ownership of outcome. 10.Additional Information: Expected to travel regularly domestically and occasionally internationally and work outside regular hours.\n\nHow to Apply: Apply with your resume and cover letter in English via the application link: [**https://righttoplay.hiringplatform.ca/248004-country-director-ethiopia/1128103-application-form/en**](https://righttoplay.hiringplatform.ca/248004-country-director-ethiopia/1128103-application-form/en) Right To Play provides equal employment opportunities to employees regardless of their gender, race, religion, age, disability, sexual orientation or marital status. We strongly encourage groups who have been historically disadvantaged with respect to employment to apply for positions at Right To Play. **As part of our selection process, final candidates will be required to complete security checks and Vulnerable Sector Check or equivalent criminal record check as a condition of the offer.** More details about our recruitment process are available [**here**](https://righttoplay.com/en/landing/how-to-join-us/). Safeguarding information is available [**here**](https://righttoplay.com/en/landing/safeguarding/). As part of our recruitment and selection process, Right To Play uses Artificial Intelligence (AI) - assisted tools to support the assessment of candidates or applications. This may include but not limited to generating and editing of job adverts, assessment and interview questions, scheduling, translation, transcription, note taking, etc. Our Applicant Tracking System (ATS), VidCruiter, also use AI-powered ChatBot to answer candidates' enquiries. These tools are used only to assist human reviewers in evaluation and do not make selection or screening decisions. All hiring decisions are made by human reviewers. All AI-assisted processes comply with applicable privacy and data protection regulations, including GDPR and PIPEDA. For more information, please refer to [**RTP AI Policy**](https://righttoplay.com/en/ai-policy/) and our [**Best Practice: Use of AI in Recruitment**](https://righttoplay.com/en/use-of-ai-in-recruitment/). We value and promote a culture of diversity, equity, inclusion, and belonging. We are committed to providing accommodations to candidates with disabilities during the recruitment and selection process, and thereafter. Please reach out to the People & Culture team by email at **careers@righttoplay.com**. **All information provided will be treated as confidential and used only to provide an accessible candidate experience.**",
@@ -218,7 +618,7 @@
     "source_url": "https://reliefweb.int/node/4230929",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.801Z",
+    "scraped_at": "2026-10-14T10:01:41.724Z",
     "raw_fields": {
       "career_categories": [
         "Donor Relations/Grants Management"
@@ -233,31 +633,6 @@
     "seniority": "Director"
   },
   {
-    "title": "RESPONSABLE DU BUREAU DE PLAIDOYER ET DE LIAISON AUPRÈS DE L’UNION AFRICAINE, Oxfam en Afrique",
-    "organization": "Oxfam",
-    "description": "Type de contrat : Contrat à durée déterminée de 2 ans Grade interne : B1, International Rémunération : conforme à la grille salariale d’Oxfam International. Cette offre comprend les avantages sociaux de base ainsi que les prestations globales applicables au personnel recruté à l’international et relocalisé.Nous considérons que les modalités de travail flexibles sont essentielles pour bâtir le Secrétariat de demain. Nous sommes donc disposés à échanger avec vous sur les modalités susceptibles de vous convenir. Le poste Oxfam en Afrique recherche une personne expérimentée, dotée d’un leadership reconnu et d’un forte capacité d’influence, pour diriger son Bureau de plaidoyer et de liaison auprès de l’Union africaine (UA), basé à Addis-Abeba. En tant que membre de l’Équipe de direction de la Plateforme Afrique, vous piloterez l’engagement d’Oxfam auprès de l’Union africaine et de ses institutions. Vous élaborerez et mettrez en œuvre des stratégies de plaidoyer à fort impact afin d’influencer les politiques et les pratiques à l’échelle continentale. Vous représenterez Oxfam au plus haut niveau auprès de l’UA, nouerez des relations stratégiques et contribuerez à positionner Oxfam comme un partenaire crédible et de confiance. Ce poste joue un rôle central dans la réalisation de la mission d’Oxfam en Afrique : il établit un lien entre les espaces d’élaboration des politiques continentales et les réalités nationales, tout en veillant à ce que les actions de plaidoyer soient cohérentes, porteuses d’impact et ancrées dans les réalités vécues par les communautés. Ce poste relève de la Direction Afrique, avec un rattachement matriciel à la Direction Plaidoyer, Campagnes et Engagement (ACE). Profil recherché Nous recherchons une personne reconnue pour son leadership en matière de plaidoyer et d’influence, disposant d’une solide expérience de collaboration avec l’Union africaine ou des institutions multilatérales comparables. Vous avez démontré votre capacité à concevoir et à mettre en œuvre des stratégies d’influence porteuses d’impact, combinant analyse des politiques, plaidoyer, communication médiatique et partenariats afin de favoriser des changements significatifs. Vous excellez dans l’établissement de relations et la négociation, savez évoluer efficacement dans des environnements complexes associant de multiples parties prenantes et êtes en mesure d’exercer une influence au plus haut niveau. Grâce à votre capacité de réflexion stratégique et d’analyse politique, vous savez traduire les processus de l’UA en possibilités concrètes d’influence et d’impact pour les pays et les partenaires. Votre expérience du leadership vous permet de diriger des équipes diversifiées et de travailler au sein d’un réseau mondial, tout en favorisant la collaboration et la redevabilité. Vous avez une connaissance approfondie du contexte sociopolitique africain et adhérez aux approches féministes, décoloniales et portées par les partenaires. La maîtrise professionnelle de l’anglais et du français est indispensable. Pourquoi nous rejoindre Ce poste offre une occasion rare d’influencer les politiques et les pratiques au plus haut niveau continental. À Oxfam, vous façonnerez notre engagement auprès de l’Union africaine, piloterez le plaidoyer sur des enjeux majeurs tels que les inégalités, la pauvreté et la justice, et collaborerez avec des gouvernements, des diplomates et des institutions internationales pour réaliser des changements concrets. Au sein d’une équipe de direction diversifiée et collaborative, vous contribuerez à rapprocher les politiques continentales des réalités des communautés, afin que les décisions prises au plus haut niveau se traduisent par des résultats tangibles pour les populations partout en Afrique. Ce que nous offrons À Oxfam, nous sommes convaincus que chaque aspect de notre travail peut contribuer à un changement positif. Si vous partagez cette conviction et possédez les compétences nécessaires pour relever les défis liés à ce poste, cette fonction vous offrira de grandes possibilités d’épanouissement personnel ainsi que d’excellentes perspectives d’évolution professionnelle. Oxfam s’engage à proposer une rémunération équitable, sur la base d’une semaine de travail de 36 heures À propos de nous Oxfam est un mouvement mondial de personnes qui agissent ensemble pour mettre fin à l’injustice qu’est la pauvreté. Cela signifie que nous nous attaquons aux inégalités qui maintiennent les populations dans la pauvreté. Ensemble, nous sauvons des vies, protégeons les populations et les aidons à reconstruire leur existence. Lorsqu’une catastrophe survient, nous aidons les personnes à bâtir un avenir meilleur, pour elles-mêmes et pour les autres. Nous agissons sur des enjeux tels que les droits fonciers, le changement climatique et les discriminations à l’égard des femmes. Et nous ne nous arrêterons pas tant que chaque personne sur la planète ne pourra pas vivre à l’abri de la pauvreté. Nous sommes une confédération internationale composée de 22 organisations affiliées et du Secrétariat d’Oxfam International. Avec nos partenaires et les communautés locales, nous menons des actions humanitaires, des programmes de développement et des campagnes dans plus de 76 pays. Oxfam en Afrique (OiA) est une plateforme continentale qui assure la coordination des bureaux pays d’Oxfam en Afrique et collabore avec des organisations de la société civile, des universitaires, des gouvernements et le secteur privé afin de contribuer à une Afrique plus égalitaire, en remettant en cause les structures de pouvoir qui perpétuent les inégalités et les injustices. À cette fin, Oxfam en Afrique apporte un leadership intellectuel dynamique et offre un espace de collaboration à ses partenaires. Oxfam en Afrique joue un rôle moteur dans l’appui aux communautés locales et le renforcement de leur pouvoir d’agir, la promotion de l’égalité de genre, le plaidoyer en faveur de changements de politiques publiques et le renforcement des capacités des organisations locales de la société civile. L’ensemble de notre travail est guidé par nos valeurs fondamentales : Autonomisation, Redevabilité, Inclusion, Courage, Solidarité et Égalité. Notre engagement en matière de safeguarding (Protection contre le harcèlement, l’exploitation et les abus sexuels) Oxfam s’engage à prévenir toute forme de comportement inapproprié au travail, notamment le harcèlement sexuel, l’exploitation et les abus sexuels, les manquements à l’intégrité et les irrégularités financières, ainsi qu’à promouvoir le bien-être des enfants, des jeunes et des adultes. Oxfam attend de l’ensemble de son personnel et de ses volontaires qu’ils partagent cet engagement et respectent notre Code de conduite. Nous accordons une importance primordiale au recrutement de personnes qui partagent nos valeurs et les mettent en pratique. Remarque : Toute offre d’emploi sera subordonnée à la réception de références satisfaisantes et pourra faire l’objet de contrôles appropriés, notamment une vérification du casier judiciaire et des contrôles relatifs au financement du terrorisme. Le Secrétariat d’Oxfam International participe également au Mécanisme interorganisations de divulgation des inconduites (Inter-Agency Misconduct Disclosure Scheme). Conformément à ce dispositif, si une personne candidate a précédemment travaillé pour une autre organisation membre, nous solliciterons auprès de cette organisation des informations concernant toute constatation d’exploitation sexuelle, d’abus sexuels et/ou de harcèlement sexuel survenue pendant son emploi, ainsi que tout incident qui faisait encore l’objet d’une enquête au moment de son départ. En soumettant sa candidature, la personne candidate confirme avoir pris connaissance de cette procédure de recrutement.\n\nHow to Apply: **Comment postuler** Si vous souhaitez influencer les politiques continentales et renforcer l’engagement auprès de l’Union africaine afin de favoriser des changements durables en Afrique, nous vous invitons à postuler. Veuillez soumettre un CV à jour et une lettre de motivation via ce lien [https://oxfam.current-vacancies.com/Jobs/Advert/4325897?cid=3360](https://oxfam.current-vacancies.com/Jobs/Advert/4325897?cid=3360) , en démontrant clairement en quoi votre profil répond aux critères essentiels définis dans la fiche de poste de Responsable du Bureau de plaidoyer et de liaison auprès de l’Union africaine. Veuillez noter que seules les personnes présélectionnées seront contactées, généralement dans les deux semaines suivant la date de clôture",
-    "deadline": "2026-10-13T00:00:00+00:00",
-    "published": "2026-09-22T11:56:13+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4230854",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.801Z",
-    "raw_fields": {
-      "career_categories": [
-        "Program/Project Management"
-      ],
-      "themes": [],
-      "experience": "5-9 years",
-      "languages": [],
-      "work_type": "Job"
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Manager"
-  },
-  {
     "title": "Administrator",
     "organization": "EMERGENCY",
     "description": "EMERGENCY is an independent and neutral international organisation founded in 1994 to provide free, high-quality medical and surgical care to victims of war, landmines and poverty. EMERGENCY promotes a culture of peace, solidarity and respect for human rights. We work in a sustainable way: building healthcare facilities, training local personnel, and conducting search and rescue missions in the Mediterranean Sea. ROSTER POSITION FOR : Sierra Leone, Sudan, OPT, Ukraine, Afghanistan TYPE OF CONTRACT: fixed term contract (6 months), which includes a monthly salary, travel expenses, board and lodgings, insurance cover (liability, health and accident insurance), a period of paid leave to be taken at the end of the mission. The Administrator is responsible for the management of all the administrative and accountancy procedures of the project. BACKGROUND AND ORGANISATION OF WORK The Administrator co-ordinates, supervises and works alongside the non-medical staff, managing the organisation of work and providing them with on-the-job training. The Administrator is responsible to the Country Director and he/she is in regular communication with the Field Operations Department (HQ) regarding all aspects of the job. DUTIES AND REPONSIBILITIES Her/his main duties and responsibilities will be: to ensure all the administrative and accountancy documentation of the project is kept correctly, including that required by the auditors and possible donor organisations; to ensure the correct management of cash, bank accounts, and the reconciliation of accounts on a monthly basis; to ensure the correct administrative management of the national staff (salaries, contracts, holidays, permissions…); to prepare the monthly report (cash flow, statements and reports file…) and present it punctually to HQ, highlighting any possible gaps in the approved budget; to collaborate with the Country Director and HQ in drafting the annual budget for the project; to assist the Country Director in drafting project proposals for institutional donors; to assist the Country Director during audits carried out by donor agencies. SPECIFIC REQUIREMENTS Diploma in Accountancy or bachelor degree in Economics, Political science or International relations; at least 2 years’ relevant work experience in the administration field; familiarity with the financial guidelines and procedures of the main donor agencies (EU, MAECI, UN agencies…) would be an advantage; experience in managing petty cash; experience in managing revenue and payments; experience in reconciling bank accounts and cash records. REQUIRED AVAILABILITY 6 months’ overseas stay including a period of leave to be taken at the end of the mission in agreement with the Coordinator.\n\nHow to Apply: Send your application at this link: [ADMINISTRATOR APPLICATION FORM](https://emergency-hq.orangehrmlive.com/external/#/recruitment-apply/vacancy/5)",
@@ -268,7 +643,7 @@
     "source_url": "https://reliefweb.int/node/4230695",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.802Z",
+    "scraped_at": "2026-10-14T10:01:41.724Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -293,7 +668,7 @@
     "source_url": "https://reliefweb.int/node/4229100",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.802Z",
+    "scraped_at": "2026-10-14T10:01:41.724Z",
     "raw_fields": {
       "career_categories": [
         "Information Management"
@@ -320,7 +695,7 @@
     "source_url": "https://reliefweb.int/node/4227027",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.802Z",
+    "scraped_at": "2026-10-14T10:01:41.724Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -345,7 +720,7 @@
     "source_url": "https://reliefweb.int/node/4226970",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.803Z",
+    "scraped_at": "2026-10-14T10:01:41.724Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -372,7 +747,7 @@
     "source_url": "https://reliefweb.int/node/4224453",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.803Z",
+    "scraped_at": "2026-10-14T10:01:41.725Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -399,7 +774,7 @@
     "source_url": "https://reliefweb.int/node/4224280",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.803Z",
+    "scraped_at": "2026-10-14T10:01:41.725Z",
     "raw_fields": {
       "career_categories": [
         "Other"
@@ -426,7 +801,7 @@
     "source_url": "https://reliefweb.int/node/4222949",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.804Z",
+    "scraped_at": "2026-10-14T10:01:41.725Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
@@ -453,7 +828,7 @@
     "source_url": "https://reliefweb.int/node/4216437",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.804Z",
+    "scraped_at": "2026-10-14T10:01:41.725Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -478,7 +853,7 @@
     "source_url": "https://reliefweb.int/node/4215186",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.805Z",
+    "scraped_at": "2026-10-14T10:01:41.726Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -493,6 +868,31 @@
     "seniority": "Manager"
   },
   {
+    "title": "Regional Sales Systems Manager",
+    "organization": "MSI Reproductive Choices",
+    "description": "About MSI MSI Reproductive Choices is one of the world’s leading providers of sexual and reproductive healthcare. We believe that everyone should have the right to choose. From contraception to safe abortion and life-saving post-abortion care, we are committed to delivering compassionate, affordable, high-quality services for all. Today, our organisation has almost 9,000 team members working in 36 countries across the world. Our success lies in the fact that MSI teams are locally led, entrepreneurial and results-driven, and are passionate about delivering high quality, client-centred care in their own communities. As a social business, we focus on sustainable delivery, efficiency, and funding models that are built to last, so that the women and girls we serve today will have a choice in the future too. We know that access to reproductive choice is life changing. For some, it can mean the ability to complete an education or start a career. For others, it means being able to look after the family they already have. For everyone, it means the freedom to decide their own future, creating a fairer, more equal world. About the Role The Regional Sales Systems Manager – Africa is responsible for leading the strategy, governance, and optimisation of sales systems across MSI’s Africa region, ensuring these systems directly enable commercial growth, performance management, and data-driven decision-making. The role owns the regional sales systems ecosystem, driving standardisation, scalability, and integration across markets. It ensures that systems, processes, and data are aligned to MSI’s commercial strategy and are actively used to improve sales performance, conversion rates, and operational efficiency. Acting as a key regional leader, the postholder influences country programmes (CPs), distributors, and cross-functional teams to adopt best-in-class systems and disciplined sales processes. The role holds accountability for data accuracy (>95%), KPI definition and tracking, and real-time visibility of commercial performance across the region. The Regional Sales Systems Manager plays a critical role in shaping how commercial performance is measured, managed, and improved, ensuring that sales teams and partners are equipped to deliver sustainable growth. This role requires strong contextual understanding of Africa markets, including the operational realities of working with distributors, field sales teams, and fragmented digital ecosystems. As such, prior experience working physically within Africa markets is essential to effectively design, implement, and drive adoption of sales systems. The role is expected to be based within the Africa region, enabling close engagement with country programmes, partners, and frontline teams, and ensuring solutions are grounded in market realities. About You For us, it’s vital that every MSI team member believes in and is committed to our organisational mission, vision and values. This means that we will only accept applications from candidates who are unequivocally pro-choice. Our values act as guiding principles, providing us with a clear direction. They set the tone for how we approach our work, interact with others and align ourselves as ‘One MSI’. It’s important that our team members truly resonate with our values and demonstrate them consistently, in all that they do. We recruit talented, dynamic individuals with diverse backgrounds who share our mission and are focused on delivering measurable results. As an equal opportunity employer, we are committed to fostering an inclusive workplace where everyone can participate and contribute meaningfully. We value open-mindedness, curiosity, resilience, and a solutions-oriented mindset, alongside a commitment to promoting equality and safeguarding the welfare of both team members and clients. We seek exceptional communicators who are self-motivated, solutions-driven, and aligned with MSI’s mission and entrepreneurial mindset. You should be dedicated to driving social change in an environment focused on sustainable impact, both locally and globally, and comfortable working with diverse teams in an ambiguous setting. To perform this role, you’ll need the following skills: Strong experience with sales force automation (SFA), CRM platforms, or commercial ERP systems Deep understanding of data governance, validation frameworks, and data quality assurance Strong systems thinking and process optimisation capability Experience designing dashboards and reporting structures for commercial teams High level of digital literacy and comfort working with IT teams and system vendors Strong project management skills, including multi-country rollouts Excellent analytical and problem-solving skills Strong stakeholder management and influencing capability Ability to simplify complex systems and translate technical concepts for non-technical users To perform this role, you’ll need the following experience: 6–8+ years of experience in sales operations, systems implementation, CRM/SFA management, (CRM ecosystem commercial experience like Salesforce, Dynamics, HubSpot, Saneforce) Experience harmonising or rolling out systems across multiple countries or regions Experience working closely with sales teams or in sales roles in the field Experience driving sales performance improvement through systems or processes Experience managing data accuracy improvement initiatives Experience working with distributors and commercial field teams Experience in FMCG, pharmaceutical, consumer health, or socially marketed products preferred Significant experience working within Africa markets is essential, with a strong understanding of local commercial environments, distributor models, and field sales realities.\\n>\\n> Experience operating on the ground within Africa (not solely remotely) is required to effectively drive system adoption and performance improvement. Formal education/qualification A degree in Information Systems, Business Administration, Data Management, Supply Chain, or a related field is desirable, or equivalent practical experience. Please see the job description here . Location: London, UK (minimum of 2 days per week in the office) or Ethiopia, Ghana, Kenya, Nigeria, Senegal, Sierra Leone, Tanzania, Uganda, Zambia, Zimbabwe. Full-time: 35 hours a week, Monday to Friday (UK) other countries may vary. Contract type: 1-2 year Fixed Term Contract. Salary : The salary will be strictly banded within the local national context. Salary band: BG 9 Closing date: 21 October 2026. Interviews may take place before this date for exceptional candidates. For internal employees applying from an MSI country programme, the role will be positioned within the existing salary structure of the country. Local terms and conditions of the country will apply.\n\nHow to Apply: Please apply via our website - [https://jobs.dayforcehcm.com/en-GB/msichoices/CANDIDATEPORTALINT/jobs/9948](https://jobs.dayforcehcm.com/en-GB/msichoices/CANDIDATEPORTALINT/jobs/9948)",
+    "deadline": "2026-10-21T00:00:00+00:00",
+    "published": "2026-06-02T09:05:48+00:00",
+    "country": "Ethiopia, Ghana, Kenya, Nigeria, Senegal, Sierra Leone, Uganda, United Kingdom of Great Britain and Northern Ireland, United Republic of Tanzania, Zambia, Zimbabwe",
+    "city": null,
+    "source_url": "https://reliefweb.int/node/4214419",
+    "source_domain": "reliefweb.int",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:41.727Z",
+    "raw_fields": {
+      "career_categories": [
+        "Information and Communications Technology"
+      ],
+      "themes": [],
+      "experience": "5-9 years",
+      "languages": [],
+      "work_type": "Job"
+    },
+    "sector_norm": "Communications",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
     "title": "Government Relations Advisor, Africa",
     "organization": "Vital Strategies",
     "description": "PLEASE NOTE: This search is being conducted by Ethiojobs. Please apply DIRECTLY through the link below : https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies _________________ Vital Strategies is an international public health organization. Our programs strengthen public health systems and address the world’s leading causes of illness, injury and death. We currently work in 73 countries, supporting data-driven decision making in government, advancing evidence-based public health policies, and mounting strategic communication campaigns. Vital Strategies’ priorities are driven by the greatest potential to improve and save lives. They include non-communicable disease prevention, tobacco control, road safety, obesity prevention, overdose prevention, environmental health, and vital statistics systems building. Our programs are primarily concentrated in low- and middle-income countries in Africa, Latin America, Asia and the Pacific. Please visit our website at www.vitalstrategies.org to find out more about our work. Vital Strategies is committed to building a diverse, equitable and inclusive (DEI) organization. We believe our programs are strengthened when they are developed and supported by individuals with diverse life experiences, whose understanding of social and cultural issues can help make our work and workforce more inclusive. We welcome applications from people of all backgrounds. Lead Poisoning Prevention Program: Vital Strategies is expanding our program that addresses the issue of lead poisoning in low- and middle-income countries. We plan to build upon existing efforts and interest by collaborating with governmental agencies in countries in Africa, Asia, and Latin America to strengthen health systems and build local expertise in childhood lead exposure to enact sound, cost-effective policies to address exposures. Job Purpose: The position of Government Relations Advisor, Africa will facilitate regional exchange and coordinate high-level engagement and partnership building for the Lead Poisoning Prevention Program across multiple countries in Africa. The role will focus on managing and strengthening relationships with key government and program partners, stakeholders, facilitating regional exchanges and strategy development, and ensuring program alignment with countries’ priorities and global objectives. The incumbent will work closely with country teams to support government engagement, partnership building, share updates on implementation progress, and ensure exchange and coordination among government and consortium partners across the regional portfolio. The role will also provide representation at regional events, support policy engagement, and ensure effective collaboration among regional stakeholders and technical partners. It is preferred that this role be based in Ethiopia, on a full-time hybrid schedule, out of Vital Strategies' office in Addis Ababa, but we are also open to qualified candidates from Ghana, Rwanda, and Tanzania. The candidate must have authorization to work legally in the respective country at the time of hire. Vital Strategies offers highly competitive compensation and comprehensive benefits. The salary range for this position will vary by location, experience and qualifications. Duties and Responsibilities: Regional program coordination and strategic vision - · In coordination with the global team, facilitate regional exchanges and development of regional partnerships and a consistent strategy for government engagement and partnership building in the region; · Initiate and/or sustain government partnerships with ministries, regulatory bodies, and other national and regional institutions in priority countries; · Support project launches and startups in new countries within the region, including support for staff recruitment; · Support country teams in translating strategy into implementation plans, including identification of key capacity gaps to be filled, and government engagement needed to ensure quality and timely delivery of program activities; · Identify and participate in regional opportunities and events that help elevate lead poisoning on national agendas; · Promote multisectoral collaboration and partnership-driven approaches to environmental health policy development; · Manage relationships with regional organizations engaged in lead-related activities, and develop, where appropriate, formal or contractual relationships for discrete programmatic activities in support of the initiative. Partnership Management - · Support country teams in managing key government and institutional partners across the region, as well as non-government organizations in relevant sectors; · Represent Vital Strategies in regional lead poisoning prevention meetings, technical forums, public hearings, and governance bodies in the region; · Support the development and review of reports, policy briefs, and training materials developed in the region; · Promote cross-sector dialogues that support the development of integrated, evidence-based public policies; · Facilitate knowledge exchange across the region; · Coordinate work with national and international partners, ensuring alignment across local and global strategies; · Assist with other duties as specified by the supervisor. Qualifications: Education & Degree - · Master’s degree in public health, public policy/Administration, Global Health, international development, environmental health science, or related field. Skills & Abilities - · Strong government engagement and partnership-building skills, with the ability to establish and sustain relationships with ministries, regulatory bodies, and regional institutions; · Demonstrated ability to coordinate multi-country initiatives and facilitate regional exchange and collaboration; · Strategic thinking skills, with the ability to translate regional strategy into actionable country-level implementation plans; · Strong stakeholder management skills across government, NGOs, multilateral agencies, and technical partners; · Ability to promote and facilitate multisectoral collaboration and policy dialogue; · Ability to monitor program quality, performance, and outcomes across a regional portfolio; · Ability to coordinate and engage program stakeholders and other country teams; · Demonstrated sensitivity in handling confidential information; · Proven ability to interpret public health data, generate actionable insights, and support policy recommendations; · Exhibits strong organizational skills with the ability to manage multiple competing priorities and meet deadlines; demonstrates personal integrity, credibility, and professionalism while taking initiative and making sound, informed decisions in a fast-paced environment; · Professional oral and written proficiency in English; · Excellent interpersonal skills, including the ability to communicate effectively to technical and non-technical audiences, and contribute to an interdisciplinary international team; · Solid knowledge of Microsoft Office Suite (Excel, Word, PowerPoint, Outlook); · Experience working with a geographically distributed team with demonstrated ability to work collaboratively, communicate clearly and regularly, monitor performance, and inspire, engage, and motivate staff; · Demonstrated commitment to contributing to an inclusive working and learning environment. Experience: Required - · Minimum of eight years of experience in government engagement and public health programming, ideally with experience in health policy, environmental health, and/or global health, especially related to lead poisoning prevention or environmental pollution; · Experience in representing organizations with governments, international institutions, and senior stakeholder forums; · Experience managing multi-country programs in Africa; · Experience working with government agencies, regulatory bodies, and public health facilities; · Experience with program reporting and monitoring. Preferred - · Demonstrated experience in communicating scientific and health information to varied audiences; · Experience in using project management platforms. Working Conditions and Physical Requirements: · If hired in Ghana, Rwanda, or Tanzania, the candidate will be hired via Vital Strategies’ Employer of Record on a remote schedule; · The position will require travel up to 30% of the time to visit operating countries in the region to visit field implementation or attend meetings with partners; · The candidate needs to be willing to work with colleagues across different time zones.\n\nHow to Apply: **PLEASE NOTE:** This search is being conducted by Ethiojobs. **Please apply DIRECTLY through the link below**: [https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies](https://ethiojobs.net/job/UAVcbgg81M-government-relations-advisor-africa-vital-strategies)",
@@ -503,7 +903,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:41.805Z",
+    "scraped_at": "2026-10-14T10:01:41.727Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -528,7 +928,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473995",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-10-13T12:34:42.126Z",
+    "scraped_at": "2026-10-14T10:01:45.310Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "QCBS",
@@ -552,7 +952,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473636",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-10-13T12:34:42.126Z",
+    "scraped_at": "2026-10-14T10:01:45.310Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "QCBS",
@@ -576,7 +976,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472720",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-10-13T12:34:42.126Z",
+    "scraped_at": "2026-10-14T10:01:45.310Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "QCBS",
@@ -600,7 +1000,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472714",
     "source_domain": "worldbank.org",
     "content_type": "tender",
-    "scraped_at": "2026-10-13T12:34:42.126Z",
+    "scraped_at": "2026-10-14T10:01:45.310Z",
     "raw_fields": {
       "notice_type": "Request for Expression of Interest",
       "procurement_method": "QCBS",
@@ -624,7 +1024,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473734",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -648,7 +1048,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472842",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -672,7 +1072,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473353",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -696,37 +1096,13 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472789",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
       "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
       "project_id": "P178808",
       "bid_reference": "ET-MOR-474917-GO-RFB",
-      "sector": ""
-    },
-    "sector_norm": "Admin & Finance",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Procurement of ICT Equipment's, by EAES",
-    "organization": "World Bank",
-    "description": "Procurement of ICT Equipment's, by EAES\n\nProject: Ethiopia Education Transformation Operation for Learning\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-EAES-565371-GO-RFB\n\nContact: Addis Ababa",
-    "deadline": "2026-10-13",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00471589",
-    "source_domain": "worldbank.org",
-    "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
-    "raw_fields": {
-      "notice_type": "Invitation for Bids",
-      "procurement_method": "Request for Bids",
-      "project_name": "Ethiopia Education Transformation Operation for Learning",
-      "project_id": "P501017",
-      "bid_reference": "ET-EAES-565371-GO-RFB",
       "sector": ""
     },
     "sector_norm": "Admin & Finance",
@@ -744,7 +1120,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470624",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -768,7 +1144,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470520",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -792,7 +1168,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469617",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -816,7 +1192,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -840,7 +1216,7 @@
     "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
     "source_domain": "worldbank.org",
     "content_type": "consulting",
-    "scraped_at": "2026-10-13T12:34:42.368Z",
+    "scraped_at": "2026-10-14T10:01:45.646Z",
     "raw_fields": {
       "notice_type": "Invitation for Bids",
       "procurement_method": "Request for Bids",
@@ -854,6 +1230,27 @@
     "seniority": "Mid-level"
   },
   {
+    "title": "Protection Assistant - Monitoring Readvertised",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "Danish Refugee Council, one of the world’s leading humanitarian NGOs, is currently looking for a qualified Protection Assistant – Monitoring for our operations in Mai Tsebri, Ethiopia.\n\nInstruction for applicants:\nAll applicants must upload a cover letter and an updated CV in English. Please ensure that your CV does not exceed three pages. Applications with CVs longer than the specified limit may not be considered\n\n(This is a re-advertisement. Applicants from previous rounds do not need to re-apply. \n\n\nOverall purpose of the role \n\nUnder the line management from Protection team leader, technical supervision of Protection Officer -Monitoring the Protection Assistant-Monitoring will implement protection monitoring activities in selected IDP sites and host community in Mai-Tsebri & Dimma and the surrounding host community. Specifically, the role will plan and conduct protection monitoring visits in the Internally Displaced Persons (IDPs), returnees and the nearby bay host communities, through data collection and encoding, referral of individuals at risk, information sharing, and timely reporting on protection trends and risks identified. The position will, furthermore, be tasked to identify and provide direct assistance and support to people with specific needs. Additionally, the position is expected to contribute to other protection activities that DRC is implementing in selected IDP sites in the contested area.\n\nYour main duties and responsibilities will be:\n\n\n\tConduct protection monitoring in assigned areas\n\tContribute in the development and review of protection monitoring tools, testing, plans and in the analysis of the collected information with the Protection Officer and Protection manager.\n\tIdentify and protection trends and needs in the assigned areas through Key Informant Interviews, Focus Group Discussions and observation.\n\tUtilize data collection system for data collection and uploading in line with international standards, best practices and DRC protection monitoring guidelines\n\tIdentify individuals at risk, provide information and refer for specialized assistance.\n\tSupport protection officers in coordination and implementation of Individual Protection Assistance\n\tRegularly monitor beneficiaries’ access to service, the effectiveness of referral service, and the contribution of referrals and individual protection assistance on addressing protection risks for individual cases.\n\tConduct community awareness raising and information dissemination on identified protection risks and prevention and mitigation strategies\n\tMaintain good relationships with other stakeholders to collect daily information on fresh displacements in the area of coverage and support safe referrals\n\tParticipate in engaging with community-based structures on a consistent basis and sticking to respectful, culturally appropriate ways.\n\tEnsure data is collected in line with Protection Information Management and protection principles, observing data protection Standard Operating Procedures\n\tParticipate in relevant trainings such as Protection Information Management and other topics \n\tAdhere to Ethical data collection and data protection protocols throughout protection monitoring process; \n\tEnsure proper documentation of activities conducted under the position as a means of verification to measure project progress, effectiveness, and efficiency.\n\tParticipate in protection and other multisectoral assessments\n\n\nReport writing and documentation \n\n\n\tSupport in the development of daily, weekly and monthly reports.\n\tEnsure proper documentation of all project monitoring activities\n\tProvide input during the protection monitoring reports and protection analysis \n\n\nExperience and technical competencies:\n\n\n\tMinimum of one year’s experience in an entry to mid-level position, with experience in the field of humanitarian response and refugee/IDP protection working for an international NGO, UN agency or relevant ministry or local authority.\n\tExperience in conducting protection monitoring or protection assessments using online data collection tools such as Kobo and Activity info\n\tGood data collection, analysis and reporting skills\n\tExperience working with displaced or conflict affected populations.\n\tStrong planning, organizational and problem-solving skills with the ability to work both independently and within a team.\n\tIntegrity, strong work ethic, and ability to consistently meet deadlines under pressure.\n\tFull proficiency in Microsoft Office, including Word and Excel. Full proficiency in Microsoft Office, including Word and Excel; proficiency in Kobo and other data collection/analysis tools desirable\n\n\nEDUCATION: (include certificates, licenses, etc.)\n\n\n\tUniversity degree/Diploma in social sciences, law, social work, international development, or other relevant field from a recognized institution.\n\n\nLANGUAGE: (indicate Fluency level)\n\n\n\tExcellent skills in speaking, reading and writing English, Amharic and Tigrigna. \n\n\nIn this position, you are expect",
+    "deadline": "27 Oct 2026",
+    "published": "13 Oct 2026",
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://drc.ngo/jobs/job?id=176966",
+    "source_domain": "drc.ngo",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:01:46.215Z",
+    "raw_fields": {
+      "region": "Africa",
+      "category": "Program/Project Management",
+      "contract_type": "National"
+    },
+    "sector_norm": "Protection & Human Rights",
+    "work_type_norm": "Full-time",
+    "seniority": "Junior"
+  },
+  {
     "title": "Safety And Liaison Officer",
     "organization": "Danish Refugee Council (DRC)",
     "description": "The Danish Refugee Council (DRC), one of the world’s leading NGOs, with a focus on responding to displacement, have been registered in Sudan since 2004, delivering life-saving programming in protection, emergency response, shelter, food security and livelihoods, disaster risk reduction, camp management, and humanitarian mine action. DRC has implemented projects in Central Darfur, South Kordofan, Gedaref, Port Sudan, and White Nile. Sudan hosts one of the largest displaced populations in Africa, with over 3.7 million internally displaced people and over 1.1 million refugees from South Sudan, Ethiopia, Eritrea, Central African Republic, Chad, Yemen and Syria. Against a background of political crisis, Sudan faces economic and social turmoil, with sharp increases in food and energy costs, further exacerbated by disease outbreaks and ongoing conflict.\n\n \n\nPOSITION PROFILE\n\nTo assist in managing safety and liaison activities in the Duty Station office and program locations. This includes compliance and adherence to DRC global Safety manual.\n\n \n\nDUTIES & RESPONSIBILITIES\n\nSafety\n\n\n\tAssist Safety Manager/Head of Safety with the implementation of regional safety policies, safety rules, and standard operating procedures (SOPs) related to the safe implementation of program activities.\n\tTrack access and operations and monitoring of staff filed movements to/from duty station.\n\tCollect, verify, analyze, and submit timely and regular reports on issues that affect, or may affect DRC/HDP operations.\n\tSupport/Coordinate with Safety focal points in other duty station for on various Safety functions, e.g., Staff movement, Safety assessment, deconfliction, document of incidents and analysis and reporting\n\tMonitor the evolving situation in DRC operations in area of responsibility in coordination with other actors as per regional, country, and program guidelines.\n\tEstablish a network of contacts with relevant government offices, including HAC, and other government offices as needed and in coordination with AM and other program leads.\n\tProvide operational safety briefings and orientation to all new and visiting staff in area of responsibility.\n\tAssist in training on safety procedures, security awareness, conducting PAST in coordination with SM/HoS, access and counter-surveillance; mission planning, and fire safety (as required) for field offices staff in area of responsibility.\n\tAssist in the management of safety incidents and crisis, provide timely and accurate incident reports and analysis, including analysis of organizational lessons learned.\n\tMonitoring and supervision (as required) of security guards, watchmen, and drivers where it relates to compliance of safety measures, local safety rules, and standard operating procedures.\n\tSupervise the implementation of physical and asset protection protocols and regulations.\n\tEnsure that appropriate access controls are in place for all DRC facilities.\n\tAssist in regular Security Risk Assessments (SRAs), including regular review of Safety Level System (SLS) and Minimum Operating Safety Standards (MOSS) as per DRC policy in coordination with Safety Manager/HoS\n\tAdvise and assist the procurement and issue of safety equipment.\n\tTrack safety-related incidents and developments and provide trend/pattern analysis.\n\tConduct regular field site assessments and advise on mitigation measures.\n\tCarry out other activities as requested by AM, and Safety Manager/HoS\n\n\nLiaison:\n\n\n\tEstablish a network of contacts with relevant government offices, including HAC, and other government offices as needed and I coordination with AM and other program leads.\n\tLead on obtaining of all relevant state-level permits\n\tAssist the liaison coordinator to get the TA (Technical Agreement) signed at the field level before moving it to HAC – HQ.\n\tArrange for different meetings with government stakeholders as necessary.\n\n\n \n\n \n\nSKILLS AND EXPERIENCES\n\n\n\t2-3 years of experience in security, preferably in the military or police context or related field of work.  \n\tPrior experience with the UN System or an International NGO is highly desirable.\n\n\n \n\nEDUCATIONAL QUALIFICATIONS\n\n\n\tA university degree in a discipline related to security management, international studies, or military/police studies.\n\t\n\tDiploma or equal of public relations.\n\t\n\n\n \n\nLANGUAGES  \n\n \n\n\n\tFluent in both written and speaking English – highly preferable\n\n\n \n\nALL EMPLOYEES ARE EXPECTED TO DEMONSTRATE DRC FIVE CORE COMPETENCIES \n\n\n\tStriving for excellence: You focus on achieving results while maintaining efficient processes. \n\tCollaborating: You engage with relevant stakeholders and encourage constructive feedback.\n\tTaking the lead: You take ownership of tasks and are open to innovation.\n\tCommunicating: You are clear, concise, and respectful in your communication.\n\tDemonstrating integrity: You uphold and promote the highest ethical standards and DRC's Code of Conduct. \n\n\n \n\nPOSITION DETAILS\n\n\n\tType of contract: National Contract.\n\tContract Length: 12 Months \n\t",
@@ -864,7 +1261,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176956",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.308Z",
+    "scraped_at": "2026-10-14T10:01:46.215Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Safety & Security",
@@ -885,7 +1282,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176942",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.310Z",
+    "scraped_at": "2026-10-14T10:01:46.219Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -906,7 +1303,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176941",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.310Z",
+    "scraped_at": "2026-10-14T10:01:46.219Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -927,7 +1324,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176940",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.310Z",
+    "scraped_at": "2026-10-14T10:01:46.219Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Program/Project Management",
@@ -948,7 +1345,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176914",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.315Z",
+    "scraped_at": "2026-10-14T10:01:46.223Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Donor & Partner Relations",
@@ -969,7 +1366,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176917",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.317Z",
+    "scraped_at": "2026-10-14T10:01:46.224Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Supply Chain",
@@ -990,7 +1387,7 @@
     "source_url": "https://drc.ngo/jobs/job?id=176916",
     "source_domain": "drc.ngo",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.317Z",
+    "scraped_at": "2026-10-14T10:01:46.225Z",
     "raw_fields": {
       "region": "Africa",
       "category": "Finance",
@@ -1001,37 +1398,17 @@
     "seniority": "Mid-level"
   },
   {
-    "title": "Driver",
-    "organization": "FHI 360",
-    "description": "About FHI 360: FHI 360 is a nonprofit human development organization dedicated to improving lives in a long -lasting way by advancing integrated, locally driven solutions. Our staff includes experts in health, public health threats, education, nutrition, environment, economic development, civil society, gender, youth, research, technology, communication, and social marketing - creating a unique mix of capabilities to address today’s interrelated development challenges. FHI 360 serves all U.S. states and territories, including Ethiopia. Job Summary: The driver will support the STRengthening Infectious Disease DEtection Systems (STRIDES) project country office team by operating the project vehicle to assure safe transportation of clients/project staff to and from various destinations. S/He will assist clients/project staff during entry and exit from vehicles as necessary and other courtesies. Assumes responsibility for care and maintenance of the vehicle; washes exterior and cleans interior; ensures maintenance and repair of the vehicle in Ethiopia. Accountabilities: Transports the Country Office staff, consultants, and visitors to designated approved locations. Ensures safety, cleanliness, security and maintenance of the vehicle. Provides day-to-day maintenance of the vehicle with timely oil changes, inspections, brakes, and tire pressure. Makes arrangements for major repairs for the vehicle when needed. Ensures all required documents with the vehicle are in order and up to date regarding vehicle insurance, vehicle logs, and necessary spare parts. Plans route and requirements based on schedule or ad-hoc requests by the office. Ensures passengers adhere to all road safety regulations. Fulfills special requests by picking up and delivering items as directed and running errands. May provide protection for clients in locations deemed high risk. Performs any other duties as assigned by the supervisor. Problem Solving & Impact: Identifies and recognizes problems that have established procedures and limited impact. Refers non-standard questions and problems to a higher level. Identifies errors can be easily and quickly detected within the immediate work unit and would result only in minor disruption or expense to correct. Supervision Given/Received: General supervision and instructions given for routine work and detailed instructions with periodic work review given for new activities or special assignments. Contacts are typically with individuals within their own department and with contacts outside the organization. Contacts involve obtaining or providing information or data requiring some explanation or interpretation. Education: ** High School Diploma/GED or equivalent Experience: ** 0-3 years of related driving experience. Must have a trade test certificate, a valid driving license and a clean driving record. Experience in the operation of large vehicles; or an equivalent combination of experience and training. FHI 360 experiance is a plus Typical Physical Demands: Typical office environment. Ability to spend long hours looking at computer screen and doing repetitive work on a keyboard. Ability to sit and stand for extended periods of time. Technology to be Used: Personal Computer/Laptop, Microsoft applications (i.e., Office 365, SharePoint, Skype/Zoom/Teams), cell phone/mobile technology, and standard office equipment. Travel Requirements: Ability to travel domestically up to 25% The expected hiring salary range for this role is indexed at USD 3,600 - 5,000 annually for basic salary. When determining an offer amount, FHI 360 factors in multiple considerations, including but not limited to: relevant years of experience and education possessed by the applicant, internal equity, market pay, and budget. Note: Preference will be given to candidates who are available to start immediately upon selection. This job posting summarizes the main duties of the job. It neither prescribes nor restricts the exact tasks that may be assigned to carry out these duties. This document should not be construed in any way to represent a contract of employment. Management reserves the right to review and revise this document at any time. FHI 360 is an equal opportunity employer whereby we do not engage in practices that discriminate against any person employed or seeking employment based on race, color, religion, sex, sexual orientation, gender identity, national or ethnic origin, age, marital status, physical or mental disability, protected Veteran status, or any other characteristic protected under applicable law. Our values and commitments to safeguarding: FHI 360 is committed to preventing any type of abuse, exploitation and harassment in our work environments and programs, including sexual abuse, exploitation and harassment. FHI 360 takes steps to safeguard the welfare of everyone who engages with our organization and programs and requires that all personnel, including staff members and volunteers, share this commitment and sign our code of conduct. All offers of employment will be subject to appropriate screening checks, including reference, criminal record and terrorism finance checks. FHI 360 also participates in the Inter-Agency Misconduct Disclosure Scheme (MDS), facilitated by the Steering Committee for Humanitarian Response. In line with the MDS, we will request information from job applicants’ previous employers about any substantiated findings of sexual abuse, exploitation and/or harassment during the applicant’s tenure with previous employers. By applying, job applicants confirm their understanding of these recruitment procedures and consent to these screening checks. FHI 360 will consider for employment all qualified applicants, including those with criminal histories, in a manner consistent with the requirements of applicable state and local laws. FHI 360 will never ask you for your career site username or password, and we will never request money, goods or services during the application, recruitment or employment process. If you have questions or concerns about correspondence from us, please email CareerCenterSupportfhi360.org . FHI 360 fosters the strength and health of its workforce through a competitive benefits package , professional development and policies and programs that support a healthy work/life balance. Join our global workforce to make a positive difference for others — and yourself. Please click here to continue searching FHI 360s Career Portal.",
-    "deadline": "2026-10-14",
-    "published": "Posted 5 Days Ago",
-    "country": "Addis Ababa, Ethiopia",
-    "city": null,
-    "source_url": "https://fhi.wd1.myworkdayjobs.com/en-US/FHI_360_External_Career_Portal/job/Addis-Ababa-Ethiopia/Driver_Requisition-2026201429",
-    "source_domain": "fhi.wd1.myworkdayjobs.com",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:42.409Z",
-    "raw_fields": {
-      "work_type": "Full time",
-      "category": ""
-    },
-    "sector_norm": "Health",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
     "title": "Workday Financial System Administrator (Remote)",
     "organization": "Ipas",
     "description": "This position is remote-based. Salary for US-based candidate is $120,000.00. Position may work remotely from any of the following US states: AZ, CA, CO, DC, FL, GA, MD, MA, MI, NJ, NY, NC, PA, SC, TX, VA, WA. Additionally, the position may work remotely from any of the following countries outside of the US: Bangladesh, Bolivia, Democratic Republic of the Congo, Cote d’Ivoire, Ethiopia, Indonesia, Kenya, Malawi, Mexico, Mozambique, Myanmar, Nepal, Nigeria, South Africa, and Zambia. The Workday Finance System Administrator (Sys Admin) provides routine support for the following Workday functional areas: Procurement and Suppliers, Expense Management, Banking and Settlement, Financial Accounting (General Ledger and Reporting), Business Assets, Projects, Budgeting and Financial Planning. Ipas utilizes Workday’s full suite of solutions for Human Capital Management (HCM) and Financial Management, and this role will collaborate closely with their counterpart in HR to ensure data integrity across functional areas. • This role will directly manage and maintain the Workday system. This role will perform Workday administrative functions including security maintenance, business process configuration, tenant configuration, data loads, integrations, and upgrades. This person will be responsible for engaging short-term consultants, as needed, for the success of projects. The Workday System Administrator understands and is familiar with the processes performed by functional Finance business areas. The role coordinates and seeks alignment across business units to maximize efficiency and productivity, and identifies and addresses areas for process improvement and operational efficiencies. The Workday System Administrator is a skilled communicator, a strong documenter of processes and decisions, and is able to clearly and effectively provide updates on the status of ongoing projects, issues, and upcoming needs. Primary Responsibilities Provides routine support for the following Workday functional areas: Procurement and Suppliers, Expense Management, Banking and Settlement, Financial Accounting (General Ledger and Reporting), Business Assets, Projects, Budgeting and Financial Planning. Supports these functional areas in a production environment and works independently with minimal oversight. Performs Workday administrative functions including security maintenance, business process configuration, tenant configuration, data loads, integrations, and upgrades. Monitors tickets and responds to daily support requests and resolves issues. Proactively communicates with internal customers. Provides technical and functional expertise including solution review, alternative options for resolution, and recommendations. Creates technical configuration including business process workflow, custom fields, custom validations, custom reports, dashboards, integrations, and access rights. Write standard, advanced, matrix and composite reports as well as creating complex calculated fields, custom objects, and worksheets. Proactively validates and identifies technical/functional issues, recommends solutions, and drives timely decisions. Acts as the organization’s lead change agent in preparation and implementation of new system rollouts and upgrades. Independently implements enhancements and solutions for identified issues including reporting and integrations, while also identifying skills needed from external resources to fill internal knowledge gaps and managing these resources. Monitors system performance, efficiency, and use. Develops triage criteria for assigning tickets among subject matter experts. Facilitates cross-functional team meetings. Liaise with Workday user community to access best practices. Other duties as assigned. Requirements Minimum Bachelor’s degree in related field. 5 or more years relevant experience. At least 3 years Workday ERP experience, with expertise in FDM and exposure to HRIS. Experience managing contractors, and vendors. Expertise in the design, implementation, and deployment of user-centric systems, with a focus on usability. Proven record of clear communication (oral and written) with diverse audiences and a record of producing clear documentation. Preferred Skills Workday ERP certifications in Financials, and/or Report Writing. Experience with Adaptive Planning and Workday Grants and Awards. Rich skills and experience with Microsoft solutions especially Excel, PowerPoint. Experience with global systems deployment. Experience with Six Sigma, Agile, and/or other methodologies. Expertise in collaborative technologies including Microsoft solutions (SharePoint, OneDrive, Planner, etc.) and/or other project management tools. Strong understanding of systems development life cycle (SDLC) and ITIL framework and principals. International non-profit/NGO experience. Ipas is strongly committed to providing a work environment that is free from all forms of harassment, discrimination, and inequity. We recruit, employ, train, promote, and compensate our personnel without regard to race, age, sex, religion, national origin, color, creed, ancestry, citizenship, caste, ethnicity, regional identity, tribal identity, marital status, veteran status, disability, genetic information, gender identity, transgender status, sexual orientation, or any other personal characteristic protected by law or outlined by Ipas policy. Ipas acknowledges that these personal characteristics may differ in different contexts.",
     "deadline": "2027-01-09",
-    "published": "Posted 4 Days Ago",
+    "published": "Posted 5 Days Ago",
     "country": "US, NC, Chapel Hill",
     "city": null,
     "source_url": "https://ipas.wd5.myworkdayjobs.com/en-US/Ipas/job/US-NC-Chapel-Hill/Workday-Financial-System-Administrator--Remote-_R1451",
     "source_domain": "ipas.wd5.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:44.807Z",
+    "scraped_at": "2026-10-14T10:01:49.197Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1051,7 +1428,7 @@
     "source_url": "https://ipas.wd5.myworkdayjobs.com/en-US/Ipas/job/US-NC-Chapel-Hill/Program-Support-Director---Francophone-and-Lusophone-Africa_R1436",
     "source_domain": "ipas.wd5.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:44.807Z",
+    "scraped_at": "2026-10-14T10:01:49.197Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1071,7 +1448,7 @@
     "source_url": "https://ipas.wd5.myworkdayjobs.com/en-US/Ipas/job/US-NC-INTL-Remote/Network-Risk-Analyst_R1370",
     "source_domain": "ipas.wd5.myworkdayjobs.com",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:44.807Z",
+    "scraped_at": "2026-10-14T10:01:49.197Z",
     "raw_fields": {
       "work_type": "Full time",
       "category": ""
@@ -1091,7 +1468,7 @@
     "source_url": "https://job-boards.greenhouse.io/girleffect/jobs/8870188002",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.147Z",
+    "scraped_at": "2026-10-14T10:01:59.132Z",
     "raw_fields": {
       "departments": "Work with Girl Effect - Consultant Opportunities"
     },
@@ -1110,7 +1487,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7758033",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.195Z",
+    "scraped_at": "2026-10-14T10:01:59.287Z",
     "raw_fields": {
       "departments": "TRE - Trees"
     },
@@ -1129,7 +1506,7 @@
     "source_url": "https://oneacrefund.org/vacancies/?gh_jid=7822853",
     "source_domain": "greenhouse.io",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.195Z",
+    "scraped_at": "2026-10-14T10:01:59.287Z",
     "raw_fields": {
       "departments": "MNE - Monitoring, Evaluation, & Learning"
     },
@@ -1148,7 +1525,7 @@
     "source_url": "https://careers.gggi.org/vacancy/carbon-pricing-senior-officer-611673.html",
     "source_domain": "careers.gggi.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:51.132Z",
+    "scraped_at": "2026-10-14T10:02:04.775Z",
     "raw_fields": {
       "contract_type": "Staff",
       "all_locations": [
@@ -1170,7 +1547,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62695-consultant-re-gain-programme-environmental-and-social-management-system-accountability-and-safeguarding/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.985Z",
+    "scraped_at": "2026-10-14T10:02:00.219Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1191,7 +1568,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1212,7 +1589,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61928-ilri-research-fellowship-opportunity-international-water-management-institute-iwmi-sustainable-animal-and-aquatic-foods-saaf-science-program/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1233,7 +1610,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61686-interest-in-ilri-board-of-trustees/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1254,7 +1631,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60908-msc-graduate-fellow-genetic-diversity-forage-spp-collections-four-positions/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1275,7 +1652,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1296,7 +1673,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62706-financial-planning-and-analysis-accountant/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.986Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1317,7 +1694,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62608-assistant-accountant/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:50.987Z",
+    "scraped_at": "2026-10-14T10:02:00.220Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1338,7 +1715,7 @@
     "source_url": "https://careers.icrc.org/job/Geneva-%28GVA%29-Amharic%2C-Oromo-&-Tigrinya-Interpreter-33459/1442359633/",
     "source_domain": "icrc.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:52.109Z",
+    "scraped_at": "2026-10-14T10:02:06.044Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1359,7 +1736,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:53.739Z",
+    "scraped_at": "2026-10-14T10:02:07.533Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1380,7 +1757,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:53.739Z",
+    "scraped_at": "2026-10-14T10:02:07.533Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -1401,12 +1778,220 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-2027-MO-IBRAHIM-FOUNDATION-LEADERSHIP-FELLOWSHIP-PROGRAM/1440251733/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:34:53.739Z",
+    "scraped_at": "2026-10-14T10:02:07.533Z",
     "raw_fields": {
       "region": "",
       "category": "",
       "contract_type": ""
     },
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Monitoring, Evaluation, Learning (MEL) and Evidence Lead, Dessie, Ethiopia",
+    "organization": "Palladium Group",
+    "description": "",
+    "deadline": "2026-10-14T08:53:52Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791968009305",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Education",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Health Care Financing Technical Lead, Dessie, Ethiopia",
+    "organization": "Palladium Group",
+    "description": "",
+    "deadline": "2026-10-14T08:32:20Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791966721513",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "National Consultant: Reproductive Health Commodity Security (RHCS) Consultant, Addis Ababa, Ethiopia",
+    "organization": "UNFPA - United Nations Population Fund",
+    "description": "",
+    "deadline": "2026-10-14T05:03:28Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954082221",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "People and Talent Manager, Addis Ababa",
+    "organization": "Plan International",
+    "description": "",
+    "deadline": "2026-10-14T05:02:30Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954076539",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "MHNT Health Officer/Team Leader - Habru woreda, Dessie, Ethiopia",
+    "organization": "Save the Children",
+    "description": "",
+    "deadline": "2026-10-14T05:02:15Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954075093",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Health",
+    "work_type_norm": "Full-time",
+    "seniority": "Manager"
+  },
+  {
+    "title": "Agrologistics, Cold Chain and Market Activitation Advisor- FRESHWAY Project, Addis Ababa",
+    "organization": "SNV Netherlands Development Organisation",
+    "description": "",
+    "deadline": "2026-10-14T05:01:59Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954073901",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Logistics & Supply Chain",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Marketing and Communications Officer, Addis Ababa",
+    "organization": "SNV Netherlands Development Organisation",
+    "description": "",
+    "deadline": "2026-10-14T05:01:55Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954073700",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Communications",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Horticulture Market Development Advisor - Horti-LIFE Green Growth, Addis Ababa",
+    "organization": "SNV Netherlands Development Organisation",
+    "description": "",
+    "deadline": "2026-10-14T05:01:52Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954073492",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Senior"
+  },
+  {
+    "title": "Project Finance Officer - Grants, Addis Ababa",
+    "organization": "SNV Netherlands Development Organisation",
+    "description": "",
+    "deadline": "2026-10-14T05:01:47Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954073164",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Admin & Finance",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Driver, Adama, Ethiopia",
+    "organization": "SNV Netherlands Development Organisation",
+    "description": "",
+    "deadline": "2026-10-14T05:01:42Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954072796",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Protection Assistant - Monitoring, Mai-Tsebri, Ethiopia",
+    "organization": "Danish Refugee Council (DRC)",
+    "description": "",
+    "deadline": "2026-10-14T05:01:32Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954070970",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Protection & Human Rights",
+    "work_type_norm": "Full-time",
+    "seniority": "Junior"
+  },
+  {
+    "title": "Roving Coordinator, Resource Mobilization in Emergencies, Addis Ababa, Ethiopia",
+    "organization": "IFRC - International Federation of Red Cross and Red Crescent Societies",
+    "description": "",
+    "deadline": "2026-10-13T19:55:08Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791912318597",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
+    "sector_norm": "Program/Project Management",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Grants Coordinator, Addis Ababa",
+    "organization": "Norwegian Refugee Council (NRC)",
+    "description": "",
+    "deadline": "2026-10-13T17:01:11Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791910845003",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1422,7 +2007,7 @@
     "source_url": "https://unjobs.org/vacancies/1791892863081",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1438,7 +2023,7 @@
     "source_url": "https://unjobs.org/vacancies/1791885689185",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1454,7 +2039,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878160431",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1470,7 +2055,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878158477",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1486,7 +2071,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878170026",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1502,7 +2087,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878167856",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -1518,7 +2103,7 @@
     "source_url": "https://unjobs.org/vacancies/1791867671691",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1534,7 +2119,7 @@
     "source_url": "https://unjobs.org/vacancies/1791867671228",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1550,7 +2135,7 @@
     "source_url": "https://unjobs.org/vacancies/1791867671490",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1566,7 +2151,7 @@
     "source_url": "https://unjobs.org/vacancies/1791867670483",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1582,7 +2167,7 @@
     "source_url": "https://unjobs.org/vacancies/1791828046391",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1598,7 +2183,7 @@
     "source_url": "https://unjobs.org/vacancies/1791828045887",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:36.319Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1614,7 +2199,7 @@
     "source_url": "https://unjobs.org/vacancies/1791824443652",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1630,7 +2215,7 @@
     "source_url": "https://unjobs.org/vacancies/1791694903795",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1646,7 +2231,7 @@
     "source_url": "https://unjobs.org/vacancies/1791806447286",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1662,7 +2247,7 @@
     "source_url": "https://unjobs.org/vacancies/1791712906061",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -1678,7 +2263,7 @@
     "source_url": "https://unjobs.org/vacancies/1791695086030",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1694,7 +2279,7 @@
     "source_url": "https://unjobs.org/vacancies/1791025703286",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1710,7 +2295,7 @@
     "source_url": "https://unjobs.org/vacancies/1791025680813",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Logistics & Supply Chain",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1726,7 +2311,7 @@
     "source_url": "https://unjobs.org/vacancies/1791025665041",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1742,7 +2327,7 @@
     "source_url": "https://unjobs.org/vacancies/1791480122396",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1758,7 +2343,7 @@
     "source_url": "https://unjobs.org/vacancies/1791480095574",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1774,7 +2359,7 @@
     "source_url": "https://unjobs.org/vacancies/1791499877954",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1790,7 +2375,7 @@
     "source_url": "https://unjobs.org/vacancies/1791633694031",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.142Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -1806,7 +2391,7 @@
     "source_url": "https://unjobs.org/vacancies/1791508946344",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1822,7 +2407,7 @@
     "source_url": "https://unjobs.org/vacancies/1791297587811",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1838,7 +2423,7 @@
     "source_url": "https://unjobs.org/vacancies/1791608914374",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -1854,7 +2439,7 @@
     "source_url": "https://unjobs.org/vacancies/1791608894090",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "IT & Technology",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1870,7 +2455,7 @@
     "source_url": "https://unjobs.org/vacancies/1791608882626",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1886,7 +2471,7 @@
     "source_url": "https://unjobs.org/vacancies/1791547254028",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -1902,7 +2487,7 @@
     "source_url": "https://unjobs.org/vacancies/1791540046098",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1918,7 +2503,7 @@
     "source_url": "https://unjobs.org/vacancies/1791525657452",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1934,7 +2519,7 @@
     "source_url": "https://unjobs.org/vacancies/1791504029816",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1950,7 +2535,7 @@
     "source_url": "https://unjobs.org/vacancies/1791504028952",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Protection & Human Rights",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -1966,7 +2551,7 @@
     "source_url": "https://unjobs.org/vacancies/1791499859028",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1982,7 +2567,7 @@
     "source_url": "https://unjobs.org/vacancies/1791439396039",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:42.550Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -1998,7 +2583,7 @@
     "source_url": "https://unjobs.org/vacancies/1791293414449",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2014,7 +2599,7 @@
     "source_url": "https://unjobs.org/vacancies/1791267815782",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2030,7 +2615,7 @@
     "source_url": "https://unjobs.org/vacancies/1791255432392",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2046,14 +2631,14 @@
     "source_url": "https://unjobs.org/vacancies/1791251422583",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
   },
   {
     "title": "Affiliate Contract - Project Associate (Reintegration), Addis Ababa",
-    "organization": "IOM - International Organization for Migration",
+    "organization": "IOM",
     "description": "",
     "deadline": "2026-10-05T08:01:42Z",
     "published": null,
@@ -2062,7 +2647,7 @@
     "source_url": "https://unjobs.org/vacancies/1791187283234",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2078,7 +2663,7 @@
     "source_url": "https://unjobs.org/vacancies/1791109144991",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2094,7 +2679,7 @@
     "source_url": "https://unjobs.org/vacancies/1791108047065",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2110,7 +2695,7 @@
     "source_url": "https://unjobs.org/vacancies/1791108045201",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2126,7 +2711,7 @@
     "source_url": "https://unjobs.org/vacancies/1790985649693",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2142,7 +2727,7 @@
     "source_url": "https://unjobs.org/vacancies/1790985654994",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2158,7 +2743,7 @@
     "source_url": "https://unjobs.org/vacancies/1790884935810",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2174,7 +2759,7 @@
     "source_url": "https://unjobs.org/vacancies/1790715721766",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2190,7 +2775,7 @@
     "source_url": "https://unjobs.org/vacancies/1790715691933",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.188Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2206,24 +2791,8 @@
     "source_url": "https://unjobs.org/vacancies/1790715683851",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Admin & Finance",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "PROGRAMME MANAGEMENT OFFICER, Addis Ababa",
-    "organization": "UNECA - Economic Commission for Africa",
-    "description": "",
-    "deadline": "2026-09-29T18:01:55Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1790704894289",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
-    "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
   },
@@ -2238,7 +2807,7 @@
     "source_url": "https://unjobs.org/vacancies/1790594380004",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2254,7 +2823,7 @@
     "source_url": "https://unjobs.org/vacancies/1790591877210",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2270,7 +2839,7 @@
     "source_url": "https://unjobs.org/vacancies/1790286530559",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2286,7 +2855,7 @@
     "source_url": "https://unjobs.org/vacancies/1790232187101",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Gender",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2302,7 +2871,7 @@
     "source_url": "https://unjobs.org/vacancies/1790233791338",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Environment",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2318,7 +2887,7 @@
     "source_url": "https://unjobs.org/vacancies/1790083252485",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2334,7 +2903,7 @@
     "source_url": "https://unjobs.org/vacancies/1790179303199",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.669Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "M&E",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2350,7 +2919,7 @@
     "source_url": "https://unjobs.org/vacancies/1790164865242",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2366,7 +2935,7 @@
     "source_url": "https://unjobs.org/vacancies/1790013736083",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Economic Development",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2382,7 +2951,7 @@
     "source_url": "https://unjobs.org/vacancies/1789640988190",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2398,7 +2967,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264576879",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:48.835Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2414,7 +2983,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264607147",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2430,7 +2999,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264637997",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Health",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2446,7 +3015,7 @@
     "source_url": "https://unjobs.org/vacancies/1785994481204",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2462,7 +3031,7 @@
     "source_url": "https://unjobs.org/vacancies/1788313428416",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2478,7 +3047,7 @@
     "source_url": "https://unjobs.org/vacancies/1788262946866",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Education",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2494,7 +3063,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638200588",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Communications",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2510,7 +3079,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638200141",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2526,7 +3095,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638199137",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Infrastructure",
     "work_type_norm": "Full-time",
     "seniority": "Senior"
@@ -2542,7 +3111,7 @@
     "source_url": "https://unjobs.org/vacancies/1784144721797",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2558,7 +3127,7 @@
     "source_url": "https://unjobs.org/vacancies/1780547891086",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Junior"
@@ -2574,7 +3143,7 @@
     "source_url": "https://unjobs.org/vacancies/1775507340118",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2590,7 +3159,7 @@
     "source_url": "https://unjobs.org/vacancies/1769183258418",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:40.670Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "WASH",
     "work_type_norm": "Full-time",
     "seniority": "Manager"
@@ -2606,7 +3175,7 @@
     "source_url": "https://unjobs.org/vacancies/1763689962357",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:45.502Z",
+    "scraped_at": "2026-10-14T10:03:55.904Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2622,7 +3191,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Chef-de-l'Unit%C3%A9-de-la-Tr%C3%A9sorerie-%28Finance%29/1373729257/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:24.804Z",
+    "scraped_at": "2026-10-14T10:03:31.131Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2638,7 +3207,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Head-of-Unit-Treasury-%28Finance%29/1373729157/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:25.229Z",
+    "scraped_at": "2026-10-14T10:03:31.648Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Director"
@@ -2654,7 +3223,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Internship-Program/765006702/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:25.597Z",
+    "scraped_at": "2026-10-14T10:03:32.138Z",
     "sector_norm": "Program/Project Management",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2670,24 +3239,8 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Programme-de-stages/765006802/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:25.936Z",
+    "scraped_at": "2026-10-14T10:03:32.646Z",
     "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Director General Job Details",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-General/1371994557/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:26.270Z",
-    "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
   },
@@ -2702,39 +3255,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-G%C3%A9n%C3%A9ral/1371994657/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.608Z",
-    "sector_norm": "Other",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Directeur des Finances (Africa CDC) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28Africa-CDC%29-9000043/1371396657/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:28.951Z",
-    "sector_norm": "Admin & Finance",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
-    "title": "Interprète/Traducteur (Mission Permanente - Genève) Détails du poste",
-    "organization": "African Union",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": "Addis Ababa",
-    "source_url": "https://jobs.au.int/job/Geneva-%28Switzerland%29-Interpr%C3%A8teTraducteur-%28Mission-Permanente-Gen%C3%A8ve%29/1373680157/",
-    "source_domain": "jobs.au.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:29.299Z",
+    "scraped_at": "2026-10-14T10:03:33.147Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2750,7 +3271,7 @@
     "source_url": "https://jobs.au.int/job/Geneva-%28Switzerland%29-InterpreterTranslator-%28Perm_-Mission-Geneva%29/1373680057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:29.635Z",
+    "scraped_at": "2026-10-14T10:03:35.647Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2766,7 +3287,39 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Finance-Director-%28Africa-CDC%29-9000043/1371396557/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:29.953Z",
+    "scraped_at": "2026-10-14T10:03:36.134Z",
+    "sector_norm": "Admin & Finance",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Interprète/Traducteur (Mission Permanente - Genève) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Geneva-%28Switzerland%29-Interpr%C3%A8teTraducteur-%28Mission-Permanente-Gen%C3%A8ve%29/1373680157/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:36.654Z",
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Directeur des Finances (Africa CDC) Détails du poste",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-des-Finances-%28Africa-CDC%29-9000043/1371396657/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:37.157Z",
     "sector_norm": "Admin & Finance",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2782,7 +3335,7 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-Center-for-Laboratory-Diagnostics-and-Systems%28Africa-CDC%29/1371825957/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:32.318Z",
+    "scraped_at": "2026-10-14T10:03:37.663Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2798,7 +3351,23 @@
     "source_url": "https://jobs.au.int/job/Addis-Ababa-Directeur-du-Centre-de-Diagnostics-et-de-Syst%C3%A8mes-de-Laboratoire/1371826057/",
     "source_domain": "jobs.au.int",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:32.668Z",
+    "scraped_at": "2026-10-14T10:03:40.179Z",
+    "sector_norm": "Other",
+    "work_type_norm": "Full-time",
+    "seniority": "Mid-level"
+  },
+  {
+    "title": "Director General Job Details",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": "Addis Ababa",
+    "source_url": "https://jobs.au.int/job/Addis-Ababa-Director-General/1371994557/",
+    "source_domain": "jobs.au.int",
+    "content_type": "job",
+    "scraped_at": "2026-10-14T10:03:40.687Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
@@ -2814,7 +3383,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/286353?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.271Z",
+    "scraped_at": "2026-10-14T10:03:46.885Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -2837,7 +3406,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/285791?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.271Z",
+    "scraped_at": "2026-10-14T10:03:46.885Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -2860,7 +3429,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/286221?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.271Z",
+    "scraped_at": "2026-10-14T10:03:46.885Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -2883,7 +3452,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/285460?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.271Z",
+    "scraped_at": "2026-10-14T10:03:46.885Z",
     "raw_fields": {
       "jobLevel": "G-6",
       "categoryCode": "GS",
@@ -2906,7 +3475,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/286270?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.272Z",
+    "scraped_at": "2026-10-14T10:03:46.886Z",
     "raw_fields": {
       "jobLevel": "G-4",
       "categoryCode": "GS",
@@ -2922,14 +3491,14 @@
     "title": "Regional Director, Africa, D2",
     "organization": "Resident Coordinator System",
     "description": "Org. Setting and Reporting In its Resolution A/RES/72/279, the United Nations General Assembly endorsed the transformation of the Development Operations Coordination Office (DCO) as a stand-alone coordination office within the United Nations Secretariat. DCO exercises managerial and oversight functions of the resident coordinator system under the oversight of the Chair of the United Nations Sustainable Development Group (UNSDG). In 2026, DCO undertook a recalibration to ensure the RC system rema",
-    "deadline": "2026-10-16T03:59:59.000Z",
+    "deadline": "2026-10-23T03:59:59.000Z",
     "published": "2026-10-09T04:00:00.000Z",
     "country": "Ethiopia",
     "city": "ADDIS ABABA",
     "source_url": "https://careers.un.org/jobSearchDescription/285894?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.272Z",
+    "scraped_at": "2026-10-14T10:03:46.886Z",
     "raw_fields": {
       "jobLevel": "D-2",
       "categoryCode": "PD",
@@ -2952,7 +3521,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/286002?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.272Z",
+    "scraped_at": "2026-10-14T10:03:46.886Z",
     "raw_fields": {
       "jobLevel": "P-4",
       "categoryCode": "PD",
@@ -2975,7 +3544,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/286004?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.272Z",
+    "scraped_at": "2026-10-14T10:03:46.886Z",
     "raw_fields": {
       "jobLevel": "G-3",
       "categoryCode": "GS",
@@ -2998,7 +3567,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/285363?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.273Z",
+    "scraped_at": "2026-10-14T10:03:46.887Z",
     "raw_fields": {
       "jobLevel": "I-1",
       "categoryCode": "INT",
@@ -3011,29 +3580,6 @@
     "seniority": "Junior"
   },
   {
-    "title": "PROGRAMME MANAGEMENT OFFICER, NOC",
-    "organization": "Economic Commission for Africa",
-    "description": "Org. Setting and Reporting ECA’s mission is to deliver ideas and actions for an empowered and transformed Africa, informed by the 2030 Agenda and Agenda 2063. The mission will be guided by ECA’s five strategic directions which are:(a) Advancing ECA’s position as a premier knowledge institution that builds on its unique position and privilege to bring global solutions to the continent’s problems and take local solution to the continent; (b) Developing macroeconomic and structural policy options t",
-    "deadline": "2026-10-14T03:59:59.000Z",
-    "published": "2026-09-29T04:00:00.000Z",
-    "country": "Ethiopia",
-    "city": "ADDIS ABABA",
-    "source_url": "https://careers.un.org/jobSearchDescription/280906?language=en",
-    "source_domain": "careers.un.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.273Z",
-    "raw_fields": {
-      "jobLevel": "NO-C",
-      "categoryCode": "NPO",
-      "jobCategory": "National Professional Officers",
-      "jobFamily": "Programme Management",
-      "jobNetwork": "Economic, Social and Development"
-    },
-    "sector_norm": "Program/Project Management",
-    "work_type_norm": "Full-time",
-    "seniority": "Mid-level"
-  },
-  {
     "title": "Principal Programme Management Officer, D1",
     "organization": "UN Office to the African Union",
     "description": "Org. Setting and Reporting The United Nations Office to the African Union (UNOAU) was created in 2010 to strengthen the United Nations’ interaction with the African Union. UNOAU is mandated to contribute to enhancing the partnership between the United Nations and the African Union in the area of peace and security, provide coordinated and consistent United Nations advice to the African Union on both long-term capacity-building and short-term operational support, and streamline the United Nations",
@@ -3044,7 +3590,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/284826?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.273Z",
+    "scraped_at": "2026-10-14T10:03:46.887Z",
     "raw_fields": {
       "jobLevel": "D-1",
       "categoryCode": "PD",
@@ -3067,7 +3613,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/284922?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.273Z",
+    "scraped_at": "2026-10-14T10:03:46.887Z",
     "raw_fields": {
       "jobLevel": "P-3",
       "categoryCode": "PD",
@@ -3090,7 +3636,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/280814?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.274Z",
+    "scraped_at": "2026-10-14T10:03:46.887Z",
     "raw_fields": {
       "jobLevel": "NO-C",
       "categoryCode": "NPO",
@@ -3113,7 +3659,7 @@
     "source_url": "https://careers.un.org/jobSearchDescription/283207?language=en",
     "source_domain": "careers.un.org",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:36:34.274Z",
+    "scraped_at": "2026-10-14T10:03:46.887Z",
     "raw_fields": {
       "jobLevel": "CON",
       "categoryCode": "CON",
@@ -3136,7 +3682,7 @@
     "source_url": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/requisitions?keyword=NORCAP",
     "source_domain": "oraclecloud.com",
     "content_type": "job",
-    "scraped_at": "2026-10-13T12:37:12.893Z",
+    "scraped_at": "2026-10-14T10:04:28.655Z",
     "sector_norm": "Other",
     "work_type_norm": "Full-time",
     "seniority": "Mid-level"
