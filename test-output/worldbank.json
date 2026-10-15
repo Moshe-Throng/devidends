@@ -1,9 +1,30 @@
 {
   "metadata": {
-    "scraped_at": "2026-10-14T10:04:34.825Z",
-    "count": 13
+    "scraped_at": "2026-10-15T09:46:42.891Z",
+    "count": 15
   },
   "opportunities": [
+    {
+      "title": "Hire a technology provider to develop and implement (as a pilot) a Digital Contract Farming Management System /DCFMS/",
+      "organization": "World Bank",
+      "description": "Hire a technology provider to develop and implement (as a pilot) a Digital Contract Farming Management System /DCFMS/\n\nProject: Ethiopia Rural Connectivity to Support Food Security Program\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ATI-573898-CS-QCBS\n\nContact: Agricultural Transformation Agency (ATA) Off Meskal Flower Road across Commercial Graduates Ass.\nAA",
+      "deadline": "2026-11-05",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474843",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-15T09:43:57.767Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Ethiopia Rural Connectivity to Support Food Security Program",
+        "project_id": "P176303",
+        "bid_reference": "ET-ATI-573898-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Services for Feasibility Study and Detailed Design of Irrigation Schemes in Four Woredas: Golitseha Drip Irrigation, Hobi Gravity Irrigation, Testura Gravity Irrigation, and Undulu Woreda Sprinkler Irrigation.",
       "organization": "World Bank",
@@ -15,7 +36,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473995",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-14T10:01:45.310Z",
+      "scraped_at": "2026-10-15T09:43:57.767Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473636",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-14T10:01:45.310Z",
+      "scraped_at": "2026-10-15T09:43:57.767Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472720",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-14T10:01:45.310Z",
+      "scraped_at": "2026-10-15T09:43:57.767Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,13 +99,55 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472714",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-14T10:01:45.310Z",
+      "scraped_at": "2026-10-15T09:43:57.767Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-BEN-GUM-RPCU-569768-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Woreda information centre ICT equipment, tablets and laptops for NPCU, RPCU and woreda",
+      "organization": "World Bank",
+      "description": "Procurement of Woreda information centre ICT equipment, tablets and laptops for NPCU, RPCU and woreda\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-571911-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-11-10",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473353",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+        "project_id": "P174385",
+        "bid_reference": "ET-MOA-571911-GO-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Forage and poultry processing equipment for cooperatives Lot 1. Forage processing equipment for 20 centres/cooperatives Lot 2. Poultry farming production equipment and materials for youth job creation for 94 centres",
+      "organization": "World Bank",
+      "description": "Procurement of Forage and poultry processing equipment for cooperatives Lot 1. Forage processing equipment for 20 centres/cooperatives Lot 2. Poultry farming production equipment and materials for youth job creation for 94 centres\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-575040-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
+      "deadline": "2026-11-17",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474866",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
+        "project_id": "P174385",
+        "bid_reference": "ET-MOA-575040-GO-RFB",
         "sector": ""
       }
     },
@@ -99,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473734",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -120,34 +183,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472842",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Support for Preparation of the Modernizing Ethiopia’s Statistical System Project",
         "project_id": "P516394",
         "bid_reference": "ET-ESS-574071-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Woreda information centre ICT equipment, tablets and laptops for NPCU, RPCU and woreda",
-      "organization": "World Bank",
-      "description": "Procurement of Woreda information centre ICT equipment, tablets and laptops for NPCU, RPCU and woreda\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-571911-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
-      "deadline": "2026-11-10",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473353",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-MOA-571911-GO-RFB",
         "sector": ""
       }
     },
@@ -162,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472789",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470624",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470520",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469617",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.145Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.146Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-14T10:01:45.646Z",
+      "scraped_at": "2026-10-15T09:43:58.146Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",

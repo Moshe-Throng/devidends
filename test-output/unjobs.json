@@ -1,5 +1,1786 @@
 [
   {
+    "title": "Affiliate Contractor - Senior Project Associate (Reintegration), Dire Dawa, Ethiopia",
+    "organization": "IOM - International Organization for Migration",
+    "description": "",
+    "deadline": "2026-10-15T08:00:44Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1792051228068",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Regional Project Coordinator/ Technical Lead, Weldiya, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-15T05:05:07Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983297686",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "MONITORING, EVALUATION AND LEARNING (MEL) SPECIALIST, Jijiga, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-15T05:03:48Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983299118",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Consultant - RE-GAIN Programme - Environmental and Social Management System, Accountability and Safeguarding, Addis Ababa, Ethiopia",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": "2026-10-14T19:29:33Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1792005063903",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Agronomy Specialist, Region-Somali, Dollo Ado, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T17:23:51Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983295080",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Wash Technical Assistant, North Afar, Ethiopia",
+    "organization": "Norwegian Refugee Council (NRC)",
+    "description": "",
+    "deadline": "2026-10-14T17:12:28Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791997248968",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Carbon Pricing Senior Officer, Addis Ababa",
+    "organization": "Global Green Growth Institute (GGGI)",
+    "description": "",
+    "deadline": "2026-10-14T16:26:47Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791954076998",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Monitoring Evaluation and Learning Specialist, Jijgiga, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:57:26Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983214173",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Project Officer-Bokolmayo CAMP, Dreams Project, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:57:03Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983226662",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Financial Inclusion Officer| Jigjiga, Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:56:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983233602",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Financial Inclusion Officer, Weldiya, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:25:29Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983236785",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Procurement Officer | Dollo- Ado, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:25:19Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983229208",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "LIVESTOCK AND CROP PRODUCTION COORDINATOR | Dollo- ado, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:25:13Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983230038",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Driver | Dollo-ado, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:25:09Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983231068",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Finance Officer, Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:24:58Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983240163",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Driver, Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:24:54Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983245879",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "OPERATION COORDINATOR, Negelle, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:24:46Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983250056",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Monitoring Evaluation and Learning (MEL) Specialist, Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:24:20Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983251452",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Infant and Young Child Feeding (IYCF) Officer, Negelle, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:24:11Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983254917",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Driver | Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:23:58Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983252675",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Finance Assistant, 00000",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:14:01Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983255762",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Regional Seed System Coordinator, Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:13:32Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983257191",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "WASH Specialist, Negelle",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:13:25Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983259890",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "Health Officer, Negelle, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:09:43Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983260697",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "LOGISTICS ASSISTANT, Negelle, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:09:16Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983261932",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:40.374Z"
+  },
+  {
+    "title": "AGRONOMY SPECIALIST, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:08:54Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983262533",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "AGRI COORDINATOR (Internal Only), Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:07:27Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983304297",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "ON-FARM MARKET SYSTEM DEVELOPMENT SPECIALIST: ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION, Weldiya, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:06:36Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983302856",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "MEAL/CARM OFFICER, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:06:21Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983305942",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "OFF-FARM/EMPLOYMENT MARKET SYSTEM DEVELOPMENT SPECIALIST, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:05:54Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983307388",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Project Officer (Internal Only), Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:05:22Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983310992",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Agronomy Specialist (Internal Only), Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:05:07Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983312203",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "MONITORING, EVALUATION AND LEARNING (MEL) SPECIALIST, Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:03:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983314692",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "KNOWLEDGE MANAGEMENT & LEARNING SPECIALIST (Internal Only), Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:03:21Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983313441",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Gender Equality and Social Inclusion Officer(Maternity Cover), Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:02:38Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983316140",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "CASH AND VOUCHER SPECIALIST, Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:01:38Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983314073",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Finance Assistant, Jijiga",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:01:11Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983316747",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Safety and Security Officer, Woldia, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:00:49Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983323959",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Driver, Region-Somali, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T15:00:15Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983323329",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "SENIOR GOVERNANCE ADVISOR, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:09Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983327963",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "PROGRAM PERFORMANCE AND QUALITY (PAQ) DIRECTOR, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:08Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983327174",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Sub Award and Partners Capacity Building Manager – HIGHLAND RESILIENCE ACTIVITY: ADDIS ABABA, ETHIOPIA",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:07Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983326751",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Innovations and Investments Fund Manager, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:06Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983326352",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Innovations and Investments Fund Manager – Highland Resilience Activity: Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:05Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983325921",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "Field Finance Coordinator | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:04Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983325502",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "PSNP LIVELIHOODS TECHNICAL SPECIALIST HIGHLAND RESILIENCE ACTIVITY: ADDIS ABABA",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:03Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983325075",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "MARKET SYSTEMS FOR EMPLOYMENT TEAM LEAD - HIGHLANDS RESILIENCE ACTIVITY: ADDIS ABABA",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:01Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983322909",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "COUNTRY COMMUNITY ACCOUNTABILITY AND REPORTING MECHANISM (CARM) AND SAFEGUARDING ADVISOR, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:09:00Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983322476",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "COUNTRY STRATEGIC COMMUNICATIONS AND LEARNING MANAGER, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:59Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983322055",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "WASH Officer, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:58Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983321611",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:47.257Z"
+  },
+  {
+    "title": "KEY EXPERT 3: VALUE CHAIN AND BUSINESS DEVELOPMENT EXPERT, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:57Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983320317",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "KEY EXPERT 2: MIGRATION AND FORCED DISPLACEMENT, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983319871",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ROVING OPERATIONS COORDINATOR, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983320741",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "Key Expert 4: Monitoring, Evaluation, Accountability and Learning Expert, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983319469",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "WEST HARARGE ZONE ZONAL PROGRAM COORDINATOR – HIGHLAND RESILIENCE ACTIVITY: OROMIA REGION_ Re Advertised, Chiro, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:55Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983318401",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "CASH AND VOUCHER SPECIALIST - HIGH LAND RESILIENCE ACTIVITY (HRA) CRISIS MODIFIER: HOSAINA, CENTRAL ETHIOPIA REGION",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:54Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983317564",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ECS-HUB- CONFLICT SENSITIVITY AND GENDER ADVISOR (Internal), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:48Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983310035",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ECS-HUB- MEL AND CARM SPECIALIST (Internal), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:47Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983309626",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "PROJECT COORDINATOR- MARKET SYSTEM DEVELOPMENT (Internal Only), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:46Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983308401",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ECS-HUB- CAPACITY BUILDING ADVISOR (Internal), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:46Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983309213",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "OFF-FARM/EMPLOYMENT MARKET SYSTEM DEVELOPMENT SPECIALIST, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Mekele, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:46Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983307993",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MONITORING, EVALUATION, RESEARCH, AND LEARNING (MERL) ADVISOR (Internal Only), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:45Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983308816",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "OFF-FARM/EMPLOYMENT MARKET SYSTEM DEVELOPMENT SPECIALIST, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:44Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983306967",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MEAL/CARM OFFICER, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:43Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983306555",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ON-FARM MARKET SYSTEM DEVELOPMENT SPECIALIST: ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Mekele, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:42Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983303471",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MEAL/CARM OFFICER, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Mekele, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:41Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983304911",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "ON-FARM MARKET SYSTEM DEVELOPMENT SPECIALIST: ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:40Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983302436",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MARKET SYSTEMS DEVELOPMENT TECHNICAL ADVISOR- ECONOMIC RECOVERY FOR CONFLICT AFFECTED POPULATIONS (ERCAP) (Internal Only), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:39Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983302033",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "GENDER, DIVERSITY AND SOCIAL INCLUSION (GESI) ADVISOR: ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:38Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983300957",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MSD PROJECT COORDINATOR, ECONOMIC RECOVERY-CONFLICTED AFFECTED POPULATION (Internal Only), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:37Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983300540",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "KNOWLEDGE MANAGEMENT AND COMMUNICATIONS MANAGER –RLP, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:37Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983294678",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "Deputy Program Manager (Deputy Chief of Party), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:36Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983294250",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "Market System Development (MSD) Team Lead, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:35Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983293811",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "MSD ADVISOR ( Internal only ), Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:32Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983293377",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:45:53.731Z"
+  },
+  {
+    "title": "Country Finance Manager| Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:29Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983290634",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Grant & Compliance Manager | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:28Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983290208",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "MEAL Officer (Internal Only), Gambella, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:27Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983289772",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "MSD-Livelihoods Improvement Advisor, Gambella, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:26Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983288722",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Financial Inclusion Advisor, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:25Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983287478",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Market System Development (MSD) Team Lead/Re-advert, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:25Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983288314",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "MSD ADVISOR, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:24Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983286988",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "IYCF Officer, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:23Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983284155",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Community Mobilizer, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:22Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983283717",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "VIOLENCE AGAINST WOMEN AND GIRLS / VAWG/ PREVENTION OFFICER, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:19Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983280253",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Agriculture Officer, Gode, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:18Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983280684",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Humanitarian WASH Technical Advisor, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:18Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983279840",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "ADOLESCENT GIRLS PROGRAM OFFICER, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:16Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983278039",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Head Of Finance| Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:14Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983275732",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "DEPUTY CHIEF OF PARTY | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:13Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983273341",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Driver, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:13Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983274580",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "CHIEF OF PARTY | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:12Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983272928",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Health and Nutrition Specialist, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:10Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983270781",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Learning and Communication Specialist, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:08Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983269652",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Director of Programs, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:08Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983266441",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Market system and Monitoring, Evaluation, Research, and Learning (MMERL) Advisor | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:02Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983261517",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "PROJECT OFFICER, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:08:01Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983259454",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "MEL AND CARM SPECIALIST-ECS-HUB, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:59Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983258625",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Adolescent Girls Program Officer| Abala",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:59Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983258225",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:00.230Z"
+  },
+  {
+    "title": "Monitoring, Evaluation, Research, and Learning (MERL) Advisor | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:52Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983253521",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Consortium Program Manager, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:50Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983252262",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Human Resource Assistant – Temporary, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:48Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983249648",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Logistics and Admin intern, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:47Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983249244",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Human Resource Intern, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:46Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983248810",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "REGIONAL PROJECT COORDINATOR/TECHNICAL LEAD, Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:45Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983247930",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Driver, Mekele, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:44Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983246487",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Monitoring, Evaluation, Research, and Learning (MERL) Advisor, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:44Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983245471",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Communication Intern, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:43Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983245048",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Data Analytics Intern, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:42Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983244634",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Project Manager, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:41Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983244230",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Impact Communications Specialist, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:40Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983243834",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Monitoring, Evaluation and Learning Advisor, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:39Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983243418",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Market System Development Team Lead, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:38Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983243013",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Monitoring, Evaluation and Learning Specialist, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:38Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983242059",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Program Coordinator – Jobtech for Refugees and Youth, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:36Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983232233",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Market System Development Team Lead | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:36Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983239718",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Accounting and Reporting Coordinator, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:35Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983239293",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "PROCUREMENT OFFICER | Addis Ababa (Internal)",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:34Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983230644",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Finance Intern, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:34Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983238886",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Financial Inclusion Advisor | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:33Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983238468",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Impact Communications Specialist | Addis Ababa (Readvertised)",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:31Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983228209",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Financial Inclusion Officer|Mekelle, Mekele, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:31Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983235937",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Procurement Officer Addis Ababa (Internal) Readvertised",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:30Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983227797",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:06.576Z"
+  },
+  {
+    "title": "Financial Inclusion Officer | Abaala, Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:29Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983233185",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Financial Inclusion Officer | Abaala (Readvertised), Abala, Ethiopia",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:28Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983225815",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Logistics And Admin Intern | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:27Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983225323",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Driver BAHIR DAR – East Africa Land Border Security Program (EALBSP)",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:25Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983224437",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Finance Officer – Bahir Dar – Border Security Program (BSP)",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:22Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983221916",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Project Officer – Bahir Dar – East Africa Land Border Security Program (EALBSP)",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:21Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983221500",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Project Manager-Jobtech for Refugees and Youth | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:20Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983220639",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Government Engagement Advisor (BSP)| Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:19Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983220163",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "MRELA & CARM Senior Officer BSP| Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:18Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983219742",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "MRELA Advisor| Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:17Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983219332",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Ethiopia Country Lead BSP | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:16Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983218922",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Area Coordinator BSP | Bahir Dar",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:15Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983218455",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Logistics Assistant BSP | Bahir Dar",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:12Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983216398",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Finance And Subaward Specialist BSP | Addis Ababa",
+    "organization": "Mercy Corps",
+    "description": "",
+    "deadline": "2026-10-14T13:07:11Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791983215528",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
+    "title": "Project Assistant (Protection) (Affiliated Contract), Addis Ababa",
+    "organization": "IOM",
+    "description": "",
+    "deadline": "2026-10-14T12:00:56Z",
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://unjobs.org/vacancies/1791979244630",
+    "source_domain": "unjobs.org",
+    "content_type": "job",
+    "scraped_at": "2026-10-15T09:46:12.104Z"
+  },
+  {
     "title": "Monitoring, Evaluation, Learning (MEL) and Evidence Lead, Dessie, Ethiopia",
     "organization": "Palladium Group",
     "description": "",
@@ -10,7 +1791,7 @@
     "source_url": "https://unjobs.org/vacancies/1791968009305",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Health Care Financing Technical Lead, Dessie, Ethiopia",
@@ -23,7 +1804,7 @@
     "source_url": "https://unjobs.org/vacancies/1791966721513",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "National Consultant: Reproductive Health Commodity Security (RHCS) Consultant, Addis Ababa, Ethiopia",
@@ -36,7 +1817,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954082221",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "People and Talent Manager, Addis Ababa",
@@ -49,7 +1830,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954076539",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "MHNT Health Officer/Team Leader - Habru woreda, Dessie, Ethiopia",
@@ -62,7 +1843,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954075093",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Agrologistics, Cold Chain and Market Activitation Advisor- FRESHWAY Project, Addis Ababa",
@@ -75,7 +1856,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954073901",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Marketing and Communications Officer, Addis Ababa",
@@ -88,7 +1869,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954073700",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Horticulture Market Development Advisor - Horti-LIFE Green Growth, Addis Ababa",
@@ -101,7 +1882,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954073492",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Project Finance Officer - Grants, Addis Ababa",
@@ -114,7 +1895,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954073164",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Driver, Adama, Ethiopia",
@@ -127,7 +1908,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954072796",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:12.104Z"
   },
   {
     "title": "Protection Assistant - Monitoring, Mai-Tsebri, Ethiopia",
@@ -140,7 +1921,7 @@
     "source_url": "https://unjobs.org/vacancies/1791954070970",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Roving Coordinator, Resource Mobilization in Emergencies, Addis Ababa, Ethiopia",
@@ -153,7 +1934,7 @@
     "source_url": "https://unjobs.org/vacancies/1791912318597",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Grants Coordinator, Addis Ababa",
@@ -166,10 +1947,10 @@
     "source_url": "https://unjobs.org/vacancies/1791910845003",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "Intern - Administration and Business Operations",
+    "title": "Intern - Administration and Business Operations, Addis Ababa",
     "organization": "RCS - Resident Coordinator System",
     "description": "",
     "deadline": "2026-10-13T12:01:17Z",
@@ -179,7 +1960,7 @@
     "source_url": "https://unjobs.org/vacancies/1791892863081",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Project Implementation Expert – AI UniPod, Addis Ababa",
@@ -192,10 +1973,10 @@
     "source_url": "https://unjobs.org/vacancies/1791885689185",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "Agronomy Advisor, Limu Seka, Ethiopia",
+    "title": "Agronomy Advisor, Ātnago, Ethiopia",
     "organization": "TechnoServe",
     "description": "",
     "deadline": "2026-10-13T08:10:46Z",
@@ -205,7 +1986,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878160431",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Finance and Administrative Officer, Limu Kosa, Ethiopia",
@@ -218,7 +1999,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878158477",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Administrator, Addis Ababa",
@@ -231,7 +2012,7 @@
     "source_url": "https://unjobs.org/vacancies/1791878170026",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Chief of Party - Regrow Yirga Coffee Program, Addis Ababa",
@@ -244,10 +2025,10 @@
     "source_url": "https://unjobs.org/vacancies/1791878167856",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "MEAL Officer - Woldiya PO, Dessie",
+    "title": "MEAL Officer, Woldiya PO, Dessie, Ethiopia",
     "organization": "Save the Children",
     "description": "",
     "deadline": "2026-10-13T05:01:38Z",
@@ -257,10 +2038,10 @@
     "source_url": "https://unjobs.org/vacancies/1791867671691",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "MHNT Nurse - Habru woreda, Dessie",
+    "title": "MHNT Nurse - Habru woreda, Dessie, Ethiopia",
     "organization": "Save the Children",
     "description": "",
     "deadline": "2026-10-13T05:01:37Z",
@@ -270,10 +2051,10 @@
     "source_url": "https://unjobs.org/vacancies/1791867671228",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "MHNT Midwifery - Habru woreda, Dessie",
+    "title": "MHNT Midwifery - Habru woreda, Dessie, Ethiopia",
     "organization": "Save the Children",
     "description": "",
     "deadline": "2026-10-13T05:01:35Z",
@@ -283,10 +2064,10 @@
     "source_url": "https://unjobs.org/vacancies/1791867671490",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "Health & Nutrition Coordinator - Habru woreda, Dessie",
+    "title": "Health & Nutrition Coordinator - Habru woreda, Dessie, Ethiopia",
     "organization": "Save the Children",
     "description": "",
     "deadline": "2026-10-13T05:01:29Z",
@@ -296,10 +2077,10 @@
     "source_url": "https://unjobs.org/vacancies/1791867670483",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "COMMUNICATIONS ASSISTANT, G6",
+    "title": "COMMUNICATIONS ASSISTANT, Addis Ababa",
     "organization": "UNECA - Economic Commission for Africa",
     "description": "",
     "deadline": "2026-10-12T18:00:58Z",
@@ -309,10 +2090,10 @@
     "source_url": "https://unjobs.org/vacancies/1791828046391",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "CFND/NRFSS - Consultant for the African ESG Framework and Compact development, Capacity Building and Climate/COP32 Support",
+    "title": "CFND/NRFSS - Consultant for the African ESG Framework and Compact development, Capacity Building and Climate/COP32 Support, Addis Ababa",
     "organization": "UNECA - Economic Commission for Africa",
     "description": "",
     "deadline": "2026-10-12T18:00:57Z",
@@ -322,10 +2103,10 @@
     "source_url": "https://unjobs.org/vacancies/1791828045887",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:36.319Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
-    "title": "Child Protection Officer (NO-2), FT, #00137694, Oromiya (Addis Ababa Zone), Ethiopia, ESAR",
+    "title": "Child Protection Officer, Oromiya, Addis Ababa Zone, Ethiopia",
     "organization": "UNICEF - United Nations Children's Fund",
     "description": "",
     "deadline": "2026-10-12T17:01:32Z",
@@ -335,20 +2116,7 @@
     "source_url": "https://unjobs.org/vacancies/1791824443652",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "Sr Supply Chain Coordinator - Re advert",
-    "organization": "Save the Children",
-    "description": "",
-    "deadline": "2026-10-12T15:42:37Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791694903795",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Individual Contractor-Administrative Assistant",
@@ -361,7 +2129,7 @@
     "source_url": "https://unjobs.org/vacancies/1791806447286",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Country Director, Addis Ababa, Ethiopia",
@@ -374,7 +2142,7 @@
     "source_url": "https://unjobs.org/vacancies/1791712906061",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Cleaner, Assosa, Ethiopia",
@@ -387,46 +2155,7 @@
     "source_url": "https://unjobs.org/vacancies/1791695086030",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "Monitoring Evaluation and Learning Specialist, Jijgiga",
-    "organization": "Mercy Corps",
-    "description": "",
-    "deadline": "2026-10-10T15:36:21Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791025703286",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "Logistics Assistant BSP, Yabelo, Ethiopia",
-    "organization": "Mercy Corps",
-    "description": "",
-    "deadline": "2026-10-10T15:35:50Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791025680813",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "Area Coordinator BSP, Yabelo, Ethiopia",
-    "organization": "Mercy Corps",
-    "description": "",
-    "deadline": "2026-10-10T15:34:49Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791025665041",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Sudan - Field Coordinator  (M/F) - Ed Daein, Soudan",
@@ -439,7 +2168,7 @@
     "source_url": "https://unjobs.org/vacancies/1791480122396",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "FIELD COORDINATOR, TIGRAY, Ethiopia",
@@ -452,7 +2181,7 @@
     "source_url": "https://unjobs.org/vacancies/1791480095574",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Compliance and Systems Director for Ethiopia, Ethiopia - Addis Ababa",
@@ -465,7 +2194,7 @@
     "source_url": "https://unjobs.org/vacancies/1791499877954",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Regional Director, Africa, Addis Ababa",
@@ -478,7 +2207,7 @@
     "source_url": "https://unjobs.org/vacancies/1791633694031",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Team Leader, Addis Ababa, Ethiopa",
@@ -491,7 +2220,7 @@
     "source_url": "https://unjobs.org/vacancies/1791508946344",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:18.044Z"
   },
   {
     "title": "Supply Chain & Admin Officer, Dire Dawa, Ethiopia",
@@ -504,7 +2233,7 @@
     "source_url": "https://unjobs.org/vacancies/1791297587811",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Security Manager, Addis Ababa, Ethiopia",
@@ -517,7 +2246,7 @@
     "source_url": "https://unjobs.org/vacancies/1791608914374",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Digital Impact Specialist, Addis Ababa",
@@ -530,20 +2259,7 @@
     "source_url": "https://unjobs.org/vacancies/1791608894090",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "People and Culture Officer, Addis Ababa, Ethiopia",
-    "organization": "UNICEF - United Nations Children's Fund",
-    "description": "",
-    "deadline": "2026-10-10T05:11:07Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791608882626",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "FINANCE ASSISTANT, G4",
@@ -556,20 +2272,7 @@
     "source_url": "https://unjobs.org/vacancies/1791547254028",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "International Consultant- Communications, Addis Ababa",
-    "organization": "IOM",
-    "description": "",
-    "deadline": "2026-10-09T10:01:03Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791540046098",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Programme Coordinator, Addis Ababa",
@@ -582,7 +2285,7 @@
     "source_url": "https://unjobs.org/vacancies/1791525657452",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "DRIVER, Addis Ababa",
@@ -595,7 +2298,7 @@
     "source_url": "https://unjobs.org/vacancies/1791504029816",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "HUMAN RIGHTS OFFICER, Addis Ababa",
@@ -608,7 +2311,7 @@
     "source_url": "https://unjobs.org/vacancies/1791504028952",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Economic Programming and Private Business Partnerships Advisor, Addis Ababa, Ethiopia",
@@ -621,20 +2324,7 @@
     "source_url": "https://unjobs.org/vacancies/1791499859028",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
-  },
-  {
-    "title": "Risk & Compliance Specialist, Addis Ababa",
-    "organization": "UNICEF - United Nations Children's Fund",
-    "description": "",
-    "deadline": "2026-10-08T06:10:16Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791439396039",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:42.550Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Senior Program Officer, AI & Digital Health Delivery (3-year LTE), Addis Ababa, Ethiopia",
@@ -647,7 +2337,7 @@
     "source_url": "https://unjobs.org/vacancies/1791293414449",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Women's Economic Empowerment Manager - Regional Livestock Programme (RLP), Hargeisa, Mogadishu, Kismayo, Nairobi, Addis Ababa or Jigjiga, Ethiopia",
@@ -660,7 +2350,7 @@
     "source_url": "https://unjobs.org/vacancies/1791267815782",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Sales Representative Pharma Portfolio, Addis Ababa",
@@ -673,7 +2363,7 @@
     "source_url": "https://unjobs.org/vacancies/1791255432392",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Junior consultant for BRIDGE+ Project, Addis Ababa",
@@ -686,7 +2376,7 @@
     "source_url": "https://unjobs.org/vacancies/1791251422583",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Affiliate Contract - Project Associate (Reintegration), Addis Ababa",
@@ -699,7 +2389,7 @@
     "source_url": "https://unjobs.org/vacancies/1791187283234",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Partnerships and Private Sector Engagement Manager Ethiopia, Addis Ababa",
@@ -712,20 +2402,7 @@
     "source_url": "https://unjobs.org/vacancies/1791109144991",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
-  },
-  {
-    "title": "Chief Migration Health Officer (P), Addis Ababa",
-    "organization": "IOM - International Organization for Migration",
-    "description": "",
-    "deadline": "2026-10-04T10:01:07Z",
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://unjobs.org/vacancies/1791108047065",
-    "source_domain": "unjobs.org",
-    "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Project Associate (Referral)-Affilated Contractor-Required Number-1, Addis Ababa",
@@ -738,7 +2415,7 @@
     "source_url": "https://unjobs.org/vacancies/1791108045201",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Business Development Lead, Addis Ababa, Ethiopia",
@@ -751,7 +2428,7 @@
     "source_url": "https://unjobs.org/vacancies/1790985649693",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Gender, Equality & Inclusion Specialist, Addis Ababa, Ethiopia",
@@ -764,7 +2441,7 @@
     "source_url": "https://unjobs.org/vacancies/1790985654994",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Intern - Macroeconomic Analysis, Institutions and Economic Governance Section (MIGS) / MGD, Addis Ababa",
@@ -777,11 +2454,11 @@
     "source_url": "https://unjobs.org/vacancies/1790884935810",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Senior Director Monitoring, Evaluation, Learning, and Innovation, Addis Ababa",
-    "organization": "Management Sciences for Health (MSH)",
+    "organization": "",
     "description": "",
     "deadline": "2026-09-30T10:01:27Z",
     "published": null,
@@ -790,7 +2467,7 @@
     "source_url": "https://unjobs.org/vacancies/1790715721766",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Director for Monitoring, Evaluation, Learning, and Innovation, Addis Ababa",
@@ -803,7 +2480,7 @@
     "source_url": "https://unjobs.org/vacancies/1790715691933",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Finance Director, Addis Ababa",
@@ -816,7 +2493,7 @@
     "source_url": "https://unjobs.org/vacancies/1790715683851",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Senior Director for Finance & Administration, Addis Ababa",
@@ -829,7 +2506,7 @@
     "source_url": "https://unjobs.org/vacancies/1790594380004",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "JPO - Strategic Planning and Analysis Analyst, Addis Ababa, Ethiopia",
@@ -842,7 +2519,7 @@
     "source_url": "https://unjobs.org/vacancies/1790591877210",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Research Manager, Addis Ababa, Ethiopia",
@@ -855,7 +2532,7 @@
     "source_url": "https://unjobs.org/vacancies/1790286530559",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "MERL Coordinator (Women Peace Security), Addis Ababa, Ethiopia",
@@ -868,7 +2545,7 @@
     "source_url": "https://unjobs.org/vacancies/1790232187101",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:24.826Z"
   },
   {
     "title": "Climate and Nature Programme and Policy Officer SEO ADD, Addis Ababa, Ethiopia",
@@ -881,7 +2558,7 @@
     "source_url": "https://unjobs.org/vacancies/1790233791338",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Associate, Customer Strategy and Impact - MEA, Accion Advisory, Addis Ababa, Ethiopia",
@@ -894,7 +2571,7 @@
     "source_url": "https://unjobs.org/vacancies/1790083252485",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Research and Project Consultant – Time for Growth Policy Resource Portal, Addis Ababa",
@@ -907,7 +2584,7 @@
     "source_url": "https://unjobs.org/vacancies/1790179303199",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Principal Programme Management Officer, Addis Ababa",
@@ -920,7 +2597,7 @@
     "source_url": "https://unjobs.org/vacancies/1790164865242",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "ECONOMIC AFFAIRS OFFICER, Addis Ababa",
@@ -933,7 +2610,7 @@
     "source_url": "https://unjobs.org/vacancies/1790013736083",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Public Information Officer (Publishing Officer), Addis Ababa",
@@ -946,7 +2623,7 @@
     "source_url": "https://unjobs.org/vacancies/1789640988190",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Coordinator, Digital Health, Addis Ababa, Ethiopia",
@@ -959,7 +2636,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264576879",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:48.835Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Consultant, Digital Health, Addis Ababa, Ethiopia",
@@ -972,7 +2649,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264607147",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Advisor, Health Financing, Addis Ababa, Ethiopia",
@@ -985,7 +2662,7 @@
     "source_url": "https://unjobs.org/vacancies/1789264637997",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "MEL Data Automation Officer, Addis Ababa or Bahir Dar, Ethiopia",
@@ -998,7 +2675,7 @@
     "source_url": "https://unjobs.org/vacancies/1785994481204",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Director, Country, Ethiopia",
@@ -1011,7 +2688,7 @@
     "source_url": "https://unjobs.org/vacancies/1788313428416",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Planning, Monitoring, Evaluation and Learning Officer, Addis Ababa, Ethiopia",
@@ -1024,7 +2701,7 @@
     "source_url": "https://unjobs.org/vacancies/1788262946866",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Manager, Communications & Partnerships",
@@ -1037,7 +2714,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638200588",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Manager, Transport Finance, Ethiopia, Kenya, Uganda",
@@ -1050,7 +2727,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638200141",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Senior Associate, Public Transport, Addis Ababa, Ethiopia",
@@ -1063,7 +2740,7 @@
     "source_url": "https://unjobs.org/vacancies/1786638199137",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Country Director, Addis Ababa, Ethiopia",
@@ -1076,7 +2753,7 @@
     "source_url": "https://unjobs.org/vacancies/1784144721797",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "MSc Graduate Fellow - Genetic diversity forage spp collections (Four Positions), Addis Ababa, Ethiopia",
@@ -1089,7 +2766,7 @@
     "source_url": "https://unjobs.org/vacancies/1780547891086",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Ethiopia Innovations and Growth Lead, Addis Ababa, Ethiopia",
@@ -1102,7 +2779,7 @@
     "source_url": "https://unjobs.org/vacancies/1775507340118",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Technical Senior Manager, WASH, Addis Ababa, Ethiopia",
@@ -1115,7 +2792,7 @@
     "source_url": "https://unjobs.org/vacancies/1769183258418",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   },
   {
     "title": "Deputy Chief of Party, Addis Ababa, Ethiopia",
@@ -1128,6 +2805,6 @@
     "source_url": "https://unjobs.org/vacancies/1763689962357",
     "source_domain": "unjobs.org",
     "content_type": "job",
-    "scraped_at": "2026-10-14T10:03:55.904Z"
+    "scraped_at": "2026-10-15T09:46:31.422Z"
   }
 ]
