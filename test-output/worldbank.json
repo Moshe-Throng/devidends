@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-10-17T09:12:00.276Z",
-    "count": 17
+    "scraped_at": "2026-10-18T09:29:11.356Z",
+    "count": 18
   },
   "opportunities": [
+    {
+      "title": "Finance Officer",
+      "organization": "World Bank",
+      "description": "Finance Officer\n\nProject: Ethiopia Digital ID for Inclusion and Services Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-NIDP-576621-CS-INDV\n\nContact: Bole Wolo Sefer Ethio-China Street Addis Ababa, Ethiopia",
+      "deadline": "2026-10-30",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475679",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-18T09:26:13.468Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Ethiopia Digital ID for Inclusion and Services Project",
+        "project_id": "P179040",
+        "bid_reference": "ET-NIDP-576621-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Consultancy Services for Design and Study of Bridges and Rural Gravel Roads in Madawalabu, Sawena, Elwaye, Dawe Sarar and Mieso Woredas.",
+      "organization": "World Bank",
+      "description": "Consultancy Services for Design and Study of Bridges and Rural Gravel Roads in Madawalabu, Sawena, Elwaye, Dawe Sarar and Mieso Woredas.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ORO-RPCU-570403-CS-QCBS\n\nContact: Addis Ababa, Ethiopia",
+      "deadline": "2026-10-26",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473636",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-ORO-RPCU-570403-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Services for the Design and Establishment of a Wholesale (Apex) Development Finance Framework",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474612",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474990",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474991",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474843",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -99,34 +141,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473995",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
+      "scraped_at": "2026-10-18T09:26:13.469Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-BEN-GUM-RPCU-569758-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Consultancy Services for Design and Study of Bridges and Rural Gravel Roads in Madawalabu, Sawena, Elwaye, Dawe Sarar and Mieso Woredas.",
-      "organization": "World Bank",
-      "description": "Consultancy Services for Design and Study of Bridges and Rural Gravel Roads in Madawalabu, Sawena, Elwaye, Dawe Sarar and Mieso Woredas.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ORO-RPCU-570403-CS-QCBS\n\nContact: Addis Ababa, Ethiopia",
-      "deadline": "2026-10-22",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473636",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-10-17T09:08:59.765Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QCBS",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-ORO-RPCU-570403-CS-QCBS",
         "sector": ""
       }
     },
@@ -141,7 +162,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475484",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -162,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473353",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -183,7 +204,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474866",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -204,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473734",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -225,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472842",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -246,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472789",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -267,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470624",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -288,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470520",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -309,7 +330,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469617",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -330,7 +351,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -351,7 +372,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00465936",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-17T09:09:00.119Z",
+      "scraped_at": "2026-10-18T09:26:13.765Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
