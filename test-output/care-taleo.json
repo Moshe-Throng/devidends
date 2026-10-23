@@ -10,7 +10,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8041",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.272Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "CHANGE MANAGER, FLEET SYSTEMS PROJECT",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "FINANCE AND ADMINISTRATION",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8070",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8072",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8082",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8056",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8045",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,21 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "GLOBAL CHANGE MANAGER - SUPPLY CHAIN",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "FINANCE AND ADMINISTRATION",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8063",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,7 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8057",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8080",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-22T09:59:59.273Z",
+    "scraped_at": "2026-10-23T09:54:38.999Z",
     "_sourceId": "care-taleo"
   }
 ]
