@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "Senior Investment Officer - Assosa",
+    "organization": "Inkomoko",
+    "description": "",
+    "deadline": null,
+    "published": "2026-10-23T00:00:00.000Z",
+    "country": "Ethiopia",
+    "city": "Asosa",
+    "source_url": "https://apply.workable.com/inkomoko/j/68B37306CD/",
+    "source_domain": "workable.com",
+    "content_type": "job",
+    "scraped_at": "2026-10-24T09:23:50.678Z",
+    "raw_fields": {
+      "department": [
+        "Investment"
+      ],
+      "work_type": ""
+    },
+    "_sourceId": "inkomoko-workable"
+  }
+]

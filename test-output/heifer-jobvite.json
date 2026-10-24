@@ -10,28 +10,10 @@
     "source_url": "https://jobs.jobvite.com/heifer/job/onBXAfwf",
     "source_domain": "jobvite.com",
     "content_type": "job",
-    "scraped_at": "2026-10-23T09:54:36.691Z",
+    "scraped_at": "2026-10-24T09:23:48.852Z",
     "raw_fields": {
       "location": "Creation Date: 10/14/26, 12:28 PM",
-      "department": "Bangladesh"
-    },
-    "_sourceId": "heifer-jobvite"
-  },
-  {
-    "title": "Director, Transformation Integration and Adaptation",
-    "organization": "Heifer International",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Creation Date: 10/16/26, 2:19 PM",
-    "city": null,
-    "source_url": "https://jobs.jobvite.com/heifer/job/opqYAfw7",
-    "source_domain": "jobvite.com",
-    "content_type": "job",
-    "scraped_at": "2026-10-23T09:54:36.691Z",
-    "raw_fields": {
-      "location": "Creation Date: 10/16/26, 2:19 PM",
-      "department": "Ethiopia"
+      "department": "Mexico"
     },
     "_sourceId": "heifer-jobvite"
   }
