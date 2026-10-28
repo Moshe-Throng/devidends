@@ -1,9 +1,114 @@
 {
   "metadata": {
-    "scraped_at": "2026-10-27T10:24:31.969Z",
-    "count": 31
+    "scraped_at": "2026-10-28T11:14:34.633Z",
+    "count": 35
   },
   "opportunities": [
+    {
+      "title": "Selection of an Individual Consultants as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS) - Position 1",
+      "organization": "World Bank",
+      "description": "Selection of an Individual Consultants as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS) - Position 1\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-577821-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
+      "deadline": "2026-11-13",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477381",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-MOR-577821-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Selection of an Individual Consultants as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS) - Position 2",
+      "organization": "World Bank",
+      "description": "Selection of an Individual Consultants as Technical Lead / Chief Architect for the Integrated Tax Administration System (ITAS) - Position 2\n\nProject: Governance Modernization to Enable Efficient Service Delivery Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOR-578032-CS-INDV\n\nContact: P. O. Box: 2559 \nAddis Ababa\nPhone +251 11 617-84-90",
+      "deadline": "2026-11-13",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477383",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
+        "project_id": "P178808",
+        "bid_reference": "ET-MOR-578032-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Hiring a firm for Enhancing livelihoods of direct support beneficiaries through hand craft skill development and market linkage.",
+      "organization": "World Bank",
+      "description": "Hiring a firm for Enhancing livelihoods of direct support beneficiaries through hand craft skill development and market linkage.\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-574806-CS-QCBS\n\nContact: Addis Ababa",
+      "deadline": "2026-11-13",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477220",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-MOUDI-574806-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Hire a firm for GRM Audit of UPSNJP in 15 project cities",
+      "organization": "World Bank",
+      "description": "Hire a firm for GRM Audit of UPSNJP in 15 project cities\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Consultant Qualification  Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-572340-CS-CQS\n\nContact: Addis Ababa",
+      "deadline": "2026-11-13",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477217",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-MOUDI-572340-CS-CQS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Review of PW Activities Respone to Climate Change",
+      "organization": "World Bank",
+      "description": "Review of PW Activities Respone to Climate Change\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-MOUDI-567112-CS-QCBS\n\nContact: Addis Ababa",
+      "deadline": "2026-11-13",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477222",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-MOUDI-567112-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Selection and Employment of the #1 Special Contract Management Advisor for ETOL Program, by MoE.",
       "organization": "World Bank",
@@ -15,7 +120,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476478",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -36,7 +141,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476490",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -57,34 +162,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476289",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Support for Preparation of the Modernizing Ethiopia’s Statistical System Project",
         "project_id": "P516394",
         "bid_reference": "ET-ESS-574160-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Hiring Social Safeguards Specialist",
-      "organization": "World Bank",
-      "description": "Hiring Social Safeguards Specialist\n\nProject: Support for Preparation of the Modernizing Ethiopia’s Statistical System Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ESS-574164-CS-INDV\n\nContact: Churchill Road, Addis Ababa\nP.O.Box: 1143\nEmail: info@ess.gov.et\nTel: 0962331133",
-      "deadline": "2026-11-10",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476275",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Support for Preparation of the Modernizing Ethiopia’s Statistical System Project",
-        "project_id": "P516394",
-        "bid_reference": "ET-ESS-574164-CS-INDV",
         "sector": ""
       }
     },
@@ -99,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476279",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -120,13 +204,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476282",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Support for Preparation of the Modernizing Ethiopia’s Statistical System Project",
         "project_id": "P516394",
         "bid_reference": "ET-ESS-574171-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Hiring Social Safeguards Specialist",
+      "organization": "World Bank",
+      "description": "Hiring Social Safeguards Specialist\n\nProject: Support for Preparation of the Modernizing Ethiopia’s Statistical System Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-ESS-574164-CS-INDV\n\nContact: Churchill Road, Addis Ababa\nP.O.Box: 1143\nEmail: info@ess.gov.et\nTel: 0962331133",
+      "deadline": "2026-11-10",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476275",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Support for Preparation of the Modernizing Ethiopia’s Statistical System Project",
+        "project_id": "P516394",
+        "bid_reference": "ET-ESS-574164-CS-INDV",
         "sector": ""
       }
     },
@@ -141,7 +246,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476048",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -162,7 +267,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476051",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -183,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476045",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -204,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476074",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -225,7 +330,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476056",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -246,7 +351,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475679",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -267,7 +372,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474612",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -288,7 +393,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474990",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -309,7 +414,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474991",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -330,7 +435,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474843",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-10-27T10:20:28.071Z",
+      "scraped_at": "2026-10-28T11:11:27.435Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -351,7 +456,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476784",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -372,7 +477,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476746",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -393,34 +498,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476701",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-AFR-RPCU-589816-CW-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement for the Lot I: Construction of Jemu -Shasha Unpaved (gravel) access road [31 Km] in Meanit Shasha Woreda & Lot II : Construction of Tum-Haro Unpaved (gravel) access road 17 Km and Tum medium span bridge (20m span) in Maji Woreda, West Omo Zone",
-      "organization": "World Bank",
-      "description": "Procurement for the Lot I: Construction of Jemu -Shasha Unpaved (gravel) access road [31 Km] in Meanit Shasha Woreda & Lot II : Construction of Tum-Haro Unpaved (gravel) access road 17 Km and Tum medium span bridge (20m span) in Maji Woreda, West Omo Zone\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-SWE-RPCU-575641-CW-RFB\n\nContact: Bonga,\nEthiopia",
-      "deadline": "2026-11-16",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475953",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-SWE-RPCU-575641-CW-RFB",
         "sector": ""
       }
     },
@@ -435,13 +519,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475955",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-SWE-RPCU-571277-CW-RFB",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement for the Lot I: Construction of Jemu -Shasha Unpaved (gravel) access road [31 Km] in Meanit Shasha Woreda & Lot II : Construction of Tum-Haro Unpaved (gravel) access road 17 Km and Tum medium span bridge (20m span) in Maji Woreda, West Omo Zone",
+      "organization": "World Bank",
+      "description": "Procurement for the Lot I: Construction of Jemu -Shasha Unpaved (gravel) access road [31 Km] in Meanit Shasha Woreda & Lot II : Construction of Tum-Haro Unpaved (gravel) access road 17 Km and Tum medium span bridge (20m span) in Maji Woreda, West Omo Zone\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-SWE-RPCU-575641-CW-RFB\n\nContact: Bonga,\nEthiopia",
+      "deadline": "2026-11-16",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475953",
+      "source_domain": "worldbank.org",
+      "content_type": "consulting",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
+      "raw_fields": {
+        "notice_type": "Invitation for Bids",
+        "procurement_method": "Request for Bids",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-SWE-RPCU-575641-CW-RFB",
         "sector": ""
       }
     },
@@ -456,7 +561,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475932",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -477,7 +582,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475930",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -498,7 +603,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475484",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -519,7 +624,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473353",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -540,7 +645,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474866",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -561,7 +666,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473734",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -582,7 +687,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472842",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -603,34 +708,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472789",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Governance Modernization to Enable Efficient Service Delivery Project",
         "project_id": "P178808",
         "bid_reference": "ET-MOR-474917-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Lot 1. Procurement of Row Planter, forage baler, Choppers for forge processing purpose Lot 2. Procurement of Multi crop Mechanical thrashers, handheld harvester for cereal crops, and Weed Slasher for promoting conservation agriculture",
-      "organization": "World Bank",
-      "description": "Lot 1. Procurement of Row Planter, forage baler, Choppers for forge processing purpose Lot 2. Procurement of Multi crop Mechanical thrashers, handheld harvester for cereal crops, and Weed Slasher for promoting conservation agriculture\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-571908-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
-      "deadline": "2026-10-27",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00470624",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-MOA-571908-GO-RFB",
         "sector": ""
       }
     },
@@ -645,7 +729,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00469179",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-10-27T10:20:28.425Z",
+      "scraped_at": "2026-10-28T11:11:27.721Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
