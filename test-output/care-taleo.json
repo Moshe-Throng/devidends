@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8070",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.234Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8072",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.234Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8082",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.234Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8056",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.234Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8045",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8077",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,7 +108,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "GLOBAL DIGITAL OPERATIONS DIRECTOR",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "DIGITAL",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8085",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,21 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8057",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "MAJOR AND PRINCIPAL GIVING PORTFOLIO MANAGER",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "MAJOR GIFTS",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8080",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-10-28T11:12:17.634Z",
+    "scraped_at": "2026-10-29T11:25:16.235Z",
     "_sourceId": "care-taleo"
   }
 ]
