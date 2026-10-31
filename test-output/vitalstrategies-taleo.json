@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=921",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.362Z",
+    "scraped_at": "2026-10-31T10:51:13.271Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=901",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.362Z",
+    "scraped_at": "2026-10-31T10:51:13.271Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=919",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.275Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=920",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.275Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -66,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=918",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.275Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -80,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=936",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.276Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -94,21 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=952",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
-    "_sourceId": "vitalstrategies-taleo"
-  },
-  {
-    "title": "Global Security and Travel Operations Associate",
-    "organization": "Vital Strategies",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "United States, New York, NY",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=932",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.276Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -122,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=942",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.276Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -136,7 +122,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=938",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-10-30T11:17:03.363Z",
+    "scraped_at": "2026-10-31T10:51:13.276Z",
+    "_sourceId": "vitalstrategies-taleo"
+  },
+  {
+    "title": "Lead Poisoning Surveillance Coordinator, Rajasthan",
+    "organization": "Vital Strategies",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "India, Rajasthan – Jaipur",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=944",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-10-31T10:51:13.276Z",
     "_sourceId": "vitalstrategies-taleo"
   }
 ]
