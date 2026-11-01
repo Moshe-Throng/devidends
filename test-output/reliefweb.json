@@ -10,7 +10,7 @@
     "source_url": "https://reliefweb.int/node/4235960",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.194Z",
+    "scraped_at": "2026-11-01T11:46:44.776Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -32,7 +32,7 @@
     "source_url": "https://reliefweb.int/node/4235817",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.195Z",
+    "scraped_at": "2026-11-01T11:46:44.777Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -56,7 +56,7 @@
     "source_url": "https://reliefweb.int/node/4235812",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.195Z",
+    "scraped_at": "2026-11-01T11:46:44.777Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -80,7 +80,7 @@
     "source_url": "https://reliefweb.int/node/4235507",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.196Z",
+    "scraped_at": "2026-11-01T11:46:44.777Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -104,7 +104,7 @@
     "source_url": "https://reliefweb.int/node/4235348",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.197Z",
+    "scraped_at": "2026-11-01T11:46:44.778Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -126,7 +126,7 @@
     "source_url": "https://reliefweb.int/node/4235340",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.197Z",
+    "scraped_at": "2026-11-01T11:46:44.778Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -148,7 +148,7 @@
     "source_url": "https://reliefweb.int/node/4235139",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.197Z",
+    "scraped_at": "2026-11-01T11:46:44.778Z",
     "raw_fields": {
       "career_categories": [
         "Other"
@@ -172,7 +172,7 @@
     "source_url": "https://reliefweb.int/node/4234705",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.197Z",
+    "scraped_at": "2026-11-01T11:46:44.779Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -196,7 +196,7 @@
     "source_url": "https://reliefweb.int/node/4234489",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.197Z",
+    "scraped_at": "2026-11-01T11:46:44.779Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -218,7 +218,7 @@
     "source_url": "https://reliefweb.int/node/4234352",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.198Z",
+    "scraped_at": "2026-11-01T11:46:44.779Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -242,7 +242,7 @@
     "source_url": "https://reliefweb.int/node/4233658",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.198Z",
+    "scraped_at": "2026-11-01T11:46:44.780Z",
     "raw_fields": {
       "career_categories": [
         "Advocacy/Communications"
@@ -264,7 +264,7 @@
     "source_url": "https://reliefweb.int/node/4233075",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.198Z",
+    "scraped_at": "2026-11-01T11:46:44.780Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -288,7 +288,7 @@
     "source_url": "https://reliefweb.int/node/4229100",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.198Z",
+    "scraped_at": "2026-11-01T11:46:44.780Z",
     "raw_fields": {
       "career_categories": [
         "Information Management"
@@ -312,37 +312,13 @@
     "source_url": "https://reliefweb.int/node/4226970",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.198Z",
+    "scraped_at": "2026-11-01T11:46:44.780Z",
     "raw_fields": {
       "career_categories": [
         "Logistics/Procurement"
       ],
       "themes": [
         "Agriculture"
-      ],
-      "experience": "3-4 years",
-      "languages": [],
-      "work_type": "Job"
-    }
-  },
-  {
-    "title": "Physiotherapist",
-    "organization": "EMERGENCY",
-    "description": "The Physiotherapist is responsible for the treatment, counselling, preventative care and rehabilitation of the motor function and physical wellness of the patients. is responsible for assessing, planning, implementing, and evaluating individualized rehabilitation programs for patients with limb loss and other mobility impairments. Working within a multidisciplinary team, the Physiotherapist facilitates functional recovery, promotes independence, optimizes prosthetic use, and improves patients’ quality of life through evidence-based rehabilitation practices The Physiotherapist tasks and responsibilities include, but are not limited to, the following points: Undertake a comprehensive and accurate assessment of patients in a variety of settings; Identify, plan and manage physiotherapy interventions and rehabilitation plans Provide physio treatments to achieve identified outcomes and monitor patients’ conditions, both for in-patients and out-patients, if needed; Perform all the tasks related to the physio competence framework; Establish, maintain and conclude therapeutic interpersonal relationships with patients and their relatives, based on respect, dignity and care; Conduct comprehensive physical assessments of patients with upper and lower limb amputations, including musculoskeletal, neurological, cardiovascular, balance, gait, and functional evaluations. Provide pre-prosthetic rehabilitation, including: residual limb care and shaping, edema management, scar management, pain management (including phantom limb pain where appropriate), range of motion and strengthening exercises, contracture prevention Cardiovascular conditioning Deliver prosthetic rehabilitation, including: prosthetic gait training, balance and coordination training, functional mobility training Stair negotiation and community ambulation Transfers and activities of daily living (ADL) training Fall prevention strategies Monitor patient progress and modify treatment plans according to clinical outcomes. Encourage patients to have a positive attitude towards physiotherapy by motivating them; Organizing daily group activities, if possible, for patients; Promote an environment that enables patient’s safety and health implementing all necessary actions such as infection control practices, bed sores prevention practices and maintaining high level of hygiene also ensuring physio material are properly cleaned; Ensure that the equipment is functional and well maintained and stored; Ensure documentation/record is accurate and physio chart is properly filled, maintaining confidentially of information; Compiling and submitting periodic reports, if requested, following EMERGENCY guidelines; Be compliant with EMERGENCY guidelines for the treatment of patients; Work closely with prosthetists/orthotists during prosthetic prescription, fitting, alignment, and follow-up. Provide clinical feedback regarding prosthetic fit, function, comfort, and patient performance. Participate in training programs or activities, meeting timelines and deliverables, if requested by EMERGENCY; Train new staff, if needed. Job requirements: Degree in the Physio field; (Bachelor’s Degree in Physiotherapy from a recognized institution). Postgraduate training in rehabilitation, prosthetics, amputee rehabilitation, or neurorehabilitation Experience working in prosthetic and orthotic services. Good problem solving, time management and technical skills and willingness to learn new procedures and techniques; Good communication, interpersonal skills and high level of empathy, patience and ability to handle emotional and pressure situations; Basic Computer Skills, including Microsoft Office Program; Good level of English, written and spoken.\n\nHow to Apply: Send your application at this link: [EMERGENCY NGO](https://emergency-hq.orangehrmlive.com/external/#/recruitment-apply/vacancy/166)",
-    "deadline": "2026-10-31T00:00:00+00:00",
-    "published": "2026-08-04T10:09:58+00:00",
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://reliefweb.int/node/4224280",
-    "source_domain": "reliefweb.int",
-    "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.199Z",
-    "raw_fields": {
-      "career_categories": [
-        "Other"
-      ],
-      "themes": [
-        "Health"
       ],
       "experience": "3-4 years",
       "languages": [],
@@ -360,7 +336,7 @@
     "source_url": "https://reliefweb.int/node/4216437",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.199Z",
+    "scraped_at": "2026-11-01T11:46:44.781Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
@@ -382,7 +358,7 @@
     "source_url": "https://reliefweb.int/node/4215186",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.199Z",
+    "scraped_at": "2026-11-01T11:46:44.782Z",
     "raw_fields": {
       "career_categories": [
         "Administration/Finance"
@@ -404,7 +380,7 @@
     "source_url": "https://reliefweb.int/node/4203722",
     "source_domain": "reliefweb.int",
     "content_type": "job",
-    "scraped_at": "2026-10-31T10:50:20.199Z",
+    "scraped_at": "2026-11-01T11:46:44.782Z",
     "raw_fields": {
       "career_categories": [
         "Program/Project Management"
