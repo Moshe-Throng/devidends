@@ -10,7 +10,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62830-director-reap-consortium/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.114Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +29,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -48,7 +48,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62877-ilri-consultancy-recruitment-consultant-for-coordination-and-delivery/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +67,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62876-ilri-consultancy-senior-recruitment-and-talent-acquisition-consultant/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -86,7 +86,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62832-ilri-internship-position-administrative-intern/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -105,7 +105,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62895-ilri-msc-graduate-fellowship-evidence-synthesis-in-agri-food-systems-and-climate-change/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -124,7 +124,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61928-ilri-research-fellowship-opportunity-international-water-management-institute-iwmi-sustainable-animal-and-aquatic-foods-saaf-science-program/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -143,7 +143,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61686-interest-in-ilri-board-of-trustees/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -152,17 +152,36 @@
     "_sourceId": "ilri"
   },
   {
-    "title": "Program Accountant",
+    "title": "Program Accountants",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62896-program-accountant/detail",
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62896-program-accountants/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Research Management Coordinator – Land and Food System Modelling",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62905-research-management-coordinator-land-and-food-system-modelling/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -181,7 +200,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62806-research-officer-iii-livestock-and-feed-economics/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -200,7 +219,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62845-communications-officer-iii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.354Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -219,7 +238,26 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60908-msc-graduate-fellow-genetic-diversity-forage-spp-collections-four-positions/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "Research Management Coordinator – Land and Food System Modelling",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62905-research-management-coordinator-land-and-food-system-modelling/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -238,7 +276,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62844-communications-manager/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -257,7 +295,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -276,7 +314,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62832-ilri-internship-position-administrative-intern/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -295,7 +333,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62895-ilri-msc-graduate-fellowship-evidence-synthesis-in-agri-food-systems-and-climate-change/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -314,7 +352,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61928-ilri-research-fellowship-opportunity-international-water-management-institute-iwmi-sustainable-animal-and-aquatic-foods-saaf-science-program/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -333,7 +371,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61686-interest-in-ilri-board-of-trustees/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -342,17 +380,17 @@
     "_sourceId": "ilri"
   },
   {
-    "title": "Program Accountant",
+    "title": "Program Accountants",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62896-program-accountant/detail",
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62896-program-accountants/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -371,7 +409,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -390,7 +428,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62806-research-officer-iii-livestock-and-feed-economics/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -409,7 +447,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62830-director-reap-consortium/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.115Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -428,7 +466,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62877-ilri-consultancy-recruitment-consultant-for-coordination-and-delivery/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.116Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -447,7 +485,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62876-ilri-consultancy-senior-recruitment-and-talent-acquisition-consultant/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.116Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -466,7 +504,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62901-program-manager-reap/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.116Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -485,7 +523,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62902-safeguards-officer-reap/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-04T12:54:25.355Z",
+    "scraped_at": "2026-11-05T13:02:24.116Z",
     "raw_fields": {
       "region": "",
       "category": "",
