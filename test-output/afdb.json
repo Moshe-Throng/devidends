@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.387Z",
+    "scraped_at": "2026-11-09T13:46:31.939Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,26 +29,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.387Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "afdb"
-  },
-  {
-    "title": "2027 African Development Bank Group Shanghai Ocean University Scholarship Master Degree Program2027 African Development Bank Group Shanghai Ocean University Scholarship Master Degree Program",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-Degree-Program/1454702333/",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.387Z",
+    "scraped_at": "2026-11-09T13:46:31.939Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +48,26 @@
     "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Bachelor-Degree-Program/1454705233/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.387Z",
+    "scraped_at": "2026-11-09T13:46:31.939Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "2027 African Development Bank Group Shanghai Ocean University Scholarship Master Degree Program2027 African Development Bank Group Shanghai Ocean University Scholarship Master Degree Program",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-Degree-Program/1454702333/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-09T13:46:31.939Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -86,7 +86,7 @@
     "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-and-PhD-Program/1454656933/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.387Z",
+    "scraped_at": "2026-11-09T13:46:31.939Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -105,7 +105,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-2027-MO-IBRAHIM-FOUNDATION-LEADERSHIP-FELLOWSHIP-PROGRAM/1440251733/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-08T11:50:47.388Z",
+    "scraped_at": "2026-11-09T13:46:31.940Z",
     "raw_fields": {
       "region": "",
       "category": "",
