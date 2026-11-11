@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.398Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,7 +29,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.398Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -38,17 +38,17 @@
     "_sourceId": "afdb"
   },
   {
-    "title": "2027 African Development Bank Group Shanghai Ocean University Scholarship Master and PhD Program2027 African Development Bank Group Shanghai Ocean University Scholarship Master and PhD Program",
+    "title": "Division Manager - Corporate and Finance Audit (PAGL.1)Division Manager - Corporate and Finance Audit (PAGL.1)",
     "organization": "African Development Bank (AfDB)",
     "description": "",
     "deadline": null,
     "published": null,
     "country": "Ethiopia",
     "city": null,
-    "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-and-PhD-Program/1454656933/",
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Division-Manager-Corporate-and-Finance-Audit-%28PAGL_1%29/1456369133/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.398Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,7 +67,7 @@
     "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Bachelor-Degree-Program/1454705233/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.399Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -86,7 +86,26 @@
     "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-Degree-Program/1454702333/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.399Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "2027 African Development Bank Group Shanghai Ocean University Scholarship Master and PhD Program2027 African Development Bank Group Shanghai Ocean University Scholarship Master and PhD Program",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/2027-African-Development-Bank-Group-Shanghai-Ocean-University-Scholarship-Master-and-PhD-Program/1454656933/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -105,7 +124,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-2027-MO-IBRAHIM-FOUNDATION-LEADERSHIP-FELLOWSHIP-PROGRAM/1440251733/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:24:04.399Z",
+    "scraped_at": "2026-11-11T12:35:38.481Z",
     "raw_fields": {
       "region": "",
       "category": "",

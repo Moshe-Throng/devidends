@@ -1,5 +1,23 @@
 [
   {
+    "title": "Senior/Staff/Principal Engineer",
+    "organization": "Canonical",
+    "description": "Canonical is a leading provider of open source software and operating systems to the global enterprise and technology markets. Our platform, Ubuntu, is very widely used in breakthrough enterprise initiatives such as public cloud, data science, AI, engineering innovation, and IoT. Our customers include the world's leading public cloud and silicon providers, and industry leaders in many sectors. The company is a pioneer of global distributed collaboration, with 1200+ colleagues in 75+ countries and very few office-based roles. Teams meet two to four times yearly in person, in interesting locations around the world, to align on strategy and execution. The company is founder-led, profitable, and growing. This is a general track for Senior+ (Senior/Staff/Principal) Engineers in any team at Canonical. After the first round of interviews we will establish which teams might be an excellent fit, and progress your application with them. At Canonical a Senior+ Engineer is not only an outstanding software architect and coder, they also demonstrate the leadership qualities needed to rally a team or department to ship outstanding products. A Senior+ Engineer partners with other Engineering leaders (Managers, Directors, VPs) to take joint responsibility for outcomes at team, department and company level. We hire based on academic results and proven execution, and we select those with a passion for open-source software, innovation, and cutting-edge technology. In this role, you will make a significant contribution in Canonical's portfolio through high-quality code, technical leadership, team motivation and direction, exceptional design, and crisp documentation. As a Senior+ Engineer you'll drive the architecture, design and evolution of high-impact open source software. Our teams work at every level of the stack. From the kernel and system software at the core of Ubuntu through to major language runtimes and the bleeding-edge of cloud automation and distributed systems, you'll have the opportunity to work on complex but highly rewarding projects. Our teams also build the services which deliver Ubuntu to the world, on cloud, devices, servers and PCs. Additionally, this role will give you the opportunity to engage with the broader open-source community. We're looking for individuals who can help build a thriving community, contribute to a broad range of technologies, and ensure seamless software operations at scale. Location: we have remote opportunities for Senior Engineers in every time zone. The role entails Leading design and architecture of an impactful open source project Coding in Golang, Rust, Python, C/C++ or Typescript / React Collaborating proactively with a globally distributed team Mentoring, developing and advising colleagues in their career progression Displaying technical leadership in Canonical and our communities Debugging issues and producing high-quality code to fix them Contributing to technical documentation with the aim to make it the best of its kind Working from home with global travel twice annually for company events What we are looking for in you An exceptional academic track record from both high school and university Undergraduate degree in Computer Science or STEM, or a compelling narrative about your alternative path Drive and a track record of going above-and-beyond expectations Technical leadership as well as team motivation, direction and pace Deep experience with at least one of Go, Rust, Python or C Conscientiousness and detail orientation, with a focus on performance Excellent communication skills including professional written and spoken English Excellent interpersonal skills, curiosity, flexibility, and accountability Ability to travel twice a year, for company events up to two weeks each Nice-to-have skills Depending on your eventual team, you might also bring experience with Container technologies such as LXD, Docker and Kubernetes Highly concurrent, distributed systems Performance engineering – from kernel to web – benchmarks, optimization Software security – fuzzing, tabletop threat models, analysis, audit Build systems and toolchains, including for cross-compilation Public clouds or OpenStack Debian/Ubuntu packaging Systems programming or scalable web services Deep quality and test engineering Web or Flutter front-end experience REST and gRPC API experience SQL and NoSQL data store expertise What we offer you We consider geographical location, experience, and performance in shaping compensation worldwide. We revisit compensation annually (and more often for graduates and associates) to ensure we recognize outstanding performance. In addition to base pay, we offer a performance-driven annual bonus or commission. We provide all team members with additional benefits which reflect our values and ideals. We balance our programs to meet local needs and ensure fairness globally. Distributed work environment with twice-yearly team sprints in person Personal learning and development budget",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-staff-principal-engineer-at-canonical-4487864525",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:47.983Z",
+    "raw_fields": {
+      "li_job_id": "4487864525",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
     "title": "Business Development Manager - Ethiopia",
     "organization": "SoftConstruct",
     "description": "Are you GAME to JOIN US and be our new Business Development Manager? Soft Construct is on a search for a new player to join our team Responsibilities Identify and develop new business opportunities within the iGaming and gambling industry (platforms, casinos, betting solutions, and related products). Build and maintain strong relationships with key stakeholders, partners, and clients. Conduct market research and competitive analysis to identify trends, potential customers, and business expansion opportunities. Negotiate and close business deals to meet sales and revenue targets. Collaborate with the marketing and product teams to align business strategies and promotional activities. Attend industry events, expos, and networking conferences to expand the company’s presence and brand recognition worldwide. Monitor industry regulations and ensure compliance with local and international gaming laws. Prepare reports and presentations for management on business development progress and strategic plans. Carry out other duties assigned by the immediate supervisor, which are in line with the job description and do not contradict the labor code. Requirements Bachelor’s degree in Business Administration, Marketing, IT, or a related field. At least 3 years of experience in business development, sales, or account management, preferably in the iGaming or gambling industry. Strong understanding of iGaming platforms, casino solutions, and gambling products is an advantage. Ability to conduct in-depth market research and competitive analysis. Knowledge of industry regulations and compliance requirements. Experience in developing partnerships and managing key accounts. Proficiency in CRM tools, business development software, and project management tools. Strong communication and interpersonal skills. Result-driven and highly motivated. Ability to work independently and in a team-oriented environment. Persuasive with strong problem-solving abilities. Excellent negotiation and deal-closing skills. Knowledge of English language is required and knowledge of any additional language is an advantage. Open to travel for business meetings and industry events. Do you like to learn hard, work hard, and play hard? Do you imagine better things, technologies, future? If you answered ''Yes'' to at least two of these questions, then we might be a great fit for you.",
@@ -10,7 +28,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/business-development-manager-ethiopia-at-softconstruct-4487159516",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:21.160Z",
+    "scraped_at": "2026-11-11T12:34:47.983Z",
     "raw_fields": {
       "li_job_id": "4487159516",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -18,37 +36,19 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Medical Doctor",
-    "organization": "government",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-10",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/medical-doctor-4489416383",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:21.161Z",
-    "raw_fields": {
-      "li_job_id": "4489416383",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Business Development Representative",
+    "title": "Community Engineer (multiple roles and seniority levels)",
     "organization": "Canonical",
-    "description": "Canonical is a leading provider of open source software and operating systems to the global enterprise and technology markets. Our platform, Ubuntu, is very widely used in breakthrough enterprise initiatives such as public cloud, data science, AI, engineering innovation, and IoT. Our customers include the world's leading public cloud and silicon providers, and industry leaders in many sectors. The company is a pioneer of global distributed collaboration, with 1200+ colleagues in 75+ countries and very few office-based roles. Teams meet two to four times yearly in person, in interesting locations around the world, to align on strategy and execution. The company is founder-led, profitable, and growing. Canonical is a remote-first global company that publishes Ubuntu and open-source enterprise solutions for cloud, developer, IoT and AI. Ubuntu is the fastest growing Linux distribution and ranks as the number #1 OS in the cloud. In partnership with Google, Amazon, IBM and Microsoft, Canonical helps companies become more agile, productive and adopt new technologies faster. Examples of customer success include AI, Blockchain, IoT, Advanced Robotics and self-driving cars, where Ubuntu is the preferred development platform. The role of a Business Development Representative at Canonical Canonical is profitable and growing. We consider our sales development organization to be the best technology sales academy in the market, and as such, we select exceptional and ambitious candidates to join our team. You will enjoy this role if you are organized, persistent, charismatic and hard-working. You will need to be interested in tech and its business implications. In this role, you will collaborate with a regional sales and marketing team, and your primary objective will be to find customer projects that fit our product lines and spread the good name of Canonical across multiple different industries and geographies. Click HERE to watch our SDR team discuss their role in Canonical The role entails Execute outbound sales & marketing campaigns Research information about prospective customers and market trends Generate high-quality leads for Senior Sellers to fuel a multi-million dollar pipeline Own and close SMB opportunities within your designated territory Collaborate across multiple teams and senior stakeholders to drive results Help define the processes and policies for the team Travel to events and conferences worldwide, presenting on booths and driving face-to-face marketing and sales opportunities What We Are Looking For In You Demonstrated success in SDR or outbound sales, with a track record of exceeding annual quotas and consistently driving qualified pipeline growth Experience navigating prospective accounts from and into a senior executive level to identify new customer opportunities Experience in enterprise software or technology sales Exceptional academic track record from both high school and university Passion for business and technology Commitment to continuous learning and improvement - curious, flexible, scientific Creative problem solving and cross team collaboration Professional written and spoken English with excellent presentation skills Verbal and written communication and negotiation skills Result driven with an over-achiever spirit Persistence & perseverance Growth mindset - people from our team develop into all departments within the sales organization (Channel, IoT, Enterprise Sales, etc) Ability to travel internationally twice a year for company events up to two weeks long What We Offer Colleagues We consider geographical location, experience, and performance in shaping compensation worldwide. We revisit compensation annually (and more often for graduates and associates) to ensure we recognize outstanding performance. In addition to base pay, we offer a performance-driven annual bonus or commission. We provide all team members with additional benefits which reflect our values and ideals. We balance our programs to meet local needs and ensure fairness globally. Distributed work environment with twice-yearly team sprints in person Personal learning and development budget of USD 2,000 per year Annual compensation review Recognition rewards Annual holiday leave Maternity and paternity leave Team Member Assistance Program & Wellness Platform Opportunity to travel to new locations to meet colleagues Priority Pass and travel upgrades for long-haul company events About Canonical Canonical is a pioneering tech firm at the forefront of the global move to open source. As the company that publishes Ubuntu, one of the most important open-source projects and the platform for AI, IoT, and the cloud, we are changing the world of software. We recruit on a global basis and set a very high standard for people joining the company. We expect excellence; in order to succeed, we need to be the best at what we do. Most colleagues at Canonical have worked from home since our inception in 2004. Working here is a step into th",
+    "description": "Our ambition is to set a standard of excellence when it comes to serving the open source ecosystem. This is your chance to be a part of that as a Community Engineer at Canonical . We are building community management at scale. We have multiple positions available, at different seniority levels. All applications and candidates are handled through this single entry point. To improve your chances of success in this application, read our advice on how to get a job at Canonical. The role of a Community Engineer The Community team at Canonical enables community leaders and participants to get things done, co-ordinating with Canonical teams and ensuring that community processes are efficient and well run. We don't do the work of the community, but we facilitate that work to ensure that energetic and ambitious community members with their own vision of open source can benefit from the work Canonical does and bring their own flavor of Ubuntu into being, to meet the needs and express the interests of their community. You will play a key role in designing, executing, and scaling initiatives that foster a thriving community. This is an exciting opportunity for a technically proficient person who is passionate about open source software, Linux, and sustainable community building. In this role, you will support community initiatives with your technical skills and strong organizational skills. You work hand in hand with developers to smooth processes and integrate community plans with Canonical plans for maximum impact. You can encourage and facilitate the creation of new technical projects that enhance the community contribution experience, and you represent community interests to Canonical teams. You will lead complex, multi-disciplinary programs from conception through launch, working closely with Developer Relations engineers, technical authors, product managers, marketing teams, engineering teams, and external partners. You will support and engage with volunteer developers in the Ubuntu community, addressing their concerns and helping them to create successful tools. You will help to ensure their success and the overall autonomy and sustainability of projects. You will provide the content and technical support to ensure the community stays engaged and informed. This will include regular blog and social media posts about community initiatives, events, accomplishments, and collaborative efforts between Canonical and the Ubuntu community. You will communicate effectively with developers and software engineers and represent not only the Ubuntu community but Canonical as a contributor to the wider Linux ecosystem. Our team attends conferences and expos, and talks about technical community projects and their development processes. Location : These are fully remote roles, open to candidates across the globe. What your day will look like Write high quality content to promote and support community initiatives Discuss ideas and collaborate on finding good solutions to community problems Work from home with global travel 2 to 4 weeks for internal and external events Potential opportunity to travel more if you wish Nurture community contributions to Ubuntu Engage with the Ubuntu community through Discourse, Matrix, social media, conferences, etc. Represent Ubuntu via speaking engagements at events and conferences Support the engagement by Canonical teams into the open source ecosystem What we are looking for in you You love technology and working with brilliant people You are curious, flexible, articulate, and accountable You value soft skills and are passionate, enterprising, thoughtful, and self-motivated You have experience with developer tools and open source projects You have a clear public record of accomplishments (talks, blog posts, GitHub, X, etc.) You have interest and experience with some of the following: Ubuntu Linux - kernel or userspace, DevOps, software development, testing and QA, package management, container technology You can work autonomously and assume full ownership of objectives as needed You can be flexible with your time and enjoy working with new technology in a fast-paced environment You are experienced working with open source communities and understand the workflow of volunteer contributors You have experience in (technical) program management and have excellent organizational, communication and interpersonal skills Additional Skills That You Might Also Bring Experience with community management Experience with Developer advocacy Experience as a software developer Examples of contributions to the Ubuntu Community Experience with contributing to open source projects What we offer colleagues We consider geographical location, experience, and performance in shaping compensation worldwide. We revisit compensation annually (and more often for graduates and associates) to ensure we recognize outstanding performance. In addition to base pay, we offer a performance-driven annual bonus or commission. We prov",
     "deadline": null,
-    "published": "2026-11-10",
+    "published": "2026-11-11",
     "country": "",
     "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/business-development-representative-at-canonical-4489198041",
+    "source_url": "https://et.linkedin.com/jobs/view/community-engineer-multiple-roles-and-seniority-levels-at-canonical-4487861623",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:21.162Z",
+    "scraped_at": "2026-11-11T12:34:47.984Z",
     "raw_fields": {
-      "li_job_id": "4489198041",
+      "li_job_id": "4487861623",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
@@ -56,7 +56,7 @@
   {
     "title": "Licensed Aircraft Maintenance Engineer",
     "organization": "Sheba Aviation Service PLC",
-    "description": "",
+    "description": "Company Description Sheba Aviation Service PLC is an aviation services provider based in Ethiopia, focused on delivering reliable and safe aircraft operations and maintenance solutions. The company is committed to high technical standards, regulatory compliance, and safety in all aspects of its services. Team members work with modern aircraft and systems in a professional environment that encourages continuous learning and skills development. Sheba Aviation Service PLC values integrity, precision, and collaboration to ensure operational excellence and quality service for its customers. Role Description The Licensed Aircraft Maintenance Engineer role is a full-time, on-site position based in Ethiopia. The engineer is responsible for performing scheduled and unscheduled maintenance on aircraft and aircraft systems, including inspections, repairs, adjustments, and component replacements in accordance with manufacturer specifications and regulatory requirements. Day-to-day tasks include diagnosing technical issues, troubleshooting system malfunctions, ensuring airworthiness through detailed documentation and sign-off, and coordinating with operations and maintenance teams to minimize aircraft downtime. The role also involves maintaining accurate maintenance records, adhering to safety and quality standards, supporting audits and inspections, and participating in continuous improvement and training activities to keep skills current with evolving aviation technologies. Qualifications Strong Aircraft Maintenance experience, with the ability to perform inspections, repairs, and preventive maintenance on various types of aircraft. In-depth knowledge of Aircraft and Aircraft Systems, including structures, avionics, engines, hydraulics, and electrical systems. Proficient Troubleshooting skills for identifying, analyzing, and resolving mechanical and system-related issues efficiently. Demonstrated understanding of Airworthiness requirements, regulations, and compliance procedures, including accurate documentation and sign-off. Valid aircraft maintenance engineer license or equivalent certification, recognized by relevant aviation authorities. Previous experience in a commercial, corporate, or general aviation maintenance environment is highly beneficial. Ability to read and interpret technical manuals, engineering drawings, and maintenance documentation in English. Strong attention to detail, safety-focused mindset, and capability to work effectively in a team and in a fast-paced operational setting. Willingness to work shifts, weekends, and respond to operational demands as required.",
     "deadline": null,
     "published": "2026-11-09",
     "country": "",
@@ -64,7 +64,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/licensed-aircraft-maintenance-engineer-4489140111",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:21.165Z",
+    "scraped_at": "2026-11-11T12:34:47.985Z",
     "raw_fields": {
       "li_job_id": "4489140111",
       "location_raw": "Ethiopia"
@@ -74,7 +74,7 @@
   {
     "title": "General Manager – Ethiopia",
     "organization": "SHENZHEN CIMC-TIANDA AIRPORT SUPPORT LTD",
-    "description": "",
+    "description": "Role Overview CIMC Tianda is seeking a locally based General Manager to lead its airport equipment installation and maintenance operations in Ethiopia. The successful candidate will take overall responsibility for the local team and airport service contracts, covering business performance, customer relations, installation management, operations and maintenance, HSE, personnel and subcontractor management. The position requires a hands-on manager who can maintain reliable airport operations while supporting the continued development of the local business. Key Responsibilities Assume overall responsibility for local business performance, including budgeting, profit and loss, cost control, cash flow and operating forecasts. Manage airport maintenance contracts, ensuring compliance with contractual requirements, SLAs and equipment availability targets. Manage airport equipment installation projects, including installation planning, site coordination, manpower arrangements, subcontractor management, progress control, quality, safety, testing, commissioning and handover. Oversee preventive and corrective maintenance, 24/7 breakdown response, spare parts, maintenance records and subcontractor performance. Maintain effective relationships with the airport, customers, government authorities and other local stakeholders. Support business development, contract renewals, quotations, variations, claims, invoicing and accounts receivable collection. Lead the local organization, including recruitment, shift arrangements, training, performance management and employee relations. Implement HSE and safety management systems, ensuring compliance with airport requirements and local regulations. Monitor contract profitability and implement measures to improve installation efficiency, operational performance and service quality. Submit regular business, financial and operational reports in English to the Regional Director. Coordinate major commercial, technical, installation and personnel matters with the Regional Director and headquarters. Mandatory Requirements Must have held a middle-management or above position at Addis Ababa Bole International Airport. This must have been an actual employment role based at the airport, with responsibility for airport operations, ground handling, airport equipment or GSE maintenance, or on-site contracted services. Project supply, installation work or occasional contact with the airport as a customer does not meet this requirement. Proven experience managing operational teams, technicians, shifts and subcontractors. Working knowledge of airport operations, installation and maintenance management, service-level requirements and safety management. Demonstrated ability to manage budgets, operating costs and customer relationships. Able to lead business discussions and prepare management reports in English. Based in Addis Ababa or able to work there permanently, with the legal right to work in Ethiopia. Willing to remain available for major operational issues outside normal working hours. Preferred Qualifications Previous General Manager, Operations Director, Country Manager or equivalent experience. Experience with passenger boarding bridges, GSE or other electromechanical airport equipment. Experience in full P&L management, installation project management, contract negotiation, claims and collections. Familiarity with Ethiopian employment practices and airport stakeholder management. Application Please submit an English CV clearly stating the employer, job title, employment dates and responsibilities for the middle-management or above role held at Addis Ababa Bole International Airport. Please also indicate your notice period, earliest available start date and salary expectations.",
     "deadline": null,
     "published": "2026-11-09",
     "country": "",
@@ -82,7 +82,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/general-manager-%E2%80%93-ethiopia-at-shenzhen-cimc-tianda-airport-support-ltd-4488816757",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:21.165Z",
+    "scraped_at": "2026-11-11T12:34:47.985Z",
     "raw_fields": {
       "li_job_id": "4488816757",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -90,19 +90,19 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Experienced Daycare Caregiver/Nanny",
-    "organization": "Shints ETP Garment PLC",
-    "description": "",
+    "title": "Office Manager",
+    "organization": "Ephtah Specialty Coffee",
+    "description": "Company Description Ephtah Specialty Coffee, founded in 2021, is a specialty coffee export company dedicated to delivering the finest Ethiopian coffee to global clients. The organization prioritizes quality, exceptional after-sales support, and flexible customer service tailored to specific client needs. Ephtah emphasizes fully traceable, socially responsible supply chains to support sustainable growth of the Ethiopian coffee industry. Role Description The Office Manager is responsible for overseeing daily office operations and ensuring a well-organized, efficient work environment. This full-time, on-site role is based in Addis Ababa, Ethiopia and includes coordinating schedules, managing office supplies and equipment, and maintaining accurate records and documentation. The Office Manager will support administrative processes, assist with basic finance and logistics tasks, and ensure smooth communication between internal teams and external partners. The role also involves handling visitor inquiries, supporting customer service activities, and helping to implement office policies and procedures aligned with Ephtah’s values and business objectives. Qualifications Candidates should possess strong Communication and Customer Service skills to interact effectively with colleagues, suppliers, and clients. Candidates should possess Office Administration and Administrative Assistance skills to manage daily operations, documentation, and scheduling. Candidates should possess practical knowledge of Office Equipment to ensure proper use, basic troubleshooting, and coordination of maintenance. Relevant experience in office management or administrative roles, preferably in import/export, logistics, or the coffee/agricultural sector. Strong organizational skills, attention to detail, and the ability to prioritize tasks in a fast-paced environment. Proficiency with common office software (e.g., word processing, spreadsheets, email, and collaboration tools). Ability to work collaboratively with diverse teams and uphold the company’s values of integrity, transparency, and community focus. Degree in Business Administration, Management, or a related field is preferred.",
     "deadline": null,
-    "published": "2026-11-10",
+    "published": "2026-11-11",
     "country": "",
     "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/experienced-daycare-caregiver-nanny-at-shints-etp-garment-plc-4489467043",
+    "source_url": "https://et.linkedin.com/jobs/view/office-manager-at-ephtah-specialty-coffee-4489911935",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.991Z",
+    "scraped_at": "2026-11-11T12:34:47.985Z",
     "raw_fields": {
-      "li_job_id": "4489467043",
+      "li_job_id": "4489911935",
       "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
@@ -118,7 +118,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/medical-laboratory-technician-4488123422",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.992Z",
+    "scraped_at": "2026-11-11T12:34:49.722Z",
     "raw_fields": {
       "li_job_id": "4488123422",
       "location_raw": "Gonder, Amhara Region, Ethiopia"
@@ -128,7 +128,7 @@
   {
     "title": "Solution Architect",
     "organization": "Ericsson",
-    "description": "",
+    "description": "Join our Team About this opportunity: Lead end-to-end technical delivery of RAN projects at Ericsson, covering solution design, implementation, optimization, acceptance, and customer engagement. Strong expertise in 4G/LTE is required; 5G knowledge is a plus. Deep Ericsson product knowledge is mandatory. What you will do: Lead RAN project delivery from design through deployment, optimization, and customer handover. Define and validate RAN solutions aligned with customer requirements, Ericsson standards, and network strategy. Manage design activities including coverage, capacity, parameter planning, and feature implementation. Drive tuning and optimization to improve coverage, quality, capacity, and user experience. Lead acceptance activities — test planning, KPI definition, issue resolution, and customer sign-off. Serve as the primary technical interface for customers and senior stakeholders. Coordinate across project managers, RF engineers, delivery teams, and subcontractors. Identify and mitigate technical risks, dependencies, and deviations. Ensure compliance with Ericsson processes, governance models, quality, and security standards. Lead design reviews, troubleshooting sessions, and executive steering meetings. Translate technical topics into clear business impacts and recommendations for senior management. Support presales, bid, and solution validation activities when needed. Maintain documentation, acceptance evidence, and handover material. Coach RAN engineers and promote knowledge sharing across delivery teams. The skills you bring: Bachelor's in Telecommunications, Electrical or Computer Engineering, or related field. Extensive experience in RAN architecture, design, deployment, optimization, and acceptance. Strong practical knowledge of 4G/LTE; 5G NR knowledge is an advantage. Mandatory: proven expertise in Ericsson RAN systems, products, tools, and delivery processes. Experience leading RAN projects in customer-facing environments. Proficient in RAN KPIs, performance analysis, troubleshooting, and optimization. Strong grasp of project governance, risk management, and process compliance. Excellent communication, presentation, and problem-solving skills. Able to work independently, prioritize effectively, and make decisions under pressure. Open to travel and international/multicultural project environments. Why join Ericsson? At Ericsson, you´ll have an outstanding opportunity. The chance to use your skills and imagination to push the boundaries of what´s possible. To build solutions never seen before to some of the world’s toughest problems. You´ll be challenged, but you won’t be alone. You´ll be joining a team of diverse innovators, all driven to go beyond the status quo to craft what comes next. What happens once you apply? Click Here to find all you need to know about what our typical hiring process looks like.Encouraging a diverse and inclusive organization is core to our values at Ericsson, that's why we champion it in everything we do. We truly believe that by collaborating with people with different experiences we drive innovation, which is essential for our future growth. We encourage people from all backgrounds to apply and realize their full potential as part of our Ericsson team. Ericsson is proud to be an Equal Opportunity Employer. learn more. Primary country and city: Ethiopia (ET) || Addis Ababa Req ID: 789465",
     "deadline": null,
     "published": "2026-11-05",
     "country": "",
@@ -136,7 +136,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/solution-architect-at-ericsson-4475455647",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.992Z",
+    "scraped_at": "2026-11-11T12:34:49.722Z",
     "raw_fields": {
       "li_job_id": "4475455647",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
@@ -144,27 +144,27 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Assistant Manager- Inclusive Financial Ecosystems",
-    "organization": "MSC (MicroSave Consulting)",
-    "description": "",
+    "title": "Senior Corporate Strategy & Growth Specialist",
+    "organization": "Edge Communication Technologies P.L.C (Ethiopia)",
+    "description": "Company: Edge Communication Technologies PLC (Edge Comm-Tech) Location: Addis Ababa, Ethiopia Employment Type: Full-Time Department: Corporate Strategy & Growth Reports To: Chief Strategy Officer (CSO) Experience Required: Minimum 5 years of relevant professional experience About Edge Comm-Tech Edge Communication Technologies PLC is an Ethiopian technology solutions and systems integration company established in 2018, delivering innovative, reliable, and scalable technology solutions across Ethiopia and beyond. Driven by our mission to \"Accelerate Africa's Digital Transformation,\" we provide enterprise networking, cybersecurity, systems and cloud infrastructure, datacenter solutions, power technologies, software and AI solutions, broadcast and satellite technologies, education technology, and related ICT infrastructure services. We are seeking a highly analytical, strategic, and results-oriented Senior Corporate Strategy & Growth Specialist to strengthen our corporate planning, organizational performance, and business growth initiatives. The successful candidate will work closely with executive management to develop and implement corporate strategies, establish measurable objectives, deploy OKRs throughout the organization, and identify sustainable growth opportunities across our technology solutions and target industries. Key Responsibilities 1. Corporate Strategy, Mission, Vision & Long-Term Planning Review, refine, and translate the company's mission, vision, core values, and strategic direction into actionable corporate plans. Develop and coordinate five-year, annual, quarterly, and departmental strategic plans. Define clear corporate objectives, strategic priorities, measurable goals, and growth initiatives. Conduct organizational assessments, SWOT analysis, competitive analysis, and strategic performance reviews. Establish strategic planning frameworks and ensure alignment across departments. Support executive management in evaluating business opportunities, strategic investments, and organizational development initiatives. 2. OKR & KPI Development and Implementation Design and implement a company-wide Objectives and Key Results (OKR) framework. Cascade company objectives into C-level, departmental, team, and individual goals. Develop measurable Key Results, Key Performance Indicators (KPIs), and performance scorecards. Facilitate annual and quarterly OKR planning workshops with executive management and department heads. Establish structured weekly, monthly, and quarterly performance review mechanisms. Monitor strategic progress, identify performance gaps, and recommend corrective actions. Support department managers in aligning daily execution with company objectives. Promote a performance-driven culture focused on accountability, measurable outcomes, and continuous improvement. 3. Technology Solutions Strategy & Portfolio Development Develop strategic growth plans for each of the company's technology solutions and services. Analyze market demand, competitive positioning, emerging technologies, and business opportunities. Work with the CTO, engineering teams, and business development teams to identify new technology offerings and market opportunities. Develop solution-specific strategies covering target customers, market positioning, OEM partnerships, revenue opportunities, and competitive differentiation. Evaluate the commercial feasibility and growth potential of emerging technologies. Support the development of recurring revenue models, managed services, and technology-based business opportunities. Technology focus areas include: Software, AI & Digital Solutions Enterprise Networking & Collaboration Systems, Datacenter & Cloud Infrastructure Cybersecurity Datacenter Facilities & ICT Infrastructure Power Technology & Critical Infrastructure Broadcast & Satellite Solutions Education Technology & Audio-Visual Solutions 4. Industry & Market Growth Strategy Develop market penetration and growth strategies for priority industries. Identify customer needs, technology investment trends, and business opportunities within each target sector. Prepare sector-specific strategic plans, market assessments, and growth roadmaps. Coordinate with Marketing & Business Development to strengthen customer acquisition, retention, and market positioning. Identify opportunities for strategic partnerships, cross-selling, and expansion into new markets. Priority sectors include: Banking & Financial Institutions Universities & Educational Institutions Government & Public Sector Telecommunications Manufacturing & Industrial Enterprises Healthcare and other emerging markets 5. Business Growth & Strategic Opportunity Development Identify and evaluate new business opportunities, strategic initiatives, and potential revenue streams. Develop business cases, feasibility studies, investment assessments, and growth proposals. Support strategic customer engagement, OEM partnerships, and market expansion initiatives. Analyze sales pipel",
     "deadline": null,
-    "published": "2026-11-03",
+    "published": "2026-11-11",
     "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/assistant-manager-inclusive-financial-ecosystems-at-msc-microsave-consulting-4486770156",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-corporate-strategy-growth-specialist-at-edge-communication-technologies-p-l-c-ethiopia-4489912655",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.993Z",
+    "scraped_at": "2026-11-11T12:34:49.722Z",
     "raw_fields": {
-      "li_job_id": "4486770156",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+      "li_job_id": "4489912655",
+      "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
     "title": "Medical Representative",
     "organization": "Julphar",
-    "description": "",
+    "description": "Role summary: The Medical Information Officer is responsible for promoting Julphar’s products and services to healthcare providers, KOLs & other key stakeholders in an assigned territory or market. The MIO is working as a trusted advisor for Julphar’s customers and facilitates their buying decisions by providing therapeutic solutions that meet their needs and expectations. The position also requires identifying and evaluating the new customer, maintain the loyal customer and ensure proper implementation of Julphar CRM strategy. Key Responsibilities : • Meets or exceeds sales targets within agreed budgets and timeline • Develops and manages the assigned sales territory , in terms of customers , retailer and other key stakeholders • Implementation of Company’s sale and marketing plan in the assigned territory. • Implements territory coverage plan (No. of sales call & Visit frequency) • Delivers customer-centric activities in coordination with Line Manager • Maintains records system; daily reports, customer profile & marketing feedback reports. • Plans work schedules and weekly and monthly timetables. • Submits daily & monthly report and CRM reports as per country reporting system. • Participate and contribute in all company meetings & present the Territory snapshot • Drives increased revenue and profit to achieve the Company’s ambitious growth. • Ensure self-learning, knowledge updation, building desired skill & competency , proper interpreting of knowledge and presenting / discussing this information with health professionals. Territory Development & Strategy Implementation Qualifications, Key Experiences / Functional Knowledge Requirements: • 4 years bachelor's degree in pharmacy / science is mandatory • Minimum 2-4 years of experience in the pharmaceutical industry • Must possess strong working knowledge of Distributor / Agents operations, Government accounts, tendering processes, contracting and pricing methods (wherever applicable in the country) • Functional knowledge of the clinical aspects of the pharmaceutical industry, moderate understanding of Pharma supply chain, dispensing requirements and drug distribution channels etc",
     "deadline": null,
     "published": "2026-11-10",
     "country": "",
@@ -172,28 +172,10 @@
     "source_url": "https://et.linkedin.com/jobs/view/medical-representative-at-julphar-4488308887",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.993Z",
+    "scraped_at": "2026-11-11T12:34:49.722Z",
     "raw_fields": {
       "li_job_id": "4488308887",
       "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Physiotherapist",
-    "organization": "Pawlos Mekebeb Memorial Primary Hospital",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-04",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/physiotherapist-at-pawlos-mekebeb-memorial-primary-hospital-4487226390",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.994Z",
-    "raw_fields": {
-      "li_job_id": "4487226390",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
@@ -208,7 +190,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/project-director-%E2%80%93-integrated-innovation-highway-iih-at-path-4484057464",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:22.994Z",
+    "scraped_at": "2026-11-11T12:34:49.723Z",
     "raw_fields": {
       "li_job_id": "4484057464",
       "location_raw": "Ethiopia"
@@ -216,380 +198,362 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Senior Laboratory Technician",
-    "organization": "Alemayehu Ketema General Contractor (AKGC)",
+    "title": "Monitoring, Evaluation, Accountability and Learning (MEAL) and Research Manager - Integrated Innovation Highway (IIH) Project Ethiopia",
+    "organization": "PATH",
     "description": "",
     "deadline": null,
     "published": "2026-11-07",
     "country": "",
-    "city": "Bale, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-laboratory-technician-4488497826",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.856Z",
-    "raw_fields": {
-      "li_job_id": "4488497826",
-      "location_raw": "Bale, Oromia Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Senior Land Surveyor/Surveying Engineer - Technical Audit (B.E. Civil / Surveying with 12+ years of Exp.) Ethiopia",
-    "organization": "Consulting Engineers Group UK Ltd",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-06",
-    "country": "",
     "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-land-surveyor-surveying-engineer-technical-audit-b-e-civil-surveying-with-12%2B-years-of-exp-ethiopia-at-consulting-engineers-group-uk-ltd-4488130134",
+    "source_url": "https://et.linkedin.com/jobs/view/monitoring-evaluation-accountability-and-learning-meal-and-research-manager-integrated-innovation-highway-iih-project-ethiopia-at-path-4484061229",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.857Z",
+    "scraped_at": "2026-11-11T12:34:49.723Z",
     "raw_fields": {
-      "li_job_id": "4488130134",
+      "li_job_id": "4484061229",
       "location_raw": "Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Hydrologist/Hydraulic Engineer - Technical Audit (B.E. Civil Eng. with 12+ years of Exp.) Ethiopia",
-    "organization": "Consulting Engineers Group UK Ltd",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-06",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/hydrologist-hydraulic-engineer-technical-audit-b-e-civil-eng-with-12%2B-years-of-exp-ethiopia-at-consulting-engineers-group-uk-ltd-4488123371",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.857Z",
-    "raw_fields": {
-      "li_job_id": "4488123371",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Chief of Party II, Ethiopia",
-    "organization": "ReliefWeb",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-03",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/chief-of-party-ii-ethiopia-at-reliefweb-4487014402",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.857Z",
-    "raw_fields": {
-      "li_job_id": "4487014402",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Digital Marketing",
-    "organization": "HibLink Tech",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-10",
-    "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/digital-marketing-at-hiblink-tech-4489430924",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.858Z",
-    "raw_fields": {
-      "li_job_id": "4489430924",
-      "location_raw": "Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Dean College of Agriculture &Environmental Science in Debark University",
-    "organization": "Debark University/ደባርቅ ዩኒቨርሲቲ(Official)",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-08",
-    "country": "",
-    "city": "Debark, Amhara Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/dean-college-of-agriculture-environmental-science-in-debark-university-at-debark-university-%E1%8B%B0%E1%89%A3%E1%88%AD%E1%89%85-%E1%8B%A9%E1%8A%92%E1%89%A8%E1%88%AD%E1%88%B2%E1%89%B2-official-4488817041",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.858Z",
-    "raw_fields": {
-      "li_job_id": "4488817041",
-      "location_raw": "Debark, Amhara Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "National Consultant -to support UN Women Ethiopia Country Office end line evaluation of the Project “Addressing the Effects of Conflict Related Sexual Violence in Ethiopia”",
-    "organization": "UN Women",
+    "title": "Business Development Coordinator",
+    "organization": "International Rescue Committee",
     "description": "",
     "deadline": null,
     "published": "2026-11-09",
     "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/national-consultant-to-support-un-women-ethiopia-country-office-end-line-evaluation-of-the-project-%E2%80%9Caddressing-the-effects-of-conflict-related-sexual-violence-in-ethiopia%E2%80%9D-at-un-women-4488835899",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/business-development-coordinator-at-international-rescue-committee-4488876976",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.858Z",
+    "scraped_at": "2026-11-11T12:34:49.723Z",
     "raw_fields": {
-      "li_job_id": "4488835899",
-      "location_raw": "Ethiopia"
+      "li_job_id": "4488876976",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Senior Principal Consultant & Practice Lead -Agriculture, Livestock & Food Systems",
-    "organization": "SkyQuest Technology Consulting Pvt. Ltd.",
+    "title": "Secretary – Local Agent in the Administrative Section - Vacancy notice number 295343",
+    "organization": "EUBAM Libya",
     "description": "",
     "deadline": null,
-    "published": "2026-11-10",
+    "published": "2026-11-05",
     "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/senior-principal-consultant-practice-lead-agriculture-livestock-food-systems-at-skyquest-technology-consulting-pvt-ltd-4489431685",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/secretary-%E2%80%93-local-agent-in-the-administrative-section-vacancy-notice-number-295343-at-eubam-libya-4487594069",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:24.859Z",
+    "scraped_at": "2026-11-11T12:34:51.460Z",
     "raw_fields": {
-      "li_job_id": "4489431685",
+      "li_job_id": "4487594069",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "TRAINING CONTROLLER",
+    "organization": "AB InBev Africa",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Bedele Brewery, Oromia Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/training-controller-at-ab-inbev-africa-4488692072",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.460Z",
+    "raw_fields": {
+      "li_job_id": "4488692072",
+      "location_raw": "Bedele Brewery, Oromia Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "PACKAGING PROCESS OPERATOR",
+    "organization": "AB InBev Africa",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-05",
+    "country": "",
+    "city": "Bedele Brewery, Oromia Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/packaging-process-operator-at-ab-inbev-africa-4486584912",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.460Z",
+    "raw_fields": {
+      "li_job_id": "4486584912",
+      "location_raw": "Bedele Brewery, Oromia Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Subregional Coordinator for Eastern Africa",
+    "organization": "FAO",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-05",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/subregional-coordinator-for-eastern-africa-at-fao-4477058811",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.461Z",
+    "raw_fields": {
+      "li_job_id": "4477058811",
       "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Protection from Violence Coordinator - Maitsebri, Berhale and Asayita",
-    "organization": "Norwegian Refugee Council",
+    "title": "Senior Program Lead",
+    "organization": "Save the Children International",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-06",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-program-lead-at-save-the-children-international-4488137838",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.461Z",
+    "raw_fields": {
+      "li_job_id": "4488137838",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Health Educator",
+    "organization": "No",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Gambela Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/health-educator-4487488421",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.461Z",
+    "raw_fields": {
+      "li_job_id": "4487488421",
+      "location_raw": "Gambela Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "WaterAid UK Talent Acquisition Advisor",
+    "organization": "WaterAid",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/wateraid-uk-talent-acquisition-advisor-at-wateraid-4488372549",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.461Z",
+    "raw_fields": {
+      "li_job_id": "4488372549",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Energy Expert - African Single Electricity Market (AfSEM) Coordinator (I&E)",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-06",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-energy-expert-african-single-electricity-market-afsem-coordinator-i-e-at-african-union-4486279696",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:51.461Z",
+    "raw_fields": {
+      "li_job_id": "4486279696",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Key expert 3: Senior financial management expert (Replacement)",
+    "organization": "DAI",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/key-expert-3-senior-financial-management-expert-replacement-at-dai-4489440255",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:53.208Z",
+    "raw_fields": {
+      "li_job_id": "4489440255",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Lecturer",
+    "organization": "Gondar collage of teachers education",
     "description": "",
     "deadline": null,
     "published": "2026-11-05",
     "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/protection-from-violence-coordinator-maitsebri-berhale-and-asayita-at-norwegian-refugee-council-4487237955",
+    "city": "North Gonder, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/lecturer-4487724096",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.651Z",
+    "scraped_at": "2026-11-11T12:34:53.208Z",
     "raw_fields": {
-      "li_job_id": "4487237955",
-      "location_raw": "Ethiopia"
+      "li_job_id": "4487724096",
+      "location_raw": "North Gonder, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "health informatics",
+    "organization": "addis abeba ጤና ቢሮ",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/health-informatics-4489917733",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
+    "raw_fields": {
+      "li_job_id": "4489917733",
+      "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
     "title": "Assistant",
-    "organization": "Legal Aid Center",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-09",
-    "country": "",
-    "city": "Asela, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/assistant-at-legal-aid-center-4488890501",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.652Z",
-    "raw_fields": {
-      "li_job_id": "4488890501",
-      "location_raw": "Asela, Oromia Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Education Project Manager Ethiopia North Afar",
-    "organization": "PollsAfrica",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-07",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/education-project-manager-ethiopia-north-afar-at-pollsafrica-4487394814",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.652Z",
-    "raw_fields": {
-      "li_job_id": "4487394814",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Education Project Manager Ethiopia North Afar",
-    "organization": "ReliefWeb",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-06",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/education-project-manager-ethiopia-north-afar-at-reliefweb-4488401384",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.652Z",
-    "raw_fields": {
-      "li_job_id": "4488401384",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Compliance and Systems Director for Ethiopia",
-    "organization": "People in Need",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-09",
-    "country": "",
-    "city": "Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/compliance-and-systems-director-for-ethiopia-at-people-in-need-4487145460",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.654Z",
-    "raw_fields": {
-      "li_job_id": "4487145460",
-      "location_raw": "Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "ServiceNow Developer",
-    "organization": "Mirroar",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-03",
-    "country": "",
-    "city": "Debre Work, Amhara Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/servicenow-developer-at-mirroar-4487088040",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.654Z",
-    "raw_fields": {
-      "li_job_id": "4487088040",
-      "location_raw": "Debre Work, Amhara Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "MSc clinical midwife",
-    "organization": "UoG University of Gondar",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-05",
-    "country": "",
-    "city": "Gonder, Amhara Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/msc-clinical-midwife-4487765578",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.654Z",
-    "raw_fields": {
-      "li_job_id": "4487765578",
-      "location_raw": "Gonder, Amhara Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Community Mobilizer",
-    "organization": "Compassion International",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-04",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/community-mobilizer-at-compassion-international-4478143917",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:26.655Z",
-    "raw_fields": {
-      "li_job_id": "4478143917",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "1-2026 Extraordinary Call for Contributions for the EU Security and Defence Initiative Gulf of Guinea (EUSDI GoG)",
-    "organization": "EUBAM Libya",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-06",
-    "country": "",
-    "city": "Gog, Gambela Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/1-2026-extraordinary-call-for-contributions-for-the-eu-security-and-defence-initiative-gulf-of-guinea-eusdi-gog-at-eubam-libya-4488095184",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
-    "raw_fields": {
-      "li_job_id": "4488095184",
-      "location_raw": "Gog, Gambela Region, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
-    "title": "Intern",
-    "organization": "Amref Health Africa in Ethiopia",
+    "organization": "Werda tselemti agricultural office",
     "description": "",
     "deadline": null,
     "published": "2026-11-10",
     "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/intern-at-amref-health-africa-in-ethiopia-4487462298",
+    "city": "May Tsebri, Tigray, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assistant-4489164210",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
     "raw_fields": {
-      "li_job_id": "4487462298",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+      "li_job_id": "4489164210",
+      "location_raw": "May Tsebri, Tigray, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Agronomist(MSc)",
-    "organization": "Student at Jimma Univeristy(PhD Canditate)",
+    "title": "Livestock expert",
+    "organization": "Government",
     "description": "",
     "deadline": null,
     "published": "2026-11-09",
     "country": "",
-    "city": "Jimma, Oromia Region, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/agronomist-msc-4488859258",
+    "city": "Southern Nations, Nationalities, and Peoples, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/livestock-expert-4488868488",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
     "raw_fields": {
-      "li_job_id": "4488859258",
-      "location_raw": "Jimma, Oromia Region, Ethiopia"
+      "li_job_id": "4488868488",
+      "location_raw": "Southern Nations, Nationalities, and Peoples, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "MBA Student",
-    "organization": "KEDABR",
+    "title": "Coffee Maker",
+    "organization": "Self-Employed (sole trader)",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/coffee-maker-at-self-employed-sole-trader-4489129725",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
+    "raw_fields": {
+      "li_job_id": "4489129725",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Aftersales Manager",
+    "organization": "GoodWe",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/aftersales-manager-at-goodwe-4488666671",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
+    "raw_fields": {
+      "li_job_id": "4488666671",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Expression of interest: Humanitarian Health and Climate Collaborative – Ethiopia Anchor Institution",
+    "organization": "ReliefWeb",
     "description": "",
     "deadline": null,
     "published": "2026-11-04",
     "country": "",
-    "city": "Harar, Harar, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/mba-student-at-kedabr-4487287035",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/expression-of-interest-humanitarian-health-and-climate-collaborative-%E2%80%93-ethiopia-anchor-institution-at-reliefweb-4487511463",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
+    "scraped_at": "2026-11-11T12:34:53.209Z",
     "raw_fields": {
-      "li_job_id": "4487287035",
-      "location_raw": "Harar, Harar, Ethiopia"
+      "li_job_id": "4487511463",
+      "location_raw": "Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Intern Medical content creator and Video Host",
-    "organization": "Selam Cardiac Care Center",
+    "title": "Assistant Accountant - Accounting",
+    "organization": "African Union",
     "description": "",
     "deadline": null,
     "published": "2026-11-09",
     "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/intern-medical-content-creator-and-video-host-at-selam-cardiac-care-center-4489105580",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assistant-accountant-accounting-at-african-union-4487157992",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
+    "scraped_at": "2026-11-11T12:34:53.210Z",
     "raw_fields": {
-      "li_job_id": "4489105580",
-      "location_raw": "Addis Ababa, Ethiopia"
+      "li_job_id": "4487157992",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "MNCH+N Lead",
+    "organization": "World Vision",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-08",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/mnch%2Bn-lead-at-world-vision-4488145471",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:53.210Z",
+    "raw_fields": {
+      "li_job_id": "4488145471",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
@@ -604,7 +568,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/content-creator-blog-writer-intern-at-skillbridge-institute-of-technology-sbit-4489409311",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.441Z",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
     "raw_fields": {
       "li_job_id": "4489409311",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -622,10 +586,118 @@
     "source_url": "https://et.linkedin.com/jobs/view/beauty-consultant-m-w-d-80-100%25-globus-basel-at-parfums-christian-dior-4480516066",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.442Z",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
     "raw_fields": {
       "li_job_id": "4480516066",
       "location_raw": "Bale, Southern Nations, Nationalities, and Peoples, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Site Reliability Engineer",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-site-reliability-engineer-at-canonical-4487877046",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4487877046",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Business Development Representative",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/business-development-representative-at-canonical-4489198041",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4489198041",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Product Marketing Manager",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-product-marketing-manager-at-canonical-4489629873",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4489629873",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Technical Author (multiple roles and seniority levels)",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/technical-author-multiple-roles-and-seniority-levels-at-canonical-4487873084",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4487873084",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Jira Administrator",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-jira-administrator-at-canonical-4489652027",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4489652027",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Security Operations Engineer",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-11",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-security-operations-engineer-at-canonical-4487875088",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
+    "raw_fields": {
+      "li_job_id": "4487875088",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
@@ -640,9 +712,117 @@
     "source_url": "https://et.linkedin.com/jobs/view/manager-of-enterprise-open-source-sales-team-at-canonical-4489175789",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-10T13:23:28.442Z",
+    "scraped_at": "2026-11-11T12:34:54.959Z",
     "raw_fields": {
       "li_job_id": "4489175789",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Director, Talent Analytics",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-09",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/director-talent-analytics-at-canonical-4488849801",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.708Z",
+    "raw_fields": {
+      "li_job_id": "4488849801",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Alliances & Channels Leader",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/alliances-channels-leader-at-canonical-4487451349",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.708Z",
+    "raw_fields": {
+      "li_job_id": "4487451349",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Regional BDR Team Manager",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/regional-bdr-team-manager-at-canonical-4489193165",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.709Z",
+    "raw_fields": {
+      "li_job_id": "4489193165",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Graduate Talent Scientist",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-09",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/graduate-talent-scientist-at-canonical-4488853694",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.709Z",
+    "raw_fields": {
+      "li_job_id": "4488853694",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Senior Sales Operations Analyst",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-10",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/senior-sales-operations-analyst-at-canonical-4489636347",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.709Z",
+    "raw_fields": {
+      "li_job_id": "4489636347",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Representante de Desarrollo de Ventas",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-09",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/representante-de-desarrollo-de-ventas-at-canonical-4489118533",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-11T12:34:56.709Z",
+    "raw_fields": {
+      "li_job_id": "4489118533",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
