@@ -10,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8081",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.974Z",
+    "scraped_at": "2026-11-12T13:40:09.410Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -24,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8070",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.974Z",
+    "scraped_at": "2026-11-12T13:40:09.410Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8072",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.974Z",
+    "scraped_at": "2026-11-12T13:40:09.410Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8056",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.974Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,21 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8045",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.974Z",
-    "_sourceId": "care-taleo"
-  },
-  {
-    "title": "DIRECTOR, PROJECT MANAGEMNT OFFICE AND INTERVENTIONS",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "STRATEGY",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8077",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.975Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8092",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.978Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,7 +94,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.978Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "EXECUTIVE DIRECTOR, NEW VENTURES AND INNOVATIVE FINANCE",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "CORPORATE PARTNERSHIPS 2",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8091",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,7 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.978Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8088",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-11T12:35:29.978Z",
+    "scraped_at": "2026-11-12T13:40:09.411Z",
     "_sourceId": "care-taleo"
   }
 ]
