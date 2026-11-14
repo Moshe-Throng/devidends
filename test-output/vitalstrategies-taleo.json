@@ -1,19 +1,5 @@
 [
   {
-    "title": "Chief Financial Officer (CFO) Russell Reynolds is leading this search for Vital Strategies",
-    "organization": "Vital Strategies",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "United States, New York, NY",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=921",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.061Z",
-    "_sourceId": "vitalstrategies-taleo"
-  },
-  {
     "title": "Director, Global HR Compliance & Operations (Kenya Posting)",
     "organization": "Vital Strategies",
     "description": "",
@@ -24,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=919",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.042Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -38,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=920",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -52,7 +38,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=918",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
+    "_sourceId": "vitalstrategies-taleo"
+  },
+  {
+    "title": "Director, Global Program, Vision Access",
+    "organization": "Vital Strategies",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "United States, New York, NY",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=958",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -66,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=936",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -80,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=952",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -94,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=942",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -108,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=938",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -122,7 +122,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=944",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.043Z",
     "_sourceId": "vitalstrategies-taleo"
   },
   {
@@ -136,7 +136,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg01/ats/careers/v2/viewRequisition?org=VITASTRA&cws=37&rid=950",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-13T12:58:33.062Z",
+    "scraped_at": "2026-11-14T12:01:21.044Z",
     "_sourceId": "vitalstrategies-taleo"
   }
 ]
