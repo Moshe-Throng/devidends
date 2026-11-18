@@ -1,9 +1,51 @@
 {
   "metadata": {
-    "scraped_at": "2026-11-17T14:18:07.914Z",
-    "count": 40
+    "scraped_at": "2026-11-18T13:49:54.170Z",
+    "count": 41
   },
   "opportunities": [
+    {
+      "title": "Procurement of Consultancy Service for Feasibility Study & Detail Designs for 4 gravel access roads in Dassenech, Benatsemay, Kolango-Zuria, and Salamago Woredas; and 3 bridges in Kolango-Zuriya, Maale, and Salamago woredas.",
+      "organization": "World Bank",
+      "description": "Procurement of Consultancy Service for Feasibility Study & Detail Designs for 4 gravel access roads in Dassenech, Benatsemay, Kolango-Zuria, and Salamago Woredas; and 3 bridges in Kolango-Zuriya, Maale, and Salamago woredas.\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SE-RPCU-571226-CS-QCBS\n\nContact: Jinka, Ethiopia",
+      "deadline": "2026-12-02",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482250",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-SE-RPCU-571226-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of Consultancy Service for Feasibility Study & Detail Designs for Weito Pumped Small Scale Irrigation from surface water source in Kolango-Zuriya Woreda [100 Ha]",
+      "organization": "World Bank",
+      "description": "Procurement of Consultancy Service for Feasibility Study & Detail Designs for Weito Pumped Small Scale Irrigation from surface water source in Kolango-Zuriya Woreda [100 Ha]\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-SE-RPCU-571071-CS-QCBS\n\nContact: Jinka, Ethiopia",
+      "deadline": "2026-12-02",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482248",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-SE-RPCU-571071-CS-QCBS",
+        "sector": ""
+      }
+    },
     {
       "title": "Consultancy Service for Construction Supervision for Construction of Goma water supply & sanitation subproject from borehole Water",
       "organization": "World Bank",
@@ -15,7 +57,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481449",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -36,7 +78,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481445",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -57,7 +99,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481417",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -78,34 +120,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481408",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-SOM- RPCU-570299-CS-QCBS",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of consultancy service construction supervision and contract administration of awadi geberoch diversion irrigation schemes in argoba woreda",
-      "organization": "World Bank",
-      "description": "Procurement of consultancy service construction supervision and contract administration of awadi geberoch diversion irrigation schemes in argoba woreda\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-AFR-RPCU-569666-CS-QCBS\n\nContact: Semera,\nEthiopia",
-      "deadline": "2026-11-30",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481016",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "QCBS",
-        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
-        "project_id": "P180076",
-        "bid_reference": "ET-AFR-RPCU-569666-CS-QCBS",
         "sector": ""
       }
     },
@@ -120,13 +141,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481406",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
         "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
         "project_id": "P180076",
         "bid_reference": "ET-SOM- RPCU-570309-CS-QCBS",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Procurement of consultancy service construction supervision and contract administration of awadi geberoch diversion irrigation schemes in argoba woreda",
+      "organization": "World Bank",
+      "description": "Procurement of consultancy service construction supervision and contract administration of awadi geberoch diversion irrigation schemes in argoba woreda\n\nProject: Lowlands Livelihood Resilience Project, Phase Two (LLRP II)\n\nMethod: Quality And Cost-Based Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-AFR-RPCU-569666-CS-QCBS\n\nContact: Semera,\nEthiopia",
+      "deadline": "2026-11-30",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481016",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "QCBS",
+        "project_name": "Lowlands Livelihood Resilience Project, Phase Two (LLRP II)",
+        "project_id": "P180076",
+        "bid_reference": "ET-AFR-RPCU-569666-CS-QCBS",
         "sector": ""
       }
     },
@@ -141,7 +183,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480265",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -162,34 +204,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480263",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Urban Productive Safety Net and Jobs Project",
         "project_id": "P169943",
         "bid_reference": "ET-OROMIA-OJCVB-573656-CS-INDV",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Recruitment of 1 Youth Employment Apprenticeship Specialist for Ambo city",
-      "organization": "World Bank",
-      "description": "Recruitment of 1 Youth Employment Apprenticeship Specialist for Ambo city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-OROMIA-OJCVB/AMBO-573676-CS-INDV\n\nContact: Addis Ababa",
-      "deadline": "2026-11-23",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480274",
-      "source_domain": "worldbank.org",
-      "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
-      "raw_fields": {
-        "notice_type": "Request for Expression of Interest",
-        "procurement_method": "IC",
-        "project_name": "Urban Productive Safety Net and Jobs Project",
-        "project_id": "P169943",
-        "bid_reference": "ET-OROMIA-OJCVB/AMBO-573676-CS-INDV",
         "sector": ""
       }
     },
@@ -204,7 +225,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480267",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -225,13 +246,34 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480294",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
         "project_name": "Urban Productive Safety Net and Jobs Project",
         "project_id": "P169943",
         "bid_reference": "ET-OROMIA-OJCVB/NEKEMTE-573668-CS-INDV",
+        "sector": ""
+      }
+    },
+    {
+      "title": "Recruitment of 1 Youth Employment Apprenticeship Specialist for Ambo city",
+      "organization": "World Bank",
+      "description": "Recruitment of 1 Youth Employment Apprenticeship Specialist for Ambo city\n\nProject: Urban Productive Safety Net and Jobs Project\n\nMethod: Individual Consultant Selection\n\nNotice Type: Request for Expression of Interest\n\nReference: ET-OROMIA-OJCVB/AMBO-573676-CS-INDV\n\nContact: Addis Ababa",
+      "deadline": "2026-11-23",
+      "published": null,
+      "country": "Ethiopia",
+      "city": null,
+      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480274",
+      "source_domain": "worldbank.org",
+      "content_type": "tender",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
+      "raw_fields": {
+        "notice_type": "Request for Expression of Interest",
+        "procurement_method": "IC",
+        "project_name": "Urban Productive Safety Net and Jobs Project",
+        "project_id": "P169943",
+        "bid_reference": "ET-OROMIA-OJCVB/AMBO-573676-CS-INDV",
         "sector": ""
       }
     },
@@ -246,7 +288,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480296",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -267,7 +309,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480291",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -288,7 +330,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480289",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -309,7 +351,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480081",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -330,7 +372,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480018",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -351,7 +393,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480016",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -372,7 +414,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480022",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -393,7 +435,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480020",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -414,7 +456,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479073",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "QCBS",
@@ -435,7 +477,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00478087",
       "source_domain": "worldbank.org",
       "content_type": "tender",
-      "scraped_at": "2026-11-17T14:14:54.024Z",
+      "scraped_at": "2026-11-18T13:46:28.568Z",
       "raw_fields": {
         "notice_type": "Request for Expression of Interest",
         "procurement_method": "IC",
@@ -456,7 +498,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481880",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -477,7 +519,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480895",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -498,7 +540,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480769",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -519,7 +561,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479979",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -540,7 +582,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479980",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -561,7 +603,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479520",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -582,7 +624,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479365",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -603,7 +645,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00478948",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -624,7 +666,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479079",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -645,7 +687,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479141",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -666,7 +708,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00478735",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -687,7 +729,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00478723",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -708,7 +750,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00477002",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -729,7 +771,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476746",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -750,7 +792,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476701",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -771,34 +813,13 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475484",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
         "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
         "project_id": "P174385",
         "bid_reference": "ET-MOA-576474-GO-RFB",
-        "sector": ""
-      }
-    },
-    {
-      "title": "Procurement of Forage and poultry processing equipment for cooperatives Lot 1. Forage processing equipment for 20 centres/cooperatives Lot 2. Poultry farming production equipment and materials for youth job creation for 94 centres",
-      "organization": "World Bank",
-      "description": "Procurement of Forage and poultry processing equipment for cooperatives Lot 1. Forage processing equipment for 20 centres/cooperatives Lot 2. Poultry farming production equipment and materials for youth job creation for 94 centres\n\nProject: Second Ethiopia Resilient Landscapes and Livelihoods Project\n\nMethod: Request for Bids\n\nNotice Type: Invitation for Bids\n\nReference: ET-MOA-575040-GO-RFB\n\nContact: P.O.Box 62347Addis Ababa Ethiopia",
-      "deadline": "2026-11-17",
-      "published": null,
-      "country": "Ethiopia",
-      "city": null,
-      "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00474866",
-      "source_domain": "worldbank.org",
-      "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
-      "raw_fields": {
-        "notice_type": "Invitation for Bids",
-        "procurement_method": "Request for Bids",
-        "project_name": "Second Ethiopia Resilient Landscapes and Livelihoods Project",
-        "project_id": "P174385",
-        "bid_reference": "ET-MOA-575040-GO-RFB",
         "sector": ""
       }
     },
@@ -813,7 +834,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00473734",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",
@@ -834,7 +855,7 @@
       "source_url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00472842",
       "source_domain": "worldbank.org",
       "content_type": "consulting",
-      "scraped_at": "2026-11-17T14:14:54.455Z",
+      "scraped_at": "2026-11-18T13:46:28.856Z",
       "raw_fields": {
         "notice_type": "Invitation for Bids",
         "procurement_method": "Request for Bids",

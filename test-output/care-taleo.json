@@ -1,19 +1,5 @@
 [
   {
-    "title": "AI SECURITY ENGINEER",
-    "organization": "CARE",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "CYBERSECURITY",
-    "city": null,
-    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8081",
-    "source_domain": "phg.tbe.taleo.net",
-    "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
-    "_sourceId": "care-taleo"
-  },
-  {
     "title": "CHANGE MANAGER, FLEET SYSTEMS PROJECT",
     "organization": "CARE",
     "description": "",
@@ -24,7 +10,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8070",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.490Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -38,7 +24,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8072",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.490Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -52,7 +38,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8045",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.490Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -66,7 +52,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8092",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -80,7 +66,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8028",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -94,7 +80,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8091",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -108,7 +94,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=4712",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -122,7 +108,7 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8088",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   },
   {
@@ -136,7 +122,21 @@
     "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8079",
     "source_domain": "phg.tbe.taleo.net",
     "content_type": "job",
-    "scraped_at": "2026-11-17T14:15:50.789Z",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
+    "_sourceId": "care-taleo"
+  },
+  {
+    "title": "PROJECT MANAGER, FLEET SYSTEMS PROJECT",
+    "organization": "CARE",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "FINANCE AND ADMINISTRATION",
+    "city": null,
+    "source_url": "https://phg.tbe.taleo.net/phg02/ats/careers/v2/viewRequisition?org=CAREUSA&cws=52&rid=8071",
+    "source_domain": "phg.tbe.taleo.net",
+    "content_type": "job",
+    "scraped_at": "2026-11-18T13:47:11.491Z",
     "_sourceId": "care-taleo"
   }
 ]
