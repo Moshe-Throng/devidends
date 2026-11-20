@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "title": "General Counsel (remote)",
+    "organization": "Canonical",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-14",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/general-counsel-remote-at-canonical-4491067892",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.320Z",
+    "raw_fields": {
+      "li_job_id": "4491067892",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Monitoring And Evaluation Project Manager",
+    "organization": "VSO",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-19",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/monitoring-and-evaluation-project-manager-at-vso-4491624094",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.321Z",
+    "raw_fields": {
+      "li_job_id": "4491624094",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Tender and Vehicle sales at Belayab motors and senior Cost estimator at Tamirn International Trading and also Cost estimator and workshop Advisor at Kaki Motors",
+    "organization": "Kaki Plc",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-19",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/tender-and-vehicle-sales-at-belayab-motors-and-senior-cost-estimator-at-tamirn-international-trading-and-also-cost-estimator-and-workshop-advisor-at-kaki-motors-4492438609",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.323Z",
+    "raw_fields": {
+      "li_job_id": "4492438609",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Accountant",
+    "organization": "SIDIHAMO GENERAL TRADING",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/accountant-4491664550",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.323Z",
+    "raw_fields": {
+      "li_job_id": "4491664550",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Plumbing Engineer",
+    "organization": "XYZ CONSTRUCTION COMPANY INCORPORATED",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/plumbing-engineer-at-xyz-construction-company-incorporated-4492497848",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.324Z",
+    "raw_fields": {
+      "li_job_id": "4492497848",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Business Development and Partnership Director",
+    "organization": "Metro",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/business-development-and-partnership-director-at-metro-4492921373",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-20T13:56:14.324Z",
+    "raw_fields": {
+      "li_job_id": "4492921373",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  }
+]
