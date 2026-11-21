@@ -1,23 +1,5 @@
 [
   {
-    "title": "General Counsel (remote)",
-    "organization": "Canonical",
-    "description": "",
-    "deadline": null,
-    "published": "2026-11-14",
-    "country": "",
-    "city": "Addis Ababa, Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/general-counsel-remote-at-canonical-4491067892",
-    "source_domain": "linkedin.com",
-    "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.320Z",
-    "raw_fields": {
-      "li_job_id": "4491067892",
-      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
-    },
-    "_sourceId": "linkedin-ethiopia"
-  },
-  {
     "title": "Monitoring And Evaluation Project Manager",
     "organization": "VSO",
     "description": "",
@@ -28,10 +10,28 @@
     "source_url": "https://et.linkedin.com/jobs/view/monitoring-and-evaluation-project-manager-at-vso-4491624094",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.321Z",
+    "scraped_at": "2026-11-21T13:20:38.030Z",
     "raw_fields": {
       "li_job_id": "4491624094",
       "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Tender Officer",
+    "organization": "Farka Technology",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-21",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/tender-officer-at-farka-technology-4493282028",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:38.032Z",
+    "raw_fields": {
+      "li_job_id": "4493282028",
+      "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
@@ -46,7 +46,7 @@
     "source_url": "https://et.linkedin.com/jobs/view/tender-and-vehicle-sales-at-belayab-motors-and-senior-cost-estimator-at-tamirn-international-trading-and-also-cost-estimator-and-workshop-advisor-at-kaki-motors-4492438609",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.323Z",
+    "scraped_at": "2026-11-21T13:20:38.032Z",
     "raw_fields": {
       "li_job_id": "4492438609",
       "location_raw": "Addis Ababa, Ethiopia"
@@ -54,56 +54,488 @@
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Accountant",
-    "organization": "SIDIHAMO GENERAL TRADING",
+    "title": "Assistant Professor in Mathematics",
+    "organization": "Debre Markos university",
     "description": "",
     "deadline": null,
     "published": "2026-11-20",
     "country": "",
-    "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/accountant-4491664550",
+    "city": "Debre Markos, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assistant-professor-in-mathematics-4492579286",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.323Z",
+    "scraped_at": "2026-11-21T13:20:38.033Z",
     "raw_fields": {
-      "li_job_id": "4491664550",
+      "li_job_id": "4492579286",
+      "location_raw": "Debre Markos, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Country Director",
+    "organization": "Innovations for Poverty Action",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/country-director-at-innovations-for-poverty-action-4492848462",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:38.034Z",
+    "raw_fields": {
+      "li_job_id": "4492848462",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Administrative Support",
+    "organization": "Deloitte",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-17",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/administrative-support-at-deloitte-4491596610",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:39.835Z",
+    "raw_fields": {
+      "li_job_id": "4491596610",
       "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Plumbing Engineer",
-    "organization": "XYZ CONSTRUCTION COMPANY INCORPORATED",
+    "title": "Consultant",
+    "organization": "Rise Impact Advisors",
     "description": "",
     "deadline": null,
     "published": "2026-11-20",
     "country": "",
     "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/plumbing-engineer-at-xyz-construction-company-incorporated-4492497848",
+    "source_url": "https://et.linkedin.com/jobs/view/consultant-at-rise-impact-advisors-4491903553",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.324Z",
+    "scraped_at": "2026-11-21T13:20:39.835Z",
     "raw_fields": {
-      "li_job_id": "4492497848",
+      "li_job_id": "4491903553",
       "location_raw": "Addis Ababa, Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   },
   {
-    "title": "Business Development and Partnership Director",
-    "organization": "Metro",
+    "title": "HOME TUTOR (IGCSE PHYSICS)",
+    "organization": "Gravity Technology",
     "description": "",
     "deadline": null,
     "published": "2026-11-20",
     "country": "",
     "city": "Addis Ababa, Ethiopia",
-    "source_url": "https://et.linkedin.com/jobs/view/business-development-and-partnership-director-at-metro-4492921373",
+    "source_url": "https://et.linkedin.com/jobs/view/home-tutor-igcse-physics-at-gravity-technology-4492917068",
     "source_domain": "linkedin.com",
     "content_type": "job",
-    "scraped_at": "2026-11-20T13:56:14.324Z",
+    "scraped_at": "2026-11-21T13:20:39.836Z",
     "raw_fields": {
-      "li_job_id": "4492921373",
+      "li_job_id": "4492917068",
       "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Junior Planner & Cost Control",
+    "organization": "ATB Riva Calzoni spa Ethiopian branch",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-21",
+    "country": "",
+    "city": "Bonga, South West Ethiopia Peoples, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/junior-planner-cost-control-4493289005",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:39.836Z",
+    "raw_fields": {
+      "li_job_id": "4493289005",
+      "location_raw": "Bonga, South West Ethiopia Peoples, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Financial Grants Manager, ImpactHDSS, Ethiopia",
+    "organization": "Vital Strategies",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-18",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/financial-grants-manager-impacthdss-ethiopia-at-vital-strategies-4484088780",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:39.836Z",
+    "raw_fields": {
+      "li_job_id": "4484088780",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Architect",
+    "organization": "Arbaminch university",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-15",
+    "country": "",
+    "city": "Arba Minch, Southern Nations, Nationalities, and Peoples, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/architect-4491216804",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:39.836Z",
+    "raw_fields": {
+      "li_job_id": "4491216804",
+      "location_raw": "Arba Minch, Southern Nations, Nationalities, and Peoples, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Associate Director - Social and Economic Empowerment",
+    "organization": "IPE Global Limited",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-16",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/associate-director-social-and-economic-empowerment-at-ipe-global-limited-4489727974",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:39.837Z",
+    "raw_fields": {
+      "li_job_id": "4489727974",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Sales Advocate",
+    "organization": "Abet Global Sanitary & Related Material Trading",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/sales-advocate-4492797833",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.544Z",
+    "raw_fields": {
+      "li_job_id": "4492797833",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Engineering Manager, MRV Product",
+    "organization": "World Resources Institute Europe",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-19",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/engineering-manager-mrv-product-at-world-resources-institute-europe-4491668160",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.544Z",
+    "raw_fields": {
+      "li_job_id": "4491668160",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Protection from Violence Programme Development Manager Ethiopia Addis Ababa",
+    "organization": "Norwegian Refugee Council",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-18",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/protection-from-violence-programme-development-manager-ethiopia-addis-ababa-at-norwegian-refugee-council-4489753054",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.544Z",
+    "raw_fields": {
+      "li_job_id": "4489753054",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "MEL Expert (Ethiopia)",
+    "organization": "Allied Talent Partners",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/mel-expert-ethiopia-at-allied-talent-partners-4487474354",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.545Z",
+    "raw_fields": {
+      "li_job_id": "4487474354",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "University Lecturer",
+    "organization": "Wallaga University",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Naqamte, Oromia Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/university-lecturer-4492799674",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.545Z",
+    "raw_fields": {
+      "li_job_id": "4492799674",
+      "location_raw": "Naqamte, Oromia Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Assisstant lecturer",
+    "organization": "Wollo university institute of technology",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "South Wollo, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assisstant-lecturer-4492794425",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.545Z",
+    "raw_fields": {
+      "li_job_id": "4492794425",
+      "location_raw": "South Wollo, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "IT Associate",
+    "organization": "Lersha",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-21",
+    "country": "",
+    "city": "Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/it-associate-at-lersha-4493264805",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.545Z",
+    "raw_fields": {
+      "li_job_id": "4493264805",
+      "location_raw": "Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Dialysis Nurse",
+    "organization": "Werabe comprehensive speshalized hispital",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-14",
+    "country": "",
+    "city": "Worabe, Southern Nations, Nationalities, and Peoples, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/dialysis-nurse-4491088504",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.546Z",
+    "raw_fields": {
+      "li_job_id": "4491088504",
+      "location_raw": "Worabe, Southern Nations, Nationalities, and Peoples, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Women Protection and Empowerment Officer-1",
+    "organization": "International Rescue Committee",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-18",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/women-protection-and-empowerment-officer-1-at-international-rescue-committee-4492044722",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.546Z",
+    "raw_fields": {
+      "li_job_id": "4492044722",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Business Development and Strategic Partnerships Coordinator",
+    "organization": "WHH Uganda - Welthungerhilfe",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-21",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/business-development-and-strategic-partnerships-coordinator-at-whh-uganda-welthungerhilfe-4493248261",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:41.546Z",
+    "raw_fields": {
+      "li_job_id": "4493248261",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Mental Health and Psycho Social Support Officer",
+    "organization": "World Vision",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Zone 3, Afar Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/mental-health-and-psycho-social-support-officer-at-world-vision-4492422614",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.277Z",
+    "raw_fields": {
+      "li_job_id": "4492422614",
+      "location_raw": "Zone 3, Afar Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Community Nutrition Promotor",
+    "organization": "World Vision",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-20",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/community-nutrition-promotor-at-world-vision-4492229514",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.277Z",
+    "raw_fields": {
+      "li_job_id": "4492229514",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Assistant Accountant - FMD",
+    "organization": "African Union",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-18",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assistant-accountant-fmd-at-african-union-4490870591",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.277Z",
+    "raw_fields": {
+      "li_job_id": "4490870591",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "National Consultant",
+    "organization": "IOM - UN Migration",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-18",
+    "country": "",
+    "city": "Addis Ababa, Addis Ababa, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/national-consultant-at-iom-un-migration-4491897108",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.278Z",
+    "raw_fields": {
+      "li_job_id": "4491897108",
+      "location_raw": "Addis Ababa, Addis Ababa, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Assistent Boormeester",
+    "organization": "EBC Group BV/ GmbH – Infra",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-17",
+    "country": "",
+    "city": "Werk' Amba, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/assistent-boormeester-at-ebc-group-bv-gmbh-%E2%80%93-infra-4491762871",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.278Z",
+    "raw_fields": {
+      "li_job_id": "4491762871",
+      "location_raw": "Werk' Amba, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "ServiceNow Technical Consultant",
+    "organization": "Mirroar",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-17",
+    "country": "",
+    "city": "Debre Work, Amhara Region, Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/servicenow-technical-consultant-at-mirroar-4491770466",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.278Z",
+    "raw_fields": {
+      "li_job_id": "4491770466",
+      "location_raw": "Debre Work, Amhara Region, Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Protection Assistant - Monitoring",
+    "organization": "Danish Refugee Council / Dansk Flygtningehjælp",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-19",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/protection-assistant-monitoring-at-danish-refugee-council-dansk-flygtningehj%C3%A6lp-4492138911",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.278Z",
+    "raw_fields": {
+      "li_job_id": "4492138911",
+      "location_raw": "Ethiopia"
+    },
+    "_sourceId": "linkedin-ethiopia"
+  },
+  {
+    "title": "Protection Officer - RPA/Monitoring",
+    "organization": "Danish Refugee Council / Dansk Flygtningehjælp",
+    "description": "",
+    "deadline": null,
+    "published": "2026-11-19",
+    "country": "",
+    "city": "Ethiopia",
+    "source_url": "https://et.linkedin.com/jobs/view/protection-officer-rpa-monitoring-at-danish-refugee-council-dansk-flygtningehj%C3%A6lp-4492177938",
+    "source_domain": "linkedin.com",
+    "content_type": "job",
+    "scraped_at": "2026-11-21T13:20:43.278Z",
+    "raw_fields": {
+      "li_job_id": "4492177938",
+      "location_raw": "Ethiopia"
     },
     "_sourceId": "linkedin-ethiopia"
   }
