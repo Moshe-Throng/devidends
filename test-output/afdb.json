@@ -10,7 +10,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=&sortColumn=sort_title&sortDirection=desc#hdrTitleButton",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -29,45 +29,7 @@
     "source_url": "https://afdb.jobs2web.com/search/?q=#reset",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "afdb"
-  },
-  {
-    "title": "PRINCIPAL RISK MANAGEMENT OFFICER, PSFPRINCIPAL RISK MANAGEMENT OFFICER, PSF",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/job/Abidjan-PRINCIPAL-RISK-MANAGEMENT-OFFICER%2C-PSF/1457791233/",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "afdb"
-  },
-  {
-    "title": "Program Officer (TA), PSFProgram Officer (TA), PSF",
-    "organization": "African Development Bank (AfDB)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Program-Officer-%28TA%29%2C-PSF/1457790833/",
-    "source_domain": "afdb.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -86,7 +48,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Treasury-Risk-Analyst-%28TA%29%2C-PSF/1457790633/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -105,7 +67,45 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Underwriter-&-Compliance-Off_-%28TA%29%2C-PSF/1457791633/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "Program Officer (TA), PSFProgram Officer (TA), PSF",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-Program-Officer-%28TA%29%2C-PSF/1457790833/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "afdb"
+  },
+  {
+    "title": "PRINCIPAL RISK MANAGEMENT OFFICER, PSFPRINCIPAL RISK MANAGEMENT OFFICER, PSF",
+    "organization": "African Development Bank (AfDB)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://afdb.jobs2web.com/job/Abidjan-PRINCIPAL-RISK-MANAGEMENT-OFFICER%2C-PSF/1457791233/",
+    "source_domain": "afdb.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -124,7 +124,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Lead%2C-Coordination-and-Risk-Governance-PIAC/1456981833/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -143,7 +143,7 @@
     "source_url": "https://afdb.jobs2web.com/job/Abidjan-Division-Manager-Corporate-and-Finance-Audit-%28PAGL_1%29/1456369133/",
     "source_domain": "afdb.org",
     "content_type": "job",
-    "scraped_at": "2026-11-21T13:21:04.106Z",
+    "scraped_at": "2026-11-22T13:13:00.912Z",
     "raw_fields": {
       "region": "",
       "category": "",
