@@ -1,43 +1,5 @@
 [
   {
-    "title": "Agronomy & Fodder Officer - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62927-agronomy-fodder-officer-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Conservancy Outreach Coordinator - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62928-conservancy-outreach-coordinator-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
     "title": "Director – REAP Consortium",
     "organization": "International Livestock Research Institute (ILRI)",
     "description": "",
@@ -48,7 +10,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62830-director-reap-consortium/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.612Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -67,64 +29,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63050-ilri-consultancy-project-coordination/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Consultancy: Project development & management",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Internship Position: Administrative Intern",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62832-ilri-internship-position-administrative-intern/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Internship Position: Supply Chain",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62904-ilri-internship-position-supply-chain/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.612Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -143,7 +48,26 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63056-ilri-internship-liaison-and-protocol-unit-ethiopia/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.612Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "ILRI PhD Graduate Fellowship: Designing a tailored agentic knowledge system and co-scientist",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63077-ilri-phd-graduate-fellowship-designing-a-tailored-agentic-knowledge-system-and-co-scientist/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-23T15:51:09.612Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -162,7 +86,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61928-ilri-research-fellowship-opportunity-international-water-management-institute-iwmi-sustainable-animal-and-aquatic-foods-saaf-science-program/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -181,7 +105,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63008-procurement-associate-ii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -200,45 +124,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62952-procurement-officer-iii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Ranch Livestock Manager -Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62930-ranch-livestock-manager-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Ranch Veterinary Assistant - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62933-ranch-veterinary-assistant-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -257,7 +143,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62925-youth-enterprise-development-and-inclusive-finance-specialist/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -276,7 +162,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63011-youth-enterprise-development-market-systems-and-inclusive-finance-specialist/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -295,45 +181,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63007-consultant-administration-and-communication/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.530Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "MSc Graduate Fellow - Genetic diversity forage spp collections (Four Positions)",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60908-msc-graduate-fellow-genetic-diversity-forage-spp-collections-four-positions/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Ranch Veterinary Assistant - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62933-ranch-veterinary-assistant-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -352,45 +200,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/30501-ilri-internship/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Internship Position: Administrative Intern",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62832-ilri-internship-position-administrative-intern/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Internship Position: Supply Chain",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62904-ilri-internship-position-supply-chain/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -409,7 +219,26 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63056-ilri-internship-liaison-and-protocol-unit-ethiopia/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
+    "raw_fields": {
+      "region": "",
+      "category": "",
+      "contract_type": ""
+    },
+    "_sourceId": "ilri"
+  },
+  {
+    "title": "ILRI PhD Graduate Fellowship: Designing a tailored agentic knowledge system and co-scientist",
+    "organization": "International Livestock Research Institute (ILRI)",
+    "description": "",
+    "deadline": null,
+    "published": null,
+    "country": "Ethiopia",
+    "city": null,
+    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63077-ilri-phd-graduate-fellowship-designing-a-tailored-agentic-knowledge-system-and-co-scientist/detail",
+    "source_domain": "ilri.org",
+    "content_type": "job",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -428,7 +257,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/61928-ilri-research-fellowship-opportunity-international-water-management-institute-iwmi-sustainable-animal-and-aquatic-foods-saaf-science-program/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -447,7 +276,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63008-procurement-associate-ii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -466,102 +295,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62952-procurement-officer-iii/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "ILRI Consultancy: Project development & management",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/60304-ilri-consultancy-project-development-management/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Accountant - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62926-accountant-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Agronomy & Fodder Officer - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62927-agronomy-fodder-officer-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Conservancy Outreach Coordinator - Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62928-conservancy-outreach-coordinator-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
-    "raw_fields": {
-      "region": "",
-      "category": "",
-      "contract_type": ""
-    },
-    "_sourceId": "ilri"
-  },
-  {
-    "title": "Ranch Livestock Manager -Kapiti Plains Estate Limited",
-    "organization": "International Livestock Research Institute (ILRI)",
-    "description": "",
-    "deadline": null,
-    "published": null,
-    "country": "Ethiopia",
-    "city": null,
-    "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62930-ranch-livestock-manager-kapiti-plains-estate-limited/detail",
-    "source_domain": "ilri.org",
-    "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -580,7 +314,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63050-ilri-consultancy-project-coordination/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -599,7 +333,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/63011-youth-enterprise-development-market-systems-and-inclusive-finance-specialist/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -618,7 +352,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62830-director-reap-consortium/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.613Z",
     "raw_fields": {
       "region": "",
       "category": "",
@@ -637,7 +371,7 @@
     "source_url": "https://ilri.simplicant.com//ilri.simplicant.com/jobs/62925-youth-enterprise-development-and-inclusive-finance-specialist/detail",
     "source_domain": "ilri.org",
     "content_type": "job",
-    "scraped_at": "2026-11-22T13:12:55.531Z",
+    "scraped_at": "2026-11-23T15:51:09.614Z",
     "raw_fields": {
       "region": "",
       "category": "",
