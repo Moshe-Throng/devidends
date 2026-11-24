@@ -1,6 +1,105 @@
 [
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "All of Africa Today - November 24, 2026",
+    "summary": "[allAfrica]",
+    "url": "https://allafrica.com/stories/202611240173.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T06:44:30.000Z",
+    "category": "General",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia, Norway Vow to Deepen Strategic Partnership On Climate Action and Sustainable Development",
+    "summary": "[ENA] Addis Ababa -- Ethiopia and Norway have reaffirmed their commitment to strengthening cooperation on climate finance, forest conservation and multilateral development partnerships.",
+    "url": "https://allafrica.com/stories/202611240103.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:43:36.000Z",
+    "category": "Funding & Donors",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "African Leaders Call for Action, Domestic Investment to Advance Health Sovereignty",
+    "summary": "[ENA] African leaders have called for stronger political commitment, increased domestic investment and concrete action to accelerate the continent's transition toward health sovereignty, self-reliance and resilient healthcare systems.",
+    "url": "https://allafrica.com/stories/202611240099.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:43:34.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia's Deputy PM Urges African Nations to Move Beyond Raw Material Exports, Boost Value Addition",
+    "summary": "[ENA] Ethiopia's Deputy Prime Minister Temesgen Tiruneh has urged African countries to move beyond exporting raw materials and accelerate value addition, industrialization and intra-African trade to translate the continent's economic potential into jobs, prosperity and improved living standards.",
+    "url": "https://allafrica.com/stories/202611240098.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:41:38.000Z",
+    "category": "Economy & Trade",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Somalia-UAE Rupture - Not Merely Diplomatic Spat, but Decade of Competing Interests, Port Politics, and External Meddling",
+    "summary": "[Addis Standard] Addis Abeba -- When Somalia's Federal Government ordered the United Arab Emirates (UAE) ambassador to leave Mogadishu within 72 hours on 19 November 2026 and recalled its envoy from Abu Dhabi, the move brought an already strained relationship to a boiling point. Over the past decade, ties between the two countries have swung repeatedly from close cooperation to deep suspicion, open confrontation, and fragile reconciliation. Yet the rupture of November 2026 is no routine diplomat",
+    "url": "https://allafrica.com/stories/202611240081.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:15:25.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "United Bank for Africa Shelved Ethiopia Banking Expansion Over Nigeria's 10% Foreign Investment Cap",
+    "summary": "[Addis Standard] Addis Abeba -- Nigerian billionaire businessman Tony Elumelu has disclosed that United Bank for Africa (UBA) was unable to pursue its ambition of becoming the first international bank to operate in Ethiopia after Nigeria's central bank enforced a regulatory cap limiting banks' investments in foreign subsidiaries to 10% of their capital.",
+    "url": "https://allafrica.com/stories/202611240082.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:15:25.000Z",
+    "category": "Funding & Donors",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Lethal Artillery Strikes On Civilian Neighbourhoods in Tigray's Alamata City Must Be Investigated As War Crimes",
+    "summary": "[AI London] Artillery attacks by Ethiopia's military and its allied Tigray Peace Forces (TPF) that killed dozens of civilians and injured many more in the city of Alamata in the northern region of Tigray, between 26 and 28 September, must be investigated as possible war crimes, Amnesty International said today.",
+    "url": "https://allafrica.com/stories/202611240073.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-24T05:12:17.000Z",
+    "category": "Humanitarian",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "IGAD Chief Hails Ethiopia's Indispensable Role in Advancing Horn of Africa Peace, Unity",
+    "summary": "[ENA] Addis Ababa -- Intergovernmental Authority on Development (IGAD) Executive Secretary Dr. Workneh Gebeyehu has hailed Ethiopia as an indispensable regional anchor.",
+    "url": "https://allafrica.com/stories/202611230771.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-23T20:56:41.000Z",
+    "category": "Policy & Governance",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
+    "title": "Ethiopia Advances Global Peacekeeping Ambitions, Climate Diplomacy and Strategic Red Sea Aspirations",
+    "summary": "[ENA] From strengthening its legacy in international peacekeeping and preparing to host COP32 to expanding diplomatic partnerships and renewing the debate over Red Sea access, Ethiopia's engagements throughout the week highlighted its ambition to shape regional stability and play a more influential role in global affairs.",
+    "url": "https://allafrica.com/stories/202611230770.html",
+    "source_name": "AllAfrica",
+    "source_id": "allafrica-ethiopia",
+    "published_at": "2026-11-23T20:56:40.000Z",
+    "category": "Climate & Environment",
+    "fetched_at": "2026-11-24T15:44:55.021Z"
+  },
+  {
+    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
     "title": "Health Financing Top of Agenda As African Leaders Meet in Addis",
     "summary": "[New Times] African leaders and health experts began a five-day meeting in Addis Ababa, Ethiopia, on Monday, November 23, to discuss ways of reducing the continent's dependence on foreign health financing and imported medical supplies.",
     "url": "https://allafrica.com/stories/202611230542.html",
@@ -8,7 +107,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T15:25:34.000Z",
     "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -19,7 +118,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T15:21:40.000Z",
     "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -30,7 +129,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T12:43:25.000Z",
     "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -41,7 +140,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T12:39:58.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -52,7 +151,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T12:22:51.000Z",
     "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -63,7 +162,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T10:20:01.000Z",
     "category": "Climate & Environment",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -74,7 +173,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T10:16:26.000Z",
     "category": "Policy & Governance",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -85,7 +184,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T05:31:38.000Z",
     "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -96,7 +195,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T05:14:54.000Z",
     "category": "Economy & Trade",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -107,7 +206,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-23T05:13:38.000Z",
     "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -118,7 +217,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-20T17:26:51.000Z",
     "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -129,7 +228,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-20T14:32:43.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -140,7 +239,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-20T10:35:00.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -151,7 +250,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-20T05:18:09.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -162,7 +261,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-19T16:34:33.000Z",
     "category": "Funding & Donors",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -173,7 +272,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-19T16:05:59.000Z",
     "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -184,7 +283,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-19T16:05:04.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -195,7 +294,7 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-19T13:21:19.000Z",
     "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   },
   {
     "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
@@ -206,116 +305,6 @@
     "source_id": "allafrica-ethiopia",
     "published_at": "2026-11-19T13:20:07.000Z",
     "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "PM Abiy Unveils 57-Hectare Urban Corridor Development Project in Addis Ababa",
-    "summary": "[ENA] Addis Ababa -- Prime Minister Abiy Ahmed has officially unveiled a 57-hectare urban corridor development project covering seven routes and connecting roads in Addis Ababa, aimed at transforming the capital into a more productive, inclusive and livable city.",
-    "url": "https://allafrica.com/stories/202611190053.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-19T05:27:22.000Z",
-    "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopia's Future Peacekeeping Role Must Keep Balancing National Interests, Regional Duties - Navy Commandant",
-    "summary": "[ENA] Addis Ababa -- Ethiopia's future engagement in international peacekeeping must keep balancing national security interests, international obligations, and its enduring commitment to peace and stability in the Horn of Africa, FDRE Navy Commandant Vice Admiral Kindu Gezu stated.",
-    "url": "https://allafrica.com/stories/202611190047.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-19T05:21:00.000Z",
-    "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopia Strengthens Pandemic Preparedness, Health Security, Minister Says",
-    "summary": "[ENA] Addis Ababa -- Ethiopia has made significant progress in strengthening its health security and emergency response systems, raising its International Health Regulations (IHR) capacity score from 62 to 70, Minister of Health Dr. Mekdes Daba announced.",
-    "url": "https://allafrica.com/stories/202611190046.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-19T05:20:59.000Z",
-    "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopia's Strengthened Defense Capacity Vital to National, Regional Security",
-    "summary": "[ENA] Addis Ababa -- Ethiopia's growing defense capabilities are strengthening the country's ability to safeguard its national interests and contribute to peace and stability across the region, Commandant of the International Peace Support Training Centre Gezahegn Fekadu said.",
-    "url": "https://allafrica.com/stories/202611190044.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-19T05:20:58.000Z",
-    "category": "Education",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopia Steps Up Climate Diplomacy Ahead of COP32 in Addis Ababa",
-    "summary": "[ENA] Addis Ababa -- Ethiopia is intensifying its diplomatic engagement with international climate institutions and partners to build cooperation and secure support ahead of hosting the 32nd United Nations Climate Change Conference (COP32) in Addis Ababa in November 2027.",
-    "url": "https://allafrica.com/stories/202611190045.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-19T05:20:58.000Z",
-    "category": "Climate & Environment",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Power Without Transparency - Who Holds Ethiopia's Media Regulator Accountable When It Silences the Press?",
-    "summary": "[Addis Standard] On 2 November 2026, the Ethiopian Media Authority (EMA) announced the indefinite suspension of the registration certificate of Media and Communication Center PLC, the publisher of the Amharic-language Reporter and the English-language The Reporter, and their digital platforms. One of Ethiopia's longest-established independent media organizations was brought to a halt. That raises a question bigger than one publisher: who holds the media regulator accountable when it uses its pow",
-    "url": "https://allafrica.com/stories/202611180491.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-18T15:41:25.000Z",
-    "category": "Health",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "In-Depth Analysis - Emptied of Civilians, No End in Sight - How the Escalating Moyale Conflict Is Deepening a Humanitarian Crisis",
-    "summary": "[Addis Standard] Addis Abeba -- Once a bustling border town sustained by cross-border commerce, pastoralist livelihoods and closely interconnected communities, Moyale is increasingly being emptied of its civilian population as escalating clashes between Oromia and Somali regional forces drive residents from their homes, disrupt economic activity and push tens of thousands across the border into Kenya.",
-    "url": "https://allafrica.com/stories/202611180487.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-18T15:39:16.000Z",
-    "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "El Ni&#xF1;o, Iran War Shocks Could Push Nearly One Million More Ethiopians Into Poverty, New Report Warns",
-    "summary": "[Addis Standard] Addis Abeba -- Nearly 905,000 additional people in Ethiopia could be pushed into poverty and 2.8 million into undernourishment in 2027 as the effects of a potentially exceptionally strong El Ni&#xF1;o converge with higher global fuel prices linked to the Iran war, according to a new analysis by the International Food Policy Research Institute (IFPRI).",
-    "url": "https://allafrica.com/stories/202611180198.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-18T10:24:57.000Z",
-    "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "All of Africa Today - November 18, 2026",
-    "summary": "[allAfrica]",
-    "url": "https://allafrica.com/stories/202611180083.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-18T07:07:07.000Z",
-    "category": "General",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
-  },
-  {
-    "id": "aHR0cHM6Ly9hbGxhZnJpY2EuY29tL3N0",
-    "title": "Ethiopia-Eritrea Border Clashes Raise Fears of Regional War",
-    "summary": "[DW] As Ethiopian troops push Tigrayan forces toward the Eritrean border, fears of a new regional war are growing. With tensions rising between Ethiopia, Eritrea and Sudan, the Horn of Africa faces uncertain times ahead.",
-    "url": "https://allafrica.com/stories/202611180081.html",
-    "source_name": "AllAfrica",
-    "source_id": "allafrica-ethiopia",
-    "published_at": "2026-11-18T06:54:50.000Z",
-    "category": "Humanitarian",
-    "fetched_at": "2026-11-23T15:54:01.754Z"
+    "fetched_at": "2026-11-24T15:44:55.021Z"
   }
 ]
